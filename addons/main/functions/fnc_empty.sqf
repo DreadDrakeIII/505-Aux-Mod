@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call MOD_PREFIX_addonName_fnc_empty;
+ * [] call 505aux_addonName_fnc_empty;
  *
  * Public: No
  */

@@ -1,6 +1,6 @@
-name = "MOD_TITLE"
+name = "505-Aux-Mod"
 author = "DartRuffian"
-prefix = "MOD_PREFIX"
+prefix = "505aux"
 mainprefix = "z"
 
 [version]
@@ -11,8 +11,8 @@ git_hash = 0
 include = [
     "mod.cpp",
     "meta.cpp",
-    "logo_MOD_PREFIX.png",
-    "logo_MOD_PREFIX_ca.paa",
+    "logo_505aux.png",
+    "logo_505aux_ca.paa",
     "LICENSE.md",
     "README.md",
 ]

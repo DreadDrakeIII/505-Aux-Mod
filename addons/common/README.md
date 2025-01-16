@@ -1,4 +1,4 @@
-MOD_PREFIX_common
+505aux_common
 ===================
 
 Common functionality shared between addons.

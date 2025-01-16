@@ -1,6 +1,6 @@
 #define MAINPREFIX z
-#define PREFIX MOD_PREFIX
-#define MOD_NAME MOD_TITLE
+#define PREFIX 505aux
+#define MOD_NAME 505-Aux-Mod
 #define AUTHOR "DartRuffian"
 
 #define REQUIRED_VERSION 2.18

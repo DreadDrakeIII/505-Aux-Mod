@@ -1,4 +1,4 @@
-MOD_PREFIX_main
+505aux_main
 ===================
 
-Main Addon for MOD_TITLE
+Main Addon for 505-Aux-Mod

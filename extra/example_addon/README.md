@@ -1,4 +1,4 @@
-MOD_PREFIX_addonName
+505aux_addonName
 ===================
 
 Description for this addon
