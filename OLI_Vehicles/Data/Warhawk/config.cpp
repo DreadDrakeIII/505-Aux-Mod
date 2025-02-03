@@ -42,8 +42,8 @@ class CfgVehicles
 		//armor=150;
        hiddenSelectionsTextures[]=
 		{
-			"OLI_Vehicles\Data\Warhawk\data\fighter_01_fuselage_01_co.paa",
-			"OLI_Vehicles\Data\Warhawk\data\fighter_01_fuselage_02_co.paa",
+			"OLI_Vehicles\Data\Warhawk\data\fighter_01_fuselage_01_co_2.paa",
+			"OLI_Vehicles\Data\Warhawk\data\fighter_01_fuselage_02_co_2.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
