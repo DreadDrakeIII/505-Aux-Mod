@@ -1,12 +1,12 @@
 class CfgPatches
 {
-	class W505_Vehicle_Core
+	class OLI_Vehicle_Core
 	{
 		author="Cold Winter Productions";
 		name="505th Vehicle Core"
 		requiredAddons[]=
 		{
-			"W505_Core"
+			"OLI_Core"
 		};
 		requiredVersion=0.1;
 		units[]=

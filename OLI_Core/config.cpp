@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class W505_Core
+	class OLI_Core
 	{
 		author= "Cold Winter Productions";
 		requiredaddons[]=
