@@ -29,7 +29,7 @@ class CfgVehicles
         displayName = "V/AC-220 Widow";
         faction = "OLI_Fac";
         editorsubcategory = "OLI_Aircraft_RTW";
-        //crew = "TCI_unit";
+        crew = "OLI_HeliPilot";
 		//armor=150;
        hiddenSelectionsTextures[]=
 		{

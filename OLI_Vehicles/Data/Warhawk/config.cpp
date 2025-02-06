@@ -29,7 +29,7 @@ class CfgVehicles
         displayName = "F/A-40 Warhawk";
         faction = "OLI_Fac";
         editorsubcategory = "OLI_Aircraft_FXW";
-        //crew = "TCI_unit";
+        crew = "OLI_JetPilot";
 		weapons[]=
 		{
 			"weapon_Fighter_Gun20mm_AA",

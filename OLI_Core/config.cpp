@@ -41,7 +41,7 @@ class CfgEditorSubcategories
 	{
 		scope=2;
 		scopeCurator=2;
-		displayName="Troopers";
+		displayName="505th Troopers";
 	};
 	class OLI_Landcraft
 	{
