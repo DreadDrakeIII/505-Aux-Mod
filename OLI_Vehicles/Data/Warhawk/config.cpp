@@ -34,7 +34,8 @@ class CfgVehicles
 		{
 			"weapon_Fighter_Gun20mm_AA",
 			"Laserdesignator_pilotCamera",
-			"CMFlareLauncher_Singles"
+			"CMFlareLauncher_Singles",
+			"OLI_Flare_Countermeasure"
 		};
 		magazines[]=
 		{
@@ -42,7 +43,7 @@ class CfgVehicles
 			"magazine_Fighter01_Gun20mm_AA_x450",
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
-			"240Rnd_CMFlare_Chaff_Magazine"
+			"OLI_Flare_CM_mag"
 		};
 		//armor=150;
        hiddenSelectionsTextures[]=
@@ -58,5 +59,21 @@ class CfgVehicles
 			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 			//"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 		};
-   };
+		 class EventHandlers
+        {
+            init = "[_this select 0] spawn {sleep 0.1; (_this select 0) setVariable ['CMFlareLauncher', 'OLI_Flare_Countermeasure']};";
+        };
+		soundLocked[]=
+		{
+			"OLI_Vehicles\Data\sounds\radarlock.ogg",
+			3, //vol
+			1 //playback
+		};
+		soundIncommingMissile[]=
+		{
+			"OLI_Vehicles\Data\sounds\launchwarn.wss",
+			1.5,
+			1
+		};
+	};
 };

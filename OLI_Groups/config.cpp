@@ -27,7 +27,7 @@ class cfgvehicles
 		{
 			displayName="505th Heli Pilot";
 			faction="OLI_Fac";
-			editorcategory="OLI_INF";
+			editorsubcategory="OLI_INF";
 			scope=2;									
 			scopeCurator = 2;
 			side=1;
@@ -88,7 +88,7 @@ class cfgvehicles
 		{
 			displayName="505th Jet Pilot";
 			faction="OLI_Fac";
-			editorcategory="OLI_INF";
+			editorsubcategory="OLI_INF";
 			scope=2;									
 			scopeCurator = 2;
 			side=1;
