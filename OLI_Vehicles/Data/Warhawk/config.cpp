@@ -32,10 +32,15 @@ class CfgVehicles
         //crew = "TCI_unit";
 		weapons[]=
 		{
+			"weapon_Fighter_Gun20mm_AA",
+			"Laserdesignator_pilotCamera",
 			"CMFlareLauncher_Singles"
 		};
 		magazines[]=
 		{
+			"magazine_Fighter01_Gun20mm_AA_x450",
+			"magazine_Fighter01_Gun20mm_AA_x450",
+			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
 			"240Rnd_CMFlare_Chaff_Magazine"
 		};
