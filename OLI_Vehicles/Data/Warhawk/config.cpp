@@ -32,12 +32,12 @@ class CfgVehicles
         //crew = "TCI_unit";
 		weapons[]=
 		{
-
+			"CMFlareLauncher_Singles"
 		};
-		
 		magazines[]=
 		{
-
+			"240Rnd_CMFlare_Chaff_Magazine",
+			"240Rnd_CMFlare_Chaff_Magazine"
 		};
 		//armor=150;
        hiddenSelectionsTextures[]=
@@ -49,9 +49,9 @@ class CfgVehicles
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_00_ca.paa",
+			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_03_ca.paa",
 			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+			//"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 		};
    };
 };
