@@ -61,48 +61,12 @@ class CfgEditorSubcategories
 		scopeCurator=2;
 		displayName="Aircraft (Fixed Wing)";
 	};
-	//class TCI_Helmets_Props_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Helmet Props (Rank)";
-	//};
-	//class TCI_Helmets_Props_cus_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Helmet Props (Custom)";
-	//};
-	//class TCI_Flags_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Flags";
-	//};
-	//class TCI_Ships_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Ships";
-	//};
-	//class TCI_Ship_Parts_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Ship Parts";
-	//};
-	//class TCI_resupply_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Resupply Crates";
-	//};
-	//class TCI_gonk_subcat
-	//{
-	//	scope=2;
-	//	scopeCurator=2;
-	//	displayname="Gonks";
-	//};
+	class OLI_resupply_subcat
+	{
+		scope=2;
+		scopeCurator=2;
+		displayname="Resupply Crates";
+	};
 };
 //class CfgMarkerClasses
 //{
