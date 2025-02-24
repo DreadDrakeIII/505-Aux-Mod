@@ -35,7 +35,7 @@ class CfgVehicles
 			"weapon_Fighter_Gun20mm_AA",
 			"Laserdesignator_pilotCamera",
 			"OLI_240rnd_CM_Custom",
-			"OLI_Flare_Countermeasure"
+			//"OLI_Flare_Countermeasure"
 		};
 		magazines[]=
 		{

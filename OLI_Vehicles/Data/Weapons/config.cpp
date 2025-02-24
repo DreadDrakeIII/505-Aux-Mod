@@ -54,6 +54,14 @@ class CfgWeapons
 		{
 			"240Rnd_CMFlare_Chaff_Magazine"
 		};
+        modes[]= {"Burst","Single","AIBurst"};
+       
+        class Single
+        {
+            soundBegin[] = {"sound",1};
+            sounds[] = {"StandardSound"};
+        };
+
 		sounds[]=
 		{
 			"StandardSound"
@@ -64,6 +72,7 @@ class CfgWeapons
 			{
 				"OLI_CM_shot_soundSet"
 			};
+            soundbegin[] = {};
 		};
 	};
 };
