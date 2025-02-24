@@ -44,7 +44,28 @@ class CfgWeapons
         reloadTime = 0.5;  // Fire rate
         burst = 1;  // Fires one flare at a time
         soundBurst = 0;  // Prevents sound looping
+        
     };
+    class OLI_240rnd_CM_Custom: CMFlareLauncher
+	{
+		displayName="Countermeasures";
+		displayNameShort="Countermeasures";
+		magazines[]=
+		{
+			"240Rnd_CMFlare_Chaff_Magazine"
+		};
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			soundsetshot[]=
+			{
+				"OLI_CM_shot_soundSet"
+			};
+		};
+	};
 };
 
 class CfgAmmo
@@ -70,6 +91,7 @@ class CfgAmmo
         
         timeToLive = 300;  // Keeps flare active longer in the air
     };
+    
 };
 
 class CfgMagazines
@@ -85,3 +107,40 @@ class CfgMagazines
         mass = 10;
     };
 }
+
+class CfgSoundSets
+{
+	class OLI_CM_shot_soundSet
+	{
+		SoundShaders[]=
+		{
+			"OLI_CM_shot_soundShader"
+		};
+		volumeFactor=1.6;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		sound3DProcessingType="ExplosionLight3DProcessingType";
+		distanceFilter="explosionDistanceFreqAttenuationFilter";
+		occlusionFactor=0.30000001;
+		obstructionFactor=0;
+	};
+};
+
+class CfgSoundShaders
+{
+	class OLI_CM_shot_soundShader
+	{
+		samples[]=
+		{
+			
+			{
+				"OLI_Vehicles\Data\sounds\flare.wss",
+				1
+			}
+		};
+		volume=1;
+		range=1600;
+	};
+};
