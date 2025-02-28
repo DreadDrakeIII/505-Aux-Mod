@@ -41,7 +41,8 @@ class CfgVehicles
 		{
 			"CMFlareLauncher_Singles",
 			//"SmokeLauncher",
-			"OLI_Flare_Countermeasure"
+			"OLI_Flare_Countermeasure",
+			"M134_minigun"
 		};
 		magazines[]=
 		{
@@ -51,7 +52,9 @@ class CfgVehicles
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",
-			"OLI_Flare_CM_mag"
+			"OLI_Flare_CM_mag",
+			"5000Rnd_762x51_Belt",
+			"5000Rnd_762x51_Belt"
 		};
 		class EventHandlers
         {
