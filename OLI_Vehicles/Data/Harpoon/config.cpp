@@ -32,11 +32,11 @@ class CfgVehicles
         crew = "OLI_HeliPilot";
 		scope = 2
 		armor=100; //Default 40
-   //    hiddenSelectionsTextures[]=
-	//	{
-			//"OLI_Vehicles\Data\harpoon\data\vtol_01_ext01_505_co.paa",
-		//	"OLI_Vehicles\Data\harpoon\data\vtol_01_ext02_505_co.paa"
-	//	};
+       hiddenSelectionsTextures[]=
+		{
+			"OLI_Vehicles\Data\harpoon\data\heli_transport_03_ext01_co.paa",
+			"OLI_Vehicles\Data\harpoon\data\heli_transport_03_ext02_co.paa"
+		};
 		weapons[]=
 		{
 			"CMFlareLauncher_Singles",
