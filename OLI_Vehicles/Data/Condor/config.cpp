@@ -32,15 +32,15 @@ class CfgVehicles
         crew = "OLI_JetPilot";
 		weapons[]=
 		{
-			"weapon_Fighter_Gun20mm_AA",
+			"Gatling_30mm_Plane_CAS_01_F",
 			"Laserdesignator_pilotCamera",
 			"OLI_240rnd_CM_Custom",
 			//"OLI_Flare_Countermeasure"
 		};
 		magazines[]=
 		{
-			"magazine_Fighter01_Gun20mm_AA_x450",
-			"magazine_Fighter01_Gun20mm_AA_x450",
+			"1000Rnd_Gatling_30mm_Plane_CAS_01_F",
+			"1000Rnd_Gatling_30mm_Plane_CAS_01_F",
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
 			"OLI_Flare_CM_mag"
