@@ -30,7 +30,8 @@ class CfgVehicles
         faction = "OLI_Fac";
         editorsubcategory = "OLI_Aircraft_RTW";
         crew = "OLI_HeliPilot";
-		scope = 2
+		scope = 2;
+		scopeCurator = 2;
 		armor=100; //Default 40
        hiddenSelectionsTextures[]=
 		{
