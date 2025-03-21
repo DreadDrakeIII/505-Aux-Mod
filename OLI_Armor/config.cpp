@@ -171,6 +171,63 @@ class CfgVehicles
 		};
 	};
 
+	////////////////////Custom////////////////////
+	class OLI_Drake_Unit: OLI_unit
+	{
+		author="Cold Winter Productions";
+		displayName="505th Marine Drake";
+		uniformclass="OLI_Uniform";
+		hiddenSelectionsTextures[]=
+		{
+			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
+		};
+		linkedItems[]=
+		{
+			"OLI_HELMETV2",
+			"OLI_Armour_Drake_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+		respawnLinkedItems[]=
+		{
+			"OLI_HELMETV2",
+			"OLI_Armour_Drake_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+	};
+	class OLI_Drexus_Unit: OLI_unit
+	{
+		scope=2;
+		scopeCurator=2;
+		author="Cold Winter Productions";
+		displayName="505th Marine Drexus";
+		uniformclass="OLI_Uniform";
+		hiddenSelectionsTextures[]=
+		{
+			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
+		};
+		linkedItems[]=
+		{
+			"OLI_DREXUS_HELMET",
+			"OLI_Armour_Drexus_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+		respawnLinkedItems[]=
+		{
+			"OLI_DREXUS_HELMET",
+			"OLI_Armour_Drexus_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+	};
 
 	
 };
@@ -298,6 +355,18 @@ class CfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"OLI_Armor\Data\PL\PL_CEHelmet_co.paa"
+		};
+	};
+	////////////////////Custom Helms////////////////////
+	class OLI_DREXUS_HELMET: OLI_HELMET
+	{
+		author="Cold Winter Productions";
+		scope=2;
+		scopeCurator=2;
+		displayName="505th Marine Custom Helmet (Drexus)";
+		hiddenSelectionsTextures[]=
+		{
+			"OLI_Armor\Data\Custom\Drexus\Dexus_Helmet_co.paa"
 		};
 	};
 
@@ -852,6 +921,39 @@ class CfgWeapons
 			{
 				"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",
 				"\OLI_Armor\Data\PL\PL_CEArmour_co.paa"
+			};
+		};
+
+		class OLI_Armour_Drake_Vest: Rogue_CEArmour
+		{
+			author="Cold Winter Productions";
+			scope=2;
+			displayName="505th Marine Custom Armor (Drake)";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo1"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",
+				"\OLI_Armor\Data\Custom\Drake\Drake_Armor_co.paa"
+			};
+		};
+		class OLI_Armour_Drexus_Vest: Rogue_CEArmour
+		{
+			author="Cold Winter Productions";
+			scope=2;
+			displayName="505th Marine Custom Armor (Drexus)";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo1"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",
+				"\OLI_Armor\Data\Custom\Drexus\Dexus_Armor_co.paa"
 			};
 		};
 };
