@@ -96,7 +96,7 @@ class CfgVehicles
 		uniformclass="OLI_Uniform_Medic";
 		hiddenSelectionsTextures[]=
 		{
-			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"OLI_Armor\Data\Medic\Medic_UniformP_co.paa",
 			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
 		};
 		linkedItems[]=
@@ -120,10 +120,10 @@ class CfgVehicles
 	{
 		author="Cold Winter Productions";
 		displayName="505th Marine Squad Lead";
-		uniformclass="OLI_Uniform_Medic";
+		uniformclass="OLI_Uniform_SL";
 		hiddenSelectionsTextures[]=
 		{
-			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"OLI_Armor\Data\SL\SL_UniformP_co.paa",
 			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
 		};
 		linkedItems[]=
@@ -147,10 +147,10 @@ class CfgVehicles
 	{
 		author="Cold Winter Productions";
 		displayName="505th Marine Platoon Lead";
-		uniformclass="OLI_Uniform_Medic";
+		uniformclass="OLI_Uniform_PL";
 		hiddenSelectionsTextures[]=
 		{
-			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"OLI_Armor\Data\PL\PL_UniformP_co.paa",
 			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
 		};
 		linkedItems[]=
@@ -176,7 +176,7 @@ class CfgVehicles
 	{
 		author="Cold Winter Productions";
 		displayName="505th Marine Drake";
-		uniformclass="OLI_Uniform";
+		uniformclass="OLI_Drake_Uniform";
 		hiddenSelectionsTextures[]=
 		{
 			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
@@ -199,37 +199,66 @@ class CfgVehicles
 			"ItemWatch"
 		};
 	};
-	class OLI_Drexus_Unit: OLI_unit
+	class OLI_Adamant_Unit: OLI_unit
 	{
 		scope=2;
 		scopeCurator=2;
 		author="Cold Winter Productions";
-		displayName="505th Marine Drexus";
+		displayName="505th Marine Adamant";
 		uniformclass="OLI_Uniform";
 		hiddenSelectionsTextures[]=
 		{
-			"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa",
+			"OLI_Armor\Data\Custom\Adamant\Dexus_UniformP_co.paa",
 			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
 		};
 		linkedItems[]=
 		{
-			"OLI_DREXUS_HELMET",
-			"OLI_Armour_Drexus_Vest",
+			"OLI_Adamant_HELMET",
+			"OLI_Armour_Adamant_Vest",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch"
 		};
 		respawnLinkedItems[]=
 		{
-			"OLI_DREXUS_HELMET",
-			"OLI_Armour_Drexus_Vest",
+			"OLI_Adamant_HELMET",
+			"OLI_Armour_Adamant_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+	};
+    class OLI_Crawford_Unit: OLI_unit
+	{
+		scope=2;
+		scopeCurator=2;
+		author="Cold Winter Productions";
+		displayName="505th Marine Crawford";
+		uniformclass="OLI_Crawford_Uniform";
+		hiddenSelectionsTextures[]=
+		{
+			"OLI_Armor\Data\Custom\Anvil\Anvil_UniformP_co.paa",
+			"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"
+		};
+		linkedItems[]=
+		{
+			"OLI_Crawford_HELMET",
+			"OLI_Armour_Crawford_Vest",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+		respawnLinkedItems[]=
+		{
+			"OLI_Crawford_HELMET",
+			"OLI_Armour_Crawford_Vest",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch"
 		};
 	};
 
-	
+
 };
 
 
@@ -260,6 +289,48 @@ class CfgWeapons
 			class ItemInfo: UniformItem
 			{
 				uniformClass="OLI_Medic";
+				containerClass="Supply150";
+				mass=40;
+			};
+		};
+        class OLI_Adamant_Uniform: OLI_Uniform
+		{
+		author="Cold Winter Productions";
+		displayName="505th Marine Uniform (Adamant)";
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
+			class ItemInfo: UniformItem
+			{
+				uniformClass="OLI_Adamant_Uniform";
+				containerClass="Supply150";
+				mass=40;
+			};
+		};
+        class OLI_Anvil_Uniform: OLI_Uniform
+		{
+		author="Cold Winter Productions";
+		displayName="505th Marine Uniform (Crawford)";
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
+			class ItemInfo: UniformItem
+			{
+				uniformClass="OLI_Crawford_Uniform";
+				containerClass="Supply150";
+				mass=40;
+			};
+		};
+        class OLI_Drake_Uniform: OLI_Uniform
+		{
+		author="Cold Winter Productions";
+		displayName="505th Marine Uniform (Drake)";
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
+			class ItemInfo: UniformItem
+			{
+				uniformClass="OLI_Drake_Uniform";
 				containerClass="Supply150";
 				mass=40;
 			};
@@ -358,15 +429,26 @@ class CfgWeapons
 		};
 	};
 	////////////////////Custom Helms////////////////////
-	class OLI_DREXUS_HELMET: OLI_HELMET
+	class OLI_Adamant_HELMET: OLI_HELMETV2
 	{
 		author="Cold Winter Productions";
 		scope=2;
 		scopeCurator=2;
-		displayName="505th Marine Custom Helmet (Drexus)";
+		displayName="505th Marine Custom Helmet (Adamant)";
 		hiddenSelectionsTextures[]=
 		{
-			"OLI_Armor\Data\Custom\Drexus\Dexus_Helmet_co.paa"
+			"OLI_Armor\Data\Custom\Adamant\Dexus_Helmet_co.paa"
+		};
+	};
+    class OLI_Anvil_HELMET: OLI_HELMETV2
+	{
+		author="Cold Winter Productions";
+		scope=2;
+		scopeCurator=2;
+		displayName="505th Marine Custom Helmet (Anvil)";
+		hiddenSelectionsTextures[]=
+		{
+			"OLI_Armor\Data\Custom\Anvil\Anvil_Helmet_co.paa"
 		};
 	};
 
@@ -940,11 +1022,11 @@ class CfgWeapons
 				"\OLI_Armor\Data\Custom\Drake\Drake_Armor_co.paa"
 			};
 		};
-		class OLI_Armour_Drexus_Vest: Rogue_CEArmour
+		class OLI_Armour_Adamant_Vest: Rogue_CEArmour
 		{
 			author="Cold Winter Productions";
 			scope=2;
-			displayName="505th Marine Custom Armor (Drexus)";
+			displayName="505th Marine Custom Armor (Adamant)";
 			hiddenSelections[]=
 			{
 				"camo",
@@ -953,7 +1035,23 @@ class CfgWeapons
 			hiddenSelectionsTextures[]=
 			{
 				"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",
-				"\OLI_Armor\Data\Custom\Drexus\Dexus_Armor_co.paa"
+				"\OLI_Armor\Data\Custom\Adamant\Dexus_Armor_co.paa"
+			};
+		};
+        class OLI_Armour_Anvil_Vest: Rogue_CEArmour
+		{
+			author="Cold Winter Productions";
+			scope=2;
+			displayName="505th Marine Custom Armor (Crawford)";
+			hiddenSelections[]=
+			{
+				"camo",
+				"camo1"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",
+				"\OLI_Armor\Data\Custom\Anvil\Anvil_Armor_co.paa"
 			};
 		};
 };

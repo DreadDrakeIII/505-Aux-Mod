@@ -14,56 +14,68 @@ class CfgPatches
 };
 class CfgMusicClasses
 {
-    class OLI_Calm
+    class OLI_505_Halo
     {
-        displayName="505th Calm Music";
+        displayName="505th Halo Music";
     };
-	class OLI_Sad
+    class OLI_VideoGame
     {
-        displayName="505th Sad Music";
+        displayName="505th Video Games";
     };
-	class OLI_505_Battle
+    class OLI_Songs
     {
-        displayName="505th Battle Music";
+        displayName="505th Songs";
     };
-	//class OLI_StarWars
-   // {
-    //    displayName="505th Star Wars Music";
-   // };
-	class OLI_Radio
+    class OLI_Soundtrack
     {
-        displayName="505th Radio";
+        displayName="505th Soundtrack";
     };
 };
 
 class CfgMusic
 {
-	
+
 	/////////////////////
-	//////OLI_Calm//////
+	//////OLI_Halo//////
 	/////////////////////
-	
-	
-	
-	/////////////////////
-	//OLI_Sad//
-	/////////////////////
-	class BuryingTheDead
+    class BuryingTheDead
 	{
-		name="Burying The Dead";
-		musicClass="OLI_Sad";
+		name="Halo Reach - Deliver Hope";
+		musicClass="OLI_Halo";
 		sound[]=
         {
-            "OLI_Music\Data\BuryingTheDead.ogg",
+            "OLI_Music\Data\DeliverHope.ogg",
             db+0,
             1
         };
-		duration=129;
+		duration=137;
 	};
-	class Norman
+
+    /////////////////////
+	////OLI_VideoGame////
+	/////////////////////
+
+
+
+	/////////////////
+	//OLI_505_Songs//
+	/////////////////
+	class BURN
+	{
+		name="Burn";
+		musicClass="OLI_Songs";
+		sound[]=
+        {
+            "OLI_Music\Data\BURN.ogg",
+            db+0,
+            1
+        };
+		duration=202;
+	};
+    class Norman
 	{
 		name="Norman";
-		musicClass="OLI_Sad";
+		musicClass="OLI_Songs";
 		sound[]=
         {
             "OLI_Music\Data\Norman.ogg",
@@ -72,14 +84,14 @@ class CfgMusic
         };
 		duration=171;
 	};
-	
-	////////////////////////
-	//OLI_505_Battle//
+
+    ////////////////////////
+	//OLI_505_Soundtracks//
 	///////////////////////
 	class The_Final_Battle
 	{
 		name="The Final Battle";
-		musicClass="OLI_505_Battle";
+		musicClass="OLI_Soundtrack";
 		sound[]=
         {
             "OLI_Music\Data\The Final Battle.ogg",
@@ -91,7 +103,7 @@ class CfgMusic
 	class Barbarian_Horde
 	{
 		name="Barbarian Horde";
-		musicClass="OLI_505_Battle";
+		musicClass="OLI_Soundtrack";
 		sound[]=
         {
             "OLI_Music\Data\BarbarianHorde.ogg",
@@ -100,26 +112,10 @@ class CfgMusic
         };
 		duration=633;
 	};
-
-	/////////////
-	//OLI_Radio//
-	/////////////
-	class BURN
-	{
-		name="Burn";
-		musicClass="OLI_Radio";
-		sound[]=
-        {
-            "OLI_Music\Data\BURN.ogg",
-            db+0,
-            1
-        };
-		duration=202;
-	};
-	class Hoist_The_Colours_x_Hes_a_Pirate
+    class Hoist_The_Colours_x_Hes_a_Pirate
 	{
 		name="Hoist The Colours x He's a Pirate";
-		musicClass="OLI_Radio";
+		musicClass="OLI_Soundtrack";
 		sound[]=
         {
             "OLI_Music\Data\Hoist The Colours x He's a Pirate.ogg",
@@ -128,10 +124,34 @@ class CfgMusic
         };
 		duration=295;
 	};
-	class Unravel_EPIC
+    class BuryingTheDead
+	{
+		name="Burying The Dead";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\BuryingTheDead.ogg",
+            db+0,
+            1
+        };
+		duration=129;
+	};
+    class TheBattle
+	{
+		name="Gladiator - The Battle";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\The_Battle.ogg",
+            db+0,
+            1
+        };
+		duration=602;
+	};
+    class Unravel_EPIC
 	{
 		name="Unravel  EPIC";
-		musicClass="OLI_Radio";
+		musicClass="OLI_Soundtrack";
 		sound[]=
         {
             "OLI_Music\Data\Unravel  EPIC.ogg",
@@ -139,5 +159,53 @@ class CfgMusic
             1
         };
 		duration=260;
+	};
+    class VictoryandDeath
+	{
+		name="Victory and Death";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\VictoryandDeath.ogg",
+            db+0,
+            1
+        };
+		duration=62;
+	};
+    class TENET_Trucks_in_Place
+	{
+		name="TENET - Trucks in Place";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\TENET_Trucks_in_Place.ogg",
+            db+0,
+            1
+        };
+		duration=332;
+	};
+    class TENET_Freeport
+	{
+		name="TENET - Freeport";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\TENET_Freeport.ogg",
+            db+0,
+            1
+        };
+		duration=219;
+	};
+    class TENET_SATOR
+	{
+		name="TENET-SATOR[Dread]";
+		musicClass="OLI_Soundtrack";
+		sound[]=
+        {
+            "OLI_Music\Data\TENET_SATOR.ogg",
+            db+0,
+            1
+        };
+		duration=171;
 	};
 };
