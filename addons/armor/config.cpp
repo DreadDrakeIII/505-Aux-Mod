@@ -1,0 +1,131 @@
+#include "script_component.hpp"
+
+class CfgPatches {
+    class ADDON {
+        author = AUTHOR;
+        name = COMPONENT_NAME;
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {
+            QCLASS(main),
+            "A3_Characters_F",
+			"A3_Data_F_Mark",
+            "Rogue_CEMarine",
+            "19thMD_Vests_Kelp",
+            "TKE_UCN",
+            "TKE_Rogue_Uniform",
+            "TKE_MD",
+            "1st_MEU_patch_gear_facewear",
+            "OPTRE_Misc_Objects"
+
+        };
+        units[] = {
+            QCLASS(Marine_CE_Base),
+            QCLASS(Marine_Rifleman_CE),
+            QCLASS(Marine_Autorifle_CE),
+            QCLASS(Marine_Marksman_CE),
+            QCLASS(Marine_LAT_CE),
+            QCLASS(Marine_Grenadier_CE),
+            QCLASS(Marine_Breacher_CE),
+            QCLASS(Corpsman_Rifleman_CE),
+            QCLASS(Marine_SquadLead_CE),
+            QCLASS(Marine_PlatoonLead_CE),
+            QCLASS(Marine_Adamant_CE),
+            QCLASS(Marine_Crawford_CE),
+            QCLASS(Marine_Oliver_CE),
+            QCLASS(Backpack_CE),
+            QCLASS(Backpack_CE_505),
+            QCLASS(Backpack_Predef),
+            QCLASS(Backpack_AutoRifle_Predef),
+            QCLASS(Backpack_Marksman_Predef),
+            QCLASS(Backpack_LAT_Predef),
+            QCLASS(Backpack_Grenadier_Predef),
+            QCLASS(Backpack_Breacher_Predef),
+            QCLASS(BackpackLR_CE),
+            QCLASS(BackpackLR_CE_505),
+            QCLASS(Invisible_Backpack_CE),
+            QCLASS(LR_Antenna_CE),
+            QCLASS(ScoutBackpack_CE),
+            QCLASS(MedicalBackpack),
+            QCLASS(MedicalBackpack_Predef),
+            QCLASS(Backpack_SL_PL_Predef),
+        };
+        weapons[] = {
+            QCLASS(Marine_Helmet_Base),
+            QCLASS(Marine_Helmet_V2_Base),
+            QCLASS(CE_HELMET),
+            QCLASS(CE_HELMETV2),
+            QCLASS(CE_HELMET_Corpsman),
+            QCLASS(CE_HELMET_CorpsmanV2),
+            QCLASS(CE_HELMET_SL),
+            QCLASS(CE_HELMET_SLV2),
+            QCLASS(CE_HELMET_PL),
+            QCLASS(CE_HELMET_PLV2),
+            QCLASS(CE_Adamant_HELMET),
+            QCLASS(CE_Crawford_HELMET),
+            QCLASS(Field_Cap),
+            QCLASS(Uniform_CE_Base),
+            QCLASS(Uniform_CE),
+            QCLASS(Uniform_CE_Rolled),
+            QCLASS(Uniform_CE_Corpsman),
+            QCLASS(Uniform_CE_Corpsman_Rolled),
+            QCLASS(Uniform_CE_SL),
+            QCLASS(Uniform_CE_SL_Rolled),
+            QCLASS(Uniform_CE_PL),
+            QCLASS(Uniform_CE_PL_Rolled),
+            QCLASS(Adamant_Uniform_CE),
+            QCLASS(Crawford_Uniform_CE),
+            QCLASS(Oliver_Uniform_CE),
+            QCLASS(CE_Marine_Vest_Base),
+            QCLASS(CE_Marine_VestV2_Base),
+            QCLASS(CE_Marine_Vest_NSV2_Base),
+            QCLASS(CE_Marine_Vest_NS_Base),
+            QCLASS(CE_Marine_Vest_Pouch_Base),
+            QCLASS(CE_Marine_Vest_V2_Pouch_Base),
+            QCLASS(CE_Marine_Vest_NSV2_Pouch_Base),
+            QCLASS(CE_Marine_Vest_NS_Pouch_Base),
+            QCLASS(CE_Armour_Vest),
+            QCLASS(CE_Armour_Vest_V2),
+            QCLASS(CE_Armour_Vest_NSV2),
+            QCLASS(CE_Armour_Vest_NS),
+            QCLASS(CE_Armour_Vest_Pouch),
+            QCLASS(CE_Armour_Vest_V2Pouch),
+            QCLASS(CE_Armour_Vest_NSV2Pouch),
+            QCLASS(CE_Armour_Vest_NSPouch),
+            QCLASS(CE_Armour_Corpsman_Vest),
+            QCLASS(CE_Armour_Corpsman_Vest_V2),
+            QCLASS(CE_Armour_Corpsman_Vest_NS),
+            QCLASS(CE_Armour_Corpsman_Vest_NSV2),
+            QCLASS(CE_Armour_Corpsman_Vest_Pouch),
+            QCLASS(CE_Armour_Corpsman_Vest_V2Pouch),
+            QCLASS(CE_Armour_Corpsman_Vest_NSPouch),
+            QCLASS(CE_Armour_Corpsman_Vest_NSV2Pouch),
+            QCLASS(CE_Armour_SL_Vest),
+            QCLASS(CE_Armour_SL_Vest_V2),
+            QCLASS(CE_Armour_SL_Vest_NS),
+            QCLASS(CE_Armour_SL_Vest_NSV2),
+            QCLASS(CE_Armour_SL_Vest_Pouch),
+            QCLASS(CE_Armour_SL_Vest_V2Pouch),
+            QCLASS(CE_Armour_SL_Vest_NSV2Pouch),
+            QCLASS(CE_Armour_SL_Vest_NSPouch),
+            QCLASS(CE_Armour_PL_Vest),
+            QCLASS(CE_Armour_PL_Vest_V2),
+            QCLASS(CE_Armour_PL_Vest_NSV2),
+            QCLASS(CE_Armour_PL_Vest_NS),
+            QCLASS(CE_Armour_PL_Vest_Pouch),
+            QCLASS(CE_Armour_PL_Vest_NSV2Pouch),
+            QCLASS(CE_Armour_PL_Vest_NSV2Pouch),
+            QCLASS(CE_Armour_PL_Vest_NSPouch),
+            QCLASS(CE_Vest_Adamant_Pouches),
+            QCLASS(CE_Vest_Crawford),
+            QCLASS(CE_Vest_Oliver),
+        };
+        VERSION_CONFIG;
+    };
+};
+
+#include "CfgFactionClasses.hpp"
+#include "CfgEditorSubcategories.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
+#include "CfgGlasses.hpp"
+#include "CfgEventHandlers.hpp"

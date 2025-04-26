@@ -1,4 +1,4 @@
-505aux_main
+OLI_main
 ===================
 
-Main Addon for 505-Aux-Mod
+Main Addon for MOD_TITLE

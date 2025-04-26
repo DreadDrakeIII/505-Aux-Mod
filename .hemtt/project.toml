@@ -1,11 +1,13 @@
-name = "505-Aux-Mod"
-author = "DartRuffian"
-prefix = "505aux"
-mainprefix = "z"
+name = "505th Auxilary Mod"
+author = "505th Aux Team"
+prefix = "OLI"
+mainprefix = "BLU"
 
 [version]
 path = "addons/main/script_version.hpp"
 git_hash = 0
+[lints.config.file_type]
+options.allow_no_extension = true
 
 [files]
 include = [
@@ -16,7 +18,46 @@ include = [
     "LICENSE.md",
     "README.md",
 ]
-exclude = []
+exclude = ["*.spp", "*.spp.painter_lock", "*.psd"]
 
 [properties]
-author = "DartRuffian"
+author = "505th Aux Team"
+url = "https://github.com/DreadDrakeIII/505-Aux-Mod"
+
+[hemtt.launch.default]
+workshop = [
+    "450814997",  # CBA_A3
+    "463939057", # ACE
+    "2369477168", # ADT
+    "623475643",  # 3DEN
+    "1779063631", # ZEN
+    "2291129343", # Improved Melee System
+    "767380317", # Blastcore # Only used to test particle effects
+    "769440155", # Operation TREBUCHET
+    "3325103983", # Combat Equipment Evolved
+    "1572627279", # OPTRE First Contact
+    "570118882", # No Weapon Sway
+    "3328314886", # Heavy Weapon Framework
+    "3038821437", # UNSC Foundries
+    "3038826897", # UNSC Foundries Ace Compat
+    "3300894429", # WBK Kit Menu
+    "3165450999", # WBK Immersive Animations
+    "2933180786", # WebKnight's OPTRE Expansion
+    "2915485125", # Burn 'Em Redux
+    "3391132245", # Advanced Vault System: SPARTANS Expansion
+    "2794721649", # Advanced Vault System: Remastered
+    "3255508422", # HALO Flamethrower
+    "2888477598", # 1st MEU Aux Mod
+    # "2522638637", # ACE Arsenal Extended
+    "366425329", # FIR AWS(AirWeaponSystem)
+]
+presets = ["main"]
+dlc = []
+optionals = []
+mission = "AuxTest.VR"
+parameters = []
+
+[hemtt.launch.previews]
+extends = "default"
+mission = "Previews.VR"
+parameters = ["-name=Previews"]

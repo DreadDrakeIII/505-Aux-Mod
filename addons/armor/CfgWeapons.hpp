@@ -1,0 +1,136 @@
+class CfgWeapons {
+    class H_HelmetB;
+    class Rogue_CEHelmet: H_HelmetB {
+        class ItemInfo;
+    };
+    class CLASS(Marine_Helmet_Base): Rogue_CEHelmet {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Helmet EP (Base)";
+    };
+
+    class Rogue_CEHelmetV2;
+    class CLASS(Marine_Helmet_V2_Base): Rogue_CEHelmetV2 {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Helmet (Base)";
+    };
+
+    class Rogue_CEFieldCap_base;
+    class CLASS(FieldCap_Base): Rogue_CEFieldCap_base {
+        author = "505th Aux Team";
+        scope = 1;
+        displayName = "[505th] Field Cap (Base)";
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CECapGrey_co.paa"};
+    };
+
+    class TKE_UCNPilotHelm_BASE;
+    class CLASS(505th_Pilot_Helmet_Base): TKE_UCNPilotHelm_BASE {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Pilot Helmet (Base)";
+    };
+
+    class Rogue_CEBoonie;
+    class CLASS(Boonie_Base): Rogue_CEBoonie {
+        author = "505th Aux Team";
+        scope = 1;
+        displayName = "[505th] Boonie Hat (Base)";
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEBooniehat_co.paa"};
+    };
+
+    #include "configs\Helmets.hpp"
+
+
+    class UniformItem;
+    class Rogue_CEUniform_U_B;
+    class CLASS(Uniform_CE_Base): Rogue_CEUniform_U_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Uniform (Base)";
+    };
+
+    class Rogue_CEUniformRolled_U_B;
+    class CLASS(Uniform_CE_Rolled_Base): Rogue_CEUniformRolled_U_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Uniform Rolled (Base)";
+    };
+
+    //class TKE_Rogue_UniformNCMDTFGrey_U_B;
+    //class CLASS(Uniform_Pilot_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
+    //    SCOPE_HIDDEN;
+    //    author = AUTHOR;
+    //    displayName = "[505th] Pilot Uniform (Base)";
+    //};
+
+    #include "configs\Uniforms.hpp"
+
+    class Rogue_CEArmour;
+	class Rogue_CEArmourV2;
+	class Rogue_CEArmourNSV2;
+	class Rogue_CEArmourNS;
+	class Rogue_CEArmourPouch;
+	class Rogue_CEArmourV2Pouch;
+	class Rogue_CEArmourNSV2Pouch;
+	class Rogue_CEArmourNSPouch;
+    class TKE_MDTFArmour1Grey;
+
+    class CLASS(CE_Marine_Vest_Base): Rogue_CEArmour {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest (Base)";
+    };
+
+    class CLASS(CE_Marine_VestV2_Base): Rogue_CEArmourV2 {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest NF (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_NSV2_Base): Rogue_CEArmourNSV2 {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest NF+S (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_NS_Base): Rogue_CEArmourNS {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest NS (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_Pouch_Base): Rogue_CEArmourPouch {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest Pouches (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_V2_Pouch_Base): Rogue_CEArmourV2Pouch {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest Pouches + NF (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_NSV2_Pouch_Base): Rogue_CEArmourNSV2Pouch {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest Pouches + NF/S (Base)";
+    };
+
+    class CLASS(CE_Marine_Vest_NS_Pouch_Base): Rogue_CEArmourNSPouch {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Marine Vest Pouches + NS (Base)";
+    };
+
+    class CLASS(Pilot_Vest_Base): TKE_MDTFArmour1Grey {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Pilot Vest (Base)";
+    };
+
+    #include "configs\Vests.hpp"
+};

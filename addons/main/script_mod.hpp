@@ -1,7 +1,7 @@
-#define MAINPREFIX z
-#define PREFIX 505aux
-#define MOD_NAME 505-Aux-Mod
-#define AUTHOR "DartRuffian"
+#define MAINPREFIX BLU
+#define PREFIX OLI
+#define MOD_NAME 505th Auxilary Mod
+#define AUTHOR "505th Aux Team"
 
 #define REQUIRED_VERSION 2.18
 #define REQUIRED_CBA_VERSION {3,18,1}

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call 505aux_addonName_fnc_empty;
+ * [] call OLI_addonName_fnc_empty;
  *
  * Public: No
  */
