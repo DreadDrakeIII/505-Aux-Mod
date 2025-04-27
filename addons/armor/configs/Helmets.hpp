@@ -90,10 +90,17 @@ class CLASS(CE_FieldCap_505th): CLASS(FieldCap_Base) {
     hiddenSelectionsTextures[] = {QPATHTOF(data\fieldcap\505th_CECap_co.paa)};
 };
 /////////////////////Pilot Helms/////////////////////
-class CLASS(Pilot_Helmet): CLASS(505th_Pilot_Helmet_Base) {
+class CLASS(Jet_Pilot_Helmet): CLASS(505th_Jet_Pilot_Helmet_Base) {
     author = "505th Aux Team";
     scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
-    displayName = "[505th] Pilot Helmet";
+    displayName = "[505th] Jet Pilot Helmet";
+};
+class CLASS(Heli_Pilot_Helmet): CLASS(505th_Heli_Pilot_Helmet_Base) {
+    author = "505th Aux Team";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    displayName = "[505th] Heli Pilot Helmet";
 };

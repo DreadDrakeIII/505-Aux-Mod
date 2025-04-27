@@ -9,6 +9,7 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "A3_Air_F_EPC_Plane_CAS_01",
+            "MG8_core",
             "ace_realisticnames"
         };
         units[] = {

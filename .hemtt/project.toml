@@ -50,6 +50,10 @@ workshop = [
     "2888477598", # 1st MEU Aux Mod
     # "2522638637", # ACE Arsenal Extended
     "366425329", # FIR AWS(AirWeaponSystem)
+    "784218341", # The Mighty GAU-8 Avenger
+    "949698441", # The Mighty GAU-8 Avenger - ACE
+    "2987115897", # Weapon Research and Security: Firearms
+    "3469976535", # Weapon Research and Security: Autonomous systems
 ]
 presets = ["main"]
 dlc = []

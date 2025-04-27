@@ -501,13 +501,13 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 ////////////////////Crewman Units////////////////////
-class CLASS(Marine_Pilot): CLASS(Pilot_Base) {
+class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     SCOPE_PUBLIC;
 
     editorSubcategory = QEDSUBCAT(Crewmen);
     editorPreview = EDITOR_PREVIEW(Marine_Pilot);
 
-    displayName = "[505th] Pilot";
+    displayName = "[505th] Jet Pilot";
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
@@ -517,10 +517,33 @@ class CLASS(Marine_Pilot): CLASS(Pilot_Base) {
         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
     };
     linkedItems[] = {
-        QCLASS(Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+        QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
     };
     respawnLinkedItems[] = {
-        QCLASS(Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+        QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Pilot_Backpack);
+};
+class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
+
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot);
+
+    displayName = "[505th] Heli Pilot";
+
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnWeapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+    };
+    linkedItems[] = {
+        QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", QCLASS(505th_Hud_Glasses), MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Pilot_Backpack);
 };

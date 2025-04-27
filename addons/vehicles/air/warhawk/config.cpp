@@ -12,7 +12,8 @@ class CfgPatches {
             "A3_Air_F_Jets_Plane_Fighter_01"
         };
         units[] = {
-            QCLASS(Warhawk)
+            QCLASS(Warhawk),
+            QCLASS(Eagle)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

@@ -16,7 +16,7 @@ class CfgPatches {
             QGVAR(widow_armed),
             QGVAR(widow_infantry),
             // Land
-            QGVAR(springbok)
+            QGVAR(puma)
         };
         units[] = {};
         weapons[] = {};

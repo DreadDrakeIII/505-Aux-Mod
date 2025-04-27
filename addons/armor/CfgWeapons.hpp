@@ -26,10 +26,17 @@ class CfgWeapons {
     };
 
     class TKE_UCNPilotHelm_BASE;
-    class CLASS(505th_Pilot_Helmet_Base): TKE_UCNPilotHelm_BASE {
+    class CLASS(505th_Jet_Pilot_Helmet_Base): TKE_UCNPilotHelm_BASE {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] Pilot Helmet (Base)";
+        displayName = "[505th] Jet Pilot Helmet (Base)";
+    };
+
+    class H_CrewHelmetHeli_B;
+    class CLASS(505th_Heli_Pilot_Helmet_Base): H_CrewHelmetHeli_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Heli Pilot Helmet (Base)";
     };
 
     class Rogue_CEBoonie;
