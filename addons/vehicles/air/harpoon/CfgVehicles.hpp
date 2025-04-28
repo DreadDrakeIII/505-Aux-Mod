@@ -1,12 +1,13 @@
 class CfgVehicles {
     class B_Heli_Transport_03_F;
     class CLASS(Harpoon): B_Heli_Transport_03_F {
-        SCOPE_PUBLIC;
+        scope = 2;
+        scopeCurator = 2;
         displayName = "CH-447 Harpoon";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
-        crew = QCLASS(Heli_Pilot_Helmet);
-        typicalCargo[] = {QCLASS(Heli_Pilot_Helmet)};
+        crew = QCLASS(Marine_Heli_Pilot);
+        typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 100; //Default 40
         hiddenSelectionsTextures[] = {
             QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),

@@ -15,5 +15,6 @@
         "*.rvmat": "cpp"
     },
 
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.dimInactiveRegions": true
 }

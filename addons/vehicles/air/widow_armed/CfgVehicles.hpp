@@ -1,11 +1,12 @@
 class CfgVehicles {
     class B_T_VTOL_01_armed_F;
     class CLASS(Widow_Armed): B_T_VTOL_01_armed_F {
-        SCOPE_PUBLIC;
+        scope = 2;
+        scopeCurator = 2;
         displayName = "V/AC-220 Widow";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
-        crew = QCLASS(Heli_Pilot_Helmet);
+        crew = QCLASS(Marine_Heli_Pilot);
         hiddenSelectionsTextures[] = {
             QPATHTOF(air\widow_armed\data\textures\vtol_01_ext01_505_co.paa),
             QPATHTOF(air\widow_armed\data\textures\vtol_01_ext02_505_co.paa),

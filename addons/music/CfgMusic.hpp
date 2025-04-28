@@ -16,6 +16,23 @@ class CfgMusic {
     MUSIC(Halo_NeverForget,"[Halo] Never Forget",187,Halo);
 
     // Video Games
+    MUSIC(Helldivers_Main_Theme_HD,"[Helldivers] Main Theme HD",150,VideoGames);
+    MUSIC(Helldivers_Mission_Select,"[Helldivers] Mission Select",400,VideoGames);
+    MUSIC(Helldivers_Cyborg_Planet_Difficulty_1_4_HD,"[Helldivers] Cyborg Difficulty 1_4",237,VideoGames);
+    MUSIC(Helldivers_Cyborg_Planet_Difficulty_5_8_HD,"[Helldivers] Cyborg Difficulty 5_8",293,VideoGames);
+    MUSIC(Helldivers_Cyborg_Planet_Difficulty_9_Up_HD,"[Helldivers] Cyborg Difficulty 9+",391,VideoGames);
+    MUSIC(Long_Version_Helldivers_Cyborgs_BGM_Difficulty_9_Up_HD,"[Helldivers] Cyborg Difficulty 9+ (Long)",2136,VideoGames);
+    MUSIC(Helldivers_Soundtrack_Cyborgs_Siege_Mech_Boss_Theme_HD,"[Helldivers] Cyborg Boss Theme",275,VideoGames);
+    MUSIC(Helldivers_Bugs_Planet_Difficulty_1_4_HD,"[Helldivers] Bug Difficulty 1_4",322,VideoGames);
+    MUSIC(Helldivers_Bugs_Planet_Difficulty_5_8_HD,"[Helldivers] Bug Difficulty 5_8",311,VideoGames);
+    MUSIC(Helldivers_Bugs_Planet_Difficulty_9_Up_HD,"[Helldivers] Bug Difficulty 9+",342,VideoGames);
+    MUSIC(Helldivers_Bugs_Hive_Lord_Boss_Theme_HD,"[Helldivers] Bug Boss Theme",373,VideoGames);
+    MUSIC(Helldivers_Illuminate_Planet_Difficulty_1_4_HD,"[Helldivers] Illuminate Difficulty 1-4",280,VideoGames);
+    MUSIC(Helldivers_Illuminate_Planet_Difficulty_5_8_HD,"[Helldivers] Illuminate Difficulty 5-8",325,VideoGames);
+    MUSIC(Helldivers_Illuminate_Planet_Difficulty_9_Up_HD,"[Helldivers] Illuminate Difficulty 9+",432,VideoGames);
+    MUSIC(Helldivers_Illuminate_Great_Eye_Boss_Music_HD,"[Helldivers] Illuminate Boss Theme",379,VideoGames);
+    MUSIC(Helldivers_Extraction_Theme,"[Helldivers] Extraction Theme",226,VideoGames);
+    MUSIC(Helldivers_Credits_Theme_HD,"[Helldivers] Credits Theme",316,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);

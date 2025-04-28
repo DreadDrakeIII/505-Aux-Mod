@@ -1,7 +1,7 @@
 class CfgVehicles {
     class DMNS_UNSC_Nightingale;
     class CLASS(Nightingale): DMNS_UNSC_Nightingale {
-        SCOPE_PUBLIC;
+        SCOPE_PRIVATE;
         displayName = "EV-41 Nightingale";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);

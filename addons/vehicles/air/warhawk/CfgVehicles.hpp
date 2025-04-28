@@ -36,9 +36,9 @@ class CfgVehicles {
     };
 
     class B_Plane_Fighter_01_Stealth_F;
-    class CLASS(Eagle): B_Plane_Fighter_01_Stealth_F {
+    class CLASS(StealthHawk): B_Plane_Fighter_01_Stealth_F {
         SCOPE_PUBLIC;
-        displayName = "F/A-41 Eagle";
+        displayName = "F/A-41 Stealth Hawk";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);

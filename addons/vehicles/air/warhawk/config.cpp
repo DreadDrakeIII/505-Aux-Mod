@@ -13,7 +13,7 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(Warhawk),
-            QCLASS(Eagle)
+            QCLASS(StealthHawk)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

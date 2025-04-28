@@ -32,6 +32,8 @@ class CfgPatches {
             QCLASS(Marine_Adamant_CE),
             QCLASS(Marine_Crawford_CE),
             QCLASS(Marine_Oliver_CE),
+            QCLASS(Marine_Jet_Pilot),
+            QCLASS(Marine_Heli_Pilot),
             QCLASS(Backpack_CE),
             QCLASS(Backpack_CE_505),
             QCLASS(Backpack_Predef),
@@ -127,5 +129,4 @@ class CfgPatches {
 #include "CfgEditorSubcategories.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgGlasses.hpp"
 #include "CfgEventHandlers.hpp"

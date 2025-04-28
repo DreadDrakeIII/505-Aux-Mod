@@ -1,12 +1,13 @@
 class CfgVehicles {
     class B_Heli_Light_01_dynamicLoadout_F;
     class CLASS(Sparrow): B_Heli_Light_01_dynamicLoadout_F {
-        SCOPE_PUBLIC;
         displayName = "AH-600 Sparrow";
+        scope = 2;
+        scopeCurator = 2;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
-        crew = QCLASS(Heli_Pilot_Helmet);
-        typicalCargo[] = {QCLASS(Heli_Pilot_Helmet)};
+        crew = QCLASS(Marine_Heli_Pilot);
+        typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 100;
         hiddenSelectionsTextures[] = {
             QPATHTOF(air\sparrow\data\textures\heli_light_01_ext_blufor_co.paa),
@@ -26,5 +27,13 @@ class CfgVehicles {
             "5000Rnd_762x51_Belt",
             "5000Rnd_762x51_Belt"
         };
+    };
+
+    class B_Heli_Light_01_F;
+    class CLASS(): B_Heli_Light_01_F {
+        displayName = "AH-610 Pigeon";
+        scope = 2;
+        scopeCurator = 2;
+        faction = QFACTION(505th);
     };
 };

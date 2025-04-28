@@ -427,6 +427,8 @@ class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Base) {
 ////////////////////Custom Units////////////////////
 class CLASS(Marine_Adamant_CE): CLASS(Marine_Rifleman_CE) {
     displayName = "J.Adamant";
+    name = "J.Adamant";
+    nameSound = "J.Adamant";
     editorSubcategory = QEDSUBCAT(Customs);
     editorPreview = EDITOR_PREVIEW(Marine_Adamant_CE);
 
@@ -465,6 +467,8 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
     editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
 
     displayName = "A.Crawford";
+    name = "A.Crawford";
+    nameSound = "A.Crawford";
 
     uniformClass = QCLASS(Uniform_Crawford_CE);
     hiddenSelections[] = {"camo","camo1"};
@@ -487,6 +491,8 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
 
     displayName = "D.Oliver";
+    name = "D.Oliver";
+    nameSound = "D.Oliver";
 
     uniformClass = QCLASS(Uniform_Oliver_CE);
     hiddenSelections[] = {"camo","camo1"};
