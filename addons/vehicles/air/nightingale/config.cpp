@@ -11,7 +11,8 @@ class CfgPatches {
             "DMNS_Vehicles_Nightingale"
         };
         units[] = {
-            QCLASS(Nightingale)
+            QCLASS(Nightingale),
+            QCLASS(ONI_Nightingale)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

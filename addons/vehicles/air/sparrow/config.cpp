@@ -12,7 +12,8 @@ class CfgPatches {
             "ace_realisticnames"
         };
         units[] = {
-            QCLASS(Sparrow)
+            QCLASS(Sparrow),
+            QCLASS(Pidgeon)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

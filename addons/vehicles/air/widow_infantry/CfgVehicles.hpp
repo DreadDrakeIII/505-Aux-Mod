@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(Widow): B_T_VTOL_01_infantry_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "V/C-220 Widow";
+        displayName = "[505th] V/C-220 Widow";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);

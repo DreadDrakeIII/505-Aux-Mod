@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(Harpoon): B_Heli_Transport_03_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "CH-447 Harpoon";
+        displayName = "[505th] CH-447 Harpoon";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
@@ -16,12 +16,15 @@ class CfgVehicles {
         weapons[]=
 		{
 			"CMFlareLauncher_Singles",
+            "Laserdesignator_pilotCamera",
 			//"SmokeLauncher",
 		};
 		magazines[]=
 		{
 			"240Rnd_CMFlare_Chaff_Magazine",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "Laserbatteries",
+            "Laserbatteries",
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",

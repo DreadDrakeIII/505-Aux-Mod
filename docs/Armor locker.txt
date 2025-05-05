@@ -1,0 +1,80 @@
+[
+    this,
+    "Platoon Leader",
+    [["OPTRE_MA37K","","acc_pointer_IR","",["OPTRE_32Rnd_762x51_Mag",32],[],""],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_PL_Rolled",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["OLI_CE_Armour_PL_Vest_NSPouch",[["OPTRE_8Rnd_127x40_Mag",3,8],["OPTRE_32Rnd_762x51_Mag",10,32]]],["Rogue_CEBackpackLR",[["ItemcTab",1],["MineDetector",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CECapCamo","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OPTRE_MA37K","OPTRE_M295_BMR","OPTRE_MA5A","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","H_Watchcap_blk","H_Bandanna_gry","Rogue_CECapCamo","Rogue_CECapGrey","OLI_CE_FieldCap_505th","Rogue_CEBoonieGrey","Rogue_CEBoonie","OLI_CE_HELMET_PL","OLI_CE_HELMET_PLV2","OLI_CE_Armour_PL_Vest","OLI_CE_Armour_PL_Vest_NSV2","OLI_CE_Armour_PL_Vest_V2","OLI_CE_Armour_PL_Vest_NS","OLI_CE_Armour_PL_Vest_V2Pouch","OLI_CE_Armour_PL_Vest_NSV2Pouch","OLI_CE_Armour_PL_Vest_NSPouch","OLI_CE_Armour_PL_Vest_Pouch","Rogue_CEBackpackLR","Rogue_CEBackpackTFAR","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Squad Leader",
+    [["OPTRE_MA37K","","acc_pointer_IR","Optre_Evo_Sight_Riser",["OPTRE_32Rnd_762x51_Mag",32],[],""],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_SL",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["OLI_CE_Armour_SL_Vest",[["OPTRE_8Rnd_127x40_Mag",3,8],["OPTRE_32Rnd_762x51_Mag",10,32]]],["Rogue_CEInvisibleBackpack",[["ItemcTab",1],["MineDetector",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"OLI_CE_HELMET_SL","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET_SL","OLI_CE_HELMET_SLV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_SL_Vest","OLI_CE_Armour_SL_Vest_NSV2","OLI_CE_Armour_SL_Vest_V2","OLI_CE_Armour_SL_Vest_NS","OLI_CE_Armour_SL_Vest_V2Pouch","OLI_CE_Armour_SL_Vest_NSV2Pouch","OLI_CE_Armour_SL_Vest_NSPouch","OLI_CE_Armour_SL_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_MA37K","OPTRE_M295_BMR","OPTRE_MA5A","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Rifleman",
+    [["OPTRE_MA5A","","acc_pointer_IR","Optre_Evo_Sight_Riser",["OPTRE_32Rnd_762x51_Mag",32],[],""],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_Rolled",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmourV2Pouch",[["OPTRE_32Rnd_762x51_Mag",10,32],["OPTRE_8Rnd_127x40_Mag",3,8]]],["Rogue_CEInvisibleBackpack",[["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEHelmet","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_M295_BMR","OPTRE_MA5A","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Marksman",
+    [["MEU_OPTRE_MRS10X","","acc_pointer_IR","OPTRE_BR55HB_Scope",["OPTRE_20Rnd_86x70_Mag",20],[],"bipod_01_F_blk"],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_Rolled",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmourScout",[["OPTRE_20Rnd_86x70_Mag",10,20],["OPTRE_8Rnd_127x40_Mag",3,8]]],["Rogue_CEBackpackScout",[["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEBoonie","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","Rogue_CEArmourScout","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","Rogue_CEBackpackScout","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","MEU_OPTRE_M393_DMR","MEU_OPTRE_MRS10X","OPTRE_BR55HB_Scope","OPTRE_BR45_Scope","OPTRE_BMR_Scope_v2"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "LAT Operator",
+    [["OPTRE_MA5A","","acc_pointer_IR","Optre_Evo_Sight_Riser",["OPTRE_32Rnd_762x51_Mag",32],[],""],["MEU_Cricket","","","",["OPTRE_1Rnd_50x137_HEAT",1],[],""],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmour",[["OPTRE_32Rnd_762x51_Mag",10,32],["OPTRE_8Rnd_127x40_Mag",3,8]]],["Rogue_CEBackpack",[["OPTRE_M9_Frag",4,1],["OPTRE_1Rnd_50x137_HEAT",5,1],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEHelmet","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_M295_BMR","OPTRE_MA5A","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Grenadier",
+    [["OPTRE_MA5AGL","","acc_pointer_IR","Optre_Evo_Sight_Riser",["OPTRE_32Rnd_762x51_Mag",32],["1Rnd_HE_Grenade_shell",1],""],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_Rolled",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmourV2",[["OPTRE_32Rnd_762x51_Mag",10,32],["OPTRE_8Rnd_127x40_Mag",3,8]]],["Rogue_CEInvisibleBackpack",[["OPTRE_M9_Frag",4,1],["1Rnd_HE_Grenade_shell",25,1],["3Rnd_Smoke_Grenade_shell",4,3],["3Rnd_SmokeRed_Grenade_shell",4,3],["3Rnd_UGL_FlareWhite_F",4,3],["3Rnd_UGL_FlareGreen_F",1,3],["3Rnd_UGL_FlareRed_F",1,3],["3Rnd_UGL_FlareYellow_F",1,3],["3Rnd_UGL_FlareCIR_F",1,3],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEHelmet","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Corpsman_Vest","OLI_CE_Armour_Corpsman_Vest_NSV2","OLI_CE_Armour_Corpsman_Vest_V2","OLI_CE_Armour_Corpsman_Vest_NS","OLI_CE_Armour_Corpsman_Vest_V2Pouch","OLI_CE_Armour_Corpsman_Vest_NSV2Pouch","OLI_CE_Armour_Corpsman_Vest_NSPouch","OLI_CE_Armour_Corpsman_Vest_Pouch","OLI_CE_Invisible_Backpack_CE","OLI_CE_Backpack_CE","OLI_CE_Backpack_CE_505","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Corpsman",
+    [["OPTRE_MA5A","","ACE_DBAL_A3_Red","Optre_Evo_Sight_Riser",["OPTRE_32Rnd_762x51_Mag",32],[],""],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE_Corpsman",[["ACE_CableTie",5],["ACE_EarPlugs",1],["ACE_IR_Strobe_Item",1],["WBK_HeadLampItem_Long",1],["ACE_Flashlight_XL50",1],["ACE_EntrenchingTool",1],["ACE_MapTools",1],["acex_intelitems_notepad",1,1],["ACE_Chemlight_HiGreen",5,1],["OPTRE_M8_Flare",1,1],["OPTRE_M8_Flare_White",1,1],["OPTRE_32Rnd_762x51_Mag",4,32]]],["OLI_CE_Armour_Corpsman_Vest",[["OPTRE_32Rnd_762x51_Mag",6,32],["OPTRE_8Rnd_127x40_Mag",2,8]]],["19thMD_Backpack_Standard_Med",[["ACE_elasticBandage",40],["ACE_packingBandage",25],["ACE_quikclot",20],["kat_IV_16",10],["kat_larynx",10],["ACE_adenosine",14],["ACE_epinephrine",14],["ACE_salineIV",14],["ACE_splint",12],["ACE_tourniquet",10],["kat_aatKit",10],["kat_EACA",10],["kat_TXA",10],["kat_chestSeal",6],["kat_IO_FAST",5],["kat_naloxone",5],["kat_Pulseoximeter",5],["ACE_morphine",5],["kat_Armband_Medic_Goggles",1],["kat_accuvac",1],["kat_X_AED",1],["kat_BVM",1],["kat_stethoscope",1],["ACE_surgicalKit",1],["kat_Painkiller",10,4],["OPTRE_M2_Smoke",2,1],[["UNSC_Knife","","","",[],[],""],1]]],"OLI_CE_HELMET_CorpsmanV2","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET_Corpsman","OLI_CE_HELMET_CorpsmanV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Corpsman_Vest","OLI_CE_Armour_Corpsman_Vest_NSV2","OLI_CE_Armour_Corpsman_Vest_V2","OLI_CE_Armour_Corpsman_Vest_NS","OLI_CE_Armour_Corpsman_Vest_V2Pouch","OLI_CE_Armour_Corpsman_Vest_NSV2Pouch","OLI_CE_Armour_Corpsman_Vest_NSPouch","OLI_CE_Armour_Corpsman_Vest_Pouch","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_M295_BMR","OPTRE_MA5A","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Breacher",
+    [["OPTRE_M45","","acc_pointer_IR","OPTRE_M12_Optic",["OPTRE_6Rnd_8Gauge_Pellets",6],[],""],[],["Police_Bat","","","",[],[],""],["OLI_Uniform_CE_Rolled",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmourV2Pouch",[["OPTRE_12Rnd_8Gauge_Pellets",7,12]]],["Rogue_CEInvisibleBackpack",[["ACE_CableTie",5],["OPTRE_M9_Frag",4,1],["OPTRE_12Rnd_8Gauge_Pellets",3,12],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEHelmet","OPTRE_HUD_In_Glasses",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_M12_SOC","OPTRE_M45","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
+
+[
+    this,
+    "Autorifleman",
+    [["OPTRE_M73","","acc_pointer_IR","Optre_Evo_Sight_Riser",["OPTRE_100Rnd_95x40_Box_Tracer",100],[],"bipod_01_F_blk"],[],["OPTRE_M6B","","","",["OPTRE_8Rnd_127x40_Mag",8],[],""],["OLI_Uniform_CE",[["ACE_elasticBandage",20],["ACE_splint",4],["ACE_tourniquet",4],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",5,4],["Laserbatteries",2,1],["acex_intelitems_notepad",1,1],["OPTRE_M2_Smoke",4,1],["OPTRE_M2_Smoke_Blue",2,1]]],["Rogue_CEArmourPouch",[["OPTRE_8Rnd_127x40_Mag",3,8],["OPTRE_100Rnd_95x40_Box_Tracer_Yellow",3,100]]],["Rogue_CEBackpack",[["OPTRE_M9_Frag",4,1],["OPTRE_100Rnd_95x40_Box_Tracer_Yellow",3,100],[["UNSC_Knife","","","",[],[],""],1]]],"Rogue_CEHelmet","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
+    ["OLI_CE_HELMET","OLI_CE_HELMETV2","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","Rogue_CEInvisibleBackpack","Rogue_CEBackpack","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","Dmns_M33_T","OPTRE_M73","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight"],
+    "true",
+    {}
+] spawn Wbk_AddKit;

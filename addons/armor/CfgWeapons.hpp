@@ -66,12 +66,12 @@ class CfgWeapons {
         displayName = "[505th] Marine Uniform Rolled (Base)";
     };
 
-    //class TKE_Rogue_UniformNCMDTFGrey_U_B;
-    //class CLASS(Uniform_Pilot_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
-    //    SCOPE_HIDDEN;
-    //    author = AUTHOR;
-    //    displayName = "[505th] Pilot Uniform (Base)";
-    //};
+    class TKE_Rogue_UniformNCMDTFGrey_U_B;
+    class CLASS(Uniform_Pilot_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Pilot Uniform (Base)";
+    };
 
     #include "configs\Uniforms.hpp"
 

@@ -33,6 +33,7 @@ class CfgMusic {
     MUSIC(Helldivers_Illuminate_Great_Eye_Boss_Music_HD,"[Helldivers] Illuminate Boss Theme",379,VideoGames);
     MUSIC(Helldivers_Extraction_Theme,"[Helldivers] Extraction Theme",226,VideoGames);
     MUSIC(Helldivers_Credits_Theme_HD,"[Helldivers] Credits Theme",316,VideoGames);
+    MUSIC(TWD_Clementine_Suite,"[TDW] Clementine Suite (Sad)",425,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);
@@ -49,4 +50,7 @@ class CfgMusic {
     MUSIC(TENET_Trucks_in_Place,"TENET - Trucks in Place",332,Soundtracks);
     MUSIC(TENET_Freeport,"TENET - Freeport",219,Soundtracks);
     MUSIC(TENET_SATOR,"TENET - SATOR [Dread]",171,Soundtracks);
+
+    // Other
+    MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
 };

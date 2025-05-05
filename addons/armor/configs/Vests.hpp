@@ -146,6 +146,8 @@ class CLASS(CE_Armour_Corpsman_Vest_NSPouch): CLASS(CE_Marine_Vest_NS_Pouch_Base
 class CLASS(CE_Armour_SL_Vest): CLASS(CE_Marine_Vest_Base) {
 	author = "505th Aux Team";
 	scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
 	displayName = "[505th] Marine Squad Lead Armor";
 	hiddenSelections[] = {"camo","camo1"};
 	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\SL_Armour_co.paa)};

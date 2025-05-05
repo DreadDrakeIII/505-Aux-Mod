@@ -4,4 +4,5 @@ class CfgVehicles {
         SCOPE_PRIVATE;
         author = AUTHOR;
     };
+    SOUND_OBJ(The_505th_Anthem,"[505th] The 505th Anthem");
 };

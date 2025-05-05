@@ -18,7 +18,7 @@ scopeCurator = 2;
 scopeArsenal = 2;
 	class ItemInfo: UniformItem
 	{
-		uniformClass = QCLASS(Marine_Rifleman_CE_Rolled);
+		uniformClass = QCLASS(Marine_Rifleman_Rolled_CE);
 		containerClass = "Supply150";
 		mass = 40;
 	};
@@ -142,7 +142,7 @@ scopeArsenal = 2;
 	};
 };
 /////////////////////Pilot Uniform/////////////////////
-//class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
-//    SCOPE_PUBLIC;
-//    displayName = "[505th] Pilot Uniform";
-//};
+class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
+   SCOPE_PUBLIC;
+    displayName = "[505th] Pilot Uniform";
+};

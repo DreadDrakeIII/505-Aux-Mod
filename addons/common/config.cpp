@@ -8,7 +8,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "OLI_main"
+            QCLASS(main)
         };
         units[] = {};
         weapons[] = {};

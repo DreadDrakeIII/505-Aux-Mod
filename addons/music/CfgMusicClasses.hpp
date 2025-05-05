@@ -14,4 +14,7 @@ class CfgMusicClasses {
     class CLASS(MusicCat_SFX) {
         displayName = "[505th] Sound Effects";
     };
+    class CLASS(MusicCat_Other) {
+        displayName = "[505th] Other";
+    };
 };

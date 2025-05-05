@@ -2,14 +2,15 @@ class CfgVehicles {
     class B_Plane_CAS_01_dynamicLoadout_F;
     class CLASS(Condor): B_Plane_CAS_01_dynamicLoadout_F {
         SCOPE_PUBLIC;
-        displayName = "A-310 Condor";
+        displayName = "[505th] A-310 Condor";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
         weapons[]=
 		{
 			"Gatling_30mm_Plane_CAS_01_F",
-			"Laserdesignator_pilotCamera",
+            "Laserdesignator_pilotCamera",
+            "CMFlareLauncher"
 		};
 		magazines[]=
 		{

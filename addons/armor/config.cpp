@@ -20,6 +20,7 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(Marine_CE_Base),
+            QCLASS(Marine_CE_Rolled_Base),
             QCLASS(Marine_Rifleman_CE),
             QCLASS(Marine_Autorifle_CE),
             QCLASS(Marine_Marksman_CE),
@@ -77,6 +78,8 @@ class CfgPatches {
             QCLASS(Adamant_Uniform_CE),
             QCLASS(Crawford_Uniform_CE),
             QCLASS(Oliver_Uniform_CE),
+            QCLASS(Uniform_Pilot_Base),
+            QCLASS(Uniform_Pilot),
             QCLASS(CE_Marine_Vest_Base),
             QCLASS(CE_Marine_VestV2_Base),
             QCLASS(CE_Marine_Vest_NSV2_Base),

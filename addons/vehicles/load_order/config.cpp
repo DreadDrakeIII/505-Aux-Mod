@@ -13,10 +13,12 @@ class CfgPatches {
             QGVAR(harpoon),
             QGVAR(sparrow),
             QGVAR(warhawk),
+            QGVAR(wasp),
             QGVAR(widow_armed),
             QGVAR(widow_infantry),
             // Land
-            QGVAR(puma)
+            QGVAR(puma),
+            QGVAR(rex)
         };
         units[] = {};
         weapons[] = {};

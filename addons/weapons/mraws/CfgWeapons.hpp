@@ -8,7 +8,7 @@ class CfgWeapons {
         SCOPE_PUBLIC;
         author = AUTHOR;
 
-        displayName = "[505th] M20 Lawbringer (Base)";
+        displayName = "[505th] M20 Lawbringer";
 
         modes[] = {"Single"};
         muzzles[] = {"this"};
