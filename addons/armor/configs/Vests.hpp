@@ -70,6 +70,7 @@ class CLASS(CE_Armour_Vest_NSPouch): CLASS(CE_Marine_Vest_NS_Pouch_Base) {
 	hiddenSelections[] = {"camo","camo1"};
 	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
 };
+/////////////////////////////Corpsman Vests/////////////////////////////
 class CLASS(CE_Armour_Corpsman_Vest): CLASS(CE_Marine_Vest_Base) {
 	author = "505th Aux Team";
 	scope = 2;
@@ -143,6 +144,7 @@ class CLASS(CE_Armour_Corpsman_Vest_NSPouch): CLASS(CE_Marine_Vest_NS_Pouch_Base
 	hiddenSelections[] = {"camo","camo1"};
 	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Medic_Armour_co.paa)};
 };
+////////////////////////////////SL Vests////////////////////////////////
 class CLASS(CE_Armour_SL_Vest): CLASS(CE_Marine_Vest_Base) {
 	author = "505th Aux Team";
 	scope = 2;
@@ -215,6 +217,7 @@ class CLASS(CE_Armour_SL_Vest_NSPouch): CLASS(CE_Marine_Vest_NSV2_Pouch_Base) {
 	hiddenSelections[] = {"camo","camo1"};
 	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\SL_Armour_co.paa)};
 };
+////////////////////////////////PL Vests////////////////////////////////
 class CLASS(CE_Armour_PL_Vest): CLASS(CE_Marine_Vest_Base) {
 	author = "505th Aux Team";
 	scope = 2;

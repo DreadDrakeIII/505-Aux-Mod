@@ -25,10 +25,10 @@ class CfgVehicles {
         crew = QCLASS(Marine__Heli_Pilot);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
 
-        soundEngineOffExt[] = {"jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\ext_off.ogg",1,1,300};
-        soundEngineOffInt[] = {"jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\int_off.ogg",1,1};
-        soundEngineOnExt[] = {"jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\ext_start.ogg",1,1,300};
-        soundEngineOnInt[] = {"jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\int_start.ogg",1,1};
+        soundEngineOffExt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\ext_off.ogg",1,1,300};
+        soundEngineOffInt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\int_off.ogg",1,1};
+        soundEngineOnExt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\ext_start.ogg",1,1,300};
+        soundEngineOnInt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\int_start.ogg",1,1};
 
         armor = 560; //Default 140
 

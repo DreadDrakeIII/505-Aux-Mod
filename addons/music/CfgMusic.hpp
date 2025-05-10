@@ -53,4 +53,6 @@ class CfgMusic {
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
+    MUSIC(Helms_Deep,"[LotR] Helm's Deep",4372,Other);
+    MUSIC(Urban_Warfare_Ambience,"Urban Warfare Ambience",3600,Other);
 };

@@ -3,7 +3,7 @@
 <h1 align="center">505-Aux-Mod</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/505-Aux-Mod/releases/latest">
-        <img src="https://img.shields.io/badge/Version-2.7.0-blue?style=flat-square" alt="505-Aux-Mod Version">
+        <img src="https://img.shields.io/badge/Version-2.8.0-blue?style=flat-square" alt="505-Aux-Mod Version">
     </a>
     <a href="https://github.com/DartsArmaMods/505-Aux-Mod/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/505-Aux-Mod.svg?style=flat-square&label=Issues" alt="505-Aux-Mod Issues">

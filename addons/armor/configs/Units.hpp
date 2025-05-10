@@ -427,12 +427,16 @@ class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 ////////////////////Custom Units////////////////////
-class CLASS(Marine_Adamant_CE): CLASS(Marine_Rifleman_CE) {
+class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
     displayName = "J.Adamant";
-    name = "J.Adamant";
-    nameSound = "J.Adamant";
+
+    // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
     editorPreview = EDITOR_PREVIEW(Marine_Adamant_CE);
+
+    identityTypes[] = {QCLASS(Adamant)};
 
     uniformClass = QCLASS(Uniform_Adamant_CE);
     hiddenSelections[] = {"camo","camo1"};
@@ -468,9 +472,9 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
     editorSubcategory = QEDSUBCAT(Customs);
     editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
 
+    identityTypes[] = {QCLASS(Crawford)};
+
     displayName = "A.Crawford";
-    name = "A.Crawford";
-    nameSound = "A.Crawford";
 
     uniformClass = QCLASS(Uniform_Crawford_CE);
     hiddenSelections[] = {"camo","camo1"};
@@ -492,9 +496,9 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     editorSubcategory = QEDSUBCAT(Customs);
     editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
 
+    identityTypes[] = {QCLASS(Oliver)};
+
     displayName = "D.Oliver";
-    name = "D.Oliver";
-    nameSound = "D.Oliver";
 
     uniformClass = QCLASS(Uniform_Oliver_CE);
     hiddenSelections[] = {"camo","camo1"};

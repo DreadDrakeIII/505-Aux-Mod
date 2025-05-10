@@ -22,6 +22,12 @@ class CfgEditorSubcategories {
     class EDSUBCAT(APCs) {
         displayName = "APCs";
     };
+    class EDSUBCAT(Anti_Air) {
+        displayName = "Anti-Air";
+    };
+    class EDSUBCAT(Artillery) {
+        displayName = "Artillery";
+    };
     class EDSUBCAT(Cars) {
         displayName = "Cars";
     };
