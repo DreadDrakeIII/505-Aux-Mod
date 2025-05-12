@@ -7,5 +7,5 @@ class CfgSFX {
     * Third value is radius that the sound can be heard in meters
     */
 SOUND_FX(The_505th_Anthem,"[505th] The 505th Anthem",200);
-SOUND_FX(Urban_Warfare_Ambience,"[505th] Urban Warfare",200);
+SOUND_FX(Urban_Warfare_Ambience,"[505th] Urban Warfare",2000);
 };
