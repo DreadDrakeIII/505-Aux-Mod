@@ -39,6 +39,15 @@ class CfgVehicles {
         linkedItems[] = {};
         respawnLinkedItems[] = {};
     };
+    class CLASS(BlackOps_Base): TKE_Rogue_UniformNCCamo_inf_B {
+        SCOPE_PRIVATE;
+        author = AUTHOR;
+
+        faction = QFACTION(ONI);
+        uniformClass = QCLASS(Uniform_BlackOps);
+        linkedItems[] = {};
+        respawnLinkedItems[] = {};
+    };
 
     #include "configs\Units.hpp"
 
@@ -49,6 +58,7 @@ class CfgVehicles {
     class Rogue_CEBackpackLR;
     class Rogue_CEBackpackScout;
     class 19thMD_Backpack_Standard_Med;
+    class TKE_AlicePackUCN;
 
     class CLASS(Backpack_Base): Rogue_CEBackpack {
         SCOPE_PRIVATE;
@@ -77,6 +87,10 @@ class CfgVehicles {
     class CLASS(Pilot_Backpack_Base): TKE_CamelBakUCN {
         SCOPE_PRIVATE;
         displayName = "Pilot Backpack (Base)";
+    };
+    class CLASS(BlackOps_Backpack_Base): TKE_AlicePackUCN {
+        SCOPE_PRIVATE;
+        displayName = "Black Ops Backpack (Base)";
     };
 
     #include "configs\Backpacks.hpp"

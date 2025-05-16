@@ -51,6 +51,10 @@ class CfgPatches {
             QCLASS(MedicalBackpack),
             QCLASS(MedicalBackpack_Predef),
             QCLASS(Backpack_SL_PL_Predef),
+            QCLASS(Pilot_Backpack_Base),
+            QCLASS(BlackOps_Backpack_Base),
+            QCLASS(Pilot_Backpack),
+            QCLASS(BlackOps_Backpack)
         };
         weapons[] = {
             QCLASS(Marine_Helmet_Base),
@@ -123,6 +127,16 @@ class CfgPatches {
             QCLASS(CE_Vest_Adamant_Pouches),
             QCLASS(CE_Vest_Crawford),
             QCLASS(CE_Vest_Oliver),
+            QCLASS(BlackOps_Vest),
+            QCLASS(Pilot_Vest),
+            QCLASS(505th_Black_Ops_Helmet_Base),
+            QCLASS(Black_Ops_Helmet),
+            QCLASS(505th_Heli_Pilot_Helmet_Base),
+            QCLASS(505th_Heli_Crew_Helmet_Base),
+            QCLASS(505th_Jet_Pilot_Helmet_Base),
+            QCLASS(Jet_Pilot_Helmet),
+            QCLASS(Heli_Pilot_Helmet),
+            QCLASS(Heli_Crew_Helmet)
         };
         VERSION_CONFIG;
     };

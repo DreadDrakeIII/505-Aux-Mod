@@ -9,16 +9,23 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             // Air
+            QGVAR(buzzard),
             QGVAR(condor),
+            QGVAR(falcon),
             QGVAR(harpoon),
+            QGVAR(nightingale),
             QGVAR(sparrow),
+            QGVAR(vulture),
             QGVAR(warhawk),
             QGVAR(wasp),
-            QGVAR(widow_armed),
-            QGVAR(widow_infantry),
+            QGVAR(widow),
+            QGVAR(wyvern),
             // Land
             QGVAR(puma),
-            QGVAR(rex)
+            QGVAR(rex),
+            QGVAR(scorpion),
+            QGVAR(sundevil),
+            QGVAR(warthog),
         };
         units[] = {};
         weapons[] = {};

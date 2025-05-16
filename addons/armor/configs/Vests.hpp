@@ -318,4 +318,14 @@ class CLASS(CE_Vest_Oliver): CLASS(CE_Marine_Vest_Base) {
 ///////////////////////////////Pilot Vest///////////////////////////////
 class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
     displayName = "[505th] Pilot Vest";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+};
+/////////////////////////////Black Ops Vest/////////////////////////////
+class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
+    displayName = "[505th] Black Ops Vest";
+    scope = 0;
+    scopeCurator = 0;
+    scopeArsenal = 0;
 };

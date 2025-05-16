@@ -224,3 +224,49 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         scopeCurator = 2;
         scopeArsenal = 2;
     };
+    class CLASS(Pilot_Backpack_Predef): CLASS(Pilot_Backpack) {
+        SCOPE_HIDDEN;
+
+        class TransportMagazines {
+            MAG_XX(OPTRE_26Rnd_127x40_Mag_Tracer,8);
+            MAG_XX(OPTRE_8Rnd_127x40_Mag,3);
+            MAG_XX(OPTRE_M2_Smoke,4);
+            MAG_XX(OPTRE_M2_Smoke_Blue,2);
+        };
+        class TransportWeapons {
+            WEAP_XX(UNSC_Knife,1);
+        };
+        class TransportItems {
+            ITEM_XX(ACE_elasticBandage,60);
+            ITEM_XX(acex_intelitems_notepad,1);
+            ITEM_XX(kat_Painkiller,5);
+            ITEM_XX(ToolKit,1);
+        };
+    };
+    class CLASS(BlackOps_Backpack): CLASS(BlackOps_Backpack_Base) {
+        author = "505th Aux Team";
+        displayName = "[505th] Black Ops Backpack";
+        scope = 0;
+        scopeCurator=0;
+        scopeArsenal = 0;
+    };
+    class CLASS(BlackOps_Backpack_Predef): CLASS(BlackOps_Backpack_Base) {
+        SCOPE_HIDDEN;
+
+        class TransportMagazines {
+            MAG_XX(WRS_Ar_Magazine,20);
+            MAG_XX(WRS_Puma_Magazine,20);
+            MAG_XX(OPTRE_M9_Frag,5);
+            MAG_XX(OPTRE_M2_Smoke,5);
+            MAG_XX(OPTRE_M2_Smoke_Blue,5);
+        };
+        class TransportWeapons {
+            WEAP_XX(Knife_kukri,1);
+        };
+        class TransportItems {
+            ITEM_XX(ACE_elasticBandage,60);
+            ITEM_XX(kat_PainKiller,5);
+            ITEM_XX(acex_intelitems_notepad,1);
+            ITEM_XX(ACE_tourniquet,12);
+        };
+    };

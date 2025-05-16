@@ -13,7 +13,10 @@ class CfgPatches {
             "OPTRE_ACE_Compat"
         };
         units[] = {
-            QCLASS(Sundevil)
+            QCLASS(Sundevil),
+            QCLASS(Sundevil_A1),
+            QCLASS(Sundevil_Single),
+            QCLASS(Sundevil_A1_Single)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

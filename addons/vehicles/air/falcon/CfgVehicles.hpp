@@ -8,6 +8,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
+        gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
 
@@ -39,6 +40,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
+        gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
 

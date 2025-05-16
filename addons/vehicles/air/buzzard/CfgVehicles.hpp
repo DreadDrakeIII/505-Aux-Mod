@@ -1,7 +1,7 @@
 class CfgVehicles {
     class O_Plane_Fighter_02_F;
     class CLASS(Buzzard): O_Plane_Fighter_02_F {
-        SCOPE_PRIVATE;
+        SCOPE_PUBLIC;
 
         displayName = "[505th] Buzzard";
         side = BLUFOR;
@@ -16,13 +16,13 @@ class CfgVehicles {
             "number_02",
             "number_03"
         };
-        hiddenSelectionTextures[] = {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(air\buzzard\data\textures\505th_01_fuselage_co.paa),
             QPATHTOF(air\buzzard\data\textures\505th_02_fuselage_co.paa),
-            "",
-            "",
-            "",
-            "",
+            QPATHTOF(air\buzzard\data\textures\505th_01_fuselage_co.paa),
+            "a3\air_f_jets\plane_fighter_02\data\Numbers\Fighter_02_number_02_co.paa",
+            "a3\air_f_jets\plane_fighter_02\data\Numbers\Fighter_02_number_00_co.paa",
+            "a3\air_f_jets\plane_fighter_02\data\Numbers\Fighter_02_number_01_co.paa"
         };
     };
 };

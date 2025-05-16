@@ -7,15 +7,16 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
-        typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
+        gunnerType = QCLASS(Marine_Heli_Crew);
+        typicalCargo[] = {QCLASS(Marine_Heli_Crew)};
         armor = 100; //Default 40
         hiddenSelections[] = {
             "camo1",
             "camo2"
         };
         hiddenSelectionsTextures[] = {
-            QPATHTOEF(vehicles,air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
-            QPATHTOEF(vehicles,air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
+            QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
+            QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
         };
         weapons[]=
 		{

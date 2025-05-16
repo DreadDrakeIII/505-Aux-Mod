@@ -111,4 +111,61 @@ class CfgVehicles {
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa"
         };
     };
+
+    class OPTRE_M808BM_UNSC_Driverless;
+    class CLASS(Scorpion_MB_Single): OPTRE_M808BM_UNSC_Driverless {
+        SCOPE_PUBLIC;
+
+        displayName = "[505th] M808B/M Scorpion MBT (Single)";
+        faction = QFACTION(505th);
+        editorSubcategory = QEDSUBCAT(Tanks_Single);
+        crew = QCLASS(Marine_Rifleman_CE);
+        hiddenSelections[] = {
+            "camo1",
+            "camo2",
+            "camo3",
+            "camo4",
+            "camo5",
+            "camo6",
+            "camo7",
+            "camo8"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa",
+            ""
+        };
+    };
+    class OPTRE_M808B_UNSC_Driverless;
+    class CLASS(Scorpion_Single): OPTRE_M808B_UNSC_Driverless {
+        SCOPE_PUBLIC;
+
+        displayName = "[505th] M808B Scorpion MBT (Single)";
+        faction = QFACTION(505th);
+        editorSubcategory = QEDSUBCAT(Tanks_Single);
+        crew = QCLASS(Marine_Rifleman_CE);
+        hiddenSelections[] = {
+            "camo1",
+            "camo2",
+            "camo3",
+            "camo4",
+            "camo5",
+            "camo6",
+            "camo7"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
+            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
+            "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa"
+        };
+    };
 };

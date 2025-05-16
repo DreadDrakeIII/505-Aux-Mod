@@ -104,3 +104,18 @@ class CLASS(Heli_Pilot_Helmet): CLASS(505th_Heli_Pilot_Helmet_Base) {
     scopeArsenal = 2;
     displayName = "[505th] Heli Pilot Helmet";
 };
+class CLASS(Heli_Crew_Helmet): CLASS(505th_Heli_Crew_Helmet_Base) {
+    author = "505th Aux Team";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    displayName = "[505th] Heli Crew Helmet";
+};
+///////////////////Black Ops Helms///////////////////
+class CLASS(Black_Ops_Helmet): CLASS(505th_Black_Ops_Helmet_Base) {
+    author = "505th Aux Team";
+    scope = 0;
+    scopeCurator = 0;
+    scopeArsenal = 0;
+    displayName = "[505th] Black Ops Helmet";
+};

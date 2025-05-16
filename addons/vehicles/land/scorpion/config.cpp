@@ -15,7 +15,9 @@ class CfgPatches {
             QCLASS(Scorpion),
             QCLASS(Scorpion_MB),
             QCLASS(Scorpion_Engineer),
-            QCLASS(Scorpion_Arty)
+            QCLASS(Scorpion_Arty),
+            QCLASS(Scorpion_MB_Single),
+            QCLASS(Scorpion_Single)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

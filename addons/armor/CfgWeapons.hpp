@@ -32,11 +32,25 @@ class CfgWeapons {
         displayName = "[505th] Jet Pilot Helmet (Base)";
     };
 
-    class H_CrewHelmetHeli_B;
-    class CLASS(505th_Heli_Pilot_Helmet_Base): H_CrewHelmetHeli_B {
+    class H_PilotHelmetHeli_B;
+    class CLASS(505th_Heli_Pilot_Helmet_Base): H_PilotHelmetHeli_B {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Heli Pilot Helmet (Base)";
+    };
+
+    class H_CrewHelmetHeli_B;
+    class CLASS(505th_Heli_Crew_Helmet_Base): H_CrewHelmetHeli_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Heli Crew Helmet (Base)";
+    };
+
+    class TKE_UCMCHelmClosed;
+    class CLASS(505th_Black_Ops_Helmet_Base): TKE_UCMCHelmClosed {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Black Ops Helmet (Base)";
     };
 
     class Rogue_CEBoonie;
@@ -73,6 +87,12 @@ class CfgWeapons {
         displayName = "[505th] Pilot Uniform (Base)";
     };
 
+    class CLASS(Uniform_BlackOps_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Black Ops Uniform (Base)";
+    };
+
     #include "configs\Uniforms.hpp"
 
     class Rogue_CEArmour;
@@ -84,6 +104,7 @@ class CfgWeapons {
 	class Rogue_CEArmourNSV2Pouch;
 	class Rogue_CEArmourNSPouch;
     class TKE_MDTFArmour1Grey;
+    class TKE_UCMCArmour3_21st;
 
     class CLASS(CE_Marine_Vest_Base): Rogue_CEArmour {
         SCOPE_HIDDEN;
@@ -137,6 +158,12 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Pilot Vest (Base)";
+    };
+
+    class CLASS(BlackOps_Vest_Base): TKE_UCMCArmour3_21st {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Black Ops Vest (Base)";
     };
 
     #include "configs\Vests.hpp"

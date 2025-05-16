@@ -7,6 +7,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
+        gunnerType = QCLASS(Marine_Heli_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2"
@@ -24,6 +25,7 @@ class CfgVehicles {
         faction = QFACTION(ONI);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
+        gunnerType = QCLASS(Marine_Heli_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2"

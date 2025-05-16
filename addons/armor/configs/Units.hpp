@@ -523,10 +523,10 @@ class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
-        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     respawnWeapons[] = {
-        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     linkedItems[] = {
         QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
@@ -534,7 +534,7 @@ class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     respawnLinkedItems[] = {
         QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
-    backpack = QCLASS(Pilot_Backpack);
+    backpack = QCLASS(Pilot_Backpack_Predef);
 };
 class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
     SCOPE_PUBLIC;
@@ -546,10 +546,10 @@ class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
-        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     respawnWeapons[] = {
-        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M6D_Carbine_Vis_Red", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     linkedItems[] = {
         QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
@@ -557,5 +557,52 @@ class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
     respawnLinkedItems[] = {
         QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
-    backpack = QCLASS(Pilot_Backpack);
+    backpack = QCLASS(Pilot_Backpack_Predef);
+};
+class CLASS(Marine_Heli_Crew): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
+
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot);
+
+    displayName = "[505th] Heli Crew";
+
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnWeapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    linkedItems[] = {
+        QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Pilot_Backpack_Predef);
+};
+class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
+    SCOPE_PRIVATE;
+
+    editorSubcategory = QEDSUBCAT(SpecialForces);
+    faction = QFACTION(ONI);
+    editorPreview = EDITOR_PREVIEW(Unit_BlackOps);
+
+    displayName = "[505th] Black Ops";
+
+    uniformClass = QCLASS(Uniform_BlackOps);
+    weapons[] = {
+        "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder"
+    };
+    respawnWeapons[] = {
+        "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder",
+    };
+    linkedItems[] = {
+        QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(BlackOps_Backpack_Predef);
 };
