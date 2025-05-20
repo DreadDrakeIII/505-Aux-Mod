@@ -1,7 +1,7 @@
 class CfgVehicles {
     class B_Heli_Transport_01_F;
     class CLASS(Ghosthawk): B_Heli_Transport_01_F {
-        SCOPE_PUBLIC;
+        SCOPE_PRIVATE;
 
         displayName = "[505th] UH-240 Ghost Hawk";
         faction = QFACTION(505th);

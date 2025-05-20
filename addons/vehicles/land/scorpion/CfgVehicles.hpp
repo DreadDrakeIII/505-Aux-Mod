@@ -21,7 +21,7 @@ class CfgVehicles {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
             QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa",
@@ -49,7 +49,7 @@ class CfgVehicles {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
             QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa"
@@ -74,7 +74,7 @@ class CfgVehicles {
         };
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             QPATHTOF(land\scorpion\data\textures\505th_scorpion_mg_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             QPATHTOF(land\scorpion\data\textures\505th_scorp_crane_co.paa),
@@ -105,7 +105,7 @@ class CfgVehicles {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_art_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_art_camo_ca.paa",
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             QPATHTOF(land\scorpion\data\textures\505th_scorpion_mg_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_1_lopo_co.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa"
@@ -134,7 +134,7 @@ class CfgVehicles {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
             QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa",
@@ -162,7 +162,7 @@ class CfgVehicles {
             QPATHTOF(land\scorpion\data\textures\505th_scorp_lopo_co.paa),
             QPATHTOF(land\scorpion\data\textures\505th_scorp_tur_wood_co.paa),
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\det_3_co.paa",
-            QPATHTOF(land\scorpion\data\textures\505th_scorp_decals_ca.paa),
+            "",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\scorp_net_wood_ca.paa",
             "OPTRE_Vehicles_Tracked\Scorpion\data\texture\mine_roller_co.paa"

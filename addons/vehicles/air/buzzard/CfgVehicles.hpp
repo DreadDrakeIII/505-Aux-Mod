@@ -1,7 +1,7 @@
 class CfgVehicles {
     class O_Plane_Fighter_02_F;
     class CLASS(Buzzard): O_Plane_Fighter_02_F {
-        SCOPE_PUBLIC;
+        SCOPE_PRIVATE;
 
         displayName = "[505th] Buzzard";
         side = BLUFOR;

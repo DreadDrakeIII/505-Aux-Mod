@@ -54,6 +54,10 @@ workshop = [
     "949698441", # The Mighty GAU-8 Avenger - ACE
     "2987115897", # Weapon Research and Security: Firearms
     "3469976535", # Weapon Research and Security: Autonomous systems
+    "3423561449", # Equipment PLUS
+    "3283642267", # Speshal Core
+    "3283645995", # Breach - Rewrite
+    "3283652320", # Melee - Rewrite
 ]
 presets = ["main"]
 dlc = []
