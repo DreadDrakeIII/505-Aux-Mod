@@ -58,6 +58,9 @@ workshop = [
     "3283642267", # Speshal Core
     "3283645995", # Breach - Rewrite
     "3283652320", # Melee - Rewrite
+    "1960024802", # PLP All in One
+    "1923321700", # O&T Expansion Eden
+    "3489262669", # Expanded Actions and Vehicle Animations
 ]
 presets = ["main"]
 dlc = []

@@ -72,6 +72,14 @@ class CLASS(Marine_Autorifle_CE): CLASS(Marine_Rifleman_CE) {
     displayName = "INF 02 Marine [Autorifle]";
     editorPreview = EDITOR_PREVIEW(Marine_Autorifle);
 
+    magazines[] = {
+        "OPTRE_100Rnd_95x40_Box_Tracer"
+    };
+
+    respawnMagazines[] = {
+        "OPTRE_100Rnd_95x40_Box_Tracer"
+    };
+
     weapons[]= {
         "OPTRE_M73",
         "OPTRE_M6B",

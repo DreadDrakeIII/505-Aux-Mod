@@ -34,6 +34,8 @@ class CfgMusic {
     MUSIC(Helldivers_Extraction_Theme,"[Helldivers] Extraction Theme",226,VideoGames);
     MUSIC(Helldivers_Credits_Theme_HD,"[Helldivers] Credits Theme",316,VideoGames);
     MUSIC(TWD_Clementine_Suite,"[TDW] Clementine Suite (Sad)",425,VideoGames);
+    MUSIC(CoD_115,"[CoD] 115",226,VideoGames);
+    MUSIC(Daredevil,"[AC7] Daredevil",321,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);
@@ -44,7 +46,7 @@ class CfgMusic {
     MUSIC(BarbarianHorde,"Barbarian Horde",633,Soundtracks);
     MUSIC(HtCxHaP,"Hoist The Colours x He's a Pirate",295,Soundtracks);
     MUSIC(BuryingTheDead,"Burying The Dead",129,Soundtracks);
-    MUSIC(The_Battle,"Gladiator - The Battle",602,Spimdtracks);
+    MUSIC(The_Battle,"Gladiator - The Battle",602,Soundtracks);
     MUSIC(UnravelEPIC,"Unravel Epic",260,Soundtracks);
     MUSIC(VictoryandDeath,"Victory and Death",62,Soundtracks);
     MUSIC(TENET_Trucks_in_Place,"TENET - Trucks in Place",332,Soundtracks);
@@ -55,4 +57,26 @@ class CfgMusic {
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
     MUSIC(Helms_Deep,"[LotR] Helm's Deep",4372,Other);
     MUSIC(Urban_Warfare_Ambience,"Urban Warfare Ambience",3600,Other);
+    MUSIC(D_Day_Drop_Band_of_Brothers,"[BoB] D Day Drop",265,Other);
+
+    // AOT OST
+    MUSIC(Attack_on_Titan,"[AoT] Attack on Titan Standard",257,AOT);
+    MUSIC(Body_Motion,"[AoT] Body Motion",343,AOT);
+    MUSIC(Army_G,"[AoT] Army G",206,AOT);
+    MUSIC(Ape_Titan,"[Aot] Ape Titan",332,AOT);
+    MUSIC(You_See_Big_Girl,"[AoT] You See Big Girl",359,AOT);
+    MUSIC(Female_Titan,"[AoT] Female Titan",277,AOT);
+    MUSIC(XL_TT_Colossal_Titan,"[AoT] Colossal Titan",224,AOT);
+    MUSIC(Female_Titan_V2,"[AoT] Female Titan V2",80,AOT);
+    MUSIC(XL_TT_Erens_Sacrifice,"[AoT] Eren's Sacrifice",206,AOT);
+    MUSIC(Vogel_im_Kafig_Revenge,"[AoT] Eren's First Transformation",210,AOT);
+    MUSIC(XL_TT_Determination,"[AoT] Determination",61,AOT);
+    MUSIC(Expedition,"[AoT] Expedition",252,AOT);
+    MUSIC(Vogel_im_Kafig_Losing_Hope,"[AoT] Mikasa Loses Hope",108,AOT);
+    MUSIC(Erens_Iconic_Transformation_Theme,"[AoT] Eren's Iconic Transformation Theme",142,AOT);
+    MUSIC(Hopeful_Fight,"[AoT] Hopeful Fight",200,AOT);
+    MUSIC(Death,"[AoT] Death",196,AOT);
+    MUSIC(Sacrifice,"[AoT] Sacrifice",207,AOT);
+    MUSIC(Loss,"[AoT] Loss",386,AOT);
+    MUSIC(DOA,"[AoT] DOA",207,AOT);
 };

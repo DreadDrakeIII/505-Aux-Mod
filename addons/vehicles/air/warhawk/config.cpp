@@ -9,10 +9,12 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "FIR_AirWeaponSystem_US",
+            "MG8_core",
             "A3_Air_F_Jets_Plane_Fighter_01"
         };
         units[] = {
             QCLASS(Warhawk),
+            QCLASS(Cursed_Warhawk),
             QCLASS(StealthHawk)
         };
         weapons[] = {};
