@@ -14,15 +14,16 @@ class CfgVehicles {
             QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
             QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
         };
-        weapons[]=
-		{
+        weapons[]={
 			"CMFlareLauncher_Singles",
 			//"SmokeLauncher",
 		};
-		magazines[]=
-		{
+		magazines[]={
 			"240Rnd_CMFlare_Chaff_Magazine",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",
 			"SmokeLauncherMag",
@@ -45,6 +46,21 @@ class CfgVehicles {
             QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
             QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
         };
+        weapons[]={
+			"CMFlareLauncher_Singles",
+			//"SmokeLauncher",
+		};
+		magazines[]={
+			"240Rnd_CMFlare_Chaff_Magazine",
+			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+		};
     };
 
     class B_T_VTOL_01_vehicle_F;
@@ -62,5 +78,20 @@ class CfgVehicles {
             QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
             QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
         };
+        weapons[]={
+			"CMFlareLauncher_Singles",
+			//"SmokeLauncher",
+		};
+		magazines[]={
+			"240Rnd_CMFlare_Chaff_Magazine",
+			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+			"SmokeLauncherMag",
+		};
     };
 };

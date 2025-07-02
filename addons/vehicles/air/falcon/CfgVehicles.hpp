@@ -11,6 +11,14 @@ class CfgVehicles {
         gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
+        magazines[] = {
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "Laserbatteries"
+        };
 
         hiddenSelections[] = {
             "camo1",
@@ -43,6 +51,14 @@ class CfgVehicles {
         gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
+        magazines[] = {
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "Laserbatteries"
+        };
 
         hiddenSelections[] = {
             "camo1",

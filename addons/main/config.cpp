@@ -17,4 +17,7 @@ class CfgPatches {
 };
 
 #include "CfgSettings.hpp"
+#include "CfgEditorCategories.hpp"
+#include "CfgEditorSubcategories.hpp"
+#include "CfgVehicles.hpp"
 #include "CfgEventHandlers.hpp"

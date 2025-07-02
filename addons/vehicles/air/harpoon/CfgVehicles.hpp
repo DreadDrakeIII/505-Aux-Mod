@@ -28,6 +28,9 @@ class CfgVehicles {
 		{
 			"240Rnd_CMFlare_Chaff_Magazine",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
             "Laserbatteries",
             "Laserbatteries",
 			"SmokeLauncherMag",

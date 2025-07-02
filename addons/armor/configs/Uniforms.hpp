@@ -128,6 +128,19 @@ scopeArsenal = 2;
 		mass = 40;
 	};
 };
+class CLASS(Crawford_Uniform_Rolled_CE): CLASS(Uniform_CE_Base) {
+author = "505th Aux Team";
+displayName = "[505th] Marine Rolled Uniform (Crawford)";
+scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
+	class ItemInfo: UniformItem
+	{
+		uniformClass = QCLASS(Marine_Crawford_Rolled_CE);
+		containerClass = "Supply150";
+		mass = 40;
+	};
+};
 class CLASS(Oliver_Uniform_CE): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Marine Uniform (Oliver)";

@@ -81,6 +81,7 @@ class CfgPatches {
             QCLASS(Uniform_CE_PL_Rolled),
             QCLASS(Adamant_Uniform_CE),
             QCLASS(Crawford_Uniform_CE),
+            QCLASS(Crawford_Uniform_Rolled_CE),
             QCLASS(Oliver_Uniform_CE),
             QCLASS(Uniform_Pilot_Base),
             QCLASS(Uniform_Pilot),
@@ -141,6 +142,7 @@ class CfgPatches {
 
 #include "CfgFactionClasses.hpp"
 #include "CfgEditorSubcategories.hpp"
+#include "CfgIdentities.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgEventHandlers.hpp"

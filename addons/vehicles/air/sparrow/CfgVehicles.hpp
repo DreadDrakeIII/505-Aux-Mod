@@ -21,12 +21,17 @@ class CfgVehicles {
         magazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
             "Laserbatteries",
             "Laserbatteries",
             "SmokeLauncherMag",
             "SmokeLauncherMag",
             "SmokeLauncherMag",
             "SmokeLauncherMag",
+            "5000Rnd_762x51_Belt",
+            "5000Rnd_762x51_Belt",
             "5000Rnd_762x51_Belt",
             "5000Rnd_762x51_Belt"
         };
@@ -53,8 +58,15 @@ class CfgVehicles {
         magazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
             "Laserbatteries",
             "Laserbatteries",
+            "SmokeLauncherMag",
+            "SmokeLauncherMag",
+            "SmokeLauncherMag",
+            "SmokeLauncherMag",
             "SmokeLauncherMag",
             "SmokeLauncherMag",
             "SmokeLauncherMag",

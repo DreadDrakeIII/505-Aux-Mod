@@ -79,4 +79,13 @@ class CfgMusic {
     MUSIC(Sacrifice,"[AoT] Sacrifice",207,AOT);
     MUSIC(Loss,"[AoT] Loss",386,AOT);
     MUSIC(DOA,"[AoT] DOA",207,AOT);
+    MUSIC(Rush_Through,"[AoT] Rush Through",391,AOT);
+    MUSIC(Pushing_Forward,"[AoT] Pushing Foward",188,AOT);
+    MUSIC(Volt,"[AoT] 2Volt",399,AOT);
+    MUSIC(Son2Seaver,"[AoT] son2seaver",320,AOT);
+    MUSIC(Omake,"[AoT] Omake",332,AOT);
+    MUSIC(Call_your_name,"[AoT] Call your Name",268,AOT);
+    MUSIC(Bauklotze,"[AoT] Bauklotze",236,AOT);
+    MUSIC(Its_Over,"[AoT] It's Over",175,AOT);
+    MUSIC(AOTF,"[AoT] AOTF-s1",475,AOT);
 };

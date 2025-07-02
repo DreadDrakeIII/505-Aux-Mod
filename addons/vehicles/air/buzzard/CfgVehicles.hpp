@@ -8,6 +8,16 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
+        magazines[] = {
+            "magazine_Fighter02_Gun30mm_AA_x180",
+            "magazine_Fighter02_Gun30mm_AA_x180",
+            "Laserbatteries",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine"
+        };
         hiddenSelections[] = {
             "Camo_01",
             "Camo_02",

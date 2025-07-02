@@ -446,7 +446,7 @@ class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
 
     identityTypes[] = {QCLASS(Adamant)};
 
-    uniformClass = QCLASS(Uniform_Adamant_CE);
+    uniformClass = QCLASS(Adamant_Uniform_CE);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Dexus_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -484,9 +484,62 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
 
     displayName = "A.Crawford";
 
-    uniformClass = QCLASS(Uniform_Crawford_CE);
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    uniformClass = QCLASS(Crawford_Uniform_CE);
     hiddenSelections[] = {"camo","camo1"};
-    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),QPATHTOF(data\uniforms\ce\custom\Anvil_UniformT_co.paa)};
+
+    linkedItems[] = {
+        QCLASS(CE_Crawford_HELMET), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_Crawford_HELMET), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Rifleman_Backpack_Predef);
+};
+class CLASS(Marine_Crawford_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
+
+    identityTypes[] = {QCLASS(Crawford)};
+
+    displayName = "A.Crawford";
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    uniformClass = QCLASS(Crawford_Uniform_Rolled_CE);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),QPATHTOF(data\uniforms\ce\custom\Anvil_Uniform_RolledT_co.paa)};
 
     linkedItems[] = {
         QCLASS(CE_Crawford_HELMET), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
@@ -508,7 +561,7 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
 
     displayName = "D.Oliver";
 
-    uniformClass = QCLASS(Uniform_Oliver_CE);
+    uniformClass = QCLASS(Oliver_Uniform_CE);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Drake_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 

@@ -28,7 +28,7 @@ url = "https://github.com/DreadDrakeIII/505-Aux-Mod"
 workshop = [
     "450814997",  # CBA_A3
     "463939057", # ACE
-    "2369477168", # ADT
+    "3499977893", # ADT
     "623475643",  # 3DEN
     "1779063631", # ZEN
     "2291129343", # Improved Melee System
@@ -61,6 +61,9 @@ workshop = [
     "1960024802", # PLP All in One
     "1923321700", # O&T Expansion Eden
     "3489262669", # Expanded Actions and Vehicle Animations
+    "2958273599", # Modular Warehouse Parts
+    "2975882889", # Modular Shoothouse Parts
+    "366423278", # F-16 Fighting Falcon
 ]
 presets = ["main"]
 dlc = []

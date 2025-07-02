@@ -23,6 +23,9 @@ class CfgVehicles {
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine"
 		};
         hiddenSelectionsTextures[] = {
             QPATHTOF(air\condor\data\textures\plane_cas_01_ext01_505th_CO.paa),

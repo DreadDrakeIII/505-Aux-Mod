@@ -1,8 +1,5 @@
 class CfgWeapons {
-    class H_HelmetB;
-    class Rogue_CEHelmet: H_HelmetB {
-        class ItemInfo;
-    };
+    class Rogue_CEHelmet;
     class CLASS(Marine_Helmet_Base): Rogue_CEHelmet {
         SCOPE_HIDDEN;
         author = AUTHOR;
@@ -71,6 +68,7 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Uniform (Base)";
+        uniformType = "Neopren";
     };
 
     class Rogue_CEUniformRolled_U_B;
@@ -78,6 +76,7 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Uniform Rolled (Base)";
+        uniformType = "Neopren";
     };
 
     class TKE_Rogue_UniformNCMDTFGrey_U_B;
@@ -85,6 +84,7 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Pilot Uniform (Base)";
+        uniformType = "Neopren";
     };
 
     class CLASS(Uniform_BlackOps_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
@@ -110,48 +110,56 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_VestV2_Base): Rogue_CEArmourV2 {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NF (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_NSV2_Base): Rogue_CEArmourNSV2 {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NF+S (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_NS_Base): Rogue_CEArmourNS {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NS (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_Pouch_Base): Rogue_CEArmourPouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_V2_Pouch_Base): Rogue_CEArmourV2Pouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NF (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_NSV2_Pouch_Base): Rogue_CEArmourNSV2Pouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NF/S (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(CE_Marine_Vest_NS_Pouch_Base): Rogue_CEArmourNSPouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NS (Base)";
+        vestType = "Rebreather";
     };
 
     class CLASS(Pilot_Vest_Base): TKE_MDTFArmour1Grey {

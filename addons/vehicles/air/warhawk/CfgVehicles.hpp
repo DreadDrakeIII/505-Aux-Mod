@@ -19,6 +19,10 @@ class CfgVehicles {
 			"magazine_Fighter01_Gun20mm_AA_x450",
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine"
 		};
         hiddenSelectionsTextures[]=
 		{
@@ -58,6 +62,10 @@ class CfgVehicles {
             "MG8_1174Rnd_Gau8_30mm",
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine"
 		};
         hiddenSelectionsTextures[]=
 		{
@@ -94,6 +102,10 @@ class CfgVehicles {
 			"magazine_Fighter01_Gun20mm_AA_x450",
 			"Laserbatteries",
 			"240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine",
+            "240Rnd_CMFlare_Chaff_Magazine"
 		};
         hiddenSelectionsTextures[]=
 		{
