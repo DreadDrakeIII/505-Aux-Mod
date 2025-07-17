@@ -45,4 +45,7 @@ class CfgEditorSubcategories {
     class EDSUBCAT(Resupply) {
         displayName = "Resupply";
     };
+    class EDSUBCAT(Utility) {
+        displayName = "Utility";
+    };
 };

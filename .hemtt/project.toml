@@ -64,6 +64,10 @@ workshop = [
     "2958273599", # Modular Warehouse Parts
     "2975882889", # Modular Shoothouse Parts
     "366423278", # F-16 Fighting Falcon
+    "3122396633", # C-130 Hercules
+    "1124993203", # 3den Better Inventory
+    "1260802825", # AV-8B Harrier 2
+    "3390219536", # C-5 Galaxy
 ]
 presets = ["main"]
 dlc = []

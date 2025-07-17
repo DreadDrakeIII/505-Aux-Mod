@@ -1,5 +1,3 @@
-#define ATRT_HEALTH 100
-
 #define VIV_PICKUP_RANGE 30
 
 #define IMPULSE_SETTINGS tas_can_impulse = FALSE; \

@@ -52,6 +52,8 @@ class CfgMusic {
     MUSIC(TENET_Trucks_in_Place,"TENET - Trucks in Place",332,Soundtracks);
     MUSIC(TENET_Freeport,"TENET - Freeport",219,Soundtracks);
     MUSIC(TENET_SATOR,"TENET - SATOR [Dread]",171,Soundtracks);
+    MUSIC(DUNE_Armada,"DUNE - Armada",309,Soundtracks);
+    MUSIC(DUNE_Herald_of_the_Change,"DUNE - Herald of the Change",301,Soundtracks);
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);

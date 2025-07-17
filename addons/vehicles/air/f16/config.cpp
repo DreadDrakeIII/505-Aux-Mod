@@ -8,10 +8,13 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
-            "FIR_F16_SKINS_F"
+            "FIR_F16_SKINS_F",
+            "FIR_F16D_F"
         };
         units[] = {
-            QCLASS(F16),
+            QCLASS(F16C),
+            QCLASS(F16C_Danson),
+            QCLASS(F16D)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;
