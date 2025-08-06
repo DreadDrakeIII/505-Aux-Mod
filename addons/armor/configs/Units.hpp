@@ -43,7 +43,7 @@ class CLASS(Marine_Rifleman_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
 
     uniformClass = QCLASS(Uniform_CE_Rolled);
     hiddenSelection[] = {"camo","camo1"};
-    hiddenSelectionTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+    hiddenSelectionTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     weapons[]= {
         "OPTRE_MA5A",
         "OPTRE_M6B",
@@ -434,6 +434,86 @@ class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     };
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
+
+class CLASS(Marine_FR_CE): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_PlatoonLead);
+
+    displayName = "INF 10 Marine [Force Recon]";
+
+    uniformClass = QCLASS(Uniform_FR_CE);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformP_co.paa),
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformT_CO.paa)
+    };
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_FR_Predef);
+};
+
+class CLASS(Marine_FR_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_PlatoonLead);
+
+    displayName = "INF 10 Marine [Force Recon]";
+
+    uniformClass = QCLASS(Uniform_CE_FR_Rolled);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformP_co.paa),
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_Uniform_RolledT_CO.paa)
+    };
+
+    weapons[]= {
+        "OPTRE_M393_DMR",
+        "OPTRE_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_M393_DMR",
+        "OPTRE_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_FR_Predef);
+};
 ////////////////////Custom Units////////////////////
 class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
@@ -580,7 +660,7 @@ class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     editorSubcategory = QEDSUBCAT(Crewmen);
     editorPreview = EDITOR_PREVIEW(Marine_Pilot);
 
-    displayName = "[505th] Jet Pilot";
+    displayName = "AVI Jet Pilot";
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
@@ -603,7 +683,7 @@ class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
     editorSubcategory = QEDSUBCAT(Crewmen);
     editorPreview = EDITOR_PREVIEW(Marine_Pilot);
 
-    displayName = "[505th] Heli Pilot";
+    displayName = "AVI Heli Pilot";
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
@@ -626,7 +706,7 @@ class CLASS(Marine_Heli_Crew): CLASS(Pilot_Base) {
     editorSubcategory = QEDSUBCAT(Crewmen);
     editorPreview = EDITOR_PREVIEW(Marine_Pilot);
 
-    displayName = "[505th] Heli Crew";
+    displayName = "AVI Heli Crew";
 
     uniformClass = QCLASS(Uniform_Pilot);
     weapons[] = {
@@ -643,14 +723,38 @@ class CLASS(Marine_Heli_Crew): CLASS(Pilot_Base) {
     };
     backpack = QCLASS(Pilot_Backpack_Predef);
 };
+class CLASS(Marine_Tank_Crew): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
+
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot);
+
+    displayName = "ARMR Tank Crew";
+
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
+    };
+    respawnWeapons[] = {
+        "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
+    };
+    linkedItems[] = {
+        "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Tanker_Backpack_Predef);
+};
+////////////////////BlackOp Units////////////////////
 class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
-    SCOPE_PRIVATE;
+    SCOPE_PUBLIC;
 
     editorSubcategory = QEDSUBCAT(SpecialForces);
     faction = QFACTION(ONI);
     editorPreview = EDITOR_PREVIEW(Unit_BlackOps);
 
-    displayName = "[505th] Black Ops";
+    displayName = " Black Ops";
 
     uniformClass = QCLASS(Uniform_BlackOps);
     weapons[] = {

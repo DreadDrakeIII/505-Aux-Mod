@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(C130J): FIR_C130J_Blank {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] C-130J";
+        displayName = "C-130J";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);

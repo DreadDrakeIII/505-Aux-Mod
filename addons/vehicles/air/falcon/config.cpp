@@ -11,7 +11,9 @@ class CfgPatches {
             "OPTRE_Vehicles_Air_Falcon"
         };
         units[] = {
+            QCLASS(Falcon_Base),
             QCLASS(Falcon),
+            QCLASS(Falcon_Armed_Base),
             QCLASS(Falcon_Armed)
         };
         weapons[] = {};

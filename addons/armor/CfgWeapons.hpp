@@ -45,7 +45,7 @@ class CfgWeapons {
 
     class TKE_UCMCHelmClosed;
     class CLASS(505th_Black_Ops_Helmet_Base): TKE_UCMCHelmClosed {
-        SCOPE_HIDDEN;
+        SCOPE_PUBLIC;
         author = AUTHOR;
         displayName = "[505th] Black Ops Helmet (Base)";
     };
@@ -103,75 +103,120 @@ class CfgWeapons {
 	class Rogue_CEArmourV2Pouch;
 	class Rogue_CEArmourNSV2Pouch;
 	class Rogue_CEArmourNSPouch;
+    class Rogue_CEArmourScout;
     class TKE_MDTFArmour1Grey;
     class TKE_UCMCArmour3_21st;
+    class ItemInfo;
 
     class CLASS(CE_Marine_Vest_Base): Rogue_CEArmour {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_VestV2_Base): Rogue_CEArmourV2 {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NF (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_NSV2_Base): Rogue_CEArmourNSV2 {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NF+S (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_NS_Base): Rogue_CEArmourNS {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest NS (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_Pouch_Base): Rogue_CEArmourPouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_V2_Pouch_Base): Rogue_CEArmourV2Pouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NF (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_NSV2_Pouch_Base): Rogue_CEArmourNSV2Pouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NF/S (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(CE_Marine_Vest_NS_Pouch_Base): Rogue_CEArmourNSPouch {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Marine Vest Pouches + NS (Base)";
-        vestType = "Rebreather";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+    };
+
+    class CLASS(CE_Scout_Vest_Base): Rogue_CEArmourScout {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] Scout Vest (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     class CLASS(Pilot_Vest_Base): TKE_MDTFArmour1Grey {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Pilot Vest (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+
     };
 
     class CLASS(BlackOps_Vest_Base): TKE_UCMCArmour3_21st {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Vest (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
     };
 
     #include "configs\Vests.hpp"

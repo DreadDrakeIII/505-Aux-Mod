@@ -29,6 +29,7 @@ class CfgPatches {
             QGVAR(widow),
             QGVAR(wyvern),
             // Land
+            QGVAR(apex),
             QGVAR(bison),
             QGVAR(oryx),
             QGVAR(puma),

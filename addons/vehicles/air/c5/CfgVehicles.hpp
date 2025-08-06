@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(C5Galaxy): JK_B_US_C5M_Super_Galaxy_F {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] C-5 Galaxy";
+        displayName = "C-5 Galaxy";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);

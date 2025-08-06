@@ -68,6 +68,7 @@ workshop = [
     "1124993203", # 3den Better Inventory
     "1260802825", # AV-8B Harrier 2
     "3390219536", # C-5 Galaxy
+    "2776005424", # Enhanced Artwork Supporter
 ]
 presets = ["main"]
 dlc = []

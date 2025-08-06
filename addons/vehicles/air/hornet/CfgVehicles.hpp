@@ -3,7 +3,7 @@ class CfgVehicles {
     class OPTRE_UNSC_hornet_CAS;
     class CLASS(Hornet_CAP): OPTRE_UNSC_hornet_CAP {
         SCOPE_PUBLIC;
-        displayName = "[505th] AV-14 Hornet (CAP)";
+        displayName = "AV-14 Hornet (CAP)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
@@ -29,7 +29,7 @@ class CfgVehicles {
 
     class CLASS(Hornet_CAS): OPTRE_UNSC_hornet_CAS {
         SCOPE_PUBLIC;
-        displayName = "[505th] AV-14 Hornet (CAS)";
+        displayName = "AV-14 Hornet (CAS)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);

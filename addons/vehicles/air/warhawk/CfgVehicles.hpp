@@ -2,7 +2,7 @@ class CfgVehicles {
     class B_Plane_Fighter_01_F;
     class CLASS(Warhawk): B_Plane_Fighter_01_F {
         SCOPE_PUBLIC;
-        displayName = "[505th] F/A-40 Warhawk";
+        displayName = "F/A-40 Warhawk";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
@@ -41,7 +41,7 @@ class CfgVehicles {
 
     class CLASS(Cursed_Warhawk): B_Plane_Fighter_01_F {
         SCOPE_PUBLIC;
-        displayName = "[505th] F/A-404 Cursed Warhawk";
+        displayName = "F/A-404 Cursed Warhawk";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
@@ -85,7 +85,7 @@ class CfgVehicles {
     class B_Plane_Fighter_01_Stealth_F;
     class CLASS(StealthHawk): B_Plane_Fighter_01_Stealth_F {
         SCOPE_PUBLIC;
-        displayName = "[505th] F/A-41 Stealth Hawk";
+        displayName = "F/A-41 Stealth Hawk";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);

@@ -2,7 +2,7 @@ class CfgVehicles {
     class B_UGV_01_F;
     class CLASS(Rex_Unarmed): B_UGV_01_F {
         SCOPE_PUBLIC;
-        displayName = "[505th] 200-Rex (Unarmed)";
+        displayName = "200-Rex (Unarmed)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Drones);
         crew = "B_UAV_AI";
@@ -18,7 +18,7 @@ class CfgVehicles {
 class B_UGV_01_rcws_F;
 class CLASS(Rex_Armed): B_UGV_01_rcws_F {
     SCOPE_PUBLIC;
-    displayName = "[505th] 220-Rex (Armed)";
+    displayName = "220-Rex (Armed)";
     faction = QFACTION(505th);
     editorSubcategory = QEDSUBCAT(Drones);
     crew = "B_UAV_AI";

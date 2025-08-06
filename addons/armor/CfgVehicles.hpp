@@ -8,7 +8,8 @@ class CfgVehicles {
 
         displayName = "Marine (Base)";
         uniformClass = QCLASS(Uniform_CE);
-        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+        modelSides[] = {BLUFOR};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
         linkedItems[] = {QCLASS(CE_HELMETV2), QCLASS(CE_Armour_Vest),"","",MARINE_LINKED_ITEMS_RADIO};
         respawnLinkedItems[] = {QCLASS(CE_HELMETV2), QCLASS(CE_Armour_Vest),"","",MARINE_LINKED_ITEMS_RADIO};
@@ -24,7 +25,8 @@ class CfgVehicles {
 
         displayName = "Marine Rolled (Base)";
         uniformClass = QCLASS(Uniform_CE_Rolled);
-        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+        modelSides[] = {BLUFOR};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     };
 
     class TKE_Rogue_UniformNCCamo_inf_B;
@@ -36,6 +38,7 @@ class CfgVehicles {
 
         displayName = "Pilot (Base)";
         uniformClass = QCLASS(Uniform_Pilot);
+        modelSides[] = {BLUFOR};
         linkedItems[] = {};
         respawnLinkedItems[] = {};
     };
@@ -45,6 +48,7 @@ class CfgVehicles {
 
         faction = QFACTION(ONI);
         uniformClass = QCLASS(Uniform_BlackOps);
+        modelSides[] = {BLUFOR};
         linkedItems[] = {};
         respawnLinkedItems[] = {};
     };

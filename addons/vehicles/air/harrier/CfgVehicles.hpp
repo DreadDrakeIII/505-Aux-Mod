@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(AV8B): FIR_AV8B_NA_Blank {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] AV-8B Harrier II";
+        displayName = "AV-8B Harrier II";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);

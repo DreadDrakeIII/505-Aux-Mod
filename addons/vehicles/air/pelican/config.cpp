@@ -11,7 +11,8 @@ class CfgPatches {
             "Splits_Vehicles_Air_Pelican"
         };
         units[] = {
-            QCLASS(Pelican)
+            QCLASS(Pelican_Base),
+            QCLASS(Pelican),
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

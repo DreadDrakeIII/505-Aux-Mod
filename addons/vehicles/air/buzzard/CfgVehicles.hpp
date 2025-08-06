@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(Buzzard): O_Plane_Fighter_02_F {
         SCOPE_PRIVATE;
 
-        displayName = "[505th] Buzzard";
+        displayName = "Buzzard";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Planes);

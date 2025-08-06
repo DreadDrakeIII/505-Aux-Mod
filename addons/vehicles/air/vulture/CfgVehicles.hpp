@@ -3,7 +3,7 @@ class CfgVehicles {
     class CLASS(Vulture): B_UAV_05_F {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] UCAV Vulture";
+        displayName = "UCAV Vulture";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Drones);
         crew = "B_UAV_AI";

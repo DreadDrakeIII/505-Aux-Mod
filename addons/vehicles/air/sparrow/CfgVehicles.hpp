@@ -1,7 +1,7 @@
 class CfgVehicles {
     class B_Heli_Light_01_dynamicLoadout_F;
     class CLASS(Sparrow): B_Heli_Light_01_dynamicLoadout_F {
-        displayName = "[505th] AH-600 Sparrow";
+        displayName = "AH-600 Sparrow";
         scope = 2;
         scopeCurator = 2;
         faction = QFACTION(505th);
@@ -39,7 +39,7 @@ class CfgVehicles {
 
     class B_Heli_Light_01_F;
     class CLASS(Pidgeon): B_Heli_Light_01_F {
-        displayName = "[505th] AH-610 Pigeon";
+        displayName = "AH-610 Pigeon";
         scope = 2;
         scopeCurator = 2;
         faction = QFACTION(505th);

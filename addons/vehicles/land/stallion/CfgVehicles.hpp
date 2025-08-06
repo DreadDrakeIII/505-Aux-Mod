@@ -8,7 +8,7 @@ class CfgVehicles {
     class OPTRE_m1087_stallion_device_unsc;
     class CLASS(Stallion_Open_Transport): OPTRE_m1087_stallion_unsc {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion";
+        displayName = "M1087 Stallion";
         hiddenSelections[] = {"Camo1","Camo2","Camo3"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),
@@ -22,7 +22,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Covered_Transport): OPTRE_m1087_stallion_cover_unsc {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Covered)";
+        displayName = "M1087 Stallion (Covered)";
         hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),
@@ -37,7 +37,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Ammo): B_Truck_01_ammo_F {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Ammo)";
+        displayName = "M1087 Stallion (Ammo)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_Rifleman_CE);
@@ -53,7 +53,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Refuel): OPTRE_m1087_stallion_unsc_refuel {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Fuel)";
+        displayName = "M1087 Stallion (Fuel)";
         hiddenSelections[] = {"Camo1","Camo2","Camo3"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),
@@ -67,7 +67,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Repair): OPTRE_m1087_stallion_unsc_repair {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Repair)";
+        displayName = "M1087 Stallion (Repair)";
         hiddenSelections[] = {"Camo1","Camo2","Camo3"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),
@@ -81,7 +81,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Medical): OPTRE_m1087_stallion_unsc_medical {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Medical)";
+        displayName = "M1087 Stallion (Medical)";
         hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),
@@ -96,7 +96,7 @@ class CfgVehicles {
     };
     class CLASS(Stallion_Device): OPTRE_m1087_stallion_device_unsc {
         SCOPE_PUBLIC;
-        displayName = "[505th] M1087 Stallion (Device)";
+        displayName = "M1087 Stallion (Device)";
         hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4","Camo5"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\stallion\data\textures\505th_Stallion_EXT1_co.paa),

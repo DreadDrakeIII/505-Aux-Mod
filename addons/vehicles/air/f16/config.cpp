@@ -13,7 +13,6 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(F16C),
-            QCLASS(F16C_Danson),
             QCLASS(F16D)
         };
         weapons[] = {};

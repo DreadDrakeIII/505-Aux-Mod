@@ -36,7 +36,7 @@ class GVAR(deleteCrew) { \
     displayName = "Change HUD Color"; \
     condition = QUOTE(ace_player == currentPilot (_this#0) and isEngineOn (_this#0)); \
     exceptions[] = {"isNotInside"}; \
-    icon = "\ls_data\icons\hud\colorWheel.paa"; \
+    icon = ""; \
     class HUD_White { \
         displayName = "White"; \
         runOnHover = TRUE; \

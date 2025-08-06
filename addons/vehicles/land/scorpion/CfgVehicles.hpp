@@ -3,10 +3,10 @@ class CfgVehicles {
     class CLASS(Scorpion_MB): OPTRE_M808BM_UNSC {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M808B/M Scorpion MBT";
+        displayName = "M808B/M Scorpion MBT";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Tanks);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2",
@@ -32,10 +32,10 @@ class CfgVehicles {
     class CLASS(Scorpion): OPTRE_M808B_UNSC {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M808B Scorpion MBT";
+        displayName = "M808B Scorpion MBT";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Tanks);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2",
@@ -59,10 +59,10 @@ class CfgVehicles {
     class CLASS(Scorpion_Engineer): OPTRE_M808R_Engineer_UNSC {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M808E Scorpion (Engineer)";
+        displayName = "M808E Scorpion (Engineer)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Tanks);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo_body",
             "camo_decal",
@@ -87,10 +87,10 @@ class CfgVehicles {
     class CLASS(Scorpion_Arty): OPTRE_M875_SPH {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M875 Scorpion Self Propelled Howitzer";
+        displayName = "M875 Scorpion Self Propelled Howitzer";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Artillery);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2",
@@ -116,10 +116,10 @@ class CfgVehicles {
     class CLASS(Scorpion_MB_Single): OPTRE_M808BM_UNSC_Driverless {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M808B/M Scorpion MBT (Single)";
+        displayName = "M808B/M Scorpion MBT (Single)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Tanks_Single);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2",
@@ -145,10 +145,10 @@ class CfgVehicles {
     class CLASS(Scorpion_Single): OPTRE_M808B_UNSC_Driverless {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] M808B Scorpion MBT (Single)";
+        displayName = "M808B Scorpion MBT (Single)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Tanks_Single);
-        crew = QCLASS(Marine_Rifleman_CE);
+        crew = QCLASS(Marine_Tank_Crew);
         hiddenSelections[] = {
             "camo1",
             "camo2",

@@ -6,7 +6,7 @@ class CfgVehicles {
     class CLASS(AV22_Sparrowhawk): OPTRE_AV22_Sparrowhawk {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] AV-22 Sparrowhawk";
+        displayName = "AV-22 Sparrowhawk";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
@@ -30,7 +30,7 @@ class CfgVehicles {
     class CLASS(AV22A_Sparrowhawk): OPTRE_AV22A_Sparrowhawk {
         SCOPE_PUBLIC;
 
-        displayName = "[505th] AV-22A Sparrowhawk";
+        displayName = "AV-22A Sparrowhawk";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
@@ -53,7 +53,7 @@ class CfgVehicles {
 
     class CLASS(AV22B_Sparrowhawk): OPTRE_AV22B_Sparrowhawk {
         SCOPE_PUBLIC;
-        displayName = "[505th] AV-22B Sparrowhawk";
+        displayName = "AV-22B Sparrowhawk";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
@@ -76,7 +76,7 @@ class CfgVehicles {
 
     class CLASS(AV22C_Sparrowhawk): OPTRE_AV22C_Sparrowhawk {
         SCOPE_PUBLIC;
-        displayName = "[505th] AV-22C Sparrowhawk";
+        displayName = "AV-22C Sparrowhawk";
         side = BLUFOR;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);

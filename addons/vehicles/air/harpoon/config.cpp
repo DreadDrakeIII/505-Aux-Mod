@@ -13,7 +13,8 @@ class CfgPatches {
             "kat_stretcher",
         };
         units[] = {
-            QCLASS(Harpoon)
+            QCLASS(Harpoon_Base),
+            QCLASS(Harpoon),
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

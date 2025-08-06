@@ -2,7 +2,7 @@ class CfgVehicles {
     class DMNS_UNSC_Nightingale;
     class CLASS(Nightingale): DMNS_UNSC_Nightingale {
         SCOPE_PUBLIC;
-        displayName = "[505th] EV-41 Nightingale";
+        displayName = "EV-41 Nightingale";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
@@ -27,7 +27,7 @@ class CfgVehicles {
 
     class CLASS(ONI_Nightingale): DMNS_UNSC_Nightingale {
         SCOPE_PUBLIC;
-        displayName = "[ONI] EV-44 Nightingale";
+        displayName = "EV-44 Nightingale";
         faction = QFACTION(ONI);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
