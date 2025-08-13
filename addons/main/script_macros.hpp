@@ -169,7 +169,7 @@ ace_hearing_protection = 0.85
 
 // Linked Items
 #define LINKED_ITEMS "ItemMap", "ItemCompass", "ItemGPS", "ItemWatch"
-#define LINKED_ITEMS_RADIO LINKED_ITEMS, "ItemRadio"
+#define LINKED_ITEMS_RADIO LINKED_ITEMS, "TFAR_fadak"
 
 // Sides
 #define OPFOR 0

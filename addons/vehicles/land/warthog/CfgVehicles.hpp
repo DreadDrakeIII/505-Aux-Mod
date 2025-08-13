@@ -235,4 +235,127 @@ class CfgVehicles {
             ""
         };
     };
+
+    class OPTRE_M12_LRV_ins;
+    class CLASS(ARTE_Warthog_LRV): OPTRE_M12_LRV_ins {
+        SCOPE_PUBLIC;
+
+        displayName = "M12 LAAG Warthog";
+        faction = QFACTION(ARTE);
+        editorSubcategory = QEDSUBCAT(Cars);
+        crew = QCLASS(Wolf_Rifleman);
+        typicalCargo[] = {QCLASS(Wolf_Rifleman)};
+        hiddenSelections[] = {
+            "Camo1",
+            "Camo2",
+            "Camo3",
+            "camo_details",
+            "camo_interior",
+            "camo_turret_decal",
+            "camo_sight",
+            "camo_doors"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\warthog\data\textures\Artemis_M12HogMaav_extupper_co.paa),
+            "\OPTRE_Vehicles\Warthog\data\night\M12HogMaav_extunder_night_co.paa",
+            QPATHTOF(land\warthog\data\textures\Artemis_m12_turret_co.paa),
+            "",
+            "\OPTRE_Vehicles\warthog\data\m12hogmaav_interior_co.paa",
+            "",
+            "\OPTRE_Vehicles\warthog\data\turrets\sight_co.paa",
+            ""
+        };
+    };
+
+    class OPTRE_M12A1_LRV_ins;
+    class CLASS(ARTE_Warthog_AT_LRV): OPTRE_M12A1_LRV_ins {
+        SCOPE_PUBLIC;
+
+        displayName = "M12A1 AT Warthog";
+        faction = QFACTION(ARTE);
+        editorSubcategory = QEDSUBCAT(Cars);
+        crew = QCLASS(Wolf_Rifleman);
+        typicalCargo[] = {QCLASS(Wolf_Rifleman)};
+        hiddenSelections[] = {
+            "Camo1",
+            "Camo2",
+            "Camo3",
+            "camo_details",
+            "camo_interior",
+            "camo_turret",
+            "camo_turret_decals",
+            "camo_doors"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\warthog\data\textures\Artemis_M12HogMaav_extupper_co.paa),
+            "\OPTRE_Vehicles\Warthog\data\night\M12HogMaav_extunder_night_co.paa",
+            QPATHTOF(land\warthog\data\textures\Artemis_m12_turret_co.paa),
+            "",
+            "\OPTRE_Vehicles\warthog\data\m12hogmaav_interior_co.paa",
+            "\OPTRE_Vehicles\warthog\data\turrets\m39_turret_co.paa",
+            "",
+            "",
+        };
+    };
+
+    class OPTRE_M12_TD_ins;
+    class CLASS(ARTE_Warthog_TD_LRV): OPTRE_M12_TD_ins {
+        SCOPE_PUBLIC;
+
+        displayName = "M12 TD Warthog";
+        faction = QFACTION(ARTE);
+        editorSubcategory = QEDSUBCAT(Cars);
+        crew = QCLASS(Wolf_Rifleman);
+        typicalCargo[] = {QCLASS(Wolf_Rifleman)};
+        hiddenSelections[] = {
+            "Camo1",
+            "Camo2",
+            "Camo3",
+            "Camo4",
+            "Camo5",
+            "Camo6",
+            "camo_details",
+            "camo_interior",
+            "camo_console"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\warthog\data\textures\Artemis_M12HogMaav_extupper_co.paa),
+            "\OPTRE_Vehicles\Warthog\data\night\M12HogMaav_extunder_night_co.paa",
+            "\OPTRE_Vehicles\Warthog\data\night\transp_lopo_night_co.paa",
+            "\OPTRE_Vehicles\Warthog\data\night\hog_apc_night_co.paa",
+            "\OPTRE_Weapons_Turrets\fg75\data\cannon_co.paa",
+            "\OPTRE_Weapons_Turrets\fg75\data\carriage_co.paa",
+            "",
+            "\OPTRE_Vehicles\Warthog\data\m12hogmaav_interior_co.paa",
+            "\OPTRE_Weapons_Turrets\fg75\data\console_co.paa"
+
+        };
+    };
+
+    class OPTRE_M12R_AA_ins;
+    class CLASS(ARTE_Warthog_AA): OPTRE_M12R_AA_ins {
+        SCOPE_PUBLIC;
+
+        displayName = "M12R AA Warthog";
+        faction = QFACTION(ARTE);
+        editorSubcategory = QEDSUBCAT(Cars);
+        crew = QCLASS(Wolf_Rifleman);
+        typicalCargo[] = {QCLASS(Wolf_Rifleman)};
+        hiddenSelections[] = {
+            "Camo1",
+            "Camo2",
+            "Camo3",
+            "camo_details",
+            "camo_interior",
+            "camo_doors"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\warthog\data\textures\Artemis_M12HogMaav_extupper_co.paa),
+            "\OPTRE_Vehicles\Warthog\data\night\M12HogMaav_extunder_night_co.paa",
+            QPATHTOF(land\warthog\data\textures\Artemis_m79_turret_co.paa),
+            "",
+            "\OPTRE_Vehicles\warthog\data\m12hogmaav_interior_co.paa",
+            ""
+        };
+    };
 };

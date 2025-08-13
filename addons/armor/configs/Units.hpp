@@ -514,7 +514,7 @@ class CLASS(Marine_FR_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     };
     backpack = QCLASS(Backpack_FR_Predef);
 };
-////////////////////Custom Units////////////////////
+//////////////////////Custom Unit//////////////////////
 class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
@@ -653,7 +653,7 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
-////////////////////Crewman Units////////////////////
+/////////////////////Crewman Units/////////////////////
 class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     SCOPE_PUBLIC;
 
