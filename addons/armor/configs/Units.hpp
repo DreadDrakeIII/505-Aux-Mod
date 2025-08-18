@@ -467,15 +467,15 @@ class CLASS(Marine_FR_CE): CLASS(Marine_CE_Base) {
     };
 
     linkedItems[] = {
-        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Backpack_FR_Predef);
 };
 
-class CLASS(Marine_FR_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Marine_CE_FR_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
@@ -507,10 +507,10 @@ class CLASS(Marine_FR_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     };
 
     linkedItems[] = {
-        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_HELMET_ForceReconV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Armour_ForceRecon_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Backpack_FR_Predef);
 };
@@ -748,7 +748,7 @@ class CLASS(Marine_Tank_Crew): CLASS(Pilot_Base) {
 };
 ////////////////////BlackOp Units////////////////////
 class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_PRIVATE;
 
     editorSubcategory = QEDSUBCAT(SpecialForces);
     faction = QFACTION(ONI);

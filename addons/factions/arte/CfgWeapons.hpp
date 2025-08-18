@@ -193,8 +193,56 @@ class CfgWeapons {
             hiddenSelections[] = {"camo","camo1","camo2","camo3","camo4"};
             uniformModel ="\TKE_Kuiper_Engagements\TKE_UCN\TKE_UCMCArmour6_2.p3d";
             vestType = "Rebreather";
+            class HitpointsProtectionInfo
+        {
+            class Legs {
+                hitpointName = "HitLegs";
+                armor = 40;
+                passThrough = 0.5;
+            };
+            class Arms {
+                hitpointName = "HitArms";
+                armor = 40;
+                passThrough = 0.4;
+            };
+            class Abdomen {
+                hitpointName = "HitAbdomen";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Body {
+                hitpointName = "HitBody";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Hands {
+                hitpointName = "HitHands";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Chest {
+                hitpointName = "HitChest";
+                armor = 40;
+                passThrough = 0.095;
+            };
+            class Diaphragm {
+                hitpointName = "HitDiaphragm";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Neck {
+                hitpointName = "HitNeck";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Pelvis {
+                hitpointName = "HitPelvis";
+                armor = 40;
+                passThrough = 0.3;
+            };
         };
     };
+};
     class CLASS(Jager_Vest_02): CLASS(Vest_Base) {
         scope = 2;
         scopeArsenal = 2;
@@ -222,12 +270,60 @@ class CfgWeapons {
             "\TKE_Kuiper_Engagements\TKE_UCN\data\TKE_UCNExtras_co.paa",
             "\TKE_Kuiper_Engagements\TKE_UCN\data\TKE_BinoUCN_co.paa"
         };
-        class ItemInfo: ItemInfo {
-            hiddenSelections[] = {"camo","camo1","camo2","camo3","camo4","camo7","camo8"};
-            uniformModel ="\TKE_Kuiper_Engagements\TKE_UCN\TKE_UCMCArmour6_3.p3d";
+            class ItemInfo: ItemInfo {
+            hiddenSelections[] = {"camo","camo1","camo2","camo3","camo4"};
+            uniformModel ="\TKE_Kuiper_Engagements\TKE_UCN\TKE_UCMCArmour6_2.p3d";
             vestType = "Rebreather";
+            class HitpointsProtectionInfo
+        {
+            class Legs {
+                hitpointName = "HitLegs";
+                armor = 40;
+                passThrough = 0.5;
+            };
+            class Arms {
+                hitpointName = "HitArms";
+                armor = 40;
+                passThrough = 0.4;
+            };
+            class Abdomen {
+                hitpointName = "HitAbdomen";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Body {
+                hitpointName = "HitBody";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Hands {
+                hitpointName = "HitHands";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Chest {
+                hitpointName = "HitChest";
+                armor = 40;
+                passThrough = 0.095;
+            };
+            class Diaphragm {
+                hitpointName = "HitDiaphragm";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Neck {
+                hitpointName = "HitNeck";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Pelvis {
+                hitpointName = "HitPelvis";
+                armor = 40;
+                passThrough = 0.3;
+            };
         };
     };
+};
     class CLASS(Jager_Vest_03): CLASS(Vest_Base) {
         scope = 2;
         scopeArsenal = 2;
@@ -248,9 +344,56 @@ class CfgWeapons {
             "\TKE_Kuiper_Engagements\TKE_UCN\data\TKE_UCMCArmourCamo2_co.paa"
         };
         class ItemInfo: ItemInfo {
-            hiddenSelections[] = {"camo","camo1","camo2","camo3","camo4","camo7","camo8"};
-            uniformModel = "\TKE_Kuiper_Engagements\TKE_UCN\TKE_UCMCArmour2_1.p3d";
+            hiddenSelections[] = {"camo","camo1","camo2","camo3","camo4"};
+            uniformModel ="\TKE_Kuiper_Engagements\TKE_UCN\TKE_UCMCArmour6_2.p3d";
             vestType = "Rebreather";
+            class HitpointsProtectionInfo{
+                    class Legs {
+                hitpointName = "HitLegs";
+                armor = 40;
+                passThrough = 0.5;
+            };
+            class Arms {
+                hitpointName = "HitArms";
+                armor = 40;
+                passThrough = 0.4;
+            };
+            class Abdomen {
+                hitpointName = "HitAbdomen";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Body {
+                hitpointName = "HitBody";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Hands {
+                hitpointName = "HitHands";
+                armor = 40;
+                passThrough = 0.6;
+            };
+            class Chest {
+                hitpointName = "HitChest";
+                armor = 40;
+                passThrough = 0.095;
+            };
+            class Diaphragm {
+                hitpointName = "HitDiaphragm";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Neck {
+                hitpointName = "HitNeck";
+                armor = 40;
+                passThrough = 0.1;
+            };
+            class Pelvis {
+                hitpointName = "HitPelvis";
+                armor = 40;
+                passThrough = 0.3;
+            };
+            };
         };
     };
 };

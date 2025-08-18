@@ -15,7 +15,7 @@ class CfgPatches {
             "TKE_Rogue_Uniform",
             "TKE_MD",
             "1st_MEU_patch_gear_facewear",
-            "OPTRE_Misc_Objects"
+            "OPTRE_Misc_Objects",
 
         };
         units[] = {

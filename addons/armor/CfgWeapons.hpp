@@ -45,7 +45,7 @@ class CfgWeapons {
 
     class TKE_UCMCHelmClosed;
     class CLASS(505th_Black_Ops_Helmet_Base): TKE_UCMCHelmClosed {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Helmet (Base)";
     };

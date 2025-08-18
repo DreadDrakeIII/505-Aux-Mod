@@ -84,18 +84,4 @@ class CfgVehicles {
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
         };
     };
-
-    class Bag_Base;
-    class B_FieldPack_Base: Bag_Base {
-        class EventHandlers;
-    };
-    class CLASS(Backpack_Base): B_FieldPack_Base {
-        SCOPE_PRIVATE;
-        displayName = "Backpack Base";
-        modelSides[] = {ALL_SIDES};
-
-        class EventHandlers: EventHandlers {
-            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
-        };
-    };
 };

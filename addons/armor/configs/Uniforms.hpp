@@ -131,7 +131,7 @@ scopeCurator = 2;
 scopeArsenal = 2;
 	class ItemInfo: UniformItem
 	{
-		uniformClass = QCLASS(Marine_FR_CE_Rolled);
+		uniformClass = QCLASS(Marine_CE_FR_Rolled);
         uniformType = "Neopren";
 		containerClass = "Supply150";
 		mass = 40;
@@ -202,6 +202,6 @@ class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
 };
 ///////////////////Black Ops Uniform///////////////////
 class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
-   SCOPE_PUBLIC;
+   SCOPE_PRIVATE;
     displayName = "[505th] Black Ops Uniform";
 };

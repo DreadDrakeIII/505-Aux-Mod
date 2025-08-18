@@ -298,9 +298,9 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
     class CLASS(BlackOps_Backpack): CLASS(BlackOps_Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Black Ops Backpack";
-        scope = 2;
-        scopeCurator=2;
-        scopeArsenal = 2;
+        scope = 0;
+        scopeCurator = 0;
+        scopeArsenal = 0;
     };
     class CLASS(BlackOps_Backpack_Predef): CLASS(BlackOps_Backpack_Base) {
         SCOPE_HIDDEN;

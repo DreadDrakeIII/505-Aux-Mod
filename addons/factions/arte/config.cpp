@@ -37,11 +37,7 @@ class CfgPatches {
             QCLASS(Jager_AT_Predef),
             QCLASS(Jager_LMG_Predef),
             QCLASS(Jager_Sniper_Predef),
-            QCLASS(Jager_Bismark_Predef),
-            QCLASS(ARTE_Warthog_LRV),
-            QCLASS(ARTE_Warthog_AT_LRV),
-            QCLASS(ARTE_Warthog_TD_LRV),
-            QCLASS(ARTE_Warthog_AA)
+            QCLASS(Jager_Bismark_Predef)
         };
         weapons[] = {
             QCLASS(Helmet_Base),

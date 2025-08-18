@@ -600,7 +600,11 @@ class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
 /////////////////////////////Black Ops Vest/////////////////////////////
 class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
     displayName = "[505th] Black Ops Vest";
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    scope = 0;
+    scopeCurator = 0;
+    scopeArsenal = 0;
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
 };
