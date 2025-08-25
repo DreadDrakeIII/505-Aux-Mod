@@ -16,7 +16,7 @@ class CfgPatches {
             "TKE_MD",
             "1st_MEU_patch_gear_facewear",
             "OPTRE_Misc_Objects",
-
+            "OPTRE_ACE_Compat"
         };
         units[] = {
             QCLASS(Marine_CE_Base),

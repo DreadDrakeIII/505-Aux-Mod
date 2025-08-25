@@ -14,6 +14,7 @@ class CfgMusic {
     MUSIC(Halo_FinishTheFight,"[Halo] Finish the Fight",147,Halo);
     MUSIC(Halo_LongNightOfSolace,"[Halo] Long Night Of Solace",706,Halo);
     MUSIC(Halo_NeverForget,"[Halo] Never Forget",187,Halo);
+    MUSIC(Heretic_Hero,"[Halo] Heretic Hero",266,Halo);
 
     // Video Games
     MUSIC(Helldivers_Main_Theme_HD,"[Helldivers] Main Theme HD",150,VideoGames);
@@ -49,11 +50,12 @@ class CfgMusic {
     MUSIC(The_Battle,"Gladiator - The Battle",602,Soundtracks);
     MUSIC(UnravelEPIC,"Unravel Epic",260,Soundtracks);
     MUSIC(VictoryandDeath,"Victory and Death",62,Soundtracks);
-    MUSIC(TENET_Trucks_in_Place,"TENET - Trucks in Place",332,Soundtracks);
-    MUSIC(TENET_Freeport,"TENET - Freeport",219,Soundtracks);
-    MUSIC(TENET_SATOR,"TENET - SATOR [Dread]",171,Soundtracks);
-    MUSIC(DUNE_Armada,"DUNE - Armada",309,Soundtracks);
-    MUSIC(DUNE_Herald_of_the_Change,"DUNE - Herald of the Change",301,Soundtracks);
+    MUSIC(TENET_Trucks_in_Place,"[TENET] - Trucks in Place",332,Soundtracks);
+    MUSIC(TENET_Freeport,"[TENET] - Freeport",219,Soundtracks);
+    MUSIC(TENET_SATOR,"[TENET] - SATOR [Dread]",171,Soundtracks);
+    MUSIC(DUNE_Armada,"[DUNE] - Armada",309,Soundtracks);
+    MUSIC(DUNE_Herald_of_the_Change,"[DUNE] - Herald of the Change",301,Soundtracks);
+    MUSIC(Metal_Frenzy,"[Battlefront 1] Metal Frenzy",705,Soundtracks);
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
