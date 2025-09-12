@@ -21,7 +21,8 @@ class CfgPatches {
             QCLASS(ARTE_Warthog_LRV),
             QCLASS(ARTE_Warthog_AT_LRV),
             QCLASS(ARTE_Warthog_TD_LRV),
-            QCLASS(ARTE_Warthog_AA)
+            QCLASS(ARTE_Warthog_AA),
+            QCLASS(Warthog_TT)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

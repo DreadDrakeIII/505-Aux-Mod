@@ -62,6 +62,10 @@ class CfgMusic {
     MUSIC(Helms_Deep,"[LotR] Helm's Deep",4372,Other);
     MUSIC(Urban_Warfare_Ambience,"Urban Warfare Ambience",3600,Other);
     MUSIC(D_Day_Drop_Band_of_Brothers,"[BoB] D Day Drop",265,Other);
+    MUSIC(Insurrection_Begins_Today,"Insurrection Begins Today (Full Speech)",120,Other);
+    MUSIC(Insurrection_Begins_Today_1,"Insurrection Begins Today (Speech PT1)",43,Other);
+    MUSIC(Insurrection_Begins_Today_2,"Insurrection Begins Today (Speech PT2)",38,Other);
+    MUSIC(Insurrection_Begins_Today_3,"Insurrection Begins Today (Speech PT3)",37,Other);
 
     // AOT OST
     MUSIC(Attack_on_Titan,"[AoT] Attack on Titan Standard",257,AOT);

@@ -12,4 +12,8 @@ SOUND_FX(Cave_Ambience,"[505th] Cave Ambience",9000);
 SOUND_FX(Bustling_Town_Ambience,"[505th] Town Ambience",5000);
 SOUND_FX(Self_Destruct_Sequence_30_sec,"[505th] Self Destruct",5000);
 SOUND_FX(Star_Trek_RED_ALERT,"[505th] Red Alert",5000);
+SOUND_FX(Insurrection_Begins_Today_1,"[505th] Insurrection Begins 1",200);
+SOUND_FX(Insurrection_Begins_Today_2,"[505th] Insurrection Begins 2",200);
+SOUND_FX(Insurrection_Begins_Today_3,"[505th] Insurrection Begins 3",200);
+SOUND_FX(Insurrection_Begins_Today,"[505th] Insurrection Begins Full",200);
 };
