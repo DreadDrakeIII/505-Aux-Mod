@@ -163,6 +163,7 @@ class CfgPatches {
             QCLASS(Jet_Pilot_Helmet),
             QCLASS(Heli_Pilot_Helmet),
             QCLASS(Heli_Crew_Helmet),
+            QCLASS(Heli_Pilot_Helmet_Tuna),
             QCLASS(BlackOps_Vest)
         };
         VERSION_CONFIG;

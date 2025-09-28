@@ -154,6 +154,15 @@ class CLASS(Heli_Pilot_Helmet): CLASS(505th_Heli_Pilot_Helmet_Base) {
     scopeArsenal = 2;
     displayName = "[505th] Heli Pilot Helmet";
 };
+class CLASS(Heli_Pilot_Helmet_Tuna): CLASS(505th_Heli_Pilot_Helmet_Base) {
+    author = "505th Aux Team";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    displayName = "[505th] Heli Pilot Helmet (Tuna)";
+    hiddenSelections[] = {"camo"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\pilot\Tuna_Helmet_co.paa)};
+};
 class CLASS(Heli_Crew_Helmet): CLASS(505th_Heli_Crew_Helmet_Base) {
     author = "505th Aux Team";
     scope = 2;

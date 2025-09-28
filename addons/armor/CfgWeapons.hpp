@@ -34,6 +34,7 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Heli Pilot Helmet (Base)";
+        hiddenSelections[] = {"camo"};
     };
 
     class H_CrewHelmetHeli_B;
@@ -41,6 +42,7 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Heli Crew Helmet (Base)";
+        hiddenSelections[] = {"camo"};
     };
 
     class TKE_UCMCHelmClosed;
