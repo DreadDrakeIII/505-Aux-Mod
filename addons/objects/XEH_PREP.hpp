@@ -1,1 +1,1 @@
-PREP(lockerInit);
+PREP(LockerInit);
