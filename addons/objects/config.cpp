@@ -14,7 +14,8 @@ class CfgPatches {
             QCLASS(AFB_Sign_1),
             QCLASS(OP_Sign_1),
             QCLASS(Flag_505th_Pole),
-            QCLASS(Flag_505th_Damaged_Pole)
+            QCLASS(Flag_505th_Damaged_Pole),
+            QCLASS(Marine_Locker)
         };
         weapons[] = {};
         VERSION_CONFIG;

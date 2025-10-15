@@ -62,4 +62,18 @@ class CfgVehicles {
             init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\505th_Damaged_co.paa));
         };
     };
+
+    class OPTRE_Furniture_Locker;
+    class CLASS(Marine_Locker): OPTRE_Furniture_Locker {
+        author = "505th Aux Team";
+        displayName = "505th Loadout Locker";
+        scope = 2;             // visible in editor
+        scopeCurator = 2;      // visible in Zeus
+        editorCategory = "EdCat_Objects";
+        editorSubcategory = "EdSubcat_Supplies";
+
+        class EventHandlers {
+            init = "_this call OLI_fnc_LockerInit;";
+        };
+    };
 };

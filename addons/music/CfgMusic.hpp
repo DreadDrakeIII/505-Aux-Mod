@@ -37,6 +37,7 @@ class CfgMusic {
     MUSIC(TWD_Clementine_Suite,"[TDW] Clementine Suite (Sad)",425,VideoGames);
     MUSIC(CoD_115,"[CoD] 115",226,VideoGames);
     MUSIC(Daredevil,"[AC7] Daredevil",321,VideoGames);
+    MUSIC(Cabal_Stomp,"[Destiny] Cabal Stomp",218,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);
@@ -56,6 +57,7 @@ class CfgMusic {
     MUSIC(DUNE_Armada,"[DUNE] - Armada",309,Soundtracks);
     MUSIC(DUNE_Herald_of_the_Change,"[DUNE] - Herald of the Change",301,Soundtracks);
     MUSIC(Metal_Frenzy,"[Battlefront 1] Metal Frenzy",705,Soundtracks);
+    MUSIC(Prelude_to_War,"[Battlestar] Prekude to War",502,Soundtracks);
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
@@ -66,6 +68,7 @@ class CfgMusic {
     MUSIC(Insurrection_Begins_Today_1,"Insurrection Begins Today (Speech PT1)",43,Other);
     MUSIC(Insurrection_Begins_Today_2,"Insurrection Begins Today (Speech PT2)",38,Other);
     MUSIC(Insurrection_Begins_Today_3,"Insurrection Begins Today (Speech PT3)",37,Other);
+    MUSIC(Goodbye_Song,"Goodbye Song",82,Other);
 
     // AOT OST
     MUSIC(Attack_on_Titan,"[AoT] Attack on Titan Standard",257,AOT);
