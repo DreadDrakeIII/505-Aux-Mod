@@ -6,7 +6,7 @@ params ["_locker"];
     ["OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -15,7 +15,7 @@ params ["_locker"];
     ["OPTRE_MA5CGL","OPTRE_BR45GL","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","WNZ_EMP40mm_Grenade_Magazine","ACE_40mm_Pike","1Rnd_9Bang_MEU_shell","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -24,7 +24,7 @@ params ["_locker"];
     ["Dmns_M33_T","OPTRE_M73","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -33,7 +33,7 @@ params ["_locker"];
     ["MEU_OPTRE_MRS10X","srifle_DMR_07_blk_F","OPTRE_M392_DMR","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_BR45_Scope","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -42,7 +42,7 @@ params ["_locker"];
     ["OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -51,7 +51,7 @@ params ["_locker"];
     ["OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMET_CorpsmanV2","OLI_CE_HELMET_Corpsman","OLI_Uniform_CE_Corpsman","OLI_Uniform_CE_Corpsman_Rolled","OLI_CE_Armour_Corpsman_Vest","OLI_CE_Armour_Corpsman_Vest_NSV2","OLI_CE_Armour_Corpsman_Vest_V2","OLI_CE_Armour_Corpsman_Vest_NS","OLI_CE_Armour_Corpsman_Vest_V2Pouch","OLI_CE_Armour_Corpsman_Vest_NSV2Pouch","OLI_CE_Armour_Corpsman_Vest_NSPouch","OLI_CE_Armour_Corpsman_Vest_Pouch","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -60,7 +60,7 @@ params ["_locker"];
     ["OPTRE_MA37K","OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMET_SLV2","OLI_CE_HELMET_SL","OLI_Uniform_CE_SL","OLI_Uniform_CE_SL_Rolled","OLI_CE_Armour_SL_Vest","OLI_CE_Armour_SL_Vest_NSV2","OLI_CE_Armour_SL_Vest_V2","OLI_CE_Armour_SL_Vest_NS","OLI_CE_Armour_SL_Vest_V2Pouch","OLI_CE_Armour_SL_Vest_NSV2Pouch","OLI_CE_Armour_SL_Vest_NSPouch","OLI_CE_Armour_SL_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -69,7 +69,7 @@ params ["_locker"];
     ["TKE_UCNPilotHelm_BASE","H_PilotHelmetHeli_B","H_CrewHelmetHeli_B","TKE_Rogue_UniformMDTFGrey_U_B","TKE_Rogue_UniformRolledMDTFGrey_U_B","hgun_PDW2000_F","OPTRE_M6D_Carbine_Black_F","SMG_05_F","OPTRE_M7","OPTRE_BMR_Laser"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -78,7 +78,7 @@ params ["_locker"];
     ["OPTRE_MA37K","OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_FieldCap_505th","OLI_CE_HELMET_PLV2","OLI_CE_HELMET_PL","OLI_Uniform_CE_PL","OLI_Uniform_CE_PL_Rolled","OLI_CE_Armour_PL_Vest","OLI_CE_Armour_PL_Vest_NSV2","OLI_CE_Armour_PL_Vest_V2","OLI_CE_Armour_PL_Vest_NS","OLI_CE_Armour_PL_Vest_V2Pouch","OLI_CE_Armour_PL_Vest_NSV2Pouch","OLI_CE_Armour_PL_Vest_NSPouch","OLI_CE_Armour_PL_Vest_Pouch","OLI_LR_Antenna_CE","OLI_BackpackLR_CE","OLI_BackpackLR_CE_505","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
 
@@ -88,7 +88,7 @@ params ["_locker"];
     ["OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
     this,
@@ -97,7 +97,7 @@ params ["_locker"];
     ["OPTRE_MA5C","OPTRE_BR45","OPTRE_M295_BMR","OPTRE_Commando","OPTRE_M6G","19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
     "true",
     {}
-];
+]; spawn Wbk_AddKit;
 
 [
   this,
@@ -106,9 +106,4 @@ params ["_locker"];
   ["19_UNSC_M6C","TKE_MDPistolBlack","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OPTRE_M7_Sight","OPTRE_BMR_Laser","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OLI_CE_HELMETV2","OLI_CE_HELMET","Rogue_CEUniform_U_B","Rogue_CEUniformRolled_U_B","OLI_CE_Armour_Vest","OLI_CE_Armour_Vest_NSV2","OLI_CE_Armour_Vest_V2","OLI_CE_Armour_Vest_NS","OLI_CE_Armour_Vest_V2Pouch","OLI_CE_Armour_Vest_NSV2Pouch","OLI_CE_Armour_Vest_NSPouch","OLI_CE_Armour_Vest_Pouch","OLI_Backpack_CE","OLI_Backpack_CE_505","OLI_Invisible_Backpack_CE","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F"],
   "true",
   {}
-];
-
-// Add WBK kits to locker
-{
-    [_locker, _x, true, {}] spawn Wbk_AddKit;
-} forEach _kits;
+]; spawn Wbk_AddKit;
