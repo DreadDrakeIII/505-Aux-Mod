@@ -1,6 +1,3 @@
-    _this = Marine_Locker
-*/
-
 params ["_locker"];
 [
     this,
