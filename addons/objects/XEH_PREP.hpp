@@ -1,1 +1,1 @@
-PREP(fnc_LockerInit);
+PREP(lockerInit);
