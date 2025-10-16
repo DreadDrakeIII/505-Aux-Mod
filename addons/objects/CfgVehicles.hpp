@@ -62,13 +62,4 @@ class CfgVehicles {
             init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\505th_Damaged_co.paa));
         };
     };
-
-    class TKE_SupplyCrateV2;
-    class CLASS(Marine_Loadout): TKE_SupplyCrateV2 {
-     SCOPE_PUBLIC;
-     author = AUTHOR;
-     displayName = "Marine Loadouts";
-     editorCategory = QEDCAT(Objects);
-     editorSubcategory = QEDSUBCAT(Flags);
-    };
 };

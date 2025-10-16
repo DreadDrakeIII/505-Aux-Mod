@@ -9,6 +9,7 @@ class CfgPatches {
             QCLASS(main),
             "OPTRE_UNSC_Structure_Signs",
             "TKE_Props",
+            "OPTRE_BW_Locker",
             "A3_Structures_F_Mil_Flags"
         };
         units[] = {
@@ -16,7 +17,8 @@ class CfgPatches {
             QCLASS(OP_Sign_1),
             QCLASS(Flag_505th_Pole),
             QCLASS(Flag_505th_Damaged_Pole),
-            QCLASS(Marine_Loadout)
+            QCLASS(Marine_Locker_Base),
+            QCLASS(Marine_Locker_CE)
         };
         weapons[] = {};
         VERSION_CONFIG;
