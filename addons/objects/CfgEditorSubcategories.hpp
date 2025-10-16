@@ -10,4 +10,8 @@ class CfgEditorSubcategories {
     class EDSUBCAT(Flags) {
         displayName = "Flags";
     };
+
+    class EDSUBCAT(Utility) {
+        displayName = "Utility";
+    };
 };

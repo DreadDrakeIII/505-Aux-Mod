@@ -63,14 +63,12 @@ class CfgVehicles {
         };
     };
 
-    class OPTRE_Furniture_Locker;
-    class CLASS(Marine_Locker): OPTRE_Furniture_Locker {
+    class TKE_SupplyCrateV2;
+    class CLASS(Marine_Loadout): TKE_SupplyCrateV2 {
      SCOPE_PUBLIC;
      author = AUTHOR;
-     displayName = "Marine Locker";
+     displayName = "Marine Loadouts";
      editorCategory = QEDCAT(Objects);
-     editorSubcategory = QEDSUBCAT(Utility)
-     
-        };
+     editorSubcategory = QEDSUBCAT(Flags);
     };
 };
