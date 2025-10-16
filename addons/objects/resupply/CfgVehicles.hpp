@@ -27,6 +27,15 @@ class CfgVehicles {
         ace_dragging_ignoreWeightCarry = TRUE;
     };
 
+    class CLASS(CE_Loadout): CLASS(Resupply_Base) {
+        displayName = "CE Loadout Crate";
+        model = "\TKE_Kuiper_Engagements\TKE_Props\TKE_SupplyCrate.p3d";
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {
+            "\TKE_Kuiper_Engagements\TKE_Props\data\TKE_SupplyCrate_co.paa"
+        };
+    };
+
     class CLASS(Resupply_SquadAmmo): CLASS(Resupply_Base) {
         displayName = "01: Ammo Crate (Squad)";
         hiddenSelections[] = {"camo"};
