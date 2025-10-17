@@ -17,8 +17,10 @@ class CfgPatches {
             QCLASS(OP_Sign_1),
             QCLASS(Flag_505th_Pole),
             QCLASS(Flag_505th_Damaged_Pole),
-            QCLASS(Marine_Locker_Base),
-            QCLASS(Marine_Locker_CE)
+            QCLASS(Console_Base),
+            QCLASS(Console_Permissions),
+            QCLASS(Utility_Arsenal),
+            QCLASS(Utility_FullHeal),
         };
         weapons[] = {};
         VERSION_CONFIG;
@@ -26,5 +28,4 @@ class CfgPatches {
 };
 
 #include "CfgVehicles.hpp"
-#include "CfgEditorSubcategories.hpp"
 #include "CfgEventHandlers.hpp"

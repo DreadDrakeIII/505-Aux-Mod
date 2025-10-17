@@ -1,0 +1,12 @@
+#define MENU_PAGE_HOME 0
+#define RANKMENU_PAGE_UNIFORMS 1
+
+#define LOADOUTMENU_PAGE_SQUAD 1
+#define LOADOUTMENU_PAGE_ROLE 2
+#define LOADOUTMENU_PAGE_WEAPONS 3
+
+
+#define LOADOUTS_RANKS_ENLISTED "PVT", "PFC", "LCpl", "Cpl"
+#define LOADOUTS_RANKS_NCO "Sgt", "SSgt", "GySgt", "MSgt", "1stSgt", "MGySgt", "SgtMaj", "SMMC"
+#define LOADOUTS_RANKS_OFFICER "WO", "CWO2", "CWO3", "CWO4", "CWO5", "2ndLt", "1stLt", "Capt", "Maj", "LTCol", "Col", "BGen", "MajGen", "LtGen", "Gen"
+#define LOADOUTS_RANKS_LIST [LOADOUTS_RANKS_ENLISTED, LOADOUTS_RANKS_NCO, LOADOUTS_RANKS_OFFICER]
