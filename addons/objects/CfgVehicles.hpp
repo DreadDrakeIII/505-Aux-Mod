@@ -86,7 +86,7 @@ class CfgVehicles {
 
         class UserActions {
             class Assign_Medic {
-                displayName = QUOTE(<t color='#c40000'><img image=QQPATHTOEF(core,data\ui\Medic_White_ca.paa)/> Assign Medic Permissions</t>);
+                displayName = QUOTE(<t color='#c40000'><img image=QQPATHTOEF(main,data\ui\Medic_White_ca.paa)/> Assign Medic Permissions</t>);
 
                 position = "camera";
                 radius = 3;
@@ -95,36 +95,95 @@ class CfgVehicles {
                 hideOnUse = TRUE;
                 priority = 100;
 
-                condition = QUOTE(!(ace_player call EFUNC(core,isMedic)));
-                statement = QUOTE([ARR_2(ace_player,1)] call EFUNC(core,setMedic));
+                condition = QUOTE(!(ace_player call EFUNC(main,isMedic)));
+                statement = QUOTE([ARR_2(ace_player,1)] call EFUNC(main,setMedic));
             };
             class Unassign_Medic: Assign_Medic {
-                displayName = QUOTE(<t color='#c40000'><img image=QQPATHTOEF(core,data\ui\Medic_White_ca.paa)/> Unassign Medic Permissions</t>);
-                condition = QUOTE(ace_player call EFUNC(core,isMedic));
-                statement = QUOTE([ARR_2(ace_player,0)] call EFUNC(core,setMedic));
+                displayName = QUOTE(<t color='#c40000'><img image=QQPATHTOEF(main,data\ui\Medic_White_ca.paa)/> Unassign Medic Permissions</t>);
+                condition = QUOTE(ace_player call EFUNC(main,isMedic));
+                statement = QUOTE([ARR_2(ace_player,0)] call EFUNC(main,setMedic));
             };
             class Assign_Engineer: Assign_Medic {
-                displayName = QUOTE(<t color='#f0be00'><img image=QQPATHTOEF(core,data\ui\EOD_White_ca.paa)/> Assign Engineer Permissions</t>);
-                condition = QUOTE(!(ace_player call EFUNC(core,isEngineer)));
-                statement = QUOTE([ARR_2(ace_player,2)] call EFUNC(core,setEngineer));
+                displayName = QUOTE(<t color='#f0be00'><img image=QQPATHTOEF(main,data\ui\EOD_White_ca.paa)/> Assign Engineer Permissions</t>);
+                condition = QUOTE(!(ace_player call EFUNC(main,isEngineer)));
+                statement = QUOTE([ARR_2(ace_player,2)] call EFUNC(main,setEngineer));
             };
             class Unassign_Engineer: Assign_Engineer {
-                displayName = QUOTE(<t color='#f0be00'><img image=QQPATHTOEF(core,data\ui\EOD_White_ca.paa)/> Unassign Engineer Permissions</t>);
-                condition = QUOTE(ace_player call EFUNC(core,isEngineer));
-                statement = QUOTE([ARR_2(ace_player,0)] call EFUNC(core,setEngineer));
+                displayName = QUOTE(<t color='#f0be00'><img image=QQPATHTOEF(main,data\ui\EOD_White_ca.paa)/> Unassign Engineer Permissions</t>);
+                condition = QUOTE(ace_player call EFUNC(main,isEngineer));
+                statement = QUOTE([ARR_2(ace_player,0)] call EFUNC(main,setEngineer));
             };
         };
     };
 
-    class CLASS(Utility_Arsenal): CLASS(Console_Base) {
+    class Land_Optican_Kiosk_sm;
+    class CLASS(Utility_FullHeal_Small): Land_Optican_Kiosk_sm {
         SCOPE_PUBLIC;
-        displayName = "Arsenal Terminal";
+        displayName = "Full Heal Station (Small)";
+        model = "\OPTRE_Buildings\CityObjects\Optican_Kiosk_sm";
+        editorPreview = "OPTRE_Misc\Image\OPTRE\Building\Land_Optican_Kiosk_sm.jpg";
+
+        // Editor Attributes
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Utility);
+
+        class UserActions {
+            class FullHeal {
+                displayName = "<t color='#c40000'><img image='z\ace\addons\zeus\ui\icon_module_zeus_heal_ca.paa'/> Recieve Treatment</t>";
+
+                position = "camera";
+                radius = 3;
+                onlyForPlayer = TRUE;
+
+                hideOnUse = FALSE;
+                priority = 100;
+
+                condition = "true";
+            };
+        };
+    };
+
+    class Land_Optican_Kiosk_lg;
+    class CLASS(Utility_FullHeal_Large): Land_Optican_Kiosk_lg {
+        SCOPE_PUBLIC;
+        displayName = "Full Heal Station (Large)";
+        model = "\OPTRE_Buildings\CityObjects\Optican_Kiosk_lg";
+        editorPreview = "OPTRE_Misc\Image\OPTRE\Building\Land_Optican_Kiosk_lg.jpg";
+
+        // Editor Attributes
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Utility);
+
+        class UserActions {
+            class FullHeal {
+                displayName = "<t color='#c40000'><img image='z\ace\addons\zeus\ui\icon_module_zeus_heal_ca.paa'/> Recieve Treatment</t>";
+
+                position = "camera";
+                radius = 3;
+                onlyForPlayer = TRUE;
+
+                hideOnUse = FALSE;
+                priority = 100;
+
+                condition = "true";
+            };
+        };
+    };
+
+    class OPTRE_Furniture_Locker;
+    class CLASS(Utility_Arsenal): OPTRE_Furniture_Locker {
+        SCOPE_PUBLIC;
+        displayName = "Arsenal Locker";
         model = "OPTRE_BW_Buildings\Furniture\Locker\Locker";
         editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_Locker.jpg";
 
+        // Editor Attributes
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Utility);
+
         class UserActions {
             class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(core,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
 
                 position = "camera";
                 radius = 3;
@@ -139,57 +198,13 @@ class CfgVehicles {
 
             class Arsenal_BIS: Arsenal_ACE {
                 // Bohemia Green, looks weird: #6BA539
-                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(core,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
+                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
                 statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
             };
 
             class Add_Radio: Arsenal_ACE {
                 displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
                 statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
-            };
-        };
-    };
-
-    class CLASS(Utility_FullHeal_Small): CLASS(Console_Base) {
-        SCOPE_PUBLIC;
-        displayName = "Full Heal Station (Small)";
-        model = "\OPTRE_Buildings\CityObjects\Optican_Kiosk_sm";
-        editorPreview = "OPTRE_Misc\Image\OPTRE\Building\Land_Optican_Kiosk_sm.jpg";
-
-        class UserActions {
-            class FullHeal {
-                displayName = "<t color='#c40000'><img image='z\ace\addons\zeus\ui\icon_module_zeus_heal_ca.paa'/> Recieve Treatment</t>";
-
-                position = "camera";
-                radius = 3;
-                onlyForPlayer = TRUE;
-
-                hideOnUse = FALSE;
-                priority = 100;
-
-                condition = "true";
-            };
-        };
-    };
-
-    class CLASS(Utility_FullHeal_Large): CLASS(Console_Base) {
-        SCOPE_PUBLIC;
-        displayName = "Full Heal Station (Large)";
-        model = "\OPTRE_Buildings\CityObjects\Optican_Kiosk_lg";
-        editorPreview = "OPTRE_Misc\Image\OPTRE\Building\Land_Optican_Kiosk_lg.jpg";
-
-        class UserActions {
-            class FullHeal {
-                displayName = "<t color='#c40000'><img image='z\ace\addons\zeus\ui\icon_module_zeus_heal_ca.paa'/> Recieve Treatment</t>";
-
-                position = "camera";
-                radius = 3;
-                onlyForPlayer = TRUE;
-
-                hideOnUse = FALSE;
-                priority = 100;
-
-                condition = "true";
             };
         };
     };

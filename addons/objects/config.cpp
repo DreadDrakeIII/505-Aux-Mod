@@ -20,7 +20,8 @@ class CfgPatches {
             QCLASS(Console_Base),
             QCLASS(Console_Permissions),
             QCLASS(Utility_Arsenal),
-            QCLASS(Utility_FullHeal),
+            QCLASS(Utility_FullHeal_Small),
+            QCLASS(Utility_FullHeal_Large)
         };
         weapons[] = {};
         VERSION_CONFIG;
