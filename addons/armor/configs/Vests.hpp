@@ -593,7 +593,7 @@ class CLASS(CE_Vest_FR_Rend): CLASS(CE_Marine_Vest_Base) {
     scopeCurator = 2;
     scopeArsenal = 2;
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Rend_Force_Recon_Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Rend_Force_Recon_Armor_co.paa)};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
