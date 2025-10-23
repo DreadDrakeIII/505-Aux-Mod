@@ -553,8 +553,8 @@ class CLASS(CE_Vest_Adamant_Pouches): CLASS(CE_Marine_Vest_Pouch_Base) {
 class CLASS(CE_Vest_Crawford): CLASS(CE_Marine_Vest_Base) {
     displayName = "[505th] Custom Armor (Crawford)";
     scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Anvil_Armor_co.paa)};
     class ItemInfo: ItemInfo {
@@ -565,8 +565,8 @@ scopeArsenal = 2;
 class CLASS(CE_Vest_Hoffman): CLASS(CE_Marine_Vest_Pouch_Base) {
     displayName = "[505th] Custom Armor (Hoffman)";
     scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Hoffman_Armor_co.paa),"\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
     class ItemInfo: ItemInfo {
@@ -586,6 +586,20 @@ class CLASS(CE_Vest_Oliver): CLASS(CE_Marine_Vest_Base) {
             vestType = "Rebreather";
         };
 };
+
+class CLASS(CE_Vest_FR_Rend): CLASS(CE_Marine_Vest_Base) {
+    displayName = "[505th] Custom Armor (Rend)";
+	scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+	hiddenSelections[] = {"camo","camo1"};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Rend_Force_Recon_Armour_co.paa)};
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};
+
 ///////////////////////////////Pilot Vest///////////////////////////////
 class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
     displayName = "[505th] Pilot Vest";
