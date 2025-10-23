@@ -587,7 +587,7 @@ class CLASS(CE_Vest_Oliver): CLASS(CE_Marine_Vest_Base) {
         };
 };
 
-class CLASS(CE_Vest_FR_Rend): CLASS(CE_Marine_Vest_Base) {
+class CLASS(CE_Vest_FR_Rend): CLASS(CE_Marine_VestV2_Base) {
     displayName = "[505th] Custom Armor (Rend)";
 	scope = 2;
     scopeCurator = 2;
