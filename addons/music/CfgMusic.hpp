@@ -38,6 +38,10 @@ class CfgMusic {
     MUSIC(CoD_115,"[CoD] 115",226,VideoGames);
     MUSIC(Daredevil,"[AC7] Daredevil",321,VideoGames);
     MUSIC(Cabal_Stomp,"[Destiny] Cabal Stomp",218,VideoGames);
+    MUSIC(Panic,"[LBP2] Panic",61,VideoGames);
+    MUSIC(Suspense,"[LBP2] Suspense",60,VideoGames);
+    MUSIC(Tension,"[LBP2] Tension",60,VideoGames);
+    MUSIC(Meanies,"[LBP2] Meanies",126,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);
@@ -58,6 +62,8 @@ class CfgMusic {
     MUSIC(DUNE_Herald_of_the_Change,"[DUNE] - Herald of the Change",301,Soundtracks);
     MUSIC(Metal_Frenzy,"[Battlefront 1] Metal Frenzy",705,Soundtracks);
     MUSIC(Prelude_to_War,"[Battlestar] Prekude to War",502,Soundtracks);
+    MUSIC(Denouement,"Denouement",296,Soundtracks);
+    MUSIC(Attack,"Attack",165,Soundtracks);
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
