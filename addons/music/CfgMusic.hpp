@@ -17,6 +17,8 @@ class CfgMusic {
     MUSIC(Heretic_Hero,"[Halo] Heretic Hero",266,Halo);
 
     // Video Games
+
+    //Hell Divers
     MUSIC(Helldivers_Main_Theme_HD,"[Helldivers] Main Theme HD",150,VideoGames);
     MUSIC(Helldivers_Mission_Select,"[Helldivers] Mission Select",400,VideoGames);
     MUSIC(Helldivers_Cyborg_Planet_Difficulty_1_4_HD,"[Helldivers] Cyborg Difficulty 1_4",237,VideoGames);
@@ -34,14 +36,34 @@ class CfgMusic {
     MUSIC(Helldivers_Illuminate_Great_Eye_Boss_Music_HD,"[Helldivers] Illuminate Boss Theme",379,VideoGames);
     MUSIC(Helldivers_Extraction_Theme,"[Helldivers] Extraction Theme",226,VideoGames);
     MUSIC(Helldivers_Credits_Theme_HD,"[Helldivers] Credits Theme",316,VideoGames);
+
+    // The Walking Dead
     MUSIC(TWD_Clementine_Suite,"[TDW] Clementine Suite (Sad)",425,VideoGames);
+
+    // Call of Duty
     MUSIC(CoD_115,"[CoD] 115",226,VideoGames);
+
+    // ACE Combat
     MUSIC(Daredevil,"[AC7] Daredevil",321,VideoGames);
+
+    // Destiny
     MUSIC(Cabal_Stomp,"[Destiny] Cabal Stomp",218,VideoGames);
+
+    // Little Big Planet 2
     MUSIC(Panic,"[LBP2] Panic",61,VideoGames);
     MUSIC(Suspense,"[LBP2] Suspense",60,VideoGames);
     MUSIC(Tension,"[LBP2] Tension",60,VideoGames);
     MUSIC(Meanies,"[LBP2] Meanies",126,VideoGames);
+
+    // Total War: Rome
+    MUSIC(TWR_ArabicVictory,"[TW] Arabic Victory",78,VideoGames);
+    MUSIC(TWR_Divinitus,"[TW] Divinitus",110,VideoGames);
+    MUSIC(TWR_EasternIntro,"[TW] Eastern Intro",90,VideoGames);
+    MUSIC(TWR_JourneyToRome,"[TW] Journey to Rome",139,VideoGames);
+    MUSIC(TWR_Mayhem,"[TW] Mayhem",219,VideoGames);
+    MUSIC(TWR_MeleeCafee,"[TW] Melee Cafee",173,VideoGames);
+    MUSIC(TWR_Mobilize,"[TW] Mobilize",116,VideoGames);
+    MUSIC(TWR_SoldiersChant,"[TW] Soldiers Chant",161,VideoGames);
 
     // Songs
     MUSIC(BURN,"Burn",202,Songs);

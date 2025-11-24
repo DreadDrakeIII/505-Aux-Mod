@@ -161,7 +161,7 @@ class CLASS(Heli_Crew_Helmet): CLASS(505th_Heli_Crew_Helmet_Base) {
     scopeArsenal = 2;
     displayName = "[505th] Heli Crew Helmet";
 };
-class CLASS(Tuna_Pilot_Helmet): H_PilotHelmetHeli_B {
+class CLASS(Tuna_Pilot_Helmet): CLASS(Heli_Pilot_Helmet) {
     author = "505th Aux Team";
     scope = 2;
     scopeCurator = 2;
@@ -169,6 +169,15 @@ class CLASS(Tuna_Pilot_Helmet): H_PilotHelmetHeli_B {
     displayName = "[505th] Custom Helmet (Tuna)";
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\pilot\Tuna_Helmet_co.paa)};
+};
+class CLASS(Malarkey_Pilot_Helmet): CLASS(Heli_Crew_Helmet) {
+    author = "505th Aux Team";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    displayName = "[505th] Custom Helmet (Malarkey)";
+    hiddenSelections[] = {"camo"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\pilot\Malarkey_Helmet_co.paa)};
 };
 ///////////////////Black Ops Helms///////////////////
 class CLASS(Black_Ops_Helmet): CLASS(505th_Black_Ops_Helmet_Base) {
