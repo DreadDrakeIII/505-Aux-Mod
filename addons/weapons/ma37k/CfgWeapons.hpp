@@ -2,41 +2,37 @@ class Mode_SemiAuto;
 class Mode_FullAuto;
 
 class CfgWeapons {
-
     class Rifle_Base_F;
-    class arifle_MX_Base_F: Rifle_Base_F {
+    class arifle_Mk20_F: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-
-    class OPTRE_MA5C: arifle_MX_Base_F {
+    class OPTRE_MA37K: arifle_Mk20_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
             class MuzzleSlot;
         };
 
-        class Single: Mode_SemiAuto {
-            class StandardSound;
-        };
-        class FullAuto: Mode_FullAuto {
-            class StandardSound;
-        };
+        class Single: Mode_SemiAuto {};
+        class FullAuto: Mode_FullAuto {};
     };
 
-    class CLASS(MA5C): OPTRE_MA5C {
+    class CLASS(MA37K): OPTRE_MA37K {
         SCOPE_PUBLIC;
         author = AUTHOR;
-        baseWeapon = QCLASS(MA5C);
+        baseWeapon = QCLASS(MA37K);
 
-        displayName = "[505th] MA5C Assault Rifle";
+        displayName = "[505th] MA37K Assault Rifle";
         descriptionShort = "General Purpose Assault Rifle • 7.62×51mm • 32Rnd Magazine";
-        picture = "\OPTRE_weapons\ar\icons\ma5c_icon.paa";
-        model = "\OPTRE_Weapons\AR\MA5C.p3d";
+        model = "\OPTRE_Weapons\MA37K\MA37K.p3d";
+        picture = "\OPTRE_Weapons\MA37K\icons\ma37k_icon.paa";
+        pictureMjolnirHud = "\OPTRE_Suit_Scripts\textures\weaponIcons\AssaultRifles\MA37K_icon.paa";
+        HUD_TotalPosibleBullet = 32;
         cartridgePos = "nabojnicestart";
         cartridgeVel = "nabojniceend";
 
-        modes[] = {"Single", "FullAuto"};
-        magazines[] = {QCLASS(32Rnd_762x51_Mag)};
+        modes[] = { "Single", "FullAuto" };
+        magazines[] = { QCLASS(32Rnd_762x51_Mag) };
         dispersion = 0.00029;
         maxZeroing = 400;
         discreteDistance[] = {50,100,200,300,400};
@@ -82,10 +78,6 @@ class CfgWeapons {
             aiRateOfFire = 2.0;
             aiRateOfFireDispersion = 1;
             aiRateOfFireDistance = 500;
-
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
         };
 
         class FullAuto: FullAuto {
@@ -104,11 +96,6 @@ class CfgWeapons {
             aiRateOfFire = 2.0;
             aiRateOfFireDispersion = 1;
             aiRateOfFireDistance = 500;
-
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
         };
     };
-
 };

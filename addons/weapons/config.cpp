@@ -9,8 +9,8 @@ class CfgPatches {
         requiredAddons[] = {
             QCLASS(main),
             "A3_Weapons_F",
-            "OPTRE_Weapons_Ammo"
-
+            "OPTRE_Weapons",
+            "OPTRE_ACE_Compat"
         };
         units[] = {};
         weapons[] = {};

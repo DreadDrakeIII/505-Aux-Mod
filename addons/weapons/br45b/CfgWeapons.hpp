@@ -1,14 +1,13 @@
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class Mode_Burst;
 
 class CfgWeapons {
-
     class Rifle_Base_F;
-    class arifle_MX_Base_F: Rifle_Base_F {
+    class arifle_Mk20_F: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-
-    class OPTRE_MA5C: arifle_MX_Base_F {
+    class OPTRE_BR45: arifle_Mk20_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
@@ -16,39 +15,41 @@ class CfgWeapons {
         };
 
         class Single: Mode_SemiAuto {
-            class StandardSound;
         };
         class FullAuto: Mode_FullAuto {
-            class StandardSound;
+        };
+        class Burst: Mode_Burst {
         };
     };
 
-    class CLASS(MA5C): OPTRE_MA5C {
+    class CLASS(BR45B): OPTRE_BR45 {
         SCOPE_PUBLIC;
         author = AUTHOR;
-        baseWeapon = QCLASS(MA5C);
+        baseWeapon = QCLASS(BR45B);
 
-        displayName = "[505th] MA5C Assault Rifle";
-        descriptionShort = "General Purpose Assault Rifle • 7.62×51mm • 32Rnd Magazine";
-        picture = "\OPTRE_weapons\ar\icons\ma5c_icon.paa";
-        model = "\OPTRE_Weapons\AR\MA5C.p3d";
+        displayName = "[505th] BR45B Battle Rifle";
+        descriptionShort = "Hi-Power Rifle • 9.5x40 • 32-round mag • Medium range";
+        picture = "\OPTRE_weapons\br\icons\br45_icon.paa";
         cartridgePos = "nabojnicestart";
         cartridgeVel = "nabojniceend";
 
-        modes[] = {"Single", "FullAuto"};
-        magazines[] = {QCLASS(32Rnd_762x51_Mag)};
+        modes[] = { "Single", "FullAuto", "Burst" };
+        magazines[] = { QCLASS(32Rnd_95x40_Mag) };
         dispersion = 0.00029;
-        maxZeroing = 400;
-        discreteDistance[] = {50,100,200,300,400};
-        discreteDistanceInitIndex = 0;
+        maxZeroing = 600;
+        discreteDistance[] = {100,200,300,400,500,600};
+        discreteDistanceInitIndex = 1;
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
-            mass = 75;
+            mass = 45;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
                     "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic"
+                    "OPTRE_M12_Optic",
+                    "Optre_Recon_Sight",
+                    "Optre_Recon_Sight_Red"
+
                 };
             };
 
@@ -74,18 +75,14 @@ class CfgWeapons {
             recoil = "recoil_single_trg";
             recoilProne = "recoil_single_prone_trg";
             minRange = 2;
-            minRangeProbab = 0.01;
-            midRange = 200;
-            midRangeProbab = 0.1;
-            maxRange = 400;
-            maxRangeProbab = 0.01;
+            minRangeProbab = 0.03;
+            midRange = 300;
+            midRangeProbab = 0.7;
+            maxRange = 600;
+            maxRangeProbab = 0.05;
             aiRateOfFire = 2.0;
             aiRateOfFireDispersion = 1;
             aiRateOfFireDistance = 500;
-
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
         };
 
         class FullAuto: FullAuto {
@@ -96,19 +93,33 @@ class CfgWeapons {
             recoil = "recoil_auto_trg";
             recoilProne = "recoil_auto_prone_trg";
             minRange = 2;
-            minRangeProbab = 0.01;
-            midRange = 200;
-            midRangeProbab = 0.1;
-            maxRange = 400;
-            maxRangeProbab = 0.01;
+            minRangeProbab = 0.03;
+            midRange = 300;
+            midRangeProbab = 0.7;
+            maxRange = 600;
+            maxRangeProbab = 0.05;
             aiRateOfFire = 2.0;
             aiRateOfFireDispersion = 1;
             aiRateOfFireDistance = 500;
+        };
 
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
+        class Burst: Burst {
+            displayName = "Burst";
+            burst = 3;
+            reloadTime = 0.075;
+            dispersion = 0.00085;
+            soundContinuous = 0;
+            recoil = "recoil_auto_trg";
+            recoilProne = "recoil_auto_prone_trg";
+            minRange = 2;
+            minRangeProbab = 0.03;
+            midRange = 300;
+            midRangeProbab = 0.7;
+            maxRange = 600;
+            maxRangeProbab = 0.05;
+            aiRateOfFire = 2.0;
+            aiRateOfFireDispersion = 1;
+            aiRateOfFireDistance = 500;
         };
     };
-
 };
