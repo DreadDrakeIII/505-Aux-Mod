@@ -66,10 +66,7 @@ class CfgWeapons {
             };
 
             class MuzzleSlot: MuzzleSlot {
-                compatibleItems[] = {
-                    "OPTRE_Ma5Suppressor",
-                    "OPTRE_M247a1_Flashhider"
-                };
+                compatibleItems[] = {};
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {

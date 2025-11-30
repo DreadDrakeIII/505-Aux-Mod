@@ -12,6 +12,7 @@ class CfgWeapons {
             class CowsSlot;
             class PointerSlot;
             class MuzzleSlot;
+            class UnderBarrelSlot;
         };
 
         class Single: Mode_SemiAuto {
@@ -64,6 +65,10 @@ class CfgWeapons {
                     "OPTRE_Ma5Suppressor",
                     "OPTRE_M247a1_Flashhider"
                 };
+            };
+
+            class UnderBarrelSlot: UnderBarrelSlot {
+                compatibleItems[] = {};
             };
         };
 
