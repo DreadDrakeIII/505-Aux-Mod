@@ -43,8 +43,10 @@ class CfgWeapons {
         // Tighter base dispersion for long-range accuracy (great range)
         dispersion = 0.00018;          // base dispersion (weapon)
         maxZeroing = 800;              // extended zeroing (great range)
-        discreteDistance[] = {100,200,300,400,600,800};
-        discreteDistanceInitIndex = 2; // default 300m
+        discreteDistance[] = {100,200,300,400,500,600,700,800};
+        discreteDistanceInitIndex = 0; // default 100m
+        maxRange=800;
+        maxRangeToHit=750;
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 85; // slightly heavier - hi-power rifle

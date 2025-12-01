@@ -47,6 +47,8 @@ class CfgWeapons {
         HUD_TotalPosibleBullet = 400;
         maxRecoilSway = 0.006;
         swayDecaySpeed = 1.5;
+        maxRange=600;
+        maxRangeToHit=580;
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 150;

@@ -40,6 +40,8 @@ class CfgWeapons {
         maxZeroing = 600;
         discreteDistance[] = {100,200,300,400,500,600};
         discreteDistanceInitIndex = 1;
+        maxRange=600;
+        maxRangeToHit=580;
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 45;

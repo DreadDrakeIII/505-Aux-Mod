@@ -34,9 +34,12 @@ class CfgWeapons {
         modes[] = { "Single", "FullAuto" };
 
         dispersion = 0.00029;
-        maxZeroing = 1600;
-        discreteDistance[] = {100,200,300,400,500,600};
+        maxZeroing = 1200;
+        discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200};
         discreteDistanceInitIndex = 0;
+        maxRange=1200;
+        maxRangeToHit=1150;
+
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 75;
