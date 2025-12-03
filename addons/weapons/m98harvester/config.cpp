@@ -9,12 +9,14 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_BR",
-            "OPTRE_JSRS_Sounds"
+            "OPTRE_Weapons_Sniper",
+            "OPTRE_ACE_Compat",
+            "OPTRE_JSRS_Sounds",
+            "OPTRE_Weapons_Ammo"
             };
 
         units[] = {};
-        weapons[] = { QCLASS(BR45B), QCLASS(BR45BGL) };
+        weapons[] = { QCLASS(M98_HARVESTER) };
         VERSION_CONFIG;
     };
 };

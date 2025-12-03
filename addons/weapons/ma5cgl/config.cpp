@@ -9,16 +9,17 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_BR",
+            "OPTRE_Weapons_AR",
             "OPTRE_JSRS_Sounds"
             };
 
         units[] = {};
-        weapons[] = { QCLASS(BR45B), QCLASS(BR45BGL) };
+        weapons[] = { QCLASS(MA5CGL) };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgWeapons.hpp"
-#include "CfgMagazines.hpp"
-#include "CfgMagazinesWells.hpp"
+// #include "CfgMagazines.hpp"
+#include "CfgSoundShaders.hpp"
+#include "CfgSoundSets.hpp"
