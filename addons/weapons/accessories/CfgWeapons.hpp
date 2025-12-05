@@ -5,7 +5,13 @@ class CfgWeapons
     class ItemCore;
     class InventoryFlashLightItem_Base_F;
 
-    // === EHB MEQ7 Attachment ===
+    // Scope base classes
+    class ace_xm157_prototype: ItemCore
+    {
+        class ItemInfo;
+    };
+
+    // === 505th MEQ7 Attachment ===
     class OPTRE_BMR_Laser: acc_pointer_IR {};
 
     class CLASS(MEQ7): acc_pointer_IR
@@ -139,6 +145,50 @@ class CfgWeapons
                 dotColor[] = {1000, 0, 0};    // Red dot color (very bright)
                 dotSize = 1;
                 isIR = 0;                     // NOT infrared, visible!
+            };
+        };
+    };
+
+    // === 505th Scopes ===
+    class CLASS(M98H_Scope): ace_xm157_prototype
+    {
+        author = AUTHOR;
+        SCOPE_PUBLIC;
+        baseWeapon = QCLASS(M98H_Scope);
+
+        displayName = "[505th] Oracle N-variant M98H Scope";
+        model = "\OPTRE_Weapons\Sniper\SRS99C_Scope.p3d";
+        picture = "\OPTRE_weapons\sniper\icons\scope2.paa";
+
+        class ItemInfo: ItemInfo
+        {
+            mass = 14;
+            optics = 1;
+            modelOptics = "\x\cba\addons\optics\cba_optic_big_100.p3d";
+
+            class OpticsModes
+            {
+                class lpvo
+                {
+                    opticsID = 1;
+                    useModelOptics = 1;
+                    opticsPPEffects[] = {"OpticsCHAbera1", "OpticsBlur1"};
+
+                    opticsZoomMin = "25 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomMax = "1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomInit = "1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+
+                    discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
+                    discreteDistanceInitIndex = 0;
+                    distanceZoomMin = 100;
+                    distanceZoomMax = 100;
+
+                    memoryPointCamera = "opticView";
+                    visionMode[] = {"Normal", "NVG", "TI"};
+                    opticsFlare = 1;
+                    opticsDisablePeripherialVision = 1;
+                    cameraDir = "";
+                };
             };
         };
     };

@@ -16,7 +16,8 @@ class CfgPatches {
         weapons[] = {
             QCLASS(LR_MEQ7_ATTACHMENT),
             QCLASS(FL_MEQ7_ATTACHMENT),
-            QCLASS(MEQ7)
+            QCLASS(MEQ7),
+            QCLASS(M98H_Scope)
         };
         VERSION_CONFIG;
     };

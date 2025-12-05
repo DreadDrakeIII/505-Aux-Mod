@@ -653,6 +653,84 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
+
+class CLASS(Marine_Davy_CE): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    displayName = "S.Davy";
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_Davy_CE);
+
+    identityTypes[] = {QCLASS(Davy)};
+
+    uniformClass = QCLASS(Uniform_CE_FR_Rolled);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformP_co.paa),
+        QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformT_CO.paa)
+    };
+
+    weapons[]= {
+        "OLI_M98_Harvester",
+        "OLI_M6G",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OLI_M98_Harvester",
+        "OLI_M6G",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_FR_Predef);
+};
+
+class CLASS(Marine_Kain_CE): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    displayName = "J.Kain";
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_Kain_CE);
+
+    identityTypes[] = {QCLASS(Kain)};
+
+    uniformClass = QCLASS(Uniform_CE);
+    weapons[]= {
+        "OPTRE_MA5C",
+        "OPTRE_M6G",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5C",
+        "OPTRE_M6G",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_Predef);
+};
 /////////////////////Crewman Units/////////////////////
 class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     SCOPE_PUBLIC;
