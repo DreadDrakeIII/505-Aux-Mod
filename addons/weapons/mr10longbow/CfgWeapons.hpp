@@ -38,6 +38,7 @@ class CfgWeapons {
 
         // Magazine: low capacity 15 rnd 9.5 VX2
         magazines[] = { QCLASS(15Rnd_95xVX2_Mag) };
+        magazineWell[] = { QCLASS(Magwell_MR10_LONGBOW) };
 
         // Tighter base dispersion for long-range accuracy (great range)
         dispersion = 0.00018;          // base dispersion (weapon)
@@ -80,20 +81,7 @@ class CfgWeapons {
         //
         class Single: Single {
             displayName = "Single";
-            reloadTime = 0.12;          // semi delay (comfortable semi follow-up)
-            dispersion = 0.00012;       // very tight for single shots at range
-            soundContinuous = 0;
-            recoil = "recoil_single_sdar";
-            recoilProne = "recoil_single_prone_sdar";
-            minRange = 10;
-            minRangeProbab = 0.05;
-            midRange = 400;
-            midRangeProbab = 0.9;
-            maxRange = 1200;
-            maxRangeProbab = 0.3;
-            aiRateOfFire = 4.0;
-            aiRateOfFireDispersion = 1;
-            aiRateOfFireDistance = 800;
+            reloadTime = 0.12;
 
             class StandardSound: StandardSound {
                 soundSetShot[] = {"DMR02_Shot_SoundSet","DMR02_tail_SoundSet","DMR02_InteriorTail_SoundSet"};

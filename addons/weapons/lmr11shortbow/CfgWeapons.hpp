@@ -5,7 +5,7 @@ class CfgWeapons {
     class OPTRE_LongRifle_Base: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-    class OPTRE_M392_DMR: OPTRE_LongRifle_Base {
+    class OPTRE_M393_DMR: OPTRE_LongRifle_Base {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
@@ -19,7 +19,7 @@ class CfgWeapons {
     // ================================
     // LMR11 Shortbow - Sniper Rifle
     // ================================
-    class CLASS(LMR11_SHORTBOW): OPTRE_M392_DMR {
+    class CLASS(LMR11_SHORTBOW): OPTRE_M393_DMR {
         SCOPE_PUBLIC;
         author = AUTHOR;
         baseWeapon = QCLASS(LMR11_SHORTBOW);
@@ -30,11 +30,15 @@ class CfgWeapons {
         picture = "\OPTRE_Weapons\DMR\icons\M395_Icon.paa";
         model = "\OPTRE_Weapons\DMR\M395.p3d";
 
+        hiddenSelections[] = {"camo","camo1","camo2"};
+        hiddenSelectionsTextures[] = {"optre_weapons\dmr\data\mainbody1_co.paa","optre_weapons\dmr\data\mainbody2_co.paa","optre_weapons\dmr\data\muzzle_co.paa"};
+
         // Behaviour / performance
         modes[] = { "Single" };
 
         // Magazine: low capacity 15 rnd 9.5 VX2
         magazines[] = { QCLASS(30Rnd_762x51_Mag) };
+        magazineWell[] = { QCLASS(Magwell_LMR11_SHORTBOW) };
 
         // Tighter base dispersion for long-range accuracy (great range)
         dispersion = 0.00018;          // base dispersion (weapon)
@@ -79,18 +83,6 @@ class CfgWeapons {
             displayName = "Single";
             reloadTime = 0.12;          // semi delay (comfortable semi follow-up)
             dispersion = 0.00012;       // very tight for single shots at range
-            soundContinuous = 0;
-            recoil = "recoil_single_sdar";
-            recoilProne = "recoil_single_prone_sdar";
-            minRange = 10;
-            minRangeProbab = 0.05;
-            midRange = 400;
-            midRangeProbab = 0.9;
-            maxRange = 1200;
-            maxRangeProbab = 0.3;
-            aiRateOfFire = 4.0;
-            aiRateOfFireDispersion = 1;
-            aiRateOfFireDistance = 800;
         };
     };
 };

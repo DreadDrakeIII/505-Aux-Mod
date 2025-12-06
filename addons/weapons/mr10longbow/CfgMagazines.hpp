@@ -10,8 +10,8 @@ class CfgMagazines {
         author = AUTHOR;
 
         displayName = "[505th] 9.5×VX2 15Rnd Mag";
-        displayNameShort = "9.5×VX2 • 15Rnd";
-        descriptionShort = "Low-capacity magazine • Hi-Power • 9.5×VX2 Ball";
+        displayNameShort = "9.5xVX2mm • 15Rnd";
+        descriptionShort = "Low-capacity magazine • 15Rnd 9.5xVX2mm Ball";
 
         model = "\A3\weapons_F\ammo\mag_univ.p3d";
         picture = "\A3\Weapons_F_Mark\Data\UI\M_338_CA.paa";

@@ -39,14 +39,7 @@ class CfgWeapons {
 
         // Magazine: low capacity 20 rnd 9.5 VX2
         magazines[] = { QCLASS(20Rnd_95xVX2_Mag) };
-
-        // Tighter base dispersion for long-range accuracy (great range)
-        dispersion = 0.00018;          // base dispersion (weapon)
-        maxZeroing = 800;              // extended zeroing (great range)
-        discreteDistance[] = {100,200,300,400,500,600,700,800};
-        discreteDistanceInitIndex = 0; // default 100m
-        maxRange=800;
-        maxRangeToHit=750;
+        magazineWell[] = { QCLASS(Magwell_VK78_COMMANDO) };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 85; // slightly heavier - hi-power rifle
@@ -78,46 +71,20 @@ class CfgWeapons {
             };
         };
 
-        //
-        // Semi (single shot) - accurate, used for long-range engagements
-        //
-        class Single: Single {
-            displayName = "Semi";
-            reloadTime = 0.12;          // semi delay (comfortable semi follow-up)
-            dispersion = 0.00012;       // very tight for single shots at range
-            soundContinuous = 0;
-            recoil = "recoil_single_sdar";
-            recoilProne = "recoil_single_prone_sdar";
-            minRange = 10;
-            minRangeProbab = 0.05;
-            midRange = 400;
-            midRangeProbab = 0.9;
-            maxRange = 1200;
-            maxRangeProbab = 0.3;
-            aiRateOfFire = 4.0;
-            aiRateOfFireDispersion = 1;
-            aiRateOfFireDistance = 800;
-        };
+            //
+            // Semi (single shot) - accurate, used for long-range engagements
+            //
+            class Single: Single {
+                displayName = "Semi";
+                reloadTime = 0.12;
+            };
 
-        //
-        // Full auto - slower cyclic rate to reflect "slower fire rate" spec
-        //
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-            reloadTime = 0.14;          // slower cyclic rate (~430–500 RPM depending on engine math)
-            dispersion = 0.00032;       // a bit wider in full auto
-            soundContinuous = 0;
-            recoil = "recoil_single_sdar";
-            recoilProne = "recoil_single_prone_sdar";
-            minRange = 0;
-            minRangeProbab = 0.01;
-            midRange = 200;
-            midRangeProbab = 0.6;
-            maxRange = 600;
-            maxRangeProbab = 0.05;
-            aiRateOfFire = 2.0;
-            aiRateOfFireDispersion = 1;
-            aiRateOfFireDistance = 400;
+            //
+            // Full auto - slower cyclic rate to reflect "slower fire rate" spec
+            //
+            class FullAuto: FullAuto {
+                displayName = "Full Auto";
+                reloadTime = 0.14;
         };
     };
 };

@@ -1,12 +1,12 @@
 class CfgMagazines {
     class CLASS(Mag_Base);
 
-    class CLASS(25Rnd_762x51_Mag): CLASS(Mag_Base) {
+    class CLASS(25Rnd_762xV7_Mag): CLASS(Mag_Base) {
         SCOPE_PUBLIC;
-        baseMagazine = QCLASS(25Rnd_762x51_Mag);
+        baseMagazine = QCLASS(25Rnd_762xV7_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 7.62xV7 25Rnd Mag";
+        displayName = "[EHB] 7.62xV7 25Rnd Mag";
         displayNameShort = "7.62×51mm 25Rnd";
         descriptionShort = "High-capacity magazine • 7.62×V7 Ball";
 

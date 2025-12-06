@@ -36,6 +36,7 @@ class CfgWeapons {
 
         modes[] = {"Single", "FullAuto"};
         magazines[] = {QCLASS(8Rnd_127x40_Mag)};
+        magazineWell[] = { QCLASS(Magwell_M6G) };
 
 
         class WeaponSlotsInfo: WeaponSlotsInfo {

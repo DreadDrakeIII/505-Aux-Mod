@@ -21,3 +21,4 @@ class CfgPatches {
 
 #include "CfgWeapons.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgMagazinesWells.hpp"

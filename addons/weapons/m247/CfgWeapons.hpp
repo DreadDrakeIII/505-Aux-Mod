@@ -30,25 +30,12 @@ class CfgWeapons {
         displayName = "[505th] M247 Heavy Machine Gun";
         descriptionShort = "Heavy Machine Gun • 9.5x40mm • 400Rnd box";
         picture = "\OPTRE_Weapons_MG\m247\data\icons\m247_icon.paa";
-        pictureMjolnirHud = "\OPTRE_Suit_Scripts\textures\weaponIcons\MachineGuns\M247_icon.paa";
         model = "\OPTRE_Weapons_MG\m247\M247.p3d";
-        cartridgePos = "nabojnicestart";
-        cartridgeVel = "nabojniceend";
-        deployedPivot = "bipod";
-        Eye = "OPTRE_EYE_HUD_AmmoCount_LMG";
-        Glasses = "OPTRE_GLASS_HUD_AmmoCount_LMG";
 
 
         modes[] = {"Single", "FullAuto"};
         magazines[] = {QCLASS(400Rnd_762x51_Box)};
-        maxZeroing = 600;
-        discreteDistance[] = {50,100,200,300,400,500,600};
-        discreteDistanceInitIndex = 1;
-        HUD_TotalPosibleBullet = 400;
-        maxRecoilSway = 0.006;
-        swayDecaySpeed = 1.5;
-        maxRange=600;
-        maxRangeToHit=580;
+        magazineWell[] = { QCLASS(Magwell_M247) };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 150;
@@ -86,5 +73,4 @@ class CfgWeapons {
             displayName = "Full Auto";
         };
     };
-
 };
