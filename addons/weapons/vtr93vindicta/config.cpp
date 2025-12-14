@@ -9,14 +9,13 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_MG_M73",
-            "OPTRE_JSRS_Sounds",
-            "OPTRE_ACE_Compat"
+            "WBK_SciFiWeaponary",
+            "OPTRE_ACE_Compat",
+            "OPTRE_JSRS_Sounds"
             };
+
         units[] = {};
-        weapons[] = {
-            QCLASS(M73)
-        };
+        weapons[] = {QCLASS(VTR93_VINDICTA)};
         VERSION_CONFIG;
     };
 };

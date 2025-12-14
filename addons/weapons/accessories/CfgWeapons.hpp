@@ -1,19 +1,25 @@
 class CfgWeapons
 {
-    // Parent classes from OPTRE
+    // Parent classes
     class acc_pointer_IR;
     class ItemCore;
+    class optic_Aco;
+    class muzzle_snds_acp;
     class InventoryFlashLightItem_Base_F;
+    class InventoryMuzzleItem_Base_F;
 
     // Scope base classes
-    class ace_xm157_prototype: ItemCore
-    {
+    class OPTRE_SRS99C_Scope: ItemCore {
         class ItemInfo;
     };
 
-    // === 505th MEQ7 Attachment ===
-    class OPTRE_BMR_Laser: acc_pointer_IR {};
+    class OPTRE_SRS99_Scope: optic_Aco {  // Fixed: was ItemCore, should be optic_Aco
+        class ItemInfo;
+    };
 
+    // ============================================
+    // === EHB MEQ7 Attachments
+    // ============================================
     class CLASS(MEQ7): acc_pointer_IR
     {
         author = AUTHOR;
@@ -21,7 +27,7 @@ class CfgWeapons
         baseWeapon = QCLASS(MEQ7);
 
         displayName = "[505th] MEQ7 Attachment";
-        descriptionShort = "MEQ7 IR, Visible Red Laser Pointer and Flashlight- Compatible with all weapons";
+        descriptionShort = "MEQ7 IR, Visible Red Laser Pointer and Flashlight - Compatible with all weapons";
         descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Infrared laser pointer";
 
         picture = "\OPTRE_Weapons\br\icons\laser.paa";
@@ -47,10 +53,7 @@ class CfgWeapons
         };
     };
 
-    // === Flashlight ===
-    class OPTRE_BMR_MEQ_Flashlight: acc_pointer_IR {};
-
-    class CLASS(FL_MEQ7_ATTACHMENT): ItemCore
+    class CLASS(FL_MEQ7_ATTACHMENT): acc_pointer_IR  // Fixed: was ItemCore
     {
         author = AUTHOR;
         SCOPE_HIDDEN;
@@ -83,8 +86,8 @@ class CfgWeapons
                 innerAngle = 5;
                 outerAngle = 100;
                 coneFadeCoef = 8;
-                position = "laser";           // Uses "laser" memory point
-                direction = "laser_dir";      // Uses "laser_dir" memory point
+                position = "laser";
+                direction = "laser_dir";
                 useFlare = 1;
                 flareSize = 1.4;
                 flareMaxDistance = 200;
@@ -104,9 +107,6 @@ class CfgWeapons
             };
         };
     };
-
-    // === Red Laser (from OPTRE config) ===
-    class OPTRE_BMR_Vis_Red_Laser: acc_pointer_IR {};
 
     class CLASS(LR_MEQ7_ATTACHMENT): acc_pointer_IR
     {
@@ -134,60 +134,197 @@ class CfgWeapons
 
             class Pointer
             {
-                irLaserPos = "laser";         // Uses "laser" memory point
-                irLaserEnd = "laser_dir";     // Uses "laser_dir" memory point
+                irLaserPos = "laser";
+                irLaserEnd = "laser_dir";
                 irDistance = 5;
-
-                // Red visible laser beam (from OPTRE config)
-                beamColor[] = {15, 0, 0};     // Red beam color
+                beamColor[] = {15, 0, 0};
                 beamMaxLength = 3000;
                 beamThickness = 0.25;
-                dotColor[] = {1000, 0, 0};    // Red dot color (very bright)
+                dotColor[] = {1000, 0, 0};
                 dotSize = 1;
-                isIR = 0;                     // NOT infrared, visible!
+                isIR = 0;
             };
         };
     };
 
-    // === 505th Scopes ===
-    class CLASS(M98H_Scope): ace_xm157_prototype
+    // ============================================
+    // === EHB Suppressors
+    // ============================================
+    class CLASS(M98H_Suppressor): muzzle_snds_acp
     {
         author = AUTHOR;
         SCOPE_PUBLIC;
-        baseWeapon = QCLASS(M98H_Scope);
+        baseWeapon = QCLASS(M98H_Suppressor);
 
-        displayName = "[505th] Oracle N-variant M98H Scope";
+        displayName = "[505th] M98H Suppressor";
+        descriptionShort = "M98H Anti-Material Rifle Suppressor";
+        picture = "\OPTRE_weapons\smg\icons\silencer.paa";
+        model = "\OPTRE_Weapons\Sniper\SRS99D_Sup.p3d";
+
+        inertia = 0.2;
+
+        class ItemInfo: InventoryMuzzleItem_Base_F
+        {
+            mass = 20;
+
+            class MagazineCoef
+            {
+                initSpeed = 1;
+            };
+
+            class AmmoCoef
+            {
+                hit = 1;
+                typicalSpeed = 1;
+                airFriction = 1;
+                visibleFire = 0.5;
+                audibleFire = 0.3;
+                visibleFireTime = 0.5;
+                audibleFireTime = 0.5;
+                cost = 1;
+            };
+
+            muzzleEnd = "zaslehPoint";
+            alternativeFire = "OPTRE_muzzleFlash_suppressed";
+            soundTypeIndex = 1;
+
+            class MuzzleCoef
+            {
+                dispersionCoef = 0.9;
+                artilleryDispersionCoef = 1;
+                fireLightCoef = 0.1;
+                recoilCoef = 0.85;
+                recoilProneCoef = 0.85;
+                minRangeCoef = 1; minRangeProbabCoef = 1;
+                midRangeCoef = 1; midRangeProbabCoef = 1;
+                maxRangeCoef = 1; maxRangeProbabCoef = 1;
+            };
+        };
+    };
+
+    // ============================================
+    // === EHB Scopes
+    // ============================================
+    class CLASS(VTR_Scope): OPTRE_SRS99C_Scope
+    {
+        author = AUTHOR;
+        SCOPE_PUBLIC;
+        baseWeapon = QCLASS(VTR_Scope);
+
+        displayName = "[505th] VTR Scope";
         model = "\OPTRE_Weapons\Sniper\SRS99C_Scope.p3d";
         picture = "\OPTRE_weapons\sniper\icons\scope2.paa";
+
+        weaponInfoType = "CBA_ScriptedOptic_zooming";
+        modelOptics = "\x\cba\addons\optics\cba_optic_big_100.p3d";
 
         class ItemInfo: ItemInfo
         {
             mass = 14;
             optics = 1;
+            opticType = 2;
             modelOptics = "\x\cba\addons\optics\cba_optic_big_100.p3d";
 
             class OpticsModes
             {
-                class lpvo
+                class Snip
                 {
                     opticsID = 1;
                     useModelOptics = 1;
+                    opticsDisplayName = "WFOV";
+
+                    memoryPointCamera = "eye2";
+                    cameraDir = "";
+
                     opticsPPEffects[] = {"OpticsCHAbera1", "OpticsBlur1"};
-
-                    opticsZoomMin = "25 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-                    opticsZoomMax = "1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-                    opticsZoomInit = "1 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-
-                    discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
-                    discreteDistanceInitIndex = 0;
-                    distanceZoomMin = 100;
-                    distanceZoomMax = 100;
-
-                    memoryPointCamera = "opticView";
-                    visionMode[] = {"Normal", "NVG", "TI"};
                     opticsFlare = 1;
                     opticsDisablePeripherialVision = 1;
-                    cameraDir = "";
+
+                    opticsZoomInit = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomMax = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomMin = "25 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+
+                    discreteDistance[] = {100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1125,1150,1175,1200,1225,1250,1275,1300,1325,1350,1375,1400,1425,1450,1475,1500,1525,1550,1575,1600,1625,1650,1675,1700,1725,1750,1775,1800,1825,1850,1875,1900,1925,1950,1975,2000,2025,2050,2075,2100,2125,2150,2175,2200,2225,2250,2275,2300,2325,2350,2375,2400,2425,2450,2475,2500};
+                    discreteDistanceInitIndex = "0 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelperZeroing')";
+                    distanceZoomMin = 100;
+                    distanceZoomMax = 2000;
+
+                    visionMode[] = {"Normal", "NVG", "TI"};
+                    thermalMode[] = {0, 1};
+                };
+            };
+        };
+
+        class CBA_ScriptedOptic
+        {
+            minMagnificationReticleScale[] = {5, 0.9};
+            maxMagnificationReticleScale[] = {25, 4.5};
+
+            reticleDetailTextures[] =
+            {
+                {0, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_5_bar_ca.paa), 1, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_5_illum_ca.paa)},
+                {10, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_10_bar_ca.paa), 0.5, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_10_illum_ca.paa)},
+                {15, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_15_bar_ca.paa), 0.33333334, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_15_illum_ca.paa)},
+                {20, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_20_bar_ca.paa), 0.25, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_20_illum_ca.paa)},
+                {25, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_25_bar_ca.paa), 0.2, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_25_illum_ca.paa)}
+            };
+
+            manualReticleNightSwitch = 1;
+            reticleSafezoneSize = 0.8;
+        };
+    };
+
+    class CLASS(M98HA_Scope): OPTRE_SRS99_Scope
+    {
+        author = AUTHOR;
+        SCOPE_PUBLIC;
+        baseWeapon = QCLASS(M98HA_Scope);
+
+        displayName = "[505th] M98H Argus Scope";
+        model = "\OPTRE_Weapons\Sniper\SRS99D_Scope.p3d";
+        picture = "\OPTRE_weapons\sniper\icons\scope.paa";
+
+        // Original OPTRE style
+        weaponInfoType = "RscOptics_nightstalker";
+        modelOptics = "\OPTRE_Weapons\Sniper\SRS99D_Scope.p3d";
+
+        selectionFireAnim = "";
+        fireAnim = "";
+
+        class ItemInfo: ItemInfo
+        {
+            mass = 14;
+            optics = 1;
+            opticType = 1;
+            modelOptics = "\OPTRE_Weapons\Sniper\SRS99D_Scope.p3d";
+
+            class OpticsModes
+            {
+                class SRS99_Scope_View
+                {
+                    opticsID = 1;
+                    useModelOptics = 1;
+
+                    opticsZoomMin = 0.01;
+                    opticsZoomMax = 0.25;
+                    opticsZoomInit = 0.25;
+
+                    discretefov[] = {0.25, 0.05, 0.025, 0.01};
+                    discreteinitIndex = 0;
+
+                    discreteDistance[] = {100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1125,1150,1175,1200,1225,1250,1275,1300,1325,1350,1375,1400,1425,1450,1475,1500,1525,1550,1575,1600,1625,1650,1675,1700,1725,1750,1775,1800,1825,1850,1875,1900,1925,1950,1975,2000,2025,2050,2075,2100,2125,2150,2175,2200,2225,2250,2275,2300,2325,2350,2375,2400,2425,2450,2475,2500};
+                    discreteDistanceInitIndex = "0 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelperZeroing')";
+                    distanceZoomMin = 100;
+                    distanceZoomMax = 2000;
+
+                    memoryPointCamera = "opticView";
+                    modelOptics[] = {"\OPTRE_Weapons\Sniper\Sniper_Oracle10_Optic"};
+                    opticsPPEffects[] = {"OpticsCHAbera1", "OpticsBlur1"};
+
+                    visionMode[] = {"Normal", "NVG", "TI"};
+                    thermalMode[] = {0, 1};
+                    opticsFlare = 1;
+                    opticsDisablePeripherialVision = 1;
                 };
             };
         };

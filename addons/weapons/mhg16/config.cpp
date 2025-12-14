@@ -9,13 +9,13 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_MG_M73",
+            "TKE_Weapons_handgun_mhg16",
             "OPTRE_JSRS_Sounds",
             "OPTRE_ACE_Compat"
             };
         units[] = {};
         weapons[] = {
-            QCLASS(M73)
+            QCLASS(MHG16)
         };
         VERSION_CONFIG;
     };

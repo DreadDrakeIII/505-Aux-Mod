@@ -40,14 +40,6 @@ class CfgWeapons {
         magazines[] = { QCLASS(15Rnd_95xVX2_Mag) };
         magazineWell[] = { QCLASS(Magwell_MR10_LONGBOW) };
 
-        // Tighter base dispersion for long-range accuracy (great range)
-        dispersion = 0.00018;          // base dispersion (weapon)
-        maxZeroing = 1800;              // extended zeroing (great range)
-        discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800};
-        discreteDistanceInitIndex = 0; // default 100m
-        maxRange=1800;
-        maxRangeToHit=1750;
-
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 130; // slightly heavier - hi-power long-range rifle
 

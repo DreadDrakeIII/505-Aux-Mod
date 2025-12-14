@@ -724,10 +724,10 @@ class CLASS(Marine_Kain_CE): CLASS(Marine_CE_Base) {
     };
 
     linkedItems[] = {
-        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET), QCLASS(CE_Vest_Kain), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET), QCLASS(CE_Vest_Kain), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Backpack_Predef);
 };
