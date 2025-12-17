@@ -1,5 +1,5 @@
 // ============================================================================
-// EHB Gears - Stealth Balaclava with OPTRE HUD
+// 505th Gears - Stealth Balaclava with OPTRE HUD
 // ============================================================================
 // Balaclava stays visible + OPTRE HUD overlay appears on screen
 // Both at the same time!
@@ -49,5 +49,16 @@ class CfgGlasses {
         ACE_Protection = 1;
         ACE_Resistance = 2;
         ACE_TintAmount = 0;
+    };
+
+    class CLASS(DAVY_MASK): CLASS(Stealth_Balaclava) {
+        displayName = "[505th] DAVY Mask with google";
+
+
+        hiddenSelections[] = {"camo1","camo2"};
+        hiddenselectionsTextures[] = {
+            QPATHTOF(textures\masks\davy_mask_co.paa),
+            "\A3\Characters_F\Heads\Glasses\data\g_combat_ca.paa"
+        };
     };
 };

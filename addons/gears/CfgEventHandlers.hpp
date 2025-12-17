@@ -1,5 +1,5 @@
 // ============================================================================
-// EHB Gears - CBA Extended Event Handlers
+// 505th Gears - CBA Extended Event Handlers
 // ============================================================================
 
 class Extended_PreStart_EventHandlers {

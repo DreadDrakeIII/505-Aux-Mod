@@ -52,7 +52,8 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    QCLASS(M98HA_Scope)
+                    QCLASS(M98HA_Scope),
+                    QCLASS(VTR_Scope)
                 };
             };
 

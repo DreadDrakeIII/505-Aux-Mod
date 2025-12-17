@@ -4,6 +4,7 @@ class CfgOptreHudSchemes {
         class MainDialogs {
             // Register our mask with OPTRE HUD system
             CLASS(Stealth_Balaclava) = "OPTRE_MarrineGlasses_black";
+            CLASS(DAVY_MASK) = "OPTRE_MarrineGlasses_black";
         };
     };
 };

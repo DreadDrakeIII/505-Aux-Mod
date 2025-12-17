@@ -13,7 +13,10 @@ class CfgWeapons {
             class UnderBarrelSlot;
         };
 
-        class Single: Mode_SemiAuto {};
+        class Single: Mode_SemiAuto {
+            class StandardSound;
+            class SilencedSound;
+        };
     };
 
     // ================================
@@ -75,6 +78,25 @@ class CfgWeapons {
             displayName = "Single";
             reloadTime = 0.12;          // semi delay (comfortable semi follow-up)
             dispersion = 0.00012;       // very tight for single shots at range
+            class StandardSound: StandardSound {
+                closure1[] = {};
+                closure2[] = {};
+                begin1[] = {"\OPTRE_Weapons\DMR\Data\sounds\DMR_1.ogg",2.5,1,1500};
+                soundSetShot[] = {"jsrs_rifle_shake_soundset","jsrs_mar10_shot_soundset","jsrs_mk18_shell_soundset","jsrs_7x62mm_reflector_soundset"};
+                soundClosure[] = {"closure1",0.5,"closure2",0.5};
+                weaponSoundEffect = "DefaultRifle";
+            };
+            class SilencedSound: SilencedSound {
+                begin1[] = {"A3\Sounds_F\arsenal\weapons\Rifles\MX\Silencer_Mx_short_01",0.794328,1,400};
+                begin2[] = {"A3\Sounds_F\arsenal\weapons\Rifles\MX\Silencer_Mx_short_02",0.794328,1,400};
+                begin3[] = {"A3\Sounds_F\arsenal\weapons\Rifles\MX\Silencer_Mx_short_03",0.794328,1,400};
+                closure1[] = {};
+                closure2[] = {};
+                soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin1",0.34};
+                soundClosure[] = {"closure1",0.5,"closure2",0.5};
+                SoundSetShot[] = {"jsrs_rifle_shake_soundset","jsrs_mar10_shot_silenced_soundset","jsrs_mk18_shell_soundset","jsrs_7x62mm_sd_reflector_soundset"};
+                weaponSoundEffect = "DefaultRifle";
+            };
         };
     };
 };

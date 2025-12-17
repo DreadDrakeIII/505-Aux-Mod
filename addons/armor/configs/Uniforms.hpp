@@ -195,6 +195,21 @@ scopeArsenal = 2;
 		mass = 40;
 	};
 };
+class CLASS(Doc_Uniform_CE): CLASS(Uniform_CE_Base) {
+author = "505th Aux Team";
+displayName = "[505th] Custom Uniform (Doc)";
+uniformType = "Neopren";
+scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
+	class ItemInfo: UniformItem
+	{
+		uniformClass = QCLASS(Marine_Doc_CE);
+        uniformType = "Neopren";
+		containerClass = "Supply150";
+		mass = 40;
+	};
+};
 /////////////////////Pilot Uniform/////////////////////
 class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
    SCOPE_PUBLIC;

@@ -731,6 +731,48 @@ class CLASS(Marine_Kain_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Backpack_Predef);
 };
+
+class CLASS(Marine_Doc_CE): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_Doc_CE);
+
+    identityTypes[] = {QCLASS(Doc)};
+
+    displayName = "J.Doc";
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    uniformClass = QCLASS(Doc_Uniform_CE);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\uniforms\ce\custom\Doc_UniformP_co.paa),
+        QPATHTOF(data\uniforms\ce\custom\Doc_UniformT_co.paa)
+        };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Vest_Doc), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Vest_Doc), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Rifleman_Backpack_Predef);
+};
 /////////////////////Crewman Units/////////////////////
 class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
     SCOPE_PUBLIC;

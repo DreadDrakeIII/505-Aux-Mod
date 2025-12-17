@@ -600,13 +600,26 @@ class CLASS(CE_Vest_Kain): CLASS(CE_Marine_Vest_Base) {
         };
 };
 
-class CLASS(CE_Vest_FR_Davy): CLASS(CE_Marine_VestV2_Base) {
+class CLASS(CE_Vest_FR_Davy): CLASS(CE_Marine_Vest_NSV2_Base) {
     displayName = "[505th] Custom Armor (Rend)";
 	scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
 	hiddenSelections[] = {"camo","camo1"};
 	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Davy_FR_Armor_co.paa)};
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};
+
+class CLASS(CE_Vest_Doc): CLASS(CE_Marine_Vest_Base) {
+    displayName = "[505th] Custom Armor (Doc)";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Doc_Armor_co.paa)};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
