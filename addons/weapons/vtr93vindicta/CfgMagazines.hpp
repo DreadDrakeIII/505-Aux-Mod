@@ -20,7 +20,7 @@ class CfgMagazines {
         ammo = QCLASS(127x108_HDUR);
 
         count = 10;                // doluble-cap
-        initSpeed = 1800;           // muzzle velocity (m/s)
+        initSpeed = 980;           // muzzle velocity (m/s)
         tracersEvery = 0;
         lastRoundsTracer = 2;
         mass = 14;                 // slightly heavier round

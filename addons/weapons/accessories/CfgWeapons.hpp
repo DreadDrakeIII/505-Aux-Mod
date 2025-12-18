@@ -2,23 +2,22 @@ class CfgWeapons
 {
     // Parent classes
     class acc_pointer_IR;
-    class ItemCore;
     class optic_Aco;
     class muzzle_snds_acp;
     class InventoryFlashLightItem_Base_F;
     class InventoryMuzzleItem_Base_F;
 
     // Scope base classes
-    class OPTRE_SRS99C_Scope: ItemCore {
+    class OPTRE_SRS99C_Scope: optic_Aco {
         class ItemInfo;
     };
 
-    class OPTRE_SRS99_Scope: optic_Aco {  // Fixed: was ItemCore, should be optic_Aco
+    class OPTRE_SRS99_Scope: optic_Aco {
         class ItemInfo;
     };
 
     // ============================================
-    // === EHB MEQ7 Attachments
+    // === 505th MEQ7 Attachments
     // ============================================
     class CLASS(MEQ7): acc_pointer_IR
     {
@@ -53,7 +52,7 @@ class CfgWeapons
         };
     };
 
-    class CLASS(FL_MEQ7_ATTACHMENT): acc_pointer_IR  // Fixed: was ItemCore
+    class CLASS(FL_MEQ7_ATTACHMENT): acc_pointer_IR
     {
         author = AUTHOR;
         SCOPE_HIDDEN;
@@ -148,7 +147,7 @@ class CfgWeapons
     };
 
     // ============================================
-    // === EHB Suppressors
+    // === 505th Suppressors
     // ============================================
     class CLASS(M98H_Suppressor): muzzle_snds_acp
     {
@@ -203,7 +202,7 @@ class CfgWeapons
     };
 
     // ============================================
-    // === EHB Scopes
+    // === 505th Scopes
     // ============================================
     class CLASS(VTR_Scope): OPTRE_SRS99C_Scope
     {

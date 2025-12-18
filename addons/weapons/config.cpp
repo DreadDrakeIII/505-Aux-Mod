@@ -5,7 +5,7 @@ class CfgPatches {
         author = AUTHOR;
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
-        addonRootClass = QCLASS(main);  // 🔹 optional but good practice
+        addonRootClass = QCLASS(main);
         requiredAddons[] = {
             QCLASS(main),
             "A3_Weapons_F",

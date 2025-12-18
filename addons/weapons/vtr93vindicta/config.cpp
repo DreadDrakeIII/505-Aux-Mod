@@ -9,9 +9,7 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "WBK_SciFiWeaponary",
-            "OPTRE_ACE_Compat",
-            "OPTRE_JSRS_Sounds"
+            "WBK_SciFiWeaponary"
             };
 
         units[] = {};

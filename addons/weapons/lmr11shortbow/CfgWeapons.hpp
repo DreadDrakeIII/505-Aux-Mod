@@ -76,8 +76,7 @@ class CfgWeapons {
         //
         class Single: Single {
             displayName = "Single";
-            reloadTime = 0.12;          // semi delay (comfortable semi follow-up)
-            dispersion = 0.00012;       // very tight for single shots at range
+
             class StandardSound: StandardSound {
                 closure1[] = {};
                 closure2[] = {};

@@ -27,7 +27,7 @@ class CfgMagazines {
 
         // Magazine properties
         count = 5;                     // 5 rounds (anti-material standard)
-        initSpeed = 1400;              // very fast muzzle velocity
+        initSpeed = 2000;              // very fast muzzle velocity
         tracersEvery = 0;              // no tracers (armor-piercing rounds)
         lastRoundsTracer = 0;          // no tracer rounds
         mass = 8;                      // weight in kg
@@ -45,7 +45,7 @@ class CfgMagazines {
         descriptionShort = "Anti-Material Magazine • HVAP Rounds • Balanced Penetration • 5 Rounds";
 
         ammo = QCLASS(147x114_HVAP);
-        initSpeed = 1300;               // balanced velocity (slightly slower than APFSDS)
+        initSpeed = 1800;               // balanced velocity (slightly slower than APFSDS)
         mass = 8;
     };
 
@@ -58,7 +58,7 @@ class CfgMagazines {
         descriptionShort = "Anti-Material Magazine • HEDP Rounds • Explosive Payload • 5 Rounds";
 
         ammo = QCLASS(147x114_HEDP);
-        initSpeed = 1300;               // same velocity as HVAP
+        initSpeed = 1800;               // same velocity as HVAP
         mass = 12;                      // slightly heavier due to explosive payload
     };
 };

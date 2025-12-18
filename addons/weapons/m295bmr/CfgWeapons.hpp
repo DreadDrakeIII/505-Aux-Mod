@@ -7,7 +7,6 @@ class CfgWeapons {
         class WeaponSlotsInfo;
     };
 
-    // --- Base OPTRE class ---
     class OPTRE_M295_BMR: srifle_EBR_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
@@ -18,7 +17,6 @@ class CfgWeapons {
         class FullAuto: Mode_FullAuto {};
     };
 
-    // --- EHB custom version ---
     class CLASS(M295_BMR): OPTRE_M295_BMR {
         SCOPE_PUBLIC;
         author = AUTHOR;

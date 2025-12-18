@@ -42,7 +42,7 @@ class CfgVehicles {
         maxSpeed = 120;
         enginePower = 412;
 
-        hiddenSelections[] ={"Camo1","Camo2","camo3"};
+        hiddenSelections[] ={"Camo1","Camo2","camo3",};
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Kuz_co.paa),

@@ -10,7 +10,6 @@ class CfgMagazines {
         displayNameShort = "400Rnd 7.62x51mm Box";
         descriptionShort = "400 Rounds Box • 7.62x51mm Ball";
 
-        // Keep vanilla OPTRE models
         model = "\OPTRE_Weapons\ammoPacketsV2\data\7.62x51\762x51_100rnd.p3d";
         modelSpecial = "\OPTRE_Weapons_MG\m247\M247_Mag_Proxy.p3d";
         picture = "\OPTRE_Weapons_MG\m247\data\icons\magazine.paa";

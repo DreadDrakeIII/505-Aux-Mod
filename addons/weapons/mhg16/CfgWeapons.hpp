@@ -28,9 +28,7 @@ class CfgWeapons {
             };
 
             class PointerSlot: PointerSlot {
-                class CompatibleItems {
-                    ATTACHMENTS_POINTER_BASE
-                };
+                class CompatibleItems {};
             };
 
             class MuzzleSlot: MuzzleSlot {

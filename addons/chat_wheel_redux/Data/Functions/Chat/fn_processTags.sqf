@@ -4,17 +4,14 @@ _message call CWR_fnc_devLog;
 _message = switch (true) do {
     case ("[distance]" in _message): {
         [_message] spawn CWR_OpenDistanceMenu;
-        _message;
     };
 
     case ("[status]" in _message): {
         [_message] spawn CWR_OpenStatusMenu;
-        _message;
     };
 
     case ("[enemy]" in _message): {
         [_message] spawn CWR_OpenEnemyMenu;
-        _message;
     };
 
 

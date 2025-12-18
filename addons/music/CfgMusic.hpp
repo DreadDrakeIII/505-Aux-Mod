@@ -61,7 +61,7 @@ class CfgMusic {
     MUSIC(TWR_EasternIntro,"[TW] Eastern Intro",90,VideoGames);
     MUSIC(TWR_JourneyToRome,"[TW] Journey to Rome",139,VideoGames);
     MUSIC(TWR_Mayhem,"[TW] Mayhem",219,VideoGames);
-    MUSIC(TWR_MeleeCafee,"[TW] Melee Cafee",173,VideoGames);
+    MUSIC(TWR_MeleeCafe,"[TW] Melee Cafe",173,VideoGames);
     MUSIC(TWR_Mobilize,"[TW] Mobilize",116,VideoGames);
     MUSIC(TWR_SoldiersChant,"[TW] Soldiers Chant",161,VideoGames);
 

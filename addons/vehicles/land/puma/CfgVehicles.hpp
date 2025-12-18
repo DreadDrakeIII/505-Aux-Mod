@@ -11,7 +11,7 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {
             QPATHTOF(land\puma\data\textures\505th_M511_Body_co.paa),
             "DMNS\DMNS_Armour\M511_Springbok\Data\M511_Interior_co.paa",
-            QPATHTOF(land\puma\data\textures\505th_M511_Details.co.paa),
+            QPATHTOF(land\puma\data\textures\505th_M511_Details_co.paa),
             QPATHTOF(land\puma\data\textures\505th_M511_AA_co.paa),
             QPATHTOF(land\puma\data\textures\505th_M511_AA_co.paa),
             QPATHTOF(land\puma\data\textures\505th_M511_AA_co.paa)
@@ -30,7 +30,7 @@ class CLASS(Puma_IFV): DMNS_M511_Springbok_IFV {
     hiddenSelectionsTextures[] = {
             QPATHTOF(land\puma\data\textures\505th_M511_Body_co.paa),
             "DMNS\DMNS_Armour\M511_Springbok\Data\M511_Interior_co.paa",
-            QPATHTOF(land\puma\data\textures\505th_M511_Details.co.paa),
+            QPATHTOF(land\puma\data\textures\505th_M511_Details_co.paa),
             QPATHTOF(land\puma\data\textures\505th_M511_IFV_co.paa),
             QPATHTOF(land\puma\data\textures\505th_M511_AA_co.paa)
         };
