@@ -15,7 +15,7 @@
         ["American English", "British English"], // UI labels
         0
     ],
-    1, // isGlobal
+    0, // isGlobal
     {
         params ["_value"];
 
@@ -160,16 +160,6 @@ if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     {}
 ] call CBA_fnc_addSetting;
 
-[
-    "CWR_AutoMessages_Reloading",
-    "CHECKBOX",
-    ["Reload Callouts", "Automatically announce when reloading weapons."],
-    ["505th Expeditionary Force Aux Mod", "Automated Messages"],
-    true,
-    0,
-    {}
-] call CBA_fnc_addSetting;
-
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
 {
     [
@@ -178,27 +168,10 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
         ["Unconscious Callouts", "When a player goes unconscious, the closest player will make a call out. The max radius is still bound by CWR_Voice_VoiceRadius."],
         ["505th Expeditionary Force Aux Mod", "Automated Messages"],
         true,
-        1,
+        0,
         {}
     ] call CBA_fnc_addSetting;
 };
-
-
-// ============================================================================
-// CHAT WHEEL SETTINGS
-// ============================================================================
-
-[
-    "CWR_TagMenu_UseNewLine",
-    "CHECKBOX",
-    ["Separate examples with newline", "If enabled, example messages are separate with a newline, rather than an arrow."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    true,
-    0,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
 
 // ============================================================================
 // VOICE LINE SETTINGS
@@ -210,7 +183,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
     ["Voice Lines Radius", "The radius of voice lines and automated messages."],
     ["505th Expeditionary Force Aux Mod", "Voice Lines"],
     [10, 50, 30, 0],
-    1,
+    0,
     {},
     false
 ] call CBA_fnc_addSetting;
@@ -252,7 +225,7 @@ CWR_Voice_RCUnitsSendsMessages = false; // Wip
     ["Custom VoiceLines Cooldown", "The minimum amount of time between custom voicelines. This cooldown is per player."],
     ["505th Expeditionary Force Aux Mod", "Voice Lines"],
     [0, 15, 3, 0],
-    1,
+    0,
     {},
     false
 ] call CBA_fnc_addSetting;

@@ -14,7 +14,6 @@ _message = switch (true) do {
         [_message] spawn CWR_OpenEnemyMenu;
     };
 
-
     case ("[bearing]" in _message): {
         private _bearing = round direction player;
         _message = [_message, "[bearing]", str _bearing] call CWR_fnc_stringReplace;
@@ -37,7 +36,6 @@ _message = switch (true) do {
 
     case ("[launcher]" in _message): {
         [_message] spawn CWR_OpenLauncherMenu;
-        _message;
     };
 
     case ("[ping]" in _message): {
@@ -71,8 +69,8 @@ _message = switch (true) do {
             if ((time - (player getVariable ["CWR_playerLastUsedVoice", -CWR_Voice_CoolDown])) > CWR_Voice_CoolDown ) then {
                 private _voiceLine = selectRandom getArray (_config >> "voiceLines");
                 private _nearbyPlayers = [getPosATL player, CWR_Voice_VoiceRadius, CWR_Voice_RCUnitsSendsMessages] call CWR_fnc_getNearbyPlayers;
-                {
-                    [_voiceLine, getPosASL player] remoteExecCall ["CWR_fnc_playLocalSound", _x];
+ {
+                    [_voiceLine, player] remoteExecCall ["CWR_fnc_playLocalSound", _x];
                 } forEach _nearbyPlayers;
 
                 player setVariable ["CWR_playerLastUsedVoice", time];
@@ -83,6 +81,8 @@ _message = switch (true) do {
     };
 
     default {
+        params ["_message"];
+
         _message;
     };
 };

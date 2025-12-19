@@ -10,10 +10,9 @@ if (!hasInterface) exitWith {};
 GVAR(maskClass) = QCLASS(Stealth_Balaclava);
 GVAR(hudActive) = false;
 GVAR(lastGoggles) = "";
-GVAR(hudHiddenForOptics) = false;
 
 // === MEDICAL SCANNER CONFIG ===
-GVAR(medGlassesClass) = QCLASS(Glasses_MedScanner);
+GVAR(medGlassesClass) = "OLI_Glasses_MedScanner";
 GVAR(scannerActive) = false;
 GVAR(vitalsEnabled) = false;
 GVAR(scannerRunning) = false;
@@ -38,7 +37,7 @@ GVAR(scannerEH) = -1;
     if (isNil "OPTRE_HUD_CompassWanted") then { OPTRE_HUD_CompassWanted = true; };
     if (isNil "OPTREB_HUD_HelmetOnClass") then { OPTREB_HUD_HelmetOnClass = ""; };
 
-    // Monitor goggles changes for STEALTH MASK
+    // Monitor goggles changes
     [{
         params ["_args", "_handle"];
 
@@ -90,66 +89,18 @@ GVAR(scannerEH) = -1;
         };
 
         // Medical Glasses equipped -> Auto-activate scanner
-        if (_currentGoggles isEqualTo GVAR(medGlassesClass) && {!GVAR(scannerRunning)}) then {
+        if (_currentGoggles isEqualTo GVAR(medGlassesClass) && {!GVAR(scannerActive)}) then {
             [] call GVAR(fnc_startScanner);
             diag_log "[505th Gears] Medical Glasses -> Scanner ON";
         };
 
         // Medical Glasses removed -> Deactivate scanner
-        if (_currentGoggles isNotEqualTo GVAR(medGlassesClass) && {GVAR(scannerRunning)}) then {
+        if (_currentGoggles isNotEqualTo GVAR(medGlassesClass) && {GVAR(scannerActive)}) then {
             [] call GVAR(fnc_stopScanner);
             diag_log "[505th Gears] Medical Glasses removed -> Scanner OFF";
         };
 
     }, 0.5, []] call CBA_fnc_addPerFrameHandler;
-
-    // Scroll action: Toggle Squad Cameras (Stealth Mask only)
-    player addAction [
-        "<t color='#00ffff'>[505th] Toggle Squad Cameras</t>",
-        {
-            if (!GVAR(hudActive)) exitWith {};
-
-            if (OPTRE_LHD_Function == 1) then {
-                OPTRE_LHD_Function = 2;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_PIP";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_PIP", "PLAIN", 0.3, false];
-            } else {
-                OPTRE_LHD_Function = 1;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
-            };
-        },
-        [],
-        1.5,
-        false,
-        true,
-        "",
-        format ["alive _target && %1", QGVAR(hudActive)]
-    ];
-
-    // Scroll action: Toggle Nav Map (Stealth Mask only)
-    player addAction [
-        "<t color='#00ff00'>[505th] Toggle Nav Map</t>",
-        {
-            if (!GVAR(hudActive)) exitWith {};
-
-            if (OPTRE_LHD_Function == 3) then {
-                OPTRE_LHD_Function = 1;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
-            } else {
-                OPTRE_LHD_Function = 3;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_HudMap";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_HudMap", "PLAIN", 0.3, false];
-            };
-        },
-        [],
-        1.4,
-        false,
-        true,
-        "",
-        format ["alive _target && %1", QGVAR(hudActive)]
-    ];
 
     // ========================================================================
     // MEDICAL SCANNER GLASSES - 5-Tier Triage System (ACE + KAT)
@@ -282,7 +233,6 @@ GVAR(scannerEH) = -1;
         };
 
         // ORANGE - WOUNDED Serious
-        // Deep penetration, heavy blood loss, explosion, airway/breathing stopped
         if (
             _severeWoundCount >= 2 ||
             {_bleeding > 0.4} ||
@@ -296,7 +246,6 @@ GVAR(scannerEH) = -1;
         };
 
         // YELLOW - WOUNDED Minor
-        // Open wounds bleeding, fractures
         if (
             (_openWoundCount > 0 && !_minorOnlyWounds) ||
             {_bleeding > 0.1} ||
@@ -312,7 +261,6 @@ GVAR(scannerEH) = -1;
         };
 
         // GREEN - COMBAT READY
-        // Recovered, minor scrape/bruise, or never hurt
         ["READY", [0, 0.9, 0, 1], "COMBAT READY", 0, false]
     };
 
@@ -379,6 +327,7 @@ GVAR(scannerEH) = -1;
 
         GVAR(scannerRunning) = true;
         GVAR(scannerEnabled) = true;
+        GVAR(scannerActive) = true;
 
         GVAR(scannerEH) = addMissionEventHandler ["Draw3D", {
             if ((goggles player) isNotEqualTo GVAR(medGlassesClass)) exitWith {
@@ -386,6 +335,7 @@ GVAR(scannerEH) = -1;
                 GVAR(scannerEH) = -1;
                 GVAR(scannerRunning) = false;
                 GVAR(scannerEnabled) = false;
+                GVAR(scannerActive) = false;
             };
 
             if (!GVAR(scannerEnabled)) exitWith {};
@@ -404,10 +354,11 @@ GVAR(scannerEH) = -1;
                 private _result = [_unit] call GVAR(fnc_getMedicalStatus);
                 _result params ["_status", "_color", "_text", "_severity", "_isDown"];
 
+                // Position above head (fixed)
                 private _pos = if (_isDown) then {
-                    (getPos _unit) vectorAdd [0, 0, 1.5]
+                    (getPos _unit) vectorAdd [0, 0, 1.2]
                 } else {
-                    (_unit modelToWorldVisual (_unit selectionPosition "spine3")) vectorAdd [0, 0, 0.4]
+                    (_unit modelToWorldVisual (_unit selectionPosition "head")) vectorAdd [0, 0, 0.35]
                 };
 
                 private _icon = switch (_status) do {
@@ -418,8 +369,9 @@ GVAR(scannerEH) = -1;
                     default          { "\A3\ui_f\data\IGUI\Cfg\Actions\ico_on_ca.paa" };
                 };
 
-                drawIcon3D [_icon, _color, _pos, 1.2, 1.2, 0, "", 2, 0.04, "PuristaBold"];
-                drawIcon3D ["", _color, _pos vectorAdd [0, 0, -0.15], 0, 0, 0, _text, 2, 0.03, "PuristaMedium"];
+                // Smaller icon size (fixed)
+                drawIcon3D [_icon, _color, _pos, 0.6, 0.6, 0, "", 2, 0.025, "PuristaBold"];
+                drawIcon3D ["", _color, _pos vectorAdd [0, 0, -0.12], 0, 0, 0, _text, 2, 0.02, "PuristaMedium"];
 
             } forEach _nearUnits;
 
@@ -458,6 +410,7 @@ GVAR(scannerEH) = -1;
     // ========================================================================
     GVAR(fnc_stopScanner) = {
         GVAR(scannerEnabled) = false;
+        GVAR(scannerActive) = false;
         GVAR(scannerRunning) = false;
         if (GVAR(scannerEH) > -1) then {
             removeMissionEventHandler ["Draw3D", GVAR(scannerEH)];
@@ -466,49 +419,119 @@ GVAR(scannerEH) = -1;
     };
 
     // ========================================================================
-    // Scroll action: Toggle Medical Scanner
+    // CBA KEYBINDS - Medical Scanner
     // ========================================================================
-    player addAction [
-        "<t color='#00ff00'>[505th] Medical Scanner</t>",
+
+    // Toggle Medical Scanner
+    [
+        ["505th Expeditionary Force Aux Mod", "Medical Scanner"],
+        "OLI_ToggleMedicalScanner",
+        ["Toggle Medical Scanner", "Turn scanner overlay on/off (requires Medical Scanner Glasses)"],
         {
-            if ((goggles player) isNotEqualTo GVAR(medGlassesClass)) exitWith {};
+            if ((goggles player) != GVAR(medGlassesClass)) exitWith {
+                systemChat "[Medical Scanner] Requires Medical Scanner Glasses";
+            };
 
-            if (!GVAR(scannerRunning)) exitWith { [] call GVAR(fnc_startScanner); };
+            if (!GVAR(scannerRunning)) exitWith {
+                [] call GVAR(fnc_startScanner);
+                systemChat "[Medical Scanner] ON";
+            };
+
             GVAR(scannerEnabled) = !GVAR(scannerEnabled);
-
             private _status = ["OFF", "ON"] select GVAR(scannerEnabled);
             systemChat format ["[Medical Scanner] %1", _status];
         },
+        {},
         [],
-        1.5,
         false,
-        true,
-        "",
-        format ["alive _target && (goggles _target) isEqualTo %1", QGVAR(medGlassesClass)]
-    ];
+        0,
+        false
+    ] call CBA_fnc_addKeybind;
 
-    // ========================================================================
-    // Scroll action: Toggle Detailed Vitals
-    // ========================================================================
-    player addAction [
-        "<t color='#00ffff'>[505th] Toggle Detailed Vitals</t>",
+    // Toggle Detailed Vitals
+    [
+        ["505th Expeditionary Force Aux Mod", "Medical Scanner"],
+        "OLI_ToggleDetailedVitals",
+        ["Toggle Detailed Vitals", "Show/hide vitals panel when looking at teammate (requires scanner active)"],
         {
-            if ((goggles player) isNotEqualTo GVAR(medGlassesClass)) exitWith {};
-            if (!GVAR(scannerRunning)) exitWith {};
+            if ((goggles player) != GVAR(medGlassesClass)) exitWith {};
+            if (!GVAR(scannerRunning)) exitWith {
+                systemChat "[Medical Scanner] Scanner must be active first";
+            };
 
             GVAR(vitalsEnabled) = !GVAR(vitalsEnabled);
-
             private _status = ["OFF", "ON"] select GVAR(vitalsEnabled);
             systemChat format ["[Medical Scanner] Detailed Vitals: %1", _status];
         },
+        {},
         [],
-        1.4,
         false,
-        true,
-        "",
-        format ["alive _target && (goggles _target) isEqualTo %1 && %2", QGVAR(medGlassesClass), QGVAR(scannerRunning)]
-    ];
+        0,
+        false
+    ] call CBA_fnc_addKeybind;
 
-    diag_log "[505th Gears] 5-Tier Medical Scanner ready (25m range)";
+    // ========================================================================
+    // CBA KEYBINDS - Stealth Balaclava HUD
+    // ========================================================================
+
+    // Toggle Squad Cameras
+    [
+        ["505th Expeditionary Force Aux Mod", "Stealth Balaclava HUD"],
+        "OLI_ToggleSquadCameras",
+        ["Toggle Squad Cameras", "Switch between Radar and Squad Cameras (requires Stealth Balaclava)"],
+        {
+            if (!GVAR(hudActive)) exitWith {
+                systemChat "[HUD] Requires Stealth Balaclava";
+            };
+
+            if (OPTRE_LHD_Function == 1) then {
+                OPTRE_LHD_Function = 2;
+                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_PIP";
+                303 cutRsc ["OPTRE_LHD_LeftBottom_PIP", "PLAIN", 0.3, false];
+                systemChat "[HUD] Squad Cameras";
+            } else {
+                OPTRE_LHD_Function = 1;
+                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
+                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
+                systemChat "[HUD] Radar";
+            };
+        },
+        {},
+        [],
+        false,
+        0,
+        false
+    ] call CBA_fnc_addKeybind;
+
+    // Toggle Nav Map
+    [
+        ["505th Expeditionary Force Aux Mod", "Stealth Balaclava HUD"],
+        "OLI_ToggleNavMap",
+        ["Toggle Nav Map", "Switch between Radar and Nav Map (requires Stealth Balaclava)"],
+        {
+            if (!GVAR(hudActive)) exitWith {
+                systemChat "[HUD] Requires Stealth Balaclava";
+            };
+
+            if (OPTRE_LHD_Function == 3) then {
+                OPTRE_LHD_Function = 1;
+                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
+                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
+                systemChat "[HUD] Radar";
+            } else {
+                OPTRE_LHD_Function = 3;
+                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_HudMap";
+                303 cutRsc ["OPTRE_LHD_LeftBottom_HudMap", "PLAIN", 0.3, false];
+                systemChat "[HUD] Nav Map";
+            };
+        },
+        {},
+        [],
+        false,
+        0,
+        false
+    ] call CBA_fnc_addKeybind;
+
+    diag_log "[505th Gears] Medical Scanner + HUD keybinds ready";
 
 }] call CBA_fnc_waitUntilAndExecute;

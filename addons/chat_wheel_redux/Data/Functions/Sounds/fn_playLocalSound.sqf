@@ -4,27 +4,28 @@
  * Determines which sound effect should play based on user settings, then plays that sound effect.
  *
  * Arguments:
- * 0: Sound Position <ARRAY format PositionASL>
+ * 0: Sound file <STRING>
+ * 1: Sound source (object to attach sound to) <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * ["file.wss", getPosASL player] call CWR_fnc_playLocalSound;
+ * ["file.ogg", player] call CWR_fnc_playLocalSound;
  */
 
-params ["_file", "_position"];
+params ["_file", "_source"];
 
 if (CWR_Voice_EnableVoiceLines) then {
     playSound3D [
         _file,
-        objNull,
+        _source,
         false,
-        _position,
-        CWR_Voice_VoiceVolume, // volume
-        1, // pitch
-        0, // distance
-        0, // offset
-        true // play locally
+        getPosASL _source,
+        CWR_Voice_VoiceVolume,
+        1,
+        0,
+        0,
+        true
     ];
 };

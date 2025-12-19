@@ -40,7 +40,7 @@ if !(CWR_AutoMessages_Uncon) exitWith {};
     private _config = (configFile >> "CWR_VoiceLines" >> "Unconscious");
     if (isClass _config and !_isOnCooldown) then {
         private _voiceLine = selectRandom getArray (_config >> "voiceLines");
-        [_voiceLine, getPosASL _closestPlayer] call CWR_fnc_playLocalSound;
+        [_voiceLine, _closestPlayer] call CWR_fnc_playLocalSound;
         _closestPlayer setVariable ["CWR_playerLastUsedVoice", time];
     };
 }] call CBA_fnc_addEventHandler;

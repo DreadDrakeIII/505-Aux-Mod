@@ -136,6 +136,7 @@ class CfgAmmo {
         // --- Ballistics / Performance ---
         hit = 80;
         caliber = 10.0;
+        initSpeed = 980;
         typicalSpeed = 980;            // high velocity (m/s)
         airFriction = -0.0001;        // excellent velocity retention
         timeToLive = 20;

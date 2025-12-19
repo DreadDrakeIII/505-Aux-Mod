@@ -31,6 +31,41 @@ class CLASS(Marine_Rifleman_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Backpack_Predef);
 };
+class CLASS(Marine_Rifleman_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_Rifleman);
+
+    displayName = "INF 01 Marine [Rifleman]";
+
+    uniformClass = QCLASS(Uniform_CE_Rolled);
+    hiddenSelection[] = {"camo","camo1"};
+    hiddenSelectionTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest_V2), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest_V2), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Rifleman_Backpack_Predef);
+};
 
 class CLASS(Marine_Autorifle_CE): CLASS(Marine_Rifleman_CE) {
     displayName = "INF 02 Marine [Autorifle]";
@@ -187,6 +222,43 @@ class CLASS(Corpsman_Rifleman_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(MedicalBackpack_Predef);
 };
 
+class CLASS(Corpsman_Rifleman_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_Rifleman);
+
+    displayName = "INF 07 Corpsman";
+
+    uniformClass = QCLASS(Uniform_CE_Corpsman_Rolled);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\medic\Medic_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Armour_Corpsman_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Armour_Corpsman_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(MedicalBackpack_Predef);
+};
+
 class CLASS(Marine_SquadLead_CE): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
@@ -224,6 +296,43 @@ class CLASS(Marine_SquadLead_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
+class CLASS(Marine_SquadLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_Squadlead);
+
+    displayName = "INF 08 Marine [Squadlead]";
+
+    uniformClass = QCLASS(Uniform_CE_SL_Rolled);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\sl\SL_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_SL), QCLASS(CE_Armour_SL_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_SL), QCLASS(CE_Armour_SL_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_SL_PL_Predef);
+};
+
 class CLASS(Marine_PlatoonLead_CE): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
@@ -247,6 +356,43 @@ class CLASS(Marine_PlatoonLead_CE): CLASS(Marine_CE_Base) {
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
         "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_PL), QCLASS(CE_Armour_PL_Vest_NSV2), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_PL), QCLASS(CE_Armour_PL_Vest_NSV2), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_SL_PL_Predef);
+};
+
+class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_PlatoonLead);
+
+    displayName = "INF 09 Marine [Platoonlead]";
+
+    uniformClass = QCLASS(Uniform_CE_PL_Rolled);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\pl\PL_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+
+    weapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OPTRE_MA5A",
+        "OPTRE_M6B",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
