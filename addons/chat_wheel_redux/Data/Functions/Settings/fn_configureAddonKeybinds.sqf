@@ -26,7 +26,7 @@
 
 // Numpad 0 - Medic!
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Quick Chat"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_0",
     ["Medic!", "Send 'I need a medic!' message"],
     {
@@ -41,7 +41,7 @@
 
 // Numpad 1 - Need Ammo (with voice)
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Quick Chat"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_2",
     ["Need Ammo", "Send 'I need ammo!' message with voice"],
     {
@@ -60,7 +60,7 @@
 
 // Numpad 3 - Call Medic Check
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Quick Chat"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_3",
     ["Call Medic Check", "Ask squad for medical status"],
     {
@@ -75,7 +75,7 @@
 
 // Numpad 4 - Response Medic Check (Status submenu)
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Quick Chat"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_4",
     ["Medical Status", "Report your medical status"],
     {
@@ -95,7 +95,7 @@
 
 // Ctrl + Numpad 1 - Custom Message 1
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_1",
     ["Custom Message 1", "Send custom message 1 (configurable in settings)"],
     {
@@ -113,7 +113,7 @@
 
 // Ctrl + Numpad 2 - Custom Message 2
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_2",
     ["Custom Message 2", "Send custom message 2 (configurable in settings)"],
     {
@@ -131,7 +131,7 @@
 
 // Ctrl + Numpad 3 - Custom Message 3
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_3",
     ["Custom Message 3", "Send custom message 3 (configurable in settings)"],
     {
@@ -149,7 +149,7 @@
 
 // Ctrl + Numpad 4 - Custom Message 4
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_4",
     ["Custom Message 4", "Send custom message 4 (configurable in settings)"],
     {
@@ -167,7 +167,7 @@
 
 // Ctrl + Numpad 5 - Custom Message 5
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_5",
     ["Custom Message 5", "Send custom message 5 (configurable in settings)"],
     {
@@ -185,7 +185,7 @@
 
 // Ctrl + Numpad 6 - Custom Message 6
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_6",
     ["Custom Message 6", "Send custom message 6 (configurable in settings)"],
     {
@@ -203,7 +203,7 @@
 
 // Ctrl + Numpad 7 - Custom Message 7
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_7",
     ["Custom Message 7", "Send custom message 7 (configurable in settings)"],
     {
@@ -221,7 +221,7 @@
 
 // Ctrl + Numpad 8 - Custom Message 8
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_8",
     ["Custom Message 8", "Send custom message 8 (configurable in settings)"],
     {
@@ -239,7 +239,7 @@
 
 // Ctrl + Numpad 9 - Custom Message 9
 [
-    ["505th Expeditionary Force Aux Mod", "Numpad Custom Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_NumPad_Custom_9",
     ["Custom Message 9", "Send custom message 9 (configurable in settings)"],
     {
@@ -254,13 +254,68 @@
     0,
     false
 ] call CBA_fnc_addKeybind;
+
+// Ctrl + Numpad 10 - Custom Message 10
+[
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "CWR_NumPad_Custom_10",
+    ["Custom Message 10", "Send custom message 10 (configurable in settings)"],
+    {
+        private _msg = [CWR_messagesHashMap, "Custom 10"] call CBA_fnc_hashGet;
+        if (_msg != "Default") then {
+            _msg call CWR_fnc_sendGroupMessage;
+        };
+    },
+    {},
+    [DIK_NUMPAD9, [true, false, false]], // Ctrl + Numpad 9
+    false,
+    0,
+    false
+] call CBA_fnc_addKeybind;
+
+// Ctrl + Numpad 11 - Custom Message 11
+[
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "CWR_NumPad_Custom_11",
+    ["Custom Message 11", "Send custom message 11 (configurable in settings)"],
+    {
+        private _msg = [CWR_messagesHashMap, "Custom 11"] call CBA_fnc_hashGet;
+        if (_msg != "Default") then {
+            _msg call CWR_fnc_sendGroupMessage;
+        };
+    },
+    {},
+    [DIK_NUMPAD9, [true, false, false]], // Ctrl + Numpad 9
+    false,
+    0,
+    false
+] call CBA_fnc_addKeybind;
+
+// Ctrl + Numpad 12 - Custom Message 12
+[
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "CWR_NumPad_Custom_12",
+    ["Custom Message 12", "Send custom message 12 (configurable in settings)"],
+    {
+        private _msg = [CWR_messagesHashMap, "Custom 12"] call CBA_fnc_hashGet;
+        if (_msg != "Default") then {
+            _msg call CWR_fnc_sendGroupMessage;
+        };
+    },
+    {},
+    [DIK_NUMPAD9, [true, false, false]], // Ctrl + Numpad 9
+    false,
+    0,
+    false
+] call CBA_fnc_addKeybind;
+
 // ----------------------------------------------------------------------------
 // NEW KEYBINDS FOR ENEMY CONTACT
 // ----------------------------------------------------------------------------
 
 // Ctrl+Alt+1 - Enemy Infantry
 [
-    ["505th Expeditionary Force Aux Mod", "Enemy Contact"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_EnemyInfantry",
     ["Enemy Infantry", "Report enemy infantry with bearing"],
     {
@@ -275,7 +330,7 @@
 
 // Ctrl+Alt+2 - Enemy Vehicle
 [
-    ["505th Expeditionary Force Aux Mod", "Enemy Contact"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_EnemyVehicle",
     ["Enemy Vehicle", "Report enemy vehicle with bearing"],
     {
@@ -290,7 +345,7 @@
 
 // Ctrl+Alt+3 - Enemy Air
 [
-    ["505th Expeditionary Force Aux Mod", "Enemy Contact"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_EnemyAir",
     ["Enemy Air", "Report enemy aircraft with bearing"],
     {
@@ -310,7 +365,7 @@
 
 // Ctrl+Alt+7 - Combat Ready
 [
-    ["505th Expeditionary Force Aux Mod", "Medical Check Response"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_MedCheck_Ready",
     ["Combat Ready", "Report you are combat ready"],
     {
@@ -325,7 +380,7 @@
 
 // Ctrl+Alt+8 - Wounded
 [
-    ["505th Expeditionary Force Aux Mod", "Medical Check Response"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_MedCheck_Wounded",
     ["Wounded", "Report you are wounded"],
     {
@@ -340,7 +395,7 @@
 
 // Ctrl+Alt+9 - Casualty Here (with map ping)
 [
-    ["505th Expeditionary Force Aux Mod", "Medical Check Response"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     "CWR_MedCheck_Casualty",
     ["Casualty Here", "Report casualty at your position (creates map marker)"],
     {

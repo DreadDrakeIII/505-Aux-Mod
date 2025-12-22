@@ -15,11 +15,7 @@ class CfgPatches {
             "OPTRE_FunctionsLibrary"  // <-- OPTRE mod's Functions PBO
         };
         units[] = {};
-        weapons[] = {
-            QCLASS(Stealth_Balaclava),
-            QCLASS(DAVY_MASK),
-            QCLASS(Glasses_MedScanner)
-        };
+        weapons[] = {};
         VERSION_CONFIG;
     };
 };

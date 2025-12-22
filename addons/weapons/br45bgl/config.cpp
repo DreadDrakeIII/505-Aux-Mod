@@ -14,11 +14,9 @@ class CfgPatches {
             };
 
         units[] = {};
-        weapons[] = { QCLASS(BR45B)};
+        weapons[] = { QCLASS(BR45GL) };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgWeapons.hpp"
-#include "CfgMagazines.hpp"
-#include "CfgMagazinesWells.hpp"

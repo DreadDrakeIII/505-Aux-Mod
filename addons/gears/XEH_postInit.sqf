@@ -7,7 +7,10 @@
 if (!hasInterface) exitWith {};
 
 // === STEALTH MASK CONFIG ===
-GVAR(maskClass) = QCLASS(Stealth_Balaclava);
+GVAR(hudMasks) = [
+    QCLASS(Stealth_Mask_Goggle),
+    QCLASS(Davy_Mask_Goggle)
+];
 GVAR(hudActive) = false;
 GVAR(lastGoggles) = "";
 
@@ -25,7 +28,7 @@ GVAR(scannerEH) = -1;
     // STEALTH BALACLAVA - OPTRE HUD
     // ========================================================================
 
-    diag_log format ["[505th Gears] Stealth Mask: %1", GVAR(maskClass)];
+    diag_log format ["[505th Gears] Stealth Mask: %1", GVAR(hudMasks)];
     diag_log format ["[505th Gears] Medical Glasses: %1", GVAR(medGlassesClass)];
 
     // Initialize OPTRE variables
@@ -47,9 +50,9 @@ GVAR(scannerEH) = -1;
         GVAR(lastGoggles) = _currentGoggles;
 
         // Stealth Mask equipped -> Auto-activate OPTRE HUD
-        if (_currentGoggles isEqualTo GVAR(maskClass) && {!GVAR(hudActive)}) then {
+        if (_currentGoggles in GVAR(hudMasks) && {!GVAR(hudActive)}) then {
 
-            OPTREB_HUD_HelmetOnClass = GVAR(maskClass);
+            OPTREB_HUD_HelmetOnClass = _currentGoggles;
 
             if (!isNil "OPTRE_fnc_ToggleVisor") then {
                 OPTRE_Hud_On = false;
@@ -74,7 +77,7 @@ GVAR(scannerEH) = -1;
         };
 
         // Stealth Mask removed -> Deactivate HUD
-        if (_currentGoggles isNotEqualTo GVAR(maskClass) && {GVAR(hudActive)}) then {
+        if (!(_currentGoggles in GVAR(hudMasks)) && {GVAR(hudActive)}) then {
 
             OPTRE_Hud_On = false;
             OPTRE_Hud_UnFullyLoaded = true;
@@ -424,7 +427,7 @@ GVAR(scannerEH) = -1;
 
     // Toggle Medical Scanner
     [
-        ["505th Expeditionary Force Aux Mod", "Medical Scanner"],
+        ["505th Expeditionary Force Aux Mod", "Facewears HUD"],
         "OLI_ToggleMedicalScanner",
         ["Toggle Medical Scanner", "Turn scanner overlay on/off (requires Medical Scanner Glasses)"],
         {
@@ -450,7 +453,7 @@ GVAR(scannerEH) = -1;
 
     // Toggle Detailed Vitals
     [
-        ["505th Expeditionary Force Aux Mod", "Medical Scanner"],
+        ["505th Expeditionary Force Aux Mod", "Facewears HUD"],
         "OLI_ToggleDetailedVitals",
         ["Toggle Detailed Vitals", "Show/hide vitals panel when looking at teammate (requires scanner active)"],
         {
@@ -471,66 +474,46 @@ GVAR(scannerEH) = -1;
     ] call CBA_fnc_addKeybind;
 
     // ========================================================================
-    // CBA KEYBINDS - Stealth Balaclava HUD
-    // ========================================================================
+// CBA KEYBINDS - Stealth Mask (Google) HUD
+// ========================================================================
 
-    // Toggle Squad Cameras
-    [
-        ["505th Expeditionary Force Aux Mod", "Stealth Balaclava HUD"],
-        "OLI_ToggleSquadCameras",
-        ["Toggle Squad Cameras", "Switch between Radar and Squad Cameras (requires Stealth Balaclava)"],
-        {
-            if (!GVAR(hudActive)) exitWith {
-                systemChat "[HUD] Requires Stealth Balaclava";
+// Cycle HUD Mode: Radar -> Squad Cameras -> Nav Map -> Radar...
+[
+    ["505th Expeditionary Force Aux Mod", "Facewears HUD"],
+    "OLI_CycleHUDMode",
+    ["Mask HUD Mode", "Cycle between Radar, Squad Cameras, and Nav Map (requires Stealth Mask (Google))"],
+    {
+        if (!GVAR(hudActive)) exitWith {
+            systemChat "[HUD] Requires Stealth Mask (Google)";
+        };
+
+        // Cycle: 1 (Radar) -> 2 (Cameras) -> 3 (Nav Map) -> 1 (Radar)
+        OPTRE_LHD_Function = (OPTRE_LHD_Function % 3) + 1;
+
+        switch (OPTRE_LHD_Function) do {
+            case 1: {
+                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
+                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
+                systemChat "[HUD] Radar";
             };
-
-            if (OPTRE_LHD_Function == 1) then {
-                OPTRE_LHD_Function = 2;
+            case 2: {
                 OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_PIP";
                 303 cutRsc ["OPTRE_LHD_LeftBottom_PIP", "PLAIN", 0.3, false];
                 systemChat "[HUD] Squad Cameras";
-            } else {
-                OPTRE_LHD_Function = 1;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
-                systemChat "[HUD] Radar";
             };
-        },
-        {},
-        [],
-        false,
-        0,
-        false
-    ] call CBA_fnc_addKeybind;
-
-    // Toggle Nav Map
-    [
-        ["505th Expeditionary Force Aux Mod", "Stealth Balaclava HUD"],
-        "OLI_ToggleNavMap",
-        ["Toggle Nav Map", "Switch between Radar and Nav Map (requires Stealth Balaclava)"],
-        {
-            if (!GVAR(hudActive)) exitWith {
-                systemChat "[HUD] Requires Stealth Balaclava";
-            };
-
-            if (OPTRE_LHD_Function == 3) then {
-                OPTRE_LHD_Function = 1;
-                OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_Radar";
-                303 cutRsc ["OPTRE_LHD_LeftBottom_Radar", "PLAIN", 0.3, false];
-                systemChat "[HUD] Radar";
-            } else {
-                OPTRE_LHD_Function = 3;
+            case 3: {
                 OPTRE_Hud_LHDCurrent = "OPTRE_LHD_LeftBottom_HudMap";
                 303 cutRsc ["OPTRE_LHD_LeftBottom_HudMap", "PLAIN", 0.3, false];
                 systemChat "[HUD] Nav Map";
             };
-        },
-        {},
-        [],
-        false,
-        0,
-        false
-    ] call CBA_fnc_addKeybind;
+        };
+    },
+    {},
+    [],
+    false,
+    0,
+    false
+] call CBA_fnc_addKeybind;
 
     diag_log "[505th Gears] Medical Scanner + HUD keybinds ready";
 

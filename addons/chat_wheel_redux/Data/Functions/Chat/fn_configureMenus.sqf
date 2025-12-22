@@ -16,18 +16,69 @@ CWR_messagesHashMap =
         ["Custom 6", "Default Message"],
         ["Custom 7", "Default Message"],
         ["Custom 8", "Default Message"],
-        ["Custom 9", "Default Message"]
+        ["Custom 9", "Default Message"],
+        ["Custom 10", "Default Message"],
+        ["Custom 11", "Default Message"],
+        ["Custom 12", "Default Message"]
     ],
     "Default Message"
 ] call CBA_fnc_hashCreate;
 
-[
-    "Speak!",
-    "CWR_Menu_Root",
-    [CWR_messagesHashMap] call CBA_fnc_hashKeys,
-    "",
-    QUOTE([([CWR_messagesHashMap] call CBA_fnc_hashValues) select %2] call CWR_fnc_sendGroupMessage)
-] call BIS_fnc_createMenu;
+// Helper function to get display label for a menu key
+// For custom messages, shows the actual message content (truncated if needed)
+// For other entries, shows the original key name
+CWR_fnc_getDisplayLabel = {
+    params ["_key"];
+
+    // Check if this is a custom message key
+    if (_key select [0, 6] == "Custom") then {
+        private _message = [CWR_messagesHashMap, _key] call CBA_fnc_hashGet;
+
+        // If empty or default, show placeholder
+        if (_message isEqualTo "" || _message isEqualTo "Default Message" || _message isEqualTo "Default") then {
+            format ["%1 (empty)", _key]
+        } else {
+            // Strip any voice line tags for cleaner display
+            private _displayMsg = _message;
+            // Remove [vl-*] tags
+            private _tagStart = _displayMsg find "[vl-";
+            while {_tagStart != -1} do {
+                private _tagEnd = (_displayMsg select [_tagStart, 50]) find "]";
+                if (_tagEnd != -1) then {
+                    _displayMsg = (_displayMsg select [0, _tagStart]) + (_displayMsg select [_tagStart + _tagEnd + 1]);
+                };
+                _tagStart = _displayMsg find "[vl-";
+            };
+
+            // Truncate if too long (max 30 chars for menu readability)
+            if (count _displayMsg > 30) then {
+                (_displayMsg select [0, 27]) + "..."
+            } else {
+                _displayMsg
+            };
+        };
+    } else {
+        // Non-custom entries keep their original label
+        _key
+    };
+};
+
+// Function to build/rebuild the root menu with current display labels
+CWR_fnc_buildRootMenu = {
+    private _keys = [CWR_messagesHashMap] call CBA_fnc_hashKeys;
+    private _displayLabels = _keys apply { [_x] call CWR_fnc_getDisplayLabel };
+
+    [
+        "Speak!",
+        "CWR_Menu_Root",
+        _displayLabels,
+        "",
+        QUOTE([([CWR_messagesHashMap] call CBA_fnc_hashValues) select %2] call CWR_fnc_sendGroupMessage)
+    ] call BIS_fnc_createMenu;
+};
+
+// Build initial menu
+[] call CWR_fnc_buildRootMenu;
 
 
 // Enemy Contact Menu

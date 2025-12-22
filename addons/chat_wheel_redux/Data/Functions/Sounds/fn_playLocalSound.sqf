@@ -1,31 +1,30 @@
 /*
  * Authors: Leopard20
- * Edited by DartRuffian
- * Determines which sound effect should play based on user settings, then plays that sound effect.
- *
- * Arguments:
- * 0: Sound file <STRING>
- * 1: Sound source (object to attach sound to) <OBJECT>
- *
- * Return Value:
- * None
- *
- * Example:
- * ["file.ogg", player] call CWR_fnc_playLocalSound;
+ * Edited by DartRuffian, RevGamer
  */
 
 params ["_file", "_source"];
 
-if (CWR_Voice_EnableVoiceLines) then {
-    playSound3D [
-        _file,
-        _source,
-        false,
-        getPosASL _source,
-        CWR_Voice_VoiceVolume,
-        1,
-        0,
-        0,
-        true
-    ];
+if (!CWR_Voice_EnableVoiceLines) exitWith {};
+
+// Convert network ID to object if needed
+private _soundSource = if (typeName _source == "STRING") then {
+    objectFromNetId _source  // Convert network ID to object
+} else {
+    _source  // Already an object
 };
+
+// Verify we have a valid object
+if (isNull _soundSource) exitWith {};
+
+playSound3D [
+    _file,
+    _soundSource,              // Now it's an object!
+    false,
+    getPosASL _soundSource,    // This works now!
+    CWR_Voice_VoiceVolume,
+    1,
+    0,
+    0,
+    true
+];

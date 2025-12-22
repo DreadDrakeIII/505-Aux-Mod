@@ -25,7 +25,8 @@ class CfgPatches {
             QCLASS(MEQ7),
             QCLASS(VTR_Scope),
             QCLASS(M98HA_Scope),
-            QCLASS(M98H_Suppressor)
+            QCLASS(M98H_Suppressor),
+            QCLASS(OPTRE_SRS99C_Scope)
         };
         VERSION_CONFIG;
     };

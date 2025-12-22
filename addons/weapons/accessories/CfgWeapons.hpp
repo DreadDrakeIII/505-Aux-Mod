@@ -211,53 +211,13 @@ class CfgWeapons
         baseWeapon = QCLASS(VTR_Scope);
 
         displayName = "[505th] VTR Scope";
-        model = "\OPTRE_Weapons\Sniper\SRS99C_Scope.p3d";
-        picture = "\OPTRE_weapons\sniper\icons\scope2.paa";
 
         weaponInfoType = "CBA_ScriptedOptic_zooming";
-        modelOptics = "\x\cba\addons\optics\cba_optic_big_100.p3d";
-
-        class ItemInfo: ItemInfo
-        {
-            mass = 14;
-            optics = 1;
-            opticType = 2;
-            modelOptics = "\x\cba\addons\optics\cba_optic_big_100.p3d";
-
-            class OpticsModes
-            {
-                class Snip
-                {
-                    opticsID = 1;
-                    useModelOptics = 1;
-                    opticsDisplayName = "WFOV";
-
-                    memoryPointCamera = "opticView";
-                    cameraDir = "";
-
-                    opticsPPEffects[] = {"OpticsCHAbera1", "OpticsBlur1"};
-                    opticsFlare = 1;
-                    opticsDisablePeripherialVision = 0;
-
-                    opticsZoomInit = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-                    opticsZoomMax = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-                    opticsZoomMin = "25 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
-
-                    discreteDistance[] = {100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1125,1150,1175,1200,1225,1250,1275,1300,1325,1350,1375,1400,1425,1450,1475,1500,1525,1550,1575,1600,1625,1650,1675,1700,1725,1750,1775,1800,1825,1850,1875,1900,1925,1950,1975,2000,2025,2050,2075,2100,2125,2150,2175,2200,2225,2250,2275,2300,2325,2350,2375,2400,2425,2450,2475,2500};
-                    discreteDistanceInitIndex = "0 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelperZeroing')";
-                    distanceZoomMin = 100;
-                    distanceZoomMax = 2000;
-
-                    visionMode[] = {};
-                };
-            };
-        };
 
         class CBA_ScriptedOptic
         {
             minMagnificationReticleScale[] = {5, 0.9};
             maxMagnificationReticleScale[] = {25, 4.5};
-
             reticleDetailTextures[] =
             {
                 {0, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_5_bar_ca.paa), 1, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_5_illum_ca.paa)},
@@ -267,10 +227,52 @@ class CfgWeapons
                 {25, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_25_bar_ca.paa), 0.2, QPATHTOF(accessories\data\CBA_Optic\Tremor3\Tremor3_25_illum_ca.paa)}
             };
 
+            bodyTexture = QPATHTOF(accessories\data\CBA_Optic\ScopeBody_Leup_B_N_ca.paa);
+            bodyTextureSize=1.0700001;
             manualReticleNightSwitch = 1;
             reticleSafezoneSize = 0.8;
         };
+
+        class ItemInfo: ItemInfo
+        {
+            mass = 14;
+            optics = 1;
+            opticType = 2;
+            modelOptics = "\x\cba\addons\optics\cba_optic_big_pip.p3d";
+
+            class OpticsModes
+            {
+                class Sniper
+                {
+                    opticsID = 1;
+                    useModelOptics = 1;
+
+                    opticsZoomInit = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomMax = "5 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+                    opticsZoomMin = "25 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelper')";
+
+                    discreteDistance[] = {100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1125,1150,1175,1200,1225,1250,1275,1300,1325,1350,1375,1400,1425,1450,1475,1500,1525,1550,1575,1600,1625,1650,1675,1700,1725,1750,1775,1800,1825,1850,1875,1900,1925,1950,1975,2000,2025,2050,2075,2100,2125,2150,2175,2200,2225,2250,2275,2300,2325,2350,2375,2400,2425,2450,2475,2500};
+                    discreteDistanceInitIndex = "2 call (uiNamespace getVariable 'cba_optics_fnc_setOpticMagnificationHelperZeroing')";
+                    distanceZoomMin = 100;
+                    distanceZoomMax = 2000;
+
+                    memoryPointCamera = "opticView";
+                    cameraDir = "";
+
+                    opticsPPEffects[] = {"OpticsCHAbera1", "OpticsBlur1"};
+                    opticsFlare = 1;
+                    opticsDisablePeripherialVision = 0;
+
+
+
+
+
+                    visionMode[] = {};
+                };
+            };
+        };
     };
+
 
     class CLASS(M98HA_Scope): OPTRE_SRS99_Scope
     {

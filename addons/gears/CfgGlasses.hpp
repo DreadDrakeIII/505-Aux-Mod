@@ -1,8 +1,8 @@
 // ============================================================================
-// 505th Gears - Stealth Balaclava with OPTRE HUD
+// ==============================505th Facewears===============================
 // ============================================================================
-// Balaclava stays visible + OPTRE HUD overlay appears on screen
-// Both at the same time!
+// Stealth Mask goggle with OPTRE HUD overlay
+// Medical Scanner GLasses
 // ============================================================================
 
 class CfgGlasses {
@@ -10,14 +10,13 @@ class CfgGlasses {
     class G_Balaclava_TI_G_blk_F;
     class G_Tactical_Clear;
 
-    class CLASS(Stealth_Balaclava): G_Balaclava_TI_G_blk_F {
+    class CLASS(Stealth_Mask_Goggle): G_Balaclava_TI_G_blk_F {
         SCOPE_PUBLIC;
         author = AUTHOR;
 
-        displayName = "[505th] Stealth Balaclava with google";
-        descriptionShort = "Stealth balaclava with integrated OPTRE HUD goggle.";
+        displayName = "[505th] Stealth Mask (Google)";
+        descriptionShort = "Stealth Mask with integrated OPTRE HUD goggle.";
 
-        // OPTRE HUD Configuration - Required for OPTRE to recognize this
         optreHUDStyle = "Glasses";
         optreVarietys[] = {"", "", ""};
 
@@ -51,8 +50,12 @@ class CfgGlasses {
         ACE_TintAmount = 0;
     };
 
-    class CLASS(DAVY_MASK): CLASS(Stealth_Balaclava) {
-        displayName = "[505th] DAVY Mask with google";
+    //========================================================================
+    //============================CUSTOM MASKS================================
+    //========================================================================
+
+    class CLASS(Davy_Mask_Goggle): CLASS(Stealth_Mask_Goggle) {
+        displayName = "[505th] Davy Mask with google";
 
 
         hiddenSelections[] = {"camo1","camo2"};

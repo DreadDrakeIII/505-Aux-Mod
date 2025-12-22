@@ -9,7 +9,7 @@
     "CWR_Voice_Language",
     "LIST",
     ["Voice Language", "Select the language for voice lines. Server must have the language files."],
-    ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     [
         ["en_US", "en_GB"],                 // values stored
         ["American English", "British English"], // UI labels
@@ -145,6 +145,41 @@ if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "CWR_CustomMessages_10",
+    "EDITBOX",
+    ["Custom Message 10", "Custom message that can be used in the Chat Wheel. Custom messages support [tags]."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "Default",
+    0,
+    {
+        [CWR_messagesHashMap, "Custom 10", _this] call CBA_fnc_hashSet;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "CWR_CustomMessages_11",
+    "EDITBOX",
+    ["Custom Message 11", "Custom message that can be used in the Chat Wheel. Custom messages support [tags]."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "Default",
+    0,
+    {
+        [CWR_messagesHashMap, "Custom 11", _this] call CBA_fnc_hashSet;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    "CWR_CustomMessages_12",
+    "EDITBOX",
+    ["Custom Message 12", "Custom message that can be used in the Chat Wheel. Custom messages support [tags]."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    "Default",
+    0,
+    {
+        [CWR_messagesHashMap, "Custom 12", _this] call CBA_fnc_hashSet;
+    }
+] call CBA_fnc_addSetting;
 
 // ============================================================================
 // AUTOMATED MESSAGES - SEPARATE TOGGLES
@@ -154,7 +189,7 @@ if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     "CWR_AutoMessages_Grenades",
     "CHECKBOX",
     ["Grenade Callouts", "Automatically announce when throwing grenades or smoke."],
-    ["505th Expeditionary Force Aux Mod", "Automated Messages"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     true,
     0,
     {}
@@ -166,7 +201,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
         "CWR_AutoMessages_Uncon",
         "CHECKBOX",
         ["Unconscious Callouts", "When a player goes unconscious, the closest player will make a call out. The max radius is still bound by CWR_Voice_VoiceRadius."],
-        ["505th Expeditionary Force Aux Mod", "Automated Messages"],
+        ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
         true,
         0,
         {}
@@ -181,7 +216,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
     "CWR_Voice_VoiceRadius",
     "SLIDER",
     ["Voice Lines Radius", "The radius of voice lines and automated messages."],
-    ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     [10, 50, 30, 0],
     0,
     {},
@@ -192,7 +227,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
     "CWR_Voice_VoiceVolume",
     "SLIDER",
     ["Voice Lines Volume", "Volume for custom voice lines."],
-    ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     [0, 5, 3, 1]
 ] call CBA_fnc_addSetting;
 
@@ -200,7 +235,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
     "CWR_Voice_EnableVoiceLines",
     "CHECKBOX",
     ["Enable Custom VoiceLines", "If enabled, you will hear voice lines when certain actions are done. Such as throwing a grenade, using a chat wheel option, etc."],
-    ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     true,
     0,
     {},
@@ -212,7 +247,7 @@ CWR_Voice_RCUnitsSendsMessages = false; // Wip
 //     "CWR_Voice_RCUnitsSendsMessages",
 //     "CHECKBOX",
 //     ["RC Units Send Messages", "If enabled, remote (zeus) controlled units will send messages and say voice lines."],
-//     ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+//     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
 //     true,
 //     0,
 //     {},
@@ -223,7 +258,7 @@ CWR_Voice_RCUnitsSendsMessages = false; // Wip
     "CWR_Voice_CoolDown",
     "SLIDER",
     ["Custom VoiceLines Cooldown", "The minimum amount of time between custom voicelines. This cooldown is per player."],
-    ["505th Expeditionary Force Aux Mod", "Voice Lines"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     [0, 15, 3, 0],
     0,
     {},
@@ -239,7 +274,7 @@ CWR_Voice_RCUnitsSendsMessages = false; // Wip
     "CWR_Debug_ShowMessages",
     "CHECKBOX",
     ["CWR - Show Debug Messages", "Shows debug messages for Chat Wheel Redux, useful for trying to figure out if something is going wrong."],
-    ["505th Expeditionary Force Aux Mod", "Developer"],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     false,
     0,
     {},

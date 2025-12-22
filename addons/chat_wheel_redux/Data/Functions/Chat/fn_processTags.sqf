@@ -69,8 +69,12 @@ _message = switch (true) do {
             if ((time - (player getVariable ["CWR_playerLastUsedVoice", -CWR_Voice_CoolDown])) > CWR_Voice_CoolDown ) then {
                 private _voiceLine = selectRandom getArray (_config >> "voiceLines");
                 private _nearbyPlayers = [getPosATL player, CWR_Voice_VoiceRadius, CWR_Voice_RCUnitsSendsMessages] call CWR_fnc_getNearbyPlayers;
- {
-                    [_voiceLine, player] remoteExecCall ["CWR_fnc_playLocalSound", _x];
+
+                // Use network ID for reliable object transmission across clients
+                private _speakerNetId = netId player;
+
+                {
+                    [_voiceLine, _speakerNetId] remoteExecCall ["CWR_fnc_playLocalSound", _x];
                 } forEach _nearbyPlayers;
 
                 player setVariable ["CWR_playerLastUsedVoice", time];
@@ -81,8 +85,6 @@ _message = switch (true) do {
     };
 
     default {
-        params ["_message"];
-
         _message;
     };
 };

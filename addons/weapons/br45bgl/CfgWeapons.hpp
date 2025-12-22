@@ -6,12 +6,13 @@ class CfgWeapons {
     class arifle_Mk20_F: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-    class OPTRE_BR45: arifle_Mk20_F {
+    class OPTRE_BR45GL: arifle_Mk20_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
             class MuzzleSlot;
-            class UnderBarrelSlot;
+            class GL_Muzzle;
+
         };
 
         class Single: Mode_SemiAuto {
@@ -20,16 +21,16 @@ class CfgWeapons {
         };
     };
 
-    class CLASS(BR45B): OPTRE_BR45 {
+    class CLASS(BR45GL): OPTRE_BR45GL {
         SCOPE_PUBLIC;
         author = AUTHOR;
-        baseWeapon = QCLASS(BR45B);
+        baseWeapon = QCLASS(BR45GL);
 
-        displayName = "[505th] BR45B Battle Rifle";
-        descriptionShort = "Hi-Power Rifle • 9.5x40 • 32-round mag • Medium range";
+        displayName = "[505th] BR45-GL Battle Rifle";
+        descriptionShort = "Hi-Power Rifle • 9.5x40 • 32-round mag • 40mm GL";
+
+        model = "\OPTRE_Weapons\BR\BR45GL";
         picture = "\OPTRE_weapons\br\icons\br45_icon.paa";
-        cartridgePos = "nabojnicestart";
-        cartridgeVel = "nabojniceend";
 
         modes[] = { "Single", "FullAuto" };
         magazines[] = { QCLASS(32Rnd_95x40_Mag) };
@@ -61,8 +62,27 @@ class CfgWeapons {
                 };
             };
 
-            class UnderBarrelSlot: UnderBarrelSlot {
-                compatibleItems[] = {};
+            class GL_Muzzle: GL_Muzzle {
+                displayName = "GL";
+                magazines[] = {
+                    "1Rnd_HE_Grenade_shell",
+                    "UGL_FlareGreen_F",
+                    "UGL_FlareCIR_F",
+                    "UGL_FlareRed_F",
+                    "UGL_FlareWhite_F",
+                    "UGL_FlareYellow_F",
+                    "UGL_FlareGreen_Illumination_F",
+                    "UGL_FlareRed_Illumination_F",
+                    "UGL_FlareWhite_Illumination_F",
+                    "UGL_FlareYellow_Illumination_F",
+                    "1Rnd_SmokeBlue_Grenade_shell",
+                    "1Rnd_SmokeGreen_Grenade_shell",
+                    "1Rnd_SmokeOrange_Grenade_shell",
+                    "1Rnd_SmokePurple_Grenade_shell",
+                    "1Rnd_SmokeRed_Grenade_shell",
+                    "1Rnd_Smoke_Grenade_shell",
+                    "1Rnd_SmokeYellow_Grenade_shell"
+                };
             };
         };
 
