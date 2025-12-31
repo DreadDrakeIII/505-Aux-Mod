@@ -45,16 +45,22 @@ class CfgVehicles {
 
         class TransportMagazines {
             // Primary Ammo
-            MAG_XX(OPTRE_32Rnd_762x51_Mag,40);
-            MAG_XX(OPTRE_36Rnd_95x40_Mag,40);
-            MAG_XX(OPTRE_25Rnd_762x51_Mag,40);
+            MAG_XX(CLASS(32Rnd_95x40_Mag),40);
+            MAG_XX(CLASS(30Rnd_762x51_Mag),40);
+            MAG_XX(CLASS(12Rnd_127x40_Mag),40);
             MAG_XX(DMNS_100Rnd_762x51_Mag,40);
-            MAG_XX(OPTRE_100Rnd_95x40_Box,40);
-            MAG_XX(OPTRE_60Rnd_5x23mm_Mag,40);
+            MAG_XX(CLASS(8Rnd_127x40_Mag),40);
+            MAG_XX(CLASS(100Rnd_95x40_Box),40);
             MAG_XX(Laserbatteries,40);
-            MAG_XX(OPTRE_20Rnd_86x70_Mag,40);
-            MAG_XX(OPTRE_26Rnd_127x40_Mag_Tracer,40);
-            MAG_XX(30Rnd_9x21_Mag_SMG_02,40);
+            MAG_XX(CLASS(5Rnd_147x114_APFSDS_Mag),40);
+            MAG_XX(CLASS(400Rnd_762x51_Box),40);
+            MAG_XX(CLASS(25Rnd_762xV7_Mag),40);
+            MAG_XX(CLASS(32Rnd_762x51_Mag),40);
+            MAG_XX(CLASS(12Rnd_45ACP_Mag),40);
+            MAG_XX(CLASS(10Rnd_HDUR),40);
+            MAG_XX(CLASS(20Rnd_95xVX2_Mag),40);
+            MAG_XX(CLASS(16Rnd_45ACP_Mag),40);
+            MAG_XX(CLASS(15Rnd_95xVX2_Mag),40);
 
             // UGL Ammo
             MAG_XX(1Rnd_HE_MEU_shell,20);
@@ -91,14 +97,22 @@ class CfgVehicles {
 
         class TransportMagazines {
             // Primary Ammo
-            MAG_XX(OPTRE_32Rnd_762x51_Mag,160);
-            MAG_XX(OPTRE_36Rnd_95x40_Mag,160);
-            MAG_XX(OPTRE_25Rnd_762x51_Mag,160);
+            MAG_XX(CLASS(32Rnd_95x40_Mag),160);
+            MAG_XX(CLASS(30Rnd_762x51_Mag),160);
+            MAG_XX(CLASS(12Rnd_127x40_Mag),160);
             MAG_XX(DMNS_100Rnd_762x51_Mag,160);
-            MAG_XX(OPTRE_100Rnd_95x40_Box,160);
-            MAG_XX(OPTRE_60Rnd_5x23mm_Mag,160);
+            MAG_XX(CLASS(8Rnd_127x40_Mag),160);
+            MAG_XX(CLASS(100Rnd_95x40_Box),160);
             MAG_XX(Laserbatteries,160);
-            MAG_XX(OPTRE_20Rnd_86x70_Mag,160);
+            MAG_XX(CLASS(5Rnd_147x114_APFSDS_Mag),160);
+            MAG_XX(CLASS(400Rnd_762x51_Box),160);
+            MAG_XX(CLASS(25Rnd_762xV7_Mag),160);
+            MAG_XX(CLASS(32Rnd_762x51_Mag),160);
+            MAG_XX(CLASS(12Rnd_45ACP_Mag),160);
+            MAG_XX(CLASS(10Rnd_HDUR),160);
+            MAG_XX(CLASS(20Rnd_95xVX2_Mag),160);
+            MAG_XX(CLASS(16Rnd_45ACP_Mag),160);
+            MAG_XX(CLASS(15Rnd_95xVX2_Mag),160);
 
             // UGL Ammo
             MAG_XX(1Rnd_HE_MEU_shell,80);
