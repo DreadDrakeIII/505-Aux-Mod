@@ -1,0 +1,11 @@
+#define PATH "\BLU\OLI\addons\zeus\minesweeper\IED\"
+#define PATH_IMG "\BLU\OLI\addons\zeus\minesweeper\IED\img\"
+#define PATH_SND "\BLU\OLI\addons\zeus\minesweeper\sounds\"
+#define INIT_FN(name,file) name = compile preprocessFileLineNumbers (PATH + file)
+#define TIMER_ID 1000
+#define MINECOUNT_ID 1001 
+#define DEBUG false
+#define COLOR_RED(text) "<t color=""#FF0000"">" + text + "</t>"
+#define COLOR_GREEN(text) "<t color=""#00FF00"">" + text + "</t>"
+#define COLOR_BLUE(text) "<t color=""#0000FF"">" + text + "</t>"
+#define COLOR_YELLOW(text) "<t color=""#FFFF00"">" + text + "</t>"

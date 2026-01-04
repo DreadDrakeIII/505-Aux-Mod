@@ -11,11 +11,12 @@ class CfgPatches {
             "cba_xeh",
             "A3_Characters_F_Exp",
             "ace_goggles",
-            "OPTRE_Hud",              // <-- OPTRE mod's HUD PBO
-            "OPTRE_FunctionsLibrary"  // <-- OPTRE mod's Functions PBO
+            "ace_vector",
+            "OPTRE_Hud",
+            "OPTRE_FunctionsLibrary"
         };
         units[] = {};
-        weapons[] = {};
+        weapons[] = {QCLASS(Vector)};
         VERSION_CONFIG;
     };
 };
@@ -23,3 +24,4 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgGlasses.hpp"
 #include "CfgOptreHudSchemes.hpp"
+#include "CfgWeapons.hpp"

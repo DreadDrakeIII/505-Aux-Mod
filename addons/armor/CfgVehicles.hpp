@@ -29,33 +29,33 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     };
 
-    class TKE_Rogue_UniformNCCamo_inf_B;
-    class CLASS(Pilot_Base): TKE_Rogue_UniformNCCamo_inf_B {
-        SCOPE_PRIVATE;
-        author = AUTHOR;
+    // class TKE_Rogue_UniformNCCamo_inf_B;
+    // class CLASS(Pilot_Base): TKE_Rogue_UniformNCCamo_inf_B {
+    //     SCOPE_PRIVATE;
+    //     author = AUTHOR;
 
-        faction = QFACTION(505th);
+    //     faction = QFACTION(505th);
 
-        displayName = "Pilot (Base)";
-        uniformClass = QCLASS(Uniform_Pilot);
-        modelSides[] = {BLUFOR};
-        linkedItems[] = {};
-        respawnLinkedItems[] = {};
-    };
-    class CLASS(BlackOps_Base): TKE_Rogue_UniformNCCamo_inf_B {
-        SCOPE_PRIVATE;
-        author = AUTHOR;
+    //     displayName = "Pilot (Base)";
+    //     uniformClass = QCLASS(Uniform_Pilot);
+    //     modelSides[] = {BLUFOR};
+    //     linkedItems[] = {};
+    //     respawnLinkedItems[] = {};
+    // };
+    // class CLASS(BlackOps_Base): TKE_Rogue_UniformNCCamo_inf_B {
+    //     SCOPE_PRIVATE;
+    //     author = AUTHOR;
 
-        faction = QFACTION(ONI);
-        uniformClass = QCLASS(Uniform_BlackOps);
-        modelSides[] = {BLUFOR};
-        linkedItems[] = {};
-        respawnLinkedItems[] = {};
-    };
+    //     faction = QFACTION(ONI);
+    //     uniformClass = QCLASS(Uniform_BlackOps);
+    //     modelSides[] = {BLUFOR};
+    //     linkedItems[] = {};
+    //     respawnLinkedItems[] = {};
+    // };
 
     #include "configs\Units.hpp"
 
-    class TKE_CamelBakUCN;
+    // class TKE_CamelBakUCN;
     class Rogue_CEBackpack;
     class Rogue_CEBackpackTFAR;
     class Rogue_CEInvisibleBackpack;
@@ -88,10 +88,10 @@ class CfgVehicles {
         SCOPE_PRIVATE;
         displayName = "Medical Backpack (Base)";
     };
-    class CLASS(Pilot_Backpack_Base): TKE_CamelBakUCN {
-        SCOPE_PRIVATE;
-        displayName = "Pilot Backpack (Base)";
-    };
+    // class CLASS(Pilot_Backpack_Base): TKE_CamelBakUCN {
+    //     SCOPE_PRIVATE;
+    //     displayName = "Pilot Backpack (Base)";
+    // };
     class CLASS(BlackOps_Backpack_Base): TKE_AlicePackUCN {
         SCOPE_PRIVATE;
         displayName = "Black Ops Backpack (Base)";
