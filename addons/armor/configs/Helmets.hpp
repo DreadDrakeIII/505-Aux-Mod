@@ -5,7 +5,7 @@ class CLASS(CE_HELMET): CLASS(Marine_Helmet_Base) {
 	scopeCurator = 2;
     scopeArsenal = 2;
 	displayName = "[505th] Marine Helmet [Eyepiece]";
-	hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\ce\Helmet_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEHelmet_co.paa"};
 };
 class CLASS(CE_HELMETV2): CLASS(Marine_Helmet_V2_Base) {
 	author = "505th Aux Team";
@@ -13,7 +13,7 @@ class CLASS(CE_HELMETV2): CLASS(Marine_Helmet_V2_Base) {
 	scopeCurator = 2;
     scopeArsenal = 2;
 	displayName = "[505th] Marine Helmet";
-	hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\ce\Helmet_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEHelmet_co.paa"};
 };
 class CLASS(CE_HELMET_Corpsman): CLASS(CE_HELMET) {
 	author = "505th Aux Team";

@@ -5,7 +5,7 @@ class CLASS(CE_Armour_Vest): CLASS(CE_Marine_Vest_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor";
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -18,7 +18,7 @@ class CLASS(CE_Armour_Vest_V2): CLASS(CE_Marine_VestV2_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (No Forearms)";
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -31,7 +31,7 @@ class CLASS(CE_Armour_Vest_NSV2): CLASS(CE_Marine_Vest_NSV2_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (No Forearms + Shoulders)";
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -44,7 +44,7 @@ class CLASS(CE_Armour_Vest_NS): CLASS(CE_Marine_Vest_NS_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (No Shoulders)";
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -57,7 +57,7 @@ class CLASS(CE_Armour_Vest_Pouch): CLASS(CE_Marine_Vest_Pouch_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (Pouches)";
 	hiddenSelections[] = {"camo","camo1","camo2"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa),"\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa","\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -70,7 +70,7 @@ class CLASS(CE_Armour_Vest_V2Pouch): CLASS(CE_Marine_Vest_V2_Pouch_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (Pouches + No Forearms)";
 	hiddenSelections[] = {"camo","camo1","camo2"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa),"\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa","\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -83,7 +83,7 @@ class CLASS(CE_Armour_Vest_NSV2Pouch): CLASS(CE_Marine_Vest_NSV2_Pouch_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (Pouches + No Forearms/Shoulders)";
 	hiddenSelections[] = {"camo","camo1","camo2"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa),"\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa","\Rogue_CEMarine\data\Rogue_CEPouches_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -96,7 +96,7 @@ class CLASS(CE_Armour_Vest_NSPouch): CLASS(CE_Marine_Vest_NS_Pouch_Base) {
     scopeArsenal = 2;
 	displayName = "[505th] Marine Armor (Pouches + No Shoulders)";
 	hiddenSelections[] = {"camo","camo1"};
-	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\standard\Armour_co.paa)};
+	hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa","\Rogue_CEMarine\data\Rogue_CEArmour_co.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";

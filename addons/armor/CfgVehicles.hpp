@@ -9,7 +9,7 @@ class CfgVehicles {
         displayName = "Marine (Base)";
         uniformClass = QCLASS(Uniform_CE);
         modelSides[] = {BLUFOR};
-        hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
         linkedItems[] = {QCLASS(CE_HELMETV2), QCLASS(CE_Armour_Vest),"","",MARINE_LINKED_ITEMS_RADIO};
         respawnLinkedItems[] = {QCLASS(CE_HELMETV2), QCLASS(CE_Armour_Vest),"","",MARINE_LINKED_ITEMS_RADIO};
@@ -26,7 +26,7 @@ class CfgVehicles {
         displayName = "Marine Rolled (Base)";
         uniformClass = QCLASS(Uniform_CE_Rolled);
         modelSides[] = {BLUFOR};
-        hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
+        hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     };
 
     // class TKE_Rogue_UniformNCCamo_inf_B;
