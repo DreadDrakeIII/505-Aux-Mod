@@ -565,6 +565,15 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Rifleman_Backpack_Predef);
 };
 
+class CLASS(Marine_Crawford_Rolled_CE): CLASS(Marine_CE_Base) {
+    SCOPE_HIDDEN;
+
+    // Editor Properties
+    uniformClass = QCLASS(Crawford_Uniform_Rolled_CE);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),QPATHTOF(data\uniforms\ce\custom\Anvil_Uniform_RolledT_co.paa)};
+};
+
 class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 

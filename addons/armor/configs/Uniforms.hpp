@@ -148,7 +148,7 @@ scopeArsenal = 2;
 	{
 		uniformClass = QCLASS(Marine_Adamant_CE);
         uniformType = "Neopren";
-		containerClass = "Supply150";
+		containerClass = "Supply500";
 		mass = 40;
 	};
 };
