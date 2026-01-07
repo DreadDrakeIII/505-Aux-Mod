@@ -565,7 +565,7 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Rifleman_Backpack_Predef);
 };
 
-class CLASS(Marine_Crawford_Rolled_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_Crawford_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
