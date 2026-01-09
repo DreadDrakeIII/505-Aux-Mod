@@ -25,7 +25,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Kuz_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
     class CLASS(Mule_Covered): OPTRE_m1015_mule_cover_ins {
@@ -47,7 +46,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Kuz_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 
@@ -70,7 +68,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_MRL_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 
@@ -93,7 +90,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Repair_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 
@@ -116,7 +112,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Fuel_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 
@@ -139,7 +134,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Kuz_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 
@@ -162,7 +156,6 @@ class CfgVehicles {
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Cab_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Repair_co.paa),
             QPATHTOF(land\mule\data\textures\Artemis_Mule_Interior_co.paa),
-            QPATHTOF(land\mule\data\textures\Artemis_Mule_Chassis_2_co.paa)
         };
     };
 };
