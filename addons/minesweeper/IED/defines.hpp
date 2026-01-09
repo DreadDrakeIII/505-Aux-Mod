@@ -43,8 +43,6 @@
 #define ST_DOWN           0x04
 #define ST_UP             0x08
 #define ST_VCENTER        0x0C
-#define ST_GROUP_BOX       96
-#define ST_GROUP_BOX2      112
 #define ST_ROUNDED_CORNER  ST_GROUP_BOX + ST_CENTER
 #define ST_ROUNDED_CORNER2 ST_GROUP_BOX2 + ST_CENTER
 
@@ -55,9 +53,7 @@
 #define ST_PICTURE        0x30
 #define ST_FRAME          0x40
 #define ST_BACKGROUND     0x50
-#undef ST_GROUP_BOX
 #define ST_GROUP_BOX      0x60
-#undef ST_GROUP_BOX2
 #define ST_GROUP_BOX2     0x70
 #define ST_HUD_BACKGROUND 0x80
 #define ST_TILE_PICTURE   0x90
@@ -207,7 +203,7 @@ class RscButton
     colorText[] = {1.0,0.0,0.0,.9};
     colorDisabled[] = {0.6,0.1,0.3,0};
     colorBackground[] = {0.94,0.94,0.94,1.0};
-    colorBackgroundDisabled[] = {0,0.0,0};
+    colorBackgroundDisabled[] = {0,0,0,0};
     colorBackgroundActive[] = {0.15,0.35,0.55,0.7};
     colorFocused[] = {0.87,0.87,0.87,1.0};
     colorShadow[] = {0.023529,0,0.0313725,0};
@@ -245,7 +241,7 @@ class RscMineTile
     colorText[] = {1.0,1.0,1.0,1.0};
     colorDisabled[] = {0.6,0.1,0.3,0};
     colorBackground[] = {0.94,0.94,0.94,1.0};
-    colorBackgroundDisabled[] = {0,0.0,0};
+    colorBackgroundDisabled[] = {0,0,0,0};
     colorBackgroundActive[] = {0.15,0.35,0.55,0.7};
     colorFocused[] = {0.87,0.87,0.87,1.0};
     colorShadow[] = {0.023529,0,0.0313725,0};

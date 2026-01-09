@@ -79,7 +79,7 @@ for "_xx" from 1 to 9 do {
         private _vn  = format ["ShoterIed_Value%1%2", _xx, _yy];
         private _val = _ied getVariable [_vn, "E"];
 
-        if (_val isNotEqualTo "B") then {
+        if (_val != "B") then {
             private _cnt = [_ied, _xx, _yy] call ShoterIed_BombCount;
             if (_cnt == 0) then {
                 _ied setVariable [_vn, "E", false];

@@ -1,6 +1,11 @@
 params ["_logic", "_units", "_activated"];
 if (!_activated) exitWith { true };
 
+if (!local _logic) exitWith { true };
+
+
+private _difficulty = _logic getVariable ["Difficulty", "medium"];
+
 private _targets = [];
 
 // Zeus + Eden: if the module is attached to an object, use that first
@@ -9,6 +14,7 @@ if (!isNull _attached) then {
     _targets pushBackUnique _attached;
 };
 
+
 // Eden case if needed
 {
     if (!isNull _x && { _x != _logic }) then {
@@ -16,7 +22,8 @@ if (!isNull _attached) then {
     };
 } forEach _units;
 
-// Fallback to nearby objects
+
+// Fallback to nearby objects. update - I dont think this works actually but watever
 if (_targets isEqualTo []) then {
     private _pos = getPosWorld _logic;
 
@@ -28,20 +35,18 @@ if (_targets isEqualTo []) then {
 
     _candidates = _candidates select { _x != _logic && {!isNull _x} };
 
-    if (_candidates isNotEqualTo []) then {
+    if (_candidates != []) then {
         _targets pushBackUnique (_candidates select 0);
     };
 };
 
-// No valid targets at all
-if (_targets isEqualTo []) exitWith {
-    ["505th: No valid targets for Minesweeper IED module"]
-        remoteExec ["systemChat", 0, false];
-    deleteVehicle _logic;
-    true
-};
 
-// Create ZEN dialog for configuration
+// No valid targets at all
+if (_targets isEqualTo []) exitWith {true};
+
+
+
+// Create ZEN dialog for difficulty selection
 [
     "Minesweeper IED Configuration",
     [
@@ -49,20 +54,20 @@ if (_targets isEqualTo []) exitWith {
             "COMBO",
             ["Difficulty Preset", "Select a preset difficulty or choose Custom to use sliders below"],
             [
-                [0, 1, 2, 3, 4],
+                [0, 1, 2, 3, 4],  // Indices for presets and custom
                 ["Easy (10 mines, 55s)", "Medium (12 mines, 70s)", "Hard (14 mines, 105s)", "Extreme (17 mines, 140s)", "Custom (Use Sliders)"],
-                1
+                1  // Default index (Medium)
             ]
         ],
         [
             "SLIDER",
             ["Custom Bomb Count", "Number of bombs in the grid"],
-            [1, 80, 12, 0]
+            [1, 80, 12, 0]  // Min: 1, Max: 80, Default: 12
         ],
         [
             "SLIDER",
             ["Custom Timer (seconds)", "Time to defuse in seconds"],
-            [10, 240, 90, 0]
+            [10, 240, 90, 0]  // Min: 10s, Max: 240s, Default: 90s
         ],
         [
             "COMBO",
@@ -70,17 +75,17 @@ if (_targets isEqualTo []) exitWith {
             [
                 ["SmallSecondary", "ammo_Bomb_SDB", "HelicopterExploSmall", "Bo_GBU12_LGB"],
                 ["Small (Hand Grenade)", "Medium (Small Bomb)", "Large (Helicopter Explosion)", "Huge (GBU-12)"],
-                1
+                1  // Small Bomb is default
             ]
         ],
         [
             "CHECKBOX",
-            ["Enable Motion Sensor", "If enabled, IED will explode when units move near it at speed"],
+            ["Enable BLUFOR Detection", "If enabled, IED will explode when BLUFOR units move near it at speed"],
             false
         ],
         [
             "CHECKBOX",
-            ["Audible Before Defusal", "If enabled, IED beeps before anyone starts defusing"],
+            ["Audible Before Defusal", "If enabled, IED beeps before anyone starts defusing (gives away position)"],
             false
         ]
     ],
@@ -89,42 +94,42 @@ if (_targets isEqualTo []) exitWith {
         params ["_values", "_args"];
         _values params ["_presetIndex", "_customBombs", "_customTimer", "_explosionType", "_proximityEnabled", "_audibleBeforeDefusal"];
         _args params ["_targets", "_logic"];
-        
+
         private _mineCount = 12;
         private _timer = 120;
-        
-        // Check if Custom is selected
+
+        // Check if Custom is selected, use presets if not using custom
         if (_presetIndex == 4) then {
+            // Use slider values
             _mineCount = round _customBombs;
             _timer = round _customTimer;
         } else {
             switch (_presetIndex) do {
-                case 0: { _mineCount = 10; _timer = 55; };
-                case 1: { _mineCount = 12; _timer = 70; };
-                case 2: { _mineCount = 15; _timer = 105; };
-                case 3: { _mineCount = 17; _timer = 140; };
+                case 0: { _mineCount = 10; _timer = 55; };   // Easy, all times are decided by my casual speed * 3.5 plus some extra seconds
+                case 1: { _mineCount = 12; _timer = 70; };  // Medium
+                case 2: { _mineCount = 15; _timer = 105; };  // Hard
+                case 3: { _mineCount = 17; _timer = 140; };  // Extreme
             };
         };
 
-        // Motion sensor: sideEmpty = disabled, west = enabled for BLUFOR
+        // Proximity Checkbox
         private _side = if (_proximityEnabled) then { west } else { sideEmpty };
-        
+
         // Apply to all targets
         {
-            [_x, _mineCount, _timer, _explosionType, _side, _audibleBeforeDefusal] remoteExec ["505th_fnc_Minesweeper", 0, true];
+            [_x, _mineCount, _timer, _explosionType, _side, _audibleBeforeDefusal] remoteExec ["MSW_fnc_Minesweeper", 0, true];
         } forEach _targets;
-        
+
         deleteVehicle _logic;
     },
     {
         // On Cancel
         params ["_values", "_args"];
         _args params ["_targets", "_logic"];
-        
-        ["505th: Minesweeper IED module cancelled"] remoteExec ["systemChat", 0, false];
+
         deleteVehicle _logic;
     },
-    [_targets, _logic]
+    [_targets, _logic]  // Arguments passed to both callbacks
 ] call zen_dialog_fnc_create;
 
 true

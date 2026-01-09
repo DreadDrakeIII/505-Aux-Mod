@@ -1,0 +1,62 @@
+#include "defines.def"
+/*
+	Author: Shoter
+
+	Description:
+	The script is not doing 1 tick, it is constantly ticking :).
+	It's a mysterious ticking machine XD. What is that voice?
+
+	Parameter(s):
+		/klj./jk.,
+
+	Returns: N/A
+*/
+private [ "_ied", "_timer" ];
+_ied = [_this, 0 ] call BIS_fnc_param;
+
+_timer = _ied getVariable "ShoterIed_Timer";
+_side = _ied getVariable "ShoterIed_Side";
+
+_startTime = time;
+_lastBeepTime = 0;
+
+while { true } do
+{
+_delta = time - _startTime;
+_curTime = _timer - _delta;
+ctrlSetText [ TIMER_ID, format ["%1", floor _curTime] ];
+
+if(_curTime < 0) then
+	{
+		[_ied] call ShoterIed_Detonate;
+	};
+
+if (_curTime > 20) then {
+	// Normal beeping - every 1 seconds
+	if ((time - _lastBeepTime) >= 1) then {
+		playSound3D ["\BLU\OLI\addons\minesweeper\sounds\standard_beep.ogg", _ied, false, getPosASL _ied, 5, 1, 100];
+		_lastBeepTime = time;
+	};
+} else {
+	if (_curTime > 10) then {
+		// Fast beeping - every 0.5 second
+		if ((time - _lastBeepTime) >= 0.5) then {
+			playSound3D ["\BLU\OLI\addons\minesweeper\sounds\standard_beep.ogg", _ied, false, getPosASL _ied, 5, 1, 150];
+			_lastBeepTime = time;
+		};
+	};
+} else {
+	if (_curTime > 0) then {
+		// Fast beeping - every 0.25 second
+		if ((time - _lastBeepTime) >= 0.25) then {
+			playSound3D ["\BLU\OLI\addons\minesweeper\sounds\standard_beep.ogg", _ied, false, getPosASL _ied, 5, 1, 150];
+			_lastBeepTime = time;
+		};
+	};
+};
+
+sleep 0.05;
+if(!dialog) exitWith { [_ied] call ShoterIed_Detonate; true };
+if((_ied getVariable ["ShoterIed_Detonated", false]) || (_ied getVariable ["ShoterIed_Difused", false])) exitWith {};
+
+};

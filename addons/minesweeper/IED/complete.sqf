@@ -8,6 +8,6 @@ _ied setVariable [ "ShoterIed_Difuser", objNull , true];
 _ied setVariable [ "ShoterIed_Difused", true , true];
 _ied setVariable [ "ShoterIed_Detonated", true , true];
 
-playSound3D ["\BLU\OLI\addons\zeus\minesweeper\sounds\success.ogg", _ied, false, getPosASL _ied, 5, 1, 200];
+playSound3D ["\BLU\OLI\addons\minesweeper\sounds\success.ogg", _ied, false, getPosASL _ied, 5, 1, 200];
 
 closeDialog 123;

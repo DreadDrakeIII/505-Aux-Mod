@@ -1,6 +1,5 @@
 /*
 	Author: Shoter
-	Modified: 505th
 
 	Description:
 	Initialize minesweeper GUI
@@ -44,7 +43,10 @@ if( (_ied getVariable ["ShoterIed_Difuser",objNull]) isEqualTo objNull OR DEBUG)
 	{
 		for [ {_Y = 1}, {_Y < 10}, {_Y = _Y + 1} ] do
 		{
+			diag_log format ["Index %1_%2", _X, _Y ];
 			_field = [_X, _Y] call ShoterIed_GetField;
+			diag_log format ["field %1", _field ];
+			//ctrlSetText [ ctrlIDC _field, PATH_IMG + (format ["%1",(floor (1 + random 8))]) + ".paa"];
 			_field ctrlSetEventHandler ["MouseButtonDown", format ["nic = _this spawn ShoterIed_TileClick"]];
 			_ied setVariable ["ShoterIed_Value" + format ["%1%2", _X, _Y],  "E", false];
 		};
@@ -64,20 +66,41 @@ if( (_ied getVariable ["ShoterIed_Difuser",objNull]) isEqualTo objNull OR DEBUG)
 		{
 			for [ {_Y = 1}, {_Y < 10}, {_Y = _Y + 1} ] do
 			{
+				diag_log format ["Index %1_%2", _X, _Y ];
 				_field = [_X, _Y] call ShoterIed_GetField;
+				diag_log format ["field %1", _field ];
 				_count = [_ied, _X, _Y] call ShoterIed_BombCount;
 				if(_count != 0) then
 				{
+					//ctrlSetText [ ctrlIDC _field, PATH_IMG + format["%1",_count] + ".paa"];
 					_ied setVariable ["ShoterIed_Value" + format ["%1%2", _X, _Y], _count];
 				};
 			};
 		};
 		_tests = 0;
+/*
+		if(player getVariable ["ShoterIed_Specialist",false] isEqualTo true) then
+		{
+			for [ {_U = 0}, {_U < 3}, {_tests = _tests + 1} ] do
+			{
+				_X = floor (random 10);
+				_Y = floor (random 10);
+				_field = [_X, _Y] call ShoterIed_GetField;
+				if( ((ctrlText (_X*10+_Y)) isEqualTo PATH_IMG+"tile.paa") AND ((_ied getVariable "ShoterIed_Value" + format ["%1%2", _X, _Y]) isEqualTo "E") ) then {
+					[_ied, _X, _Y] call ShoterIed_Uncover;
+					_U = _U + 1;
+					//ctrlSetText [ ctrlIDC _field, PATH_IMG + (format ["tileflag",(floor (8))]) + ".paa"];
+				};
+				if( _tests isEqualTo 20) exitWith {true};
+			};
+		};
+*/
+
 
 	};
 
 	nic = [_ied] spawn ShoterIed_SweeperTick;
-	playSound3D ["\BLU\OLI\addons\zeus\minesweeper\sounds\start_defusing.ogg", _ied, false, getPosASL _ied, 5, 1, 200];
+	playSound3D ["\BLU\OLI\addons\minesweeper\sounds\start_defusing.ogg", _ied, false, getPosASL _ied, 5, 1, 200];
 } else
 {
 	//someone is disarming the bomb.

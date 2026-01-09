@@ -1,9 +1,12 @@
 /*
 	Author: Shoter
-	Modified: 505th
 
 	Description:
-	IED tick, server side - Motion sensor detection
+	IED tick, server side
+
+	Info :
+	SERVER_SIDE
+	LOOP
 
 	Parameter(s):
 		0 : OBJECT - IED object
@@ -16,9 +19,6 @@ if(isServer) then
 	_ied = [_this, 0 ] call BIS_fnc_param;
 
 	_side = _ied getVariable "ShoterIed_Side";
-
-	// If side is sideEmpty, motion sensor is disabled
-	if (_side isEqualTo sideEmpty) exitWith {};
 
 	while {true} do {
 
