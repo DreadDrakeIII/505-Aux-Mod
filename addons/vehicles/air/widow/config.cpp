@@ -16,7 +16,8 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(Widow_Armed),
-            QCLASS(Widow)
+            QCLASS(Widow),
+            QCLASS(Widow_Vehicle)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

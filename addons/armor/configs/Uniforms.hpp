@@ -109,7 +109,7 @@ scopeArsenal = 2;
 		mass = 40;
 	};
 };
-class CLASS(Uniform_FR_CE): CLASS(Uniform_CE_Base) {
+class CLASS(Uniform_CE_FR): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Force Recon Uniform";
 scope = 2;

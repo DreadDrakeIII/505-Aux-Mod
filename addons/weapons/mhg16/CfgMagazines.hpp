@@ -12,7 +12,7 @@ class CfgMagazines {
 
         ammo = QCLASS(45ACP_Ball);
         count = 12;
-        initSpeed = 280;
+        initSpeed = 620;
         tracersEvery = 0;
         lastRoundsTracer = 2;
         mass = 6;

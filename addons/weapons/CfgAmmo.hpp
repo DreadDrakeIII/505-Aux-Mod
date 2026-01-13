@@ -160,21 +160,21 @@ class CfgAmmo {
 
     class CLASS(45ACP_Ball): B_45ACP_Ball {
         cartridge = "FxCartridge_9mm";
-        hit = 5;
-        caliber = 1.4;
-        typicalSpeed = 280;
-        airFriction = -0.00082143;
+        hit = 16;
+        caliber = 2;
+        typicalSpeed = 620;
+        airFriction = -0.02;
         timeToLive = 6;
-        tracerScale = 0.6;
+        tracerScale = 1.3;
     };
 
     class CLASS(9x21_Ball): B_9x21_Ball {
         cartridge = "FxCartridge_9mm";
-        hit = 5;
-        caliber = 1.2;
-        typicalSpeed = 380;
-        airFriction = -0.00211064;
+        hit = 16;
+        caliber = 2;
+        typicalSpeed = 620;
+        airFriction = -0.02;
         timeToLive = 6;
-        tracerScale = 0.5;
+        tracerScale = 1.3;
     };
 };

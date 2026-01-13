@@ -13,7 +13,7 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(Buzzard),
-            QCLASS(Stealth_Buzzard)
+            // QCLASS(Stealth_Buzzard)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;

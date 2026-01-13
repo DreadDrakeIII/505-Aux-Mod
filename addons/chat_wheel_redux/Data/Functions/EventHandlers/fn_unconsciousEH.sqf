@@ -26,7 +26,7 @@ if !(CWR_AutoMessages_Uncon) exitWith {};
     format ["_nearbyPlayers = %1", _nearbyPlayers] call CWR_fnc_devLog;
 
     _nearbyPlayers = _nearbyPlayers select { [_x] call ace_common_fnc_isAwake; };
-    if (count _nearbyPlayers == 0) exitWith {}; // No nearby conscious players
+   if (_nearbyPlayers isEqualTo []) exitWith {}; // No nearby conscious players
 
     _nearbyPlayers = [_unit, _nearbyPlayers] call CWR_fnc_sortByDistance;
     format ["Sorted _nearbyPlayers = %1", _nearbyPlayers] call CWR_fnc_devLog;
@@ -40,7 +40,7 @@ if !(CWR_AutoMessages_Uncon) exitWith {};
     private _config = (configFile >> "CWR_VoiceLines" >> "Unconscious");
     if (isClass _config and !_isOnCooldown) then {
         private _voiceLine = selectRandom getArray (_config >> "voiceLines");
-        [_voiceLine, _closestPlayer] call CWR_fnc_playLocalSound;
+        [_voiceLine, getPosASL _closestPlayer] call CWR_fnc_playLocalSound;
         _closestPlayer setVariable ["CWR_playerLastUsedVoice", time];
     };
 }] call CBA_fnc_addEventHandler;

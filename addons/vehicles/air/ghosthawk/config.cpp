@@ -12,7 +12,7 @@ class CfgPatches {
             "kat_stretcher"
         };
         units[] = {
-            QCLASS(Ghosthawk),
+            // QCLASS(Ghosthawk),
             QCLASS(ONI_Ghosthawk)
         };
         weapons[] = {};

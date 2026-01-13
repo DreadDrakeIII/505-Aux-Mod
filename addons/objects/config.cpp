@@ -10,16 +10,23 @@ class CfgPatches {
             "OPTRE_UNSC_Structure_Signs",
             "TKE_Props",
             "OPTRE_BW_Locker",
-            "A3_Structures_F_Mil_Flags"
+            "A3_Structures_F_Mil_Flags",
+            "WBK_Lovchy_Animations",
+            "WBK_KitArsenal",
+            "ace_arsenal"
         };
         units[] = {
             QCLASS(AFB_Sign_1),
             QCLASS(OP_Sign_1),
             QCLASS(Flag_505th_Pole),
+            QCLASS(Banner_505th),
             QCLASS(Flag_505th_Damaged_Pole),
             QCLASS(Console_Base),
             QCLASS(Console_Permissions),
-            QCLASS(Utility_Arsenal),
+            QCLASS(FRLoadout_Arsenal),
+            QCLASS(HMLoadout_Arsenal),
+            QCLASS(AFLoadout_Arsenal),
+            QCLASS(CELoadout_Arsenal),
             QCLASS(Utility_FullHeal_Small),
             QCLASS(Utility_FullHeal_Large)
         };

@@ -170,34 +170,40 @@ class CfgVehicles {
         };
     };
 
-    class OPTRE_Furniture_Locker;
-    class CLASS(Utility_Arsenal): OPTRE_Furniture_Locker {
-        SCOPE_PUBLIC;
-        displayName = "Arsenal Locker";
-        model = "OPTRE_BW_Buildings\Furniture\Locker\Locker";
-        editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_Locker.jpg";
+        class OPTRE_Furniture_AmmoRack_BR55;
 
-        // Editor Attributes
-        editorCategory = QEDCAT(Objects);
-        editorSubcategory = QEDSUBCAT(Utility);
+        // Corpsman Loadout Locker
+    class CLASS(HMLoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
+            SCOPE_PUBLIC;
+            author = AUTHOR;
+            displayName = "[505th] Corpsman Loadout and Arsenal & Kit Locker";
+            model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
+            editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_AmmoRack_BR55.jpg";
 
+            hiddenSelections[] = {"Texture_Case","Texture_Inside","Texture_Parts"};
+            hiddenSelectionsTextures[] = {
+                "\BLU\OLI\addons\objects\data\lockers\corpsman_case_co.paa",
+                "\BLU\OLI\addons\objects\data\lockers\corpsman_case_inside_co.paa",
+                "OPTRE_BW_Buildings\Furniture\Data\parts_co.paa"
+                };
+
+            editorCategory = QEDCAT(Objects);
+            editorSubcategory = QEDSUBCAT(Utility);
+
+        // --- ACE / BIS Arsenal ---
         class UserActions {
             class Arsenal_ACE {
                 displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
-
                 position = "camera";
                 radius = 3;
                 onlyForPlayer = TRUE;
-
                 hideOnUse = TRUE;
                 priority = 100;
-
                 condition = "true";
                 statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
             };
 
             class Arsenal_BIS: Arsenal_ACE {
-                // Bohemia Green, looks weird: #6BA539
                 displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
                 statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
             };
@@ -207,5 +213,155 @@ class CfgVehicles {
                 statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
             };
         };
+
+            // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
+            class EventHandlers {
+                class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+            };
+    };
+
+        // FR Loadout Locker
+    class CLASS(FRLoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
+            SCOPE_PUBLIC;
+            author = AUTHOR;
+            displayName = "[505th] FR Loadout and Arsenal & Kit Locker";
+            model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
+            editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_AmmoRack_BR55.jpg";
+
+            hiddenSelections[] = {"Texture_Case","Texture_Inside","Texture_Parts"};
+            hiddenSelectionsTextures[] = {
+                "\BLU\OLI\addons\objects\data\lockers\fr_case_co.paa",
+                "\BLU\OLI\addons\objects\data\lockers\fr_case_inside_co.paa",
+                "OPTRE_BW_Buildings\Furniture\Data\parts_co.paa"
+                };
+
+            editorCategory = QEDCAT(Objects);
+            editorSubcategory = QEDSUBCAT(Utility);
+
+            // --- ACE / BIS Arsenal ---
+        class UserActions {
+            class Arsenal_ACE {
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                position = "camera";
+                radius = 3;
+                onlyForPlayer = TRUE;
+                hideOnUse = TRUE;
+                priority = 100;
+                condition = "true";
+                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
+            };
+
+            class Arsenal_BIS: Arsenal_ACE {
+                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
+                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
+            };
+
+            class Add_Radio: Arsenal_ACE {
+            displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
+            statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+            };
+        };
+
+        // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
+
+    };
+
+        // CE Loadout Locker
+    class CLASS(CELoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
+            SCOPE_PUBLIC;
+            author = AUTHOR;
+            displayName = "[505th] CE Loadout and Arsenal & Kit Locker";
+            model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
+            editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_AmmoRack_BR55.jpg";
+
+            hiddenSelections[] = {"Texture_Case","Texture_Inside","Texture_Parts"};
+            hiddenSelectionsTextures[] = {
+                "\BLU\OLI\addons\objects\data\lockers\marine_case_co.paa",
+                "\BLU\OLI\addons\objects\data\lockers\marine_case_inside_co.paa",
+                "OPTRE_BW_Buildings\Furniture\Data\parts_co.paa"
+                };
+
+            editorCategory = QEDCAT(Objects);
+            editorSubcategory = QEDSUBCAT(Utility);
+
+        // --- ACE / BIS Arsenal ---
+        class UserActions {
+            class Arsenal_ACE {
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                position = "camera";
+                radius = 3;
+                onlyForPlayer = TRUE;
+                hideOnUse = TRUE;
+                priority = 100;
+                condition = "true";
+                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
+            };
+
+            class Arsenal_BIS: Arsenal_ACE {
+                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
+                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
+            };
+
+            class Add_Radio: Arsenal_ACE {
+                displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
+                statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+            };
+        };
+
+            // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
+            class EventHandlers {
+                class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+            };
+    };
+
+       // Pilot Loadout Locker
+    class CLASS(AFLoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
+            SCOPE_PUBLIC;
+            author = AUTHOR;
+            displayName = "[505th] Pilot Loadout and Arsenal & Kit Locker";
+            model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
+            editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_AmmoRack_BR55.jpg";
+
+            hiddenSelections[] = {"Texture_Case","Texture_Inside","Texture_Parts"};
+            hiddenSelectionsTextures[] = {
+                "\BLU\OLI\addons\objects\data\lockers\pilot_case_co.paa",
+                "\BLU\OLI\addons\objects\data\lockers\pilot_case_inside_co.paa",
+                "OPTRE_BW_Buildings\Furniture\Data\parts_co.paa"
+                };
+
+            editorCategory = QEDCAT(Objects);
+            editorSubcategory = QEDSUBCAT(Utility);
+
+        // --- ACE / BIS Arsenal ---
+        class UserActions {
+            class Arsenal_ACE {
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                position = "camera";
+                radius = 3;
+                onlyForPlayer = TRUE;
+                hideOnUse = TRUE;
+                priority = 100;
+                condition = "true";
+                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
+            };
+
+            class Arsenal_BIS: Arsenal_ACE {
+                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
+                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
+            };
+
+            class Add_Radio: Arsenal_ACE {
+                displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
+                statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+            };
+        };
+
+            // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
+            class EventHandlers {
+                class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+            };
     };
 };
