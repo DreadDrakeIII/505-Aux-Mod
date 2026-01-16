@@ -193,7 +193,7 @@ class CfgVehicles {
         // --- ACE / BIS Arsenal ---
         class UserActions {
             class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Custom Arsenal Access</t>);
                 position = "camera";
                 radius = 3;
                 onlyForPlayer = TRUE;
@@ -201,11 +201,6 @@ class CfgVehicles {
                 priority = 100;
                 condition = "true";
                 statement = "[cursorObject, player, false] call ace_arsenal_fnc_openBox";
-            };
-
-            class Arsenal_BIS: Arsenal_ACE {
-                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
-                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
             };
 
             class Add_Radio: Arsenal_ACE {
@@ -284,7 +279,7 @@ class CfgVehicles {
         // --- ACE / BIS Arsenal ---
         class UserActions {
             class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Custom Arsenal Access</t>);
                 position = "camera";
                 radius = 3;
                 onlyForPlayer = TRUE;
@@ -327,7 +322,7 @@ class CfgVehicles {
         // --- ACE Arsenal ---
         class UserActions {
             class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open Limited Arsenal</t>);
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Custom Arsenal Access</t>);
                 position = "camera";
                 radius = 3;
                 onlyForPlayer = TRUE;
