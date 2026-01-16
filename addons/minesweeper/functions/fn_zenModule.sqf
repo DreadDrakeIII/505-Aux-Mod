@@ -36,17 +36,18 @@ private _dialogResult = [
             ],
             0  // Easy is default
         ]],
-        ["SLIDER", ["Custom Width", "Grid width (only used if Custom preset selected)"], [1, 35, 12, 0]],
-        ["SLIDER", ["Custom Height", "Grid height (only used if Custom preset selected)"], [1, 23, 12, 0]],
+        ["SLIDER", ["Custom Width", "Grid width (only used if Custom preset selected)"], [3, 35, 12, 0]],
+        ["SLIDER", ["Custom Height", "Grid height (only used if Custom preset selected)"], [3, 23, 12, 0]],
         ["SLIDER", ["Custom Mines", "Number of mines (only used if Custom preset selected)"], [1, 805, 20, 0]],
         ["SLIDER", ["Custom Time (seconds)", "Defusal time in seconds (only used if Custom preset selected)"], [5, 999, 90, 0]],
         ["COMBO", ["Explosion Size", "Explosion when IED detonates"], [
-            ["small", "medium", "large", "huge"],
+            ["small", "medium", "large", "huge", "nothing"],
             [
                 ["Small (Hand Grenade)", "Minor blast"],
                 ["Medium (Small Bomb)", "Moderate explosion"],
                 ["Large (Helicopter)", "Standard helicopter explosion"],
-                ["Huge (GBU-12)", "Massive explosion"]
+                ["Huge (GBU-12)", "Massive explosion"],
+                ["Nothing (Training)", "No explosion, plays loser sound"]
             ],
             2  // Large is default
         ]],

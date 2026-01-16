@@ -6,6 +6,10 @@ params [["_ied", objNull, [objNull]]];
 if (isNull _ied) exitWith {};
 if (!hasInterface) exitWith {};
 
+// Prevent duplicate actions (fixes bug when players leave server)
+if (_ied getVariable ["MSIED_ActionsAdded_Local", false]) exitWith {};
+_ied setVariable ["MSIED_ActionsAdded_Local", true];
+
 // Add Inspect IED action (higher priority, instant)
 private _inspectId = _ied addAction [
     "Inspect IED",
@@ -19,39 +23,39 @@ private _inspectId = _ied addAction [
             case "medium": { "The circuitry is not too hard" };
             case "hard": { "The circuitry is complex" };
             case "extreme": { "The circuitry is Beyond All Reason" };
-            default { "The circuitry is partially guarded and uses special made fuses unknown to the UNSC" }; // custom
+            default { "The circuitry is partially guarded and uses special made fuses unknown to the UNSC" };
         };
         
         hint _hintText;
     },
     [],
-    6,          // Priority (higher than Defuse)
+    6,
     true,
-    false,      // Don't hide on use
+    false,
     "",
     "_this distance _target < 4 && !(_target getVariable ['MSIED_Defused', false]) && !(_target getVariable ['MSIED_Detonated', false])"
 ];
 
 // Add Defuse action (hold action)
 private _defuseId = [
-    _ied,                                                   // Object
-    "Defuse",                                               // Title
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",  // Idle icon
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",  // Progress icon
-    "_this distance _target < 4 && !(_target getVariable ['MSIED_Defused', false]) && !(_target getVariable ['MSIED_Detonated', false])",  // Condition to show
-    "_caller distance _target < 4",                         // Condition to progress
-    {},                                                     // Code on start
-    {},                                                     // Code on progress
+    _ied,
+    "Defuse",
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+    "_this distance _target < 4 && !(_target getVariable ['MSIED_Defused', false]) && !(_target getVariable ['MSIED_Detonated', false])",
+    "_caller distance _target < 4",
+    {},
+    {},
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         [_target] call MSIED_fnc_initMinefield;
-    },                                                      // Code on completion
-    {},                                                     // Code on interrupted
-    [],                                                     // Arguments
-    3,                                                      // Duration (seconds)
-    5.9,                                                    // Priority
-    true,                                                   // Remove on completion
-    false                                                   // Show to unconscious
+    },
+    {},
+    [],
+    3,
+    5.9,
+    true,
+    false
 ] call BIS_fnc_holdActionAdd;
 
 _ied setVariable ["MSIED_ActionId", _defuseId];
@@ -65,9 +69,9 @@ private _debugDefuseId = _ied addAction [
         [_target] call MSIED_fnc_initMinefield;
     },
     [],
-    5.95,       // Priority (between Inspect and Defuse)
+    5.95,
     true,
-    true,       // hideOnUse
+    true,
     "",
     "_this distance _target < 4 && (_target getVariable ['MSIED_Debug', false]) && !(_target getVariable ['MSIED_Defused', false]) && !(_target getVariable ['MSIED_Detonated', false])"
 ];

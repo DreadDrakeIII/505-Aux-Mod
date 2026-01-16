@@ -200,7 +200,7 @@ class CfgVehicles {
                 hideOnUse = TRUE;
                 priority = 100;
                 condition = "true";
-                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
+                statement = "[cursorObject, player, false] call ace_arsenal_fnc_openBox";
             };
 
             class Arsenal_BIS: Arsenal_ACE {
@@ -210,7 +210,7 @@ class CfgVehicles {
 
             class Add_Radio: Arsenal_ACE {
                 displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
-                statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+                statement = QUOTE(ace_player linkItem 'TFAR_anprc152');
             };
         };
 
@@ -237,35 +237,29 @@ class CfgVehicles {
 
             editorCategory = QEDCAT(Objects);
             editorSubcategory = QEDSUBCAT(Utility);
+        // --- ACE Arsenal ---
+    class UserActions {
+        class Arsenal_ACE {
+            displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Custom Arsenal Access</t>);
+            position = "camera";
+            radius = 3;
+            onlyForPlayer = TRUE;
+            hideOnUse = TRUE;
+            priority = 100;
+            condition = "true";
+            statement = "[cursorObject, player, false] call ace_arsenal_fnc_openBox";
+        };
 
-            // --- ACE / BIS Arsenal ---
-        class UserActions {
-            class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
-                position = "camera";
-                radius = 3;
-                onlyForPlayer = TRUE;
-                hideOnUse = TRUE;
-                priority = 100;
-                condition = "true";
-                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
-            };
-
-            class Arsenal_BIS: Arsenal_ACE {
-                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
-                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
-            };
-
-            class Add_Radio: Arsenal_ACE {
+        class Add_Radio: Arsenal_ACE {
             displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
-            statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
-            };
+            statement = QUOTE(ace_player linkItem 'TFAR_anprc152');
         };
+    };
 
-        // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
-        class EventHandlers {
-            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
-        };
+    // CBA Extended Event Handlers - handled by CfgEventHandlers.hpp
+            class EventHandlers {
+                class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+            };
 
     };
 
@@ -297,17 +291,12 @@ class CfgVehicles {
                 hideOnUse = TRUE;
                 priority = 100;
                 condition = "true";
-                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
+                statement = "[cursorObject, player, false] call ace_arsenal_fnc_openBox";
             };
 
-            class Arsenal_BIS: Arsenal_ACE {
-                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
-                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
-            };
-
-            class Add_Radio: Arsenal_ACE {
+                class Add_Radio: Arsenal_ACE {
                 displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
-                statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+                statement = QUOTE(ace_player linkItem 'TFAR_anprc152');
             };
         };
 
@@ -335,27 +324,22 @@ class CfgVehicles {
             editorCategory = QEDCAT(Objects);
             editorSubcategory = QEDSUBCAT(Utility);
 
-        // --- ACE / BIS Arsenal ---
+        // --- ACE Arsenal ---
         class UserActions {
             class Arsenal_ACE {
-                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open ACE Arsenal</t>);
+                displayName = QUOTE(<t color='#a02116'><img image=QQPATHTOEF(main,data\ui\ACE_logo_small_ca.paa)/> Open Limited Arsenal</t>);
                 position = "camera";
                 radius = 3;
                 onlyForPlayer = TRUE;
                 hideOnUse = TRUE;
                 priority = 100;
                 condition = "true";
-                statement = QUOTE([ARR_3(ace_player,ace_player,true)] call ace_arsenal_fnc_openBox;);
-            };
-
-            class Arsenal_BIS: Arsenal_ACE {
-                displayName = QUOTE(<t color='#E6E6E6'><img image=QQPATHTOEF(main,data\ui\BIS_logo_small_ca.paa)/> Open BIS Arsenal</t>);
-                statement = QUOTE([ARR_2('Open',[true])] call BIS_fnc_arsenal;);
+                statement = "[cursorObject, player, false] call ace_arsenal_fnc_openBox";
             };
 
             class Add_Radio: Arsenal_ACE {
                 displayName = "<t color='#E6E6E6'><img image='\a3\modules_f_curator\data\portraitradio_ca.paa'/> Add Radio</t>";
-                statement = QUOTE(ace_player linkItem 'ls_radios_cwp8');
+                statement = QUOTE(ace_player linkItem 'TFAR_anprc152');
             };
         };
 

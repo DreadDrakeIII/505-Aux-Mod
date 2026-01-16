@@ -15,8 +15,19 @@ _locker spawn {
     // Wait for object to be ready
     sleep 0.1;
 
-    // // Debug message
-    // systemChat "[505th] Corpsman Locker initialized!";
+    _locker setVariable ["ace_dragging_canDrag", false, true];
+    _locker setVariable ["ace_dragging_canCarry", false, true];
+    _locker setVariable ["ace_cargo_noRename", true, true];
+
+    clearWeaponCargoGlobal _locker;
+    clearMagazineCargoGlobal _locker;
+    clearItemCargoGlobal _locker;
+    clearBackpackCargoGlobal _locker;
+
+    // Setup Limited Arsenal - using universal file
+    [_locker] execVM '\BLU\OLI\addons\objects\functions\fnc_limitedArsenal.sqf';
+
+    sleep 0.2;
 
     // Register Corpsman WBK Kits
     [_locker] execVM '\BLU\OLI\addons\objects\functions\fnc_registerHMKits.sqf';

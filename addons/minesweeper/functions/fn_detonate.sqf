@@ -11,7 +11,7 @@ private _defused = _ied getVariable ["MSIED_Defused", false];
 
 if (_detonated || _defused) exitWith {};
 
-// Close dialog immediately if open (local)
+// Close dialog immediately if open
 closeDialog 55500;
 
 // Clear local player variable if we're the defuser
@@ -32,6 +32,9 @@ private _debugDefuseId = _ied getVariable ["MSIED_DebugDefuseId", -1];
 if (_debugDefuseId >= 0) then {
     _ied removeAction _debugDefuseId;
 };
+
+// Reset local action flag so actions can be re-added if IED is reused
+_ied setVariable ["MSIED_ActionsAdded_Local", false];
 
 // If we're server, handle detonation directly
 // If we're client, ask server to handle it

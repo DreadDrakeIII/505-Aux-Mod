@@ -2,10 +2,13 @@ params [["_ied", objNull, [objNull]]];
 
 if (isNull _ied) exitWith {};
 
-// Close dialog immediately (local)
+// Play success sound FIRST (before anything else)
+playSound3D ["\minesweeper_ied\sounds\success.ogg", _ied, false, getPosASL _ied, 5, 1, 50];
+
+// Close dialog
 closeDialog 55500;
 
-// Clear player's disarming variable (local)
+// Clear player's disarming variable
 player setVariable ["MSIED_disarmingObj", objNull, false];
 
 // Remove local actions
@@ -24,8 +27,8 @@ if (_debugDefuseId >= 0) then {
     _ied removeAction _debugDefuseId;
 };
 
-// Play success sound
-playSound3D ["\minesweeper_ied\sounds\success.ogg", _ied, false, getPosASL _ied, 5, 1, 50];
+// Reset local action flag so actions can be re-added if IED is reused
+_ied setVariable ["MSIED_ActionsAdded_Local", false];
 
 // Server handles: setting variables, removing debug flag
 if (isServer) then {
@@ -41,6 +44,5 @@ if (isServer) then {
     // Remove from JIP queue
     remoteExecCall ["", _ied];
 } else {
-    // Client: ask server to finalize
     [_ied] remoteExec ["MSIED_fnc_completeServer", 2];
 };

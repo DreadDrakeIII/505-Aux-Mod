@@ -8,15 +8,24 @@
 
 params ["_locker"];
 
-// Simple spawn to wait for object initialization
 _locker spawn {
     params ["_locker"];
 
-    // Wait for object to be ready
     sleep 0.1;
 
-    // // Debug message
-    // systemChat "[505th] FR Locker initialized!";
+    _locker setVariable ["ace_dragging_canDrag", false, true];
+    _locker setVariable ["ace_dragging_canCarry", false, true];
+    _locker setVariable ["ace_cargo_noRename", true, true];
+
+    clearWeaponCargoGlobal _locker;
+    clearMagazineCargoGlobal _locker;
+    clearItemCargoGlobal _locker;
+    clearBackpackCargoGlobal _locker;
+
+    // Setup Limited Arsenal - using universal file
+    [_locker] execVM '\BLU\OLI\addons\objects\functions\fnc_limitedArsenal.sqf';
+
+    sleep 0.2;
 
     // Register FR WBK Kits
     [_locker] execVM '\BLU\OLI\addons\objects\functions\fnc_registerFRKits.sqf';

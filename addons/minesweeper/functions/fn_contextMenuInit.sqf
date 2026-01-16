@@ -35,6 +35,7 @@ private _actionInfo = [
             case "medium": {"Medium (Bomb)"};
             case "large": {"Large (Helicopter)"};
             case "huge": {"Huge (GBU-12)"};
+            case "nothing": {"Nothing (Training)"};
             default {"Large"};
         };
         
