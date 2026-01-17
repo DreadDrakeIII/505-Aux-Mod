@@ -44,3 +44,32 @@
         _object say3D [_sound, _distance];
     };
 }] call CBA_fnc_addEventHandler;
+
+// Sci-fi Support Plus FTL Ship Registration
+if (!isNil "PHAN_ALL_Ships_list") then {
+    private _shipsToAdd = [
+        "OLI_Frigate_Innie_Blank",
+        "OLI_Frigate_Innie"
+    ];
+
+    private _validShips = [];
+    private _displayList = [];
+
+    {
+        if (_x != "" && {getText (configFile >> "CfgVehicles" >> _x >> "displayName") != ""}) then {
+            _validShips pushBack _x;
+
+            _displayList pushBack [
+                getText (configFile >> "CfgVehicles" >> _x >> "displayName"),
+                "",
+                getText (configFile >> "CfgVehicles" >> _x >> "editorPreview"),
+                [255, 100, 0, 255]
+            ];
+        };
+    } forEach _shipsToAdd;
+
+    PHAN_ALL_Ships_list append _validShips;
+    PHAN_ALL_Ships_listDISPLAY append _displayList;
+
+    diag_log format ["[505th FTL] Registered %1 ships", count _validShips];
+};
