@@ -55,7 +55,7 @@ class CfgVehicles {
 
     #include "configs\Units.hpp"
 
-    // class TKE_CamelBakUCN;
+    class TKE_CamelBakUCN;
     class Rogue_CEBackpack;
     class Rogue_CEBackpackTFAR;
     class Rogue_CEInvisibleBackpack;
@@ -88,10 +88,10 @@ class CfgVehicles {
         SCOPE_PRIVATE;
         displayName = "Medical Backpack (Base)";
     };
-    // class CLASS(Pilot_Backpack_Base): TKE_CamelBakUCN {
-    //     SCOPE_PRIVATE;
-    //     displayName = "Pilot Backpack (Base)";
-    // };
+    class CLASS(Pilot_Backpack_Base): TKE_CamelBakUCN {
+        SCOPE_PRIVATE;
+        displayName = "Pilot Backpack (Base)";
+    };
     class CLASS(BlackOps_Backpack_Base): TKE_AlicePackUCN {
         SCOPE_PRIVATE;
         displayName = "Black Ops Backpack (Base)";

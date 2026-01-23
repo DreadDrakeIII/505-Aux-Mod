@@ -9,7 +9,8 @@ if (!hasInterface) exitWith {};
 // === STEALTH MASK CONFIG ===
 GVAR(hudMasks) = [
     QCLASS(Stealth_Mask_Goggle),
-    QCLASS(Davy_Mask_Goggle)
+    QCLASS(Davy_Mask_Goggle),
+    QCLASS(Stealth_Mask)
 ];
 GVAR(hudActive) = false;
 GVAR(lastGoggles) = "";

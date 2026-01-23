@@ -8,6 +8,7 @@
 class CfgGlasses {
 
     class G_Balaclava_TI_G_blk_F;
+    class G_Balaclava_TI_blk_F;
     class G_Tactical_Clear;
 
     class CLASS(Stealth_Mask_Goggle): G_Balaclava_TI_G_blk_F {
@@ -24,6 +25,27 @@ class CfgGlasses {
         ACE_Color[] = {0, 0, 0};
         ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
         ACE_Overlay = "\z\ace\addons\goggles\textures\HUD\CombatGoggles.paa";
+        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
+        ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
+        ACE_Protection = 1;
+        ACE_Resistance = 2;
+        ACE_TintAmount = 0;
+    };
+
+    class CLASS(Stealth_Mask): G_Balaclava_TI_blk_F {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+
+        displayName = "[505th] Stealth Mask";
+        descriptionShort = "Stealth Mask with integrated OPTRE HUD goggle.";
+
+        optreHUDStyle = "Glasses";
+        optreVarietys[] = {"", "", ""};
+
+        // ACE Goggles Configuration
+        ACE_Color[] = {0, 0, 0};
+        ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
+        ACE_Overlay = "";
         ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
         ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
         ACE_Protection = 1;

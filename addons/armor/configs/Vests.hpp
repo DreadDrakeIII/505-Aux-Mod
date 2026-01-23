@@ -626,17 +626,17 @@ class CLASS(CE_Vest_Doc): CLASS(CE_Marine_Vest_Base) {
         };
 };
 
-// ///////////////////////////////Pilot Vest///////////////////////////////
-// class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
-//     displayName = "[505th] Pilot Vest";
-//     scope = 2;
-//     scopeCurator = 2;
-//     scopeArsenal = 2;
-//     class ItemInfo: ItemInfo {
-//             containerClass = "Supply100";
-//             vestType = "Rebreather";
-//         };
-// };
+///////////////////////////////Pilot Vest///////////////////////////////
+class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
+    displayName = "[505th] Pilot Vest";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};
 /////////////////////////////Black Ops Vest/////////////////////////////
 class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
     displayName = "[505th] Black Ops Vest";

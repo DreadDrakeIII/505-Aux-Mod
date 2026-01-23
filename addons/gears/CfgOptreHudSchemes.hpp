@@ -5,6 +5,7 @@ class CfgOptreHudSchemes {
             // Register our mask with OPTRE HUD system
             CLASS(Stealth_Mask_Goggle) = "OPTRE_MarrineGlasses_black";
             CLASS(Davy_Mask_Goggle) = "OPTRE_MarrineGlasses_black";
+            CLASS(Stealth_Mask) = "OPTRE_MarrineGlasses_black";
         };
     };
 };
