@@ -86,6 +86,16 @@ class CfgMusic {
     MUSIC(Prelude_to_War,"[Battlestar] Prekude to War",502,Soundtracks);
     MUSIC(Denouement,"Denouement",296,Soundtracks);
     MUSIC(Attack,"Attack",165,Soundtracks);
+    MUSIC(And_Now_We_Run_Payday_2,"[Payday 2] And Now We Run",210,Soundtracks);
+    MUSIC(And_Now_We_Run_Payday2,"[Payday 2] And Now We Run (Extended)",420,Soundtracks);
+    MUSIC(Batten_Down_The_Hatches_Assasins_Creed_Black_Flag,"[AC Black Flag] Batten Down The Hatches",100,Soundtracks);
+    MUSIC(Blood_Coagulant_Terraria_Calamity,"[Terraria Calamity] Blood Coagulant",305,Soundtracks);
+    MUSIC(Brooklyn_Assault_Battlefield_6,"[BF6] Brooklyn Assault",180,Soundtracks);
+    MUSIC(Darktide_Main_Theme,"[Darktide] Main Theme",258,Soundtracks);
+    MUSIC(Radiance_Hollow_Knight,"[Hollow Knight] Radiance",138,Soundtracks);
+    MUSIC(RUN_Deep_Rock_Galactic,"[Deep Rock Galactic] RUN!",149,Soundtracks);
+    MUSIC(The_Transit_Horde_Darktide,"[Darktide] The Transit Horde",125,Soundtracks);
+    MUSIC(WOLF_BARK_I_AM_YOUR_BEAST,"[WOLF] I AM YOUR BEAST",189,Soundtracks);
 
     // Other
     MUSIC(The_505th_Anthem,"The 505th Anthem",161,Other);
