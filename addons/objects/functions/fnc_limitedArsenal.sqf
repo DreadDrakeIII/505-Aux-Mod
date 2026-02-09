@@ -32,6 +32,8 @@ private _whitelist = [
     // ========== HELMETS ==========
     "OLI_Tuna_Pilot_Helmet",
     "OLI_Malarkey_Pilot_Helmet",
+    "OLI_CE_Adamant_HELMET",
+    "OLI_CE_Crawford_HELMET",
     // Backpacks
 
     // ========== GOGGLES/FACEWEAR ==========

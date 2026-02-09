@@ -13,7 +13,7 @@ class CfgEditorSubcategories {
         displayName = "Special Forces";
     };
     class EDSUBCAT(Crewmen) {
-        displayName = "Crewman";
+    displayName = "Crewmen";
     };
     // Ground Vehicles
     class EDSUBCAT(Tanks) {

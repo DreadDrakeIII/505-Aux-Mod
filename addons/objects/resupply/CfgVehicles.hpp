@@ -81,7 +81,11 @@ class CfgVehicles {
 
             // Launcher Ammo
             MAG_XX(OPTRE_1Rnd_50x137_HEAT,2);
-
+            MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,2);
+            MAG_XX(MEU_SPKR108_SAM_AA,2);
+            MAG_XX(MEU_M57_Pilum_HEAT_Mag,2);
+            MAG_XX(MEU_M57_Pilum_HE_Mag,2);
+            MAG_XX(MEU_M57_Pilum_AP_Mag,2);
             // Grenades
             MAG_XX(OPTRE_M9_Frag,8);
         };
@@ -133,6 +137,11 @@ class CfgVehicles {
 
             // Launcher Ammo
             MAG_XX(OPTRE_1Rnd_50x137_HEAT,20);
+            MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,20);
+            MAG_XX(MEU_SPKR108_SAM_AA,20);
+            MAG_XX(MEU_M57_Pilum_HEAT_Mag,20);
+            MAG_XX(MEU_M57_Pilum_HE_Mag,20);
+            MAG_XX(MEU_M57_Pilum_AP_Mag,20);
 
             // Grenades
             MAG_XX(OPTRE_M9_Frag,32);

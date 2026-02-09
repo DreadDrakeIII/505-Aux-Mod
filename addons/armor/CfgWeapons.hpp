@@ -81,15 +81,14 @@ class CfgWeapons {
         uniformType = "Neopren";
     };
 
-    class TKE_Rogue_UniformNCMDTFGrey_U_B;
-    class CLASS(Uniform_Pilot_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
+    class TKE_CombatUniMerc_U_B;
+    class CLASS(Uniform_Pilot_Base): TKE_CombatUniMerc_U_B {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Pilot Uniform (Base)";
-        uniformType = "Neopren";
     };
 
-    class CLASS(Uniform_BlackOps_Base): TKE_Rogue_UniformNCMDTFGrey_U_B {
+    class CLASS(Uniform_BlackOps_Base): TKE_CombatUniMerc_U_B {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Uniform (Base)";

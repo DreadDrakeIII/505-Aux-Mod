@@ -210,11 +210,11 @@ scopeArsenal = 2;
 		mass = 40;
 	};
 };
-// /////////////////////Pilot Uniform/////////////////////
-// class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
-//    SCOPE_PUBLIC;
-//     displayName = "[505th] Pilot Uniform";
-// };
+/////////////////////Pilot Uniform/////////////////////
+class CLASS(Uniform_Pilot): CLASS(Uniform_Pilot_Base) {
+   SCOPE_PUBLIC;
+    displayName = "[505th] Pilot Uniform";
+};
 ///////////////////Black Ops Uniform///////////////////
 class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
    SCOPE_PRIVATE;

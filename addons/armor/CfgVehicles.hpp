@@ -29,29 +29,29 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEUniformP_co.paa","\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     };
 
-    // class TKE_Rogue_UniformNCCamo_inf_B;
-    // class CLASS(Pilot_Base): TKE_Rogue_UniformNCCamo_inf_B {
-    //     SCOPE_PRIVATE;
-    //     author = AUTHOR;
+    class TKE_Rogue_UniformNCCamo_inf_B;
+    class CLASS(Pilot_Base): TKE_Rogue_UniformNCCamo_inf_B {
+        SCOPE_PRIVATE;
+        author = AUTHOR;
 
-    //     faction = QFACTION(505th);
+        faction = QFACTION(505th);
 
-    //     displayName = "Pilot (Base)";
-    //     uniformClass = QCLASS(Uniform_Pilot);
-    //     modelSides[] = {BLUFOR};
-    //     linkedItems[] = {};
-    //     respawnLinkedItems[] = {};
-    // };
-    // class CLASS(BlackOps_Base): TKE_Rogue_UniformNCCamo_inf_B {
-    //     SCOPE_PRIVATE;
-    //     author = AUTHOR;
+        displayName = "Pilot (Base)";
+        uniformClass = QCLASS(Uniform_Pilot);
+        modelSides[] = {BLUFOR};
+        linkedItems[] = {};
+        respawnLinkedItems[] = {};
+    };
+    class CLASS(BlackOps_Base): TKE_Rogue_UniformNCCamo_inf_B {
+        SCOPE_PRIVATE;
+        author = AUTHOR;
 
-    //     faction = QFACTION(ONI);
-    //     uniformClass = QCLASS(Uniform_BlackOps);
-    //     modelSides[] = {BLUFOR};
-    //     linkedItems[] = {};
-    //     respawnLinkedItems[] = {};
-    // };
+        faction = QFACTION(ONI);
+        uniformClass = QCLASS(Uniform_BlackOps);
+        modelSides[] = {BLUFOR};
+        linkedItems[] = {};
+        respawnLinkedItems[] = {};
+    };
 
     #include "configs\Units.hpp"
 

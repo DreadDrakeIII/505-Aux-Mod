@@ -717,121 +717,121 @@ class CLASS(Marine_Doc_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Rifleman_Backpack_Predef);
 };
-/////////////////////Crewman Units/////////////////////
-// class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
-//     SCOPE_PUBLIC;
+///////////////////Crewman Units/////////////////////
+class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
 
-//     editorSubcategory = QEDSUBCAT(Crewmen);
-//     editorPreview = EDITOR_PREVIEW(Marine_Pilot_Jet);
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot_Jet);
 
-//     displayName = "AVI Jet Pilot";
+    displayName = "AVI Jet Pilot";
 
-//     uniformClass = QCLASS(Uniform_Pilot);
-//     weapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnWeapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     linkedItems[] = {
-//         QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnLinkedItems[] = {
-//         QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     backpack = QCLASS(Pilot_Backpack_Predef);
-// };
-// class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
-//     SCOPE_PUBLIC;
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnWeapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    linkedItems[] = {
+        QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Jet_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Pilot_Backpack_Predef);
+};
+class CLASS(Marine_Heli_Pilot): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
 
-//     editorSubcategory = QEDSUBCAT(Crewmen);
-//     editorPreview = EDITOR_PREVIEW(Marine_Pilot_Heli);
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot_Heli);
 
-//     displayName = "AVI Heli Pilot";
+    displayName = "AVI Heli Pilot";
 
-//     uniformClass = QCLASS(Uniform_Pilot);
-//     weapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnWeapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     linkedItems[] = {
-//         QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnLinkedItems[] = {
-//         QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     backpack = QCLASS(Pilot_Backpack_Predef);
-// };
-// class CLASS(Marine_Heli_Crew): CLASS(Pilot_Base) {
-//     SCOPE_PUBLIC;
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnWeapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    linkedItems[] = {
+        QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Heli_Pilot_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Pilot_Backpack_Predef);
+};
+class CLASS(Marine_Heli_Crew): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
 
-//     editorSubcategory = QEDSUBCAT(Crewmen);
-//     editorPreview = EDITOR_PREVIEW(Marine_Pilot_Heli);
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Pilot_Heli);
 
-//     displayName = "AVI Heli Crew";
+    displayName = "AVI Heli Crew";
 
-//     uniformClass = QCLASS(Uniform_Pilot);
-//     weapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnWeapons[] = {
-//         "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     linkedItems[] = {
-//         QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnLinkedItems[] = {
-//         QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     backpack = QCLASS(Pilot_Backpack_Predef);
-// };
-// class CLASS(Marine_Tank_Crew): CLASS(Pilot_Base) {
-//     SCOPE_PUBLIC;
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnWeapons[] = {
+        "OPTRE_M6D_Carbine_Black_F", "OPTRE_M319s", "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    linkedItems[] = {
+        QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Heli_Crew_Helmet), QCLASS(Pilot_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Pilot_Backpack_Predef);
+};
+class CLASS(Marine_Tank_Crew): CLASS(Pilot_Base) {
+    SCOPE_PUBLIC;
 
-//     editorSubcategory = QEDSUBCAT(Crewmen);
-//     editorPreview = EDITOR_PREVIEW(Marine_Tanker);
+    editorSubcategory = QEDSUBCAT(Crewmen);
+    editorPreview = EDITOR_PREVIEW(Marine_Tanker);
 
-//     displayName = "ARMR Tank Crew";
+    displayName = "ARMR Tank Crew";
 
-//     uniformClass = QCLASS(Uniform_Pilot);
-//     weapons[] = {
-//         "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
-//     };
-//     respawnWeapons[] = {
-//         "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
-//     };
-//     linkedItems[] = {
-//         "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnLinkedItems[] = {
-//         "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     backpack = QCLASS(Tanker_Backpack_Predef);
-// };
-////////////////////BlackOp Units////////////////////
-// class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
-//     SCOPE_PRIVATE;
+    uniformClass = QCLASS(Uniform_Pilot);
+    weapons[] = {
+        "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
+    };
+    respawnWeapons[] = {
+        "OPTRE_M7", "TKE_MDPistolBlack", "Throw", "Put"
+    };
+    linkedItems[] = {
+        "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        "OPTRE_UNSC_VX16_Helmet_Mask", QCLASS(CE_Armour_Scout_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Tanker_Backpack_Predef);
+};
+//////////////////BlackOp Units////////////////////
+class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
+    SCOPE_PRIVATE;
 
-//     editorSubcategory = QEDSUBCAT(SpecialForces);
-//     faction = QFACTION(ONI);
-//     editorPreview = EDITOR_PREVIEW(Unit_BlackOps);
+    editorSubcategory = QEDSUBCAT(SpecialForces);
+    faction = QFACTION(ONI);
+    editorPreview = EDITOR_PREVIEW(Unit_BlackOps);
 
-//     displayName = " Black Ops";
+    displayName = " Black Ops";
 
-//     uniformClass = QCLASS(Uniform_BlackOps);
-//     weapons[] = {
-//         "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder"
-//     };
-//     respawnWeapons[] = {
-//         "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder",
-//     };
-//     linkedItems[] = {
-//         QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     respawnLinkedItems[] = {
-//         QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
-//     };
-//     backpack = QCLASS(BlackOps_Backpack_Predef);
-// };
+    uniformClass = QCLASS(Uniform_BlackOps);
+    weapons[] = {
+        "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder"
+    };
+    respawnWeapons[] = {
+        "WRS_Weapon_AR_Black", "WBK_SciFi_Pistol_Black","muzzle_snds_acp","acc_flashlight_pistol", "OPTRE_Smartfinder",
+    };
+    linkedItems[] = {
+        QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(Black_Ops_Helmet), QCLASS(BlackOps_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(BlackOps_Backpack_Predef);
+};
