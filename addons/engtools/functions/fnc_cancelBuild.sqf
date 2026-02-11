@@ -1,7 +1,9 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_cancelBuild
- * Cancels building and cleans up
+ * Cancels active building mode, cleans up all event handlers.
+ * Note: buildRotation is intentionally KEPT so repeat placements
+ *       inherit the last-used angle.
  */
 
 if (!isNil QGVAR(buildingObject)) then {
@@ -24,8 +26,14 @@ if (!isNil QGVAR(buildMouseEH)) then {
     GVAR(buildMouseEH) = nil;
 };
 
+// Scroll wheel handler (added in v8)
+if (!isNil QGVAR(buildScrollEH)) then {
+    (findDisplay 46) displayRemoveEventHandler ["MouseZChanged", GVAR(buildScrollEH)];
+    GVAR(buildScrollEH) = nil;
+};
+
 GVAR(buildClassname) = nil;
-GVAR(buildRotation) = nil;
 GVAR(canPlaceObject) = nil;
+// buildRotation intentionally preserved for next repeat placement
 
 hint "";
