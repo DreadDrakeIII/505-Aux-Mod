@@ -16,7 +16,7 @@ class CfgPatches {
 class CfgFactionClasses {
     class NO_CATEGORY;
     class 505th_MinesweeperIED: NO_CATEGORY {
-        displayName = "505th Minesweeper IED";
+        displayName = "505th Zeus";
     };
 };
 
@@ -53,7 +53,7 @@ class CfgVehicles {
         class ArgumentsBaseUnits {};
         class ModuleDescription {};
     };
-    
+
     class 505th_ModuleMinesweeperIED_F: Module_F {
         scope = 2;
         displayName = "505th Minesweeper IED";
@@ -65,7 +65,7 @@ class CfgVehicles {
         isTriggerActivated = 0;
         isDisposable = 0;
         is3DEN = 0;
-        
+
         class Arguments {
             class Difficulty {
                 displayName = "Difficulty";
@@ -87,7 +87,7 @@ class CfgVehicles {
                     };
                 };
             };
-            
+
             class TriggerSide {
                 displayName = "Trigger Side";
                 description = "Which side triggers the IED";
@@ -117,7 +117,7 @@ class CfgVehicles {
                 };
             };
         };
-        
+
         class ModuleDescription: ModuleDescription {
             description = "Place directly on an object to turn it into a 505th Minesweeper IED. Can only be disarmed by completing a minesweeper minigame. The module will automatically detect the object underneath it.";
             sync[] = {};

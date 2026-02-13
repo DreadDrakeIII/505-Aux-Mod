@@ -3,6 +3,7 @@
  * Function: OLI_engtools_fnc_openEngineerMenu
  * Opens the Combat Engineer Tool Tablet dialog.
  * Syncs all toggle states (height / terrain / snap) on open.
+ * Now also displays current resource count.
  */
 
 if !("OLI_Combat_Engineer_Toolkit" in items player) exitWith {
@@ -55,6 +56,34 @@ createDialog QGVAR(dialog);
         } else {
             _sCtrl ctrlSetText "[OFF] SNAP";
             _sCtrl ctrlSetBackgroundColor [0.10, 0.14, 0.30, 1.0];
+        };
+    };
+
+    // Resource display
+    private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+    private _resCtrl = _display displayCtrl IDC_RESOURCE_DISPLAY;
+    if (!isNull _resCtrl) then {
+        if (_resourcesEnabled) then {
+            private _resources = player getVariable [QGVAR(resources), 0];
+            _resCtrl ctrlSetText format ["⬡ %1", _resources];
+        } else {
+            _resCtrl ctrlSetText "⬡ FREE";
+            _resCtrl ctrlSetTextColor [0.5, 0.8, 0.5, 1];
+        };
+    };
+
+    // Auto-level toggle
+    if (isNil "OLI_engtools_autoLevel") then { OLI_engtools_autoLevel = false; };
+    private _alCtrl = _display displayCtrl IDC_AUTOLEVEL_TOGGLE;
+    if (!isNull _alCtrl) then {
+        if (OLI_engtools_autoLevel) then {
+            _alCtrl ctrlSetText "[ON]  AUTO LEVEL";
+            _alCtrl ctrlSetBackgroundColor [0.08, 0.14, 0.45, 1.0];
+            _alCtrl ctrlSetTextColor       [0.70, 0.85, 1.00, 1.0];
+        } else {
+            _alCtrl ctrlSetText "[OFF] AUTO LEVEL";
+            _alCtrl ctrlSetBackgroundColor [0.14, 0.10, 0.30, 1.0];
+            _alCtrl ctrlSetTextColor       [0.55, 0.55, 0.80, 1.0];
         };
     };
 

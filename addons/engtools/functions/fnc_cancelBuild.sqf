@@ -34,6 +34,22 @@ if (!isNil QGVAR(buildScrollEH)) then {
 
 GVAR(buildClassname) = nil;
 GVAR(canPlaceObject) = nil;
+GVAR(buildSlopeAngle) = nil;
+GVAR(buildSurfaceNormal) = nil;
+GVAR(buildCanPlace) = nil;
+GVAR(buildVecDir) = nil;
+GVAR(buildVecUp) = nil;
+GVAR(buildSnapVecDir) = nil;
+GVAR(buildSnapVecUp) = nil;
+GVAR(buildSnapPos) = nil;
+GVAR(buildSnapBaseDir) = nil;
+GVAR(buildSnapLocked) = nil;
+GVAR(buildSnapTargetPos) = nil;
+GVAR(buildSnapLongAxis) = nil;
+GVAR(buildSnapTHalfLong) = nil;
+GVAR(buildSnapNHalfLong) = nil;
+GVAR(buildSnapTHalfZ) = nil;
+GVAR(buildSnapNHalfZ) = nil;
 // buildRotation intentionally preserved for next repeat placement
 
 hint "";

@@ -3,6 +3,7 @@
  * Function: OLI_engtools_fnc_updatePreview
  * Updates the preview panel on hover.
  * Called with no args to clear the panel.
+ * Now shows resource cost for each object.
  */
 
 params [
@@ -35,9 +36,32 @@ if (_imagePath isEqualTo "") then {
 
 if (!isNull _imgCtrl)  then { _imgCtrl ctrlSetText _imagePath };
 if (!isNull _nameCtrl) then { _nameCtrl ctrlSetText _displayName };
+
+// ── Build description with cost info ────────────────────────────────────────
+private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+private _costStr = "";
+
+if (_resourcesEnabled) then {
+    private _cost = [_classname] call FUNC(getObjectCost);
+    private _currentRes = player getVariable [QGVAR(resources), 0];
+    private _canAfford = _currentRes >= _cost;
+
+    if (_canAfford) then {
+        _costStr = format [
+            "  <t color='#55CC66'>|  Cost: %1</t>  <t color='#AAAAAA'>(%2 available)</t>",
+            _cost, _currentRes
+        ];
+    } else {
+        _costStr = format [
+            "  <t color='#FF4444'>|  Cost: %1</t>  <t color='#FF6666'>(Need %2 more)</t>",
+            _cost, _cost - _currentRes
+        ];
+    };
+};
+
 if (!isNull _descCtrl) then {
     _descCtrl ctrlSetStructuredText parseText format [
-        "<t align='left' color='#CCCCCC' size='1.1'>%1</t>",
-        _description
+        "<t align='left' color='#CCCCCC' size='1.1'>%1</t>%2",
+        _description, _costStr
     ];
 };

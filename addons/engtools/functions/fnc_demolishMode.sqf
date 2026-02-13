@@ -3,6 +3,7 @@
  * Function: OLI_engtools_fnc_demolishMode
  * Activates demolish mode – LMB removes nearby built objects.
  * RMB or Scroll Wheel returns to menu.
+ * Now refunds full resource cost on demolish.
  */
 
 if (!isNil QGVAR(buildingObject)) then { [] call FUNC(cancelBuild); };
@@ -23,9 +24,13 @@ GVAR(demolishEH) = addMissionEventHandler ["EachFrame", {
     if (count _near > 0) then {
         private _obj  = _near select 0;
         private _dist = round ((player distance _obj) * 10) / 10;
+        private _cost = _obj getVariable [QGVAR(builtCost), 0];
+        private _refundStr = if (_cost > 0) then {
+            format ["<br/><t color='#55CC66'>Refund: +%1 resources</t>", _cost]
+        } else { "" };
         hintSilent parseText format [
-            "<t size='1.1' color='#FF4444'>DEMOLISH MODE</t><br/><t color='#FF8888'>Target: %1</t><br/><t color='#FFAAAA'>Distance: %2m</t><br/><br/><t color='#FFFFFF'>LMB</t><t color='#AAAAAA'> – Delete  |  <t color='#FFFFFF'>RMB/Scroll</t><t color='#AAAAAA'> – Back to menu</t>",
-            typeOf _obj, _dist
+            "<t size='1.1' color='#FF4444'>DEMOLISH MODE</t><br/><t color='#FF8888'>Target: %1</t><br/><t color='#FFAAAA'>Distance: %2m</t>%3<br/><br/><t color='#FFFFFF'>LMB</t><t color='#AAAAAA'> – Delete  |  <t color='#FFFFFF'>RMB/Scroll</t><t color='#AAAAAA'> – Back to menu</t>",
+            typeOf _obj, _dist, _refundStr
         ];
     } else {
         hintSilent parseText "<t size='1.1' color='#FF4444'>DEMOLISH MODE</t><br/><t color='#888888'>No built objects within 6m</t><br/><br/><t color='#FFFFFF'>RMB or Scroll</t><t color='#AAAAAA'> – Back to menu</t>";
@@ -44,7 +49,7 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
         true
     };
 
-    // LMB – delete nearest
+    // LMB – delete nearest + refund
     if (_button == 0) exitWith {
         private _near = (nearestObjects [player, [], 6]) select {
             _x getVariable [QGVAR(builtObject), false]
@@ -56,6 +61,17 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
 
         private _obj  = _near select 0;
         private _type = typeOf _obj;
+        private _cost = _obj getVariable [QGVAR(builtCost), 0];
+
+        // ── Refund resources ────────────────────────────────────────────────
+        private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+        if (_resourcesEnabled && _cost > 0) then {
+            private _currentRes = player getVariable [QGVAR(resources), 0];
+            player setVariable [QGVAR(resources), _currentRes + _cost, true];
+            systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
+        } else {
+            systemChat format ["[Engineer] Demolished: %1", _type];
+        };
 
         if (!isNil QGVAR(builtObjects)) then {
             GVAR(builtObjects) = GVAR(builtObjects) - [_obj];
@@ -68,7 +84,6 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
             deleteVehicle _obj;
         };
 
-        systemChat format ["[Engineer] Demolished: %1", _type];
         true
     };
     false

@@ -6,3 +6,8 @@ if (!hasInterface) exitWith {};
 [] spawn {
     [] call FUNC(initEngineerMenu);
 };
+
+// Initialize resource system
+[] spawn {
+    [] call FUNC(initResources);
+};

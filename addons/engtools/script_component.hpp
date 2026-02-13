@@ -20,10 +20,16 @@
 #define IDC_HEIGHT_DOWN         3105
 #define IDC_HEIGHT_RESET        3106
 #define IDC_SNAP_TOGGLE         3107
+#define IDC_RESOURCE_DISPLAY    3108
+#define IDC_AUTOLEVEL_TOGGLE    3109
 
 // Image paths
-#define PATH_LOGO_505  "\BLU\OLI\addons\engtools\data\505TH_Logo.png"
-#define PATH_LOGO_ENG  "\BLU\OLI\addons\engtools\data\eng_logo.png"
+#define PATH_LOGO_505  "\BLU\OLI\addons\engtools\data\505TH_Logo.paa"
+#define PATH_LOGO_ENG  "\BLU\OLI\addons\engtools\data\eng_logo.paa"
+
+// Resource defaults
+#define DEFAULT_RESOURCE_COST 20
+#define DEFAULT_BUILD_TIME 5
 
 // ── Layout ────────────────────────────────────────────────────────────────────
 #define DIALOG_X  "0.07  * safezoneW + safezoneX"

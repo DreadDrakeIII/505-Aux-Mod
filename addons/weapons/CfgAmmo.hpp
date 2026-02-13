@@ -136,12 +136,18 @@ class CfgAmmo {
         // --- Ballistics / Performance ---
         hit = 80;
         caliber = 10.0;
-        initSpeed = 980;
-        typicalSpeed = 980;            // high velocity (m/s)
-        airFriction = -0.0001;        // excellent velocity retention
+        typicalSpeed = 980;
+        airFriction = -0.0001;
         timeToLive = 20;
         tracerScale = 3;
         model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        ACE_ballisticCoefficients[]={0.84};
+        ACE_muzzleVelocities[] = {980, 981};
+        ACE_barrelLengths[] = {720, 760};
+        ACE_dragModel=1;
+        ACE_bulletLength=64.516;
+        ACE_bulletMass=48.6;
+
     };
 
     // ================================

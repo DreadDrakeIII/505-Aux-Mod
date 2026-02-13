@@ -5,7 +5,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         author = AUTHOR;
         url = "";
-        units[] = {};
+        units[] = { QCLASS(Module_AddResources) };
         weapons[] = { QCLASS(Combat_Engineer_Toolkit) };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"A3_Functions_F","cba_main","cba_xeh",QCLASS(main),"OPTRE_Core"};
@@ -20,6 +20,51 @@ class Extended_PreInit_EventHandlers {
 };
 class Extended_PostInit_EventHandlers {
     class ADDON { init = QUOTE(call compile preprocessFileLineNumbers QQPATHTOF(XEH_postInit.sqf)); };
+};
+
+// =============================================================================
+//   ZEUS MODULE – Add Engineer Resources
+// =============================================================================
+
+class CfgFactionClasses {
+    class CLASS(Zeus) {
+        displayName = "505th Zeus";
+        priority = 2;
+        side = 7; // logic side
+    };
+};
+
+class CfgVehicles {
+    class Module_F;
+
+    class CLASS(Module_AddResources): Module_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Add Engineer Resources";
+        category = QCLASS(Zeus);
+        function = QFUNC(zeusAddResources);
+        functionPriority = 1;
+        isGlobal = 1;     // run on server
+        isTriggerActivated = 0;
+        isDisposable = 1;  // delete after use
+        curatorCanAttach = 1;
+
+        author = AUTHOR;
+        icon = "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\repair_ca.paa";
+
+        class Attributes {
+            class Units {
+                property = QCLASS(Module_AddResources_Units);
+                control = "Units";
+                displayName = "Synced Units";
+                expression = "";
+            };
+        };
+
+        class ModuleDescription {
+            description = "Place on a player to add engineer build resources. A dialog will ask for the amount.";
+        };
+    };
 };
 
 // =============================================================================
@@ -79,15 +124,6 @@ class RscButton {
 
 // =============================================================================
 //   DIALOG  –  COMBAT ENGINEER TABLET
-// =============================================================================
-// NEW LAYOUT ORDER (top → bottom):
-//   1. Header  (logo | title | X)
-//   2. Mode tabs  (BUILD | DEMOLISH)          ← small centred rectangles
-//   3. Preview panel  (image + name/desc)
-//   4. Options row  (LevelTerrain | Snap | Height)
-//   5. Column headers
-//   6. Object buttons  (7 rows × 3 cols)
-//   7. Status bar + controls hint
 // =============================================================================
 
 class GVAR(dialog) {
@@ -157,10 +193,10 @@ class GVAR(dialog) {
         class Watermark: RscPicture {
             idc=-1;
             style=48;
-            x="0.30 * safezoneW + safezoneX";
-            y="0.36 * safezoneH + safezoneY";
-            w="0.40 * safezoneW"; h="0.33 * safezoneH";
-            colorText[] = {1,1,1,0.04};
+            x="0.36 * safezoneW + safezoneX";
+            y="0.26 * safezoneH + safezoneY";
+            w="0.28 * safezoneW"; h="0.50 * safezoneH";
+            colorText[] = {1,1,1,0.10};
             text=PATH_LOGO_ENG;
         };
 
@@ -171,9 +207,9 @@ class GVAR(dialog) {
         // ── 505th logo ────────────────────────────────────────────────────────
         class Logo505: RscPicture {
             idc=-1; style=48;
-            x="0.076 * safezoneW + safezoneX";
+            x="0.082 * safezoneW + safezoneX";
             y="0.044 * safezoneH + safezoneY";
-            w="0.056 * safezoneW"; h="0.054 * safezoneH";
+            w="0.030 * safezoneW"; h="0.054 * safezoneH";
             colorText[] = {1,1,1,1};
             text=PATH_LOGO_505;
         };
@@ -198,6 +234,18 @@ class GVAR(dialog) {
             font="PuristaMedium"; sizeEx=0.018; style=0x00;
         };
 
+        // ── Resource display (top-right, next to close button) ────────────────
+        class ResourceDisplay: RscText {
+            idc=IDC_RESOURCE_DISPLAY;
+            text="⬡ ---";
+            x="0.780 * safezoneW + safezoneX";
+            y="0.050 * safezoneH + safezoneY";
+            w="0.110 * safezoneW"; h="0.040 * safezoneH";
+            colorText[] = {1.0,0.75,0.20,1.0};
+            colorBackground[] = {0.08,0.06,0.02,0.80};
+            font="PuristaBold"; sizeEx=0.028; style=0x02;
+        };
+
         // ── Close button ──────────────────────────────────────────────────────
         class CloseButton: RscButton {
             idc=1001; text="X";
@@ -216,8 +264,6 @@ class GVAR(dialog) {
         class ModeTabBuild: RscButton {
             idc=IDC_MODE_BUILD;
             text="BUILD MODE";
-            // centred pair: dialog centre = 0.07+0.86/2 = 0.50
-            // each tab w=0.34, gap=0.012, so left starts at 0.50-0.346=0.154
             x="0.154 * safezoneW + safezoneX";
             y="0.109 * safezoneH + safezoneY";
             w="0.33 * safezoneW"; h="0.034 * safezoneH";
@@ -243,7 +289,6 @@ class GVAR(dialog) {
         };
 
         // ── PREVIEW PANEL  (below mode tabs) ─────────────────────────────────
-        // Centred image: dialog centre = 0.50, image w=0.110 → x = 0.50 - 0.055 = 0.445
         class PreviewImgBorder: RscText {
             idc=-1;
             x="0.442 * safezoneW + safezoneX";
@@ -260,7 +305,6 @@ class GVAR(dialog) {
             colorBackground[] = {0.06,0.09,0.12,1};
             text="";
         };
-        // Name and desc centred below the image
         class PreviewName: RscText {
             idc=IDC_PREVIEW_NAME;
             text="Hover an object to preview  |  Select to begin building";
@@ -366,6 +410,19 @@ class GVAR(dialog) {
             w="0.065 * safezoneW"; h="0.024 * safezoneH";
             colorText[] = {0.32,0.50,0.36,0.70};
             font="PuristaMedium"; sizeEx=0.018; style=0x02;
+        };
+        class AutoLevelToggle: RscButton {
+            idc=IDC_AUTOLEVEL_TOGGLE;
+            text="[OFF] AUTO LEVEL";
+            x="0.730 * safezoneW + safezoneX";
+            y="0.313 * safezoneH + safezoneY";
+            w="0.190 * safezoneW"; h="0.034 * safezoneH";
+            colorText[] = {0.80,0.80,1.0,1};
+            colorBackground[] = {0.14,0.10,0.30,1.0};
+            colorBackgroundActive[] = {0.22,0.16,0.42,1};
+            colorBorder[] = {0.28,0.20,0.60,0.80};
+            font="PuristaBold"; sizeEx=0.020;
+            action="[] call OLI_engtools_fnc_toggleAutoLevel;";
         };
 
         // ── COLUMN HEADERS ────────────────────────────────────────────────────

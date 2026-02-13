@@ -6,7 +6,7 @@ if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {
 
 // Register the custom module
 [
-    "505th Minesweeper",
+    "505th Zeus",
     "Place Minesweeper IED",
     {
         params ["_pos", "_attachedObject"];
