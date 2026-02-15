@@ -2,13 +2,13 @@
 /*
  * Function: OLI_engtools_fnc_progressBuild
  * Handles the build progress timer using ACE3 progress bar.
- * Supports auto-level vectors.
+ * Now includes kneeling build animation (ACE-inspired).
+ * Vectors are read from ghost at placement time — passed directly.
  */
 
 params [
     ["_classname", "", [""]],
     ["_pos", [0,0,0], [[]]],
-    ["_dir", 0, [0]],
     ["_cost", DEFAULT_RESOURCE_COST, [0]],
     ["_vecDir", [], [[]]],
     ["_vecUp", [], [[]]]
@@ -21,25 +21,30 @@ if (_buildTime <= 0) then { _buildTime = DEFAULT_BUILD_TIME; };
 
 // ── Ghost marker at build site ──────────────────────────────────────────────
 private _ghost = _classname createVehicleLocal [0,0,0];
-_ghost setPosASL _pos;
-if (count _vecDir == 3 && count _vecUp == 3) then {
-    _ghost setVectorDirAndUp [_vecDir, _vecUp];
-} else {
-    _ghost setVectorDirAndUp [[sin _dir, cos _dir, 0], [0, 0, 1]];
-};
-_ghost setPosASL _pos;
 _ghost allowDamage false;
 _ghost enableSimulation false;
 
-// ── ACE Progress Bar ────────────────────────────────────────────────────────
+if (count _vecDir == 3 && count _vecUp == 3) then {
+    _ghost setVectorDirAndUp [_vecDir, _vecUp];
+} else {
+    _ghost setVectorDirAndUp [[0, 1, 0], [0, 0, 1]];
+};
+_ghost setPosASL _pos;
+_ghost setVectorDirAndUp [
+    if (count _vecDir == 3) then { _vecDir } else { [0, 1, 0] },
+    if (count _vecUp == 3)  then { _vecUp }  else { [0, 0, 1] }
+];
+_ghost setPosASL _pos;
+
+// ── ACE Progress Bar with build animation ───────────────────────────────────
 [
     _buildTime,
-    [_classname, _pos, _dir, _cost, _ghost, _vecDir, _vecUp],
+    [_classname, _pos, _cost, _ghost, _vecDir, _vecUp],
 
     // ── ON SUCCESS ──────────────────────────────────────────────────────────
     {
         params ["_args"];
-        _args params ["_classname", "_pos", "_dir", "_cost", "_ghost", "_vecDir", "_vecUp"];
+        _args params ["_classname", "_pos", "_cost", "_ghost", "_vecDir", "_vecUp"];
 
         deleteVehicle _ghost;
 
@@ -53,10 +58,13 @@ _ghost enableSimulation false;
         };
 
         if (isMultiplayer) then {
-            [_classname, _pos, _dir, _vecDir, _vecUp] remoteExec [QFUNC(createBuiltObject), 2];
+            [_classname, _pos, 0, _vecDir, _vecUp] remoteExec [QFUNC(createBuiltObject), 2];
         } else {
-            [_classname, _pos, _dir, _vecDir, _vecUp] call FUNC(createBuiltObject);
+            [_classname, _pos, 0, _vecDir, _vecUp] call FUNC(createBuiltObject);
         };
+
+        // Reset animation
+        [player, "", 1] call ace_common_fnc_doAnimation;
 
         private _newRes = player getVariable [QGVAR(resources), 0];
         private _resEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
@@ -77,17 +85,28 @@ _ghost enableSimulation false;
     // ── ON FAILURE / CANCEL ─────────────────────────────────────────────────
     {
         params ["_args"];
-        _args params ["_classname", "_pos", "_dir", "_cost", "_ghost"];
+        _args params ["_classname", "_pos", "_cost", "_ghost"];
 
         deleteVehicle _ghost;
+
+        // Reset animation
+        [player, "", 1] call ace_common_fnc_doAnimation;
+
         systemChat "[Engineer] Build cancelled.";
     },
 
     format ["Building %1...", _classname],
 
+    // ── Per-frame check: proximity + animation loop ─────────────────────────
     {
-        params ["_args"];
+        params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
         _args params ["_classname", "_pos"];
+
+        // Keep kneeling animation running for longer builds
+        if (_totalTime != 0 && {animationState player != "AinvPknlMstpSnonWnonDnon_medic4"}) then {
+            [player, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+        };
+
         player distance (ASLToAGL _pos) < 15
     },
 

@@ -260,7 +260,7 @@ class GVAR(dialog) {
             action="closeDialog 0;";
         };
 
-        // ── MODE TABS – small centred cornered rectangles ─────────────────────
+        // ── MODE TABS ─────────────────────────────────────────────────────────
         class ModeTabBuild: RscButton {
             idc=IDC_MODE_BUILD;
             text="BUILD MODE";
@@ -288,7 +288,7 @@ class GVAR(dialog) {
             action="[] call OLI_engtools_fnc_demolishMode; closeDialog 0;";
         };
 
-        // ── PREVIEW PANEL  (below mode tabs) ─────────────────────────────────
+        // ── PREVIEW PANEL ─────────────────────────────────────────────────────
         class PreviewImgBorder: RscText {
             idc=-1;
             x="0.442 * safezoneW + safezoneX";
@@ -411,19 +411,7 @@ class GVAR(dialog) {
             colorText[] = {0.32,0.50,0.36,0.70};
             font="PuristaMedium"; sizeEx=0.018; style=0x02;
         };
-        class AutoLevelToggle: RscButton {
-            idc=IDC_AUTOLEVEL_TOGGLE;
-            text="[OFF] AUTO LEVEL";
-            x="0.730 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.190 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.80,0.80,1.0,1};
-            colorBackground[] = {0.14,0.10,0.30,1.0};
-            colorBackgroundActive[] = {0.22,0.16,0.42,1};
-            colorBorder[] = {0.28,0.20,0.60,0.80};
-            font="PuristaBold"; sizeEx=0.020;
-            action="[] call OLI_engtools_fnc_toggleAutoLevel;";
-        };
+        // NOTE: Auto-level toggle removed (v10)
 
         // ── COLUMN HEADERS ────────────────────────────────────────────────────
         class ColHeader1: RscText {
@@ -575,7 +563,7 @@ class GVAR(dialog) {
         // ── CONTROLS HINT ─────────────────────────────────────────────────────
         class ControlsHint: RscText {
             idc=-1;
-            text="BUILD: LMB Place  |  Q/E Rotate 5°  |  PgUp/PgDn Height  |  TAB Toggle Snap  |  RMB/Scroll Back to Menu  |  Shift+RMB Delete";
+            text="BUILD: LMB Place | Q/E Yaw | Shift+Q/E Pitch | Ctrl+Q/E Bank | ALT Terrain Snap | Scroll Distance | PgUp/PgDn Height | TAB Snap | Backspace Reset Tilt";
             x=DIALOG_X; y="0.711 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.018 * safezoneH";
             colorText[] = {0.26,0.40,0.30,0.65};

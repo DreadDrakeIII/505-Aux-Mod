@@ -9,7 +9,6 @@ PREP(initEngineerMenu);
 PREP(initResources);
 PREP(openEngineerMenu);
 PREP(progressBuild);
-PREP(toggleAutoLevel);
 PREP(updatePreview);
 PREP(updateEngineerStatus);
 PREP(toggleTerrain);

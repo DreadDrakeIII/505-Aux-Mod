@@ -2,8 +2,8 @@
 /*
  * Function: OLI_engtools_fnc_cancelBuild
  * Cancels active building mode, cleans up all event handlers.
- * Note: buildRotation is intentionally KEPT so repeat placements
- *       inherit the last-used angle.
+ * Note: buildRotation, buildPitch, buildBank intentionally KEPT
+ *       so repeat placements inherit the last-used orientation.
  */
 
 if (!isNil QGVAR(buildingObject)) then {
@@ -26,7 +26,6 @@ if (!isNil QGVAR(buildMouseEH)) then {
     GVAR(buildMouseEH) = nil;
 };
 
-// Scroll wheel handler (added in v8)
 if (!isNil QGVAR(buildScrollEH)) then {
     (findDisplay 46) displayRemoveEventHandler ["MouseZChanged", GVAR(buildScrollEH)];
     GVAR(buildScrollEH) = nil;
@@ -34,22 +33,11 @@ if (!isNil QGVAR(buildScrollEH)) then {
 
 GVAR(buildClassname) = nil;
 GVAR(canPlaceObject) = nil;
-GVAR(buildSlopeAngle) = nil;
-GVAR(buildSurfaceNormal) = nil;
-GVAR(buildCanPlace) = nil;
-GVAR(buildVecDir) = nil;
-GVAR(buildVecUp) = nil;
-GVAR(buildSnapVecDir) = nil;
-GVAR(buildSnapVecUp) = nil;
-GVAR(buildSnapPos) = nil;
+
+// Snap state cleanup
 GVAR(buildSnapBaseDir) = nil;
 GVAR(buildSnapLocked) = nil;
-GVAR(buildSnapTargetPos) = nil;
-GVAR(buildSnapLongAxis) = nil;
-GVAR(buildSnapTHalfLong) = nil;
-GVAR(buildSnapNHalfLong) = nil;
-GVAR(buildSnapTHalfZ) = nil;
-GVAR(buildSnapNHalfZ) = nil;
-// buildRotation intentionally preserved for next repeat placement
+
+// buildRotation, buildPitch, buildBank intentionally preserved
 
 hint "";

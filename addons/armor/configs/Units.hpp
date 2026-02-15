@@ -1,4 +1,4 @@
-class CLASS(Marine_Rifleman_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Rifleman): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
@@ -43,7 +43,7 @@ class CLASS(Marine_Rifleman_CE): CLASS(Marine_CE_Base) {
     };
     backpack = QCLASS(Backpack_Predef);
 };
-class CLASS(Marine_Rifleman_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Marine_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
@@ -91,7 +91,7 @@ class CLASS(Marine_Rifleman_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
     backpack = QCLASS(Rifleman_Backpack_Predef);
 };
 
-class CLASS(Marine_Autorifle_CE): CLASS(Marine_Rifleman_CE) {
+class CLASS(Marine_CE_Autorifle): CLASS(Marine_CE_Rifleman) {
     displayName = "INF 02 Marine [Autorifle]";
     editorPreview = EDITOR_PREVIEW(Marine_Autorifle);
 
@@ -131,7 +131,7 @@ class CLASS(Marine_Autorifle_CE): CLASS(Marine_Rifleman_CE) {
     backpack = QCLASS(Backpack_AutoRifle_Predef);
 };
 
-class CLASS(Marine_Marksman_CE): CLASS(Marine_Rifleman_CE) {
+class CLASS(Marine_CE_Marksman): CLASS(Marine_CE_Rifleman) {
     displayName = "INF 03 Marine [Marksman]";
     editorPreview = EDITOR_PREVIEW(Marine_Marksman);
 
@@ -170,7 +170,7 @@ class CLASS(Marine_Marksman_CE): CLASS(Marine_Rifleman_CE) {
     backpack = QCLASS(Backpack_Marksman_Predef);
 };
 
-class CLASS(Marine_LAT_CE): CLASS(Marine_Rifleman_CE) {
+class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
     displayName = "INF 04 Marine [Light AT]";
     editorPreview = EDITOR_PREVIEW(Marine_LAT);
 
@@ -213,7 +213,7 @@ class CLASS(Marine_LAT_CE): CLASS(Marine_Rifleman_CE) {
     backpack = QCLASS(Backpack_LAT_Predef);
 };
 
-class CLASS(Marine_Grenadier_CE): CLASS(Marine_Rifleman_CE) {
+class CLASS(Marine_CE_Grenadier): CLASS(Marine_CE_Rifleman) {
     displayName = "INF 05 Marine [Grenadier]";
     editorPreview = EDITOR_PREVIEW(Marine_Grenadier);
 
@@ -254,7 +254,7 @@ class CLASS(Marine_Grenadier_CE): CLASS(Marine_Rifleman_CE) {
     backpack = QCLASS(Backpack_Grenadier_Predef);
 };
 
-class CLASS(Corpsman_Rifleman_CE): CLASS(Marine_CE_Base) {
+class CLASS(Corpsman_CE_Rifleman): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
@@ -263,7 +263,7 @@ class CLASS(Corpsman_Rifleman_CE): CLASS(Marine_CE_Base) {
 
     displayName = "INF 07 Corpsman";
 
-    uniformClass = QCLASS(Uniform_Corpsman_CE);
+    uniformClass = QCLASS(Uniform_CE_Corpsman);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\medic\Medic_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -303,7 +303,7 @@ class CLASS(Corpsman_Rifleman_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(MedicalBackpack_Predef);
 };
 
-class CLASS(Corpsman_Rifleman_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Corpsman_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
@@ -352,7 +352,7 @@ class CLASS(Corpsman_Rifleman_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     backpack = QCLASS(MedicalBackpack_Predef);
 };
 
-class CLASS(Marine_SquadLead_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_SquadLead): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
@@ -361,7 +361,7 @@ class CLASS(Marine_SquadLead_CE): CLASS(Marine_CE_Base) {
 
     displayName = "INF 08 Marine [Squadlead]";
 
-    uniformClass = QCLASS(Uniform_SL_CE);
+    uniformClass = QCLASS(Uniform_CE_SL);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\sl\SL_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -401,7 +401,7 @@ class CLASS(Marine_SquadLead_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
-class CLASS(Marine_SquadLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Marine_CE_SquadLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
@@ -450,7 +450,7 @@ class CLASS(Marine_SquadLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
-class CLASS(Marine_PlatoonLead_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_PlatoonLead): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
@@ -459,7 +459,7 @@ class CLASS(Marine_PlatoonLead_CE): CLASS(Marine_CE_Base) {
 
     displayName = "INF 09 Marine [Platoonlead]";
 
-    uniformClass = QCLASS(Uniform_PL_CE);
+    uniformClass = QCLASS(Uniform_CE_PL);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\pl\PL_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -499,7 +499,7 @@ class CLASS(Marine_PlatoonLead_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
-class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Marine_CE_PlatoonLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
@@ -548,7 +548,7 @@ class CLASS(Marine_PlatoonLead_CE_Rolled): CLASS(Marine_CE_Rolled_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
-class CLASS(Marine_FR_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_FR): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
@@ -557,7 +557,7 @@ class CLASS(Marine_FR_CE): CLASS(Marine_CE_Base) {
 
     displayName = "INF 10 Marine [Force Recon]";
 
-    uniformClass = QCLASS(Uniform_FR_CE);
+    uniformClass = QCLASS(Uniform_CE_FR);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {
         QPATHTOF(data\uniforms\ce\forcerecon\Force_Recon_UniformP_co.paa),
@@ -651,18 +651,18 @@ class CLASS(Marine_CE_FR_Rolled): CLASS(Marine_CE_Rolled_Base) {
 };
 
 //////////////////////Custom Unit//////////////////////
-class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Adamant): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     displayName = "J.Adamant";
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Adamant_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Adamant);
 
     identityTypes[] = {QCLASS(Adamant)};
 
-    uniformClass = QCLASS(Adamant_Uniform_CE);
+    uniformClass = QCLASS(Uniform_CE_Adamant);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Dexus_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -693,20 +693,20 @@ class CLASS(Marine_Adamant_CE): CLASS(Marine_CE_Base) {
         "OLI_12Rnd_127x40_Mag"
     };
     linkedItems[] = {
-        QCLASS(CE_Adamant_HELMET), QCLASS(CE_Vest_Adamant_Pouches), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_Adamant), QCLASS(CE_Vest_Adamant_Pouches), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_Adamant_HELMET), QCLASS(CE_Vest_Adamant_Pouches), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_Adamant), QCLASS(CE_Vest_Adamant_Pouches), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Backpack_AutoRifle_Predef);
 };
 
-class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Crawford): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Crawford_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Crawford);
 
     identityTypes[] = {QCLASS(Crawford)};
 
@@ -739,40 +739,40 @@ class CLASS(Marine_Crawford_CE): CLASS(Marine_CE_Base) {
         "OLI_12Rnd_127x40_Mag"
     };
 
-    uniformClass = QCLASS(Crawford_Uniform_CE);
+    uniformClass = QCLASS(Uniform_CE_Crawford);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),QPATHTOF(data\uniforms\ce\custom\Anvil_UniformT_co.paa)};
 
     linkedItems[] = {
-        QCLASS(CE_Crawford_HELMET), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_Crawford), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_Crawford_HELMET), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_Crawford), QCLASS(CE_Vest_Crawford), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Rifleman_Backpack_Predef);
 };
 
-class CLASS(Marine_Crawford_Rolled_CE): CLASS(Marine_CE_Rolled_Base) {
+class CLASS(Marine_CE_Crawford_Rolled): CLASS(Marine_CE_Rolled_Base) {
     SCOPE_HIDDEN;
 
     // Editor Properties
-    uniformClass = QCLASS(Crawford_Uniform_Rolled_CE);
+    uniformClass = QCLASS(Uniform_CE_Crawford_Rolled);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Anvil_UniformP_co.paa),QPATHTOF(data\uniforms\ce\custom\Anvil_Uniform_RolledT_co.paa)};
 };
 
-class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Oliver): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Oliver_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Oliver);
 
     identityTypes[] = {QCLASS(Oliver)};
 
     displayName = "D.Oliver";
 
-    uniformClass = QCLASS(Oliver_Uniform_CE);
+    uniformClass = QCLASS(Uniform_CE_Oliver);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Drake_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
@@ -812,14 +812,14 @@ class CLASS(Marine_Oliver_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 
-class CLASS(Marine_Davy_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Davy): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     displayName = "S.Davy";
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Davy_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Davy);
 
     identityTypes[] = {QCLASS(Davy)};
 
@@ -864,14 +864,14 @@ class CLASS(Marine_Davy_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Invisible_Backpack_CE);
 };
 
-class CLASS(Marine_Kain_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     displayName = "J.Kain";
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Kain_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Kain);
 
     identityTypes[] = {QCLASS(Kain)};
 
@@ -912,12 +912,12 @@ class CLASS(Marine_Kain_CE): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_Predef);
 };
 
-class CLASS(Marine_Doc_CE): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
-    editorPreview = EDITOR_PREVIEW(Marine_Doc_CE);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Doc);
 
     identityTypes[] = {QCLASS(Doc)};
 
@@ -950,7 +950,7 @@ class CLASS(Marine_Doc_CE): CLASS(Marine_CE_Base) {
         "OLI_8Rnd_127x40_Mag"
     };
 
-    uniformClass = QCLASS(Doc_Uniform_CE);
+    uniformClass = QCLASS(Uniform_CE_Doc);
     hiddenSelections[] = {"camo","camo1"};
     hiddenSelectionsTextures[] = {
         QPATHTOF(data\uniforms\ce\custom\Doc_UniformP_co.paa),

@@ -2,8 +2,9 @@
 /*
  * Function: OLI_engtools_fnc_demolishMode
  * Activates demolish mode – LMB removes nearby built objects.
+ * Now uses ACE progress bar with kneeling animation.
+ * Demolish time configurable via CBA addon options (default 5s).
  * RMB or Scroll Wheel returns to menu.
- * Now refunds full resource cost on demolish.
  */
 
 if (!isNil QGVAR(buildingObject)) then { [] call FUNC(cancelBuild); };
@@ -49,7 +50,7 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
         true
     };
 
-    // LMB – delete nearest + refund
+    // LMB – start demolish with progress bar
     if (_button == 0) exitWith {
         private _near = (nearestObjects [player, [], 6]) select {
             _x getVariable [QGVAR(builtObject), false]
@@ -63,25 +64,104 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
         private _type = typeOf _obj;
         private _cost = _obj getVariable [QGVAR(builtCost), 0];
 
-        // ── Refund resources ────────────────────────────────────────────────
-        private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
-        if (_resourcesEnabled && _cost > 0) then {
-            private _currentRes = player getVariable [QGVAR(resources), 0];
-            player setVariable [QGVAR(resources), _currentRes + _cost, true];
-            systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
-        } else {
-            systemChat format ["[Engineer] Demolished: %1", _type];
-        };
+        // Get demolish time from CBA settings
+        private _demolishTime = missionNamespace getVariable [QGVAR(setting_demolishTime), DEFAULT_DEMOLISH_TIME];
 
-        if (!isNil QGVAR(builtObjects)) then {
-            GVAR(builtObjects) = GVAR(builtObjects) - [_obj];
-            publicVariable QGVAR(builtObjects);
-        };
+        // Instant demolish if timer is 0
+        if (_demolishTime <= 0) then {
+            // Refund resources
+            private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+            if (_resourcesEnabled && _cost > 0) then {
+                private _currentRes = player getVariable [QGVAR(resources), 0];
+                player setVariable [QGVAR(resources), _currentRes + _cost, true];
+                systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
+            } else {
+                systemChat format ["[Engineer] Demolished: %1", _type];
+            };
 
-        if (isMultiplayer) then {
-            [_obj] remoteExec ["deleteVehicle", 2];
+            if (!isNil QGVAR(builtObjects)) then {
+                GVAR(builtObjects) = GVAR(builtObjects) - [_obj];
+                publicVariable QGVAR(builtObjects);
+            };
+
+            if (isMultiplayer) then {
+                [_obj] remoteExec ["deleteVehicle", 2];
+            } else {
+                deleteVehicle _obj;
+            };
         } else {
-            deleteVehicle _obj;
+            // ── ACE progress bar with kneeling animation ────────────────────
+            // Temporarily disable demolish EH so it doesn't conflict
+            if (!isNil QGVAR(demolishEH)) then {
+                removeMissionEventHandler ["EachFrame", GVAR(demolishEH)];
+                GVAR(demolishEH) = nil;
+            };
+
+            [
+                _demolishTime,
+                [_obj, _type, _cost],
+
+                // ON SUCCESS
+                {
+                    params ["_args"];
+                    _args params ["_obj", "_type", "_cost"];
+
+                    if (isNull _obj) exitWith {
+                        systemChat "[Engineer] Object already removed.";
+                    };
+
+                    // Refund resources
+                    private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+                    if (_resourcesEnabled && _cost > 0) then {
+                        private _currentRes = player getVariable [QGVAR(resources), 0];
+                        player setVariable [QGVAR(resources), _currentRes + _cost, true];
+                        systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
+                    } else {
+                        systemChat format ["[Engineer] Demolished: %1", _type];
+                    };
+
+                    if (!isNil QGVAR(builtObjects)) then {
+                        GVAR(builtObjects) = GVAR(builtObjects) - [_obj];
+                        publicVariable QGVAR(builtObjects);
+                    };
+
+                    if (isMultiplayer) then {
+                        [_obj] remoteExec ["deleteVehicle", 2];
+                    } else {
+                        deleteVehicle _obj;
+                    };
+
+                    // Reset animation
+                    [player, "", 1] call ace_common_fnc_doAnimation;
+                },
+
+                // ON CANCEL
+                {
+                    // Reset animation
+                    [player, "", 1] call ace_common_fnc_doAnimation;
+                    systemChat "[Engineer] Demolish cancelled.";
+                },
+
+                format ["Demolishing %1...", _type],
+
+                // Per-frame: proximity + animation loop
+                {
+                    params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                    _args params ["_obj"];
+
+                    if (isNull _obj) exitWith { false };
+
+                    // Keep kneeling animation
+                    if (_totalTime != 0 && {animationState player != "AinvPknlMstpSnonWnonDnon_medic4"}) then {
+                        [player, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+                    };
+
+                    player distance _obj < 8
+                },
+
+                ["isNotInside", "isNotSwimming"]
+
+            ] call ace_common_fnc_progressBar;
         };
 
         true

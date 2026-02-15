@@ -81,7 +81,7 @@ class CLASS(CE_HELMET_FRV2): CLASS(CE_HELMETV2) {
     hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\ce\Force_Recon_Helmet_co.paa)};
 };
 ////////////////////Custom Helms////////////////////
-class CLASS(CE_Adamant_HELMET): CLASS(CE_HELMETV2) {
+class CLASS(CE_HELMET_Adamant): CLASS(CE_HELMETV2) {
     author = "505th Aux Team";
     scope = 2;
     scopeCurator = 2;
@@ -90,7 +90,7 @@ class CLASS(CE_Adamant_HELMET): CLASS(CE_HELMETV2) {
     optreHUDStyle = "Glasses";
     hiddenSelectionsTextures[]  = {QPATHTOF(data\helmets\ce\Dexus_Helmet_co.paa)};
 };
-class CLASS(CE_Crawford_HELMET): CLASS(CE_HELMETV2) {
+class CLASS(CE_HELMET_Crawford): CLASS(CE_HELMETV2) {
     author = "505th Aux Team";
     scope = 2;
     scopeCurator = 2;

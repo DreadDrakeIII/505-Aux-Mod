@@ -16,11 +16,11 @@ params ["_locker"];
 // ============================================================================
 private _whitelist = [
     // ========== UNIFORMS ==========
-    "OLI_Adamant_Uniform_CE",
-    "OLI_Crawford_Uniform_CE",
-    "OLI_Crawford_Uniform_Rolled_CE",
-    "OLI_Oliver_Uniform_CE",
-    "OLI_Doc_Uniform_CE",
+    "OLI_Uniform_CE_Adamant",
+    "OLI_Uniform_CE_Crawford",
+    "OLI_Uniform_CE_Crawford_Rolled",
+    "OLI_Uniform_CE_Oliver",
+    "OLI_Uniform_CE_Doc",
     // ========== VESTS ==========
     "OLI_CE_Vest_FR_Davy",
     "OLI_CE_Vest_Adamant_Pouches",
@@ -32,8 +32,8 @@ private _whitelist = [
     // ========== HELMETS ==========
     "OLI_Tuna_Pilot_Helmet",
     "OLI_Malarkey_Pilot_Helmet",
-    "OLI_CE_Adamant_HELMET",
-    "OLI_CE_Crawford_HELMET",
+    "OLI_CE_HELMET_Adamant",
+    "OLI_CE_HELMET_Crawford",
     // Backpacks
 
     // ========== GOGGLES/FACEWEAR ==========
