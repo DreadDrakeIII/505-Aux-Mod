@@ -9,7 +9,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(APCs);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_Rifleman_CE)};
+        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
     };
 
     class CLASS(Bison_IFV): OPTRE_M412_IFV_UNSC {
@@ -19,7 +19,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(APCs);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_Rifleman_CE)};
+        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
     };
 
     class CLASS(Bison_MGS): OPTRE_M413_MGS_UNSC {
@@ -29,6 +29,6 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(APCs);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_Rifleman_CE)};
+        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
     };
 };

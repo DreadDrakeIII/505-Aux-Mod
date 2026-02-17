@@ -1,18 +1,15 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_createBuiltObject
- * Creates actual object (server-side in MP)
- * Supports auto-level via vectorDirAndUp.
+ * Creates actual object (server-side in MP).
+ * Vectors read from ghost at placement time — always explicit.
  * Stores resource cost for demolish refund.
  *
- * ROTATION FIX (v3 - dedicated server safe):
- *   OPTRE models get auto-aligned by Arma's physics engine during
- *   the first simulation tick after createVehicle. On dedicated servers
- *   this happens before enableSimulation can stop it.
- *
- *   Solution: Create at [0,0,0] (no terrain = nothing to align to),
- *   disable simulation globally, THEN move into position.
- *   Triple re-apply vectors to survive network sync.
+ * v10 FIX: Create at ACTUAL POSITION (ACE approach).
+ * Previous [0,0,0] trick caused first-build objects to vanish on
+ * some maps where origin has no valid terrain. ACE creates directly
+ * at the target position and immediately applies vectors — we do
+ * the same but also disable simulation for heavy OPTRE models.
  */
 
 params [
@@ -29,16 +26,17 @@ if (_classname isEqualTo "") exitWith {objNull};
 private _finalVecDir = if (count _vecDir == 3) then { _vecDir } else { [sin _dir, cos _dir, 0] };
 private _finalVecUp  = if (count _vecUp == 3)  then { _vecUp }  else { [0, 0, 1] };
 
-// ── STEP 1: Create at origin [0,0,0] — NO terrain there = NO auto-align ────
-private _obj = createVehicle [_classname, [0,0,0], [], 0, "CAN_COLLIDE"];
+// ── STEP 1: Create directly at target position ─────────────────────────────
+// ACE approach: create at the actual location, apply vectors immediately.
+// Using "CAN_COLLIDE" to prevent engine from searching for empty space.
+private _obj = createVehicle [_classname, ASLToAGL _pos, [], 0, "CAN_COLLIDE"];
 
-// ── STEP 2: Kill physics IMMEDIATELY before engine gets a tick ──────────────
+// ── STEP 2: Kill physics IMMEDIATELY ────────────────────────────────────────
 private _needsSimulation = _classname in ["land_TKE_MilLight"];
 _obj enableSimulationGlobal false;
 _obj allowDamage false;
 
-// ── STEP 3: Now safe to position — engine can't fight us ────────────────────
-_obj setVectorDirAndUp [_finalVecDir, _finalVecUp];
+// ── STEP 3: Apply vectors and position — override any engine alignment ──────
 _obj setPosASL _pos;
 _obj setVectorDirAndUp [_finalVecDir, _finalVecUp];
 _obj setPosASL _pos;
@@ -62,9 +60,7 @@ if (isNil QGVAR(builtObjects)) then {
 GVAR(builtObjects) pushBack _obj;
 publicVariable QGVAR(builtObjects);
 
-// ── STEP 4: Re-apply vectors multiple times to beat network sync ────────────
-// On dedicated servers, JIP and locality transfers can reset vectors.
-// We hammer it 3 times across 3 frames to guarantee it sticks.
+// ── STEP 4: Re-apply vectors across multiple frames for network sync ────────
 [_obj, _pos, _finalVecDir, _finalVecUp, _needsSimulation] spawn {
     params ["_o", "_p", "_vd", "_vu", "_sim"];
 

@@ -48,13 +48,26 @@ _ghost setPosASL _pos;
 
         deleteVehicle _ghost;
 
+        // Resource deduction (flag pattern — exitWith inside then{} only exits then)
+        private _canAfford = true;
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
         if (_resourcesEnabled) then {
             private _currentRes = player getVariable [QGVAR(resources), 0];
-            if (_currentRes < _cost) exitWith {
+            if (_currentRes < _cost) then {
+                _canAfford = false;
                 systemChat "[Engineer] Not enough resources!";
+            } else {
+                player setVariable [QGVAR(resources), _currentRes - _cost, true];
             };
-            player setVariable [QGVAR(resources), _currentRes - _cost, true];
+        };
+
+        if (!_canAfford) exitWith {
+            // Re-enter build mode even on failure
+            [_classname] spawn {
+                params ["_c"];
+                sleep 0.15;
+                [_c] call FUNC(buildObject);
+            };
         };
 
         if (isMultiplayer) then {

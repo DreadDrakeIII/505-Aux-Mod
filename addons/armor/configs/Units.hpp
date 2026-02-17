@@ -254,14 +254,14 @@ class CLASS(Marine_CE_Grenadier): CLASS(Marine_CE_Rifleman) {
     backpack = QCLASS(Backpack_Grenadier_Predef);
 };
 
-class CLASS(Corpsman_CE_Rifleman): CLASS(Marine_CE_Base) {
+class CLASS(Marine_CE_Corpsman): CLASS(Marine_CE_Base) {
     SCOPE_PUBLIC;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_Corpsman);
 
-    displayName = "INF 07 Corpsman";
+    displayName = "INF 06 Corpsman";
 
     uniformClass = QCLASS(Uniform_CE_Corpsman);
     hiddenSelections[] = {"camo","camo1"};
@@ -310,7 +310,7 @@ class CLASS(Corpsman_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_Rifleman);
 
-    displayName = "INF 07 Corpsman";
+    displayName = "INF 06 Corpsman";
 
     uniformClass = QCLASS(Uniform_CE_Corpsman_Rolled);
     hiddenSelections[] = {"camo","camo1"};
@@ -359,7 +359,7 @@ class CLASS(Marine_CE_SquadLead): CLASS(Marine_CE_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_Squadlead);
 
-    displayName = "INF 08 Marine [Squadlead]";
+    displayName = "INF 07 Marine [Squadlead]";
 
     uniformClass = QCLASS(Uniform_CE_SL);
     hiddenSelections[] = {"camo","camo1"};
@@ -408,7 +408,7 @@ class CLASS(Marine_CE_SquadLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_Squadlead);
 
-    displayName = "INF 08 Marine [Squadlead]";
+    displayName = "INF 07 Marine [Squadlead]";
 
     uniformClass = QCLASS(Uniform_CE_SL_Rolled);
     hiddenSelections[] = {"camo","camo1"};
@@ -457,7 +457,7 @@ class CLASS(Marine_CE_PlatoonLead): CLASS(Marine_CE_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_PlatoonLead);
 
-    displayName = "INF 09 Marine [Platoonlead]";
+    displayName = "INF 08 Marine [Platoonlead]";
 
     uniformClass = QCLASS(Uniform_CE_PL);
     hiddenSelections[] = {"camo","camo1"};
@@ -506,7 +506,7 @@ class CLASS(Marine_CE_PlatoonLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_PlatoonLead);
 
-    displayName = "INF 09 Marine [Platoonlead]";
+    displayName = "INF 08 Marine [Platoonlead]";
 
     uniformClass = QCLASS(Uniform_CE_PL_Rolled);
     hiddenSelections[] = {"camo","camo1"};
@@ -555,7 +555,7 @@ class CLASS(Marine_CE_FR): CLASS(Marine_CE_Base) {
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_FR);
 
-    displayName = "INF 10 Marine [Force Recon]";
+    displayName = "INF 09 Marine [Force Recon]";
 
     uniformClass = QCLASS(Uniform_CE_FR);
     hiddenSelections[] = {"camo","camo1"};

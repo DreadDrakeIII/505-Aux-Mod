@@ -353,37 +353,31 @@ GVAR(buildKeyEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", {
     if (isNull GVAR(buildingObject)) exitWith {false};
 
     switch (_key) do {
-        // Q key (16) — rotate
+        // Q key (16) — rotate (return true to BLOCK lean animation)
         case 16: {
             if (_shift) then {
-                // Shift+Q = pitch down
                 GVAR(buildPitch) = (GVAR(buildPitch) - 5);
             } else {
                 if (_ctrl) then {
-                    // Ctrl+Q = bank left
                     GVAR(buildBank) = (GVAR(buildBank) - 5);
                 } else {
-                    // Q = yaw left
                     GVAR(buildRotation) = ((GVAR(buildRotation) - 5) + 360) mod 360;
                 };
             };
-            false
+            true
         };
-        // E key (18) — rotate
+        // E key (18) — rotate (return true to BLOCK lean animation)
         case 18: {
             if (_shift) then {
-                // Shift+E = pitch up
                 GVAR(buildPitch) = (GVAR(buildPitch) + 5);
             } else {
                 if (_ctrl) then {
-                    // Ctrl+E = bank right
                     GVAR(buildBank) = (GVAR(buildBank) + 5);
                 } else {
-                    // E = yaw right
                     GVAR(buildRotation) = (GVAR(buildRotation) + 5) mod 360;
                 };
             };
-            false
+            true
         };
         // TAB (15) — toggle snap
         case 15: {
@@ -473,10 +467,12 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
         private _cost = [_cls] call FUNC(getObjectCost);
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
 
-        // ── Resource check ──────────────────────────────────────────────────
+        // ── Resource check (flag pattern — exitWith inside then{} only exits then) ──
+        private _canAfford = true;
         if (_resourcesEnabled) then {
             private _currentRes = player getVariable [QGVAR(resources), 0];
-            if (_currentRes < _cost) exitWith {
+            if (_currentRes < _cost) then {
+                _canAfford = false;
                 systemChat format ["[Engineer] Not enough resources! Need %1, have %2", _cost, _currentRes];
                 hintSilent parseText format [
                     "<t size='1.1' color='#FF4444'>INSUFFICIENT RESOURCES</t><br/>" +
@@ -485,16 +481,18 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
                 ];
             };
         };
+        if (!_canAfford) exitWith { false };
 
         // ── Location restriction check ──────────────────────────────────────
+        private _inBuildZone = true;
         private _locations = missionNamespace getVariable [QGVAR(buildLocations), []];
         if (count _locations > 0) then {
-            private _inArea = false;
-            { if (player inArea _x) exitWith { _inArea = true; }; } forEach _locations;
-
-            if (!_inArea) exitWith {
-                systemChat "[Engineer] Outside build zone – cannot place here.";
-            };
+            _inBuildZone = false;
+            { if (player inArea _x) exitWith { _inBuildZone = true; }; } forEach _locations;
+        };
+        if (!_inBuildZone) exitWith {
+            systemChat "[Engineer] Outside build zone – cannot place here.";
+            false
         };
 
         // ── Deploy handlers check ───────────────────────────────────────────

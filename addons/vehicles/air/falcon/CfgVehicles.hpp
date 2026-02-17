@@ -291,11 +291,11 @@ class CfgVehicles {
             class CargoTurret_09: CargoTurret_09 {};
             class CopilotTurret: CopilotTurret {};
             class LeftDoorGun: LeftDoorGun {
-                gunnerType = QCLASS(Marine_Rifleman_CE);
+                gunnerType = QCLASS(Marine_CE_Rifleman);
             };
             class MainTurret: MainTurret {};
             class RightDoorGun: RightDoorGun {
-                gunnerType = QCLASS(Marine_Rifleman_CE);
+                gunnerType = QCLASS(Marine_CE_Rifleman);
             };
         };
     };

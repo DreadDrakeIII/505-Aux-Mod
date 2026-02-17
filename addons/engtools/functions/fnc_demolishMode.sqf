@@ -131,15 +131,21 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
                         deleteVehicle _obj;
                     };
 
-                    // Reset animation
+                    // Reset animation and re-enter demolish mode
                     [player, "", 1] call ace_common_fnc_doAnimation;
+
+                    // Re-enter demolish mode to restore EachFrame HUD
+                    [] spawn { sleep 0.15; [] call FUNC(demolishMode); };
                 },
 
                 // ON CANCEL
                 {
-                    // Reset animation
+                    // Reset animation and re-enter demolish mode
                     [player, "", 1] call ace_common_fnc_doAnimation;
                     systemChat "[Engineer] Demolish cancelled.";
+
+                    // Re-enter demolish mode to restore EachFrame HUD
+                    [] spawn { sleep 0.15; [] call FUNC(demolishMode); };
                 },
 
                 format ["Demolishing %1...", _type],
