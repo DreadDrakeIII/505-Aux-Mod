@@ -33,7 +33,7 @@ scopeCurator = 2;
 scopeArsenal = 2;
 	class ItemInfo: UniformItem
 	{
-		uniformClass = QCLASS(Corpsman_CE_Rifleman);
+		uniformClass = QCLASS(Marine_CE_Corpsman);
         uniformType = "Neopren";
 		containerClass = "Supply150";
 		mass = 40;

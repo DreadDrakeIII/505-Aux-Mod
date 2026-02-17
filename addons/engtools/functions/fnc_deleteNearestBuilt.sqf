@@ -2,14 +2,14 @@
 /*
  * Function: OLI_engtools_fnc_deleteNearestBuilt
  * Deletes nearest engineer-built object (Shift+RMB in build mode).
- * Full refund on confirm.
+ * Full refund on confirm. All feedback via hint.
  */
 
 private _nearObjects = nearestObjects [player, [], 10];
 _nearObjects = _nearObjects select {_x getVariable [QGVAR(builtObject), false]};
 
 if (count _nearObjects == 0) exitWith {
-    systemChat "[Engineer] No built objects nearby";
+    hintSilent parseText "<t color='#888888'>No built objects nearby</t>";
 };
 
 private _obj = _nearObjects select 0;
@@ -42,14 +42,20 @@ private _cost = _obj getVariable [QGVAR(builtCost), 0];
     (findDisplay 46) displayRemoveEventHandler ["KeyDown", _keyEH];
 
     if (GVAR(deleteConfirm)) then {
-        // ── Refund resources ────────────────────────────────────────────────
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
         if (_resourcesEnabled && _cost > 0) then {
             private _currentRes = player getVariable [QGVAR(resources), 0];
             player setVariable [QGVAR(resources), _currentRes + _cost, true];
-            systemChat format ["[Engineer] %1 removed  |  Refunded +%2 resources", _type, _cost];
+            private _newRes = player getVariable [QGVAR(resources), 0];
+            hintSilent parseText format [
+                "<t size='1.1' color='#55CC66'>REMOVED</t><br/><t color='#AAAAAA'>%1</t><br/><t color='#55CC66'>Refunded +%2 resources</t><br/><t color='#FFAA00'>Remaining: %3</t>",
+                _type, _cost, _newRes
+            ];
         } else {
-            systemChat format ["[Engineer] %1 removed", _type];
+            hintSilent parseText format [
+                "<t size='1.1' color='#55CC66'>REMOVED</t><br/><t color='#AAAAAA'>%1</t>",
+                _type
+            ];
         };
 
         if (!isNil QGVAR(builtObjects)) then {
@@ -59,9 +65,8 @@ private _cost = _obj getVariable [QGVAR(builtCost), 0];
 
         deleteVehicle _obj;
     } else {
-        systemChat "[Engineer] Cancelled";
+        hintSilent parseText "<t color='#888888'>Cancelled</t>";
     };
 
-    hint "";
     GVAR(deleteConfirm) = nil;
 };

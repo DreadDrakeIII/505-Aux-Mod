@@ -35,13 +35,13 @@ if (isNull _target || {!isPlayer _target}) then {
 deleteVehicle _logic;
 
 if (isNull _target || {!isPlayer _target}) exitWith {
-    systemChat "[505th Zeus] Place module on a player unit to add resources.";
+    hint parseText "<t color='#FF4444'>Place module on a player unit to add resources.</t>";
 };
 
 // ── Build scripted dialog on the curator display ────────────────────────────
 private _curatorDisplay = findDisplay 312; // Zeus display
 if (isNull _curatorDisplay) exitWith {
-    systemChat "[505th Zeus] Zeus display not found.";
+    hint parseText "<t color='#FF4444'>Zeus display not found.</t>";
 };
 
 private _targetName = name _target;
@@ -106,11 +106,13 @@ private _allControls = [_bg, _border, _title];
         private _newRes = _currentRes + _amount;
         _target setVariable [QGVAR(resources), _newRes, true];
 
-        systemChat format ["[505th Zeus] Added %1 resources to %2. New total: %3",
-            _amount, name _target, _newRes];
+        hint parseText format [
+            "<t color='#55CC66'>Added %1 resources to %2</t><br/><t color='#FFAA00'>New total: %3</t>",
+            _amount, name _target, _newRes
+        ];
 
-        [format ["[Engineer] Zeus granted you %1 additional resources. Total: %2", _amount, _newRes]]
-            remoteExec ["systemChat", _target];
+        [parseText format ["<t color='#FFA500'>Zeus granted +%1 resources</t><br/><t color='#FFAA00'>Total: %2</t>", _amount, _newRes]]
+            remoteExec ["hintSilent", _target];
 
         // Clean up all controls
         { ctrlDelete _x } forEach _controls;
@@ -141,7 +143,7 @@ _cancelBtn ctrlAddEventHandler ["ButtonClick", {
     private _controls = _ctrl getVariable "OLI_engtools_zeusControls";
     { ctrlDelete _x } forEach _controls;
     ctrlDelete _ctrl;
-    systemChat "[505th Zeus] Cancelled.";
+    hint parseText "<t color='#888888'>Cancelled.</t>";
 }];
 
 _allControls pushBack _cancelBtn;

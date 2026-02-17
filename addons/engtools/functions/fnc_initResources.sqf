@@ -23,8 +23,8 @@ if (isNil {player getVariable QGVAR(resources)}) then {
 player addEventHandler ["Respawn", {
     private _defaultAmount = missionNamespace getVariable [QGVAR(setting_defaultResources), 100];
     player setVariable [QGVAR(resources), _defaultAmount, true];
-    systemChat format ["[Engineer] Resources reset to %1", _defaultAmount];
+    hintSilent parseText format [
+        "<t color='#FFA500'>Resources Reset</t><br/><t color='#FFAA00'>%1 resources available</t>",
+        _defaultAmount
+    ];
 }];
-
-diag_log format ["[OLI Engineering] Resources initialized: %1 for %2",
-    player getVariable [QGVAR(resources), 0], name player];

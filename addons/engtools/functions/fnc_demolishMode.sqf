@@ -57,7 +57,7 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
         };
 
         if (count _near == 0) exitWith {
-            systemChat "[Engineer] No built objects within 6m";
+            hintSilent parseText "<t size='1.1' color='#FF4444'>DEMOLISH MODE</t><br/><t color='#888888'>No built objects within 6m</t>";
         };
 
         private _obj  = _near select 0;
@@ -74,9 +74,16 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
             if (_resourcesEnabled && _cost > 0) then {
                 private _currentRes = player getVariable [QGVAR(resources), 0];
                 player setVariable [QGVAR(resources), _currentRes + _cost, true];
-                systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
+                private _newRes = player getVariable [QGVAR(resources), 0];
+                hintSilent parseText format [
+                    "<t size='1.1' color='#55CC66'>DEMOLISHED</t><br/><t color='#AAAAAA'>%1</t><br/><t color='#55CC66'>Refunded +%2 resources</t><br/><t color='#FFAA00'>Remaining: %3</t>",
+                    _type, _cost, _newRes
+                ];
             } else {
-                systemChat format ["[Engineer] Demolished: %1", _type];
+                hintSilent parseText format [
+                    "<t size='1.1' color='#55CC66'>DEMOLISHED</t><br/><t color='#AAAAAA'>%1</t>",
+                    _type
+                ];
             };
 
             if (!isNil QGVAR(builtObjects)) then {
@@ -107,7 +114,7 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
                     _args params ["_obj", "_type", "_cost"];
 
                     if (isNull _obj) exitWith {
-                        systemChat "[Engineer] Object already removed.";
+                        hintSilent parseText "<t color='#888888'>Object already removed.</t>";
                     };
 
                     // Refund resources
@@ -115,9 +122,16 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
                     if (_resourcesEnabled && _cost > 0) then {
                         private _currentRes = player getVariable [QGVAR(resources), 0];
                         player setVariable [QGVAR(resources), _currentRes + _cost, true];
-                        systemChat format ["[Engineer] Demolished: %1  |  Refunded +%2 resources", _type, _cost];
+                        private _newRes = player getVariable [QGVAR(resources), 0];
+                        hintSilent parseText format [
+                            "<t size='1.1' color='#55CC66'>DEMOLISHED</t><br/><t color='#AAAAAA'>%1</t><br/><t color='#55CC66'>Refunded +%2 resources</t><br/><t color='#FFAA00'>Remaining: %3</t>",
+                            _type, _cost, _newRes
+                        ];
                     } else {
-                        systemChat format ["[Engineer] Demolished: %1", _type];
+                        hintSilent parseText format [
+                            "<t size='1.1' color='#55CC66'>DEMOLISHED</t><br/><t color='#AAAAAA'>%1</t>",
+                            _type
+                        ];
                     };
 
                     if (!isNil QGVAR(builtObjects)) then {
@@ -142,7 +156,7 @@ GVAR(demolishMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDow
                 {
                     // Reset animation and re-enter demolish mode
                     [player, "", 1] call ace_common_fnc_doAnimation;
-                    systemChat "[Engineer] Demolish cancelled.";
+                    hintSilent parseText "<t color='#888888'>Demolish cancelled.</t>";
 
                     // Re-enter demolish mode to restore EachFrame HUD
                     [] spawn { sleep 0.15; [] call FUNC(demolishMode); };

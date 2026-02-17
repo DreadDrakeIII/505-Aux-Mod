@@ -1,9 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_progressBuild
- * Handles the build progress timer using ACE3 progress bar.
- * Now includes kneeling build animation (ACE-inspired).
- * Vectors are read from ghost at placement time — passed directly.
+ * ACE3 progress bar with kneeling build animation.
+ * All feedback via hint (no systemChat/diag_log).
  */
 
 params [
@@ -48,21 +47,26 @@ _ghost setPosASL _pos;
 
         deleteVehicle _ghost;
 
-        // Resource deduction (flag pattern — exitWith inside then{} only exits then)
+        // Resource deduction (flag pattern)
         private _canAfford = true;
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
         if (_resourcesEnabled) then {
             private _currentRes = player getVariable [QGVAR(resources), 0];
             if (_currentRes < _cost) then {
                 _canAfford = false;
-                systemChat "[Engineer] Not enough resources!";
             } else {
                 player setVariable [QGVAR(resources), _currentRes - _cost, true];
             };
         };
 
         if (!_canAfford) exitWith {
-            // Re-enter build mode even on failure
+            [player, "", 1] call ace_common_fnc_doAnimation;
+            private _currentRes = player getVariable [QGVAR(resources), 0];
+            hint parseText format [
+                "<t size='1.1' color='#FF4444'>INSUFFICIENT RESOURCES</t><br/><br/>" +
+                "<t color='#FFFFFF'>Cost: %1</t>  |  <t color='#FF6666'>Have: %2</t>",
+                _cost, _currentRes
+            ];
             [_classname] spawn {
                 params ["_c"];
                 sleep 0.15;
@@ -79,13 +83,22 @@ _ghost setPosASL _pos;
         // Reset animation
         [player, "", 1] call ace_common_fnc_doAnimation;
 
+        // Build confirmation hint
         private _newRes = player getVariable [QGVAR(resources), 0];
         private _resEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
 
         if (_resEnabled) then {
-            systemChat format ["[Engineer] Built! -%1 resources (Remaining: %2)", _cost, _newRes];
+            hint parseText format [
+                "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/>" +
+                "<t color='#FFFFFF'>%1</t><br/>" +
+                "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Remaining: %3</t>",
+                _classname, _cost, _newRes
+            ];
         } else {
-            systemChat "[Engineer] Built!";
+            hint parseText format [
+                "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/><t color='#FFFFFF'>%1</t>",
+                _classname
+            ];
         };
 
         [_classname] spawn {
@@ -101,21 +114,18 @@ _ghost setPosASL _pos;
         _args params ["_classname", "_pos", "_cost", "_ghost"];
 
         deleteVehicle _ghost;
-
-        // Reset animation
         [player, "", 1] call ace_common_fnc_doAnimation;
 
-        systemChat "[Engineer] Build cancelled.";
+        hint parseText "<t size='1.0' color='#FF8844'>BUILD CANCELLED</t>";
     },
 
     format ["Building %1...", _classname],
 
-    // ── Per-frame check: proximity + animation loop ─────────────────────────
+    // ── Per-frame check ─────────────────────────────────────────────────────
     {
         params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
         _args params ["_classname", "_pos"];
 
-        // Keep kneeling animation running for longer builds
         if (_totalTime != 0 && {animationState player != "AinvPknlMstpSnonWnonDnon_medic4"}) then {
             [player, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
         };

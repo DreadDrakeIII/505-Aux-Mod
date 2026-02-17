@@ -84,7 +84,4 @@ publicVariable QGVAR(builtObjects);
     if (_sim) then { _o enableSimulationGlobal true; };
 };
 
-diag_log format ["[OLI Engineering] %1 built %2 at %3 vecDir:%4 vecUp:%5",
-    name player, _classname, _pos, _finalVecDir, _finalVecUp];
-
 _obj

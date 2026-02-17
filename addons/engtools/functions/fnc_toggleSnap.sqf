@@ -33,4 +33,7 @@ if (!isNull _display) then {
     };
 };
 
-systemChat format ["[Engineer] Snap mode: %1", ["OFF","ON"] select OLI_engtools_snapActive];
+hintSilent parseText format [
+    "<t color='#5599FF'>Snap: %1</t>",
+    ["OFF","ON"] select OLI_engtools_snapActive
+];

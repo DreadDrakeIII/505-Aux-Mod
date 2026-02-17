@@ -57,4 +57,4 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     ] call CBA_fnc_addKeybind;
 };
 
-systemChat "[505th] Engineering module loaded - Requires 505th Combat Engineer Toolkit";
+hint parseText "<t color='#FFA500'>505th Engineering Module Loaded</t>";
