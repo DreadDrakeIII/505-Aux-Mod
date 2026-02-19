@@ -10,8 +10,8 @@ class CfgPatches {
             QUOTE(ADDON),
             "A3_Air_F_Exp_VTOL_01",
             "A3_Sounds_F_Exp",
-            "jsrs_soundmod_complete_edition"
-            ,"ace_interaction",
+            "jsrs2025_config_c",
+            "ace_interaction",
             "ace_cargo"
         };
         units[] = {
