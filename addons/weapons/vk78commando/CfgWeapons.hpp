@@ -71,20 +71,50 @@ class CfgWeapons {
             };
         };
 
-            //
-            // Semi (single shot) - accurate, used for long-range engagements
-            //
-            class Single: Single {
-                displayName = "Semi";
-                reloadTime = 0.12;
-            };
+        class Single: Single
+		{
+			displayName="Semi";
+			reloadTime=0.12;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_Silencer_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_silenced_soundset"
+				};
+			};
+		};
 
-            //
-            // Full auto - slower cyclic rate to reflect "slower fire rate" spec
-            //
-            class FullAuto: FullAuto {
-                displayName = "Full Auto";
-                reloadTime = 0.14;
-        };
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			reloadTime=0.14;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_Silencer_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_silenced_soundset"
+				};
+			};
+		};
     };
 };

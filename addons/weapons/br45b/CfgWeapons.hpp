@@ -69,11 +69,45 @@ class CfgWeapons {
         class Single: Single {
             displayName = "Semi";
             reloadTime = 0.0923077;
+            class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_Battlerifle_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_Silencer_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
         };
 
         class FullAuto: FullAuto {
             displayName = "Full Auto";
             reloadTime = 0.0923077;
+            class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_Battlerifle_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"Msbs65_01_Shot_Silencer_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
         };
     };
 };

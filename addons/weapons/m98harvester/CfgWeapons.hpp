@@ -72,11 +72,26 @@ class CfgWeapons {
             };
         };
 
-        //
-        // Semi (single shot) - accurate, used for long-range engagements
-        //
-        class Single: Single {
-            displayName = "Single";
-        };
+        class Single: Single
+		{
+			displayName="Semi";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SniperRifle_SoundSet",
+					"jsrs_2025_tailsystem_50bmg_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR05_silencerShot_SoundSet",
+					"jsrs_2025_tailsystem_50bmg_rifle_silenced_soundset"
+				};
+			};
+		};
     };
 };

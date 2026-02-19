@@ -1,3 +1,4 @@
+class Mode_SemiAuto;
 class WeaponSlotsInfo;
 class CowsSlot;
 class PointerSlot;
@@ -54,5 +55,23 @@ class CfgWeapons {
                 compatibleItems[] = {};
             };
         };
+
+        class Single: Mode_SemiAuto
+		{
+			displayName="Semi";
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"WBK_SCIFI_BOOMSLANG_SoundSet",
+					"jsrs_2025_tailsystem_127mm_hmg_soundset"
+				};
+			};
+		};
     };
 };

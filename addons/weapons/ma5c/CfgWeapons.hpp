@@ -63,22 +63,50 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Semi";
-            reloadTime = 0.0923077;
+        class Single: Single
+		{
+			displayName="Semi";
+			reloadTime=0.092307702;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_MA5C_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_ak12_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
+		};
 
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
-        };
-
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-            reloadTime = 0.0923077;
-
-            class StandardSound: StandardSound {
-                soundSetShot[] = {QCLASS(SoundSet_MA5CShot)};
-            };
-        };
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			reloadTime=0.092307702;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_MA5C_SoundSet",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_ak12_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
+		};
     };
 };

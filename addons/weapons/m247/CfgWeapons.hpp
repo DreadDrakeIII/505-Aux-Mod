@@ -65,12 +65,50 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Single";
-        };
+        class Single: Single
+		{
+			displayName="Semi";
+			reloadTime=0.075000003;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_navid_shot_soundset",
+					"jsrs_2025_tailsystem_Magnum_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_navid_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_Magnum_rifle_silenced_soundset"
+				};
+			};
+		};
 
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-        };
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			reloadTime=0.1;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_navid_shot_soundset",
+					"jsrs_2025_tailsystem_Magnum_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_navid_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_Magnum_rifle_silenced_soundset"
+				};
+			};
+		};
     };
 };

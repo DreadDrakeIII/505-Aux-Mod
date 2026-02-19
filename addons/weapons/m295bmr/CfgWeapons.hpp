@@ -56,14 +56,50 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Semi-Auto";
-            reloadTime = 0.15;
-        };
+        class Single: Single
+		{
+			displayName="Semi";
+			reloadTime=0.15000001;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_DMR_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR05_silencerShot_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_silenced_soundset"
+				};
+			};
+		};
 
-        class FullAuto: FullAuto {
-            displayName = "Full-Auto";
-            reloadTime = 0.09;
-        };
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			reloadTime=0.090000004;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_DMR_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR05_silencerShot_SoundSet",
+					"jsrs_2025_tailsystem_762mm_dmr_silenced_soundset"
+				};
+			};
+		};
     };
 };

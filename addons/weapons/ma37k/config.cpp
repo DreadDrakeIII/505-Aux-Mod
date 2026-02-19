@@ -11,7 +11,7 @@ class CfgPatches {
             QUOTE(ADDON),
             "OPTRE_Weapons_MA37K",
             "OPTRE_ACE_Compat",
-            "OPTRE_JSRS_Sounds"
+            "jsrs2025_config_c"
             };
 
         units[] = {};

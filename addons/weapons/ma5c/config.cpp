@@ -10,7 +10,7 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "OPTRE_Weapons_AR",
-            "OPTRE_JSRS_Sounds"
+            "jsrs2025_config_c"
             };
 
         units[] = {};

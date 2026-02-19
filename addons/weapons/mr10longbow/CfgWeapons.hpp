@@ -68,15 +68,21 @@ class CfgWeapons {
             };
         };
 
-        //
-        // Semi (single shot) - accurate, used for long-range engagements
-        //
         class Single: Single {
-            displayName = "Single";
-            reloadTime = 0.12;
-
-            class StandardSound: StandardSound {
-                soundSetShot[] = {"DMR02_Shot_SoundSet","DMR02_tail_SoundSet","DMR02_InteriorTail_SoundSet"};
+                displayName="Single";
+                reloadTime=0.12;
+                class BaseSoundModeType;
+                class StandardSound: BaseSoundModeType {
+                soundSetShot[]= {
+                "DMR02_Shot_SoundSet",
+                "jsrs_2025_tailsystem_magnum_rifle_soundset"
+                };
+            };
+                class SilencedSound: BaseSoundModeType {
+                soundSetShot[]= {
+                "DMR02_silencerShot_SoundSet",
+                "jsrs_2025_tailsystem_magnum_rifle_silenced_soundset"
+                };
             };
         };
     };

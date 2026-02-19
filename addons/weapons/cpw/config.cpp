@@ -10,7 +10,7 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "A3_Weapons_F_SMGs_Pdw2000",
-            "jsrs_soundmod_complete_edition",
+            "jsrs2025_config_c",
             "ace_realisticnames",
             "ace_ballistics"
             };

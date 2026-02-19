@@ -62,14 +62,50 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Semi";
-            reloadTime = 0.0923077;
-        };
+        class Single: Single
+		{
+			displayName="Semi";
+			reloadTime=0.092307702;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_spar17_shot_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_spar_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
+		};
 
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-            reloadTime = 0.0923077;
-        };
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			reloadTime=0.092307702;
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_spar17_shot_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_spar_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_762mm_rifle_silenced_soundset"
+				};
+			};
+		};
     };
 };

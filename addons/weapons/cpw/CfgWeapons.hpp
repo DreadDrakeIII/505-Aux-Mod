@@ -61,15 +61,71 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Single";
-        };
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-        };
-        class Burst: Burst {
-            displayName = "3-Round Burst";
-        };
+        		class Single: Single
+		{
+			displayName="Semi";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_soundset",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
+
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_soundset",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
+
+		class Burst: Burst
+		{
+			displayName="3-Round Burst";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_soundset",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"jsrs_2025_pdw2000_shot_silenced_soundset",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
     };
 
 };

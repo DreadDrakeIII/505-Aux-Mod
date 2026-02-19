@@ -11,7 +11,7 @@ class CfgPatches {
             QUOTE(ADDON),
             "OPTRE_Weapons_SMG",
             "OPTRE_ACE_Compat",
-            "OPTRE_Weapons_Ammo"
+            "jsrs2025_config_c"
             };
         units[] = {};
         weapons[] = {

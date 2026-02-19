@@ -64,15 +64,71 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single {
-            displayName = "Single";
-        };
-        class FullAuto: FullAuto {
-            displayName = "Full Auto";
-        };
-        class Burst: Burst {
-            displayName = "3-Round Burst";
-        };
+        class Single: Single
+		{
+			displayName="Semi";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_Silenced_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
+
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_Silenced_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
+
+		class Burst: Burst
+		{
+			displayName="3-Round Burst";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"OPTRE_SMG_Silenced_SoundSet",
+					"jsrs_2025_tailsystem_acp_smg_silenced_soundset"
+				};
+			};
+		};
     };
 
 };
