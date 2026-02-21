@@ -10,7 +10,6 @@ class CfgMagazines {
         displaynameshort = ".45 ACP";
         descriptionshort = "12 Round Magazine<br/>.45 ACP<br/>";
 
-        ammo = QCLASS(45ACP_Ball);
         count = 12;
         initSpeed = 620;
         tracersEvery = 0;

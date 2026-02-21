@@ -24,14 +24,13 @@ class CfgWeapons {
         baseWeapon = QCLASS(M6C);
 
         displayName = "[505th] M6C";
-        descriptionShort = "12.7x40mm";
+        descriptionShort = "M6C Pistol developed by Blackreach Armory Industries";
 
         model = "Foundries\UNSC_F_Weapons\weapons\UNSC_M6C.p3d";
         picture = "Foundries\UNSC_F_Weapons\weapons\UI\M6c_UI.paa";
-        cartridgePos = "nabojnicestart";
-        cartridgeVel = "nabojniceend";
 
         modes[] = {"Single"};
+
         magazines[] = {QCLASS(12Rnd_127x40_Mag)};
         magazineWell[] = { QCLASS(Magwell_M6C) };
 
@@ -42,22 +41,36 @@ class CfgWeapons {
             holsterScale = 0.95;
 
             class CowsSlot: CowsSlot {
-                compatibleItems[] = {
-                };
+                compatibleItems[] = {};
             };
-
             class PointerSlot: PointerSlot {
                 class CompatibleItems {};
             };
-
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {};
             };
         };
 
-        class Single: Single {
-            displayName = "Single";
-        };
+        class Single: Single
+		{
+			displayName="Single";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"50cal_Type115_Shot_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR06_silencerShot_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_silenced_soundset"
+				};
+			};
+		};
     };
-
 };

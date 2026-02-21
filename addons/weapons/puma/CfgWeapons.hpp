@@ -1,3 +1,5 @@
+class Single;
+class FullAuto;
 class WeaponSlotsInfo;
 class CowsSlot;
 class PointerSlot;
@@ -12,7 +14,7 @@ class CfgWeapons {
         baseWeapon = QCLASS(PUMA);
 
         displayName = "[505th] Puma";
-        descriptionShort = "Light rapid firing pistol";
+        descriptionShort = "Puma Pistol developed by Blackreach Armory Industries";
 
         modes[] = {"Single", "FullAuto"};
         magazines[] = {QCLASS(16Rnd_45ACP_Mag)};
@@ -39,5 +41,47 @@ class CfgWeapons {
                 };
             };
         };
+        class Single: Single
+		{
+			displayName="Single";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"WBK_SCIFI_PISTL_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"WBK_SCIFI_PISTL_SIL_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_silenced_soundset"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			displayName="Full Auto";
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"WBK_SCIFI_PISTL_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_soundset"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"WBK_SCIFI_PISTL_SIL_SoundSet",
+					"jsrs_2025_tailsystem_acp_pistol_silenced_soundset"
+				};
+			};
+		};
     };
 };

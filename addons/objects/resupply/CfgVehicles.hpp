@@ -61,6 +61,8 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),40);
             MAG_XX(CLASS(16Rnd_45ACP_Mag),40);
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),40);
+            MAG_XX(CLASS(26Rnd_9x21_Mag),40);
+            MAG_XX(CLASS(32Rnd_9x21_Mag),40);
 
             // UGL Ammo
             MAG_XX(1Rnd_HE_MEU_shell,20);
@@ -117,6 +119,8 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),160);
             MAG_XX(CLASS(16Rnd_45ACP_Mag),160);
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),160);
+            MAG_XX(CLASS(26Rnd_9x21_Mag),160);
+            MAG_XX(CLASS(32Rnd_9x21_Mag),160);
 
             // UGL Ammo
             MAG_XX(1Rnd_HE_MEU_shell,80);
