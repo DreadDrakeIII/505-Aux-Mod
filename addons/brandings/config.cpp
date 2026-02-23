@@ -75,7 +75,7 @@ class RscDisplayMain: RscStandardDisplay {
             colorBackgroundActive[] = {1, 1, 1, 0.1};
             colorBorder[] = {0, 0, 0, 0};
             tooltip = "Join 505th Server";
-            action = "connectToServer ['217.217.25.6', 2312, '505th'];";
+            action = "connectToServer ['217.217.25.53', 2472, '505th'];";
         };
     };
     class controlsBackground {
