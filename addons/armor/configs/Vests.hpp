@@ -626,6 +626,19 @@ class CLASS(CE_Vest_Doc): CLASS(CE_Marine_Vest_Base) {
         };
 };
 
+class CLASS(CE_Vest_Saint): CLASS(CE_Armour_Corpsman_Vest) {
+    displayName = "[505th] Custom Armor (Saint)";
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEPadding_co.paa",QPATHTOF(data\vests\ce\custom\Saint_Armor_co.paa)};
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply250";
+            vestType = "Rebreather";
+        };
+};
+
 ///////////////////////////////Pilot Vest///////////////////////////////
 class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
     displayName = "[505th] Pilot Vest";

@@ -164,6 +164,7 @@ class CfgPatches {
             QCLASS(CE_Vest_FR_Davy),
             QCLASS(CE_Vest_Kain),
             QCLASS(CE_Vest_Doc),
+            QCLASS(CE_Vest_Saint),
             QCLASS(Pilot_Vest),
             QCLASS(505th_Heli_Pilot_Helmet_Base),
             QCLASS(505th_Heli_Crew_Helmet_Base),
