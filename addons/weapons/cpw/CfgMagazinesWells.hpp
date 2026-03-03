@@ -4,8 +4,8 @@ class cfgMagazineWells {
     // Allows weapon to accept any of the 3 ammo types
     // ================================
     class CLASS(Magwell_CPW) {
-        CLASS(9x21)[] = {
-            QCLASS(32Rnd_9x21_Mag)
+        CLASS(30rnd_9x21)[] = {
+            QCLASS(30Rnd_9x21_Mag)
         };
     };
 };

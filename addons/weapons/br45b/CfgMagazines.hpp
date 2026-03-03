@@ -10,7 +10,7 @@ class CfgMagazines {
         displayNameShort = "9.5x40mm Mag";
         descriptionShort = "Calibre: 9.5x40mm • 32-round magazine";
 
-        // model = "\OPTRE_Weapons\ammoPacketsV2\data\95x40\95x40_32rnd.p3d";
+        model = "\OPTRE_Weapons\ammoPacketsV2\data\95x40\95x40_32rnd.p3d";
         picture = "\OPTRE_weapons\br\icons\magazine.paa";
 
         ammo = QCLASS(95_40_Ball);

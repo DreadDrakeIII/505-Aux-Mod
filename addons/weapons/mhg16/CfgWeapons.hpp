@@ -37,26 +37,27 @@ class CfgWeapons {
                 };
             };
         };
+
+        class Single: Single
+        {
+            displayName="Single";
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
+            {
+                soundSetShot[]=
+                {
+                    "WBK_TKE_MDPistol_SoundSet",
+                    "jsrs_2025_tailsystem_acp_pistol_soundset"
+                };
+            };
+            class SilencedSound: BaseSoundModeType
+            {
+                soundSetShot[]=
+                {
+                    "4Five_silencerShot_SoundSet",
+                    "jsrs_2025_tailsystem_acp_pistol_silenced_soundset"
+                };
+            };
+        };
     };
-    class Single: Single
-		{
-			displayName="Single";
-			class BaseSoundModeType;
-			class StandardSound: BaseSoundModeType
-			{
-				soundSetShot[]=
-				{
-					"WBK_TKE_MDPistol_SoundSet",
-					"jsrs_2025_tailsystem_acp_pistol_soundset"
-				};
-			};
-			class SilencedSound: BaseSoundModeType
-			{
-				soundSetShot[]=
-				{
-					"4Five_silencerShot_SoundSet",
-					"jsrs_2025_tailsystem_acp_pistol_silenced_soundset"
-				};
-			};
-		};
 };

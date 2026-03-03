@@ -21,7 +21,7 @@ class CfgWeapons {
         picture = "\OPTRE_Weapons_Pistols\M6D_Carbine\Data\icons\weapon\black.paa";
 
         modes[] = {"Single", "Burst", "FullAuto"};
-        magazines[] = { QCLASS(26Rnd_9x21_Mag) };
+        magazines[] = { QCLASS(40Rnd_127x40_Mag) };
         magazineWell[] = { QCLASS(Magwell_M6D_CARBINE) };
 
 
@@ -30,8 +30,7 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic"
+                    "OPTRE_M6D_Scope_Black"
                 };
             };
 

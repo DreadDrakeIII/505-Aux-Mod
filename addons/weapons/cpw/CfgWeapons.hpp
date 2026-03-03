@@ -36,7 +36,7 @@ class CfgWeapons {
         picture = "\A3\Weapons_F_gamma\Smgs\pdw2000\data\UI\gear_pdw2X_X_CA.paa";
 
         modes[] = {"Single","Burst","FullAuto"};
-        magazines[] = {QCLASS(32Rnd_9x21_Mag)};
+        magazines[] = {QCLASS(30Rnd_9x21_Mag)};
         magazineWell[] = { QCLASS(Magwell_CPW) };
 
 
@@ -45,8 +45,7 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic"
+                    "OPTRE_M7_Sight"
                 };
             };
 

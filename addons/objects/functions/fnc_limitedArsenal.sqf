@@ -21,6 +21,7 @@ private _whitelist = [
     "OLI_Uniform_CE_Crawford_Rolled",
     "OLI_Uniform_CE_Oliver",
     "OLI_Uniform_CE_Doc",
+    "OLI_Uniform_CE_Kain",
     // ========== VESTS ==========
     "OLI_CE_Vest_FR_Davy",
     "OLI_CE_Vest_Adamant_Pouches",
@@ -29,6 +30,8 @@ private _whitelist = [
     "OLI_CE_Vest_Oliver",
     "OLI_CE_Vest_Kain",
     "OLI_CE_Vest_Doc",
+    "OLI_CE_Vest_Saint",
+    "OLI_CE_Vest_Milan",
     // ========== HELMETS ==========
     "OLI_Tuna_Pilot_Helmet",
     "OLI_Malarkey_Pilot_Helmet",

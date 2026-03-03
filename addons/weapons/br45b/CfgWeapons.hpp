@@ -62,7 +62,9 @@ class CfgWeapons {
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {
-                compatibleItems[] = {};
+                compatibleItems[] = {
+                    "OPTRE_BR45Grip"
+                };
             };
         };
 

@@ -25,8 +25,7 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic"
+                    "OPTRE_M7_Sight"
                 };
             };
 

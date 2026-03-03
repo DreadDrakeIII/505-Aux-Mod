@@ -7,6 +7,13 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
+
+        // --- Double the health ---
+        armorLights = 2;        // Base is 1, doubled
+        armorStructural = 4;   // Base is 2, doubled
+        armor = 120;             // Base is 60, doubled
+        // -------------------------
+
         weapons[]=
 		{
 			"weapon_Fighter_Gun20mm_AA",
@@ -46,6 +53,13 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
+
+        // --- Double the health ---
+        armorLights = 2;        // Base is 1, doubled
+        armorStructural = 4;   // Base is 2, doubled
+        armor = 120;             // Base is 60, doubled
+        // -------------------------
+
         weapons[]=
 		{
 			"Gatling_30mm_Plane_CAS_01_F",
@@ -90,6 +104,13 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Planes);
         crew = QCLASS(Marine_Jet_Pilot);
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
+
+        // --- Double the health ---
+        armorLights = 2;        // Base is 1, doubled
+        armorStructural = 4;   // Base is 2, doubled
+        armor = 120;             // Base is 60, doubled
+        // -------------------------
+
         weapons[]=
 		{
 			"weapon_Fighter_Gun20mm_AA",

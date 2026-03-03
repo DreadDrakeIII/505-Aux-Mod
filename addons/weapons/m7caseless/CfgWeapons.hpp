@@ -1,28 +1,13 @@
-class Mode_SemiAuto;
-class Mode_Burst;
-class Mode_FullAuto;
+class Single;
+class Burst;
+class FullAuto;
+class WeaponSlotsInfo;
+class CowsSlot;
+class PointerSlot;
+class MuzzleSlot;
 
 class CfgWeapons {
-
-    class Rifle_Base_F;
-    class Rifle_Short_Base_F: Rifle_Base_F {
-        class WeaponSlotsInfo;
-    };
-
-    class OPTRE_M7: Rifle_Short_Base_F {
-        class WeaponSlotsInfo: WeaponSlotsInfo {
-            class CowsSlot;
-            class PointerSlot;
-            class MuzzleSlot;
-        };
-
-        class Single: Mode_SemiAuto {
-                    };
-        class Burst: Mode_Burst {
-                    };
-        class FullAuto: Mode_FullAuto {
-                    };
-    };
+    class OPTRE_M7;
 
     class CLASS(M7_Caseless): OPTRE_M7 {
         SCOPE_PUBLIC;
@@ -36,7 +21,7 @@ class CfgWeapons {
         picture = "\OPTRE_weapons\smg\icons\smg.paa";
 
         modes[] = {"Single","Burst","FullAuto"};
-        magazines[] = {QCLASS(60Rnd_9x21_Mag)};
+        magazines[] = {QCLASS(60Rnd_5x23_Mag)};
         magazineWell[] = { QCLASS(Magwell_M7_Caseless) };
 
 
@@ -45,8 +30,7 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic"
+                    "OPTRE_M7_Sight"
                 };
             };
 
@@ -58,8 +42,7 @@ class CfgWeapons {
 
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {
-                    "OPTRE_Ma5Suppressor",
-                    "OPTRE_M247a1_Flashhider"
+                    "OPTRE_M7_silencer"
                 };
             };
         };

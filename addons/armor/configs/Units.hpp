@@ -875,7 +875,10 @@ class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
 
     identityTypes[] = {QCLASS(Kain)};
 
-    uniformClass = QCLASS(Uniform_CE);
+    uniformClass = QCLASS(Uniform_CE_Kain);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Kain_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+
     weapons[]= {
         "OLI_MA5C",
         "OPTRE_M12_Optic",
@@ -963,7 +966,155 @@ class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
     RespawnLinkedItems[] = {
         QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Vest_Doc), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
     };
-    backpack = QCLASS(Rifleman_Backpack_Predef);
+    backpack = QCLASS(MedicalBackpack_Predef);
+};
+class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Saint);
+
+    identityTypes[] = {QCLASS(Saint)};
+
+    displayName = "B.Saint";
+
+    weapons[]= {
+        "OLI_MA5C",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OLI_MA5C",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    magazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+    respawnMagazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+
+    uniformClass = QCLASS(Uniform_CE_Corpsman);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\medic\Medic_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Vest_Saint), "OPTRE_NVG", QCLASS(Stealth_Mask), MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_Corpsman), QCLASS(CE_Vest_Saint), "OPTRE_NVG", QCLASS(Stealth_Mask), MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(MedicalBackpack_Predef);
+};
+class CLASS(Marine_CE_Handler): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Handler);
+
+    identityTypes[] = {QCLASS(Handler)};
+
+    displayName = "H.Handler";
+
+    uniformClass = QCLASS(Uniform_CE_SL);
+    hiddenSelections[] = {"camo","camo1"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\sl\SL_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
+
+    weapons[]= {
+        "OLI_VK78_COMMANDO",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OLI_VK78_COMMANDO",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    magazines[] = {
+        "OLI_20Rnd_95xVX2_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+    respawnMagazines[] = {
+        "OLI_20Rnd_95xVX2_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET_SL), QCLASS(CE_Vest_Hoffman), "OPTRE_NVG", QCLASS(Stealth_Mask), MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET_SL), QCLASS(CE_Vest_Hoffman), "OPTRE_NVG", QCLASS(Stealth_Mask), MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_SL_PL_Predef);
+};
+class CLASS(Marine_CE_Milan): CLASS(Marine_CE_Base) {
+    SCOPE_PUBLIC;
+
+    // Editor Properties
+    editorSubcategory = QEDSUBCAT(Customs);
+    editorPreview = EDITOR_PREVIEW(Marine_CE_Milan);
+
+    identityTypes[] = {QCLASS(Milan)};
+
+    displayName = "A.Milan";
+
+    uniformClass = QCLASS(Uniform_CE);
+
+    weapons[]= {
+        "OLI_MA5C",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    respawnWeapons[]= {
+        "OLI_MA5C",
+        "OPTRE_M12_Optic",
+        "OLI_MEQ7",
+        "OLI_M6C",
+        "OPTRE_Smartfinder",
+        "Throw",
+        "Put"
+    };
+    magazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+    respawnMagazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+
+    linkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Vest_Milan), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    RespawnLinkedItems[] = {
+        QCLASS(CE_HELMET), QCLASS(CE_Vest_Milan), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(Backpack_Predef);
 };
 ///////////////////Crewman Units/////////////////////
 class CLASS(Marine_Jet_Pilot): CLASS(Pilot_Base) {

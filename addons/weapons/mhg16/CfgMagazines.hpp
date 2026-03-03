@@ -8,7 +8,7 @@ class CfgMagazines {
 
         displayname = "[505th] 12Rnd .45 ACP Magazine";
         displaynameshort = ".45 ACP";
-        descriptionshort = "12 Round Magazine<br/>.45 ACP<br/>";
+        descriptionshort = "12 Round Magazine developed by Blackreach Armory Industries<br/>.45 ACP<br/>";
 
         count = 12;
         initSpeed = 620;

@@ -61,7 +61,9 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),40);
             MAG_XX(CLASS(16Rnd_45ACP_Mag),40);
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),40);
-            MAG_XX(CLASS(26Rnd_9x21_Mag),40);
+            MAG_XX(CLASS(30Rnd_9x21_Mag),40);
+            MAG_XX(CLASS(40Rnd_127x40_Mag),40);
+            MAG_XX(CLASS(60Rnd_5x23_Mag),40);
             MAG_XX(CLASS(32Rnd_9x21_Mag),40);
 
             // UGL Ammo
@@ -119,8 +121,10 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),160);
             MAG_XX(CLASS(16Rnd_45ACP_Mag),160);
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),160);
-            MAG_XX(CLASS(26Rnd_9x21_Mag),160);
-            MAG_XX(CLASS(32Rnd_9x21_Mag),160);
+            MAG_XX(CLASS(30Rnd_9x21_Mag),160); // CPW
+            MAG_XX(CLASS(40Rnd_127x40_Mag),160); // M6D Carbine
+            MAG_XX(CLASS(60Rnd_5x23_Mag),160); // M7 Caseless
+            MAG_XX(CLASS(32Rnd_9x21_Mag),160); // mpk-5
 
             // UGL Ammo
             MAG_XX(1Rnd_HE_MEU_shell,80);

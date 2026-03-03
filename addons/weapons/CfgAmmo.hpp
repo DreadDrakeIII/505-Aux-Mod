@@ -4,6 +4,8 @@ class CfgAmmo {
     class B_45ACP_Ball;
     class B_9x21_Ball;
     class OPTRE_B_127x40_Ball;
+    class OPTRE_B_127x40_Tracer;
+    class OPTRE_B_5x23_Caseless;
     class B_145x114_HVAP;
     class B_145x114_HEAP;
     class B_145x114_APFSDS;
@@ -179,7 +181,42 @@ class CfgAmmo {
         hit = 16;
         caliber = 2;
         typicalSpeed = 620;
-        airFriction = -0.02;
+        airFriction = -0.002;
+        timeToLive = 6;
+        tracerScale = 1.3;
+    };
+
+    // ================================
+    // SMG Ammo Config
+    // ================================
+
+    // CPW, MPK5 — 9x21mm
+    class CLASS(SMG_9x21_Ball): B_9x21_Ball {
+        cartridge = "FxCartridge_9mm";
+        hit = 16;
+        caliber = 2;
+        typicalSpeed = 620;
+        airFriction = -0.002;
+        timeToLive = 6;
+        tracerScale = 1.3;
+    };
+
+    // M7 Caseless — 5x23mm Caseless
+    class CLASS(5x23_Caseless): OPTRE_B_5x23_Caseless {
+        hit = 16;
+        caliber = 2;
+        typicalSpeed = 620;
+        airFriction = -0.002;
+        timeToLive = 6;
+        tracerScale = 1.3;
+    };
+
+    // M6D Carbine — 12.7x40mm Tracer
+    class CLASS(127x40_Tracer): OPTRE_B_127x40_Tracer {
+        hit = 16;
+        caliber = 2;
+        typicalSpeed = 620;
+        airFriction = -0.002;
         timeToLive = 6;
         tracerScale = 1.3;
     };
