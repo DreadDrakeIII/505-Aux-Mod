@@ -21,8 +21,8 @@ class CfgMagazines {
 
         count = 10;                // doluble-cap
         initSpeed = 980;           // muzzle velocity (m/s)
-        tracersEvery = 0;
-        lastRoundsTracer = 2;
+        tracersEvery = 1;          // tracer every round
+        lastRoundsTracer = 0;      // all rounds are tracers
         mass = 14;                 // slightly heavier round
     };
 };

@@ -1,7 +1,7 @@
 class CfgMagazines {
-    class CLASS(Mag_Base);
+    class OPTRE_36Rnd_95x40_Mag;
 
-    class CLASS(32Rnd_95x40_Mag): CLASS(Mag_Base) {
+    class CLASS(32Rnd_95x40_Mag): OPTRE_36Rnd_95x40_Mag {
         SCOPE_PUBLIC;
         baseMagazine = QCLASS(32Rnd_95x40_Mag);
         author = AUTHOR;
@@ -9,9 +9,6 @@ class CfgMagazines {
         displayName = "[505th] 32Rnd 9.5x40mm Mag";
         displayNameShort = "9.5x40mm Mag";
         descriptionShort = "Calibre: 9.5x40mm • 32-round magazine";
-
-        model = "\OPTRE_Weapons\ammoPacketsV2\data\95x40\95x40_32rnd.p3d";
-        picture = "\OPTRE_weapons\br\icons\magazine.paa";
 
         ammo = QCLASS(95_40_Ball);
         count = 32;

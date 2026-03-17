@@ -70,6 +70,8 @@ workshop = [
     "3390219536", # C-5 Galaxy
     "2776005424", # Enhanced Artwork Supporter
     "3407948300", # JSRS 2025
+    "2901732103", # Misriah Armory
+    "2921172988", # Misriah Armory Tactical Gear and Equipment
 ]
 presets = ["main"]
 dlc = []

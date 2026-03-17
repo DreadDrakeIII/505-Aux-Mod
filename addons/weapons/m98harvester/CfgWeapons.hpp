@@ -52,8 +52,7 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    QCLASS(M98HA_Scope),
-                    QCLASS(VTR_Scope)
+                    QCLASS(M98HA_Scope)
                 };
             };
 
@@ -62,9 +61,7 @@ class CfgWeapons {
             };
 
             class MuzzleSlot: MuzzleSlot {
-                compatibleItems[] = {
-                    QCLASS(M98H_Suppressor)
-                };
+                compatibleItems[] = {};
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {

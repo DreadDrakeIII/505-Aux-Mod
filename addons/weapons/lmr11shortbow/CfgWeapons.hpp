@@ -14,8 +14,6 @@ class CfgWeapons {
         };
 
         class Single: Mode_SemiAuto {
-            class StandardSound;
-            class SilencedSound;
         };
     };
 

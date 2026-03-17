@@ -1274,3 +1274,38 @@ class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
     };
     backpack = QCLASS(BlackOps_Backpack_Predef);
 };
+
+// ==================CHJ252 Units==================
+class CLASS(CHJ252_Rifleman): CLASS(CHJ252_WL_Base) {
+    SCOPE_PUBLIC;
+
+    editorSubcategory = QEDSUBCAT(INF_CE);
+    editorPreview = EDITOR_PREVIEW(CHJ252_Rifleman);
+
+    displayName = "CHJ252 Rifleman";
+
+    uniformClass = QCLASS(Uniform_CHJ252_WL);
+
+    weapons[] = {
+        "OLI_MA5C", "OPTRE_M12_Optic", "OLI_MEQ7", "OLI_M6C", "OPTRE_Smartfinder", "Throw", "Put"
+    };
+    respawnWeapons[] = {
+        "OLI_MA5C", "OPTRE_M12_Optic", "OLI_MEQ7", "OLI_M6C", "OPTRE_Smartfinder", "Throw", "Put"
+    };
+    magazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+    respawnMagazines[] = {
+        "OLI_32Rnd_762x51_Mag",
+        "OLI_12Rnd_127x40_Mag"
+    };
+
+    linkedItems[] = {
+        QCLASS(CHJ252_WL_HelmetV2), "", "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO
+    };
+    respawnLinkedItems[] = {
+        QCLASS(CHJ252_WL_HelmetV2), "", "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO
+    };
+    backpack = QCLASS(BlackOps_Backpack_Predef);
+};

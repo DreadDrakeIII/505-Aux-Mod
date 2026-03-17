@@ -2,7 +2,7 @@
 /*
  * Function: OLI_engtools_fnc_initEngineerMenu
  * Initializes the engineering tools menu
- * 
+ *
  * REQUIRES: OLI_Combat_Engineer_Toolkit in inventory
  * OPEN: Scroll wheel action OR Ctrl+F1 keybind
  */
@@ -13,7 +13,7 @@ FUNC(addEngineerAction) = {
     if (!isNil QGVAR(engineerActionID)) then {
         player removeAction GVAR(engineerActionID);
     };
-    
+
     // Add scroll wheel action
     GVAR(engineerActionID) = player addAction [
         "<t color='#FFA500'><img image='\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\repair_ca.paa'/> Engineer Tools</t>",
@@ -56,5 +56,3 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         [0x3B, [false, true, false]]
     ] call CBA_fnc_addKeybind;
 };
-
-hint parseText "<t color='#FFA500'>505th Engineering Module Loaded</t>";

@@ -9,9 +9,9 @@ class CfgVehicles {
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
 
         // --- Double the health ---
-        armorLights = 2;        // Base is 1, doubled
-        armorStructural = 4;   // Base is 2, doubled
-        armor = 120;             // Base is 60, doubled
+        armorLights = 5;        // Base is 1, x5
+        armorStructural = 10;   // Base is 2, x5
+        armor = 300;             // Base is 60, x5
         // -------------------------
 
         weapons[]=
@@ -55,9 +55,9 @@ class CfgVehicles {
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
 
         // --- Double the health ---
-        armorLights = 2;        // Base is 1, doubled
-        armorStructural = 4;   // Base is 2, doubled
-        armor = 120;             // Base is 60, doubled
+        armorLights = 5;        // Base is 1, x5
+        armorStructural = 10;   // Base is 2, x5
+        armor = 300;             // Base is 60, x5
         // -------------------------
 
         weapons[]=
@@ -106,9 +106,9 @@ class CfgVehicles {
         typicalCargo[] = {QCLASS(Marine_Jet_Pilot)};
 
         // --- Double the health ---
-        armorLights = 2;        // Base is 1, doubled
-        armorStructural = 4;   // Base is 2, doubled
-        armor = 120;             // Base is 60, doubled
+        armorLights = 5;        // Base is 1, x5
+        armorStructural = 10;   // Base is 2, x5
+        armor = 300;             // Base is 60, x5
         // -------------------------
 
         weapons[]=

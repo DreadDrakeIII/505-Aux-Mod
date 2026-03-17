@@ -10,6 +10,11 @@ class CfgAmmo {
     class B_145x114_HEAP;
     class B_145x114_APFSDS;
     class B_127x108_Ball;
+    class WBK_B_40mm_GPR_Tracer_Red;
+    class WBK_B_40mm_APFSDS_Tracer_Red;
+    class Shocking_rounds_isntit;
+    class B_338_NM_Ball;
+    class B_65x39_Caseless_green;
 
     // OPTRE Custom Ammunition
     // --- 7.62x51mm Ball ---
@@ -66,6 +71,32 @@ class CfgAmmo {
         tracerScale = 1.2;
     };
 
+    // --- 338 Ball For LMG Cerberus ---
+    class CLASS(338_Ball): B_338_NM_Ball {
+        cartridge = "FxCartridge_93x64_Ball";
+        airFriction = -0.0009;
+        caliber = 4;
+        hit = 16;
+        typicalSpeed = 950;
+        timeToLive = 6;
+        tracerScale = 1.2;
+        ACE_ballisticCoefficients[] = {0.381};
+        ACE_muzzleVelocities[] = {790, 807, 820};
+        ACE_barrelLengths[] = {508, 609.6, 660.4};
+        ACE_bulletLength = 43.18;
+        ACE_bulletMass = 19.44;
+        ACE_dragModel = 7;
+    };
+
+    // ================================
+    // WRS - 14 Bulldog Ammo Config
+    // ================================
+    class CLASS(65x39_LDUR): B_65x39_Caseless_green {
+        airFriction = -0.0009;
+        caliber = 1.6;
+        hit = 14;
+    };
+
     // ================================
     // M98 HARVESTER AMMUNITION (14.7×114mm)
     // ================================
@@ -80,11 +111,17 @@ class CfgAmmo {
         // --- Ballistics / Performance ---
         hit = 120;                      // high kinetic impact (armor-piercing)
         caliber = 20;                 // excellent armor penetration
-        typicalSpeed = 2000;           // very fast velocity (m/s)
+        typicalSpeed = 1400;           // very fast velocity (m/s)
         airFriction = -0.0001;       // excellent velocity retention
         timeToLive = 20;               // flight time before disappearing
         tracerScale = 3;             // white tracer (armor-piercing)
         model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
+        ACE_ballisticCoefficients[] = {0.92};
+        ACE_muzzleVelocities[] = {1950, 2000, 2050};
+        ACE_barrelLengths[] = {700, 760, 820};
+        ACE_dragModel = 1;
+        ACE_bulletLength = 50;
+        ACE_bulletMass = 65;
     };
 
     // ================================
@@ -97,11 +134,17 @@ class CfgAmmo {
         // --- Ballistics / Performance ---
         hit = 140;                     // moderate direct impact (more impact than APFSDS)
         caliber = 18.0;                 // strong armor penetration (less than APFSDS)
-        typicalSpeed = 1800;            // high velocity (m/s)
+        typicalSpeed = 1200;            // high velocity (m/s)
         airFriction = -0.0001;        // excellent velocity retention
         timeToLive = 20;
         tracerScale = 3;
         model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        ACE_ballisticCoefficients[] = {0.92};
+        ACE_muzzleVelocities[] = {1950, 2000, 2050};
+        ACE_barrelLengths[] = {700, 760, 820};
+        ACE_dragModel = 1;
+        ACE_bulletLength = 50;
+        ACE_bulletMass = 65;
     };
 
     // ================================
@@ -114,7 +157,7 @@ class CfgAmmo {
         // --- Ballistics / Performance ---
         hit = 250;                      // very high damage (more impact than HVAP)
         caliber = 60;                 // high armor penetration (explosive focus)
-        typicalSpeed = 1800;            // same velocity as HVAP
+        typicalSpeed = 1200;            // same velocity as HVAP
         airFriction = -0.0001;
         timeToLive = 20;
         // --- Explosive properties ---
@@ -124,8 +167,13 @@ class CfgAmmo {
         explosionEffects = "ExploAmmoExplosion";
         craterEffects = "ExploAmmoCrater";
         tracerScale = 4;             // larger tracer (red - HE round)
-
         model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+        ACE_ballisticCoefficients[] = {0.92};
+        ACE_muzzleVelocities[] = {1950, 2000, 2050};
+        ACE_barrelLengths[] = {700, 760, 820};
+        ACE_dragModel = 1;
+        ACE_bulletLength = 50;
+        ACE_bulletMass = 65;
     };
 
     // ================================
@@ -150,6 +198,66 @@ class CfgAmmo {
         ACE_bulletLength=64.516;
         ACE_bulletMass=48.6;
 
+    };
+
+    // ================================
+    // Energy Weapon Ammo Config
+    // ================================
+
+    // ================================
+    // WRS-28 PILUM AMMUNITION (Unstable Cell (HE))
+    // ================================
+    class CLASS(HE_CELL): WBK_B_40mm_GPR_Tracer_Red {
+        cartridge = "FxCartridge_556";
+
+        // --- Ballistics / Performance ---
+        hit=220;
+        caliber = 70;
+        typicalSpeed = 1250;
+        airFriction = -0.00008;
+        timeToLive = 25;
+        explosive = 1;              // high explosive content
+        indirectHit = 100;              // blast damage
+        indirectHitRange = 6;          // 6m blast radius
+        explosionEffects = "ExploAmmoExplosion";
+        craterEffects = "ExploAmmoCrater";
+
+        // --- Tracer ---
+        tracerScale = 4;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+    };
+
+    // ================================
+    // WRS-28 PILUM AMMUNITION (Concentrated Cell (AP))
+    // ================================
+    class CLASS(AP_CELL): WBK_B_40mm_APFSDS_Tracer_Red {
+        cartridge = "FxCartridge_556";
+
+        // --- Ballistics / Performance ---
+        hit=400;
+        caliber = 100;
+        typicalSpeed = 1400;
+        airFriction = -0.00006;
+        timeToLive = 25;
+        // --- Tracer ---
+        tracerScale = 3;
+        model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
+
+        // --- ACE Advanced Ballistics ---
+        ACE_ballisticCoefficients[] = {0.98};
+        ACE_muzzleVelocities[] = {1370, 1400, 1430};
+        ACE_barrelLengths[] = {700, 760, 820};
+        ACE_dragModel = 1;
+        ACE_bulletLength = 60;
+        ACE_bulletMass = 80;
+    };
+
+    // ================================
+    // WRS-10 RHINO AMMUNITION (Coolant Cartridge)
+    // ================================
+    class CLASS(shocking_round): Shocking_rounds_isntit {
+        caliber = 3;
+        hit = 25;
     };
 
     // ================================

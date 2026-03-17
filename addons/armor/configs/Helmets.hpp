@@ -39,7 +39,6 @@ class CLASS(CE_HELMET_SL): CLASS(CE_HELMET) {
     displayName = "[505th] Squad Lead Helmet [Eyepiece]";
     hiddenSelectionsTextures[] = {QPATHTOF(data\helmets\ce\SL_Helmet_co.paa)};
 };
-// FIX: Added missing scopeArsenal = 2
 class CLASS(CE_HELMET_SLV2): CLASS(CE_HELMETV2) {
     author = "505th Aux Team";
     scope = 2;
@@ -188,4 +187,17 @@ class CLASS(Black_Ops_Helmet): CLASS(505th_Black_Ops_Helmet_Base) {
     scopeCurator = 0;
     scopeArsenal = 0;
     displayName = "[505th] Black Ops Helmet";
+};
+// ===========================================================================
+// ============================ CHJ252 Helmets ===============================
+// ===========================================================================
+class CLASS(CHJ252_WL_Helmet): CLASS(CHJ252_WL_Helmet_Base) {
+    SCOPE_PUBLIC;
+    author = AUTHOR;
+    displayName = "[505th] CHJ252 Woodland Helmet";
+};
+class CLASS(CHJ252_WL_HelmetV2): CLASS(CHJ252_WL_Helmet_V2_Base) {
+    SCOPE_PUBLIC;
+    author = AUTHOR;
+    displayName = "[505th] CHJ252 Woodland Helmet EP";
 };

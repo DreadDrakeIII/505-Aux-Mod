@@ -61,6 +61,24 @@ class CfgWeapons {
         hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEBooniehat_co.paa"};
     };
 
+// =========================================================================
+// ============================ CHJ252 Helmets =============================
+// =========================================================================
+    class CH252_Helmet_Green;
+    class CLASS(CHJ252_WL_Helmet_Base): CH252_Helmet_Green {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CHJ252 Woodland Helmet (Base)";
+    };
+
+
+    class CH252_Helmet_EyePiece_Green;
+    class CLASS(CHJ252_WL_Helmet_V2_Base): CH252_Helmet_EyePiece_Green {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CHJ252 Woodland Helmet EP (Base)";
+    };
+
     #include "configs\Helmets.hpp"
 
 
@@ -92,6 +110,95 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Uniform (Base)";
+    };
+
+// =========================================================================
+// ============================ CHJ252 Uniforms ============================
+// =========================================================================
+    class MA_Marine_BDU_Heavy_Woodland_NC;
+    class CLASS(CHJ252_WL_Uniform_Heavy_Base): MA_Marine_BDU_Heavy_Woodland_NC {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CHJ252 Woodland Heavy Uniform (Base)";
+        hiddenSelections[]=
+        {
+            "Camo1",
+            "Camo2",
+            "Camo3",
+            "Camo4",
+            "Camo5",
+            "Camo6",
+            "Camo7",
+            "Camo8",
+            "Camo9",
+            "Camo10",
+    //     "Uni_Upper",
+    //     "Uni_Lower",
+            "Uni_Collar",
+    //     "Armor_Underpad",
+    //     "Armor_Straps",
+    //     "Armor_Upper",
+    //     "Armor_Lower",
+    //     "Shoulders_Lower1",
+            "Shoulders_Lower2",
+    //     "Shoulders_Upper"
+        };
+    hiddenSelectionsTextures[]=
+        {
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperUpperBDU_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperLowerBDU_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperCollar_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperSoftpadding_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperArmorStraps_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperUpperArmor_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperLowerArmor_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
+            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa"
+        };
+    };
+
+    class MA_Marine_BDU_NS_Woodland;
+    class CLASS(CHJ252_WL_Uniform_NS_Base): MA_Marine_BDU_NS_Woodland {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CHJ252 Woodland Uniform NS (Base)";
+        hiddenSelections[]=
+    {
+        "Camo1",
+        "Camo2",
+        "Camo3",
+        "Camo4",
+        "Camo5",
+        "Camo6",
+        "Camo7",
+        "Camo8",
+        "Camo9",
+        "Camo10",
+ //     "Uni_Upper",
+ //     "Uni_Lower",
+ //     "Uni_Collar",
+ //     "Armor_Underpad",
+ //     "Armor_Straps",
+ //     "Armor_Upper",
+ //     "Armor_Lower",
+        "Shoulders_Lower1",
+        "Shoulders_Lower2",
+        "Shoulders_Upper"
+    };
+    hiddenSelectionsTextures[]=
+    {
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperUpperBDU_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperLowerBDU_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperCollar_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperSoftpadding_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperArmorStraps_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperUpperArmor_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperLowerArmor_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
+        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa"
+    };
     };
 
     #include "configs\Uniforms.hpp"

@@ -53,6 +53,23 @@ class CfgVehicles {
         respawnLinkedItems[] = {};
     };
 
+    class MA_Marine_BDU_NS_Woodland;
+    class CLASS(CHJ252_WL_Base): MA_Marine_BDU_NS_Woodland {
+        SCOPE_PRIVATE;
+        author = AUTHOR;
+
+        faction = QFACTION(505th);
+
+        displayName = "CHJ252 Woodland Marine (Base)";
+        uniformClass = QCLASS(Uniform_CHJ252_WL);
+        modelSides[] = {BLUFOR};
+        hiddenSelectionsTextures[] = {"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_blufor_co.paa"};
+
+        linkedItems[] = {QCLASS(CHJ252_WL_HelmetV2), "","","",MARINE_LINKED_ITEMS_RADIO};
+        respawnLinkedItems[] = {QCLASS(CHJ252_WL_HelmetV2), "","","",MARINE_LINKED_ITEMS_RADIO};
+        backpack = "";
+    };
+
     #include "configs\Units.hpp"
 
     class TKE_CamelBakUCN;

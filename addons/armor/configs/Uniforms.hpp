@@ -235,3 +235,28 @@ class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
    SCOPE_PRIVATE;
     displayName = "[505th] Black Ops Uniform";
 };
+// ==================================================
+// ==================CHJ252 Uniforms=================
+// ==================================================
+class CLASS(CHJ252_WL_Uniform_NS): CLASS(CHJ252_WL_Uniform_NS_Base) {
+SCOPE_PUBLIC;
+author = AUTHOR;
+displayName = "[505th] CHJ252 Woodland Uniform NS";
+class ItemInfo: UniformItem
+	{
+        uniformType = "Neopren";
+		containerClass = "Supply150";
+		mass = 10;
+	};
+};
+class CLASS(CHJ252_WL_Uniform_Heavy): CLASS(CHJ252_WL_Uniform_Heavy_Base) {
+SCOPE_PUBLIC;
+author = AUTHOR;
+displayName = "[505th] CHJ252 Woodland Heavy Uniform";
+class ItemInfo: UniformItem
+	{
+        uniformType = "Neopren";
+		containerClass = "Supply150";
+		mass = 10;
+	};
+};
