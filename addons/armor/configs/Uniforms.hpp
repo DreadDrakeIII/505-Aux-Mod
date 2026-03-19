@@ -235,28 +235,49 @@ class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
    SCOPE_PRIVATE;
     displayName = "[505th] Black Ops Uniform";
 };
+
 // ==================================================
-// ==================CHJ252 Uniforms=================
+// ================== CH252 Uniforms ================
 // ==================================================
-class CLASS(CHJ252_WL_Uniform_NS): CLASS(CHJ252_WL_Uniform_NS_Base) {
-SCOPE_PUBLIC;
-author = AUTHOR;
-displayName = "[505th] CHJ252 Woodland Uniform NS";
-class ItemInfo: UniformItem
-	{
-        uniformType = "Neopren";
-		containerClass = "Supply150";
-		mass = 10;
-	};
+
+class CLASS(CH252_Uniform_WDL): CLASS(CH252_Uniform_WDL_Base) {
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Woodland";
+
+    class ItemInfo: UniformItem {
+        uniformClass = QCLASS(CH252_Rifleman_WDL);
+        containerClass = "Supply150";
+        mass = 10;
+    };
 };
-class CLASS(CHJ252_WL_Uniform_Heavy): CLASS(CHJ252_WL_Uniform_Heavy_Base) {
-SCOPE_PUBLIC;
-author = AUTHOR;
-displayName = "[505th] CHJ252 Woodland Heavy Uniform";
-class ItemInfo: UniformItem
-	{
-        uniformType = "Neopren";
-		containerClass = "Supply150";
-		mass = 10;
-	};
+
+class CLASS(CH252_Uniform_DES): CLASS(CH252_Uniform_DES_Base) {
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Arid";
+
+    class ItemInfo: UniformItem {
+        uniformClass = QCLASS(CH252_Rifleman_DES);
+        containerClass = "Supply150";
+        mass = 10;
+    };
+};
+
+class CLASS(CH252_Uniform_URB): CLASS(CH252_Uniform_URB_Base) {
+    scope = 2;
+    scopeCurator = 2;
+    scopeArsenal = 2;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Urban";
+
+    class ItemInfo: UniformItem {
+        uniformClass = QCLASS(CH252_Rifleman_URB);
+        containerClass = "Supply150";
+        mass = 10;
+    };
 };

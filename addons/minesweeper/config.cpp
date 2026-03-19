@@ -13,13 +13,6 @@ class CfgPatches {
     };
 };
 
-class CfgFactionClasses {
-    class NO_CATEGORY;
-    class 505th_MinesweeperIED: NO_CATEGORY {
-        displayName = "505th Zeus";
-    };
-};
-
 class CfgFunctions {
     class 505th_MinesweeperIED {
         tag = "MSIED";
@@ -56,7 +49,7 @@ class CfgVehicles {
 
     class 505th_ModuleMinesweeperIED_F: Module_F {
         scope = 2;
-        displayName = "505th Minesweeper IED";
+        displayName = "[505th] Minesweeper IED";
         icon = "\a3\modules_f\data\iconexplosive_ca.paa";
         category = "505th_MinesweeperIED";
         function = "MSIED_fnc_moduleIED";

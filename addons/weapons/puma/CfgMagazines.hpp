@@ -12,6 +12,8 @@ class CfgMagazines {
 
         ammo = QCLASS(45ACP_Ball);
         count = 16;
+        tracersEvery = 1;
+        lastRoundsTracer = 0;
         mass = 6;
     };
 };

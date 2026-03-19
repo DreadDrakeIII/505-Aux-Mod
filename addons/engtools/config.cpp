@@ -25,15 +25,6 @@ class Extended_PostInit_EventHandlers {
 // =============================================================================
 //   ZEUS MODULE – Add Engineer Resources
 // =============================================================================
-
-class CfgFactionClasses {
-    class CLASS(Zeus) {
-        displayName = "505th Zeus";
-        priority = 2;
-        side = 7; // logic side
-    };
-};
-
 class CfgVehicles {
     class Module_F;
 

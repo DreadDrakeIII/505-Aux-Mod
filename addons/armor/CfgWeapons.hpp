@@ -62,27 +62,76 @@ class CfgWeapons {
     };
 
 // =========================================================================
-// ============================ CHJ252 Helmets =============================
+// ============================ CH252 Helmets =============================
 // =========================================================================
-    class CH252_Helmet_Green;
-    class CLASS(CHJ252_WL_Helmet_Base): CH252_Helmet_Green {
+    class CH252_Helmet_Sealed_Tan;
+    class CLASS(EVCH252_Helmet_DES_Base): CH252_Helmet_Sealed_Tan {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] CHJ252 Woodland Helmet (Base)";
+        displayName = "[505th] EVCH252 Helmet Desert (Base)";
     };
 
 
-    class CH252_Helmet_EyePiece_Green;
-    class CLASS(CHJ252_WL_Helmet_V2_Base): CH252_Helmet_EyePiece_Green {
+    class CH252_Helmet_Sealed_Green;
+    class CLASS(EVCH252_Helmet_WDL_Base): CH252_Helmet_Sealed_Green {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] CHJ252 Woodland Helmet EP (Base)";
+        displayName = "[505th] EVCH252 Helmet Woodland (Base)";
+    };
+
+    class CLASS(EVCH252_Helmet_URB_Base): CH252_Helmet_Sealed_Green {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] EVCH252 Helmet Urban (Base)";
+    };
+
+    class HaloInf_Marine_WDL_two_headgear;
+    class CLASS(CH252_Helmet_WDL_Base): HaloInf_Marine_WDL_two_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Woodland (Base)";
+    };
+
+    class HaloInf_Marine_WDL_two_NV_headgear;
+    class CLASS(CH252_Helmet_WDL_NV_Base): HaloInf_Marine_WDL_two_NV_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Woodland NV (Base)";
+    };
+
+    class HaloInf_Marine_DES_headgear;
+    class CLASS(CH252_Helmet_DES_Base): HaloInf_Marine_DES_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Arid (Base)";
+    };
+
+    class HaloInf_Marine_DES_NV_headgear;
+    class CLASS(CH252_Helmet_DES_NV_Base): HaloInf_Marine_DES_NV_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Arid NV (Base)";
+    };
+
+    class HaloInf_Marine_URB_headgear;
+    class CLASS(CH252_Helmet_URB_Base): HaloInf_Marine_URB_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Urban (Base)";
+    };
+
+    class HaloInf_Marine_URB_NV_headgear;
+    class CLASS(CH252_Helmet_URB_NV_Base): HaloInf_Marine_URB_NV_headgear {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] CH252 Helmet Urban NV (Base)";
     };
 
     #include "configs\Helmets.hpp"
 
 
     class UniformItem;
+    class ItemInfo;
     class Rogue_CEUniform_U_B;
     class CLASS(Uniform_CE_Base): Rogue_CEUniform_U_B {
         SCOPE_HIDDEN;
@@ -104,102 +153,41 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Pilot Uniform (Base)";
+        uniformType = "Neopren";
     };
 
     class CLASS(Uniform_BlackOps_Base): TKE_CombatUniMerc_U_B {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Uniform (Base)";
+        uniformType = "Neopren";
     };
 
 // =========================================================================
-// ============================ CHJ252 Uniforms ============================
+// ============================ CH252 Uniforms =============================
 // =========================================================================
-    class MA_Marine_BDU_Heavy_Woodland_NC;
-    class CLASS(CHJ252_WL_Uniform_Heavy_Base): MA_Marine_BDU_Heavy_Woodland_NC {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CHJ252 Woodland Heavy Uniform (Base)";
-        hiddenSelections[]=
-        {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "Camo4",
-            "Camo5",
-            "Camo6",
-            "Camo7",
-            "Camo8",
-            "Camo9",
-            "Camo10",
-    //     "Uni_Upper",
-    //     "Uni_Lower",
-            "Uni_Collar",
-    //     "Armor_Underpad",
-    //     "Armor_Straps",
-    //     "Armor_Upper",
-    //     "Armor_Lower",
-    //     "Shoulders_Lower1",
-            "Shoulders_Lower2",
-    //     "Shoulders_Upper"
-        };
-    hiddenSelectionsTextures[]=
-        {
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperUpperBDU_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperLowerBDU_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperCollar_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperSoftpadding_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperArmorStraps_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperUpperArmor_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperLowerArmor_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
-            "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa"
-        };
-    };
 
-    class MA_Marine_BDU_NS_Woodland;
-    class CLASS(CHJ252_WL_Uniform_NS_Base): MA_Marine_BDU_NS_Woodland {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CHJ252 Woodland Uniform NS (Base)";
-        hiddenSelections[]=
-    {
-        "Camo1",
-        "Camo2",
-        "Camo3",
-        "Camo4",
-        "Camo5",
-        "Camo6",
-        "Camo7",
-        "Camo8",
-        "Camo9",
-        "Camo10",
- //     "Uni_Upper",
- //     "Uni_Lower",
- //     "Uni_Collar",
- //     "Armor_Underpad",
- //     "Armor_Straps",
- //     "Armor_Upper",
- //     "Armor_Lower",
-        "Shoulders_Lower1",
-        "Shoulders_Lower2",
-        "Shoulders_Upper"
-    };
-    hiddenSelectionsTextures[]=
-    {
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperUpperBDU_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperLowerBDU_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Woodland_TrooperCollar_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperSoftpadding_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\TrooperArmorStraps_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperUpperArmor_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperLowerArmor_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa",
-        "MA_Armor\data\Uniforms\Marine\data\Color_Variants\MA_Green_TrooperShoulders_CO.paa"
-    };
-    };
+// TGE wearable uniform items
+class haloinfmar_U_WDL_uniform;
+class haloinfmar_U_URB_uniform;
+class haloinfmar_U_DES_uniform;
+class CLASS(CH252_Uniform_WDL_Base): haloinfmar_U_WDL_uniform {
+    SCOPE_HIDDEN;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Woodland (Base)";
+};
+
+class CLASS(CH252_Uniform_URB_Base): haloinfmar_U_URB_uniform {
+    SCOPE_HIDDEN;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Urban (Base)";
+};
+
+class CLASS(CH252_Uniform_DES_Base): haloinfmar_U_DES_uniform {
+    SCOPE_HIDDEN;
+    author = AUTHOR;
+    displayName = "[505th] CH252 Uniform Desert (Base)";
+};
 
     #include "configs\Uniforms.hpp"
 
@@ -214,7 +202,6 @@ class CfgWeapons {
     class Rogue_CEArmourScout;
     class TKE_MDTFArmour1Grey;
     class TKE_UCMCArmour3_21st;
-    class ItemInfo;
 
     class CLASS(CE_Marine_Vest_Base): Rogue_CEArmour {
         SCOPE_HIDDEN;

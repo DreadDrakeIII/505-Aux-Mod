@@ -21,8 +21,8 @@ class CfgMagazines {
 
         count = 20;                // low-cap
         initSpeed = 850;           // muzzle velocity (m/s)
-        tracersEvery = 0;
-        lastRoundsTracer = 2;
+        tracersEvery = 1;
+        lastRoundsTracer = 0;
         mass = 14;                 // slightly heavier round
     };
 };

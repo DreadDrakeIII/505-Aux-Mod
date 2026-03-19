@@ -12,8 +12,8 @@ class CfgMagazines {
 
         ammo = QCLASS(65x39_LDUR);
         count = 40;
-        tracersEvery = 0;
-        lastRoundsTracer = 6;
+        tracersEvery = 1;
+        lastRoundsTracer = 0;
         mass = 9;
     };
 };

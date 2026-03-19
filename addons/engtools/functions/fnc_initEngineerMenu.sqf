@@ -42,7 +42,7 @@ player addEventHandler ["Respawn", {
 // CBA keybind (Ctrl+F1)
 if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     [
-        "505th Aux",
+        "505th Expeditionary Force Aux Mod",
         QGVAR(openMenu),
         "Open Engineer Tools",
         {

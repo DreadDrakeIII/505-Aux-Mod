@@ -16,8 +16,8 @@ class CfgMagazines {
         ammo = QCLASS(762xV7_Ball);
         count = 25;
         initSpeed = 1000;
-        tracersEvery = 0;
-        lastRoundsTracer = 5;
+        tracersEvery = 1;
+        lastRoundsTracer = 0;
         mass = 10;
     };
 };
