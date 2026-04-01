@@ -3,8 +3,8 @@ class CfgEditorSubcategories {
     class EDSUBCAT(INF_CE) {
         displayName = "Infantry - CE";
     };
-    class EDSUBCAT(INF_CH252) {
-        displayName = "Infantry - CH252";
+    class EDSUBCAT(INF_TCP) {
+        displayName = "Infantry - TCP";
     };
     class EDSUBCAT(Customs) {
         displayName = "Customs";

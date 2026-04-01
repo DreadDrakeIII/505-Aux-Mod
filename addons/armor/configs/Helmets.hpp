@@ -188,91 +188,23 @@ class CLASS(Black_Ops_Helmet): CLASS(505th_Black_Ops_Helmet_Base) {
     scopeArsenal = 0;
     displayName = "[505th] Black Ops Helmet";
 };
-// ===========================================================================
-// ============================ CH252 Helmets ================================
-// ===========================================================================
-class CLASS(EVCH252_Helmet_DES): CLASS(EVCH252_Helmet_DES_Base) {
+// ==============================================================================================
+// ============================ CH43/A, ECH35/J and ECH43/A Helmets =============================
+// ==============================================================================================
+class CLASS(CH43A_Helmet_Olive): CLASS(CH43A_Helmet_OLIVE_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
-    displayName = "[505th] EVCH252 Helmet Arid";
-
-    hiddenSelections[] = {
-        "camo1",
-        "camo2",
-        "camo3",
-        "camo4",
-        "camo5",
-        "camo6",
-        "Camo7",
-        "Camo8",
-        "Camo9",
-        "EyePiece",
-        "EyePieceGlass",
-        "VisorGlasses"
-    };
-
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\evch252\desert\evch252_helmet_des_co.paa),                 // camo1
-        QPATHTOF(data\helmets\evch252\desert\evch252_helmet_des_co.paa),                 // camo2
-        QPATHTOF(data\helmets\evch252\desert\evch252_helmet_des_co.paa),                 // camo3
-
-        "MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa",                // camo4
-        "MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa",                // camo5
-        "MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa",                // camo6
-
-        "MA_Armor\data\Helmets\CH252\data\VaccumCollar\Tan\VacSeal_Tan_CO.paa",          // Camo7
-
-        QPATHTOF(data\helmets\evch252\desert\evch252_helmet_des_facemodule_co.paa),      // Camo8
-        QPATHTOF(data\helmets\evch252\desert\evch252_helmet_des_facemodule_co.paa)       // Camo9
-    };
+    displayName = "[505th] CH43/A Helmet (Olive)";
 };
-class CLASS(EVCH252_Helmet_WDL): CLASS(EVCH252_Helmet_WDL_Base) {
+
+class CLASS(ECH35J_Helmet_Olive_BV): CLASS(ECH35J_Helmet_Olive_Blue_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
-    displayName = "[505th] EVCH252 Helmet Woodland";
+    displayName = "[505th] ECH35/J Helmet BV (Olive)";
 };
 
-class CLASS(EVCH252_Helmet_URB): CLASS(EVCH252_Helmet_URB_Base) {
+class CLASS(ECH43A_Helmet_Olive_BV): CLASS(ECH43A_Helmet_OLIVE_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
-    displayName = "[505th] EVCH252 Helmet Urban";
+    displayName = "[505th] ECH43/A Helmet BV (Olive)";
 };
-
-class CLASS(CH252_Helmet_WDL): CLASS(CH252_Helmet_WDL_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Woodland";
-};
-
-class CLASS(CH252_Helmet_WDL_NV): CLASS(CH252_Helmet_WDL_NV_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Woodland NV";
-};
-
-class CLASS(CH252_Helmet_DES): CLASS(CH252_Helmet_DES_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Arid";
-};
-
-class CLASS(CH252_Helmet_DES_NV): CLASS(CH252_Helmet_DES_NV_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Arid NV";
-};
-
-class CLASS(CH252_Helmet_URB): CLASS(CH252_Helmet_URB_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Urban";
-};
-
-class CLASS(CH252_Helmet_URB_NV): CLASS(CH252_Helmet_URB_NV_Base) {
-    SCOPE_PUBLIC;
-    author = AUTHOR;
-    displayName = "[505th] CH252 Helmet Urban NV";
-};
-
-hiddenSelections[] = {"camo1","camo2","camo3","camo4","camo5","camo6","Camo7","Camo8","Camo9","EyePiece","EyePieceGlass","VisorGlasses"};
-hiddenSelectionsTextures[] = {"MA_Armor\data\Helmets\CH252\data\MA_Tan_TrooperHelmet_CO.paa","MA_Armor\data\Helmets\CH252\data\MA_Tan_TrooperHelmet_CO.paa","MA_Armor\data\Helmets\CH252\data\MA_Tan_TrooperHelmet_CO.paa","MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa","MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa","MA_Armor\data\Helmets\CH252\data\MA_HelmetAccessories_A_CO.paa","MA_Armor\data\Helmets\CH252\data\VaccumCollar\Tan\VacSeal_Tan_CO.paa","MA_Armor\data\Helmets\CH252\data\SealedVisor\Blue_Visor\Desert\FaceModule_CO.paa","MA_Armor\data\Helmets\CH252\data\SealedVisor\Blue_Visor\Desert\FaceModule_CO.paa"};

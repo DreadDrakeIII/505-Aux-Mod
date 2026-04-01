@@ -673,3 +673,33 @@ class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
             vestType = "Rebreather";
         };
 };
+
+// =========================================================================
+// ============================ M43 Vests ==================================
+// =========================================================================
+class CLASS(M43_Heavy_Olive_1): CLASS(M43_Heavy_Olive_1_Base) {
+    displayName = "[505th] M43 Heavy (Olive 1)";
+    SCOPE_PUBLIC;
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};
+
+class CLASS(M43_Medium_Olive_1): CLASS(M43_Medium_Olive_1_Base) {
+    displayName = "[505th] M43 Medium (Olive 1)";
+    SCOPE_PUBLIC;
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};
+
+class CLASS(M43_Kevlar_Black_1): CLASS(M43_Kevlar_Black_1_Base) {
+    displayName = "[505th] M43 Kevlar (Black 1)";
+    SCOPE_PUBLIC;
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+};

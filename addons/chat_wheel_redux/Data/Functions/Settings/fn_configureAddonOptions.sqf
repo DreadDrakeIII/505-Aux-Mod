@@ -11,30 +11,26 @@
     ["Voice Language", "Select the language for voice lines. Server must have the language files."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     [
-        ["en_US", "en_GB"],                 // values stored
-        ["American English", "British English"], // UI labels
+        ["en_US", "en_GB"],
+        ["American English", "British English"],
         0
     ],
-    0, // isGlobal
+    0,
     {
         params ["_value"];
-
-        // Cache selected language so fn_processTags can read it
         missionNamespace setVariable ["CWR_voiceLang", _value];
-
         ["CWR_Voice_Language changed to: %1", _value] call CWR_fnc_devLog;
     },
     false
 ] call CBA_fnc_addSetting;
 
-// Optional: ensure a default exists even before user opens settings
 if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     missionNamespace setVariable ["CWR_voiceLang", "en_US"];
 };
 
 
 // ============================================================================
-// CUSTOM MESSAGES (1-9)
+// CUSTOM MESSAGES (1-12)
 // ============================================================================
 
 [
@@ -181,9 +177,20 @@ if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     }
 ] call CBA_fnc_addSetting;
 
+
 // ============================================================================
-// AUTOMATED MESSAGES - SEPARATE TOGGLES
+// AUTOMATED MESSAGES
 // ============================================================================
+
+[
+    "CWR_AutoMessages_Enabled",
+    "CHECKBOX",
+    ["Enable Automated Messages", "Master toggle for all automated chat messages (grenade callouts, unconscious callouts, etc)."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    true,
+    0,
+    {}
+] call CBA_fnc_addSetting;
 
 [
     "CWR_AutoMessages_Grenades",
@@ -195,8 +202,12 @@ if (isNil { missionNamespace getVariable "CWR_voiceLang" }) then {
     {}
 ] call CBA_fnc_addSetting;
 
-if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
-{
+// Support ACE Medical and KAT Medical
+private _hasMedical =
+    (isClass (configFile >> "CfgPatches" >> "ace_medical")) ||
+    (isClass (configFile >> "CfgPatches" >> "kat_medical"));
+
+if (_hasMedical) then {
     [
         "CWR_AutoMessages_Uncon",
         "CHECKBOX",
@@ -207,6 +218,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
         {}
     ] call CBA_fnc_addSetting;
 };
+
 
 // ============================================================================
 // VOICE LINE SETTINGS
@@ -243,16 +255,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then
 ] call CBA_fnc_addSetting;
 
 CWR_Voice_RCUnitsSendsMessages = false; // Wip
-// [
-//     "CWR_Voice_RCUnitsSendsMessages",
-//     "CHECKBOX",
-//     ["RC Units Send Messages", "If enabled, remote (zeus) controlled units will send messages and say voice lines."],
-//     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-//     true,
-//     0,
-//     {},
-//     true
-// ] call CBA_fnc_addSetting;
 
 [
     "CWR_Voice_CoolDown",

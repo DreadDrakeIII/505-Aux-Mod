@@ -7,22 +7,22 @@ class CFGVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Anti_Air);
         crew = QCLASS(Marine_Tank_Crew);
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camo4",
-            "camo5",
-            "camo6"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camo4",
+        //     "camo5",
+        //     "camo6"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M808B2A1;
@@ -33,24 +33,24 @@ class CFGVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Anti_Air);
         crew = QCLASS(Marine_Tank_Crew);
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camo4",
-            "camo5",
-            "camo6",
-            "missilepods"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_oryx_pod_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camo4",
+        //     "camo5",
+        //     "camo6",
+        //     "missilepods"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_oryx_pod_co.paa)
+        // };
     };
 
     class OPTRE_M808B2_Driverless;
@@ -61,22 +61,22 @@ class CFGVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Anti_Air_Single);
         crew = QCLASS(Marine_Tank_Crew);
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camo4",
-            "camo5",
-            "camo6"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camo4",
+        //     "camo5",
+        //     "camo6"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M808B2A1_Driverless;
@@ -87,23 +87,23 @@ class CFGVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Anti_Air_Single);
         crew = QCLASS(Marine_Tank_Crew);
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camo4",
-            "camo5",
-            "camo6",
-            "missilepods"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa),
-            QPATHTOF(land\sundevil\data\textures\505th_oryx_pod_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camo4",
+        //     "camo5",
+        //     "camo6",
+        //     "missilepods"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\sundevil\data\textures\505th_body_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_dv_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_cing_rt_m808s_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_turretbase_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_head_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_sun_devil_gun_lopo_co.paa),
+        //     QPATHTOF(land\sundevil\data\textures\505th_oryx_pod_co.paa)
+        // };
     };
 };

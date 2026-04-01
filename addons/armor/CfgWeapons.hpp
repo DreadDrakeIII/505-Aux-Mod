@@ -61,71 +61,31 @@ class CfgWeapons {
         hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEBooniehat_co.paa"};
     };
 
-// =========================================================================
-// ============================ CH252 Helmets =============================
-// =========================================================================
-    class CH252_Helmet_Sealed_Tan;
-    class CLASS(EVCH252_Helmet_DES_Base): CH252_Helmet_Sealed_Tan {
+// ===================================================================================================
+// ============================ CH43/A, ECH35/J and ECH43/A Helmets BASE =============================
+// ===================================================================================================
+    class TCP_H_Helmet_CH43A_Olive;
+    class CLASS(CH43A_Helmet_OLIVE_Base): TCP_H_Helmet_CH43A_Olive {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] EVCH252 Helmet Desert (Base)";
+        displayName = "[505th] CH43/A Helmet Olive (Base)";
     };
 
 
-    class CH252_Helmet_Sealed_Green;
-    class CLASS(EVCH252_Helmet_WDL_Base): CH252_Helmet_Sealed_Green {
+    class TCP_H_Helmet_ECH35J_Olive_Blue;
+    class CLASS(ECH35J_Helmet_Olive_Blue_Base): TCP_H_Helmet_ECH35J_Olive_Blue {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] EVCH252 Helmet Woodland (Base)";
+        displayName = "[505th] ECH35/J Helmet Olive Blue (Base)";
     };
 
-    class CLASS(EVCH252_Helmet_URB_Base): CH252_Helmet_Sealed_Green {
+    class TCP_H_Helmet_ECH43A_Olive_Blue;
+    class CLASS(ECH43A_Helmet_OLIVE_Base): TCP_H_Helmet_ECH43A_Olive_Blue {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] EVCH252 Helmet Urban (Base)";
+        displayName = "[505th] ECH43/A Helmet Olive Blue (Base)";
     };
 
-    class HaloInf_Marine_WDL_two_headgear;
-    class CLASS(CH252_Helmet_WDL_Base): HaloInf_Marine_WDL_two_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Woodland (Base)";
-    };
-
-    class HaloInf_Marine_WDL_two_NV_headgear;
-    class CLASS(CH252_Helmet_WDL_NV_Base): HaloInf_Marine_WDL_two_NV_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Woodland NV (Base)";
-    };
-
-    class HaloInf_Marine_DES_headgear;
-    class CLASS(CH252_Helmet_DES_Base): HaloInf_Marine_DES_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Arid (Base)";
-    };
-
-    class HaloInf_Marine_DES_NV_headgear;
-    class CLASS(CH252_Helmet_DES_NV_Base): HaloInf_Marine_DES_NV_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Arid NV (Base)";
-    };
-
-    class HaloInf_Marine_URB_headgear;
-    class CLASS(CH252_Helmet_URB_Base): HaloInf_Marine_URB_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Urban (Base)";
-    };
-
-    class HaloInf_Marine_URB_NV_headgear;
-    class CLASS(CH252_Helmet_URB_NV_Base): HaloInf_Marine_URB_NV_headgear {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH252 Helmet Urban NV (Base)";
-    };
 
     #include "configs\Helmets.hpp"
 
@@ -163,30 +123,31 @@ class CfgWeapons {
         uniformType = "Neopren";
     };
 
-// =========================================================================
-// ============================ CH252 Uniforms =============================
-// =========================================================================
+// ==============================================================================
+// ============================ CBUU Uniforms BASE ==============================
+// ==============================================================================
 
-// TGE wearable uniform items
-class haloinfmar_U_WDL_uniform;
-class haloinfmar_U_URB_uniform;
-class haloinfmar_U_DES_uniform;
-class CLASS(CH252_Uniform_WDL_Base): haloinfmar_U_WDL_uniform {
+// The Cole Protocol uniform items
+class TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Woodland;
+class TCP_U_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Woodland;
+class TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Urban;
+
+class CLASS(CBUU_Woodland_1_Base): TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Woodland {
     SCOPE_HIDDEN;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Woodland (Base)";
+    displayName = "[505th] CBUU Uniform Woodland 1 (Base)";
 };
 
-class CLASS(CH252_Uniform_URB_Base): haloinfmar_U_URB_uniform {
+class CLASS(CBUU_Woodland_2_Base): TCP_U_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Woodland {
     SCOPE_HIDDEN;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Urban (Base)";
+    displayName = "[505th] CBUU Uniform Woodland 2 (Base)";
 };
 
-class CLASS(CH252_Uniform_DES_Base): haloinfmar_U_DES_uniform {
+class CLASS(CBUU_Urban_1_Base): TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Urban {
     SCOPE_HIDDEN;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Desert (Base)";
+    displayName = "[505th] CBUU Uniform Urban 1 (Base)";
 };
 
     #include "configs\Uniforms.hpp"
@@ -308,6 +269,44 @@ class CLASS(CH252_Uniform_DES_Base): haloinfmar_U_DES_uniform {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] Black Ops Vest (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+    };
+
+// ==============================================================================
+// ============================ M43 Vests BASE ==================================
+// ==============================================================================
+
+    class TCP_V_M43A_GungnirL_3_1_Olive;
+    class TCP_V_M43A_GungnirS_3_2_Olive;
+    class TCP_V_M43A_Pads_1_Black;
+
+    class CLASS(M43_Heavy_Olive_1_Base): TCP_V_M43A_GungnirL_3_1_Olive {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] M43 Heavy Olive 1 (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+    };
+
+    class CLASS(M43_Medium_Olive_1_Base): TCP_V_M43A_GungnirS_3_2_Olive {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] M43 Medium Olive 1 (Base)";
+        class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        };
+    };
+
+    class CLASS(M43_Kevlar_Black_1_Base): TCP_V_M43A_Pads_1_Black {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] M43 Kevlar Black 1 (Base)";
         class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";

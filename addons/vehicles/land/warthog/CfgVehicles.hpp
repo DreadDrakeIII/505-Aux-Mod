@@ -8,26 +8,26 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "camo_details",
-            "camo_interior",
-            "camo_turret_decal",
-            "camo_sight",
-            "camo_doors"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            "",
-            "\OPTRE_Vehicles\warthog\data\turrets\sight_co.paa",
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_turret_decal",
+        //     "camo_sight",
+        //     "camo_doors"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     "",
+        //     "\OPTRE_Vehicles\warthog\data\turrets\sight_co.paa",
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M12A1_LRV;
@@ -39,26 +39,26 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "camo_details",
-            "camo_interior",
-            "camo_turret",
-            "camo_turret_decals",
-            "camo_doors"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            "\OPTRE_Vehicles\warthog\data\turrets\m39_turret_co.paa",
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_turret",
+        //     "camo_turret_decals",
+        //     "camo_doors"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     "\OPTRE_Vehicles\warthog\data\turrets\m39_turret_co.paa",
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M12G1_LRV;
@@ -70,24 +70,24 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "Camo4",
-            "camo_details",
-            "camo_interior",
-            "camo_doors"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_m68_turret_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "Camo4",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_doors"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_m68_turret_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M12R_AA;
@@ -99,22 +99,22 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "camo_details",
-            "camo_interior",
-            "camo_doors"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_m79_turret_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_doors"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_m79_turret_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+        // };
     };
 
     class OPTRE_M12_FAV;
@@ -126,20 +126,20 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "camo_details",
-            "camo_interior",
-            "camo_doors"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_doors"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
+        // };
     };
 
     class OPTRE_M12_FAV_APC;
@@ -151,26 +151,26 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "Camo4",
-            "camo_details",
-            "camo_interior",
-            "camo_transport_details",
-            "camo_net"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            "",
-            "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa"
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "Camo4",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_transport_details",
+        //     "camo_net"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     "",
+        //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa"
+        // };
     };
 
     class OPTRE_M12_FAV_APC_MED;
@@ -182,28 +182,28 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "Camo4",
-            "camo_details",
-            "camo_interior",
-            "camo_transport_details",
-            "camo_net",
-            "camo_medical"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            "",
-            "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
-            "\OPTRE_Vehicles\warthog\data\medical_lopo_co.paa"
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "Camo4",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_transport_details",
+        //     "camo_net",
+        //     "camo_medical"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     "",
+        //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
+        //     "\OPTRE_Vehicles\warthog\data\medical_lopo_co.paa"
+        // };
     };
 
     class OPTRE_M813_TT;
@@ -215,25 +215,25 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Cars);
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        hiddenSelections[] = {
-            "Camo1",
-            "Camo2",
-            "Camo3",
-            "camo_details",
-            "camo_interior",
-            "camo_net",
-            "camo_transport_decal"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-            QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
-            "",
-            QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-            "",
-            "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
-            ""
-        };
+        // hiddenSelections[] = {
+        //     "Camo1",
+        //     "Camo2",
+        //     "Camo3",
+        //     "camo_details",
+        //     "camo_interior",
+        //     "camo_net",
+        //     "camo_transport_decal"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+        //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
+        //     "",
+        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+        //     "",
+        //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
+        //     ""
+        // };
     };
 
     class OPTRE_M12_LRV_ins;

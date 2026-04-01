@@ -10,8 +10,6 @@ class CfgPatches {
             QUOTE(ADDON),
             // Air
             QGVAR(buzzard),
-            QGVAR(c5),
-            QGVAR(c130),
             QGVAR(condor),
             QGVAR(falcon),
             QGVAR(ghosthawk),

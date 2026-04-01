@@ -337,114 +337,114 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         };
     };
 
-    // ===========================================================================
-    // ============================ CH252 Backpacks ==================================
-    // ===========================================================================
-    class CLASS(CH252_Rucksack_Light): CLASS(CH252_Rucksack_Light_Base) {
-        SCOPE_PUBLIC;
-        author = "505th Aux Team";
-        displayName = "[505th] CH252 Rucksack Light";
-    };
-    class CLASS(CH252_Rucksack_Heavy): CLASS(CH252_Rucksack_Heavy_Base) {
-        SCOPE_PUBLIC;
-        author = "505th Aux Team";
-        displayName = "[505th] CH252 Rucksack Heavy";
-    };
-    class CLASS(CH252_Rucksack_LR): CLASS(CH252_LR_Base) {
-        SCOPE_PUBLIC;
-        author = "505th Aux Team";
-        displayName = "[505th] CH252 Rucksack LR";
-    };
-    class CLASS(CH252_Hardcase): CLASS(CH252_Hardcase_Base) {
-        SCOPE_PUBLIC;
-        author = "505th Aux Team";
-        displayName = "[505th] CH252 Hardcase";
-    };
-    class CLASS(CH252_Rifleman_Light_Predef): CLASS(CH252_Rucksack_Light) {
-        SCOPE_HIDDEN;
+    // // ===========================================================================
+    // // ============================ CH252 Backpacks ==================================
+    // // ===========================================================================
+    // class CLASS(CH252_Rucksack_Light): CLASS(CH252_Rucksack_Light_Base) {
+    //     SCOPE_PUBLIC;
+    //     author = "505th Aux Team";
+    //     displayName = "[505th] CH252 Rucksack Light";
+    // };
+    // class CLASS(CH252_Rucksack_Heavy): CLASS(CH252_Rucksack_Heavy_Base) {
+    //     SCOPE_PUBLIC;
+    //     author = "505th Aux Team";
+    //     displayName = "[505th] CH252 Rucksack Heavy";
+    // };
+    // class CLASS(CH252_Rucksack_LR): CLASS(CH252_LR_Base) {
+    //     SCOPE_PUBLIC;
+    //     author = "505th Aux Team";
+    //     displayName = "[505th] CH252 Rucksack LR";
+    // };
+    // class CLASS(CH252_Hardcase): CLASS(CH252_Hardcase_Base) {
+    //     SCOPE_PUBLIC;
+    //     author = "505th Aux Team";
+    //     displayName = "[505th] CH252 Hardcase";
+    // };
+    // class CLASS(CH252_Rifleman_Light_Predef): CLASS(CH252_Rucksack_Light) {
+    //     SCOPE_HIDDEN;
 
-        class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
-            MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(OPTRE_M2_Smoke,4);
-            MAG_XX(OPTRE_M2_Smoke_Blue,2);
-            MAG_XX(OPTRE_M9_Frag,4);
-        };
-      class TransportItems {
-        ITEM_XX(ACE_elasticBandage,60);
-        ITEM_XX(acex_intelitems_notepad,1);
-        ITEM_XX(kat_Painkiller,5);
-      };
-    };
-    class CLASS(CH252_Grenadier_Hardcase_Predef): CLASS(CH252_Hardcase) {
-        SCOPE_HIDDEN;
+    //     class TransportMagazines {
+    //         MAG_XX(OLI_32Rnd_762x51_Mag,9);
+    //         MAG_XX(OLI_12Rnd_127x40_Mag,3);
+    //         MAG_XX(OPTRE_M2_Smoke,4);
+    //         MAG_XX(OPTRE_M2_Smoke_Blue,2);
+    //         MAG_XX(OPTRE_M9_Frag,4);
+    //     };
+    //   class TransportItems {
+    //     ITEM_XX(ACE_elasticBandage,60);
+    //     ITEM_XX(acex_intelitems_notepad,1);
+    //     ITEM_XX(kat_Painkiller,5);
+    //   };
+    // };
+    // class CLASS(CH252_Grenadier_Hardcase_Predef): CLASS(CH252_Hardcase) {
+    //     SCOPE_HIDDEN;
 
-        class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
-            MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(OPTRE_M9_Frag,4);
-            MAG_XX(1Rnd_HE_Grenade_shell,25);
-            MAG_XX(3Rnd_Smoke_Grenade_shell,4);
-            MAG_XX(3Rnd_SmokeRed_Grenade_shell,4);
-            MAG_XX(3Rnd_UGL_FlareWhite_F,4);
-            MAG_XX(3Rnd_UGL_FlareGreen_F,1);
-            MAG_XX(3Rnd_UGL_FlareRed_F,1);
-            MAG_XX(3Rnd_UGL_FlareYellow_F,1);
-            MAG_XX(3Rnd_UGL_FlareCIR_F,1);
-            MAG_XX(OPTRE_M2_Smoke_Blue,2);
-        };
-        class TransportItems {
-            ITEM_XX(ACE_elasticBandage,60);
-            ITEM_XX(acex_intelitems_notepad,1);
-            ITEM_XX(kat_Painkiller,5);
-        };
-    };
-    class CLASS(CH252_Autorifle_Heavy_Predef): CLASS(CH252_Rucksack_Heavy) {
-        SCOPE_HIDDEN;
+    //     class TransportMagazines {
+    //         MAG_XX(OLI_32Rnd_762x51_Mag,9);
+    //         MAG_XX(OLI_12Rnd_127x40_Mag,3);
+    //         MAG_XX(OPTRE_M9_Frag,4);
+    //         MAG_XX(1Rnd_HE_Grenade_shell,25);
+    //         MAG_XX(3Rnd_Smoke_Grenade_shell,4);
+    //         MAG_XX(3Rnd_SmokeRed_Grenade_shell,4);
+    //         MAG_XX(3Rnd_UGL_FlareWhite_F,4);
+    //         MAG_XX(3Rnd_UGL_FlareGreen_F,1);
+    //         MAG_XX(3Rnd_UGL_FlareRed_F,1);
+    //         MAG_XX(3Rnd_UGL_FlareYellow_F,1);
+    //         MAG_XX(3Rnd_UGL_FlareCIR_F,1);
+    //         MAG_XX(OPTRE_M2_Smoke_Blue,2);
+    //     };
+    //     class TransportItems {
+    //         ITEM_XX(ACE_elasticBandage,60);
+    //         ITEM_XX(acex_intelitems_notepad,1);
+    //         ITEM_XX(kat_Painkiller,5);
+    //     };
+    // };
+    // class CLASS(CH252_Autorifle_Heavy_Predef): CLASS(CH252_Rucksack_Heavy) {
+    //     SCOPE_HIDDEN;
 
-        class TransportMagazines {
-            MAG_XX(OLI_100Rnd_95x40_Box,4);
-            MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(OPTRE_M2_Smoke,4);
-            MAG_XX(OPTRE_M2_Smoke_Blue,2);
-            MAG_XX(OPTRE_M9_Frag,4);
-        };
-        class TransportItems {
-            ITEM_XX(ACE_elasticBandage,60);
-            ITEM_XX(acex_intelitems_notepad,1);
-            ITEM_XX(kat_Painkiller,5);
-        };
-    };
+    //     class TransportMagazines {
+    //         MAG_XX(OLI_100Rnd_95x40_Box,4);
+    //         MAG_XX(OLI_12Rnd_127x40_Mag,3);
+    //         MAG_XX(OPTRE_M2_Smoke,4);
+    //         MAG_XX(OPTRE_M2_Smoke_Blue,2);
+    //         MAG_XX(OPTRE_M9_Frag,4);
+    //     };
+    //     class TransportItems {
+    //         ITEM_XX(ACE_elasticBandage,60);
+    //         ITEM_XX(acex_intelitems_notepad,1);
+    //         ITEM_XX(kat_Painkiller,5);
+    //     };
+    // };
 
-    class CLASS(CH252_Ammobearer_Heavy_Predef): CLASS(CH252_Rucksack_Heavy) {
-        SCOPE_HIDDEN;
+    // class CLASS(CH252_Ammobearer_Heavy_Predef): CLASS(CH252_Rucksack_Heavy) {
+    //     SCOPE_HIDDEN;
 
-        class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
-            MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(OPTRE_M2_Smoke,4);
-            MAG_XX(OPTRE_M2_Smoke_Blue,2);
-            MAG_XX(OPTRE_M9_Frag,4);
-        };
-        class TransportItems {
-            ITEM_XX(ACE_elasticBandage,60);
-            ITEM_XX(acex_intelitems_notepad,1);
-            ITEM_XX(kat_Painkiller,5);
-        };
-    };
+    //     class TransportMagazines {
+    //         MAG_XX(OLI_32Rnd_762x51_Mag,9);
+    //         MAG_XX(OLI_12Rnd_127x40_Mag,3);
+    //         MAG_XX(OPTRE_M2_Smoke,4);
+    //         MAG_XX(OPTRE_M2_Smoke_Blue,2);
+    //         MAG_XX(OPTRE_M9_Frag,4);
+    //     };
+    //     class TransportItems {
+    //         ITEM_XX(ACE_elasticBandage,60);
+    //         ITEM_XX(acex_intelitems_notepad,1);
+    //         ITEM_XX(kat_Painkiller,5);
+    //     };
+    // };
 
-    class CLASS(CH252_Rucksack_LR_Predef): CLASS(CH252_Rucksack_LR) {
-        SCOPE_HIDDEN;
+    // class CLASS(CH252_Rucksack_LR_Predef): CLASS(CH252_Rucksack_LR) {
+    //     SCOPE_HIDDEN;
 
-        class TransportMagazines {
-            MAG_XX(OLI_20Rnd_95xVX2_Mag,9);
-            MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(OPTRE_M2_Smoke,4);
-            MAG_XX(OPTRE_M2_Smoke_Blue,2);
-        };
-        class TransportItems {
-            ITEM_XX(ACE_elasticBandage,60);
-            ITEM_XX(acex_intelitems_notepad,1);
-            ITEM_XX(kat_Painkiller,5);
-        };
-    };
+    //     class TransportMagazines {
+    //         MAG_XX(OLI_20Rnd_95xVX2_Mag,9);
+    //         MAG_XX(OLI_12Rnd_127x40_Mag,3);
+    //         MAG_XX(OPTRE_M2_Smoke,4);
+    //         MAG_XX(OPTRE_M2_Smoke_Blue,2);
+    //     };
+    //     class TransportItems {
+    //         ITEM_XX(ACE_elasticBandage,60);
+    //         ITEM_XX(acex_intelitems_notepad,1);
+    //         ITEM_XX(kat_Painkiller,5);
+    //     };
+    // };

@@ -45,7 +45,22 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "OPTRE_M7_Sight"
+                    "OPTRE_M7_Sight",
+                    "TCP_optic_M11VERO_Blue",
+                    "TCP_optic_M11VERO",
+                    "TCP_optic_M81ERO_Blue",
+                    "TCP_optic_EVOSJ",
+                    "TCP_optic_EVOSJ1",
+                    "TCP_optic_M27RCO",
+                    "TCP_optic_M43RCO",
+                    "TCP_optic_M43RCO_CRS",
+                    "TCP_optic_M43RCO_CRS_CUP",
+                    "TCP_optic_M43RCO_CUP",
+                    "TCP_optic_EVOSD",
+                    "TCP_optic_M5BSLSV_Blue",
+                    "TCP_optic_M5BSLSV",
+                    "TCP_optic_M81ERO_Blue",
+                    "TCP_optic_M81ERO"
                 };
             };
 

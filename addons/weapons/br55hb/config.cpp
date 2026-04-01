@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 class CfgPatches {
     class SUBADDON {
@@ -6,17 +6,19 @@ class CfgPatches {
         name = COMPONENT_NAME;
         addonRootClass = QUOTE(ADDON);
         requiredVersion = REQUIRED_VERSION;
+
         requiredAddons[] = {
             QUOTE(ADDON),
-            "FIR_C130_Skins_F"
-        };
-        units[] = {
-            QCLASS(C130J)
-        };
-        weapons[] = {};
-        skipWhenMissingDependencies = 1;
+            "OPTRE_Weapons_BR",
+            "jsrs2025_config_c"
+            };
+
+        units[] = {};
+        weapons[] = { QCLASS(BR45B)};
         VERSION_CONFIG;
     };
 };
 
-#include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgMagazinesWells.hpp"

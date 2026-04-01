@@ -53,63 +53,59 @@ class CfgVehicles {
         respawnLinkedItems[] = {};
     };
 
-    class HaloInf_Marine_WDL_F;
-    class HaloInf_Marine_DES_F;
-    class HaloInf_Marine_URB_F;
+class TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base;
+class TCP_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Base;
 
-    class CLASS(Marine_CH252_WDL_Base): HaloInf_Marine_WDL_F {
-        SCOPE_PRIVATE;
-        author = AUTHOR;
-        faction = QFACTION(505th);
-        displayName = "CH252 Marine Woodland (Base)";
-        uniformClass = QCLASS(CH252_Uniform_WDL);
-        modelSides[] = {BLUFOR};
+class CLASS(Marine_TCP_Woodland_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base {
+    SCOPE_PRIVATE;
+    author = AUTHOR;
+    faction = QFACTION(505th);
+    displayName = "TCP Marine Woodland 1 (Base)";
+    uniformClass = QCLASS(CBUU_Woodland_1);
+    modelSides[] = {BLUFOR};
+    weapons[] = {};
+    respawnWeapons[] = {};
+    magazines[] = {};
+    respawnMagazines[] = {};
+    items[] = {};
+    respawnItems[] = {};
+    linkedItems[] = {};
+    respawnLinkedItems[] = {};
+};
 
-        hiddenSelections[] = {"Camo1","Camo2","Camo3"};
-        hiddenSelectionsTextures[] = {
-            "\Halo_marine_02\Uniform\Textures\Top\Halo_marine_02_top_woodland_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Pants\Halo_marine_02_pants_woodland_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Armor\Halo_marine_02_armor_woodland_co.paa"
-        };
+class CLASS(Marine_TCP_Woodland_2_Base): TCP_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Base {
+    SCOPE_PRIVATE;
+    author = AUTHOR;
+    faction = QFACTION(505th);
+    displayName = "TCP Marine Woodland 2 (Base)";
+    uniformClass = QCLASS(CBUU_Woodland_2);
+    modelSides[] = {BLUFOR};
+    weapons[] = {};
+    respawnWeapons[] = {};
+    magazines[] = {};
+    respawnMagazines[] = {};
+    items[] = {};
+    respawnItems[] = {};
+    linkedItems[] = {};
+    respawnLinkedItems[] = {};
+};
 
-        linkedItems[] = {};
-        respawnLinkedItems[] = {};
-    };
-
-    class CLASS(Marine_CH252_DES_Base): HaloInf_Marine_DES_F {
-        SCOPE_PRIVATE;
-        author = AUTHOR;
-        faction = QFACTION(505th);
-        displayName = "CH252 Marine Desert (Base)";
-        uniformClass = QCLASS(CH252_Uniform_DES);
-        modelSides[] = {BLUFOR};
-
-        hiddenSelections[] = {"Camo1","Camo2","Camo3"};
-        hiddenSelectionsTextures[] = {
-            "\Halo_marine_02\Uniform\Textures\Top\Halo_marine_02_top_arid_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Pants\Halo_marine_02_pants_arid_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Armor\Halo_marine_02_armor_brown_co.paa"
-        };
-    };
-
-    class CLASS(Marine_CH252_URB_Base): HaloInf_Marine_URB_F {
-        SCOPE_PRIVATE;
-        author = AUTHOR;
-        faction = QFACTION(505th);
-        displayName = "CH252 Marine Urban (Base)";
-        uniformClass = QCLASS(CH252_Uniform_URB);
-        modelSides[] = {BLUFOR};
-
-        hiddenSelections[] = {"Camo1","Camo2","Camo3"};
-        hiddenSelectionsTextures[] = {
-            "\Halo_marine_02\Uniform\Textures\Top\Halo_marine_02_top_urban_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Pants\Halo_marine_02_pants_urban_co.paa",
-            "\Halo_marine_02\Uniform\Textures\Armor\Halo_marine_02_armor_darkbrown_co.paa"
-        };
-
-        linkedItems[] = {};
-        respawnLinkedItems[] = {};
-    };
+class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base {
+    SCOPE_PRIVATE;
+    author = AUTHOR;
+    faction = QFACTION(505th);
+    displayName = "TCP Marine Urban 1 (Base)";
+    uniformClass = QCLASS(CBUU_Urban_1);
+    modelSides[] = {BLUFOR};
+    weapons[] = {};
+    respawnWeapons[] = {};
+    magazines[] = {};
+    respawnMagazines[] = {};
+    items[] = {};
+    respawnItems[] = {};
+    linkedItems[] = {};
+    respawnLinkedItems[] = {};
+};
 
     #include "configs\Units.hpp"
 
@@ -158,22 +154,22 @@ class CfgVehicles {
         SCOPE_PRIVATE;
         displayName = "Black Ops Backpack (Base)";
     };
-    class CLASS(CH252_LR_Base): Halo_LR {
-        SCOPE_PRIVATE;
-        displayName = "CH252 LR (Base)";
-    };
-    class CLASS(CH252_Hardcase_Base): Halo_Hardcase {
-        SCOPE_PRIVATE;
-        displayName = "CH252 Hardcase (Base)";
-    };
-    class CLASS(CH252_Rucksack_Light_Base): Halo_Rucksack_01 {
-        SCOPE_PRIVATE;
-        displayName = "CH252 Rucksack Light (Base)";
-    };
-    class CLASS(CH252_Rucksack_Heavy_Base): Halo_Rucksack_02 {
-        SCOPE_PRIVATE;
-        displayName = "CH252 Rucksack Heavy (Base)";
-    };
+    // class CLASS(CH252_LR_Base): Halo_LR {
+    //     SCOPE_PRIVATE;
+    //     displayName = "CH252 LR (Base)";
+    // };
+    // class CLASS(CH252_Hardcase_Base): Halo_Hardcase {
+    //     SCOPE_PRIVATE;
+    //     displayName = "CH252 Hardcase (Base)";
+    // };
+    // class CLASS(CH252_Rucksack_Light_Base): Halo_Rucksack_01 {
+    //     SCOPE_PRIVATE;
+    //     displayName = "CH252 Rucksack Light (Base)";
+    // };
+    // class CLASS(CH252_Rucksack_Heavy_Base): Halo_Rucksack_02 {
+    //     SCOPE_PRIVATE;
+    //     displayName = "CH252 Rucksack Heavy (Base)";
+    // };
 
 
     #include "configs\Backpacks.hpp"

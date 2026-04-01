@@ -4,7 +4,7 @@ displayName = "[505th] Marine Uniform";
 scope = 2;
 scopeCurator = 2;
 scopeArsenal = 2;
-	class ItemInfo: UniformItem{
+	class ItemInfo: ItemInfo{
 		uniformClass = QCLASS(Marine_CE_Rifleman);
         uniformType = "Neopren";
 		containerClass = "Supply150";
@@ -17,7 +17,7 @@ displayName = "[505th] Marine Uniform (Rolled)";
 scope = 2;
 scopeCurator = 2;
 scopeArsenal = 2;
-	class ItemInfo: UniformItem
+	class ItemInfo: ItemInfo
 	{
 		uniformClass = QCLASS(Marine_CE_Rifleman_Rolled);
         uniformType = "Neopren";
@@ -31,7 +31,7 @@ displayName = "[505th] Corpsman Uniform";
 scope = 2;
 scopeCurator = 2;
 scopeArsenal = 2;
-	class ItemInfo: UniformItem
+	class ItemInfo: ItemInfo
 	{
 		uniformClass = QCLASS(Marine_CE_Corpsman);
         uniformType = "Neopren";
@@ -235,48 +235,58 @@ class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
    SCOPE_PRIVATE;
     displayName = "[505th] Black Ops Uniform";
 };
+//////////////////CBUU Uniforms//////////////////
+class TCP_equipmentTypes;
 
-// ==================================================
-// ================== CH252 Uniforms ================
-// ==================================================
-
-class CLASS(CH252_Uniform_WDL): CLASS(CH252_Uniform_WDL_Base) {
+class CLASS(CBUU_Woodland_1): CLASS(CBUU_Woodland_1_Base) {
     scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Woodland";
+    displayName = "[505th] CBUU Uniform (Woodland 1)";
 
-    class ItemInfo: UniformItem {
-        uniformClass = QCLASS(CH252_Rifleman_WDL);
+    class TCP_equipmentTypes: TCP_equipmentTypes {
+        baseEquipment = QCLASS(CBUU_Woodland_1);
+    };
+
+    class ItemInfo: ItemInfo {
+        uniformClass = QCLASS(Marine_TCP_Woodland_1);
         containerClass = "Supply150";
         mass = 10;
     };
 };
 
-class CLASS(CH252_Uniform_DES): CLASS(CH252_Uniform_DES_Base) {
+class CLASS(CBUU_Woodland_2): CLASS(CBUU_Woodland_2_Base) {
     scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Arid";
+    displayName = "[505th] CBUU Uniform (Woodland 2)";
 
-    class ItemInfo: UniformItem {
-        uniformClass = QCLASS(CH252_Rifleman_DES);
+    class TCP_equipmentTypes: TCP_equipmentTypes {
+        baseEquipment = QCLASS(CBUU_Woodland_2);
+    };
+
+    class ItemInfo: ItemInfo {
+        uniformClass = QCLASS(Marine_TCP_Woodland_2);
         containerClass = "Supply150";
         mass = 10;
     };
 };
 
-class CLASS(CH252_Uniform_URB): CLASS(CH252_Uniform_URB_Base) {
+class CLASS(CBUU_Urban_1): CLASS(CBUU_Urban_1_Base) {
     scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
     author = AUTHOR;
-    displayName = "[505th] CH252 Uniform Urban";
+    displayName = "[505th] CBUU Uniform (Urban 1)";
 
-    class ItemInfo: UniformItem {
-        uniformClass = QCLASS(CH252_Rifleman_URB);
+    class TCP_equipmentTypes: TCP_equipmentTypes {
+        baseEquipment = QCLASS(CBUU_Urban_1);
+    };
+
+    class ItemInfo: ItemInfo {
+        uniformClass = QCLASS(Marine_TCP_Black_1);
         containerClass = "Supply150";
         mass = 10;
     };

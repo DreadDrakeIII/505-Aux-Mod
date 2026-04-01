@@ -5,7 +5,7 @@ class CfgWeapons {
     class OPTRE_LongRifle_Base: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-    class OPTRE_SRS99D: OPTRE_LongRifle_Base {
+    class TCP_srifle_SRS99: OPTRE_LongRifle_Base {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
@@ -18,37 +18,37 @@ class CfgWeapons {
     };
 
     // ================================
-    // M98 HARVESTER - Anti-Material Rifle
+    // M98 HARVESTER II - Anti-Material Rifle
     // Heavy sniper rifle for anti-material support
     // ================================
-    class CLASS(M98_HARVESTER): OPTRE_SRS99D {
+    class CLASS(M98_HARVESTER_II): TCP_srifle_SRS99 {
         SCOPE_PUBLIC;
         author = AUTHOR;
 
-        model = "\OPTRE_Weapons\Sniper\SRS99D.p3d";
-        baseWeapon = QCLASS(M98_HARVESTER);
+        baseWeapon = QCLASS(M98_HARVESTER_II);
 
         // User-facing information
-        displayName = "[505th] M98 Harvester";
-        descriptionShort = "14.7×114mm • 4Rnd magazine • Anti-Material • 2000m Range";
-        picture = "\OPTRE_weapons\sniper\icons\sniper.paa";
+        displayName = "[505th] M98 Harvester II";
+        descriptionShort = "M98 Harvester II is an upgraded version of the M98 Harvester developed by Blackreach Armory Industries.";
+
+        picture = "\TCP\Weapons\LongRangeRifles\SRS99\data\ui\icon_srifle_SRS99_X_ca.paa";
 
 
         // Behaviour / performance
         modes[] = { "Single" };
 
         // Magazine: Varies of magazines
-        magazines[] = { QCLASS(5Rnd_147x114_APFSDS_Mag),
-                        QCLASS(5Rnd_147x114_HVAP_Mag),
-                        QCLASS(5Rnd_147x114_HEDP_Mag)
+        magazines[] = { QCLASS(5Rnd_147x114_APFSDS_Magv2),
+                        QCLASS(5Rnd_147x114_HVAP_Magv2),
+                        QCLASS(5Rnd_147x114_HEDP_Magv2)
                       };
-        magazineWell[] = {QCLASS(Magwell_M98_Harvester)};
+        magazineWell[] = {QCLASS(Magwell_M98_Harvester_II)};
 
-        linkedItems[] = { QCLASS(M98HA_Scope) };
+        linkedItems[] = {"TCP_optic_Oracle_N"};
 
         // Weapon handling
         class WeaponSlotsInfo: WeaponSlotsInfo {
-            mass = 100;
+            mass = 284;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
@@ -62,7 +62,10 @@ class CfgWeapons {
             };
 
             class MuzzleSlot: MuzzleSlot {
-                compatibleItems[] = {};
+                compatibleItems[] = {
+                    "TCP_muzzle_brake_127_02",
+                    "TCP_muzzle_snds_523_01"
+                };
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {

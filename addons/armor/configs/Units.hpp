@@ -1275,322 +1275,77 @@ class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
     backpack = QCLASS(BlackOps_Backpack_Predef);
 };
 
-class CLASS(CH252_Rifleman_WDL): CLASS(Marine_CH252_WDL_Base) {
+class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
     scope = 2;
     scopeCurator = 2;
     author = AUTHOR;
-
     side = BLUFOR;
     faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
+    editorSubcategory = QEDSUBCAT(INF_TCP);
+    displayName = "Rifleman (Woodland 1)";
+    uniformClass = QCLASS(CBUU_Woodland_1);
 
-    displayName = "CHH252 Rifleman Woodland";
-    uniformClass = QCLASS(CH252_Uniform_WDL);
-
-    weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag"
+    hiddenSelectionsTextures[] = {
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_Pants_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    linkedItems[] = {QCLASS(CH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(CH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Rifleman_Light_Predef);
+    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    linkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
+    respawnLinkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
+    backpack = "";
 };
 
-class CLASS(CH252_Grenadier_WDL): CLASS(Marine_CH252_WDL_Base) {
+class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
     scope = 2;
     scopeCurator = 2;
     author = AUTHOR;
-
     side = BLUFOR;
     faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
+    editorSubcategory = QEDSUBCAT(INF_TCP);
+    displayName = "Rifleman (Woodland 2)";
+    uniformClass = QCLASS(CBUU_Woodland_2);
 
-    displayName = "CHH252 Grenadier Woodland";
-    uniformClass = QCLASS(CH252_Uniform_WDL);
-
-    weapons[]= {
-        "OLI_MA5CGL",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_MA5CGL",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag",
-        "1Rnd_HE_Grenade_shell"
-    };
-    respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag",
-        "1Rnd_HE_Grenade_shell"
+    hiddenSelectionsTextures[] = {
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_Pants_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    linkedItems[] = {QCLASS(CH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(CH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Grenadier_Hardcase_Predef);
+    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    linkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
+    respawnLinkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
+    backpack = "";
 };
 
-class CLASS(CH252_Autorifle_DES): CLASS(Marine_CH252_DES_Base) {
+class CLASS(Marine_TCP_Black_1): CLASS(Marine_TCP_Urban_1_Base) {
     scope = 2;
     scopeCurator = 2;
     author = AUTHOR;
-
     side = BLUFOR;
     faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
+    editorSubcategory = QEDSUBCAT(INF_TCP);
+    displayName = "Rifleman (Black 1)";
+    uniformClass = QCLASS(CBUU_Urban_1);
 
-    displayName = "CH252 Autorifle Arid";
-    uniformClass = QCLASS(CH252_Uniform_DES);
-
-    magazines[] = {
-        "OLI_100Rnd_95x40_Box",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_100Rnd_95x40_Box",
-        "OLI_12Rnd_127x40_Mag"
+    hiddenSelectionsTextures[] = {
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Urban\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Urban\CBUU_Pants_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    weapons[]= {
-        "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-
-    linkedItems[] = {QCLASS(CH252_Helmet_DES), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(CH252_Helmet_DES), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Autorifle_Heavy_Predef);
-};
-
-class CLASS(CH252_Ammobearer_URB): CLASS(Marine_CH252_URB_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    author = AUTHOR;
-
-    side = BLUFOR;
-    faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
-
-    displayName = "CH252 Ammobearer Urban";
-    uniformClass = QCLASS(CH252_Uniform_URB);
-
-    weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-
-    linkedItems[] = {QCLASS(CH252_Helmet_URB), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(CH252_Helmet_URB), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Ammobearer_Heavy_Predef);
-};
-
-class CLASS(EVCH252_Rifleman_WDL): CLASS(Marine_CH252_WDL_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    author = AUTHOR;
-
-    side = BLUFOR;
-    faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
-
-    displayName = "EVCH252 Rifleman Woodland";
-    uniformClass = QCLASS(CH252_Uniform_WDL);
-
-    weapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-
-    linkedItems[] = {QCLASS(EVCH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(EVCH252_Helmet_WDL), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Rucksack_LR_Predef);
-};
-
-class CLASS(EVCH252_Rifleman_DES): CLASS(Marine_CH252_DES_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    author = AUTHOR;
-
-    side = BLUFOR;
-    faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
-
-    displayName = "EVCH252 Rifleman Arid";
-    uniformClass = QCLASS(CH252_Uniform_DES);
-    hiddenSelections[] = {"camo1","camo2","camo3"};
-    hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ch252\desert\ch252_uniform_des_top_co.paa), QPATHTOF(data\uniforms\ch252\desert\ch252_uniform_des_pants_co.paa), QPATHTOF(data\uniforms\ch252\desert\ch252_uniform_des_armor_co.paa)};
-
-    weapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-
-    linkedItems[] = {QCLASS(EVCH252_Helmet_DES), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(EVCH252_Helmet_DES), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Rucksack_LR_Predef);
-};
-
-class CLASS(EVCH252_Rifleman_URB): CLASS(Marine_CH252_URB_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    author = AUTHOR;
-
-    side = BLUFOR;
-    faction = QFACTION(505th);
-    editorSubcategory = QEDSUBCAT(INF_CH252);
-
-    displayName = "EVCH252 Rifleman Urban";
-    uniformClass = QCLASS(CH252_Uniform_URB);
-
-    weapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    respawnWeapons[]= {
-        "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
-        "OLI_M6C",
-        "OPTRE_Smartfinder",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-    respawnMagazines[] = {
-        "OLI_20Rnd_95xVX2_Mag",
-        "OLI_12Rnd_127x40_Mag"
-    };
-
-    linkedItems[] = {QCLASS(EVCH252_Helmet_URB), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-    respawnLinkedItems[] = {QCLASS(EVCH252_Helmet_URB), "", "OPTRE_NVG", "MATGE_Balaclava_Black", MARINE_LINKED_ITEMS_RADIO};
-
-    backpack = QCLASS(CH252_Rucksack_LR_Predef);
+    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    linkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Kevlar_Black_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
+    respawnLinkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Kevlar_Black_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
+    backpack = "";
 };

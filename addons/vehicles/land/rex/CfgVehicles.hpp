@@ -7,12 +7,12 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Drones);
         crew = "B_UAV_AI";
         armor = 90;
-        hiddenSelections[] = {"camo1","camo2","camo3"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(land\rex\data\textures\505th_Rex_EXT1_co.paa),
-            QPATHTOF(land\rex\data\textures\505th_Rex_INT_co.paa),
-            QPATHTOF(land\rex\data\textures\505th_Turret_co.paa)
-        };
+        // hiddenSelections[] = {"camo1","camo2","camo3"};
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(land\rex\data\textures\505th_Rex_EXT1_co.paa),
+        //     QPATHTOF(land\rex\data\textures\505th_Rex_INT_co.paa),
+        //     QPATHTOF(land\rex\data\textures\505th_Turret_co.paa)
+        // };
     };
 
 class B_UGV_01_rcws_F;
@@ -23,11 +23,11 @@ class CLASS(Rex_Armed): B_UGV_01_rcws_F {
     editorSubcategory = QEDSUBCAT(Drones);
     crew = "B_UAV_AI";
     armor = 90;
-    hiddenSelections[] = {"camo1","camo2","camo3"};
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(land\rex\data\textures\505th_Rex_EXT1_co.paa),
-        QPATHTOF(land\rex\data\textures\505th_Rex_INT_co.paa),
-        QPATHTOF(land\rex\data\textures\505th_Turret_co.paa)
-        };
+    // hiddenSelections[] = {"camo1","camo2","camo3"};
+    // hiddenSelectionsTextures[] = {
+    //     QPATHTOF(land\rex\data\textures\505th_Rex_EXT1_co.paa),
+    //     QPATHTOF(land\rex\data\textures\505th_Rex_INT_co.paa),
+    //     QPATHTOF(land\rex\data\textures\505th_Turret_co.paa)
+    //     };
     };
 };
