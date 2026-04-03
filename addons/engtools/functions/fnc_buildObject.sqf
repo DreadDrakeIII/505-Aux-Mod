@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_buildObject
- * v10 — ACE-inspired placement system
+ * v11 — Shared side resource pool.
  * All feedback via hint (no systemChat/diag_log).
  * LMB always consumed (true) to prevent weapon fire.
  */
@@ -26,22 +26,23 @@ if (isNil "OLI_engtools_buildHeight")  then { OLI_engtools_buildHeight  = 0;    
 if (isNil "OLI_engtools_levelTerrain") then { OLI_engtools_levelTerrain = true;  };
 if (isNil "OLI_engtools_snapActive")   then { OLI_engtools_snapActive   = false; };
 [] call FUNC(cancelBuild);
-if (isNil QGVAR(buildRotation)) then { GVAR(buildRotation) = 0; };
-if (isNil QGVAR(buildPitch)) then { GVAR(buildPitch) = 0; };
-if (isNil QGVAR(buildBank))  then { GVAR(buildBank)  = 0; };
-if (isNil QGVAR(buildDistOffset)) then { GVAR(buildDistOffset) = 0; };
+if (isNil QGVAR(buildRotation))    then { GVAR(buildRotation)    = 0; };
+if (isNil QGVAR(buildPitch))       then { GVAR(buildPitch)       = 0; };
+if (isNil QGVAR(buildBank))        then { GVAR(buildBank)        = 0; };
+if (isNil QGVAR(buildDistOffset))  then { GVAR(buildDistOffset)  = 0; };
 
 // ── Resource check before entering build mode ────────────────────────────────
 private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
 private _cost = [_classname] call FUNC(getObjectCost);
+private _playerSide = side player;
 
 private _canEnter = true;
 if (_resourcesEnabled) then {
-    private _currentRes = player getVariable [QGVAR(resources), 0];
+    private _currentRes = [_playerSide] call FUNC(getSideResources);
     if (_currentRes < _cost) then { _canEnter = false; };
 };
 if (!_canEnter) exitWith {
-    private _currentRes = player getVariable [QGVAR(resources), 0];
+    private _currentRes = [_playerSide] call FUNC(getSideResources);
     hint parseText format [
         "<t size='1.1' color='#FF4444'>INSUFFICIENT RESOURCES</t><br/><br/>" +
         "<t color='#FFFFFF'>Cost: %1</t>  |  <t color='#FF6666'>Available: %2</t>",
@@ -59,25 +60,8 @@ GVAR(buildingObject) = _previewObj;
 GVAR(buildClassname) = _classname;
 
 // ── HELPER: Convert pitch/bank/yaw to vectorDirAndUp ──────────────────────────
-OLI_engtools_fnc_pitchBankYawToVectors = {
-    params ["_pitch", "_bank", "_yaw"];
-    private _cp = cos _pitch; private _sp = sin _pitch;
-    private _cb = cos _bank;  private _sb = sin _bank;
-    private _cy = cos _yaw;   private _sy = sin _yaw;
-
-    private _vecDir = [
-        _sy * _cp,
-        _cy * _cp,
-        -_sp
-    ];
-    private _vecUp = [
-        _sb * _cy + _cb * _sp * _sy,
-        -_sb * _sy + _cb * _sp * _cy,
-        _cb * _cp
-    ];
-
-    [vectorNormalized _vecDir, vectorNormalized _vecUp]
-};
+// Defined once in preInit — referenced here for clarity
+// OLI_engtools_fnc_pitchBankYawToVectors is PREP'd separately
 
 // ── PER-FRAME ─────────────────────────────────────────────────────────────────
 GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
@@ -101,7 +85,6 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
     private _basePos = _start vectorAdd (_camDir vectorMultiply _distance);
     _basePos set [2, ((_basePos select 2) - _halfZ) max (getTerrainHeightASL _basePos - 0.05)];
 
-    // Apply height offset
     if (OLI_engtools_buildHeight != 0) then {
         _basePos set [2, (_basePos select 2) + OLI_engtools_buildHeight];
     };
@@ -182,7 +165,7 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
         };
     };
 
-    // ── Non-snapped: free placement with camera direction ────────────────────
+    // ── Non-snapped: free placement ──────────────────────────────────────────
     if (!_snapped) then {
         private _altHeld = inputAction "tacticView" > 0;
         private _yaw = 180 + GVAR(buildRotation) + getDir player;
@@ -217,7 +200,7 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
         GVAR(canPlaceObject) = (player distance GVAR(buildingObject) < 15);
     };
 
-    // ── HUD with persistent controls ─────────────────────────────────────────
+    // ── HUD ──────────────────────────────────────────────────────────────────
     private _pitch = if (!isNil QGVAR(buildPitch)) then { GVAR(buildPitch) } else { 0 };
     private _bank  = if (!isNil QGVAR(buildBank))  then { GVAR(buildBank)  } else { 0 };
     private _altHeld = inputAction "tacticView" > 0;
@@ -238,13 +221,19 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
         "  <t color='#55CCFF'>TERRAIN SNAP</t>"
     } else { "" };
 
-    // Resource info
+    // Side resource info
     private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
     private _cls = if (!isNil QGVAR(buildClassname)) then { GVAR(buildClassname) } else { "" };
     private _cost = if (_cls != "") then { [_cls] call FUNC(getObjectCost) } else { 0 };
     private _resLine = if (_resourcesEnabled) then {
-        private _res = player getVariable [QGVAR(resources), 0];
-        format ["<br/><t size='0.85' color='#FFAA00'>Cost: %1</t>  <t size='0.85' color='#55CC66'>Resources: %2</t>", _cost, _res]
+        private _res = [side player] call FUNC(getSideResources);
+        private _sideLabel = switch (side player) do {
+            case WEST:        {"BLUFOR"};
+            case EAST:        {"OPFOR"};
+            case INDEPENDENT: {"INDFOR"};
+            default           {"SIDE"};
+        };
+        format ["<br/><t size='0.85' color='#FFAA00'>Cost: %1</t>  <t size='0.85' color='#55CC66'>%2 Pool: %3</t>", _cost, _sideLabel, _res]
     } else { "" };
 
     private _ctrlHint = "<br/><t size='0.75' color='#666666'>Q/E Yaw  |  Shift+Q/E Pitch  |  Ctrl+Q/E Bank  |  Scroll Distance</t><br/><t size='0.75' color='#666666'>PgUp/PgDn Height  |  ALT Terrain  |  TAB Snap  |  Backspace Reset</t><br/><t size='0.75' color='#666666'>LMB Place  |  RMB Menu  |  Shift+RMB Delete</t>";
@@ -275,9 +264,7 @@ GVAR(buildKeyEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", {
     if (isNil QGVAR(buildingObject)) exitWith {false};
     if (isNull GVAR(buildingObject)) exitWith {false};
 
-    // Capture switch result — returning true CONSUMES the key, blocks engine lean
     private _handled = switch (_key) do {
-        // Q key (16) — rotate (return true to BLOCK lean)
         case 16: {
             if (_shift) then {
                 GVAR(buildPitch) = (GVAR(buildPitch) - 5);
@@ -290,7 +277,6 @@ GVAR(buildKeyEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", {
             };
             true
         };
-        // E key (18) — rotate (return true to BLOCK lean)
         case 18: {
             if (_shift) then {
                 GVAR(buildPitch) = (GVAR(buildPitch) + 5);
@@ -303,7 +289,6 @@ GVAR(buildKeyEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", {
             };
             true
         };
-        // TAB (15) — toggle snap
         case 15: {
             if (isNil "OLI_engtools_snapActive") then { OLI_engtools_snapActive = false; };
             OLI_engtools_snapActive = !OLI_engtools_snapActive;
@@ -333,17 +318,14 @@ GVAR(buildKeyEH) = (findDisplay 46) displayAddEventHandler ["KeyDown", {
             };
             true
         };
-        // PgUp (201)
         case 201: {
             OLI_engtools_buildHeight = parseNumber (str (round ((OLI_engtools_buildHeight + 0.10) * 100) / 100));
             true
         };
-        // PgDn (209)
         case 209: {
             OLI_engtools_buildHeight = parseNumber (str (round ((OLI_engtools_buildHeight - 0.10) * 100) / 100));
             true
         };
-        // Backspace (14) — reset pitch/bank
         case 14: {
             GVAR(buildPitch) = 0;
             GVAR(buildBank) = 0;
@@ -360,20 +342,17 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
     if (isNil QGVAR(buildingObject)) exitWith {false};
     if (isNull GVAR(buildingObject)) exitWith {false};
 
-    // Shift+RMB – quick delete nearest
     if (_button == 1 && _shift) exitWith {
         [] call FUNC(deleteNearestBuilt);
         true
     };
 
-    // RMB – back to menu
     if (_button == 1 && !_shift) exitWith {
         [] call FUNC(cancelBuild);
         [] spawn { sleep 0.05; [] call FUNC(openEngineerMenu); };
         true
     };
 
-    // LMB – place (ALWAYS return true to block weapon fire)
     if (_button == 0) exitWith {
         if !(GVAR(canPlaceObject)) exitWith {
             hint parseText "<t size='1.0' color='#FF4444'>TOO FAR</t><br/><t color='#AAAAAA'>Must be within 15m to place.</t>";
@@ -383,17 +362,15 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
         private _cls = GVAR(buildClassname);
         private _cost = [_cls] call FUNC(getObjectCost);
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
+        private _playerSide = side player;
 
-        // ── Resource check (flag pattern) ───────────────────────────────────
         private _canAfford = true;
         if (_resourcesEnabled) then {
-            private _currentRes = player getVariable [QGVAR(resources), 0];
-            if (_currentRes < _cost) then {
-                _canAfford = false;
-            };
+            private _currentRes = [_playerSide] call FUNC(getSideResources);
+            if (_currentRes < _cost) then { _canAfford = false; };
         };
         if (!_canAfford) exitWith {
-            private _currentRes = player getVariable [QGVAR(resources), 0];
+            private _currentRes = [_playerSide] call FUNC(getSideResources);
             hint parseText format [
                 "<t size='1.1' color='#FF4444'>INSUFFICIENT RESOURCES</t><br/><br/>" +
                 "<t color='#FFFFFF'>Cost: %1</t>  |  <t color='#FF6666'>Have: %2</t>",
@@ -402,7 +379,6 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
             true
         };
 
-        // ── Location restriction check ──────────────────────────────────────
         private _inBuildZone = true;
         private _locations = missionNamespace getVariable [QGVAR(buildLocations), []];
         if (count _locations > 0) then {
@@ -414,7 +390,6 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
             true
         };
 
-        // ── Deploy handlers check ───────────────────────────────────────────
         private _handlers = missionNamespace getVariable [QGVAR(deployHandlers), []];
         private _blocked = false;
         {
@@ -428,24 +403,22 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
             true
         };
 
-        // ── Read vectors DIRECTLY from ghost object (ACE approach) ──────────
-        private _finalPos  = getPosASL GVAR(buildingObject);
-        private _vecDir    = vectorDir GVAR(buildingObject);
-        private _vecUp     = vectorUp  GVAR(buildingObject);
+        private _finalPos = getPosASL GVAR(buildingObject);
+        private _vecDir   = vectorDir GVAR(buildingObject);
+        private _vecUp    = vectorUp  GVAR(buildingObject);
 
         [] call FUNC(cancelBuild);
 
-        // ── Build timer or instant ──────────────────────────────────────────
         private _buildTimeEnabled = missionNamespace getVariable [QGVAR(setting_enableBuildTime), true];
         private _buildTime = missionNamespace getVariable [QGVAR(setting_buildTime), DEFAULT_BUILD_TIME];
 
         if (_buildTimeEnabled && _buildTime > 0) then {
             [_cls, _finalPos, _cost, _vecDir, _vecUp] spawn FUNC(progressBuild);
         } else {
-            // Instant build — deduct and create
+            // Instant build — deduct from side pool on server
             if (_resourcesEnabled) then {
-                private _currentRes = player getVariable [QGVAR(resources), 0];
-                player setVariable [QGVAR(resources), _currentRes - _cost, true];
+                private _currentRes = [_playerSide] call FUNC(getSideResources);
+                [_playerSide, _currentRes - _cost] remoteExec [QFUNC(setSideResources), 2];
             };
 
             if (isMultiplayer) then {
@@ -454,13 +427,12 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
                 [_cls, _finalPos, 0, _vecDir, _vecUp] call FUNC(createBuiltObject);
             };
 
-            // Show build confirmation hint
-            private _newRes = player getVariable [QGVAR(resources), 0];
+            private _newRes = ([_playerSide] call FUNC(getSideResources)) - _cost;
             if (_resourcesEnabled) then {
                 hint parseText format [
                     "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/>" +
                     "<t color='#FFFFFF'>%1</t><br/>" +
-                    "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Remaining: %3</t>",
+                    "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Side Pool: ~%3</t>",
                     _cls, _cost, _newRes
                 ];
             } else {
@@ -481,7 +453,7 @@ GVAR(buildMouseEH) = (findDisplay 46) displayAddEventHandler ["MouseButtonDown",
     true
 }];
 
-// ── SCROLL WHEEL – adjust placement distance ─────────────────────────────────
+// ── SCROLL WHEEL ─────────────────────────────────────────────────────────────
 GVAR(buildScrollEH) = (findDisplay 46) displayAddEventHandler ["MouseZChanged", {
     params ["_display", "_scroll"];
     if (isNil QGVAR(buildingObject)) exitWith {};

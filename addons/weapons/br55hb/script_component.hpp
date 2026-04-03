@@ -1,4 +1,4 @@
-#define SUBCOMPONENT br45b
-#define SUBCOMPONENT_BEAUTIFIED BR45B
+#define SUBCOMPONENT br55hb
+#define SUBCOMPONENT_BEAUTIFIED BR55HB
 
 #include "..\script_component.hpp"

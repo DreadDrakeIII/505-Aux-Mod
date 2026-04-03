@@ -1,17 +1,17 @@
 class CfgMagazines {
-    class OPTRE_36Rnd_95x40_Mag;
+    class TCP_36Rnd_95x40_Mag_Green;
 
-    class CLASS(32Rnd_95x40_Mag): OPTRE_36Rnd_95x40_Mag {
+    class CLASS(36Rnd_95x40_Mag): TCP_36Rnd_95x40_Mag_Green {
         SCOPE_PUBLIC;
-        baseMagazine = QCLASS(32Rnd_95x40_Mag);
+        baseMagazine = QCLASS(36Rnd_95x40_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 32Rnd 9.5x40mm Mag";
+        displayName = "[505th] 36Rnd 9.5x40mm Mag";
         displayNameShort = "9.5x40mm Mag";
-        descriptionShort = "Calibre: 9.5x40mm • 32-round magazine";
+        descriptionShort = "9.5x40mm Magazine for BR55HB Battle Rifle developed by Blackreach Armory";
 
         ammo = QCLASS(95_40_Ball);
-        count = 32;
+        count = 36;
         initSpeed = 900;
         tracersEvery = 1;
         lastRoundsTracer = 0;

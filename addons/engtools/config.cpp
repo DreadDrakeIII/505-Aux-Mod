@@ -5,10 +5,10 @@ class CfgPatches {
         name = COMPONENT_NAME;
         author = AUTHOR;
         url = "";
-        units[] = { QCLASS(Module_AddResources) };
+        units[] = { QCLASS(Module_AddResources), QCLASS(Module_SupplyDrop), QCLASS(EngineerSupplyCrate), QCLASS(EngineerSupplyPallet) };
         weapons[] = { QCLASS(Combat_Engineer_Toolkit) };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Functions_F","cba_main","cba_xeh",QCLASS(main),"OPTRE_Core"};
+        requiredAddons[] = {"A3_Functions_F","cba_main","cba_xeh",QCLASS(main),"OPTRE_Core",QCLASS(Objects)};
         version = VERSION;
         versionStr = QUOTE(VERSION_STR);
         versionAr[] = {VERSION_AR};
@@ -54,6 +54,100 @@ class CfgVehicles {
 
         class ModuleDescription {
             description = "Place on a player to add engineer build resources. A dialog will ask for the amount.";
+        };
+    };
+
+// =============================================================================
+//   ZEUS MODULE – Airdrop Engineer Supplies
+// =============================================================================
+
+    class CLASS(Module_SupplyDrop): Module_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Airdrop Engineer Supplies";
+        category = QCLASS(Zeus);
+        function = QFUNC(zeusSupplyDrop);
+        functionPriority = 1;
+        isGlobal = 0;     // run on Zeus client (UI selection)
+        isTriggerActivated = 0;
+        isDisposable = 1;
+        curatorCanAttach = 0;
+
+        author = AUTHOR;
+        icon = "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\supply_ca.paa";
+
+        class ModuleDescription {
+            description = "Place on map to airdrop supplies. Pallet spawns at 200m, parachutes down with wind drift. Orange smoke marks landing.";
+        };
+    };
+
+// =============================================================================
+//   ENGINEER SUPPLY CRATE – Small (50 resources)
+// =============================================================================
+
+    class Land_TCP_Space_Crate_01_Blue;
+
+    class CLASS(EngineerSupplyCrate): Land_TCP_Space_Crate_01_Blue {
+        scope = 2;
+        scopeCurator = 2;
+        author = AUTHOR;
+
+        displayName = "Engineer Supply Crate";
+        descriptionShort = "Contains 50 engineer build resources. Engineers only - ACE interact to collect.";
+
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Resupply);
+
+        // ACE Cargo — fits 6 slots so 4 fit inside the large pallet (24 slots)
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 6;
+
+        // ACE Dragging / Carrying
+        ace_dragging_canDrag = 1;
+        ace_dragging_dragDirection = 0;
+        ace_dragging_carryDirection = 90;
+        ace_dragging_dragPosition[] = {0, 1.2, 0};
+        ace_dragging_carryPosition[] = {0, 2, 0};
+        ace_dragging_canCarry = 1;
+        ace_dragging_ignoreWeight = 1;
+        ace_dragging_ignoreWeightCarry = 1;
+
+        class EventHandlers {
+            // Fires on Eden/Zeus placement and debug console spawn
+            init = QUOTE(if (hasInterface || isServer) then { [_this select 0] call FUNC(initSupplyCrate); };);
+        };
+    };
+
+// =============================================================================
+//   ENGINEER SUPPLY PALLET – Large (4x small crates, 200 resources total)
+// =============================================================================
+
+    class Land_TCP_Space_Crate_Pallet_Large_01_Blue;
+
+    class CLASS(EngineerSupplyPallet): Land_TCP_Space_Crate_Pallet_Large_01_Blue {
+        scope = 2;
+        scopeCurator = 2;
+        author = AUTHOR;
+
+        displayName = "Engineer Supply Pallet";
+        descriptionShort = "Contains 4x Engineer Supply Crates (200 resources total). Sling-load and deliver to engineers.";
+
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Resupply);
+
+        // ACE Cargo — 24 slots holds exactly 4x small crates (6 slots each)
+        ace_cargo_size = 24;
+        ace_cargo_canLoad = 1;
+        ace_cargo_blockUnloadCarry = 0;
+        ace_cargo_space = 24;
+        ace_cargo_hasCargo = 1;
+
+        // ACE Dragging / Carrying — pallet is too heavy to carry
+        ace_dragging_canDrag = 0;
+        ace_dragging_canCarry = 0;
+
+        class EventHandlers {
+            init = QUOTE(if (isServer) then { [_this select 0] call FUNC(initSupplyPallet); };);
         };
     };
 };

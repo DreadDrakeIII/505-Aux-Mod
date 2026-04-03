@@ -23,7 +23,7 @@ FUNC(addEngineerAction) = {
         false,
         true,
         "",
-        "'OLI_Combat_Engineer_Toolkit' in items player"
+        "'OLI_Combat_Engineer_Toolkit' in items player && { _this call OLI_main_fnc_isEngineer }"
     ];
 };
 
@@ -46,11 +46,13 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         QGVAR(openMenu),
         "Open Engineer Tools",
         {
-            if ("OLI_Combat_Engineer_Toolkit" in items player) then {
-                [] call FUNC(openEngineerMenu);
-            } else {
+            if (!("OLI_Combat_Engineer_Toolkit" in items player)) exitWith {
                 hint "Requires 505th Combat Engineer Toolkit";
             };
+            if !(player call OLI_main_fnc_isEngineer) exitWith {
+                hint "Requires Engineer permissions";
+            };
+            [] call FUNC(openEngineerMenu);
         },
         {},
         [0x3B, [false, true, false]]

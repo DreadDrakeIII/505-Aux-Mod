@@ -6,7 +6,7 @@ class CfgWeapons {
     class arifle_Mk20_F: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
-    class OPTRE_BR45: arifle_Mk20_F {
+    class TCP_srifle_BR55HB: arifle_Mk20_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
@@ -20,30 +20,45 @@ class CfgWeapons {
         };
     };
 
-    class CLASS(BR45B): OPTRE_BR45 {
+    class CLASS(BR55HB): TCP_srifle_BR55HB {
         SCOPE_PUBLIC;
         author = AUTHOR;
-        baseWeapon = QCLASS(BR45B);
+        baseWeapon = QCLASS(BR55HB);
 
-        displayName = "[505th] BR45B Battle Rifle";
-        descriptionShort = "Hi-Power Rifle • 9.5x40 • 32-round mag • Medium range";
-        picture = "\OPTRE_weapons\br\icons\br45_icon.paa";
+        displayName = "[505th] BR55HB Battle Rifle";
+        descriptionShort = "Hi-Power Rifle developed by Blackreach Armory";
         cartridgePos = "nabojnicestart";
         cartridgeVel = "nabojniceend";
 
         modes[] = { "Single", "FullAuto" };
-        magazines[] = { QCLASS(32Rnd_95x40_Mag) };
-        magazineWell[] = {QCLASS(Magwell_BR45B)};
+        magazines[] = { QCLASS(36Rnd_95x40_Mag) };
+        magazineWell[] = {QCLASS(Magwell_BR55HB)};
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 45;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
+                    "Optre_Recon_Sight",
+                    "Optre_Recon_Sight_Green",
+                    "Optre_Recon_Sight_Red",
                     "Optre_Evo_Sight_Riser",
                     "OPTRE_M12_Optic",
-                    "Optre_Recon_Sight",
-                    "Optre_Recon_Sight_Red"
+                    "TCP_optic_M11VERO_Blue",
+                    "TCP_optic_M11VERO",
+                    "TCP_optic_M81ERO_Blue",
+                    "TCP_optic_EVOSJ",
+                    "TCP_optic_EVOSJ1",
+                    "TCP_optic_M27RCO",
+                    "TCP_optic_M43RCO",
+                    "TCP_optic_M43RCO_CRS",
+                    "TCP_optic_M43RCO_CRS_CUP",
+                    "TCP_optic_M43RCO_CUP",
+                    "TCP_optic_EVOSD",
+                    "TCP_optic_M5BSLSV_Blue",
+                    "TCP_optic_M5BSLSV",
+                    "TCP_optic_M81ERO_Blue",
+                    "TCP_optic_M81ERO"
 
                 };
             };

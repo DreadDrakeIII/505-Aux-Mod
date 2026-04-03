@@ -2,26 +2,22 @@
 /*
  * Function: OLI_engtools_fnc_openEngineerMenu
  * Opens the Combat Engineer Tool Tablet dialog.
- * Syncs all toggle states (height / terrain / snap) on open.
- * Displays current resource count.
+ * Resource display now shows shared side pool.
  */
 
 if !("OLI_Combat_Engineer_Toolkit" in items player) exitWith {
     hint "Requires 505th Combat Engineer Toolkit";
 };
 
-// Cancel any active build / demolish session
 if (!isNil QGVAR(buildingObject)) then { [] call FUNC(cancelBuild); };
 if (!isNil QGVAR(demolishActive)) then { [] call FUNC(cancelDemolish); };
 
-// Init globals
 if (isNil "OLI_engtools_buildHeight")  then { OLI_engtools_buildHeight  = 0;     };
 if (isNil "OLI_engtools_levelTerrain") then { OLI_engtools_levelTerrain = true;  };
 if (isNil "OLI_engtools_snapActive")   then { OLI_engtools_snapActive   = false; };
 
 createDialog QGVAR(dialog);
 
-// Wait one frame for controls to register, then sync all states
 [] spawn {
     sleep 0.1;
     private _display = findDisplay IDD_ENGINEER_DIALOG;
@@ -59,12 +55,12 @@ createDialog QGVAR(dialog);
         };
     };
 
-    // Resource display
+    // Resource display — side pool
     private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
     private _resCtrl = _display displayCtrl IDC_RESOURCE_DISPLAY;
     if (!isNull _resCtrl) then {
         if (_resourcesEnabled) then {
-            private _resources = player getVariable [QGVAR(resources), 0];
+            private _resources = [side player] call FUNC(getSideResources);
             _resCtrl ctrlSetText format ["⬡ %1", _resources];
         } else {
             _resCtrl ctrlSetText "⬡ FREE";

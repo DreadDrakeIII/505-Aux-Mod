@@ -2,7 +2,7 @@
 /*
  * Function: OLI_engtools_fnc_progressBuild
  * ACE3 progress bar with kneeling build animation.
- * All feedback via hint (no systemChat/diag_log).
+ * Uses shared side resource pool.
  */
 
 params [
@@ -18,16 +18,11 @@ if (_classname isEqualTo "") exitWith {};
 private _buildTime = missionNamespace getVariable [QGVAR(setting_buildTime), DEFAULT_BUILD_TIME];
 if (_buildTime <= 0) then { _buildTime = DEFAULT_BUILD_TIME; };
 
-// ── Ghost marker at build site ──────────────────────────────────────────────
+// ── Ghost marker at build site ───────────────────────────────────────────────
 private _ghost = _classname createVehicleLocal [0,0,0];
 _ghost allowDamage false;
 _ghost enableSimulation false;
 
-if (count _vecDir == 3 && count _vecUp == 3) then {
-    _ghost setVectorDirAndUp [_vecDir, _vecUp];
-} else {
-    _ghost setVectorDirAndUp [[0, 1, 0], [0, 0, 1]];
-};
 _ghost setPosASL _pos;
 _ghost setVectorDirAndUp [
     if (count _vecDir == 3) then { _vecDir } else { [0, 1, 0] },
@@ -35,36 +30,38 @@ _ghost setVectorDirAndUp [
 ];
 _ghost setPosASL _pos;
 
-// ── ACE Progress Bar with build animation ───────────────────────────────────
+// Capture side at start of build (player side may not change but be safe)
+private _playerSide = side player;
+
+// ── ACE Progress Bar ─────────────────────────────────────────────────────────
 [
     _buildTime,
-    [_classname, _pos, _cost, _ghost, _vecDir, _vecUp],
+    [_classname, _pos, _cost, _ghost, _vecDir, _vecUp, _playerSide],
 
-    // ── ON SUCCESS ──────────────────────────────────────────────────────────
+    // ON SUCCESS
     {
         params ["_args"];
-        _args params ["_classname", "_pos", "_cost", "_ghost", "_vecDir", "_vecUp"];
+        _args params ["_classname", "_pos", "_cost", "_ghost", "_vecDir", "_vecUp", "_playerSide"];
 
         deleteVehicle _ghost;
 
-        // Resource deduction (flag pattern)
         private _canAfford = true;
         private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
         if (_resourcesEnabled) then {
-            private _currentRes = player getVariable [QGVAR(resources), 0];
+            private _currentRes = [_playerSide] call FUNC(getSideResources);
             if (_currentRes < _cost) then {
                 _canAfford = false;
             } else {
-                player setVariable [QGVAR(resources), _currentRes - _cost, true];
+                [_playerSide, _currentRes - _cost] remoteExec [QFUNC(setSideResources), 2];
             };
         };
 
         if (!_canAfford) exitWith {
             [player, "", 1] call ace_common_fnc_doAnimation;
-            private _currentRes = player getVariable [QGVAR(resources), 0];
+            private _currentRes = [_playerSide] call FUNC(getSideResources);
             hint parseText format [
                 "<t size='1.1' color='#FF4444'>INSUFFICIENT RESOURCES</t><br/><br/>" +
-                "<t color='#FFFFFF'>Cost: %1</t>  |  <t color='#FF6666'>Have: %2</t>",
+                "<t color='#FFFFFF'>Cost: %1</t>  |  <t color='#FF6666'>Side Pool: %2</t>",
                 _cost, _currentRes
             ];
             [_classname] spawn {
@@ -80,18 +77,16 @@ _ghost setPosASL _pos;
             [_classname, _pos, 0, _vecDir, _vecUp] call FUNC(createBuiltObject);
         };
 
-        // Reset animation
         [player, "", 1] call ace_common_fnc_doAnimation;
 
-        // Build confirmation hint
-        private _newRes = player getVariable [QGVAR(resources), 0];
+        private _newRes = [_playerSide] call FUNC(getSideResources);
         private _resEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
 
         if (_resEnabled) then {
             hint parseText format [
                 "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/>" +
                 "<t color='#FFFFFF'>%1</t><br/>" +
-                "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Remaining: %3</t>",
+                "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Side Pool: ~%3</t>",
                 _classname, _cost, _newRes
             ];
         } else {
@@ -108,20 +103,18 @@ _ghost setPosASL _pos;
         };
     },
 
-    // ── ON FAILURE / CANCEL ─────────────────────────────────────────────────
+    // ON CANCEL
     {
         params ["_args"];
         _args params ["_classname", "_pos", "_cost", "_ghost"];
-
         deleteVehicle _ghost;
         [player, "", 1] call ace_common_fnc_doAnimation;
-
         hint parseText "<t size='1.0' color='#FF8844'>BUILD CANCELLED</t>";
     },
 
     format ["Building %1...", _classname],
 
-    // ── Per-frame check ─────────────────────────────────────────────────────
+    // Per-frame check
     {
         params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
         _args params ["_classname", "_pos"];

@@ -21,6 +21,14 @@ GVAR(deployHandlers) = [];
 // Mission makers add via: OLI_engtools_buildLocations pushBack "marker_fob_1";
 GVAR(buildLocations) = [];
 
+// Shared side resource pools — initialized on server in fnc_initResources
+// Mission makers may pre-set via initServer.sqf:
+//   OLI_engtools_res_WEST = 200; publicVariable "OLI_engtools_res_WEST";
+// These are declared nil here; server sets them in fnc_initResources.
+GVAR(res_WEST) = nil;
+GVAR(res_EAST) = nil;
+GVAR(res_GUER) = nil;
+
 // ============================================================================
 // CBA SETTINGS – Engineering Tools
 // ============================================================================
@@ -28,7 +36,7 @@ GVAR(buildLocations) = [];
 [
     QGVAR(setting_defaultResources),
     "SLIDER",
-    ["Default Engineer Resources", "The starting amount of build resources each player receives on spawn."],
+    ["Default Side Resources", "The starting amount of build resources each side receives at mission start. Shared across all players on that side."],
     ["505th Expeditionary Force Aux Mod", "Engineering Tools"],
     [0, 500, 100, 0],
     1,
@@ -72,7 +80,7 @@ GVAR(buildLocations) = [];
 [
     QGVAR(setting_enableResources),
     "CHECKBOX",
-    ["Enable Resource System", "If enabled, players must spend resources to build objects. If disabled, building is free."],
+    ["Enable Resource System", "If enabled, sides must spend shared resources to build objects. If disabled, building is free."],
     ["505th Expeditionary Force Aux Mod", "Engineering Tools"],
     true,
     1,

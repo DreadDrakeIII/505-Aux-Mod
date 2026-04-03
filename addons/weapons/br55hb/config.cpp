@@ -14,7 +14,7 @@ class CfgPatches {
             };
 
         units[] = {};
-        weapons[] = { QCLASS(BR45B)};
+        weapons[] = { QCLASS(BR55HB)};
         VERSION_CONFIG;
     };
 };

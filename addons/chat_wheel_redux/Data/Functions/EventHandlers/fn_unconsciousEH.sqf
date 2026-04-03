@@ -1,7 +1,7 @@
 /*
- * Author: DartRuffian
+ * Author: DartRuffian and Revgamer
  * Modified to support KAT Medical and AI units (friendlies only).
- * Broadcasts to ALL nearby conscious players so multiple medics respond.
+ * Single machine detection, each nearby player sends message as themselves.
  */
 
 if (isDedicated) exitWith {};
@@ -23,6 +23,9 @@ diag_log "[CWR_fnc_unconsciousEH] PFH registered - watching for unconscious unit
     if !(CWR_AutoMessages_Uncon) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
+
+    // Only the first player in allPlayers runs detection to avoid duplicates
+    if (player != (allPlayers select 0)) exitWith {};
 
     {
         private _unit = _x;
@@ -75,20 +78,20 @@ diag_log "[CWR_fnc_unconsciousEH] PFH registered - watching for unconscious unit
 
             if (_nearbyPlayers isEqualTo []) then { continue; };
 
-            // Random message pool
-            private _downMessages = [
-                format ["Damn it! %1 is down!", name _unit],
-                format ["%1 is down, they're hurt bad!", name _unit],
-                format ["Jesus Christ! %1 is down!", name _unit],
-                format ["%1 is down! Corpsman!!", name _unit],
-                format ["We got a man down! %1 is down!", name _unit]
-            ];
-
-            // Broadcast message AND voice line to ALL nearby conscious players
+            // Send to each nearby player - they send as themselves in group chat
             {
                 private _responder = _x;
 
-                // Run on responder's machine so groupChat fires correctly
+                // Pick a random message per responder so each player says something different
+                private _downMessages = [
+                    format ["Damn it! %1 is down!", name _unit],
+                    format ["%1 is down, they're hurt bad!", name _unit],
+                    format ["Jesus Christ! %1 is down!", name _unit],
+                    format ["%1 is down! Corpsman!!", name _unit],
+                    format ["We got a man down! %1 is down!", name _unit]
+                ];
+
+                // remoteExec to responder's machine - they send as themselves
                 [_responder, selectRandom _downMessages] remoteExecCall ["CWR_fnc_sendLocalMessage", _responder];
 
                 private _isOnCooldown = ((time - (_responder getVariable ["CWR_playerLastUsedVoice", -CWR_Voice_CoolDown])) < CWR_Voice_CoolDown);
