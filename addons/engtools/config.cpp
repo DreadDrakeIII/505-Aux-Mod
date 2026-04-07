@@ -35,9 +35,9 @@ class CfgVehicles {
         category = QCLASS(Zeus);
         function = QFUNC(zeusAddResources);
         functionPriority = 1;
-        isGlobal = 1;     // run on server
+        isGlobal = 1;
         isTriggerActivated = 0;
-        isDisposable = 1;  // delete after use
+        isDisposable = 1;
         curatorCanAttach = 1;
 
         author = AUTHOR;
@@ -68,7 +68,7 @@ class CfgVehicles {
         category = QCLASS(Zeus);
         function = QFUNC(zeusSupplyDrop);
         functionPriority = 1;
-        isGlobal = 0;     // run on Zeus client (UI selection)
+        isGlobal = 0;
         isTriggerActivated = 0;
         isDisposable = 1;
         curatorCanAttach = 0;
@@ -98,11 +98,9 @@ class CfgVehicles {
         editorCategory = QEDCAT(Objects);
         editorSubcategory = QEDSUBCAT(Resupply);
 
-        // ACE Cargo — fits 6 slots so 4 fit inside the large pallet (24 slots)
         ace_cargo_canLoad = 1;
         ace_cargo_size = 6;
 
-        // ACE Dragging / Carrying
         ace_dragging_canDrag = 1;
         ace_dragging_dragDirection = 0;
         ace_dragging_carryDirection = 90;
@@ -113,7 +111,6 @@ class CfgVehicles {
         ace_dragging_ignoreWeightCarry = 1;
 
         class EventHandlers {
-            // Fires on Eden/Zeus placement and debug console spawn
             init = QUOTE(if (hasInterface || isServer) then { [_this select 0] call FUNC(initSupplyCrate); };);
         };
     };
@@ -135,14 +132,12 @@ class CfgVehicles {
         editorCategory = QEDCAT(Objects);
         editorSubcategory = QEDSUBCAT(Resupply);
 
-        // ACE Cargo — 24 slots holds exactly 4x small crates (6 slots each)
         ace_cargo_size = 24;
         ace_cargo_canLoad = 1;
         ace_cargo_blockUnloadCarry = 0;
         ace_cargo_space = 24;
         ace_cargo_hasCargo = 1;
 
-        // ACE Dragging / Carrying — pallet is too heavy to carry
         ace_dragging_canDrag = 0;
         ace_dragging_canCarry = 0;
 
@@ -219,14 +214,12 @@ class GVAR(dialog) {
 
     class ControlsBackground {
 
-        // ── Main body ──────────────────────────────────────────────────────────
         class Body: RscText {
             idc=-1;
             x=DIALOG_X; y=DIALOG_Y; w=DIALOG_W; h=DIALOG_H;
             colorBackground[] = {0.06,0.08,0.11,0.97};
         };
 
-        // ── Header bar ────────────────────────────────────────────────────────
         class HeaderBG: RscText {
             idc=-1;
             x=DIALOG_X; y=DIALOG_Y;
@@ -240,7 +233,6 @@ class GVAR(dialog) {
             colorBackground[] = {0.20,0.55,0.28,0.90};
         };
 
-        // ── Options row background ────────────────────────────────────────────
         class OptionsBG: RscText {
             idc=-1;
             x=DIALOG_X; y="0.307 * safezoneH + safezoneY";
@@ -260,7 +252,6 @@ class GVAR(dialog) {
             colorBackground[] = {0.20,0.55,0.28,0.45};
         };
 
-        // ── Status bar background ─────────────────────────────────────────────
         class StatusAccentTop: RscText {
             idc=-1;
             x=DIALOG_X; y="0.676 * safezoneH + safezoneY";
@@ -274,7 +265,6 @@ class GVAR(dialog) {
             colorBackground[] = {0.04,0.06,0.08,0.95};
         };
 
-        // ── Faded watermark ───────────────────────────────────────────────────
         class Watermark: RscPicture {
             idc=-1;
             style=48;
@@ -285,11 +275,10 @@ class GVAR(dialog) {
             text=PATH_LOGO_ENG;
         };
 
-    }; // ControlsBackground
+    };
 
     class Controls {
 
-        // ── 505th logo ────────────────────────────────────────────────────────
         class Logo505: RscPicture {
             idc=-1; style=48;
             x="0.082 * safezoneW + safezoneX";
@@ -299,7 +288,6 @@ class GVAR(dialog) {
             text=PATH_LOGO_505;
         };
 
-        // ── Title ─────────────────────────────────────────────────────────────
         class Title: RscText {
             idc=-1;
             text="COMBAT ENGINEER TABLET";
@@ -319,7 +307,6 @@ class GVAR(dialog) {
             font="PuristaMedium"; sizeEx=0.018; style=0x00;
         };
 
-        // ── Resource display (top-right, next to close button) ────────────────
         class ResourceDisplay: RscText {
             idc=IDC_RESOURCE_DISPLAY;
             text="⬡ ---";
@@ -331,7 +318,6 @@ class GVAR(dialog) {
             font="PuristaBold"; sizeEx=0.028; style=0x02;
         };
 
-        // ── Close button ──────────────────────────────────────────────────────
         class CloseButton: RscButton {
             idc=1001; text="X";
             x="0.894 * safezoneW + safezoneX";
@@ -345,7 +331,6 @@ class GVAR(dialog) {
             action="closeDialog 0;";
         };
 
-        // ── MODE TABS ─────────────────────────────────────────────────────────
         class ModeTabBuild: RscButton {
             idc=IDC_MODE_BUILD;
             text="BUILD MODE";
@@ -378,14 +363,14 @@ class GVAR(dialog) {
             idc=-1;
             x="0.442 * safezoneW + safezoneX";
             y="0.149 * safezoneH + safezoneY";
-            w="0.116 * safezoneW"; h="0.116 * safezoneH";
+            w="0.0653 * safezoneW"; h="0.116 * safezoneH";
             colorBackground[] = {0.18,0.42,0.22,0.50};
         };
         class PreviewImage: RscPicture {
             idc=IDC_PREVIEW_IMAGE; style=48;
             x="0.445 * safezoneW + safezoneX";
             y="0.152 * safezoneH + safezoneY";
-            w="0.110 * safezoneW"; h="0.110 * safezoneH";
+            w="0.0619 * safezoneW"; h="0.110 * safezoneH";
             colorText[] = {1,1,1,1};
             colorBackground[] = {0.06,0.09,0.12,1};
             text="";
@@ -408,7 +393,7 @@ class GVAR(dialog) {
             size=0.018;
         };
 
-        // ── OPTIONS ROW  (Level Terrain | Snap | Height) ─────────────────────
+        // ── OPTIONS ROW ───────────────────────────────────────────────────────
         class TerrainToggle: RscButton {
             idc=IDC_TERRAIN_TOGGLE;
             text="[ON] LEVEL TERRAIN";
@@ -496,139 +481,138 @@ class GVAR(dialog) {
             colorText[] = {0.32,0.50,0.36,0.70};
             font="PuristaMedium"; sizeEx=0.018; style=0x02;
         };
-        // NOTE: Auto-level toggle removed (v10)
 
         // ── COLUMN HEADERS ────────────────────────────────────────────────────
         class ColHeader1: RscText {
-            idc=-1; text="── OPTRE BARRIERS ──";
+            idc=-1; text="── Barrier ──";
             x=COL1_X; y="0.360 * safezoneH + safezoneY";
             w=BTN_W;  h="0.024 * safezoneH";
             colorText[] = {0.22,0.65,0.32,1.0};
             font="PuristaBold"; sizeEx=0.020; style=0x02;
         };
         class ColHeader2: RscText {
-            idc=-1; text="── WALLS & RAMPS ──";
+            idc=-1; text="── STRUCTURES ──";
             x=COL2_X; y="0.360 * safezoneH + safezoneY";
             w=BTN_W;  h="0.024 * safezoneH";
             colorText[] = {0.22,0.65,0.32,1.0};
             font="PuristaBold"; sizeEx=0.020; style=0x02;
         };
         class ColHeader3: RscText {
-            idc=-1; text="── TKE EQUIPMENT ──";
+            idc=-1; text="── MISC ──";
             x=COL3_X; y="0.360 * safezoneH + safezoneY";
             w=BTN_W;  h="0.024 * safezoneH";
             colorText[] = {0.22,0.65,0.32,1.0};
             font="PuristaBold"; sizeEx=0.020; style=0x02;
         };
 
-        // ── COL 1 – OPTRE BARRIERS ───────────────────────────────────────────
-        class BtnM72S: RscButton { idc=2001; text="M72S Barrier";
+        // ── COL 1 – BARRIER ───────────────────────────────────────────────────
+        class BtnRidgcoOne: RscButton { idc=2001; text="Ridge Block One";
             x=COL1_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_One','Ridge Block One','Ridgco single barrier unit.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_One'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnRidgcoThree: RscButton { idc=2002; text="Ridge Block Three";
+            x=COL1_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Three','Ridge Block Three','Ridgco triple-width barrier.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_Three'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnRidgcoFour: RscButton { idc=2003; text="Ridge Block Four";
+            x=COL1_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Four','Ridge Block Four','Ridgco quad-width barrier.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_Four'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnRidgcoFive: RscButton { idc=2004; text="Ridge Block Five";
+            x=COL1_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Five','Ridge Block Five','Ridgco five-wide barrier.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_Five'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnTKECover: RscButton { idc=2005; text="Deployable Cover";
+            x=COL1_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['land_TKE_DeployableCover','Deployable Cover','Portable ballistic cover.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['land_TKE_DeployableCover'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnTKEBunker: RscButton { idc=2006; text="Half Bunker";
+            x=COL1_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['land_TKE_HalfBunker','Half Bunker','Partial bunker fortification.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['land_TKE_HalfBunker'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnM72S: RscButton { idc=2007; text="M72S Barrier";
+            x=COL1_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
             onMouseEnter="['Land_OPTRE_M72S_barrier','M72S Barrier','UNSC modular barrier section.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['Land_OPTRE_M72S_barrier'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoOne: RscButton { idc=2002; text="Barrier One";
-            x=COL1_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_One','Barrier One','Ridgco single barrier unit.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_One'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoThree: RscButton { idc=2003; text="Barrier Three";
-            x=COL1_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Three','Barrier Three','Ridgco triple-width barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Three'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoFour: RscButton { idc=2004; text="Barrier Four";
-            x=COL1_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Four','Barrier Four','Ridgco quad-width barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Four'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoFive: RscButton { idc=2005; text="Barrier Five";
-            x=COL1_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Five','Barrier Five','Ridgco five-wide barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Five'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoTower: RscButton { idc=2006; text="Barrier Tower";
-            x=COL1_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Tower','Barrier Tower','Elevated watch tower section.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Tower'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoTunnel: RscButton { idc=2007; text="Barrier Tunnel";
-            x=COL1_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Tunnel','Barrier Tunnel','Covered tunnel passthrough.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Tunnel'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
 
-        // ── COL 2 – WALLS & RAMPS ────────────────────────────────────────────
-        class BtnRidgcoRamp: RscButton { idc=2011; text="Barrier Ramp";
+        // ── COL 2 – STRUCTURES ────────────────────────────────────────────────
+        class BtnRidgcoRamp: RscButton { idc=2009; text="Ridge Block Ramp";
             x=COL2_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Ramp','Barrier Ramp','Vehicle access ramp.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Ramp','Ridge Block Ramp','Vehicle access ramp.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Ramp'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoCorner: RscButton { idc=2012; text="Corner";
+        class BtnRidgcoCorner: RscButton { idc=2010; text="Corner Ridge Wall Block";
             x=COL2_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner','Corner','Right-angle corner section.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner','Corner Ridge Wall Block','Right-angle corner section.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Corner'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoCornerInv: RscButton { idc=2013; text="Corner Inverted";
+        class BtnRidgcoCornerInv: RscButton { idc=2011; text="Corner Inverted Ridge Wall Block";
             x=COL2_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner_Inverted','Corner Inverted','Inverse corner for inner walls.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner_Inverted','Corner Inverted Ridge Wall Block','Inverse corner for inner walls.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Corner_Inverted'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallShort: RscButton { idc=2014; text="Wall Short";
+        class BtnRidgcoWallShort: RscButton { idc=2012; text="Short Ridge Wall Block";
             x=COL2_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Short','Wall Short','Short wall segment.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Short','Short Ridge Wall Block','Short wall segment.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Wall_Short'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallLong: RscButton { idc=2015; text="Wall Long";
+        class BtnRidgcoWallLong: RscButton { idc=2013; text="Long Ridge Wall Block";
             x=COL2_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Long','Wall Long','Long wall segment.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Long','Long Ridge Wall Block ','Long wall segment.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Wall_Long'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallRamp: RscButton { idc=2016; text="Wall Ramp";
+        class BtnRidgcoWallRamp: RscButton { idc=2014; text="Ridge Wall Block Ramp";
             x=COL2_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Ramp','Wall Ramp','OPTRE Ridgco wall ramp section.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Ramp','Ridge Wall Block Ramp','OPTRE Ridgco wall ramp section.'] call OLI_engtools_fnc_updatePreview;";
             onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
             action="['OPTRE_Ridgco_Barrier_Wall_Ramp'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnCol2Row7: RscButton { idc=2017; text="— empty —";
+        class BtnRidgcoTower: RscButton { idc=2015; text="Ridge Block Tower";
             x=COL2_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Tower','Ridge Block Tower','Elevated watch tower section.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_Tower'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+
+        // ── COL 3 – MISC ──────────────────────────────────────────────────────
+        class BtnTKERoad: RscButton { idc=2016; text="Road Barrier";
+            x=COL3_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['land_TKE_RoadBarrier','Road Barrier','Vehicle blocking road barrier.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['land_TKE_RoadBarrier'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnTKETrap: RscButton { idc=2017; text="Tank Trap";
+            x=COL3_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['land_TKE_TankTrap','Tank Trap','Anti-vehicle tank trap.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['land_TKE_TankTrap'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnTKELight: RscButton { idc=2018; text="Field Light";
+            x=COL3_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['land_TKE_MilLight','Field Light','TKE military light post.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['land_TKE_MilLight'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnRidgcoTunnel: RscButton { idc=2019; text="Ridge Block Tunnel";
+            x=COL3_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
+            onMouseEnter="['OPTRE_Ridgco_Barrier_Tunnel','Ridge Block Tunnel','Covered tunnel passthrough.'] call OLI_engtools_fnc_updatePreview;";
+            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
+            action="['OPTRE_Ridgco_Barrier_Tunnel'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
+        class BtnCol3Row5: RscButton { idc=2021; text="— empty —";
+            x=COL3_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
             colorText[] = {0.35,0.40,0.35,0.50};
             colorBackground[] = {0.06,0.08,0.07,0.60};
             colorBackgroundActive[] = {0.06,0.08,0.07,0.60};
             action=""; };
-
-        // ── COL 3 – TKE EQUIPMENT ────────────────────────────────────────────
-        class BtnTKECover: RscButton { idc=2021; text="Deployable Cover";
-            x=COL3_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_DeployableCover','Deployable Cover','Portable ballistic cover.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_DeployableCover'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKEBunker: RscButton { idc=2022; text="Half Bunker";
-            x=COL3_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_HalfBunker','Half Bunker','Partial bunker fortification.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_HalfBunker'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKERoad: RscButton { idc=2023; text="Road Barrier";
-            x=COL3_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_RoadBarrier','Road Barrier','Vehicle blocking road barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_RoadBarrier'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKETrap: RscButton { idc=2024; text="Tank Trap";
-            x=COL3_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_TankTrap','Tank Trap','Anti-vehicle tank trap.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_TankTrap'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKELight: RscButton { idc=2025; text="Mil Light";
-            x=COL3_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_MilLight','Mil Light','TKE military light post.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_MilLight'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnCol3Row6: RscButton { idc=2026; text="— empty —";
+        class BtnCol3Row6: RscButton { idc=2021; text="— empty —";
             x=COL3_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
             colorText[] = {0.35,0.40,0.35,0.50};
             colorBackground[] = {0.06,0.08,0.07,0.60};
             colorBackgroundActive[] = {0.06,0.08,0.07,0.60};
             action=""; };
-        class BtnCol3Row7: RscButton { idc=2027; text="— empty —";
+        class BtnCol3Row7: RscButton { idc=2021; text="— empty —";
             x=COL3_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
             colorText[] = {0.35,0.40,0.35,0.50};
             colorBackground[] = {0.06,0.08,0.07,0.60};
@@ -645,7 +629,6 @@ class GVAR(dialog) {
             size=0.018;
         };
 
-        // ── CONTROLS HINT ─────────────────────────────────────────────────────
         class ControlsHint: RscText {
             idc=-1;
             text="BUILD: LMB Place | Q/E Yaw | Shift+Q/E Pitch | Ctrl+Q/E Bank | ALT Terrain Snap | Scroll Distance | PgUp/PgDn Height | TAB Snap | Backspace Reset Tilt";
@@ -656,7 +639,7 @@ class GVAR(dialog) {
             font="PuristaMedium"; sizeEx=0.015; style=0x02;
         };
 
-    }; // Controls
-}; // dialog
+    };
+};
 
 #include "CfgWeapons.hpp"

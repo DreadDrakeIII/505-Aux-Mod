@@ -25,10 +25,28 @@ if (_classname isEqualTo "") exitWith {
     if (!isNull _descCtrl) then { _descCtrl ctrlSetStructuredText parseText "<t align='left' color='#888888'>Select an object from the list above to begin placement.</t>" };
 };
 
-private _imagePath = getText (configFile >> "CfgVehicles" >> _classname >> "editorPreview");
-if (_imagePath isEqualTo "") then {
-    _imagePath = format ["\A3\EditorPreviews_F\Data\CfgVehicles\%1.jpg", _classname];
-};
+private _previewMap = createHashMapFromArray [
+    ["OPTRE_Ridgco_Barrier_One",             "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_One.paa"],
+    ["OPTRE_Ridgco_Barrier_Three",           "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Three.paa"],
+    ["OPTRE_Ridgco_Barrier_Four",            "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Four.paa"],
+    ["OPTRE_Ridgco_Barrier_Five",            "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Five.paa"],
+    ["OPTRE_Ridgco_Barrier_Ramp",            "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Ramp.paa"],
+    ["OPTRE_Ridgco_Barrier_Corner",          "\BLU\OLI\addons\engtools\data\Preview\Corner_Ridge_Wall_Block.paa"],
+    ["OPTRE_Ridgco_Barrier_Corner_Inverted", "\BLU\OLI\addons\engtools\data\Preview\Corner_Ridge_Wall_Block_Inverted.paa"],
+    ["OPTRE_Ridgco_Barrier_Wall_Short",      "\BLU\OLI\addons\engtools\data\Preview\Short_Ridge_Wall_Block.paa"],
+    ["OPTRE_Ridgco_Barrier_Wall_Long",       "\BLU\OLI\addons\engtools\data\Preview\Long_Ridge_Wall_Block.paa"],
+    ["OPTRE_Ridgco_Barrier_Wall_Ramp",       "\BLU\OLI\addons\engtools\data\Preview\Ridge_Wall_Block_Ramp.paa"],
+    ["OPTRE_Ridgco_Barrier_Tower",           "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Tower.paa"],
+    ["OPTRE_Ridgco_Barrier_Tunnel",          "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_Tunnel.paa"],
+    ["Land_OPTRE_M72S_barrier",              "\BLU\OLI\addons\engtools\data\Preview\M72_MB_S.paa"],
+    ["land_TKE_DeployableCover",             "\BLU\OLI\addons\engtools\data\Preview\Deployable_Cover.paa"],
+    ["land_TKE_HalfBunker",                  "\BLU\OLI\addons\engtools\data\Preview\Half_Bunker.paa"],
+    ["land_TKE_RoadBarrier",                 "\BLU\OLI\addons\engtools\data\Preview\Road_Barrier.paa"],
+    ["land_TKE_TankTrap",                    "\BLU\OLI\addons\engtools\data\Preview\Tank_Trap.paa"],
+    ["land_TKE_MilLight",                    "\BLU\OLI\addons\engtools\data\Preview\Field_Light.paa"]
+];
+
+private _imagePath = _previewMap getOrDefault [_classname, ""];
 
 if (!isNull _imgCtrl)  then { _imgCtrl ctrlSetText _imagePath };
 if (!isNull _nameCtrl) then { _nameCtrl ctrlSetText _displayName };
