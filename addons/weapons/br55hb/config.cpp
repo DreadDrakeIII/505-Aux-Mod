@@ -9,7 +9,6 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "TCP_Compat_OPTRE_Weapons_LongRangeRifles_BR55HB",
             "TCP_Weapons_Ins_LongRangeRifles_BR55HB",
             "jsrs2025_config_c"
             };
