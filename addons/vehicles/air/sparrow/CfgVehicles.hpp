@@ -9,10 +9,10 @@ class CfgVehicles {
         crew = QCLASS(Marine_Heli_Pilot);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 100;
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\sparrow\data\textures\heli_light_01_ext_blufor_co.paa),
-            "a3\air_f\heli_light_01\data\heli_light_01_dot_ca.paa"
-        };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\sparrow\data\textures\heli_light_01_ext_blufor_co.paa),
+        //     "a3\air_f\heli_light_01\data\heli_light_01_dot_ca.paa"
+        // };
         weapons[] = {
             "CMFlareLauncher_Singles",
             "Laserdesignator_mounted",
@@ -47,10 +47,10 @@ class CfgVehicles {
         crew = QCLASS(Marine_Heli_Pilot);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 100;
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\sparrow\data\textures\heli_light_01_ext_blufor_co.paa),
-            "a3\air_f\heli_light_01\data\heli_light_01_dot_ca.paa"
-        };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\sparrow\data\textures\heli_light_01_ext_blufor_co.paa),
+        //     "a3\air_f\heli_light_01\data\heli_light_01_dot_ca.paa"
+        // };
         weapons[] = {
             "CMFlareLauncher_Singles",
             "Laserdesignator_mounted"

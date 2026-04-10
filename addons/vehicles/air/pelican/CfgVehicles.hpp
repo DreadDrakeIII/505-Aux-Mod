@@ -33,73 +33,73 @@ class CfgVehicles {
             "Laserbatteries"
         };
 
-        hiddenSelections[] = {"camo1","camo2","camo3"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\pelican\data\textures\505th_Pelican_body_co.paa),
-            QPATHTOF(air\pelican\data\textures\505th_Pelican_wings_and_gear_co.paa),
-            QPATHTOF(air\pelican\data\textures\505th_Pelican_weaponry_co.paa)
-        };
-        textureList[] = {"Main", 1, "HA2Green", 0, "HA2Grey", 0, "HA2White", 0, "HW2Green", 0, "HW2Grey", 0, "HW2White", 0};
-        class TextureSources {
-            class Main {
-                author = AUTHOR;
-                displayName = "505th";
-                factions[] = {};
-                textures[] = {
-                    QPATHTOF(air\pelican\data\textures\505th_Pelican_body_co.paa),
-                    QPATHTOF(air\pelican\data\textures\505th_Pelican_wings_and_gear_co.paa),
-                    QPATHTOF(air\pelican\data\textures\505th_Pelican_weaponry_co.paa)
-                };
-            };
-            class HA2Green: Main {
-                displayName = "HA2 Green";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General\weaponry_co.paa"
-                };
-            };
-            class HA2Grey: Main {
-                displayName = "HA2 Grey";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\H2_grey\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_grey\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_grey\weaponry_co.paa"
-                };
-            };
-            class HA2White: Main {
-                displayName = "HA2 White";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\weaponry_co.paa"
-                };
-            };
-            class HW2Green: Main {
-                displayName = "HW2 Green";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\HW2\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2\weaponry_co.paa"
-                };
-            };
-            class HW2Grey: Main {
-                displayName = "HW2 Grey";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_grey\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_grey\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_grey\weaponry_co.paa"
-                };
-            };
-            class HW2White: Main {
-                displayName = "HW2 White";
-                textures[] = {
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_winter\body_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_winter\wings_and_gear_co.paa",
-                    "Splits\Splits_Vehicles\Pelican\data\HW2_winter\weaponry_co.paa"
-                };
-            };
-        };
+        // hiddenSelections[] = {"camo1","camo2","camo3"};
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\pelican\data\textures\505th_Pelican_body_co.paa),
+        //     QPATHTOF(air\pelican\data\textures\505th_Pelican_wings_and_gear_co.paa),
+        //     QPATHTOF(air\pelican\data\textures\505th_Pelican_weaponry_co.paa)
+        // };
+        // textureList[] = {"Main", 1, "HA2Green", 0, "HA2Grey", 0, "HA2White", 0, "HW2Green", 0, "HW2Grey", 0, "HW2White", 0};
+        // class TextureSources {
+        //     class Main {
+        //         author = AUTHOR;
+        //         displayName = "505th";
+        //         factions[] = {};
+        //         textures[] = {
+        //             QPATHTOF(air\pelican\data\textures\505th_Pelican_body_co.paa),
+        //             QPATHTOF(air\pelican\data\textures\505th_Pelican_wings_and_gear_co.paa),
+        //             QPATHTOF(air\pelican\data\textures\505th_Pelican_weaponry_co.paa)
+        //         };
+        //     };
+        //     class HA2Green: Main {
+        //         displayName = "HA2 Green";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General\weaponry_co.paa"
+        //         };
+        //     };
+        //     class HA2Grey: Main {
+        //         displayName = "HA2 Grey";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_grey\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_grey\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_grey\weaponry_co.paa"
+        //         };
+        //     };
+        //     class HA2White: Main {
+        //         displayName = "HA2 White";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\H2_General_winter\weaponry_co.paa"
+        //         };
+        //     };
+        //     class HW2Green: Main {
+        //         displayName = "HW2 Green";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2\weaponry_co.paa"
+        //         };
+        //     };
+        //     class HW2Grey: Main {
+        //         displayName = "HW2 Grey";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_grey\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_grey\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_grey\weaponry_co.paa"
+        //         };
+        //     };
+        //     class HW2White: Main {
+        //         displayName = "HW2 White";
+        //         textures[] = {
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_winter\body_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_winter\wings_and_gear_co.paa",
+        //             "Splits\Splits_Vehicles\Pelican\data\HW2_winter\weaponry_co.paa"
+        //         };
+        //     };
+        // };
 
         class Turrets: Turrets {
             class CargoTurret_01;

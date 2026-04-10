@@ -19,7 +19,7 @@
         [] call FEF_fnc_openUI;
     },
     {},
-    [DIK_CAPSLOCK, [false, false, false]]
+    []
 ] call CBA_fnc_addKeybind;
 
 // ============================================================================
@@ -86,7 +86,7 @@
     "FEF_Chat_QuickWounded",
     "Quick: Wounded",
     {
-        ["Wounded, still combat effective.", player, "MedicalCheckWounded"] call FEF_fnc_sendGroupMessage;
+        ["Wounded.", player, "MedicalCheckWounded"] call FEF_fnc_sendGroupMessage;
     },
     {},
     []

@@ -3,12 +3,12 @@ class Mode_FullAuto;
 
 class CfgWeapons {
 
-    class Rifle_Long_Base_F;
-    class LMG_Mk200_F: Rifle_Long_Base_F {
+    class Rifle_Base_F;
+    class Rifle_Long_Base_F: Rifle_Base_F {
         class WeaponSlotsInfo;
     };
 
-    class OPTRE_M73: LMG_Mk200_F {
+    class TCP_LMG_M731: Rifle_Long_Base_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
@@ -22,61 +22,63 @@ class CfgWeapons {
                     };
     };
 
-    class CLASS(M73): OPTRE_M73 {
+    class CLASS(M73): TCP_LMG_M731 {
         SCOPE_PUBLIC;
         author = AUTHOR;
         baseWeapon = QCLASS(M73);
 
         displayName = "[505th] M73 Light Machine Gun";
-        descriptionShort = "Light Machine Gun • 9.5x40mm • 100Rnd box";
-        picture = "\OPTRE_Weapons_MG\m73\data\icons\M73_1.paa";
-        model = "\OPTRE_Weapons_MG\m73\M73.p3d";
+        descriptionShort = "Light Machine Gun developed by Blackreach Armory";
+        picture = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_X_ca.paa";
 
         modes[] = {"Single", "FullAuto"};
         magazines[] = {QCLASS(100Rnd_95x40_Box)};
         magazineWell[] = { QCLASS(Magwell_M73) };
 
+        class LinkedItems {
+            class Cows {
+                slot = "CowsSlot"; // Required slot name
+                item = "TCP_optic_EVOSM"; // Classname of the optic
+            };
+
+            class Pointer {
+                slot = "PointerSlot"; // Required slot name
+                item = "TCP_acc_carryHandle_M731"; // Classname of the pointer
+            };
+
+            class Muzzle {
+                slot = "MuzzleSlot"; // Required slot name
+                item = "TCP_muzzle_brake_762_01"; // Classname of the silencer
+            };
+        };
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 75;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "Optre_Evo_Sight_Riser",
-                    "OPTRE_M12_Optic",
-                    "TCP_optic_M11VERO_Blue",
-                    "TCP_optic_M11VERO",
-                    "TCP_optic_M81ERO_Blue",
-                    "TCP_optic_EVOSJ",
-                    "TCP_optic_EVOSJ1",
-                    "TCP_optic_M27RCO",
-                    "TCP_optic_M43RCO",
-                    "TCP_optic_M43RCO_CRS",
-                    "TCP_optic_M43RCO_CRS_CUP",
-                    "TCP_optic_M43RCO_CUP",
-                    "TCP_optic_EVOSD",
-                    "TCP_optic_M5BSLSV_Blue",
-                    "TCP_optic_M5BSLSV",
-                    "TCP_optic_M81ERO_Blue",
-                    "TCP_optic_M81ERO"
+                    "TCP_optic_EVOSM"
                 };
             };
 
             class PointerSlot: PointerSlot {
-                class CompatibleItems {
-                    ATTACHMENTS_POINTER_BASE
+                compatibleItems[] = {
+                    "TCP_acc_carryHandle_M731",
+                    "TCP_acc_pointer_lam_M6C2",
+                    "TCP_acc_flashlight_M6G",
+                    "TCP_acc_pointer_lam_M6G"
+
                 };
             };
 
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {
-                    "OPTRE_Ma5Suppressor",
-                    "OPTRE_M247a1_Flashhider"
+                    "TCP_muzzle_brake_762_01"
                 };
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {
                 compatibleItems[] = {
-                    "bipod_01_F_blk"
+                    "TCP_bipod_01"
                 };
             };
         };

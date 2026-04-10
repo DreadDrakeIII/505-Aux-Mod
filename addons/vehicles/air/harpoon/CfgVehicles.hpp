@@ -15,40 +15,40 @@ class CfgVehicles {
         gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Crew)};
         armor = 100; //Default 40
-        hiddenSelections[] = {
-            "camo1",
-            "camo2"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
-            QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
-        };
-        textureList[] = {"Main", 1, "Green", 0, "Black", 0};
-        class TextureSources {
-            class Main {
-                author = AUTHOR;
-                displayName = "505th";
-                factions[] = {};
-                textures[] = {
-                    QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
-                    QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
-                };
-            };
-            class Green: Main {
-                displayName = "Green";
-                textures[] = {
-                    "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext01_co.paa",
-                    "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext02_co.paa"
-                };
-            };
-            class Black: Main {
-                displayName = "Black";
-                textures[] = {
-                    "\A3\Air_F_Heli\Heli_Transport_03\Data\Heli_Transport_03_ext01_black_CO.paa",
-                    "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext02_black_co.paa"
-                };
-            };
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
+        //     QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
+        // };
+        // textureList[] = {"Main", 1, "Green", 0, "Black", 0};
+        // class TextureSources {
+        //     class Main {
+        //         author = AUTHOR;
+        //         displayName = "505th";
+        //         factions[] = {};
+        //         textures[] = {
+        //             QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext01_co.paa),
+        //             QPATHTOF(air\harpoon\data\textures\heli_transport_03_ext02_co.paa)
+        //         };
+        //     };
+        //     class Green: Main {
+        //         displayName = "Green";
+        //         textures[] = {
+        //             "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext01_co.paa",
+        //             "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext02_co.paa"
+        //         };
+        //     };
+        //     class Black: Main {
+        //         displayName = "Black";
+        //         textures[] = {
+        //             "\A3\Air_F_Heli\Heli_Transport_03\Data\Heli_Transport_03_ext01_black_CO.paa",
+        //             "\a3\air_f_heli\heli_transport_03\data\heli_transport_03_ext02_black_co.paa"
+        //         };
+        //     };
+        // };
         weapons[]=
 		{
 			"CMFlareLauncher_Singles",

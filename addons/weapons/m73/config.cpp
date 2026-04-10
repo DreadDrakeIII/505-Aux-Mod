@@ -9,9 +9,9 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_MG_M73",
-            "jsrs2025_config_c",
-            "OPTRE_ACE_Compat"
+            "TCP_Weapons_Machineguns_M731",
+            "TCP_Compat_ACE_Weapons_Machineguns_M731",
+            "jsrs2025_config_c"
             };
         units[] = {};
         weapons[] = {

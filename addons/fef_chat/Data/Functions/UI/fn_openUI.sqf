@@ -4,10 +4,11 @@ call FEF_fnc_configureMenus;
 
 if (!isNull findDisplay 88000) exitWith {};
 
-createDialog "FEF_ChatDisplay";
+private _display = (findDisplay 46) createDisplay "FEF_ChatDisplay";
 
-private _display = findDisplay 88000;
-if (isNull _display) exitWith {};
+if (isNull _display) exitWith {
+    ["Failed to create display"] call FEF_fnc_devLog;
+};
 
 missionNamespace setVariable ["FEF_UI_CurrentMenu", "main"];
 missionNamespace setVariable ["FEF_UI_SelectedIndex", 0];

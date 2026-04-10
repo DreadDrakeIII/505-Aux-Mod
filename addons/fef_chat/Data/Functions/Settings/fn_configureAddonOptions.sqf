@@ -20,6 +20,28 @@
 ] call CBA_fnc_addSetting;
 
 [
+    "FEF_Voice_Volume",
+    "SLIDER",
+    ["Voice Line Volume", "Adjust the volume of local voice lines. 1.0 = full, 2.0 = boosted."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    [0, 2, 1.0, 1],
+    0,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+[
+    "FEF_Voice_VoiceRadius",
+    "SLIDER",
+    ["Voice Radius", "Maximum distance for local voice lines and local automessages."],
+    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
+    [5, 80, 35, 0],
+    0,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+[
     "FEF_Voice_Profile",
     "LIST",
     ["Voice Profile", "Select the active voice language profile."],
@@ -39,9 +61,9 @@
 // ============================================================================
 
 [
-    "FEF_Auto_EnableGrenadeCallouts",
+    "FEF_AutoMessages_Enabled",
     "CHECKBOX",
-    ["Enable Grenade Callouts", "Automatically send a grenade callout when throwing frag grenades."],
+    ["Enable Automessages", "Master switch for all automessage features."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     true,
     0,
@@ -50,9 +72,9 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "FEF_Auto_EnableSmokeCallouts",
+    "FEF_AutoMessages_Grenades",
     "CHECKBOX",
-    ["Enable Smoke Callouts", "Automatically send a smoke callout when throwing smoke grenades."],
+    ["Automessage - Grenades", "Automatically send a grenade callout when throwing frag grenades."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     true,
     0,
@@ -61,9 +83,9 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "FEF_Auto_EnableUnconsciousCallouts",
+    "FEF_AutoMessages_Unconscious",
     "CHECKBOX",
-    ["Enable Unconscious Callouts", "Automatically send a downed/friendly-down callout when a player becomes unconscious."],
+    ["Automessage - Unconscious", "Automatically send a downed/friendly-down callout when a player becomes unconscious."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
     true,
     0,
@@ -91,7 +113,7 @@
     "SLIDER",
     ["Reinsert Marker Duration", "How long the reinsert marker stays visible on the map, in seconds."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    [5, 300, 20, 0],
+    [5, 300, 120, 0],
     0,
     {},
     false
@@ -106,7 +128,7 @@
     "SLIDER",
     ["Casualty Marker Duration", "How long the casualty marker stays visible on the map, in seconds."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    [5, 300, 20, 0],
+    [5, 300, 60, 0],
     0,
     {},
     false
@@ -117,7 +139,7 @@
 // ============================================================================
 
 [
-    "FEF_Chat_Debug",
+    "FEF_Debug_ShowMessages",
     "CHECKBOX",
     ["Debug Mode", "Enable debug output for FEF Chat."],
     ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
@@ -135,8 +157,8 @@
     "FEF_Chat_CustomMessage_1",
     "EDITBOX",
     ["Custom Message 01", "Custom message slot 01."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "SET HERE.",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Set here.",
     0,
     {},
     false
@@ -146,8 +168,8 @@
     "FEF_Chat_CustomMessage_2",
     "EDITBOX",
     ["Custom Message 02", "Custom message slot 02."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "HOLD FIRE.",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "On me.",
     0,
     {},
     false
@@ -157,8 +179,8 @@
     "FEF_Chat_CustomMessage_3",
     "EDITBOX",
     ["Custom Message 03", "Custom message slot 03."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "STACK UP.",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Cover me.",
     0,
     {},
     false
@@ -168,8 +190,8 @@
     "FEF_Chat_CustomMessage_4",
     "EDITBOX",
     ["Custom Message 04", "Custom message slot 04."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "COVER ME.",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Hold fire.",
     0,
     {},
     false
@@ -179,8 +201,8 @@
     "FEF_Chat_CustomMessage_5",
     "EDITBOX",
     ["Custom Message 05", "Custom message slot 05."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Need AT on me!",
     0,
     {},
     false
@@ -190,8 +212,8 @@
     "FEF_Chat_CustomMessage_6",
     "EDITBOX",
     ["Custom Message 06", "Custom message slot 06."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Need demo on me!",
     0,
     {},
     false
@@ -201,8 +223,8 @@
     "FEF_Chat_CustomMessage_7",
     "EDITBOX",
     ["Custom Message 07", "Custom message slot 07."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Stack up.",
     0,
     {},
     false
@@ -212,8 +234,8 @@
     "FEF_Chat_CustomMessage_8",
     "EDITBOX",
     ["Custom Message 08", "Custom message slot 08."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Move to me.",
     0,
     {},
     false
@@ -223,8 +245,8 @@
     "FEF_Chat_CustomMessage_9",
     "EDITBOX",
     ["Custom Message 09", "Custom message slot 09."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Watch that sector.",
     0,
     {},
     false
@@ -234,8 +256,8 @@
     "FEF_Chat_CustomMessage_10",
     "EDITBOX",
     ["Custom Message 10", "Custom message slot 10."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Need pickup!",
     0,
     {},
     false
@@ -245,8 +267,8 @@
     "FEF_Chat_CustomMessage_11",
     "EDITBOX",
     ["Custom Message 11", "Custom message slot 11."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Send reinforcements!",
     0,
     {},
     false
@@ -256,8 +278,8 @@
     "FEF_Chat_CustomMessage_12",
     "EDITBOX",
     ["Custom Message 12", "Custom message slot 12."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    "",
+    ["505th Expeditionary Force Aux Mod", "Custom Messages"],
+    "Area secure.",
     0,
     {},
     false

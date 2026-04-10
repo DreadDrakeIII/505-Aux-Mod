@@ -9,9 +9,8 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_VK78_Commando",
-            "jsrs2025_config_c",
-            "OPTRE_ACE_Compat"
+            "TCP_Weapons_LongRangeRifles_VK78",
+            "jsrs2025_config_c"
             };
 
         units[] = {};

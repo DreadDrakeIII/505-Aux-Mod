@@ -1,68 +1,66 @@
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class WeaponSlotsInfo;
+class CowsSlot;
+class PointerSlot;
+class MuzzleSlot;
 
 class CfgWeapons {
+    class TCP_arifle_MA37;
 
-    class Rifle_Base_F;
-    class arifle_MX_Base_F: Rifle_Base_F {
-        class WeaponSlotsInfo;
-    };
-
-    class OPTRE_MA5C: arifle_MX_Base_F {
-        class WeaponSlotsInfo: WeaponSlotsInfo {
-            class CowsSlot;
-            class PointerSlot;
-            class MuzzleSlot;
-        };
-
-        class Single: Mode_SemiAuto {
-        };
-        class FullAuto: Mode_FullAuto {
-
-        };
-    };
-
-    class CLASS(MA5C): OPTRE_MA5C {
+    class CLASS(MA37): TCP_arifle_MA37 {
         SCOPE_PUBLIC;
         author = AUTHOR;
-        baseWeapon = QCLASS(MA5C);
+        baseWeapon = QCLASS(MA37);
 
-        displayName = "[505th] MA5C Assault Rifle";
-        descriptionShort = "General Purpose Assault Rifle • 7.62×51mm • 32Rnd Magazine";
-        picture = "\OPTRE_weapons\ar\icons\ma5c_icon.paa";
-        model = "\OPTRE_Weapons\AR\MA5C.p3d";
-        cartridgePos = "nabojnicestart";
-        cartridgeVel = "nabojniceend";
+        displayName = "[505th] MA37";
+        descriptionShort = "Assault Rifle developed by Blackreach Armory";
+        picture = "\TCP\Weapons\Rifles\MA37\data\ui\icon_arifle_MA37_X_ca.paa";
+        model = "\TCP\Weapons\Rifles\MA37\MA37.p3d";
 
         modes[] = {"Single", "FullAuto"};
-        magazines[] = {QCLASS(32Rnd_762x51_Mag)};
-        magazineWell[] = {QCLASS(Magwell_MA5C)};
+        magazines[] = {QCLASS(40Rnd_762x51_Mag)};
+        magazineWell[] = { QCLASS(Magwell_MA37) };
 
+        class LinkedItems {
+            class Cows {
+                slot = "CowsSlot"; // Required slot name
+                item = "TCP_optic_EVOSJ"; // Classname of the optic
+            };
+
+            class Pointer {
+                slot = "PointerSlot"; // Required slot name
+                item = "TCP_acc_pointer_lam_MA37"; // Classname of the pointer
+            };
+
+            class Muzzle {
+                slot = "MuzzleSlot"; // Required slot name
+                item = "TCP_muzzle_brake_762_01"; // Classname of the Muzzle
+            };
+        };
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 75;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "TCP_optic_M81ERO_Blue",
-                    "TCP_optic_M81ERO"
+                    "TCP_optic_EVOSJ"
                 };
             };
 
             class PointerSlot: PointerSlot {
-                class CompatibleItems {
-                    ATTACHMENTS_POINTER_BASE
+                compatibleItems[] = {
+                    "TCP_acc_pointer_lam_MA37"
                 };
             };
 
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {
-                    "OPTRE_Ma5Suppressor",
-                    "OPTRE_M247a1_Flashhider"
+                    "TCP_muzzle_brake_762_01"
                 };
             };
         };
 
-        class Single: Single
+        class Single: Mode_SemiAuto
 		{
 			displayName="Semi";
 			reloadTime=0.092307702;
@@ -85,7 +83,7 @@ class CfgWeapons {
 			};
 		};
 
-		class FullAuto: FullAuto
+		class FullAuto: Mode_FullAuto
 		{
 			displayName="Full Auto";
 			reloadTime=0.092307702;

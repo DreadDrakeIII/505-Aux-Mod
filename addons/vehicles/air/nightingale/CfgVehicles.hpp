@@ -16,12 +16,12 @@ class CfgVehicles {
             "Laserbatteries"
         };
 
-        hiddenSelections[] = {"main rotor static","tail rotor static","camo1","clan","clan_text","insignia"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\nightingale\data\textures\505th_nightingale_base2_co.paa),
-            QPATHTOF(air\nightingale\data\textures\505th_nightingale_base2_co.paa),
-            QPATHTOF(air\nightingale\data\textures\505th_nightingale_base_co.paa)
-        };
+        // hiddenSelections[] = {"main rotor static","tail rotor static","camo1","clan","clan_text","insignia"};
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\nightingale\data\textures\505th_nightingale_base2_co.paa),
+        //     QPATHTOF(air\nightingale\data\textures\505th_nightingale_base2_co.paa),
+        //     QPATHTOF(air\nightingale\data\textures\505th_nightingale_base_co.paa)
+        // };
         icon = "\OPTRE_Vehicles_Air\Falcon\data\icon.paa";
     };
 
@@ -46,10 +46,10 @@ class CfgVehicles {
         soundEngineOnExt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\ext_start.ogg",1,1,300};
         soundEngineOnInt[] = {"\jsrs_soundmod_complete\JSRS_Soundmod_Soundfiles\air_vehicles\uh80_ghosthawk\int_start.ogg",1,1};
 
-        hiddenSelections[] = {"camo1","clan","clan_text","insignia"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\nightingale\data\textures\ONI_nightingale_base_co.paa)
-        };
+        // hiddenSelections[] = {"camo1","clan","clan_text","insignia"};
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\nightingale\data\textures\ONI_nightingale_base_co.paa)
+        // };
         icon = "\OPTRE_Vehicles_Air\Falcon\data\icon.paa";
     };
 };

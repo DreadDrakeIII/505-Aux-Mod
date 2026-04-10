@@ -11,4 +11,7 @@ private _speaker = if (_speakerSource isEqualType "") then {
 
 if (isNull _speaker) exitWith {};
 
-_speaker say3D [_soundClass, _maxDistance, 1, 1];
+private _volume = if (isNil "FEF_Voice_Volume") then { 1.0 } else { FEF_Voice_Volume };
+private _scaledDistance = _maxDistance * _volume;
+
+_speaker say3D [_soundClass, _scaledDistance, 1, 1];

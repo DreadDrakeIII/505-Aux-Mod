@@ -2,9 +2,7 @@
 
 #define FEF_CHAT_BG 88001
 #define FEF_CHAT_HEADER 88002
-#define FEF_CHAT_LOGO 88003
 #define FEF_CHAT_TITLE 88004
-#define FEF_CHAT_SUBTITLE 88005
 #define FEF_CHAT_FOOTER 88006
 
 #define FEF_CHAT_BTN1 88101
@@ -29,7 +27,6 @@
 #define FEF_CLR_BTN             {0.12,0.14,0.16,0.90}
 #define FEF_CLR_BTN_SELECTED    {0.20,0.35,0.45,1}
 #define FEF_CLR_BTN_DISABLED    {0.08,0.08,0.08,0.60}
-#define FEF_CLR_SUBTITLE        {0.55,0.60,0.65,1}
 #define FEF_CLR_FOOTER          {0.55,0.60,0.65,0.90}
 #define FEF_CLR_MEDICAL         {0.70,0.13,0.13,0.96}
 #define FEF_CLR_REINSERT        {0.20,0.45,0.65,0.96}

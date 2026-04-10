@@ -1,5 +1,5 @@
 class Mode_SemiAuto;
-class Mode_FullAuto;
+class Mode_Burst;
 
 class CfgWeapons {
     class Rifle_Base_F;
@@ -14,7 +14,7 @@ class CfgWeapons {
             class MuzzleSlot;
         };
         class Single: Mode_SemiAuto {};
-        class FullAuto: Mode_FullAuto {};
+        class Burst: Mode_Burst {};
     };
 
     class CLASS(M295_BMR): OPTRE_M295_BMR {
@@ -30,7 +30,7 @@ class CfgWeapons {
 
         magazines[] = { QCLASS(25Rnd_762xV7_Mag) };
         magazineWell[] = { QCLASS(Magwell_M295BMR) };
-        modes[] = { "Single", "FullAuto" };
+        modes[] = { "Single", "Burst" };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 75;
@@ -94,9 +94,9 @@ class CfgWeapons {
 			};
 		};
 
-		class FullAuto: FullAuto
+		class Burst: Burst
 		{
-			displayName="Full Auto";
+			displayName="Burst";
 			reloadTime=0.090000004;
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType

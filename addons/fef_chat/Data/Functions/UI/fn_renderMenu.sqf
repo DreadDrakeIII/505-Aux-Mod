@@ -31,35 +31,16 @@ if (_itemCount <= 0) then {
 
 missionNamespace setVariable ["FEF_UI_SelectedIndex", _selectedIndex];
 
-// Subtitle
-private _subtitleCtrl = _display displayCtrl 88005;
-private _subtitleText = switch (_menuId) do {
-    case "main":            { "COMMS" };
-    case "main_more":       { "MORE PAGE" };
-    case "contact":         { "CONTACT" };
-    case "medical_status":  { "MEDICAL STATUS" };
-    case "reinsert":        { "REINSERT" };
-    case "squad_comms":     { "SQUAD COMMS" };
-    case "fireteam_comms":  { "FIRETEAM COMMS" };
-    case "custom_1":        { "CUSTOM PAGE 1" };
-    case "custom_2":        { "CUSTOM PAGE 2" };
-    case "custom_3":        { "CUSTOM PAGE 3" };
-    default                 { toUpper _menuId };
-};
-_subtitleCtrl ctrlSetText _subtitleText;
-
 private _buttonIdcs = [88101, 88102, 88103, 88104, 88105, 88106];
 private _accentIdcs = [88201, 88202, 88203, 88204, 88205, 88206];
 private _visibleCount = 6;
 
-// Sliding window — keep selected item visible
 private _scrollOffset = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
 
 if (_resetSelection) then {
     _scrollOffset = 0;
 };
 
-// Adjust offset to keep selection in view
 if (_selectedIndex < _scrollOffset) then {
     _scrollOffset = _selectedIndex;
 };
@@ -82,6 +63,8 @@ private _getAccentColor = {
         case (_lbl find "check" >= 0):                               { [0.10, 0.55, 0.25, 1.0] };
         case (_lbl find "squad" >= 0):                               { [0.20, 0.50, 0.70, 1.0] };
         case (_lbl find "fireteam" >= 0):                            { [0.30, 0.60, 0.55, 1.0] };
+        case (_lbl find "medevac" >= 0):                             { [0.80, 0.10, 0.10, 1.0] };
+        case (_lbl find "lz" >= 0):                                  { [0.10, 0.50, 0.80, 1.0] };
         case (toLower _type == "reinsert"):                          { [0.20, 0.45, 0.65, 1.0] };
         case (toLower _type == "back"):                              { [0.20, 0.20, 0.20, 1.0] };
         case (toLower _type == "submenu"):                           { [0.15, 0.40, 0.50, 1.0] };
@@ -95,7 +78,6 @@ private _getBtnColor = {
     [0.12, 0.14, 0.16, 0.90]
 };
 
-// Update footer to show scroll position when list is longer than 6
 private _footerCtrl = _display displayCtrl 88006;
 if (_itemCount > _visibleCount) then {
     _footerCtrl ctrlSetText format [
@@ -104,7 +86,11 @@ if (_itemCount > _visibleCount) then {
         _itemCount
     ];
 } else {
-    _footerCtrl ctrlSetText "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE";
+    if (_menuId != "main") then {
+        _footerCtrl ctrlSetText "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC BACK";
+    } else {
+        _footerCtrl ctrlSetText "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE";
+    };
 };
 
 {

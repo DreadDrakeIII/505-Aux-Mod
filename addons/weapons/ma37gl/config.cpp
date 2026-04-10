@@ -9,17 +9,17 @@ class CfgPatches {
 
         requiredAddons[] = {
             QUOTE(ADDON),
-            "TCP_Compat_OPTRE_Weapons_LongRangeRifles_BR55HB",
-            "TCP_Weapons_Ins_LongRangeRifles_BR55HB",
+            "TCP_Compat_OPTRE_Weapons_Rifles_MA37",
+            "TCP_Weapons_Rifles_MA37",
+            "TCP_Compat_ACE_Weapons_Rifles_MA37",
             "jsrs2025_config_c"
             };
-
         units[] = {};
-        weapons[] = { QCLASS(BR55HB)};
+        weapons[] = {
+            QCLASS(MA37GL)
+        };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgWeapons.hpp"
-#include "CfgMagazines.hpp"
-#include "CfgMagazinesWells.hpp"

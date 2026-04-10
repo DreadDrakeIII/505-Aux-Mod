@@ -1,21 +1,12 @@
 class Mode_SemiAuto;
+class WeaponSlotsInfo;
+class CowsSlot;
+class PointerSlot;
+class MuzzleSlot;
+class UnderBarrelSlot;
 
 class CfgWeapons {
-    class Rifle_Base_F;
-    class OPTRE_LongRifle_Base: Rifle_Base_F {
-        class WeaponSlotsInfo;
-    };
-    class TCP_srifle_SRS99: OPTRE_LongRifle_Base {
-        class WeaponSlotsInfo: WeaponSlotsInfo {
-            class CowsSlot;
-            class PointerSlot;
-            class MuzzleSlot;
-            class UnderBarrelSlot;
-        };
-
-        class Single: Mode_SemiAuto {
-        };
-    };
+    class TCP_srifle_SRS99;
 
     // ================================
     // M98 HARVESTER II - Anti-Material Rifle
@@ -44,7 +35,22 @@ class CfgWeapons {
                       };
         magazineWell[] = {QCLASS(Magwell_M98_Harvester_II)};
 
-        linkedItems[] = {"TCP_optic_Oracle_N"};
+        class LinkedItems {
+            class Cows {
+                slot = "CowsSlot"; // Required slot name
+                item = "TCP_optic_Oracle_N"; // Classname of the optic
+            };
+
+            class Pointer {
+                slot = "PointerSlot"; // Required slot name
+                item = ""; // Classname of the pointer
+            };
+
+            class Muzzle {
+                slot = "MuzzleSlot"; // Required slot name
+                item = "TCP_muzzle_brake_127_02"; // Classname of the muzzle
+            };
+        };
 
         // Weapon handling
         class WeaponSlotsInfo: WeaponSlotsInfo {
@@ -73,7 +79,7 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single
+        class Single: Mode_SemiAuto
 		{
 			displayName="Semi";
 			class BaseSoundModeType;

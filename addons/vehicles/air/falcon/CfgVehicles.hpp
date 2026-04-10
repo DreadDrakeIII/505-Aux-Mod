@@ -2,11 +2,11 @@ class CfgVehicles {
     class Helicopter_Base_H;
     class Heli_Light_01_base_F: Helicopter_Base_H{};
     class OPTRE_falcon_base: Heli_Light_01_base_F{};
-    class OPTRE_falcon_base_unarmed: OPTRE_falcon_base{};
-    class OPTRE_UNSC_falcon: OPTRE_falcon_base_unarmed{
+    class OPTRE_UNSC_falcon_S: OPTRE_falcon_base{};
+    class OPTRE_UNSC_MH_144S_Falcon: OPTRE_UNSC_falcon_S{
         class Turrets;
     };
-    class CLASS(Falcon_Base): OPTRE_UNSC_falcon {
+    class CLASS(Falcon_Base): OPTRE_UNSC_MH_144S_Falcon {
         scope = 1;
         scopeCurator = 1;
 
@@ -27,88 +27,88 @@ class CfgVehicles {
             "Laserbatteries"
         };
 
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camoGlass",
-            "camoGlassPilot",
-            "camoDecal",
-            "attach_gun",
-            "attach_sideguns"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
-            "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-            "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
-        };
-        textureList[] = {"Main", 1, "Standard", 0, "Black", 0, "White", 0, "Tan", 0, "Green", 0, "Pink", 0};
-        class TextureSources {
-            class Main {
-                author = AUTHOR;
-                displayName = "505th";
-                factions[] = {};
-                textures[] = {
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
-                    "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-                    "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
-                };
-            };
-            class Standard: Main {
-                displayName = " Standard";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\falcon\data\falcon_main_co.paa",
-                    "\OPTRE_Vehicles_Air\falcon\data\falcon_attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Black: Main {
-                displayName = "Black";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class White: Main {
-                displayName = "White";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Tan: Main {
-                displayName = "Tan";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Green: Main {
-                displayName = "Green";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Pink: Main {
-                displayName = "Pink";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camoGlass",
+        //     "camoGlassPilot",
+        //     "camoDecal",
+        //     "attach_gun",
+        //     "attach_sideguns"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
+        //     "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //     "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
+        // };
+        // textureList[] = {"Main", 1, "Standard", 0, "Black", 0, "White", 0, "Tan", 0, "Green", 0, "Pink", 0};
+        // class TextureSources {
+        //     class Main {
+        //         author = AUTHOR;
+        //         displayName = "505th";
+        //         factions[] = {};
+        //         textures[] = {
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
+        //             "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //             "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
+        //         };
+        //     };
+        //     class Standard: Main {
+        //         displayName = " Standard";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\falcon\data\falcon_main_co.paa",
+        //             "\OPTRE_Vehicles_Air\falcon\data\falcon_attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Black: Main {
+        //         displayName = "Black";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class White: Main {
+        //         displayName = "White";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Tan: Main {
+        //         displayName = "Tan";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Green: Main {
+        //         displayName = "Green";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Pink: Main {
+        //         displayName = "Pink";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        // };
 
         class Turrets: Turrets {
             class CargoTurret_01;
@@ -150,10 +150,10 @@ class CfgVehicles {
     };
 
 
-    class OPTRE_UNSC_falcon_S: OPTRE_falcon_base{
+    class OPTRE_UNSC_falcon_armed_S: OPTRE_falcon_base{
         class Turrets;
     };
-    class CLASS(Falcon_Armed_Base): OPTRE_UNSC_falcon_S {
+    class CLASS(Falcon_Armed_Base): OPTRE_UNSC_falcon_armed_S {
         scope = 1;
         scopeCurator = 1;
 
@@ -173,88 +173,88 @@ class CfgVehicles {
             "Laserbatteries"
         };
 
-        hiddenSelections[] = {
-            "camo1",
-            "camo2",
-            "camo3",
-            "camoGlass",
-            "camoGlassPilot",
-            "camoDecal",
-            "attach_gun",
-            "attach_sideguns"
-        };
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
-            "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-            "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-            QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
-        };
-        textureList[] = {"Main", 1, "Standard", 0, "Black", 0, "White", 0, "Tan", 0, "Green", 0, "Pink", 0};
-        class TextureSources {
-            class Main {
-                author = AUTHOR;
-                displayName = "505th";
-                factions[] = {};
-                textures[] = {
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
-                    "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-                    "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
-                    QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
-                };
-            };
-            class Standard: Main {
-                displayName = " Standard";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\falcon\data\falcon_main_co.paa",
-                    "\OPTRE_Vehicles_Air\falcon\data\falcon_attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Black: Main {
-                displayName = "Black";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class White: Main {
-                displayName = "White";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Tan: Main {
-                displayName = "Tan";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Green: Main {
-                displayName = "Green";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-            class Pink: Main {
-                displayName = "Pink";
-                textures[] = {
-                    "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Main_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Attachments_co.paa",
-                    "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
-                };
-            };
-        };
+        // hiddenSelections[] = {
+        //     "camo1",
+        //     "camo2",
+        //     "camo3",
+        //     "camoGlass",
+        //     "camoGlassPilot",
+        //     "camoDecal",
+        //     "attach_gun",
+        //     "attach_sideguns"
+        // };
+        // hiddenSelectionsTextures[] = {
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
+        //     "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //     "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //     QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
+        // };
+        // textureList[] = {"Main", 1, "Standard", 0, "Black", 0, "White", 0, "Tan", 0, "Green", 0, "Pink", 0};
+        // class TextureSources {
+        //     class Main {
+        //         author = AUTHOR;
+        //         displayName = "505th";
+        //         factions[] = {};
+        //         textures[] = {
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Main_co.paa),
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Attachments_co.paa),
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Interior_co.paa),
+        //             "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //             "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa",
+        //             QPATHTOF(air\falcon\data\textures\505th_Falcon_Decal_ca.paa)
+        //         };
+        //     };
+        //     class Standard: Main {
+        //         displayName = " Standard";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\falcon\data\falcon_main_co.paa",
+        //             "\OPTRE_Vehicles_Air\falcon\data\falcon_attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Black: Main {
+        //         displayName = "Black";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Black\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class White: Main {
+        //         displayName = "White";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\White\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Tan: Main {
+        //         displayName = "Tan";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Tan\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Green: Main {
+        //         displayName = "Green";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Green\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        //     class Pink: Main {
+        //         displayName = "Pink";
+        //         textures[] = {
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Main_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Pink\Falcon_Attachments_co.paa",
+        //             "\OPTRE_Vehicles_Air\Falcon\data\Falcon_Interior_co.paa"
+        //         };
+        //     };
+        // };
 
         class Turrets: Turrets {
             class CargoTurret_01;
