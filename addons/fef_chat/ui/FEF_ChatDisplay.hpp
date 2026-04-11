@@ -3,7 +3,7 @@ class FEF_ChatDisplay {
     movingEnable = 0;
     enableSimulation = 1;
     enableDisplay = 1;
-    mouseControl = 0;        // don't capture mouse
+    mouseControl = 0;
     onUnload = "";
 
     class controlsBackground {
@@ -89,9 +89,10 @@ class FEF_ChatDisplay {
             colorText[] = FEF_CLR_TEXT;
         };
 
+        // No onButtonClick — scroll + Space/Enter/Numpad Enter only
+        // Removes mouse cursor appearing when UI opens
         class Button1: FEF_RscButton {
             idc = FEF_CHAT_BTN1;
-            onButtonClick = "[0] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.222 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";
@@ -100,7 +101,6 @@ class FEF_ChatDisplay {
         };
         class Button2: FEF_RscButton {
             idc = FEF_CHAT_BTN2;
-            onButtonClick = "[1] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.273 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";
@@ -109,7 +109,6 @@ class FEF_ChatDisplay {
         };
         class Button3: FEF_RscButton {
             idc = FEF_CHAT_BTN3;
-            onButtonClick = "[2] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.324 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";
@@ -118,7 +117,6 @@ class FEF_ChatDisplay {
         };
         class Button4: FEF_RscButton {
             idc = FEF_CHAT_BTN4;
-            onButtonClick = "[3] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.375 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";
@@ -127,7 +125,6 @@ class FEF_ChatDisplay {
         };
         class Button5: FEF_RscButton {
             idc = FEF_CHAT_BTN5;
-            onButtonClick = "[4] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.426 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";
@@ -136,7 +133,6 @@ class FEF_ChatDisplay {
         };
         class Button6: FEF_RscButton {
             idc = FEF_CHAT_BTN6;
-            onButtonClick = "[5] call FEF_fnc_onButtonClick;";
             x = "0.816 * safezoneW + safezoneX";
             y = "0.477 * safezoneH + safezoneY";
             w = "0.174 * safezoneW";

@@ -1,11 +1,4 @@
-/*
-    File: fn_createFriendlyDownMarkerLocal.sqf
-    Purpose:
-    Creates a temporary local casualty marker for the supplied unit.
-    Runs locally on each recipient client.
-*/
-
-params ["_unitRef"];
+params ["_unitRef", ["_type", "routine"]];
 
 private _unit = if (_unitRef isEqualType "") then {
     objectFromNetId _unitRef
@@ -16,25 +9,28 @@ private _unit = if (_unitRef isEqualType "") then {
 if (isNull _unit) exitWith {};
 
 private _markerId = format [
-    "FEF_CAS_%1_%2",
+    "FEF_MEDEVAC_%1_%2",
     getPlayerUID _unit,
     floor diag_tickTime
 ];
 
+private _colour = switch (_type) do {
+    case "urgent":   { "ColorRed" };
+    case "priority": { "ColorOrange" };
+    default          { "ColorYellow" };
+};
+
 private _marker = createMarkerLocal [_markerId, getPosATL _unit];
-_marker setMarkerTypeLocal "mil_warning";
-_marker setMarkerColorLocal "ColorRed";
-_marker setMarkerTextLocal format ["CASUALTY"];
+_marker setMarkerTypeLocal "FEF_MarkerMedevac";
+_marker setMarkerColorLocal _colour;
+_marker setMarkerTextLocal format ["MEDEVAC %1", toUpper _type];
 
 [_markerId, _unit] spawn {
     params ["_markerId", "_unit"];
-
-    private _endTime = time + 20;
-
+    private _endTime = time + 120;
     while {time < _endTime && {!isNull _unit}} do {
         _markerId setMarkerPosLocal (getPosATL _unit);
-        uiSleep 1;
+        uiSleep 2;
     };
-
     deleteMarkerLocal _markerId;
 };

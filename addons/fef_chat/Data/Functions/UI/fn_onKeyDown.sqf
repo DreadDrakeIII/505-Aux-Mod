@@ -30,16 +30,27 @@ switch (_key) do {
     // ENTER
     case 28: {
         private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
-        [_selectedIndex] call FEF_fnc_onButtonClick;
+        private _scrollOffset  = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
+        [_selectedIndex - _scrollOffset] call FEF_fnc_onButtonClick;
+        true
+    };
+
+    // NUMPAD ENTER
+    case 156: {
+        private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
+        private _scrollOffset  = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
+        [_selectedIndex - _scrollOffset] call FEF_fnc_onButtonClick;
         true
     };
 
     // SPACE
     case 57: {
         private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
-        [_selectedIndex] call FEF_fnc_onButtonClick;
+        private _scrollOffset  = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
+        [_selectedIndex - _scrollOffset] call FEF_fnc_onButtonClick;
         true
     };
 
+    // ALL OTHER KEYS — pass through so movement still works
     default { false };
 };

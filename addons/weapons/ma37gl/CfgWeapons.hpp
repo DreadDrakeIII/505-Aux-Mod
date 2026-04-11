@@ -40,7 +40,7 @@ class CfgWeapons {
             };
         };
         class WeaponSlotsInfo: WeaponSlotsInfo {
-            mass = 75;
+            mass = 92;
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
@@ -50,7 +50,8 @@ class CfgWeapons {
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
-                    "TCP_acc_pointer_lam_MA37"
+                    "TCP_acc_pointer_lam_MA37",
+                    "TCP_acc_pointer_lam_MA37_IR"
                 };
             };
 

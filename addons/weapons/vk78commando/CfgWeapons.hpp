@@ -59,7 +59,6 @@ class CfgWeapons {
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
                     "TCP_rail_ammoCounter_VK78",
-                    "TCP_acc_pointer_lam_M6C2",
                     "TCP_acc_flashlight_M6G",
                     "TCP_acc_pointer_lam_M6G"
                 };

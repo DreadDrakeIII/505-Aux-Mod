@@ -1,11 +1,10 @@
 params ["_index"];
 
-private _menuId     = missionNamespace getVariable ["FEF_UI_CurrentMenu", "main"];
-private _menus      = missionNamespace getVariable ["FEF_Menus", createHashMap];
-private _items      = _menus getOrDefault [_menuId, []];
+private _menuId       = missionNamespace getVariable ["FEF_UI_CurrentMenu", "main"];
+private _menus        = missionNamespace getVariable ["FEF_Menus", createHashMap];
+private _items        = _menus getOrDefault [_menuId, []];
 private _scrollOffset = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
 
-// Adjust index by scroll offset to get the actual item
 private _actualIndex = _index + _scrollOffset;
 
 if (_actualIndex < 0 || {_actualIndex >= count _items}) exitWith {};
@@ -41,6 +40,16 @@ switch (_actionType) do {
     case "reinsert": {
         [_payload, player] call FEF_fnc_sendReinsertRequest;
         [] call FEF_fnc_closeUI;
+    };
+
+    case "medevac": {
+        [_payload, player] call FEF_fnc_sendMedevacRequest;
+        [] call FEF_fnc_closeUI;
+    };
+
+    case "lz": {
+        [] call FEF_fnc_closeUI;
+        [_payload] call FEF_fnc_openLZMapSelect;
     };
 
     case "close": {

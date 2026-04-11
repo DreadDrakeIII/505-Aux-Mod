@@ -16,7 +16,8 @@ class CfgPatches {
             };
         units[] = {};
         weapons[] = {
-            QCLASS(MA37)
+            QCLASS(MA37),
+            QCLASS(MA37_NoLight)
         };
         VERSION_CONFIG;
     };

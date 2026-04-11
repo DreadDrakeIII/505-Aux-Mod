@@ -34,7 +34,22 @@ class CfgWeapons {
         magazines[] = { QCLASS(36Rnd_95x40_Mag) };
         magazineWell[] = {QCLASS(Magwell_BR55HB)};
 
-        linkedItems[] = {};
+        class LinkedItems {
+            class Cows {
+                slot = "CowsSlot"; // Required slot name
+                item = ""; // Classname of the optic
+            };
+
+            class Pointer {
+                slot = "PointerSlot"; // Required slot name
+                item = "TCP_acc_pointer_lam_M6G"; // Classname of the pointer
+            };
+
+            class Muzzle {
+                slot = "MuzzleSlot"; // Required slot name
+                item = "TCP_muzzle_brake_95_01"; // Classname of the silencer
+            };
+        };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
             mass = 45;
@@ -56,7 +71,6 @@ class CfgWeapons {
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
-                    "TCP_acc_pointer_lam_M6C2",
                     "TCP_acc_flashlight_M6G",
                     "TCP_acc_pointer_lam_M6G"
                 };
@@ -64,6 +78,7 @@ class CfgWeapons {
 
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {
+                    "TCP_muzzle_brake_95_01"
                 };
             };
 

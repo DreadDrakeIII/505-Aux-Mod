@@ -1,7 +1,7 @@
 /*
     File: fn_createReinsertMarkerLocal.sqf
     Purpose:
-    Creates a temporary local reinsert marker.
+    Creates a temporary local reinsert marker with custom PAA per count.
 */
 
 params ["_unitRef", ["_count", 1]];
@@ -20,20 +20,26 @@ private _markerId = format [
     floor diag_tickTime
 ];
 
+private _markerType = switch (_count) do {
+    case 1: { "FEF_MarkerReinsertX1" };
+    case 2: { "FEF_MarkerReinsertX2" };
+    case 3: { "FEF_MarkerReinsertX3" };
+    case 4: { "FEF_MarkerReinsertX4" };
+    case 5: { "FEF_MarkerReinsertX5" };
+    default { "mil_pickup" };
+};
+
 private _marker = createMarkerLocal [_markerId, getPosATL _unit];
-_marker setMarkerTypeLocal "mil_pickup";
+_marker setMarkerTypeLocal _markerType;
 _marker setMarkerColorLocal "ColorBlue";
-_marker setMarkerTextLocal format ["REINSERT x%1 - %2", _count, name _unit];
+_marker setMarkerTextLocal format ["REINSERT x%1", _count];
 
 [_markerId, _unit] spawn {
     params ["_markerId", "_unit"];
-
-    private _endTime = time + 20;
-
+    private _endTime = time + 120;
     while {time < _endTime && {!isNull _unit}} do {
         _markerId setMarkerPosLocal (getPosATL _unit);
         uiSleep 2;
     };
-
     deleteMarkerLocal _markerId;
 };
