@@ -22,6 +22,7 @@ class CfgWeapons {
         };
 
         class Single: Single {
+                displayName = "Single";
                 reloadTime = 1.5; // time it takes to "reload" (switch from loaded to used state)
         };
     };
