@@ -7,13 +7,13 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
-        // };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
+        };
         weapons[]={
 			"CMFlareLauncher_Singles",
 			//"SmokeLauncher",
@@ -39,13 +39,13 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
-        // };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
+        };
         weapons[]={
 			"CMFlareLauncher_Singles",
 			//"SmokeLauncher",
@@ -71,13 +71,13 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
-        //     QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
-        // };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(air\widow\data\textures\vtol_01_ext01_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext02_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext03_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_ext04_505_co.paa),
+            QPATHTOF(air\widow\data\textures\vtol_01_signs_CA.paa),
+        };
         weapons[]={
 			"CMFlareLauncher_Singles",
 			//"SmokeLauncher",

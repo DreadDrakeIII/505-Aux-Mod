@@ -263,16 +263,11 @@ class CfgWeapons
                     opticsFlare = 1;
                     opticsDisablePeripherialVision = 0;
 
-
-
-
-
                     visionMode[] = {};
                 };
             };
         };
     };
-
 
     class CLASS(M98HA_Scope): OPTRE_SRS99_Scope
     {
@@ -284,7 +279,6 @@ class CfgWeapons
         model = "\OPTRE_Weapons\Sniper\SRS99D_Scope.p3d";
         picture = "\OPTRE_weapons\sniper\icons\scope.paa";
 
-        // Original OPTRE style
         weaponInfoType = "RscOptics_nightstalker";
         modelOptics = "\OPTRE_Weapons\Sniper\SRS99D_Scope.p3d";
 
@@ -326,6 +320,157 @@ class CfgWeapons
                     opticsFlare = 1;
                     opticsDisablePeripherialVision = 1;
                 };
+            };
+        };
+    };
+
+    // Mode 1: IR Laser (default)
+    class CLASS(ANPEQ6G): acc_pointer_IR
+    {
+        author = AUTHOR;
+        SCOPE_PUBLIC;
+        baseWeapon = QCLASS(ANPEQ6G);
+
+        displayName = "[505th] AN/PEQ-6G (IR)";
+        descriptionShort = "[505th] AN/PEQ-6G Laser Aiming Module - IR Mode";
+        descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Infrared laser pointer";
+
+        model = "\TCP\Weapons\Acc\Rail\LAM_M6G\accv_pointer_lam_M6G.p3d";
+        picture = "\TCP\Weapons\Acc\Rail\LAM_M6G\data\ui\icon_rail_lam_M6G_CA.paa";
+
+        inertia = 0.1;
+
+        MRT_SwitchItemNextClass = QCLASS(ANPEQ6G_VL);
+        MRT_SwitchItemPrevClass = QCLASS(ANPEQ6G_VL);
+        MRT_switchItemHintText = "IR Laser";
+
+        class ItemInfo: InventoryFlashLightItem_Base_F
+        {
+            mass = 4;
+            type = 301;
+
+            class Pointer
+            {
+                irLaserPos = "laser pos";
+                irLaserEnd = "laser dir";
+                irDistance = 5;
+            };
+        };
+    };
+
+    // Mode 2: Visible Red Laser
+    class CLASS(ANPEQ6G_VL): acc_pointer_IR
+    {
+        author = AUTHOR;
+        SCOPE_HIDDEN;
+        baseWeapon = QCLASS(ANPEQ6G_VL);
+
+        displayName = "[505th] AN/PEQ-6G (VL)";
+        descriptionShort = "[505th] AN/PEQ-6G Laser Aiming Module - Visible Laser Mode";
+        descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Visible red laser";
+
+        model = "\TCP\Weapons\Acc\Rail\LAM_M6G\accv_pointer_lam_M6G.p3d";
+        picture = "\TCP\Weapons\Acc\Rail\LAM_M6G\data\ui\icon_rail_lam_M6G_CA.paa";
+
+        inertia = 0.1;
+
+        MRT_SwitchItemNextClass = QCLASS(ANPEQ6G);
+        MRT_SwitchItemPrevClass = QCLASS(ANPEQ6G);
+        MRT_switchItemHintText = "Visible Laser";
+
+        class ItemInfo: InventoryFlashLightItem_Base_F
+        {
+            mass = 4;
+            type = 301;
+
+            class Pointer
+            {
+                irLaserPos = "laser pos";
+                irLaserEnd = "laser dir";
+                irDistance = 5;
+                beamColor[] = {15, 0, 0};
+                beamMaxLength = 3000;
+                beamThickness = 0.25;
+                dotColor[] = {1000, 0, 0};
+                dotSize = 1;
+                isIR = 0;
+            };
+        };
+    };
+    // ============================================
+    // === 505th MA37 LAM
+    // ============================================
+
+    // Mode 1: Visible Laser (default)
+    class CLASS(MA37_LAM): acc_pointer_IR
+    {
+        author = AUTHOR;
+        SCOPE_PUBLIC;
+        baseWeapon = QCLASS(MA37_LAM);
+
+        displayName = "[505th] MA37 LAM";
+        descriptionShort = "[505th] MA37 Laser Aiming Module - Visible Laser";
+        descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Visible red laser";
+
+        model = "\TCP\Weapons\Acc\Rail\LAM_MA37\accv_pointer_lam_MA37.p3d";
+        picture = "\TCP\Weapons\Acc\Rail\LAM_MA37\data\ui\icon_lam_MA37_CA.paa";
+
+        inertia = 0.1;
+
+        MRT_SwitchItemNextClass = QCLASS(MA37_LAM_IR);
+        MRT_SwitchItemPrevClass = QCLASS(MA37_LAM_IR);
+        MRT_switchItemHintText = "Visible Laser";
+
+        class ItemInfo: InventoryFlashLightItem_Base_F
+        {
+            mass = 4;
+            type = 301;
+
+            class Pointer
+            {
+                irLaserPos = "laser pos";
+                irLaserEnd = "laser dir";
+                irDistance = 5;
+                beamColor[] = {15, 0, 0};
+                beamMaxLength = 3000;
+                beamThickness = 0.25;
+                dotColor[] = {1000, 0, 0};
+                dotSize = 1;
+                isIR = 0;
+            };
+        };
+    };
+
+    // Mode 2: IR Laser
+    class CLASS(MA37_LAM_IR): acc_pointer_IR
+    {
+        author = AUTHOR;
+        SCOPE_HIDDEN;
+        baseWeapon = QCLASS(MA37_LAM_IR);
+
+        displayName = "[505th] MA37 LAM (IR)";
+        descriptionShort = "[505th] MA37 Laser Aiming Module - IR Mode";
+        descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Infrared laser";
+
+        model = "\TCP\Weapons\Acc\Rail\LAM_MA37\accv_pointer_lam_MA37.p3d";
+        picture = "\TCP\Weapons\Acc\Rail\LAM_MA37\data\ui\icon_lam_MA37_CA.paa";
+
+        inertia = 0.1;
+
+        MRT_SwitchItemNextClass = QCLASS(MA37_LAM);
+        MRT_SwitchItemPrevClass = QCLASS(MA37_LAM);
+        MRT_switchItemHintText = "IR Laser";
+
+        class ItemInfo: InventoryFlashLightItem_Base_F
+        {
+            mass = 4;
+            type = 301;
+
+            class Pointer
+            {
+                irLaserPos = "laser pos";
+                irLaserEnd = "laser dir";
+                irDistance = 5;
             };
         };
     };

@@ -12,14 +12,14 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
         gunnerType = QCLASS(Marine_Heli_Crew);
-        // hiddenSelections[] = {
-        //     "camo1",
-        //     "camo2"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(air\ghosthawk\data\textures\ONI_heli_transport_01_ext01_CO.paa),
-        //     QPATHTOF(air\ghosthawk\data\textures\ONI_heli_transport_01_ext02_CO.paa)
-        // };
+        hiddenSelections[] = {
+            "camo1",
+            "camo2"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(air\ghosthawk\data\textures\ONI_heli_transport_01_ext01_CO.paa),
+            QPATHTOF(air\ghosthawk\data\textures\ONI_heli_transport_01_ext02_CO.paa)
+        };
 
         // textureList[] = {"Main", 0, "ONI", 1};
         // class TextureSources {

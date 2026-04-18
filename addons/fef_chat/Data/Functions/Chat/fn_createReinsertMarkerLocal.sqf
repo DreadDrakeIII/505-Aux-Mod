@@ -1,9 +1,3 @@
-/*
-    File: fn_createReinsertMarkerLocal.sqf
-    Purpose:
-    Creates a temporary local reinsert marker with custom PAA per count.
-*/
-
 params ["_unitRef", ["_count", 1]];
 
 private _unit = if (_unitRef isEqualType "") then {

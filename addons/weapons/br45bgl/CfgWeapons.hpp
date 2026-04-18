@@ -80,6 +80,8 @@ class CfgWeapons {
 
             class GL_Muzzle: GL_Muzzle {
                 displayName = "GL";
+                discreteDistance[] = {50,75,100,150,200,250,300,350,400};
+                discreteDistanceCameraPoint[] = {"op_eye_50","op_eye_75","op_eye_100","op_eye_150","op_eye_200","op_eye_250","op_eye_300","op_eye_350","op_eye_400"};
                 magazines[] = {
                     "1Rnd_HE_Grenade_shell",
                     "UGL_FlareGreen_F",

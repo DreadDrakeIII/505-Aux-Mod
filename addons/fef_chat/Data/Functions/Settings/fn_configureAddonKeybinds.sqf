@@ -4,11 +4,10 @@
     File: fn_configureAddonKeybinds.sqf
     Purpose:
     Registers CBA keybinds for the 505th chat system.
-    All quick keybinds are unbound by default — set them in CBA settings.
 */
 
 // ============================================================================
-// CHAT WHEEL
+// COMMS WHEEL NAVIGATION
 // ============================================================================
 
 [
@@ -20,6 +19,53 @@
     },
     {},
     []
+] call CBA_fnc_addKeybind;
+
+[
+    ["505th Expeditionary Force Aux Mod", "Comms Wheel"],
+    "FEF_Chat_Confirm",
+    "Comms Wheel Confirm (Enter)",
+    {
+        if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith {};
+        private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
+        private _scrollOffset  = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
+        [_selectedIndex - _scrollOffset] call FEF_fnc_onButtonClick;
+    },
+    {},
+    [DIK_RETURN, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+[
+    ["505th Expeditionary Force Aux Mod", "Comms Wheel"],
+    "FEF_Chat_ConfirmSpace",
+    "Comms Wheel Confirm (Space)",
+    {
+        if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith {};
+        private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
+        private _scrollOffset  = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
+        [_selectedIndex - _scrollOffset] call FEF_fnc_onButtonClick;
+    },
+    {},
+    [DIK_SPACE, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+[
+    ["505th Expeditionary Force Aux Mod", "Comms Wheel"],
+    "FEF_Chat_Close",
+    "Comms Wheel Close/Back",
+    {
+        if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith {};
+        private _menuId = missionNamespace getVariable ["FEF_UI_CurrentMenu", "main"];
+        if (_menuId == "main") then {
+            [] call FEF_fnc_closeUI;
+        } else {
+            missionNamespace setVariable ["FEF_UI_SelectedIndex", 0];
+            missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
+            ["main", true] call FEF_fnc_renderMenu;
+        };
+    },
+    {},
+    [DIK_ESCAPE, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 // ============================================================================
@@ -139,9 +185,7 @@
     "Quick: Custom Message 01",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_1", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -153,9 +197,7 @@
     "Quick: Custom Message 02",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_2", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -167,9 +209,7 @@
     "Quick: Custom Message 03",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_3", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -181,9 +221,7 @@
     "Quick: Custom Message 04",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_4", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -195,9 +233,7 @@
     "Quick: Custom Message 05",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_5", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -209,9 +245,7 @@
     "Quick: Custom Message 06",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_6", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -223,9 +257,7 @@
     "Quick: Custom Message 07",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_7", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -237,9 +269,7 @@
     "Quick: Custom Message 08",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_8", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -251,9 +281,7 @@
     "Quick: Custom Message 09",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_9", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -265,9 +293,7 @@
     "Quick: Custom Message 10",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_10", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -279,9 +305,7 @@
     "Quick: Custom Message 11",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_11", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []
@@ -293,9 +317,7 @@
     "Quick: Custom Message 12",
     {
         private _msg = missionNamespace getVariable ["FEF_Chat_CustomMessage_12", ""];
-        if (_msg != "") then {
-            [_msg, player, ""] call FEF_fnc_sendGroupMessage;
-        };
+        if (_msg != "") then { [_msg, player, ""] call FEF_fnc_sendGroupMessage; };
     },
     {},
     []

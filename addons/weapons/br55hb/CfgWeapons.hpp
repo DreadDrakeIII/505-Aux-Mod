@@ -42,12 +42,12 @@ class CfgWeapons {
 
             class Pointer {
                 slot = "PointerSlot"; // Required slot name
-                item = "TCP_acc_pointer_lam_M6G"; // Classname of the pointer
+                item = "OLI_ANPEQ6G_VL"; // Classname of the pointer
             };
 
             class Muzzle {
                 slot = "MuzzleSlot"; // Required slot name
-                item = "TCP_muzzle_brake_95_01"; // Classname of the silencer
+                item = "TCP_muzzle_brake_95_01"; // Classname of the Muzzle
             };
         };
 
@@ -71,8 +71,8 @@ class CfgWeapons {
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
-                    "TCP_acc_flashlight_M6G",
-                    "TCP_acc_pointer_lam_M6G"
+                    "OLI_ANPEQ6G",
+                    "OLI_ANPEQ6G_VL"
                 };
             };
 

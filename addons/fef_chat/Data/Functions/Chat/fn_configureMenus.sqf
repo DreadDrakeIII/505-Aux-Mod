@@ -77,11 +77,12 @@ _menus set ["medical_status", [
 // SQUAD COMMS
 // ============================================================================
 _menus set ["squad_comms", [
-    ["Move Up",       "group", ["Squad, move up!", ""]],
-    ["Fall Back",     "group", ["Squad, fall back!", ""]],
-    ["Hold Position", "group", ["Squad, hold position!", ""]],
-    ["On Me",         "group", ["Squad, on me!", ""]],
-    ["Spread Out",    "group", ["Squad, spread out!", ""]],
+    ["Column",       "group", ["Column", ""]],
+    ["Stag Column",     "group", ["Staggered Column", ""]],
+    ["Wedge", "group", ["Wedge", ""]],
+    ["L-Ech",         "group", ["Left Echelon", ""]],
+    ["R-Ech",    "group", ["Right Echelon", ""]],
+    ["B-Line",    "group", ["Battle Line", ""]],
     ["< Back",        "back",  "main"]
 ]];
 

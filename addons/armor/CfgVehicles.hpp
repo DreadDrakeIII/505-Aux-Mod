@@ -117,10 +117,10 @@ class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kn
     class Rogue_CEBackpackScout;
     class 19thMD_Backpack_Standard_Med;
     class TKE_AlicePackUCN;
-    class Halo_LR;
-    class Halo_Hardcase;
-    class Halo_Rucksack_01;
-    class Halo_Rucksack_02;
+    // class Halo_LR;
+    // class Halo_Hardcase;
+    // class Halo_Rucksack_01;
+    // class Halo_Rucksack_02;
 
     class CLASS(Backpack_Base): Rogue_CEBackpack {
         SCOPE_PRIVATE;

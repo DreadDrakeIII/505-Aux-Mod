@@ -1,7 +1,7 @@
 class CfgVehicles {
     class OPTRE_m1087_stallion_unsc;
     class OPTRE_m1087_stallion_cover_unsc;
-    class B_Truck_01_ammo_F;
+    class OPTRE_m1087_stallion_unsc_resupply;
     class OPTRE_m1087_stallion_unsc_refuel;
     class OPTRE_m1087_stallion_unsc_repair;
     class OPTRE_m1087_stallion_unsc_medical;
@@ -35,7 +35,7 @@ class CfgVehicles {
         crew = QCLASS(Marine_CE_Rifleman);
         typicalCrew = QCLASS(Marine_CE_Rifleman);
     };
-    class CLASS(Stallion_Ammo): B_Truck_01_ammo_F {
+    class CLASS(Stallion_Ammo): OPTRE_m1087_stallion_unsc_resupply {
         SCOPE_PUBLIC;
         displayName = "M1087 Stallion (Ammo)";
         faction = QFACTION(505th);

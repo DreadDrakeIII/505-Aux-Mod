@@ -3,7 +3,8 @@ params ["_message", ["_speaker", player], ["_voiceKey", ""]];
 private _resolved = [_message, _speaker] call FEF_fnc_resolveText;
 if (_resolved isEqualTo "") exitWith {};
 
-_speaker groupChat _resolved;
+// remoteExecCall to group so ALL members see the message
+[_speaker, _resolved] remoteExecCall ["groupChat", group _speaker];
 
 if (_voiceKey isEqualTo "") exitWith {};
 if (!FEF_Voice_EnableVoiceLines) exitWith {};

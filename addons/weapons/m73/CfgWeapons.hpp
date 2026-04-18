@@ -56,15 +56,17 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "TCP_optic_EVOSM"
+                    "TCP_optic_EVOSM",
+                    "TCP_optic_M11VERO",
+                    "TCP_optic_M81ERO"
                 };
             };
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
                     "TCP_acc_carryHandle_M731",
-                    "TCP_acc_flashlight_M6G",
-                    "TCP_acc_pointer_lam_M6G"
+                    "OLI_ANPEQ6G",
+                    "OLI_ANPEQ6G_VL"
 
                 };
             };

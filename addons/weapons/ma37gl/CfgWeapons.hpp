@@ -31,7 +31,7 @@ class CfgWeapons {
 
             class Pointer {
                 slot = "PointerSlot"; // Required slot name
-                item = "TCP_acc_pointer_lam_MA37"; // Classname of the pointer
+                item = "OLI_MA37_LAM"; // Classname of the pointer
             };
 
             class Muzzle {
@@ -50,8 +50,8 @@ class CfgWeapons {
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
-                    "TCP_acc_pointer_lam_MA37",
-                    "TCP_acc_pointer_lam_MA37_IR"
+                    "OLI_MA37_LAM",
+                    "OLI_MA37_LAM_IR"
                 };
             };
 

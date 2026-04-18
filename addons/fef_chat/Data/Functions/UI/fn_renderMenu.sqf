@@ -5,8 +5,7 @@ params [
 
 disableSerialization;
 
-private _display = findDisplay 88000;
-if (isNull _display) exitWith {};
+if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith {};
 
 call FEF_fnc_configureMenus;
 
@@ -17,9 +16,7 @@ missionNamespace setVariable ["FEF_UI_CurrentMenu", _menuId];
 missionNamespace setVariable ["FEF_UI_CurrentItems", _items];
 
 private _selectedIndex = missionNamespace getVariable ["FEF_UI_SelectedIndex", 0];
-if (_resetSelection) then {
-    _selectedIndex = 0;
-};
+if (_resetSelection) then { _selectedIndex = 0; };
 
 private _itemCount = count _items;
 if (_itemCount <= 0) then {
@@ -31,25 +28,77 @@ if (_itemCount <= 0) then {
 
 missionNamespace setVariable ["FEF_UI_SelectedIndex", _selectedIndex];
 
-private _buttonIdcs = [88101, 88102, 88103, 88104, 88105, 88106];
-private _accentIdcs = [88201, 88202, 88203, 88204, 88205, 88206];
 private _visibleCount = 6;
-
 private _scrollOffset = missionNamespace getVariable ["FEF_UI_ScrollOffset", 0];
 
-if (_resetSelection) then {
-    _scrollOffset = 0;
-};
-
-if (_selectedIndex < _scrollOffset) then {
-    _scrollOffset = _selectedIndex;
-};
+if (_resetSelection) then { _scrollOffset = 0; };
+if (_selectedIndex < _scrollOffset) then { _scrollOffset = _selectedIndex; };
 if (_selectedIndex >= (_scrollOffset + _visibleCount)) then {
     _scrollOffset = _selectedIndex - _visibleCount + 1;
 };
 
 missionNamespace setVariable ["FEF_UI_ScrollOffset", _scrollOffset];
 
+// Delete old controls
+private _oldCtrls = missionNamespace getVariable ["FEF_UI_Controls", []];
+{ ctrlDelete _x; } forEach _oldCtrls;
+
+private _display = findDisplay 46;
+private _newCtrls = [];
+
+// Layout
+private _panelX  = 0.810;
+private _panelY  = 0.155;
+private _panelW  = 0.180;
+private _headerH = 0.055;
+private _btnH    = 0.048;
+private _btnGap  = 0.003;
+private _accentW = 0.006;
+private _footerH = 0.034;
+
+// Background
+private _bg = _display ctrlCreate ["RscText", -1];
+_bg ctrlSetPosition [
+    _panelX * safezoneW + safezoneX,
+    _panelY * safezoneH + safezoneY,
+    _panelW * safezoneW,
+    0.420 * safezoneH
+];
+_bg ctrlSetBackgroundColor [0.09, 0.10, 0.11, 0.92];
+_bg ctrlSetText "";
+_bg ctrlCommit 0;
+_newCtrls pushBack _bg;
+
+// Header
+private _header = _display ctrlCreate ["RscText", -1];
+_header ctrlSetPosition [
+    _panelX * safezoneW + safezoneX,
+    _panelY * safezoneH + safezoneY,
+    _panelW * safezoneW,
+    _headerH * safezoneH
+];
+_header ctrlSetBackgroundColor [0.06, 0.07, 0.08, 0.98];
+_header ctrlSetText "";
+_header ctrlCommit 0;
+_newCtrls pushBack _header;
+
+// Title
+private _title = _display ctrlCreate ["RscText", -1];
+_title ctrlSetPosition [
+    _panelX * safezoneW + safezoneX,
+    (_panelY + 0.010) * safezoneH + safezoneY,
+    _panelW * safezoneW,
+    0.030 * safezoneH
+];
+_title ctrlSetBackgroundColor [0, 0, 0, 0];
+_title ctrlSetTextColor [1, 1, 1, 1];
+_title ctrlSetText "COMMUNICATION";
+_title ctrlSetFont "PuristaBold";
+_title ctrlSetFontHeight 0.026;
+_title ctrlCommit 0;
+_newCtrls pushBack _title;
+
+// Accent color logic
 private _getAccentColor = {
     params ["_type", "_label"];
     private _lbl = toLower _label;
@@ -72,32 +121,31 @@ private _getAccentColor = {
     };
 };
 
-private _getBtnColor = {
-    params ["_isSelected"];
-    if (_isSelected) exitWith { [0.20, 0.35, 0.45, 1.0] };
-    [0.12, 0.14, 0.16, 0.90]
-};
+// Buttons + accents
+for "_i" from 0 to (_visibleCount - 1) do {
+    private _itemIdx = _i + _scrollOffset;
+    private _btnY = _panelY + _headerH + (_btnGap * (_i + 1)) + (_btnH * _i);
 
-private _footerCtrl = _display displayCtrl 88006;
-if (_itemCount > _visibleCount) then {
-    _footerCtrl ctrlSetText format [
-        "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE    %1/%2",
-        _selectedIndex + 1,
-        _itemCount
+    // Accent bar
+    private _accent = _display ctrlCreate ["RscText", -1];
+    _accent ctrlSetPosition [
+        _panelX * safezoneW + safezoneX,
+        _btnY * safezoneH + safezoneY,
+        _accentW * safezoneW,
+        _btnH * safezoneH
     ];
-} else {
-    if (_menuId != "main") then {
-        _footerCtrl ctrlSetText "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC BACK";
-    } else {
-        _footerCtrl ctrlSetText "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE";
-    };
-};
 
-{
-    private _idx        = _x;
-    private _itemIdx    = _idx + _scrollOffset;
-    private _btnCtrl    = _display displayCtrl (_buttonIdcs select _idx);
-    private _accentCtrl = _display displayCtrl (_accentIdcs  select _idx);
+    // Button text area
+    private _btn = _display ctrlCreate ["RscText", -1];
+    _btn ctrlSetPosition [
+        (_panelX + _accentW) * safezoneW + safezoneX,
+        _btnY * safezoneH + safezoneY,
+        (_panelW - _accentW) * safezoneW,
+        _btnH * safezoneH
+    ];
+    _btn ctrlSetFont "PuristaBold";
+    _btn ctrlSetFontHeight 0.030;
+    _btn ctrlSetTextColor [1, 1, 1, 1];
 
     if (_itemIdx < _itemCount) then {
         private _entry = _items select _itemIdx;
@@ -106,23 +154,53 @@ if (_itemCount > _visibleCount) then {
         private _isSelected = _itemIdx isEqualTo _selectedIndex;
         private _isSubmenu  = toLower _type == "submenu";
 
-        private _displayText = format ["  %1%2",
-            _label,
-            if (_isSubmenu) then { "  >" } else { "" }
-        ];
+        private _btnColor = if (_isSelected) then {
+            [0.20, 0.35, 0.45, 1.0]
+        } else {
+            [0.12, 0.14, 0.16, 0.90]
+        };
 
-        _btnCtrl ctrlShow true;
-        _btnCtrl ctrlEnable true;
-        _btnCtrl ctrlSetText _displayText;
-        _btnCtrl ctrlSetBackgroundColor ([_isSelected] call _getBtnColor);
-
-        _accentCtrl ctrlShow true;
-        _accentCtrl ctrlSetBackgroundColor ([_type, _label] call _getAccentColor);
+        _btn ctrlSetBackgroundColor _btnColor;
+        _btn ctrlSetText format ["  %1%2", _label, if (_isSubmenu) then { "  >" } else { "" }];
+        _accent ctrlSetBackgroundColor ([_type, _label] call _getAccentColor);
     } else {
-        _btnCtrl    ctrlShow false;
-        _btnCtrl    ctrlEnable false;
-        _btnCtrl    ctrlSetText "";
-        _accentCtrl ctrlShow false;
+        _btn ctrlSetBackgroundColor [0, 0, 0, 0];
+        _btn ctrlSetText "";
+        _accent ctrlSetBackgroundColor [0, 0, 0, 0];
     };
 
-} forEach [0, 1, 2, 3, 4, 5];
+    _btn ctrlCommit 0;
+    _accent ctrlCommit 0;
+    _newCtrls pushBack _accent;
+    _newCtrls pushBack _btn;
+};
+
+// Footer
+private _footerY = _panelY + _headerH + (_btnGap * 7) + (_btnH * 6) + 0.003;
+private _footer = _display ctrlCreate ["RscText", -1];
+_footer ctrlSetPosition [
+    _panelX * safezoneW + safezoneX,
+    _footerY * safezoneH + safezoneY,
+    _panelW * safezoneW,
+    _footerH * safezoneH
+];
+_footer ctrlSetBackgroundColor [0.06, 0.07, 0.08, 0.98];
+_footer ctrlSetTextColor [0.55, 0.60, 0.65, 0.90];
+_footer ctrlSetFont "PuristaBold";
+_footer ctrlSetFontHeight 0.016;
+
+private _footerText = if (_itemCount > _visibleCount) then {
+    format ["SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE    %1/%2", _selectedIndex + 1, _itemCount]
+} else {
+    if (_menuId != "main") then {
+        "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC BACK"
+    } else {
+        "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE"
+    };
+};
+
+_footer ctrlSetText _footerText;
+_footer ctrlCommit 0;
+_newCtrls pushBack _footer;
+
+missionNamespace setVariable ["FEF_UI_Controls", _newCtrls];

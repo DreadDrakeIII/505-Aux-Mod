@@ -43,7 +43,6 @@ class CfgWeapons {
                     "OPTRE_M12_Optic",
                     "TCP_optic_M11VERO_Blue",
                     "TCP_optic_M11VERO",
-                    "TCP_optic_M81ERO_Blue",
                     "TCP_optic_EVOSJ",
                     "TCP_optic_EVOSJ1",
                     "TCP_optic_M27RCO",

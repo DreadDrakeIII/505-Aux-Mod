@@ -2,24 +2,43 @@ disableSerialization;
 
 call FEF_fnc_configureMenus;
 
-if (!isNull findDisplay 88000) exitWith {};
+private _ctrls = missionNamespace getVariable ["FEF_UI_Controls", []];
+{ ctrlDelete _x; } forEach _ctrls;
+missionNamespace setVariable ["FEF_UI_Controls", []];
 
-private _display = (findDisplay 46) createDisplay "FEF_ChatDisplay";
-
-if (isNull _display) exitWith {
-    ["Failed to create display"] call FEF_fnc_devLog;
-};
-
+missionNamespace setVariable ["FEF_UI_Open", true];
 missionNamespace setVariable ["FEF_UI_CurrentMenu", "main"];
 missionNamespace setVariable ["FEF_UI_SelectedIndex", 0];
 missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
 
-_display displayAddEventHandler ["MouseZChanged", {
-    _this call FEF_fnc_onMouseWheel;
+// Block ACE scroll interaction
+[true] call ace_interact_menu_fnc_blockMouseWheel;
+
+private _display46 = findDisplay 46;
+private _oldEH = missionNamespace getVariable ["FEF_UI_ScrollEH", -1];
+if (_oldEH >= 0) then {
+    _display46 displayRemoveEventHandler ["MouseZChanged", _oldEH];
+};
+
+private _scrollEH = _display46 displayAddEventHandler ["MouseZChanged", {
+    params ["_display", "_scroll"];
+    if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith {};
+    [_scroll] call FEF_fnc_onMouseWheel;
 }];
 
-_display displayAddEventHandler ["KeyDown", {
+missionNamespace setVariable ["FEF_UI_ScrollEH", _scrollEH];
+
+private _oldKeyEH = missionNamespace getVariable ["FEF_UI_KeyEH", -1];
+if (_oldKeyEH >= 0) then {
+    _display46 displayRemoveEventHandler ["KeyDown", _oldKeyEH];
+};
+
+private _keyEH = _display46 displayAddEventHandler ["KeyDown", {
+    params ["_display", "_key", "_shift", "_ctrl", "_alt"];
+    if !(missionNamespace getVariable ["FEF_UI_Open", false]) exitWith { false };
     _this call FEF_fnc_onKeyDown;
 }];
+
+missionNamespace setVariable ["FEF_UI_KeyEH", _keyEH];
 
 ["main", true] call FEF_fnc_renderMenu;

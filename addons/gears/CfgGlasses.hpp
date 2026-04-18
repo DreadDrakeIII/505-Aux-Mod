@@ -1,71 +1,75 @@
 // ============================================================================
 // ==============================505th Facewears===============================
 // ============================================================================
-// Stealth Mask goggle with OPTRE HUD overlay
+// Stealth Mask Glasses with TCP HUD overlay
 // Medical Scanner GLasses
 // ============================================================================
 
 class CfgGlasses {
 
-    class G_Balaclava_TI_G_blk_F;
-    class G_Balaclava_TI_blk_F;
-    class G_Tactical_Clear;
+    class TCP_G_BalaclavaTacticalGlasses_Black_Blue;
+    class TCP_G_TacticalGlasses_Blue;
 
-    class CLASS(Stealth_Mask_Goggle): G_Balaclava_TI_G_blk_F {
-        SCOPE_PUBLIC;
-        author = AUTHOR;
+    class CLASS(Stealth_Mask_Glasses): TCP_G_BalaclavaTacticalGlasses_Black_Blue {
+    SCOPE_PUBLIC;
+    author = AUTHOR;
 
-        displayName = "[505th] Stealth Mask (Google)";
-        descriptionShort = "Stealth Mask with integrated OPTRE HUD goggle.";
+    displayName = "[505th] Stealth Mask (Glasses)";
+    descriptionShort = "Stealth Mask with integrated HUD Glasses.";
 
-        optreHUDStyle = "Glasses";
-        optreVarietys[] = {"", "", ""};
+    tcp_visrRscTitlesClass = "RscTCPVisrODST";
 
-        // ACE Goggles Configuration
-        ACE_Color[] = {0, 0, 0};
-        ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
-        ACE_Overlay = "\z\ace\addons\goggles\textures\HUD\CombatGoggles.paa";
-        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
-        ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
-        ACE_Protection = 1;
-        ACE_Resistance = 2;
-        ACE_TintAmount = 0;
-    };
+    TCP_visrClasses[] = {"TCP_G_BalaclavaTacticalGlasses_Black_Blue","TCP_G_BalaclavaTacticalGlasses_Black_Blue_DP"};
 
-    class CLASS(Stealth_Mask): G_Balaclava_TI_blk_F {
-        SCOPE_PUBLIC;
-        author = AUTHOR;
+    ACE_Color[] = {0, 0, 0};
+    ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
+    ACE_Overlay = "";
+    ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\Cracked.paa";
+    ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
+    ACE_Protection = 1;
+    ACE_Resistance = 2;
+    ACE_TintAmount = 0;
+};
 
-        displayName = "[505th] Stealth Mask";
-        descriptionShort = "Stealth Mask with integrated OPTRE HUD goggle.";
+    // class CLASS(Stealth_Mask): G_Balaclava_TI_blk_F {
+    //     SCOPE_PUBLIC;
+    //     author = AUTHOR;
 
-        optreHUDStyle = "Glasses";
-        optreVarietys[] = {"", "", ""};
+    //     displayName = "[505th] Stealth Mask";
+    //     descriptionShort = "Stealth Mask with integrated OPTRE HUD goggle.";
 
-        // ACE Goggles Configuration
-        ACE_Color[] = {0, 0, 0};
-        ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
-        ACE_Overlay = "";
-        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
-        ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
-        ACE_Protection = 1;
-        ACE_Resistance = 2;
-        ACE_TintAmount = 0;
-    };
+    //     optreHUDStyle = "Glasses";
+    //     optreVarietys[] = {"", "", ""};
+
+    //     // ACE Goggles Configuration
+    //     ACE_Color[] = {0, 0, 0};
+    //     ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
+    //     ACE_Overlay = "";
+    //     ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
+    //     ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
+    //     ACE_Protection = 1;
+    //     ACE_Resistance = 2;
+    //     ACE_TintAmount = 0;
+    // };
 
     // Medical Scanner Glasses - BLUFOR ONLY
-    class CLASS(Glasses_MedScanner): G_Tactical_Clear {
+    class CLASS(Glasses_MedScanner): TCP_G_TacticalGlasses_Blue {
         SCOPE_PUBLIC;
         author = AUTHOR;
         side = 1; // BLUFOR only
 
         displayName = "[505th] Medical Scanner Glasses";
         descriptionShort = "Tactical glasses with integrated medical scanner. Displays friendly medical status.";
+        dlc = "OLI";
+
+        tcp_visrRscTitlesClass = "RscTCPVisrODST";
+
+        TCP_visrClasses[] = {"TCP_G_BalaclavaTacticalGlasses_Black_Blue","TCP_G_BalaclavaTacticalGlasses_Black_Blue_DP"};
 
         ACE_Color[] = {0, 0, 0};
         ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
-        ACE_Overlay = "\z\ace\addons\goggles\textures\HUD\CombatGoggles.paa";
-        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\CombatGogglesCracked.paa";
+        ACE_Overlay = "";
+        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\Cracked.paa";
         ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
         ACE_Protection = 1;
         ACE_Resistance = 2;
@@ -76,14 +80,15 @@ class CfgGlasses {
     //============================CUSTOM MASKS================================
     //========================================================================
 
-    class CLASS(Davy_Mask_Goggle): CLASS(Stealth_Mask_Goggle) {
-        displayName = "[505th] Davy Mask with google";
+    // class CLASS(Davy_Mask_Glasses): CLASS(Stealth_Mask_Glasses) {
+    //     displayName = "[505th] Davy Mask with Glasses";
 
 
-        hiddenSelections[] = {"camo1","camo2"};
-        hiddenselectionsTextures[] = {
-            QPATHTOF(textures\masks\davy_mask_co.paa),
-            "\A3\Characters_F\Heads\Glasses\data\g_combat_ca.paa"
-        };
-    };
+    //     hiddenSelections[] = {"camo","camo1","camo2"};
+    //     hiddenSelectionsTextures[] = {
+    //         "\TCP\characters\BLUFOR\UNSC\Army\Facewear\balaclava\data\camo\Black\g_Balaclava_CO.paa",
+    //         "\TCP\characters\BLUFOR\UNSC\Army\Facewear\tacticalGlasses\data\camo\Black\g_TacticalGlasses_CO.paa",
+    //         "\TCP\characters\BLUFOR\UNSC\Army\Facewear\tacticalGlasses\data\camo\Blue\g_TacticalGlasses_CO.paa"
+    //     };
+    // };
 };

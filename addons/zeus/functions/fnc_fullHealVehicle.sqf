@@ -25,14 +25,26 @@ if (isNull _target) then {
     };
 };
 
+// Capture Zeus owner before deleteVehicle removes the curator object
+private _zeusOwner = -1;
+{
+    if (_logic in (getAssignedCuratorLogic _x)) then {
+        _zeusOwner = owner _x;
+    };
+} forEach allPlayers;
+
 deleteVehicle _logic;
 
 if (isNull _target) exitWith {
-    hint "No vehicle found for Full Heal Vehicle.";
+    if (_zeusOwner > 0) then {
+        "No vehicle found for Full Heal Vehicle." remoteExec ["hint", _zeusOwner];
+    };
 };
 
 if !(_target isKindOf "AllVehicles") exitWith {
-    hint "Target is not a vehicle.";
+    if (_zeusOwner > 0) then {
+        "Target is not a vehicle." remoteExec ["hint", _zeusOwner];
+    };
 };
 
 _target setDamage 0;

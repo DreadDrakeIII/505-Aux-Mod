@@ -4,7 +4,6 @@ class WeaponSlotsInfo;
 class CowsSlot;
 class PointerSlot;
 class MuzzleSlot;
-class compatibleItems;
 
 class CfgWeapons {
     class TCP_arifle_MA37;
@@ -23,16 +22,6 @@ class CfgWeapons {
         magazines[] = {QCLASS(40Rnd_762x51_Mag)};
         magazineWell[] = {QCLASS(Magwell_MA37)};
 
-        class TCP_weaponTypes {
-            class PointerSlot {
-                class NoLight {
-                    class compatibleItems {
-                        itemCore = 1;
-                    };
-                };
-            };
-        };
-
         class LinkedItems {
             class Cows {
                 slot = "CowsSlot";
@@ -40,7 +29,7 @@ class CfgWeapons {
             };
             class Pointer {
                 slot = "PointerSlot";
-                item = "TCP_acc_pointer_lam_MA37";
+                item = "OLI_MA37_LAM";
             };
             class Muzzle {
                 slot = "MuzzleSlot";
@@ -59,8 +48,8 @@ class CfgWeapons {
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
-                    "TCP_acc_pointer_lam_MA37",
-                    "TCP_acc_pointer_lam_MA37_IR"
+                    "OLI_MA37_LAM",
+                    "OLI_MA37_LAM_IR"
                 };
             };
 

@@ -13,7 +13,9 @@ class CfgPatches {
             "ace_goggles",
             "ace_vector",
             "OPTRE_Hud",
-            "OPTRE_FunctionsLibrary"
+            "OPTRE_FunctionsLibrary",
+            "TCP_Characters_BLUFOR_UNSC_Army_Facewear_balaclavaTacticalGlasses",
+            "TCP_Functions"
         };
         units[] = {};
         weapons[] = {QCLASS(Vector)};
@@ -23,5 +25,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgGlasses.hpp"
-#include "CfgOptreHudSchemes.hpp"
 #include "CfgWeapons.hpp"

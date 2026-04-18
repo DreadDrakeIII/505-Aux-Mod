@@ -1,0 +1,2 @@
+#define MASS_LAUNCHER 50
+#define MASS_MAGAZINE 30

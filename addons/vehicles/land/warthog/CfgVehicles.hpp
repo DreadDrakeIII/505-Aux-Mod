@@ -1,6 +1,6 @@
 class CfgVehicles {
-    class OPTRE_M12_LRV;
-    class CLASS(Warthog_LRV): OPTRE_M12_LRV {
+    class TCP_B_UNSC_A_M12A_LAAG_M41;
+    class CLASS(Warthog_LRV): TCP_B_UNSC_A_M12A_LAAG_M41 {
         SCOPE_PUBLIC;
 
         displayName = "M12 LAAG Warthog";
@@ -30,39 +30,39 @@ class CfgVehicles {
         // };
     };
 
-    class OPTRE_M12A1_LRV;
-    class CLASS(Warthog_AT_LRV): OPTRE_M12A1_LRV {
-        SCOPE_PUBLIC;
+    // class OPTRE_M12A1_LRV;
+    // class CLASS(Warthog_AT_LRV): OPTRE_M12A1_LRV {
+    //     SCOPE_PUBLIC;
 
-        displayName = "M12A1 AT Warthog";
-        faction = QFACTION(505th);
-        editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        // hiddenSelections[] = {
-        //     "Camo1",
-        //     "Camo2",
-        //     "Camo3",
-        //     "camo_details",
-        //     "camo_interior",
-        //     "camo_turret",
-        //     "camo_turret_decals",
-        //     "camo_doors"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
-        //     "",
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-        //     "\OPTRE_Vehicles\warthog\data\turrets\m39_turret_co.paa",
-        //     "",
-        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        // };
-    };
+    //     displayName = "M12A1 AT Warthog";
+    //     faction = QFACTION(505th);
+    //     editorSubcategory = QEDSUBCAT(Cars);
+    //     crew = QCLASS(Marine_CE_Rifleman);
+    //     typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+    //     // hiddenSelections[] = {
+    //     //     "Camo1",
+    //     //     "Camo2",
+    //     //     "Camo3",
+    //     //     "camo_details",
+    //     //     "camo_interior",
+    //     //     "camo_turret",
+    //     //     "camo_turret_decals",
+    //     //     "camo_doors"
+    //     // };
+    //     // hiddenSelectionsTextures[] = {
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_m12_turret_co.paa),
+    //     //     "",
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+    //     //     "\OPTRE_Vehicles\warthog\data\turrets\m39_turret_co.paa",
+    //     //     "",
+    //     //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+    //     // };
+    // };
 
-    class OPTRE_M12G1_LRV;
-    class CLASS(Warthog_Gauss_LRV): OPTRE_M12G1_LRV {
+    class TCP_B_UNSC_A_M12A_ALIM_M68B;
+    class CLASS(Warthog_Gauss_LRV): TCP_B_UNSC_A_M12A_ALIM_M68B {
         SCOPE_PUBLIC;
 
         displayName = "M12G1 Gauss Warthog";
@@ -90,35 +90,35 @@ class CfgVehicles {
         // };
     };
 
-    class OPTRE_M12R_AA;
-    class CLASS(Warthog_AA): OPTRE_M12R_AA {
-        SCOPE_PUBLIC;
+    // class OPTRE_M12R_AA;
+    // class CLASS(Warthog_AA): OPTRE_M12R_AA {
+    //     SCOPE_PUBLIC;
 
-        displayName = "M12R AA Warthog";
-        faction = QFACTION(505th);
-        editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        // hiddenSelections[] = {
-        //     "Camo1",
-        //     "Camo2",
-        //     "Camo3",
-        //     "camo_details",
-        //     "camo_interior",
-        //     "camo_doors"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_m79_turret_co.paa),
-        //     "",
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
-        // };
-    };
+    //     displayName = "M12R AA Warthog";
+    //     faction = QFACTION(505th);
+    //     editorSubcategory = QEDSUBCAT(Cars);
+    //     crew = QCLASS(Marine_CE_Rifleman);
+    //     typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+    //     // hiddenSelections[] = {
+    //     //     "Camo1",
+    //     //     "Camo2",
+    //     //     "Camo3",
+    //     //     "camo_details",
+    //     //     "camo_interior",
+    //     //     "camo_doors"
+    //     // };
+    //     // hiddenSelectionsTextures[] = {
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_m79_turret_co.paa),
+    //     //     "",
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa)
+    //     // };
+    // };
 
-    class OPTRE_M12_FAV;
-    class CLASS(Warthog_FAV): OPTRE_M12_FAV {
+    class TCP_B_UNSC_A_M12A;
+    class CLASS(Warthog_FAV): TCP_B_UNSC_A_M12A {
         SCOPE_PUBLIC;
 
         displayName = "M12 FAV Warthog";
@@ -142,72 +142,72 @@ class CfgVehicles {
         // };
     };
 
-    class OPTRE_M12_FAV_APC;
-    class CLASS(Warthog_FAV_APC): OPTRE_M12_FAV_APC {
-        SCOPE_PUBLIC;
+    // class OPTRE_M12_FAV_APC;
+    // class CLASS(Warthog_FAV_APC): OPTRE_M12_FAV_APC {
+    //     SCOPE_PUBLIC;
 
-        displayName = "M12 APC Warthog";
-        faction = QFACTION(505th);
-        editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        // hiddenSelections[] = {
-        //     "Camo1",
-        //     "Camo2",
-        //     "Camo3",
-        //     "Camo4",
-        //     "camo_details",
-        //     "camo_interior",
-        //     "camo_transport_details",
-        //     "camo_net"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
-        //     "",
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-        //     "",
-        //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa"
-        // };
-    };
+    //     displayName = "M12 APC Warthog";
+    //     faction = QFACTION(505th);
+    //     editorSubcategory = QEDSUBCAT(Cars);
+    //     crew = QCLASS(Marine_CE_Rifleman);
+    //     typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+    //     // hiddenSelections[] = {
+    //     //     "Camo1",
+    //     //     "Camo2",
+    //     //     "Camo3",
+    //     //     "Camo4",
+    //     //     "camo_details",
+    //     //     "camo_interior",
+    //     //     "camo_transport_details",
+    //     //     "camo_net"
+    //     // };
+    //     // hiddenSelectionsTextures[] = {
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
+    //     //     "",
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+    //     //     "",
+    //     //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa"
+    //     // };
+    // };
 
-    class OPTRE_M12_FAV_APC_MED;
-    class CLASS(Warthog_APC_MED): OPTRE_M12_FAV_APC_MED {
-        SCOPE_PUBLIC;
+    // class OPTRE_M12_FAV_APC_MED;
+    // class CLASS(Warthog_APC_MED): OPTRE_M12_FAV_APC_MED {
+    //     SCOPE_PUBLIC;
 
-        displayName = "M12 APC Medical Warthog";
-        faction = QFACTION(505th);
-        editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
-        // hiddenSelections[] = {
-        //     "Camo1",
-        //     "Camo2",
-        //     "Camo3",
-        //     "Camo4",
-        //     "camo_details",
-        //     "camo_interior",
-        //     "camo_transport_details",
-        //     "camo_net",
-        //     "camo_medical"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
-        //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
-        //     "",
-        //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
-        //     "",
-        //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
-        //     "\OPTRE_Vehicles\warthog\data\medical_lopo_co.paa"
-        // };
-    };
+    //     displayName = "M12 APC Medical Warthog";
+    //     faction = QFACTION(505th);
+    //     editorSubcategory = QEDSUBCAT(Cars);
+    //     crew = QCLASS(Marine_CE_Rifleman);
+    //     typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+    //     // hiddenSelections[] = {
+    //     //     "Camo1",
+    //     //     "Camo2",
+    //     //     "Camo3",
+    //     //     "Camo4",
+    //     //     "camo_details",
+    //     //     "camo_interior",
+    //     //     "camo_transport_details",
+    //     //     "camo_net",
+    //     //     "camo_medical"
+    //     // };
+    //     // hiddenSelectionsTextures[] = {
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extupper_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_extunder_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_transp_lopo_co.paa),
+    //     //     QPATHTOF(land\warthog\data\textures\505th_apc_lopo_co.paa),
+    //     //     "",
+    //     //     QPATHTOF(land\warthog\data\textures\505th_M12HogMaav_interior_co.paa),
+    //     //     "",
+    //     //     "\OPTRE_Vehicles\warthog\data\warthog_transport_net_ca.paa",
+    //     //     "\OPTRE_Vehicles\warthog\data\medical_lopo_co.paa"
+    //     // };
+    // };
 
-    class OPTRE_M813_TT;
-    class CLASS(Warthog_TT): OPTRE_M813_TT {
+    class TCP_B_UNSC_A_M831A;
+    class CLASS(Warthog_TT): TCP_B_UNSC_A_M831A {
         SCOPE_PUBLIC;
 
         displayName = "M813 Troop Transport";
