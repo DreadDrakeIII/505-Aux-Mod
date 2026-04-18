@@ -8,7 +8,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
-            "OPTRE_Weapons_AT_M44_Lykoi"
+            "OPTRE_Weapons_AT_M44_Lykoi",
+            "OLI_weapons_m44lykoidisposable"
         };
         units[] = {};
         weapons[] = {
