@@ -372,7 +372,7 @@ class CfgVehicles {
 
         class TransportWeapons {
             // Launchers
-            WEAP_XX(OLI_M44_Lykoi_Loaded,10);
+            WEAP_XX(DMNS_M96_LAW,10);
         };
     };
 };
