@@ -1,14 +1,15 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_createBuiltObject
- * Creates actual object (server-side in MP).
- * Vectors read from ghost at placement time — always explicit.
- * Stores resource cost for demolish refund.
+ * Creates the actual built object (server-side in MP).
  *
- * v11 FIX: Spawn at high altitude with "NONE" flag so no terrain/physics
- * can nudge the object before simulation is disabled. Then teleport to
- * exact ASL position. Eliminates the position-drift-on-place bug seen
- * on the 505th server.
+ * v13 fixes:
+ * - Accepts _builtBy from client (name player on server = "HQ" in MP)
+ * - enableSimulationGlobal BEFORE allowDamage — no physics tick can run first
+ * - setVelocity [0,0,0] to kill any residual momentum
+ * - setPosATL + setPosASL combo avoids sinking on slopes
+ * - awake true forces engine to acknowledge final position
+ * - 3-frame re-apply loop for reliable network sync
  */
 
 params [
@@ -16,73 +17,65 @@ params [
     ["_pos", [0,0,0], [[]]],
     ["_dir", 0, [0]],
     ["_vecDir", [], [[]]],
-    ["_vecUp", [], [[]]]
+    ["_vecUp", [], [[]]],
+    ["_builtBy", "", [""]]
 ];
 
-if (_classname isEqualTo "") exitWith {objNull};
+if (_classname isEqualTo "") exitWith { objNull };
 
-// Compute final vectors - ALWAYS explicit, never rely on engine defaults
 private _finalVecDir = if (count _vecDir == 3) then { _vecDir } else { [sin _dir, cos _dir, 0] };
 private _finalVecUp  = if (count _vecUp == 3)  then { _vecUp }  else { [0, 0, 1] };
 
-// ── STEP 1: Spawn at high altitude with "NONE" ─────────────────────────────
-// Spawning at [0,0,3000] with "NONE" means there is no terrain, no collision
-// surface, and no physics tick to bounce against before we kill simulation.
-// CAN_COLLIDE was causing a one-frame engine nudge on the server that shifted
-// the final position away from where the player placed it.
-private _needsSimulation = _classname in ["land_TKE_MilLight"];
-private _obj = createVehicle [_classname, [0, 0, 3000], [], 0, "NONE"];
+private _builderName = _builtBy;
+if (_builderName isEqualTo "") then {
+    _builderName = if (!isNull player) then { name player } else { "Unknown" };
+};
 
-// ── STEP 2: Kill physics BEFORE moving to final position ────────────────────
+private _needsSimulation = _classname in ["land_TKE_MilLight"];
+
+private _obj = createVehicle [_classname, ASLToAGL _pos, [], 0, "NONE"];
+if (isNull _obj) exitWith { objNull };
+
+// Kill simulation FIRST — must come before allowDamage
 _obj enableSimulationGlobal false;
 _obj allowDamage false;
+_obj setVelocity [0,0,0];
 
-// ── STEP 3: Teleport to exact ASL position with correct vectors ─────────────
-_obj setPosASL _pos;
+_obj setPosATL (ASLToAGL _pos);
 _obj setVectorDirAndUp [_finalVecDir, _finalVecUp];
 _obj setPosASL _pos;
+_obj setVelocity [0,0,0];
+_obj awake true;
 
-// ── Metadata ────────────────────────────────────────────────────────────────
+// Metadata
 _obj setVariable [QGVAR(builtObject), true, true];
-_obj setVariable [QGVAR(builtBy), name player, true];
+_obj setVariable [QGVAR(builtBy), _builderName, true];
 _obj setVariable [QGVAR(builtTime), serverTime, true];
 
-// Store cost for demolish refund
 private _cost = [_classname] call FUNC(getObjectCost);
 _obj setVariable [QGVAR(builtCost), _cost, true];
-
-// Store vectors for verification
 _obj setVariable [QGVAR(builtVecDir), _finalVecDir, true];
 _obj setVariable [QGVAR(builtVecUp), _finalVecUp, true];
 
-if (isNil QGVAR(builtObjects)) then {
-    GVAR(builtObjects) = [];
-};
+if (isNil QGVAR(builtObjects)) then { GVAR(builtObjects) = []; };
 GVAR(builtObjects) pushBack _obj;
 publicVariable QGVAR(builtObjects);
 
-// ── STEP 4: Re-apply vectors across multiple frames for network sync ────────
-// Keeps position locked against any late engine adjustments on remote clients.
+// Re-apply over 3 frames for reliable network sync
 [_obj, _pos, _finalVecDir, _finalVecUp, _needsSimulation] spawn {
     params ["_o", "_p", "_vd", "_vu", "_sim"];
 
-    // Frame 1
     sleep 0.05;
     if (isNull _o) exitWith {};
-    _o setVectorDirAndUp [_vd, _vu];
-    _o setPosASL _p;
+    _o setPosASL _p; _o setVectorDirAndUp [_vd, _vu]; _o setVelocity [0,0,0];
 
-    // Frame 2
     sleep 0.05;
     if (isNull _o) exitWith {};
-    _o setVectorDirAndUp [_vd, _vu];
-    _o setPosASL _p;
+    _o setPosASL _p; _o setVectorDirAndUp [_vd, _vu]; _o setVelocity [0,0,0];
 
-    // Frame 3 — final lock, re-enable sim if needed
     sleep 0.05;
     if (isNull _o) exitWith {};
-    _o setVectorDirAndUp [_vd, _vu];
-    _o setPosASL _p;
+    _o setPosASL _p; _o setVectorDirAndUp [_vd, _vu]; _o setVelocity [0,0,0];
     if (_sim) then { _o enableSimulationGlobal true; };
 };
 

@@ -30,19 +30,18 @@ if (_message isEqualTo "") exitWith {
 
 ["Sending callout: " + _message] call FEF_fnc_devLog;
 
-private _recipients = [getPosATL _unit, FEF_Voice_VoiceRadius, false] call FEF_fnc_getNearbyPlayers;
-_recipients pushBackUnique _unit;
-
-["Recipients count: " + str (count _recipients)] call FEF_fnc_devLog;
-
+// remoteExec to group so all members see it — no recipient loop needed
 {
     [_unit, _message] remoteExecCall ["FEF_fnc_sendLocalMessage", _x];
-} forEach _recipients;
+} forEach units group _unit;
 
 if (!FEF_Voice_EnableVoiceLines) exitWith {};
 
 private _soundClass = [_voiceKey] call FEF_fnc_resolveVoiceLine;
 if (_soundClass isEqualTo "") exitWith {};
+
+private _recipients = [getPosATL _unit, FEF_Voice_VoiceRadius, false] call FEF_fnc_getNearbyPlayers;
+_recipients pushBackUnique _unit;
 
 {
     [netId _unit, _soundClass, FEF_Voice_VoiceRadius] remoteExecCall ["FEF_fnc_playLocalVoiceLine", _x];

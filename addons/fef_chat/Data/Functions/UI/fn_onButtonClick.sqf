@@ -28,7 +28,10 @@ switch (_actionType) do {
 
     case "group": {
         _payload params ["_message", ["_voiceKey", ""]];
-        [_message, player, _voiceKey] call FEF_fnc_sendGroupMessage;
+        // remoteExec to all group members so everyone sees it
+        {
+            [_message, player, _voiceKey] remoteExecCall ["FEF_fnc_sendGroupMessage", _x];
+        } forEach units group player;
         [] call FEF_fnc_closeUI;
     };
 

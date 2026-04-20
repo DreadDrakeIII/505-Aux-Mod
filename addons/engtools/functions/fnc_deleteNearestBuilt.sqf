@@ -1,18 +1,68 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_deleteNearestBuilt
- * Deletes nearest engineer-built object (Shift+RMB in build mode).
- * Refunds to the side pool. Fixes lingering key EH on death.
+ * Deletes the engineer-built object the player is LOOKING AT (crosshair raycast).
+ * Falls back to nearest within 5m if raycast hits nothing.
+ * Refunds cost to side pool. Y/N confirmation.
  */
 
-private _nearObjects = nearestObjects [player, [], 10];
-_nearObjects = _nearObjects select {_x getVariable [QGVAR(builtObject), false]};
+// ── Raycast from camera through crosshair ────────────────────────────────────
+private _eyePos = eyePos player;
+private _lookDir = getCameraViewDirection player;
+private _endPos  = _eyePos vectorAdd (_lookDir vectorMultiply 30);
 
-if (count _nearObjects == 0) exitWith {
-    hintSilent parseText "<t color='#888888'>No built objects nearby</t>";
+// Find what the crosshair is pointing at within 30m
+private _obj = objNull;
+
+// Use lineIntersectsWith to find built objects along the line of sight
+private _candidates = (nearestObjects [player, [], 30]) select {
+    !isNull _x && { _x getVariable [QGVAR(builtObject), false] }
 };
 
-private _obj     = _nearObjects select 0;
+if (count _candidates > 0) then {
+    // Score each candidate by how close it is to the line of sight
+    private _best = objNull;
+    private _bestScore = 9999;
+
+    {
+        private _objPos = getPosASL _x;
+        // Project object position onto the ray
+        private _toObj  = _objPos vectorDiff _eyePos;
+        private _along  = _toObj vectorDotProduct _lookDir;
+
+        // Only consider objects in front of the player
+        if (_along > 0 && _along < 30) then {
+            private _closest = _eyePos vectorAdd (_lookDir vectorMultiply _along);
+            private _perpDist = _objPos vectorDistance _closest;
+
+            // Weight: perpendicular distance to ray (primary) + distance from player (secondary)
+            private _score = _perpDist + (_along * 0.05);
+            if (_score < _bestScore) then {
+                _bestScore = _score;
+                _best = _x;
+            };
+        };
+    } forEach _candidates;
+
+    // Accept if perpendicular distance is within ~3m (generous for large objects)
+    if (!isNull _best && { _bestScore < 4 }) then {
+        _obj = _best;
+    };
+};
+
+// Fallback: nearest built object within 5m if raycast found nothing
+if (isNull _obj) then {
+    private _near = (nearestObjects [player, [], 5]) select {
+        !isNull _x && { _x getVariable [QGVAR(builtObject), false] }
+    };
+    if (count _near > 0) then { _obj = _near select 0; };
+};
+
+if (isNull _obj) exitWith {
+    hintSilent parseText "<t color='#888888'>No built object in sight</t>";
+};
+
+// ── Confirmation ─────────────────────────────────────────────────────────────
 private _type    = typeOf _obj;
 private _builtBy = _obj getVariable [QGVAR(builtBy), "Unknown"];
 private _cost    = _obj getVariable [QGVAR(builtCost), 0];
@@ -26,7 +76,7 @@ private _playerSide = side player;
     } else { "" };
 
     hint parseText format [
-        "<t size='1.1' color='#FF4444'>DELETE?</t><br/><br/>%1<br/>Built by: %2%3<br/><br/><t size='0.9'>Y - Confirm | N - Cancel</t>",
+        "<t size='1.1' color='#FF4444'>DELETE?</t><br/><br/>%1<br/>Built by: %2%3<br/><br/><t size='0.9'>Y - Confirm  |  N - Cancel</t>",
         _type, _builtBy, _refundStr
     ];
 
@@ -34,12 +84,11 @@ private _playerSide = side player;
 
     private _keyEH = (findDisplay 46) displayAddEventHandler ["KeyDown", {
         params ["_display", "_key"];
-        if (_key == 21) then { GVAR(deleteConfirm) = true;  };
-        if (_key == 49) then { GVAR(deleteConfirm) = false; };
+        if (_key == 21) then { GVAR(deleteConfirm) = true;  }; // Y
+        if (_key == 49) then { GVAR(deleteConfirm) = false; }; // N
         false
     }];
 
-    // Wait for Y/N or player death — clean up EH either way
     waitUntil { !isNil QGVAR(deleteConfirm) || !alive player };
     (findDisplay 46) displayRemoveEventHandler ["KeyDown", _keyEH];
 
@@ -55,8 +104,8 @@ private _playerSide = side player;
             private _newRes = _currentRes + _cost;
             [_playerSide, _newRes] remoteExec [QFUNC(setSideResources), 2];
             hintSilent parseText format [
-                "<t size='1.1' color='#55CC66'>REMOVED</t><br/><t color='#AAAAAA'>%1</t><br/><t color='#55CC66'>Refunded +%2 to side pool</t><br/><t color='#FFAA00'>Pool: ~%3</t>",
-                _type, _cost, _newRes
+                "<t size='1.1' color='#55CC66'>REMOVED</t><br/><t color='#AAAAAA'>%1</t><br/><t color='#55CC66'>Refunded +%2 to side pool</t>",
+                _type, _cost
             ];
         } else {
             hintSilent parseText format [
@@ -70,7 +119,11 @@ private _playerSide = side player;
             publicVariable QGVAR(builtObjects);
         };
 
-        deleteVehicle _obj;
+        if (isMultiplayer) then {
+            [_obj] remoteExec ["deleteVehicle", 2];
+        } else {
+            deleteVehicle _obj;
+        };
     } else {
         hintSilent parseText "<t color='#888888'>Cancelled</t>";
     };

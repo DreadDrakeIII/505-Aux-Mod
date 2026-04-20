@@ -8,12 +8,16 @@ if (!hasInterface) exitWith {};
 
 // === STEALTH MASK CONFIG ===
 GVAR(hudMasks) = [
-    QCLASS(Stealth_Mask_Glasses)
+    QCLASS(Tactical_Combat_Mask),
+    QCLASS(Tactical_Glasses)
 ];
 GVAR(hudActive) = false;
 
 // === MEDICAL SCANNER CONFIG ===
-GVAR(medGlassesClass) = QCLASS(Glasses_MedScanner);
+GVAR(medGlassesClass) = [
+    QCLASS(MedScanner_Mask),
+    QCLASS(MedScanner_Glasses)
+];
 GVAR(scannerActive) = false;
 GVAR(vitalsEnabled) = false;
 GVAR(scannerRunning) = false;
@@ -22,7 +26,7 @@ GVAR(scannerEH) = -1;
 
 [{!isNull player}, {
 
-    diag_log format ["[505th Gears] Stealth Mask classes: %1", GVAR(hudMasks)];
+    diag_log format ["[505th Gears] Tactical Glasses: %1", GVAR(hudMasks)];
     diag_log format ["[505th Gears] Medical Glasses: %1", GVAR(medGlassesClass)];
 
     // ========================================================================
@@ -40,14 +44,14 @@ GVAR(scannerEH) = -1;
         if (_assigned && {_goggles in GVAR(hudMasks)} && {!GVAR(hudActive)}) then {
             [_unit, "", true] call TCP_fnc_visrToggleActive;
             GVAR(hudActive) = true;
-            diag_log "[505th Gears] Stealth Mask -> TCP VISR ON";
+            diag_log "[505th Gears] Tactical Glasses -> TCP VISR ON";
         };
 
         // Mask removed -> deactivate TCP VISR
         if (!_assigned && {GVAR(hudActive)}) then {
             [_unit, "", false] call TCP_fnc_visrToggleActive;
             GVAR(hudActive) = false;
-            diag_log "[505th Gears] Stealth Mask removed -> TCP VISR OFF";
+            diag_log "[505th Gears] Tactical Glasses removed -> TCP VISR OFF";
         };
 
         // Medical Glasses equipped
@@ -67,7 +71,7 @@ GVAR(scannerEH) = -1;
     if (goggles player in GVAR(hudMasks)) then {
         [player, "", true] call TCP_fnc_visrToggleActive;
         GVAR(hudActive) = true;
-        diag_log "[505th Gears] Mask on login -> TCP VISR ON";
+        diag_log "[505th Gears] Tactical Glasses -> TCP VISR ON";
     };
 
     if (goggles player isEqualTo GVAR(medGlassesClass)) then {

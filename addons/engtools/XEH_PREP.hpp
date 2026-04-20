@@ -23,3 +23,5 @@ PREP(toggleSnap);
 PREP(zeusAddResources);
 PREP(zeusSupplyDrop);
 PREP(executeSupplyDrop);
+PREP(buildCameraAssist);
+PREP(buildHUD);

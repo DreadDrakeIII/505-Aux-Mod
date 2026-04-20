@@ -22,6 +22,12 @@
 #define IDC_SNAP_TOGGLE         3107
 #define IDC_RESOURCE_DISPLAY    3108
 
+// IDCs — build HUD controls (ctrlCreate on display 46)
+#define IDC_BUILD_HUD_BG        3199
+#define IDC_BUILD_HUD_ACCENT    3200
+#define IDC_BUILD_HUD_STATUS    3201
+#define IDC_BUILD_HUD_HINT      3202
+
 // Image paths
 #define PATH_LOGO_505  "\BLU\OLI\addons\engtools\data\505TH_Logo.paa"
 #define PATH_LOGO_ENG  "\BLU\OLI\addons\engtools\data\eng_logo.paa"

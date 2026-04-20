@@ -856,10 +856,10 @@ class CLASS(Marine_CE_Davy): CLASS(Marine_CE_Base) {
     };
 
     linkedItems[] = {
-        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OLI_Davy_Mask_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OLI_Tactical_Combat_Mask", MARINE_LINKED_ITEMS_RADIO
     };
     RespawnLinkedItems[] = {
-        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OLI_Davy_Mask_Glasses", MARINE_LINKED_ITEMS_RADIO
+        QCLASS(CE_HELMET_FRV2), QCLASS(CE_Vest_FR_Davy), "OPTRE_NVG", "OLI_Tactical_Combat_Mask", MARINE_LINKED_ITEMS_RADIO
     };
     backpack = QCLASS(Invisible_Backpack_CE);
 };

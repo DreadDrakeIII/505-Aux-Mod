@@ -210,7 +210,8 @@ class GVAR(dialog) {
     idd = IDD_ENGINEER_DIALOG;
     movingEnable = 1;
     enableSimulation = 1;
-    onLoad = "[] spawn {sleep 0.05; [] call OLI_engtools_fnc_updateEngineerStatus;}";
+    onLoad   = "[] spawn {sleep 0.05; [] call OLI_engtools_fnc_updateEngineerStatus;}";
+    onUnload = "if (isNil 'OLI_engtools_buildingObject' || {isNull OLI_engtools_buildingObject}) then { [false] call OLI_engtools_fnc_buildCameraAssist; ['hide'] call OLI_engtools_fnc_buildHUD; };";
 
     class ControlsBackground {
 
@@ -394,32 +395,7 @@ class GVAR(dialog) {
         };
 
         // ── OPTIONS ROW ───────────────────────────────────────────────────────
-        class TerrainToggle: RscButton {
-            idc=IDC_TERRAIN_TOGGLE;
-            text="[ON] LEVEL TERRAIN";
-            x="0.080 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.170 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.85,1.0,0.85,1};
-            colorBackground[] = {0.10,0.36,0.16,1.0};
-            colorBackgroundActive[] = {0.14,0.48,0.22,1};
-            colorBorder[] = {0.20,0.60,0.28,0.80};
-            font="PuristaBold"; sizeEx=0.020;
-            action="[] call OLI_engtools_fnc_toggleTerrain;";
-        };
-        class SnapToggle: RscButton {
-            idc=IDC_SNAP_TOGGLE;
-            text="[OFF] SNAP";
-            x="0.262 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.130 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.80,0.88,1.0,1};
-            colorBackground[] = {0.10,0.14,0.30,1.0};
-            colorBackgroundActive[] = {0.14,0.20,0.42,1};
-            colorBorder[] = {0.20,0.28,0.60,0.80};
-            font="PuristaBold"; sizeEx=0.020;
-            action="[] call OLI_engtools_fnc_toggleSnap;";
-        };
+        // Note: Level Terrain = G key, Object Snap = F key during build mode
         class HeightLabel: RscText {
             idc=-1; text="HEIGHT:";
             x="0.408 * safezoneW + safezoneX";
@@ -631,7 +607,7 @@ class GVAR(dialog) {
 
         class ControlsHint: RscText {
             idc=-1;
-            text="BUILD: LMB Place | Q/E Yaw | Shift+Q/E Pitch | Ctrl+Q/E Bank | ALT Terrain Snap | Scroll Distance | PgUp/PgDn Height | TAB Snap | Backspace Reset Tilt";
+            text="Scroll=Rotate | ALT+Scroll=Height | Ctrl+Scroll=Dist | Shift=5x | PgUp/Dn=Height | Q/E=Yaw | Sh+Q/E=Pitch | Ctrl+Q/E=Bank | SPACE=Slope | G=Ground | F=Snap | ALT=Terrain | Backspace=Reset | LMB=Place | RMB=Menu";
             x=DIALOG_X; y="0.711 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.018 * safezoneH";
             colorText[] = {0.26,0.40,0.30,0.65};
@@ -640,6 +616,62 @@ class GVAR(dialog) {
         };
 
     };
+};
+
+// =============================================================================
+//   PiP TOP-DOWN CAMERA OVERLAY
+//   Displayed during build mode via fnc_buildCameraAssist.
+//   Adjust x/y/w/h on PiPDisplay to reposition/resize.
+// =============================================================================
+
+class RscTitles {
+
+    // ── TOP-DOWN PiP CAMERA OVERLAY ───────────────────────────────────────────
+    // Rendered by fnc_buildCameraAssist into render target "OLI_engtools_rtt".
+    // Positioned top-right. Adjust x/y/w/h on PiPDisplay to move/resize.
+    class OLI_engtools_BuildPiP {
+        idd      = -1;
+        duration = 1e10;
+        fadein   = 0;
+        fadeout  = 0;
+        class controls {
+            class PiPBorder : RscText {
+                idc = -1;
+                x = "(0.768 * safezoneW) + safezoneX";
+                y = "(0.016 * safezoneH) + safezoneY";
+                w = "0.154 * safezoneW";
+                h = "0.154 * safezoneH";
+                colorBackground[] = {0.20, 0.55, 0.28, 0.70};
+            };
+            class PiPDisplay : RscPicture {
+                idc   = 1234;
+                x = "(0.770 * safezoneW) + safezoneX";
+                y = "(0.018 * safezoneH) + safezoneY";
+                w = "0.150 * safezoneW";
+                h = "0.150 * safezoneH";
+                text  = "#(argb,512,512,1)r2t(OLI_engtools_rtt,1.0)";
+                style = 48;
+                colorBackground[] = {0, 0, 0, 1};
+            };
+            class PiPLabel : RscText {
+                idc = -1;
+                x = "(0.771 * safezoneW) + safezoneX";
+                y = "(0.019 * safezoneH) + safezoneY";
+                w = "0.070 * safezoneW";
+                h = "0.014 * safezoneH";
+                text = "TOP VIEW";
+                colorText[]       = {0.20, 0.85, 0.30, 1.0};
+                colorBackground[] = {0.04, 0.07, 0.05, 0.85};
+                font   = "PuristaBold";
+                sizeEx = 0.013;
+                style  = 0;
+            };
+        };
+    };
+
+    // ── BUILD MODE HUD ────────────────────────────────────────────────────────
+    // HUD controls are created dynamically via ctrlCreate on display 46
+    // in fnc_buildHUD.sqf — no RscTitles class needed.
 };
 
 #include "CfgWeapons.hpp"
