@@ -58,7 +58,7 @@ class CfgWeapons {
                 compatibleItems[] = {
                     "TCP_optic_EVOSM",
                     "TCP_optic_M11VERO",
-                    "TCP_optic_M81ERO"
+                    "TCP_optic_EVOSD"
                 };
             };
 

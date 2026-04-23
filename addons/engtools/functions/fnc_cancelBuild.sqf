@@ -51,6 +51,8 @@ GVAR(buildCameraEnabled) = false;
 // General state
 GVAR(buildClassname)     = nil;
 GVAR(canPlaceObject)     = nil;
+GVAR(buildStarting)      = false;
+GVAR(buildActive)        = false;
 GVAR(buildBoost)         = false;
 GVAR(buildHeightMode)    = false;
 GVAR(buildDistMode)      = false;
@@ -59,5 +61,6 @@ GVAR(buildVectorSurface) = false;
 GVAR(buildSnapBaseDir)   = nil;
 GVAR(buildSnapLocked)    = nil;
 GVAR(buildSnapNudge)     = 0;
+GVAR(buildSnapNudgeFwd)  = 0;
 
 // buildRotation, buildPitch, buildBank intentionally preserved

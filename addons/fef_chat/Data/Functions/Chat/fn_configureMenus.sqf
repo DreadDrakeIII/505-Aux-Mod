@@ -8,8 +8,6 @@
  * - downAlert : payload = []
  * - back      : payload = menuId
  * - reinsert  : payload = 1..5
- * - medevac   : payload = type string
- * - lz        : payload = type string
  */
 
 private _menus = createHashMap;
@@ -48,8 +46,6 @@ _menus set ["main", [
     ["Squad Comms",     "submenu", "squad_comms"],
     ["Fireteam Comms",  "submenu", "fireteam_comms"],
     ["Reinsert",        "submenu", "reinsert"],
-    ["MEDEVAC",         "submenu", "medevac"],
-    ["LZ Request",      "submenu", "lz_request"],
     ["Custom",          "submenu", "custom_1"]
 ]];
 
@@ -77,12 +73,11 @@ _menus set ["medical_status", [
 // SQUAD COMMS
 // ============================================================================
 _menus set ["squad_comms", [
-    ["Column",       "group", ["Column", ""]],
-    ["Stag Column",     "group", ["Staggered Column", ""]],
-    ["Wedge", "group", ["Wedge", ""]],
-    ["L-Ech",         "group", ["Left Echelon", ""]],
-    ["R-Ech",    "group", ["Right Echelon", ""]],
-    ["B-Line",    "group", ["Battle Line", ""]],
+    ["Move Up",       "group", ["Squad, move up!", ""]],
+    ["Fall Back",     "group", ["Squad, fall back!", ""]],
+    ["Hold Position", "group", ["Squad, hold position!", ""]],
+    ["On Me",         "group", ["Squad, on me!", ""]],
+    ["Spread Out",    "group", ["Squad, spread out!", ""]],
     ["< Back",        "back",  "main"]
 ]];
 
@@ -108,29 +103,6 @@ _menus set ["reinsert", [
     ["x4 Reinsert", "reinsert", 4],
     ["x5 Reinsert", "reinsert", 5],
     ["< Back",       "back",    "main"]
-]];
-
-// ============================================================================
-// MEDEVAC — Squad Leader / Pilot only
-// ============================================================================
-_menus set ["medevac", [
-    ["Urgent",   "medevac", "urgent"],
-    ["Priority", "medevac", "priority"],
-    ["Routine",  "medevac", "routine"],
-    ["< Back",   "back",    "main"]
-]];
-
-// ============================================================================
-// LZ REQUEST — Squad Leader / Pilot only
-// ============================================================================
-_menus set ["lz_request", [
-    ["Pickup",    "lz", "pickup"],
-    ["Drop-Off",  "lz", "dropoff"],
-    ["CASEVAC",   "lz", "casevac"],
-    ["Extract",   "lz", "extract"],
-    ["Hot LZ",    "lz", "hot"],
-    ["LZ Clear",  "lz", "clear"],
-    ["< Back",    "back", "main"]
 ]];
 
 // ============================================================================

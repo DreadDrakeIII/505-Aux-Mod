@@ -75,7 +75,24 @@ class CfgWeapons {
                     "TCP_1Rnd_40_Shell_Smoke_Yellow",
                     "TCP_1Rnd_40_Shell_Smoke_Orange",
                     "TCP_1Rnd_40_Shell_Smoke_Purple",
-                    "TCP_1Rnd_40_Shell_TD"
+                    "TCP_1Rnd_40_Shell_TD",
+                    "1Rnd_HE_Grenade_shell",
+                    "UGL_FlareGreen_F",
+                    "UGL_FlareCIR_F",
+                    "UGL_FlareRed_F",
+                    "UGL_FlareWhite_F",
+                    "UGL_FlareYellow_F",
+                    "UGL_FlareGreen_Illumination_F",
+                    "UGL_FlareRed_Illumination_F",
+                    "UGL_FlareWhite_Illumination_F",
+                    "UGL_FlareYellow_Illumination_F",
+                    "1Rnd_SmokeBlue_Grenade_shell",
+                    "1Rnd_SmokeGreen_Grenade_shell",
+                    "1Rnd_SmokeOrange_Grenade_shell",
+                    "1Rnd_SmokePurple_Grenade_shell",
+                    "1Rnd_SmokeRed_Grenade_shell",
+                    "1Rnd_Smoke_Grenade_shell",
+                    "1Rnd_SmokeYellow_Grenade_shell"
                 };
              };
         };

@@ -1,7 +1,21 @@
 #include "..\script_component.hpp"
 /*
  * Function: OLI_engtools_fnc_updatePreview
- * Updates the preview panel — cost checked against side pool.
+ *
+ * Updates the right-column preview panel.
+ *
+ * When a classname is provided: hides the placeholder, shows the image
+ *   border + image + name + description, and formats the cost line with
+ *   affordability colouring based on the side's current resource pool.
+ *
+ * When called with "": shows the placeholder, hides the preview contents.
+ *
+ * Layout (see config.cpp two-column layout):
+ *   - IDC_PREVIEW_IMG_BORDER  — panel background (matches dialog body)
+ *   - IDC_PREVIEW_IMAGE       — the thumbnail (0.272W × 0.300H)
+ *   - IDC_PREVIEW_NAME        — display name, bold, centred
+ *   - IDC_PREVIEW_DESC        — description + cost, structured, centred
+ *   - IDC_PREVIEW_PLACEHOLDER — shown when nothing is selected
  */
 
 params [
@@ -15,15 +29,27 @@ disableSerialization;
 private _display = findDisplay IDD_ENGINEER_DIALOG;
 if (isNull _display) exitWith {};
 
-private _imgCtrl  = _display displayCtrl IDC_PREVIEW_IMAGE;
-private _nameCtrl = _display displayCtrl IDC_PREVIEW_NAME;
-private _descCtrl = _display displayCtrl IDC_PREVIEW_DESC;
+private _borderCtrl = _display displayCtrl IDC_PREVIEW_IMG_BORDER;
+private _imgCtrl    = _display displayCtrl IDC_PREVIEW_IMAGE;
+private _nameCtrl   = _display displayCtrl IDC_PREVIEW_NAME;
+private _descCtrl   = _display displayCtrl IDC_PREVIEW_DESC;
+private _phCtrl     = _display displayCtrl IDC_PREVIEW_PLACEHOLDER;
 
+// Empty state: show placeholder, hide the preview widgets
 if (_classname isEqualTo "") exitWith {
-    if (!isNull _imgCtrl)  then { _imgCtrl ctrlSetText "" };
-    if (!isNull _nameCtrl) then { _nameCtrl ctrlSetText "Hover an object to preview  |  Select to begin building" };
-    if (!isNull _descCtrl) then { _descCtrl ctrlSetStructuredText parseText "<t align='left' color='#888888'>Select an object from the list above to begin placement.</t>" };
+    if (!isNull _borderCtrl) then { _borderCtrl ctrlShow false; };
+    if (!isNull _imgCtrl)    then { _imgCtrl    ctrlShow false; _imgCtrl ctrlSetText ""; };
+    if (!isNull _nameCtrl)   then { _nameCtrl   ctrlShow false; _nameCtrl ctrlSetText ""; };
+    if (!isNull _descCtrl)   then { _descCtrl   ctrlShow false; };
+    if (!isNull _phCtrl)     then { _phCtrl     ctrlShow true;  };
 };
+
+// Populated state: hide placeholder, show preview widgets
+if (!isNull _phCtrl)     then { _phCtrl     ctrlShow false; };
+if (!isNull _borderCtrl) then { _borderCtrl ctrlShow true;  };
+if (!isNull _imgCtrl)    then { _imgCtrl    ctrlShow true;  };
+if (!isNull _nameCtrl)   then { _nameCtrl   ctrlShow true;  };
+if (!isNull _descCtrl)   then { _descCtrl   ctrlShow true;  };
 
 private _previewMap = createHashMapFromArray [
     ["OPTRE_Ridgco_Barrier_One",             "\BLU\OLI\addons\engtools\data\Preview\Ridge_Block_One.paa"],
@@ -51,8 +77,9 @@ private _imagePath = _previewMap getOrDefault [_classname, ""];
 if (!isNull _imgCtrl)  then { _imgCtrl ctrlSetText _imagePath };
 if (!isNull _nameCtrl) then { _nameCtrl ctrlSetText _displayName };
 
+// Cost line + description (structured text, centred)
 private _resourcesEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
-private _costStr = "";
+private _costLine = "";
 
 if (_resourcesEnabled) then {
     private _cost       = [_classname] call FUNC(getObjectCost);
@@ -67,13 +94,13 @@ if (_resourcesEnabled) then {
     };
 
     if (_canAfford) then {
-        _costStr = format [
-            "  <t color='#55CC66'>|  Cost: %1</t>  <t color='#AAAAAA'>(%2 %3 pool)</t>",
+        _costLine = format [
+            "<t align='center' color='#55CC66' size='1.15'>Cost: %1</t><br/><t align='center' color='#AAAAAA' size='0.95'>(%2 %3 pool)</t>",
             _cost, _currentRes, _sideLabel
         ];
     } else {
-        _costStr = format [
-            "  <t color='#FF4444'>|  Cost: %1</t>  <t color='#FF6666'>(Need %2 more)</t>",
+        _costLine = format [
+            "<t align='center' color='#FF4444' size='1.15'>Cost: %1</t><br/><t align='center' color='#FF6666' size='0.95'>(Need %2 more)</t>",
             _cost, _cost - _currentRes
         ];
     };
@@ -81,7 +108,7 @@ if (_resourcesEnabled) then {
 
 if (!isNull _descCtrl) then {
     _descCtrl ctrlSetStructuredText parseText format [
-        "<t align='left' color='#CCCCCC' size='1.1'>%1</t>%2",
-        _description, _costStr
+        "%1<br/><br/><t align='center' color='#BBC9BE' size='1.0'>%2</t>",
+        _costLine, _description
     ];
 };

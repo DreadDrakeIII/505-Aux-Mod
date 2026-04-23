@@ -11,6 +11,8 @@
 #define IDC_PREVIEW_IMAGE       4001
 #define IDC_PREVIEW_NAME        4002
 #define IDC_PREVIEW_DESC        4003
+#define IDC_PREVIEW_IMG_BORDER  4004
+#define IDC_PREVIEW_PLACEHOLDER 4005
 #define IDC_STATUS_TEXT         3001
 #define IDC_MODE_BUILD          3100
 #define IDC_MODE_DEMOLISH       3101
@@ -21,6 +23,16 @@
 #define IDC_HEIGHT_RESET        3106
 #define IDC_SNAP_TOGGLE         3107
 #define IDC_RESOURCE_DISPLAY    3108
+
+// IDCs — engineer menu category navigation
+#define IDC_CAT_BACK        3111
+#define IDC_CAT_BARRIER     3112
+#define IDC_CAT_STRUCTURE   3113
+#define IDC_CAT_MISC        3114
+#define IDC_OBJ_LIST        3115
+#define IDC_CAT_LABEL       3116
+#define IDC_CAT_BUILD       3117
+#define IDC_CAT_TITLE       3118
 
 // IDCs — build HUD controls (ctrlCreate on display 46)
 #define IDC_BUILD_HUD_BG        3199
@@ -38,9 +50,9 @@
 #define DEFAULT_DEMOLISH_TIME 5
 
 // ── Layout ────────────────────────────────────────────────────────────────────
-#define DIALOG_X  "0.07  * safezoneW + safezoneX"
+#define DIALOG_X  "0.18  * safezoneW + safezoneX"
 #define DIALOG_Y  "0.04  * safezoneH + safezoneY"
-#define DIALOG_W  "0.86  * safezoneW"
+#define DIALOG_W  "0.64  * safezoneW"
 #define DIALOG_H  "0.74  * safezoneH"
 
 // 3 equal columns

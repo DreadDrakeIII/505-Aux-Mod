@@ -95,22 +95,7 @@ private _playerSide = side player;
 
         [player, "", 1] call ace_common_fnc_doAnimation;
 
-        private _newRes = [_playerSide] call FUNC(getSideResources);
-        private _resEnabled = missionNamespace getVariable [QGVAR(setting_enableResources), true];
-
-        if (_resEnabled) then {
-            hint parseText format [
-                "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/>" +
-                "<t color='#FFFFFF'>%1</t><br/>" +
-                "<t color='#FFA500'>Cost: -%2</t>  |  <t color='#55CC66'>Side Pool: ~%3</t>",
-                _classname, _cost, _newRes
-            ];
-        } else {
-            hint parseText format [
-                "<t size='1.1' color='#55CC66'>BUILT</t><br/><br/><t color='#FFFFFF'>%1</t>",
-                _classname
-            ];
-        };
+        // BUILT feedback is shown in the bottom HUD status line — no hint needed
 
         // Repeat build
         private _repeatCls = _classname;
@@ -127,7 +112,10 @@ private _playerSide = side player;
         _args params ["_classname", "_pos", "_cost", "_ghost"];
         if (!isNull _ghost) then { deleteVehicle _ghost; };
         [player, "", 1] call ace_common_fnc_doAnimation;
-        hint parseText "<t size='1.0' color='#FF8844'>BUILD CANCELLED</t>";
+        // Suppress message if a new build was immediately started
+        if (isNil QGVAR(buildStarting) || { !GVAR(buildStarting) }) then {
+            hint parseText "<t size='1.0' color='#FF8844'>BUILD CANCELLED</t>";
+        };
     },
 
     format ["Building %1...", _classname],

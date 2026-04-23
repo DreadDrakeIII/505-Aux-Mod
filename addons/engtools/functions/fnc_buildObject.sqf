@@ -49,7 +49,12 @@ if (count _locations > 0) then {
 if (isNil "OLI_engtools_buildHeight")  then { OLI_engtools_buildHeight  = 0;     };
 if (isNil "OLI_engtools_levelTerrain") then { OLI_engtools_levelTerrain = true;  };
 if (isNil "OLI_engtools_snapActive")   then { OLI_engtools_snapActive   = false; };
+// Signal that a build is starting — prevents onUnload from killing camera/HUD
+GVAR(buildActive) = true;
+// Flag to suppress BUILD CANCELLED message when interrupted by new object selection
+GVAR(buildStarting) = true;
 [] call FUNC(cancelBuild);
+GVAR(buildStarting) = false;
 if (isNil QGVAR(buildRotation))      then { GVAR(buildRotation)      = 0;     };
 if (isNil QGVAR(buildPitch))         then { GVAR(buildPitch)         = 0;     };
 if (isNil QGVAR(buildBank))          then { GVAR(buildBank)          = 0;     };
@@ -92,8 +97,20 @@ if (!isNil QGVAR(engineerActionID)) then {
 };
 
 // ── FIX 5: Auto-show PiP camera + HUD ────────────────────────────────────────
+// Called twice: once immediately so they're up before the next frame, and
+// again a quarter-second later as a safety net against any dialog-close
+// race (the dialog's onUnload fires asynchronously and can tear down the
+// PiP cutLayer + HUD controls if timing is unlucky). The second call is
+// a cheap re-create — both functions are idempotent via ctrlDelete/cutRsc.
 [true] call FUNC(buildCameraAssist);
 ["show"] call FUNC(buildHUD);
+
+[] spawn {
+    sleep 0.25;
+    if (isNil QGVAR(buildingObject) || { isNull GVAR(buildingObject) }) exitWith {};
+    [true] call FUNC(buildCameraAssist);
+    ["show"] call FUNC(buildHUD);
+};
 
 // ── PER-FRAME ─────────────────────────────────────────────────────────────────
 GVAR(buildEH) = addMissionEventHandler ["EachFrame", {

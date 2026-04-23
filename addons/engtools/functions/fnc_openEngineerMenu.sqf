@@ -69,4 +69,10 @@ createDialog QGVAR(dialog);
     };
 
     [] call FUNC(updateEngineerStatus);
+
+    // Show the preview placeholder ("Pick a category to see object previews")
+    // on open. Without this, the preview controls start in their config-default
+    // visible state and render on top of the placeholder, producing the
+    // "empty green rectangle" look.
+    [] call FUNC(updatePreview);
 };

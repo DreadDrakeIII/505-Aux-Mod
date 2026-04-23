@@ -1,7 +1,3 @@
-/*
-    File: fn_sendFriendlyDownAlert.sqf
-*/
-
 params [["_unit", player]];
 
 if (isNull _unit) exitWith {};
@@ -16,10 +12,23 @@ private _messages = [
 
 private _message = _messages select (floor (random (count _messages)));
 
-// Group chat
-_unit groupChat _message;
+// Find a nearby conscious player to be the speaker — not the casualty themselves
+private _nearby = [getPosATL _unit, FEF_Voice_VoiceRadius, false] call FEF_fnc_getNearbyPlayers;
 
-// Same side recipients — marker + ping
+private _speaker = objNull;
+{
+    if (_x != _unit && alive _x && !(_x getVariable ["ACE_isUnconscious", false])) exitWith {
+        _speaker = _x;
+    };
+} forEach _nearby;
+
+// Only send if someone nearby can report it — casualty can't report themselves
+if (isNull _speaker) exitWith {};
+
+// Route to speaker's machine so they call groupChat locally — Arma replicates to group from there
+[_speaker, _message] remoteExec ["FEF_fnc_speakerGroupChat", _speaker];
+
+// Same side recipients — marker + ping (side-wide, map-scoped)
 private _sideRecipients = allPlayers select {
     isPlayer _x &&
     { side group _x isEqualTo side group _unit }

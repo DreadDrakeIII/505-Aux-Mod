@@ -25,3 +25,6 @@ PREP(zeusSupplyDrop);
 PREP(executeSupplyDrop);
 PREP(buildCameraAssist);
 PREP(buildHUD);
+PREP(syncBuiltPos);
+PREP(showCategories);
+PREP(showObjectList);

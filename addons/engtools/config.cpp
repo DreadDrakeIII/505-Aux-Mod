@@ -202,6 +202,25 @@ class RscButton {
     font="PuristaMedium"; sizeEx=0.026; text=""; action="";
 };
 
+class RscListBox {
+    deletable=0; fade=0; access=0; type=5; idc=-1;
+    colorBackground[]       = {0.04, 0.07, 0.05, 0.95};
+    colorSelect[]           = {0.14, 0.38, 0.18, 1.0};
+    colorSelectBackground[] = {0.10, 0.26, 0.13, 1.0};
+    colorText[]             = {0.88, 0.98, 0.90, 1.0};
+    colorDisabled[]         = {0.35, 0.40, 0.35, 0.50};
+    colorScrollbar[]        = {0.12, 0.25, 0.14, 1.0};
+    font="PuristaMedium"; sizeEx=0.022;
+    rowHeight=0.035;
+    x=0; y=0; w=0.3; h=0.2;
+    maxHistoryDelay=1;
+    onLBSelChanged="";
+    onLBDblClick="";
+    soundSelect[]  = {"",0,0};
+    soundExpand[]  = {"",0,0};
+    soundCollapse[]= {"",0,0};
+};
+
 // =============================================================================
 //   DIALOG  –  COMBAT ENGINEER TABLET
 // =============================================================================
@@ -210,8 +229,8 @@ class GVAR(dialog) {
     idd = IDD_ENGINEER_DIALOG;
     movingEnable = 1;
     enableSimulation = 1;
-    onLoad   = "[] spawn {sleep 0.05; [] call OLI_engtools_fnc_updateEngineerStatus;}";
-    onUnload = "if (isNil 'OLI_engtools_buildingObject' || {isNull OLI_engtools_buildingObject}) then { [false] call OLI_engtools_fnc_buildCameraAssist; ['hide'] call OLI_engtools_fnc_buildHUD; };";
+    onLoad = "[] spawn { disableSerialization; sleep 0.05; [] call OLI_engtools_fnc_updateEngineerStatus; };";
+    onUnload = "if (isNil 'OLI_engtools_buildActive' || {!OLI_engtools_buildActive}) then { [false] call OLI_engtools_fnc_buildCameraAssist; ['hide'] call OLI_engtools_fnc_buildHUD; };";
 
     class ControlsBackground {
 
@@ -234,23 +253,42 @@ class GVAR(dialog) {
             colorBackground[] = {0.20,0.55,0.28,0.90};
         };
 
-        class OptionsBG: RscText {
+        // Column divider — thin vertical accent between list and preview.
+        // Left column is x=0.23–0.49 (list + category buttons).
+        // Right column is x=0.51–0.79 (preview panel).
+        class ColumnDivider: RscText {
             idc=-1;
-            x=DIALOG_X; y="0.307 * safezoneH + safezoneY";
-            w=DIALOG_W; h="0.046 * safezoneH";
-            colorBackground[] = {0.05,0.07,0.09,0.85};
+            x="0.499 * safezoneW + safezoneX"; y="0.170 * safezoneH + safezoneY";
+            w="0.002 * safezoneW"; h="0.500 * safezoneH";
+            colorBackground[] = {0.20,0.55,0.28,0.35};
         };
-        class OptionsTopLine: RscText {
+
+        // Left-column header bar — sits above list/category buttons
+        class LeftColHeaderBG: RscText {
             idc=-1;
-            x=DIALOG_X; y="0.307 * safezoneH + safezoneY";
-            w=DIALOG_W; h="0.002 * safezoneH";
-            colorBackground[] = {0.20,0.55,0.28,0.45};
+            x="0.230 * safezoneW + safezoneX"; y="0.165 * safezoneH + safezoneY";
+            w="0.260 * safezoneW"; h="0.038 * safezoneH";
+            colorBackground[] = {0.05,0.07,0.09,0.90};
         };
-        class OptionsBotLine: RscText {
+        class LeftColHeaderLine: RscText {
             idc=-1;
-            x=DIALOG_X; y="0.355 * safezoneH + safezoneY";
-            w=DIALOG_W; h="0.002 * safezoneH";
-            colorBackground[] = {0.20,0.55,0.28,0.45};
+            x="0.230 * safezoneW + safezoneX"; y="0.203 * safezoneH + safezoneY";
+            w="0.260 * safezoneW"; h="0.002 * safezoneH";
+            colorBackground[] = {0.20,0.55,0.28,0.55};
+        };
+
+        // Right-column header bar — sits above preview panel
+        class RightColHeaderBG: RscText {
+            idc=-1;
+            x="0.510 * safezoneW + safezoneX"; y="0.165 * safezoneH + safezoneY";
+            w="0.280 * safezoneW"; h="0.038 * safezoneH";
+            colorBackground[] = {0.05,0.07,0.09,0.90};
+        };
+        class RightColHeaderLine: RscText {
+            idc=-1;
+            x="0.510 * safezoneW + safezoneX"; y="0.203 * safezoneH + safezoneY";
+            w="0.280 * safezoneW"; h="0.002 * safezoneH";
+            colorBackground[] = {0.20,0.55,0.28,0.55};
         };
 
         class StatusAccentTop: RscText {
@@ -269,9 +307,9 @@ class GVAR(dialog) {
         class Watermark: RscPicture {
             idc=-1;
             style=48;
-            x="0.36 * safezoneW + safezoneX";
+            x="0.37 * safezoneW + safezoneX";
             y="0.26 * safezoneH + safezoneY";
-            w="0.28 * safezoneW"; h="0.50 * safezoneH";
+            w="0.26 * safezoneW"; h="0.50 * safezoneH";
             colorText[] = {1,1,1,0.10};
             text=PATH_LOGO_ENG;
         };
@@ -282,7 +320,7 @@ class GVAR(dialog) {
 
         class Logo505: RscPicture {
             idc=-1; style=48;
-            x="0.082 * safezoneW + safezoneX";
+            x="0.192 * safezoneW + safezoneX";
             y="0.044 * safezoneH + safezoneY";
             w="0.030 * safezoneW"; h="0.054 * safezoneH";
             colorText[] = {1,1,1,1};
@@ -292,18 +330,18 @@ class GVAR(dialog) {
         class Title: RscText {
             idc=-1;
             text="COMBAT ENGINEER TABLET";
-            x="0.140 * safezoneW + safezoneX";
+            x="0.250 * safezoneW + safezoneX";
             y="0.050 * safezoneH + safezoneY";
-            w="0.55 * safezoneW"; h="0.036 * safezoneH";
+            w="0.50 * safezoneW"; h="0.036 * safezoneH";
             colorText[] = {0.90,0.95,0.88,1.0};
             font="PuristaBold"; sizeEx=0.036; style=0x00;
         };
         class SubTitle: RscText {
             idc=-1;
             text="505th EXPEDITIONARY FORCE  //  UNITED NATIONS SPACE COMMAND";
-            x="0.140 * safezoneW + safezoneX";
+            x="0.250 * safezoneW + safezoneX";
             y="0.086 * safezoneH + safezoneY";
-            w="0.55 * safezoneW"; h="0.020 * safezoneH";
+            w="0.50 * safezoneW"; h="0.020 * safezoneH";
             colorText[] = {0.30,0.60,0.36,0.80};
             font="PuristaMedium"; sizeEx=0.018; style=0x00;
         };
@@ -311,7 +349,7 @@ class GVAR(dialog) {
         class ResourceDisplay: RscText {
             idc=IDC_RESOURCE_DISPLAY;
             text="⬡ ---";
-            x="0.780 * safezoneW + safezoneX";
+            x="0.640 * safezoneW + safezoneX";
             y="0.050 * safezoneH + safezoneY";
             w="0.110 * safezoneW"; h="0.040 * safezoneH";
             colorText[] = {1.0,0.75,0.20,1.0};
@@ -321,7 +359,7 @@ class GVAR(dialog) {
 
         class CloseButton: RscButton {
             idc=1001; text="X";
-            x="0.894 * safezoneW + safezoneX";
+            x="0.754 * safezoneW + safezoneX";
             y="0.048 * safezoneH + safezoneY";
             w="0.028 * safezoneW"; h="0.040 * safezoneH";
             colorText[] = {1,1,1,1};
@@ -335,7 +373,7 @@ class GVAR(dialog) {
         class ModeTabBuild: RscButton {
             idc=IDC_MODE_BUILD;
             text="BUILD MODE";
-            x="0.154 * safezoneW + safezoneX";
+            x="0.205 * safezoneW + safezoneX";
             y="0.109 * safezoneH + safezoneY";
             w="0.33 * safezoneW"; h="0.034 * safezoneH";
             colorText[] = {0.88,1.0,0.88,1};
@@ -348,7 +386,7 @@ class GVAR(dialog) {
         class ModeTabDemolish: RscButton {
             idc=IDC_MODE_DEMOLISH;
             text="DEMOLISH MODE";
-            x="0.496 * safezoneW + safezoneX";
+            x="0.487 * safezoneW + safezoneX";
             y="0.109 * safezoneH + safezoneY";
             w="0.33 * safezoneW"; h="0.034 * safezoneH";
             colorText[] = {1.0,0.82,0.82,1};
@@ -359,241 +397,301 @@ class GVAR(dialog) {
             action="[] call OLI_engtools_fnc_demolishMode; closeDialog 0;";
         };
 
-        // ── PREVIEW PANEL ─────────────────────────────────────────────────────
+        // ─────────────────────────────────────────────────────────────────────
+        //  TWO-COLUMN LAYOUT
+        //
+        //  Content area: y 0.16 → 0.67 (between mode tabs and status bar)
+        //  Left column:  x 0.23 → 0.49  (list + category buttons)
+        //  Right column: x 0.51 → 0.79  (preview panel)
+        //
+        //  List geometry: y 0.214 → 0.660 (0.446 tall), rowHeight 0.048.
+        //  With font sizeEx 0.040 (2× previous), ~9 rows visible without
+        //  scroll. Structure has 12 items → last 3 scroll into view. The
+        //  scroll-vs-hover lock (see ObjList.onMouseZChanged) means hover
+        //  imprecision during scroll isn't a problem — scroll takes full
+        //  control until the user clicks somewhere else.
+        //
+        //  Bottom-left region (y 0.664 → 0.670) is reserved for future
+        //  subcategory buttons. Left empty on purpose.
+        // ─────────────────────────────────────────────────────────────────────
+
+        // Left column header — "CATEGORY" in category-picker, "Category > X" in list view
+        class LeftColTitle: RscText {
+            idc = IDC_CAT_TITLE;
+            text = "CATEGORY";
+            x = "0.232 * safezoneW + safezoneX";
+            y = "0.170 * safezoneH + safezoneY";
+            w = "0.256 * safezoneW"; h = "0.030 * safezoneH";
+            colorText[]       = {0.22, 0.65, 0.30, 1.0};
+            colorBackground[] = {0, 0, 0, 0};
+            font = "PuristaBold"; sizeEx = 0.024; style = 0x02;
+        };
+
+        // Breadcrumb label — shown in list view only (sits on top of LeftColTitle,
+        // so hide one to show the other). Set dynamically by showObjectList.
+        class CatLabel: RscText {
+            idc = IDC_CAT_LABEL;
+            text = "";
+            x = "0.232 * safezoneW + safezoneX";
+            y = "0.170 * safezoneH + safezoneY";
+            w = "0.256 * safezoneW"; h = "0.030 * safezoneH";
+            colorText[]       = {0.22, 0.65, 0.30, 1.0};
+            colorBackground[] = {0, 0, 0, 0};
+            font = "PuristaBold"; sizeEx = 0.024; style = 0x02;
+        };
+
+        // Right column header — "OBJECT PREVIEW"
+        class RightColTitle: RscText {
+            idc = -1;
+            text = "OBJECT PREVIEW";
+            x = "0.512 * safezoneW + safezoneX";
+            y = "0.170 * safezoneH + safezoneY";
+            w = "0.276 * safezoneW"; h = "0.030 * safezoneH";
+            colorText[]       = {0.22, 0.65, 0.30, 1.0};
+            colorBackground[] = {0, 0, 0, 0};
+            font = "PuristaBold"; sizeEx = 0.024; style = 0x02;
+        };
+
+        // ── CATEGORY BUTTONS ──────────────────────────────────────────────────
+        // Shown in category-picker view. Centered vertically in the left column.
+        // Stacked: Barrier at y=0.320, Structure at 0.380, Misc at 0.440.
+        // Below 0.500 is reserved for future subcategory buttons.
+
+        class BtnCatBarrier: RscButton {
+            idc = IDC_CAT_BARRIER;
+            text = "Barrier";
+            x = "0.236 * safezoneW + safezoneX";
+            y = "0.320 * safezoneH + safezoneY";
+            w = "0.248 * safezoneW"; h = "0.052 * safezoneH";
+            colorText[]             = {0.90, 1.0, 0.92, 1.0};
+            colorBackground[]       = {0.10, 0.22, 0.12, 1.0};
+            colorBackgroundActive[] = {0.16, 0.36, 0.18, 1.0};
+            colorBorder[]           = {0.22, 0.65, 0.30, 0.80};
+            font = "PuristaBold"; sizeEx = 0.034;
+            action = "[""Barrier""] call OLI_engtools_fnc_showObjectList;";
+        };
+        class BtnCatStructure: RscButton {
+            idc = IDC_CAT_STRUCTURE;
+            text = "Structure";
+            x = "0.236 * safezoneW + safezoneX";
+            y = "0.380 * safezoneH + safezoneY";
+            w = "0.248 * safezoneW"; h = "0.052 * safezoneH";
+            colorText[]             = {0.90, 1.0, 0.92, 1.0};
+            colorBackground[]       = {0.10, 0.22, 0.12, 1.0};
+            colorBackgroundActive[] = {0.16, 0.36, 0.18, 1.0};
+            colorBorder[]           = {0.22, 0.65, 0.30, 0.80};
+            font = "PuristaBold"; sizeEx = 0.034;
+            action = "[""Structure""] call OLI_engtools_fnc_showObjectList;";
+        };
+        class BtnCatMisc: RscButton {
+            idc = IDC_CAT_MISC;
+            text = "Misc";
+            x = "0.236 * safezoneW + safezoneX";
+            y = "0.440 * safezoneH + safezoneY";
+            w = "0.248 * safezoneW"; h = "0.052 * safezoneH";
+            colorText[]             = {0.90, 1.0, 0.92, 1.0};
+            colorBackground[]       = {0.10, 0.22, 0.12, 1.0};
+            colorBackgroundActive[] = {0.16, 0.36, 0.18, 1.0};
+            colorBorder[]           = {0.22, 0.65, 0.30, 0.80};
+            font = "PuristaBold"; sizeEx = 0.034;
+            action = "[""Misc""] call OLI_engtools_fnc_showObjectList;";
+        };
+
+        // ── [< Back] button — sits at top of list view, above the list ────────
+        class BtnCategoryBack: RscButton {
+            idc = IDC_CAT_BACK;
+            text = "<  Back to Categories";
+            x = "0.236 * safezoneW + safezoneX";
+            y = "0.210 * safezoneH + safezoneY";
+            w = "0.248 * safezoneW"; h = "0.040 * safezoneH";
+            show = 0;
+            colorText[]             = {0.80, 0.90, 0.82, 1.0};
+            colorBackground[]       = {0.06, 0.10, 0.07, 1.0};
+            colorBackgroundActive[] = {0.10, 0.18, 0.12, 1.0};
+            colorBorder[]           = {0.22, 0.55, 0.28, 0.60};
+            font = "PuristaBold"; sizeEx = 0.024;
+            action = "[] call OLI_engtools_fnc_showCategories;";
+        };
+
+        // ── OBJECT LIST ───────────────────────────────────────────────────────
+        // Scrollable listbox. y starts below the Back button (0.254), ends
+        // above the reserved future-expand region (0.660). Font 2× previous.
+        class ObjList: RscListBox {
+            idc = IDC_OBJ_LIST;
+            x = "0.236 * safezoneW + safezoneX";
+            y = "0.254 * safezoneH + safezoneY";
+            w = "0.248 * safezoneW";
+            h = "0.406 * safezoneH";
+            show = 0;
+            colorBackground[]       = {0.04, 0.07, 0.05, 0.95};
+            colorSelect[]           = {0.95, 1.00, 0.95, 1.0};
+            colorSelectBackground[] = {0.14, 0.38, 0.18, 1.0};
+            colorText[]             = {0.88, 0.98, 0.90, 1.0};
+            colorDisabled[]         = {0.35, 0.40, 0.35, 0.50};
+            font = "PuristaBold"; sizeEx = 0.040;
+            rowHeight = 0.048;
+
+            // ── HOVER ──────────────────────────────────────────────────────
+            // Updates selection to follow cursor, UNLESS scroll lock is set.
+            // Scroll lock is set by onMouseZChanged below and cleared by any
+            // click on the dialog (clearScrollLock function).
+            onMouseMoving = "
+                disableSerialization;
+                params ['_ctrl', '_xPos', '_yPos'];
+                if (_ctrl getVariable ['OLI_scrollLock', false]) exitWith {};
+                private _rh = 0.048;
+                private _row = floor (_yPos / _rh);
+                private _count = lbSize _ctrl;
+                if (_row < 0 || _row >= _count) exitWith {};
+                if ((lbCurSel _ctrl) isEqualTo _row) exitWith {};
+                _ctrl lbSetCurSel _row;
+            ";
+
+            // ── CLICK ──────────────────────────────────────────────────────
+            // Click anywhere on list = start placing. Clears scroll lock as
+            // a side effect (click = user committed, scroll-preview is over).
+            onMouseButtonClick = "
+                disableSerialization;
+                params ['_ctrl', '_button'];
+                _ctrl setVariable ['OLI_scrollLock', false];
+                if (_button != 0) exitWith {};
+                private _idx = lbCurSel _ctrl;
+                if (_idx < 0) exitWith {};
+                private _cls = _ctrl lbData _idx;
+                if (_cls isEqualTo '' || _cls isEqualTo 'HEADER') exitWith {};
+                closeDialog 0;
+                [_cls] spawn {
+                    params ['_c'];
+                    sleep 0.05;
+                    [_c] call OLI_engtools_fnc_buildObject;
+                };
+            ";
+
+            // ── SELECTION CHANGED ─────────────────────────────────────────
+            // Drives the preview panel. Fires on mouse move, scroll wheel,
+            // arrow keys, and lbSetCurSel — one handler, every source.
+            onLBSelChanged = "
+                disableSerialization;
+                private _lb  = _this select 0;
+                private _idx = _this select 1;
+                if (_idx < 0) exitWith {};
+                private _cls  = _lb lbData    _idx;
+                private _name = _lb lbText    _idx;
+                private _desc = _lb lbTooltip _idx;
+                if (_cls isEqualTo '' || _cls isEqualTo 'HEADER') exitWith {};
+                [_cls, _name, _desc] call OLI_engtools_fnc_updatePreview;
+            ";
+            onLBDblClick = "";
+
+            // ── SCROLL WHEEL ─────────────────────────────────────────────
+            // Sets OLI_scrollLock on the control so onMouseMoving stops
+            // fighting the selection. Lock is cleared by clicking anywhere.
+            onMouseZChanged = "
+                disableSerialization;
+                params ['_ctrl', '_scroll'];
+                private _count = lbSize _ctrl;
+                if (_count <= 0) exitWith {};
+                _ctrl setVariable ['OLI_scrollLock', true];
+                private _cur = lbCurSel _ctrl;
+                if (_cur < 0) then { _cur = 0; };
+                private _next = ((_cur - _scroll) max 0) min (_count - 1);
+                if (_next isEqualTo _cur) exitWith {};
+                _ctrl lbSetCurSel _next;
+            ";
+
+            // ── ENTER KEY ────────────────────────────────────────────────
+            // Alternate commit. DIK 28 = Enter, 156 = NumEnter.
+            onKeyDown = "
+                disableSerialization;
+                params ['_ctrl', '_key'];
+                if !(_key in [28, 156]) exitWith {false};
+                private _idx = lbCurSel _ctrl;
+                if (_idx < 0) exitWith {false};
+                private _cls = _ctrl lbData _idx;
+                if (_cls isEqualTo '' || _cls isEqualTo 'HEADER') exitWith {false};
+                closeDialog 0;
+                [_cls] spawn {
+                    params ['_c'];
+                    sleep 0.05;
+                    [_c] call OLI_engtools_fnc_buildObject;
+                };
+                true
+            ";
+        };
+
+        // ── PREVIEW PANEL (RIGHT COLUMN) ──────────────────────────────────────
+        // Panel background blends with dialog body (no green tint).
+        // Image occupies top 60% of right column, name + cost + description
+        // below. Shown empty with placeholder text when no selection.
+
         class PreviewImgBorder: RscText {
-            idc=-1;
-            x="0.442 * safezoneW + safezoneX";
-            y="0.149 * safezoneH + safezoneY";
-            w="0.0653 * safezoneW"; h="0.116 * safezoneH";
-            colorBackground[] = {0.18,0.42,0.22,0.50};
+            idc = IDC_PREVIEW_IMG_BORDER;
+            x = "0.514 * safezoneW + safezoneX";
+            y = "0.214 * safezoneH + safezoneY";
+            w = "0.272 * safezoneW"; h = "0.300 * safezoneH";
+            colorBackground[] = {0.06,0.08,0.11,0.97};
         };
         class PreviewImage: RscPicture {
-            idc=IDC_PREVIEW_IMAGE; style=48;
-            x="0.445 * safezoneW + safezoneX";
-            y="0.152 * safezoneH + safezoneY";
-            w="0.0619 * safezoneW"; h="0.110 * safezoneH";
-            colorText[] = {1,1,1,1};
-            colorBackground[] = {0.06,0.09,0.12,1};
-            text="";
+            idc = IDC_PREVIEW_IMAGE; style = 48;
+            x = "0.518 * safezoneW + safezoneX";
+            y = "0.218 * safezoneH + safezoneY";
+            w = "0.264 * safezoneW"; h = "0.292 * safezoneH";
+            colorText[]       = {1,1,1,1};
+            colorBackground[] = {0.06,0.08,0.11,0.97};
+            text = "";
         };
         class PreviewName: RscText {
-            idc=IDC_PREVIEW_NAME;
-            text="Hover an object to preview  |  Select to begin building";
-            x="0.078 * safezoneW + safezoneX";
-            y="0.268 * safezoneH + safezoneY";
-            w="0.844 * safezoneW"; h="0.026 * safezoneH";
+            idc = IDC_PREVIEW_NAME;
+            text = "";
+            x = "0.514 * safezoneW + safezoneX";
+            y = "0.524 * safezoneH + safezoneY";
+            w = "0.272 * safezoneW"; h = "0.036 * safezoneH";
             colorText[] = {0.90,0.95,0.88,1.0};
-            font="PuristaBold"; sizeEx=0.022; style=0x02;
+            colorBackground[] = {0,0,0,0};
+            font = "PuristaBold"; sizeEx = 0.030; style = 0x02;
         };
         class PreviewDesc: RscStructuredText {
-            idc=IDC_PREVIEW_DESC;
-            x="0.078 * safezoneW + safezoneX";
-            y="0.296 * safezoneH + safezoneY";
-            w="0.844 * safezoneW"; h="0.018 * safezoneH";
-            text="<t color='#778877' align='center'>Select an object from the list to begin placement.</t>";
-            size=0.018;
+            idc = IDC_PREVIEW_DESC;
+            x = "0.514 * safezoneW + safezoneX";
+            y = "0.566 * safezoneH + safezoneY";
+            w = "0.272 * safezoneW"; h = "0.094 * safezoneH";
+            text = "";
+            size = 0.024;
+            class Attributes {
+                font = "PuristaMedium"; color = "#D9E6DC"; align = "center"; shadow = 0;
+            };
         };
 
-        // ── OPTIONS ROW ───────────────────────────────────────────────────────
-        // Note: Level Terrain = G key, Object Snap = F key during build mode
-        class HeightLabel: RscText {
-            idc=-1; text="HEIGHT:";
-            x="0.408 * safezoneW + safezoneX";
-            y="0.315 * safezoneH + safezoneY";
-            w="0.060 * safezoneW"; h="0.030 * safezoneH";
-            colorText[] = {0.50,0.75,0.55,1};
-            font="PuristaBold"; sizeEx=0.020; style=0x02;
-        };
-        class HeightDown: RscButton {
-            idc=IDC_HEIGHT_DOWN; text="−";
-            x="0.472 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.030 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {1.0,0.80,0.50,1};
-            colorBackground[] = {0.22,0.12,0.06,1};
-            colorBackgroundActive[] = {0.35,0.18,0.08,1};
-            font="PuristaBold"; sizeEx=0.028;
-            action="[] call OLI_engtools_fnc_heightDown;";
-        };
-        class HeightDisplay: RscButton {
-            idc=IDC_HEIGHT_DISPLAY; text="0.0m";
-            x="0.505 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.070 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.95,0.95,0.75,1};
-            colorBackground[] = {0.05,0.07,0.10,1};
-            colorBackgroundActive[] = {0.05,0.07,0.10,1};
-            colorBorder[] = {0.22,0.50,0.28,0.60};
-            font="PuristaBold"; sizeEx=0.022; style=0x02;
-            action="";
-        };
-        class HeightUp: RscButton {
-            idc=IDC_HEIGHT_UP; text="+";
-            x="0.578 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.030 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.50,1.0,0.55,1};
-            colorBackground[] = {0.07,0.20,0.10,1};
-            colorBackgroundActive[] = {0.10,0.32,0.16,1};
-            font="PuristaBold"; sizeEx=0.028;
-            action="[] call OLI_engtools_fnc_heightUp;";
-        };
-        class HeightReset: RscButton {
-            idc=IDC_HEIGHT_RESET; text="RST";
-            x="0.611 * safezoneW + safezoneX";
-            y="0.313 * safezoneH + safezoneY";
-            w="0.038 * safezoneW"; h="0.034 * safezoneH";
-            colorText[] = {0.70,0.70,0.70,1};
-            colorBackground[] = {0.10,0.12,0.14,1};
-            colorBackgroundActive[] = {0.16,0.18,0.20,1};
-            font="PuristaMedium"; sizeEx=0.018;
-            action="OLI_engtools_buildHeight = 0; private _ctrl = findDisplay 85050 displayCtrl 3103; _ctrl ctrlSetText '0.0m';";
-        };
-        class HeightStepHint: RscText {
-            idc=-1; text="(±0.10m)";
-            x="0.656 * safezoneW + safezoneX";
-            y="0.318 * safezoneH + safezoneY";
-            w="0.065 * safezoneW"; h="0.024 * safezoneH";
-            colorText[] = {0.32,0.50,0.36,0.70};
-            font="PuristaMedium"; sizeEx=0.018; style=0x02;
+        // ── PLACEHOLDER (shown when nothing selected) ─────────────────────────
+        // Different control from PreviewName so we can hide/show independently.
+        class PreviewPlaceholder: RscStructuredText {
+            idc = IDC_PREVIEW_PLACEHOLDER;
+            x = "0.514 * safezoneW + safezoneX";
+            y = "0.340 * safezoneH + safezoneY";
+            w = "0.272 * safezoneW"; h = "0.080 * safezoneH";
+            text = "<t align='center' color='#556655' size='1.2'>Pick a category<br/>to see object previews</t>";
+            size = 0.024;
         };
 
-        // ── COLUMN HEADERS ────────────────────────────────────────────────────
-        class ColHeader1: RscText {
-            idc=-1; text="── Barrier ──";
-            x=COL1_X; y="0.360 * safezoneH + safezoneY";
-            w=BTN_W;  h="0.024 * safezoneH";
-            colorText[] = {0.22,0.65,0.32,1.0};
-            font="PuristaBold"; sizeEx=0.020; style=0x02;
-        };
-        class ColHeader2: RscText {
-            idc=-1; text="── STRUCTURES ──";
-            x=COL2_X; y="0.360 * safezoneH + safezoneY";
-            w=BTN_W;  h="0.024 * safezoneH";
-            colorText[] = {0.22,0.65,0.32,1.0};
-            font="PuristaBold"; sizeEx=0.020; style=0x02;
-        };
-        class ColHeader3: RscText {
-            idc=-1; text="── MISC ──";
-            x=COL3_X; y="0.360 * safezoneH + safezoneY";
-            w=BTN_W;  h="0.024 * safezoneH";
-            colorText[] = {0.22,0.65,0.32,1.0};
-            font="PuristaBold"; sizeEx=0.020; style=0x02;
+        // ── LEGACY STUBS ──────────────────────────────────────────────────────
+        // IDC_CAT_BUILD is still referenced by show/hide toggles in the
+        // function files. Kept as an invisible 1px stub to avoid scrubbing
+        // those references. Do not remove without also editing showObjectList
+        // and showCategories.
+        class BtnBuild: RscButton {
+            idc = IDC_CAT_BUILD;
+            text = "";
+            x = "0.0 * safezoneW"; y = "0.0 * safezoneH";
+            w = "0.001 * safezoneW"; h = "0.001 * safezoneH";
+            show = 0;
+            colorText[]             = {0,0,0,0};
+            colorBackground[]       = {0,0,0,0};
+            colorBackgroundActive[] = {0,0,0,0};
+            colorBorder[]           = {0,0,0,0};
+            font = "PuristaBold"; sizeEx = 0.001;
+            action = "";
         };
 
-        // ── COL 1 – BARRIER ───────────────────────────────────────────────────
-        class BtnRidgcoOne: RscButton { idc=2001; text="Ridge Block One";
-            x=COL1_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_One','Ridge Block One','Ridgco single barrier unit.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_One'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoThree: RscButton { idc=2002; text="Ridge Block Three";
-            x=COL1_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Three','Ridge Block Three','Ridgco triple-width barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Three'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoFour: RscButton { idc=2003; text="Ridge Block Four";
-            x=COL1_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Four','Ridge Block Four','Ridgco quad-width barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Four'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoFive: RscButton { idc=2004; text="Ridge Block Five";
-            x=COL1_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Five','Ridge Block Five','Ridgco five-wide barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Five'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKECover: RscButton { idc=2005; text="Deployable Cover";
-            x=COL1_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_DeployableCover','Deployable Cover','Portable ballistic cover.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_DeployableCover'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKEBunker: RscButton { idc=2006; text="Half Bunker";
-            x=COL1_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_HalfBunker','Half Bunker','Partial bunker fortification.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_HalfBunker'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnM72S: RscButton { idc=2007; text="M72S Barrier";
-            x=COL1_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['Land_OPTRE_M72S_barrier','M72S Barrier','UNSC modular barrier section.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['Land_OPTRE_M72S_barrier'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-
-        // ── COL 2 – STRUCTURES ────────────────────────────────────────────────
-        class BtnRidgcoRamp: RscButton { idc=2009; text="Ridge Block Ramp";
-            x=COL2_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Ramp','Ridge Block Ramp','Vehicle access ramp.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Ramp'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoCorner: RscButton { idc=2010; text="Corner Ridge Wall Block";
-            x=COL2_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner','Corner Ridge Wall Block','Right-angle corner section.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Corner'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoCornerInv: RscButton { idc=2011; text="Corner Inverted Ridge Wall Block";
-            x=COL2_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Corner_Inverted','Corner Inverted Ridge Wall Block','Inverse corner for inner walls.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Corner_Inverted'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallShort: RscButton { idc=2012; text="Short Ridge Wall Block";
-            x=COL2_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Short','Short Ridge Wall Block','Short wall segment.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Wall_Short'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallLong: RscButton { idc=2013; text="Long Ridge Wall Block";
-            x=COL2_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Long','Long Ridge Wall Block ','Long wall segment.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Wall_Long'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoWallRamp: RscButton { idc=2014; text="Ridge Wall Block Ramp";
-            x=COL2_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Wall_Ramp','Ridge Wall Block Ramp','OPTRE Ridgco wall ramp section.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Wall_Ramp'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoTower: RscButton { idc=2015; text="Ridge Block Tower";
-            x=COL2_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Tower','Ridge Block Tower','Elevated watch tower section.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Tower'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-
-        // ── COL 3 – MISC ──────────────────────────────────────────────────────
-        class BtnTKERoad: RscButton { idc=2016; text="Road Barrier";
-            x=COL3_X; y=ROW1_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_RoadBarrier','Road Barrier','Vehicle blocking road barrier.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_RoadBarrier'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKETrap: RscButton { idc=2017; text="Tank Trap";
-            x=COL3_X; y=ROW2_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_TankTrap','Tank Trap','Anti-vehicle tank trap.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_TankTrap'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnTKELight: RscButton { idc=2018; text="Field Light";
-            x=COL3_X; y=ROW3_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['land_TKE_MilLight','Field Light','TKE military light post.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['land_TKE_MilLight'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnRidgcoTunnel: RscButton { idc=2019; text="Ridge Block Tunnel";
-            x=COL3_X; y=ROW4_Y; w=BTN_W; h=BTN_H;
-            onMouseEnter="['OPTRE_Ridgco_Barrier_Tunnel','Ridge Block Tunnel','Covered tunnel passthrough.'] call OLI_engtools_fnc_updatePreview;";
-            onMouseExit="[] call OLI_engtools_fnc_updatePreview;";
-            action="['OPTRE_Ridgco_Barrier_Tunnel'] call OLI_engtools_fnc_buildObject; closeDialog 0;"; };
-        class BtnCol3Row5: RscButton { idc=2021; text="— empty —";
-            x=COL3_X; y=ROW5_Y; w=BTN_W; h=BTN_H;
-            colorText[] = {0.35,0.40,0.35,0.50};
-            colorBackground[] = {0.06,0.08,0.07,0.60};
-            colorBackgroundActive[] = {0.06,0.08,0.07,0.60};
-            action=""; };
-        class BtnCol3Row6: RscButton { idc=2021; text="— empty —";
-            x=COL3_X; y=ROW6_Y; w=BTN_W; h=BTN_H;
-            colorText[] = {0.35,0.40,0.35,0.50};
-            colorBackground[] = {0.06,0.08,0.07,0.60};
-            colorBackgroundActive[] = {0.06,0.08,0.07,0.60};
-            action=""; };
-        class BtnCol3Row7: RscButton { idc=2021; text="— empty —";
-            x=COL3_X; y=ROW7_Y; w=BTN_W; h=BTN_H;
-            colorText[] = {0.35,0.40,0.35,0.50};
-            colorBackground[] = {0.06,0.08,0.07,0.60};
-            colorBackgroundActive[] = {0.06,0.08,0.07,0.60};
-            action=""; };
 
         // ── STATUS BAR ────────────────────────────────────────────────────────
         class StatusText: RscStructuredText {
@@ -607,7 +705,7 @@ class GVAR(dialog) {
 
         class ControlsHint: RscText {
             idc=-1;
-            text="Scroll=Rotate | ALT+Scroll=Height | Ctrl+Scroll=Dist | Shift=5x | PgUp/Dn=Height | Q/E=Yaw | Sh+Q/E=Pitch | Ctrl+Q/E=Bank | SPACE=Slope | G=Ground | F=Snap | ALT=Terrain | Backspace=Reset | LMB=Place | RMB=Menu";
+            text="Hover / Scroll list = preview  |  Click or Enter = start placing  |  In placement: LMB=Place  RMB=Menu  Scroll=Rotate  ALT+Scr=Height  Ctrl+Scr=Dist  Q/E=Yaw  G=Gnd  F=Snap  Backspace=Reset";
             x=DIALOG_X; y="0.711 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.018 * safezoneH";
             colorText[] = {0.26,0.40,0.30,0.65};

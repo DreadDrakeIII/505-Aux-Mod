@@ -18,8 +18,7 @@ class CfgPatches {
 };
 
 class CfgMarkers {
-    class Flag;
-    class b_unknown: Flag { scope = 2; };
+    class b_unknown;
 
     class FEF_MarkerReinsertX1: b_unknown {
         name = "Reinsert x1";
@@ -63,27 +62,6 @@ class CfgMarkers {
         size = 32;
         shadow = 0;
     };
-    class FEF_MarkerMedevac: b_unknown {
-        name = "MEDEVAC";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\request_medevac.paa";
-        color[] = {0.70, 0.13, 0.13, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerLZPickup: b_unknown {
-        name = "LZ Pickup";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\request_pickup_LZ.paa";
-        color[] = {0.10, 0.50, 0.80, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerLZDropoff: b_unknown {
-        name = "LZ Drop-Off";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\request_dropoff_LZ.paa";
-        color[] = {0.10, 0.70, 0.20, 1};
-        size = 32;
-        shadow = 0;
-    };
 };
 
 class CfgFunctions {
@@ -106,13 +84,9 @@ class CfgFunctions {
             class sendLocalMessage {};
             class sendLocalSideMessage {};
             class sendReinsertRequest {};
-            class sendMedevacRequest {};
-            class sendLZRequest {};
-            class openLZMapSelect {};
+            class speakerGroupChat {};
             class createFriendlyDownMarkerLocal {};
             class createReinsertMarkerLocal {};
-            class createMedevacMarkerLocal {};
-            class createLZMarkerLocal {};
             class createCasualtyPingLocal {};
         };
 
@@ -128,7 +102,6 @@ class CfgFunctions {
             class getDirFromBearing {};
             class getNearbyPlayers {};
             class isPlayer {};
-            class isAuthorizedComms {};
             class stringReplace {};
         };
 

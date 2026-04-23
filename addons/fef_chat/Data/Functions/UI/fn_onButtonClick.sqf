@@ -28,10 +28,8 @@ switch (_actionType) do {
 
     case "group": {
         _payload params ["_message", ["_voiceKey", ""]];
-        // remoteExec to all group members so everyone sees it
-        {
-            [_message, player, _voiceKey] remoteExecCall ["FEF_fnc_sendGroupMessage", _x];
-        } forEach units group player;
+        // groupChat inside sendGroupMessage auto-replicates — call once locally
+        [_message, player, _voiceKey] call FEF_fnc_sendGroupMessage;
         [] call FEF_fnc_closeUI;
     };
 
@@ -43,16 +41,6 @@ switch (_actionType) do {
     case "reinsert": {
         [_payload, player] call FEF_fnc_sendReinsertRequest;
         [] call FEF_fnc_closeUI;
-    };
-
-    case "medevac": {
-        [_payload, player] call FEF_fnc_sendMedevacRequest;
-        [] call FEF_fnc_closeUI;
-    };
-
-    case "lz": {
-        [] call FEF_fnc_closeUI;
-        [_payload] call FEF_fnc_openLZMapSelect;
     };
 
     case "close": {
