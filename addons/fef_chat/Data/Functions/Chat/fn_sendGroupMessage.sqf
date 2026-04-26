@@ -3,7 +3,9 @@ params ["_message", ["_speaker", player], ["_voiceKey", ""]];
 private _resolved = [_message, _speaker] call FEF_fnc_resolveText;
 if (_resolved isEqualTo "") exitWith {};
 
-_speaker groupChat _resolved;
+// remoteExec groupChat to "group _speaker" — runs on each group member's local machine.
+// Humans get it on their own client; AI is local to the server (no UI = no duplicate).
+[_speaker, _resolved] remoteExecCall ["groupChat", group _speaker];
 
 if (_voiceKey isEqualTo "") exitWith {};
 if (!FEF_Voice_EnableVoiceLines) exitWith {};

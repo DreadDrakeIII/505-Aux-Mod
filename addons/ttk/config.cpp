@@ -16,7 +16,6 @@ class CfgPatches {
         units[] = {};
         weapons[] = {
             "OLI_TacticalTraumaKit",
-            "OLI_BiofoamCanister",
             "OLI_BoneKnittingPolymer",
             "OLI_Polypseudomorphine",
             "OLI_EpiXAutoinjector",
@@ -24,6 +23,9 @@ class CfgPatches {
             "OLI_NecroClearVial",
             "OLI_NecrosisTestingKit",
             "OLI_EndurexBoosterInhaler"
+        };
+        magazines[] = {
+            "OLI_BiofoamCanister",
         };
         VERSION_CONFIG;
     };
@@ -88,6 +90,25 @@ class CfgFunctions {
     };
 };
 
+class CfgMagazines {
+    class CA_Magazine;
+    class OLI_BiofoamCanister: CA_Magazine {
+        author = "505th";
+        scope = 2;
+        displayName = "[505th] Biofoam Canister";
+        descriptionShort = "Pressurized canister that deploys a self-sealing, antimicrobial polymer to seal wounds, halt bleeding, and stabilize internal damage. Initial application induces severe pain.";
+        model = "\A3\Weapons_F\Items\Medikit";
+        picture = "\BLU\OLI\addons\ttk\img\ui_biofoam.paa";
+        ammo = "";
+        count = 5;
+        initSpeed = 0;
+        tracersEvery = 0;
+        lastRoundsTracer = 0;
+        mass = 20;
+        ACE_isMedicalItem = 1;
+        ACE_asItem = 1;
+    };
+};
 
 class CfgWeapons {
     class ACE_ItemCore;
@@ -113,18 +134,6 @@ class CfgWeapons {
         scopeArsenal = 2;
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 15;
-        };
-    };
-
-    class OLI_BiofoamCanister: ACE_ItemCore {
-        displayName = "[505th] Biofoam Canister";
-        descriptionShort = "Pressurized canister that deploys a self-sealing, antimicrobial polymer to seal wounds, halt bleeding, and stabilize internal damage. Initial application induces severe pain.";
-        model = "\A3\Weapons_F\Items\Medikit";
-        picture = "\BLU\OLI\addons\ttk\img\ui_biofoam.paa";
-        scope = 2;
-        scopeArsenal = 2;
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 20;
         };
     };
 
@@ -269,7 +278,7 @@ class ACE_Medical_Treatment_Actions {
         medicRequired = 0;
         treatmentTime = "OLI_biofoam_treatmentTime";
         items[] = {"OLI_BiofoamCanister"};
-        consumeItem = 1;
+        consumeItem = 0;
         callbackSuccess = "OLI_fnc_biofoamTreat";
         callbackFailure = "";
         callbackProgress = "";

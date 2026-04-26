@@ -18,33 +18,10 @@
 
 params [["_category", "Barrier", [""]]];
 
-private _objects = switch (_category) do {
-    case "Barrier": {[
-        ["land_TKE_HalfBunker",           "Half Bunker",          "Partial bunker fortification."],
-        ["Land_OPTRE_M72S_barrier",       "M72S Barrier",         "UNSC modular barrier section."],
-        ["land_TKE_DeployableCover",      "Deployable Cover",     "Portable ballistic cover."]
-    ]};
-    case "Structure": {[
-        ["OPTRE_Ridgco_Barrier_One",           "Ridge Block One",       "Ridgco single barrier unit."],
-        ["OPTRE_Ridgco_Barrier_Three",         "Ridge Block Three",     "Ridgco triple-width barrier."],
-        ["OPTRE_Ridgco_Barrier_Four",          "Ridge Block Four",      "Ridgco quad-width barrier."],
-        ["OPTRE_Ridgco_Barrier_Five",          "Ridge Block Five",      "Ridgco five-wide barrier."],
-        ["OPTRE_Ridgco_Barrier_Ramp",          "Ridge Block Ramp",      "Vehicle access ramp."],
-        ["OPTRE_Ridgco_Barrier_Corner",        "Corner Block",          "Right-angle corner section."],
-        ["OPTRE_Ridgco_Barrier_Corner_Inverted","Corner Inverted",      "Inverse corner for inner walls."],
-        ["OPTRE_Ridgco_Barrier_Wall_Short",    "Short Wall Block",      "Short wall segment."],
-        ["OPTRE_Ridgco_Barrier_Wall_Long",     "Long Wall Block",       "Long wall segment."],
-        ["OPTRE_Ridgco_Barrier_Wall_Ramp",     "Wall Block Ramp",       "Ridgco wall ramp section."],
-        ["OPTRE_Ridgco_Barrier_Tower",         "Ridge Block Tower",     "Elevated watch tower section."],
-        ["OPTRE_Ridgco_Barrier_Tunnel",        "Ridge Block Tunnel",    "Covered tunnel passthrough."]
-    ]};
-    case "Misc": {[
-        ["land_TKE_RoadBarrier",          "Road Barrier",         "Vehicle blocking road barrier."],
-        ["land_TKE_TankTrap",             "Tank Trap",            "Anti-vehicle tank trap."],
-        ["land_TKE_MilLight",             "Field Light",          "TKE military light post."]
-    ]};
-    default { [] };
-};
+// Pull class list from the single source of truth. fnc_getBuildableClasses
+// also supplies fnc_preloadModels with the same classnames so they can't
+// drift out of sync — add new objects there, not here.
+private _objects = [_category] call FUNC(getBuildableClasses);
 
 disableSerialization;
 private _display = findDisplay IDD_ENGINEER_DIALOG;

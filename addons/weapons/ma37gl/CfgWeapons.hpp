@@ -23,6 +23,8 @@ class CfgWeapons {
         magazines[] = {QCLASS(40Rnd_762x51_Mag)};
         magazineWell[] = { QCLASS(Magwell_MA37) };
 
+        reloadSound[] = {"\BLU\OLI\addons\weapons\ma37gl\data\sound\ma37gl_reload.ogg",1,1};
+
         class LinkedItems {
             class Cows {
                 slot = "CowsSlot"; // Required slot name

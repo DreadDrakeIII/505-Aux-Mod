@@ -35,6 +35,24 @@
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "OLI_biofoam_infinite",
+    "CHECKBOX",
+    ["Infinite Uses", "If enabled, Biofoam canisters are never consumed regardless of the uses slider."],
+    ["[505th] Medical", "Biofoam Canister"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "OLI_biofoam_uses",
+    "SLIDER",
+    ["Uses Per Canister", "How many times a single Biofoam canister can be used before it is depleted."],
+    ["[505th] Medical", "Biofoam Canister"],
+    [1, 10, 5, 0],
+    true
+] call CBA_fnc_addSetting;
+
 // ═════════════════════════════════════════════════════════════════════════════
 // ─── Auto-Tourniquet ───────────────────────────────────────────────────────────
 // ═════════════════════════════════════════════════════════════════════════════

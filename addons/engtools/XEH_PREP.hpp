@@ -28,3 +28,5 @@ PREP(buildHUD);
 PREP(syncBuiltPos);
 PREP(showCategories);
 PREP(showObjectList);
+PREP(getBuildableClasses);
+PREP(preloadModels);

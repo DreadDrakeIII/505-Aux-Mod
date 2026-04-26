@@ -28,7 +28,7 @@ switch (_actionType) do {
 
     case "group": {
         _payload params ["_message", ["_voiceKey", ""]];
-        // groupChat inside sendGroupMessage auto-replicates — call once locally
+        // sendGroupMessage handles distribution via remoteExec to the group object — call once locally
         [_message, player, _voiceKey] call FEF_fnc_sendGroupMessage;
         [] call FEF_fnc_closeUI;
     };

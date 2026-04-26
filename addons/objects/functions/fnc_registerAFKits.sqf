@@ -9,20 +9,18 @@ sleep 1;
 
 [
     _locker,
-    "Pilot",
-    [["OLI_M7_Caseless","","OPTRE_M6G_Flashlight","",["OLI_60Rnd_9x21_Mag",60],[],""],[],["OLI_M6G","","","",["OLI_8Rnd_127x40_Mag",8],[],""],["OPTRE_UNSC_Army_Uniform_R_BLK_SlimLeg",[["ACE_elasticBandage",5],["ACE_tourniquet",1],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",1,4],["Laserbatteries",1,1]]],["FIR_pilot_vest",[["OLI_60Rnd_9x21_Mag",5,60],["OLI_8Rnd_127x40_Mag",3,8]]],["OLI_Invisible_Backpack_CE",[["kat_IFAK",1],["KAT_Empty_bloodIV_250",1],["ToolKit",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"OLI_Heli_Crew_Helmet","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
-
-    ["OLI_Jet_Pilot_Helmet","OLI_Heli_Crew_Helmet","OLI_Heli_Pilot_Helmet","OLI_CPW","OLI_M6D_Carbine","OLI_MPK5","OLI_M6G","OLI_M7_Caseless","OPTRE_M7_Sight","OPTRE_M6D_Scope_Black","OPTRE_M6D_Carbine_Flashlight","OPTRE_M6D_Carbine_IR","OPTRE_M6D_Carbine_Vis_Red","OLI_MEQ7"],
+    "Navy Pilot",
+    [["OLI_M7_Caseless","","OLI_ANPEQ6G","TCP_optic_M5BSLSV",["OLI_60Rnd_5x23_Mag",60],[],""],[],["OLI_M6G","","","",["OLI_8Rnd_127x40_Mag",8],[],""],["OLI_CBUU_Urban_1",[["ACE_elasticBandage",5],["ACE_tourniquet",1],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",1,4]]],["OLI_M43_Kevlar_Black_1",[["OLI_60Rnd_5x23_Mag",3,60],["OLI_8Rnd_127x40_Mag",3,8]]],["TCP_B_Utility_Rig_Black",[["kat_IFAK",1],["KAT_Empty_bloodIV_250",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"OLI_Heli_Pilot_Helmet","OLI_Tactical_Combat_Mask",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","TCP_UGPS","TCP_ANPRC55","ItemCompass","TCP_Watch","OPTRE_NVG"]],
+    ["OLI_M6G","OLI_M6C","OLI_MHG16","OLI_ANPEQ6G","OLI_Tactical_Glasses","OLI_Tactical_Combat_Mask","TCP_G_Balaclava_Black"],
     "true",
     {}
 ] spawn Wbk_AddKit;
 
 [
-  _locker,
-  "JTAC",
-  [["OLI_MA5C","","OLI_MEQ7","",["OLI_32Rnd_762x51_Mag",32],[],""],[],["OLI_M6G","","","",["OLI_8Rnd_127x40_Mag",8],[],""],["OPTRE_UNSC_Army_Uniform_R_BLK_SlimLeg",[["ACE_elasticBandage",5],["ACE_tourniquet",1],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",1,4],["Laserbatteries",1,1]]],["OPTRE_UNSC_M52A_Armor3_URB",[["OLI_8Rnd_127x40_Mag",3,8],["OLI_32Rnd_762x51_Mag",8,32]]],["19thANPRC419",[["kat_IFAK",1],["KAT_Empty_bloodIV_250",1],["ToolKit",1],["OPTRE_M9_Frag",4,1],["OLI_32Rnd_762x51_Mag",2,32],[["UNSC_Knife","","","",[],[],""],1]]],"OPTRE_UNSC_VX16_Helmet_Mask","OPTRE_HUD_In_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","B_UavTerminal","TFAR_anprc152","ItemCompass","ItemWatch","OPTRE_NVG"]],
-
-  ["OLI_MA5C","OLI_BR45B","OLI_M295_BMR","OLI_M6G","OLI_M6C","OLI_MHG16","Optre_Evo_Sight_Riser","OPTRE_M12_Optic","OLI_MEQ7","OPTRE_UNSC_VX16_Helmet_Mask","OPTRE_UNSC_VX16_HelmetNV","OPTRE_UNSC_VX16_HelmetV","OPTRE_UNSC_VX16_Helmet","OPTRE_UNSC_VX16_Helmet_MaskV","Rogue_CEBoonieGrey","Rogue_CEBoonie","H_Watchcap_blk","H_Bandanna_gry","OPTRE_HUD_In_Glasses","OPTRE_HUD_g_Glasses","OPTRE_EyePiece","OLI_Stealth_Mask_Goggle"],
-  "true",
-  {}
+    _locker,
+    "Navy JTAC",
+    [["OLI_MA37","TCP_muzzle_brake_762_01","OLI_MA37_LAM","TCP_optic_EVOSJ",["OLI_40Rnd_762x51_Mag",40],[],""],[],["OLI_M6G","","","",["OLI_8Rnd_127x40_Mag",8],[],""],["OLI_CBUU_Urban_1",[["ACE_elasticBandage",5],["ACE_tourniquet",1],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["kat_Painkiller",1,4]]],["TCP_V_M43A_GungnirL_3_Black",[["OLI_8Rnd_127x40_Mag",3,8]]],["TCP_B_RTO_1_ANPRC171_Patrol_M2_Buttpack_Black_M43A",[["kat_IFAK",1],["KAT_Empty_bloodIV_250",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"TCP_H_Helmet_CH43A_Black_ChinstrapOffset","OLI_Tactical_Combat_Mask",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","TCP_UGPS","TCP_ANPRC55","ItemCompass","TCP_Watch","OPTRE_NVG"]],
+    ["OLI_MA37","OLI_BR55HB","OLI_M6G","OLI_M6C","OLI_MHG16","TCP_optic_M27RCO","TCP_muzzle_brake_762_01","TCP_muzzle_brake_95_01","OLI_ANPEQ6G","OLI_Tactical_Glasses","OLI_Tactical_Combat_Mask","TCP_G_Balaclava_Black"],
+    "true",
+    {}
 ] spawn Wbk_AddKit;

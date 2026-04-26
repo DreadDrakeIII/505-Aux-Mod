@@ -128,23 +128,23 @@ class CfgWeapons {
 // ==============================================================================
 
 // The Cole Protocol uniform items
-class TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Woodland;
-class TCP_U_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Woodland;
-class TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Urban;
+class TCP_U_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Woodland;
+class TCP_U_B_CBUU_TacShirt_HalfRoll_Gloves_Kneepads_Woodland;
+class TCP_U_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Urban;
 
-class CLASS(CBUU_Woodland_1_Base): TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Woodland {
+class CLASS(CBUU_Woodland_1_Base): TCP_U_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Woodland {
     SCOPE_HIDDEN;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform Woodland 1 (Base)";
 };
 
-class CLASS(CBUU_Woodland_2_Base): TCP_U_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Woodland {
+class CLASS(CBUU_Woodland_2_Base): TCP_U_B_CBUU_TacShirt_HalfRoll_Gloves_Kneepads_Woodland {
     SCOPE_HIDDEN;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform Woodland 2 (Base)";
 };
 
-class CLASS(CBUU_Urban_1_Base): TCP_U_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Urban {
+class CLASS(CBUU_Urban_1_Base): TCP_U_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Urban {
     SCOPE_HIDDEN;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform Urban 1 (Base)";

@@ -53,10 +53,10 @@ class CfgVehicles {
         respawnLinkedItems[] = {};
     };
 
-class TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base;
-class TCP_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Base;
+class TCP_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Base;
+class TCP_B_CBUU_TacShirt_HalfRoll_Gloves_Bloused_Kneepads_Base;
 
-class CLASS(Marine_TCP_Woodland_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base {
+class CLASS(Marine_TCP_Woodland_1_Base): TCP_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Base {
     SCOPE_PRIVATE;
     author = AUTHOR;
     faction = QFACTION(505th);
@@ -73,7 +73,7 @@ class CLASS(Marine_TCP_Woodland_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused
     respawnLinkedItems[] = {};
 };
 
-class CLASS(Marine_TCP_Woodland_2_Base): TCP_B_CBUU_FieldTop_HalfRoll_Gloves_Bloused_Base {
+class CLASS(Marine_TCP_Woodland_2_Base): TCP_B_CBUU_TacShirt_HalfRoll_Gloves_Bloused_Kneepads_Base {
     SCOPE_PRIVATE;
     author = AUTHOR;
     faction = QFACTION(505th);
@@ -90,7 +90,7 @@ class CLASS(Marine_TCP_Woodland_2_Base): TCP_B_CBUU_FieldTop_HalfRoll_Gloves_Blo
     respawnLinkedItems[] = {};
 };
 
-class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_FieldTop_Full_Gloves_Bloused_Kneepads_Base {
+class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_TacShirt_Full_Gloves_Bloused_Kneepads_Base {
     SCOPE_PRIVATE;
     author = AUTHOR;
     faction = QFACTION(505th);

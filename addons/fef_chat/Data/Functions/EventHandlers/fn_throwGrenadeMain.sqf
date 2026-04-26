@@ -30,8 +30,10 @@ if (_message isEqualTo "") exitWith {
 
 ["Sending callout: " + _message] call FEF_fnc_devLog;
 
-// groupChat auto-replicates to the whole group — call once on the thrower's client
-_unit groupChat _message;
+// Distribute to every human player in group (filter out AI to avoid SP duplicates)
+{
+    [_unit, _message] remoteExecCall ["FEF_fnc_sendLocalMessage", _x];
+} forEach (units group _unit select { isPlayer _x });
 
 if (!FEF_Voice_EnableVoiceLines) exitWith {};
 

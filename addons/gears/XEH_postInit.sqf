@@ -55,7 +55,7 @@ GVAR(scannerEH) = -1;
         };
 
         // Medical Glasses equipped
-        if (_assigned && {_goggles isEqualTo GVAR(medGlassesClass)} && {!GVAR(scannerActive)}) then {
+        if (_assigned && {_goggles in GVAR(medGlassesClass)} && {!GVAR(scannerActive)}) then {
             [] call GVAR(fnc_startScanner);
             diag_log "[505th Gears] Medical Glasses -> Scanner ON";
         };
@@ -74,7 +74,7 @@ GVAR(scannerEH) = -1;
         diag_log "[505th Gears] Tactical Glasses -> TCP VISR ON";
     };
 
-    if (goggles player isEqualTo GVAR(medGlassesClass)) then {
+    if ((goggles player) in GVAR(medGlassesClass)) then {
         [] call GVAR(fnc_startScanner);
     };
 
@@ -274,7 +274,7 @@ GVAR(scannerEH) = -1;
         GVAR(scannerActive) = true;
 
         GVAR(scannerEH) = addMissionEventHandler ["Draw3D", {
-            if ((goggles player) isNotEqualTo GVAR(medGlassesClass)) exitWith {
+            if (!((goggles player) in GVAR(medGlassesClass))) exitWith {
                 removeMissionEventHandler ["Draw3D", GVAR(scannerEH)];
                 GVAR(scannerEH) = -1;
                 GVAR(scannerRunning) = false;
@@ -364,7 +364,7 @@ GVAR(scannerEH) = -1;
         "OLI_ToggleMedicalScanner",
         ["Toggle Medical Scanner", "Turn scanner overlay on/off (requires Medical Scanner Glasses)"],
         {
-            if ((goggles player) != GVAR(medGlassesClass)) exitWith {
+            if (!((goggles player) in GVAR(medGlassesClass))) exitWith {
                 systemChat "[Medical Scanner] Requires Medical Scanner Glasses";
             };
             if (!GVAR(scannerRunning)) exitWith {
@@ -387,7 +387,7 @@ GVAR(scannerEH) = -1;
         "OLI_ToggleDetailedVitals",
         ["Toggle Detailed Vitals", "Show/hide vitals panel when looking at teammate (requires scanner active)"],
         {
-            if ((goggles player) != GVAR(medGlassesClass)) exitWith {};
+            if (!((goggles player) in GVAR(medGlassesClass))) exitWith {};
             if (!GVAR(scannerRunning)) exitWith {
                 systemChat "[Medical Scanner] Scanner must be active first";
             };

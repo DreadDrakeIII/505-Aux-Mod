@@ -7,18 +7,19 @@ class CfgWeapons {
         class WeaponSlotsInfo;
     };
 
-    class OPTRE_M6G: hgun_Pistol_heavy_01_F {
+    class TCP_hgun_Pistol_M6G: hgun_Pistol_heavy_01_F {
         class WeaponSlotsInfo: WeaponSlotsInfo {
             class CowsSlot;
             class PointerSlot;
             class MuzzleSlot;
+            class UnderBarrelSlot;
         };
 
         class Single: Mode_SemiAuto {
                     };
     };
 
-    class CLASS(M6G): OPTRE_M6G {
+    class CLASS(M6G): TCP_hgun_Pistol_M6G {
         SCOPE_PUBLIC;
         author = AUTHOR;
         baseWeapon = QCLASS(M6G);
@@ -26,13 +27,12 @@ class CfgWeapons {
         displayName = "[505th] M6G Magnum";
         descriptionShort = "M6G `Magnum` Pistol developed by Blackreach Armory Industries";
 
-        picture = "\OPTRE_Weapons_Pistols\M6G\data\icons\m6g_icon.paa";
-        model = "\OPTRE_Weapons_Pistols\M6G\m6g.p3d";
-
-        modes[] = {"Single", "FullAuto"};
+        modes[] = {"Single"};
 
         magazines[] = {QCLASS(8Rnd_127x40_Mag)};
         magazineWell[] = { QCLASS(Magwell_M6G) };
+
+        reloadSound[] = {"\BLU\OLI\addons\weapons\m6g\data\sound\m6g_reload.ogg",1,1};
 
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
@@ -42,17 +42,25 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
+                    "TCP_optic_KFA_M6G"
                 };
             };
 
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
+                    "TCP_acc_pointer_lam_M6C2"
                 };
             };
 
             class MuzzleSlot: MuzzleSlot {
                 compatibleItems[] = {
-                    "OPTRE_Ma5Suppressor"
+                    "TCP_muzzle_snds_127_02"
+                };
+            };
+
+            class UnderBarrelSlot: UnderBarrelSlot {
+                compatibleItems[] = {
+                    "TCP_bipod_handGuard_M6G"
                 };
             };
         };

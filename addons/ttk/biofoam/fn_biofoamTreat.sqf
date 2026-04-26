@@ -7,6 +7,7 @@
  *   1: Acts as 2x Elastic Bandages
  *   2: Acts as 3x Elastic Bandages
  * Then applies pain based on setting.
+ * Handles magazine-based consumption (multi-use canister).
  *
  * Parameters:
  *   0: _medic    <OBJECT> - The medic performing treatment
@@ -18,6 +19,28 @@ params ["_medic", "_patient", "_bodyPart"];
 
 _bodyPart = toLower _bodyPart;
 
+// ─── Consume one use from the canister (magazine ammo) ───────────────────────
+if (!OLI_biofoam_infinite) then {
+    private _mags = magazinesAmmoFull _medic;
+    private _idx = _mags findIf {(_x select 0) == "OLI_BiofoamCanister"};
+
+    if (_idx != -1) then {
+        private _currentAmmo = (_mags select _idx) select 1;
+        private _maxUses = OLI_biofoam_uses;
+
+        // Clamp to configured max uses (magazine spawns with count=10 from
+        // config, but the slider may be lower — first use corrects it)
+        private _effectiveAmmo = _currentAmmo min _maxUses;
+
+        _medic removeMagazine "OLI_BiofoamCanister";
+
+        if (_effectiveAmmo - 1 > 0) then {
+            _medic addMagazine ["OLI_BiofoamCanister", _effectiveAmmo - 1];
+        };
+    };
+};
+
+// ─── Treat wounds ────────────────────────────────────────────────────────────
 switch (OLI_biofoam_strength) do {
 
     // ── Strength 0: Bandage everything on the limb ───────────────────────

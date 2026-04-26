@@ -1286,7 +1286,7 @@ class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
     uniformClass = QCLASS(CBUU_Woodland_1);
 
     hiddenSelectionsTextures[] = {
-        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_TacShirt_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_Pants_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
@@ -1311,7 +1311,7 @@ class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
     uniformClass = QCLASS(CBUU_Woodland_2);
 
     hiddenSelectionsTextures[] = {
-        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_TacShirt_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Woodland\CBUU_Pants_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
@@ -1336,7 +1336,7 @@ class CLASS(Marine_TCP_Black_1): CLASS(Marine_TCP_Urban_1_Base) {
     uniformClass = QCLASS(CBUU_Urban_1);
 
     hiddenSelectionsTextures[] = {
-        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Urban\CBUU_FieldTop_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Urban\CBUU_TacShirt_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Urban\CBUU_Pants_CO.paa",
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
