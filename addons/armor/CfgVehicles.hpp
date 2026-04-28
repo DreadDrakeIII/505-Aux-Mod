@@ -117,10 +117,17 @@ class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_TacShirt_Full_Gloves_Bloused_Kn
     class Rogue_CEBackpackScout;
     class 19thMD_Backpack_Standard_Med;
     class TKE_AlicePackUCN;
-    // class Halo_LR;
-    // class Halo_Hardcase;
-    // class Halo_Rucksack_01;
-    // class Halo_Rucksack_02;
+    class TCP_B_Rifleman_1_M43_Medium_Rucksack_Olive;
+    class TCP_B_Rifleman_2_M43_Medium_Rucksack_Olive;
+    class TCP_B_Rifleman_3_M43_Medium_Rucksack_Olive;
+    class TCP_B_Rifleman_4_M43_Medium_Rucksack_Olive;
+    class TCP_B_Rifleman_5_M43_Medium_Rucksack_Olive;
+    class TCP_B_Utility_Rig_Black;
+    class TCP_B_RTO_1_ANPRC171_Olive;
+    class TCP_B_RTO_1_ANPRC171_Patrol_Olive;
+    class TCP_B_RTO_1_ANPRC171_Patrol_M2_Buttpack_Black_M43A;
+    class TCP_B_Medic_1_M43_Medium_Rucksack_Medical_Olive_M43A;
+
 
     class CLASS(Backpack_Base): Rogue_CEBackpack {
         SCOPE_PRIVATE;
@@ -154,23 +161,45 @@ class CLASS(Marine_TCP_Urban_1_Base): TCP_B_CBUU_TacShirt_Full_Gloves_Bloused_Kn
         SCOPE_PRIVATE;
         displayName = "Black Ops Backpack (Base)";
     };
-    // class CLASS(CH252_LR_Base): Halo_LR {
-    //     SCOPE_PRIVATE;
-    //     displayName = "CH252 LR (Base)";
-    // };
-    // class CLASS(CH252_Hardcase_Base): Halo_Hardcase {
-    //     SCOPE_PRIVATE;
-    //     displayName = "CH252 Hardcase (Base)";
-    // };
-    // class CLASS(CH252_Rucksack_Light_Base): Halo_Rucksack_01 {
-    //     SCOPE_PRIVATE;
-    //     displayName = "CH252 Rucksack Light (Base)";
-    // };
-    // class CLASS(CH252_Rucksack_Heavy_Base): Halo_Rucksack_02 {
-    //     SCOPE_PRIVATE;
-    //     displayName = "CH252 Rucksack Heavy (Base)";
-    // };
-
-
+    class CLASS(M43_Rucksack_5_Olive_Base): TCP_B_Rifleman_5_M43_Medium_Rucksack_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43 Rucksack 5 (Olive)(Base)";
+    };
+    class CLASS(M43_Rucksack_4_Olive_Base): TCP_B_Rifleman_4_M43_Medium_Rucksack_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43 Rucksack 4 (Olive)(Base)";
+    };
+    class CLASS(M43_Rucksack_3_Olive_Base): TCP_B_Rifleman_3_M43_Medium_Rucksack_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43 Rucksack 3 (Olive)(Base)";
+    };
+    class CLASS(M43_Rucksack_2_Olive_Base): TCP_B_Rifleman_2_M43_Medium_Rucksack_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43 Rucksack 2 (Olive)(Base)";
+    };
+    class CLASS(M43_Rucksack_1_Olive_Base): TCP_B_Rifleman_1_M43_Medium_Rucksack_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43 Rucksack 1 (Olive)(Base)";
+    };
+    class CLASS(Utility_Rig_Black_Base): TCP_B_Utility_Rig_Black {
+        SCOPE_PRIVATE;
+        displayName = "Utility Rig (Black)(Base)";
+    };
+    class CLASS(M43A_ANPRC171_RTO_Buttpack_1_Olive_Base): TCP_B_RTO_1_ANPRC171_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43A ANPRC171 M2 Buttpack RTO 1 (Olive)(Base)";
+    };
+    class CLASS(M43A_ANPRC171_RTO_Buttpack_2_Olive_Base): TCP_B_RTO_1_ANPRC171_Patrol_Olive {
+        SCOPE_PRIVATE;
+        displayName = "M43A ANPRC171 M2 Buttpack RTO 2 (Olive)(Base)";
+    };
+    class CLASS(M43A_ANPRC171_RTO_Buttpack_1_Black_Base): TCP_B_RTO_1_ANPRC171_Patrol_M2_Buttpack_Black_M43A {
+        SCOPE_PRIVATE;
+        displayName = "M43A ANPRC171 M2 Buttpack RTO 1 (Black)(Base)";
+    };
+    class CLASS(M43_Medic_Rucksack_Olive_Base): TCP_B_Medic_1_M43_Medium_Rucksack_Medical_Olive_M43A {
+        SCOPE_PRIVATE;
+        displayName = "M43A Medic Rackpack (Olive)(Base)";
+    };
     #include "configs\Backpacks.hpp"
 };

@@ -7,6 +7,10 @@ class CfgWeapons
     class InventoryFlashLightItem_Base_F;
     class InventoryMuzzleItem_Base_F;
 
+    class ItemCore;
+    class InventoryOpticsItem_Base_F;
+    class TCP_OpticsMode_Base_3D;
+
     // Scope base classes
     class OPTRE_SRS99C_Scope: optic_Aco {
         class ItemInfo;
@@ -471,6 +475,120 @@ class CfgWeapons
                 irLaserPos = "laser pos";
                 irLaserEnd = "laser dir";
                 irDistance = 5;
+            };
+        };
+    };
+
+    // ============================================
+    // ========= TCP Optics NV Patch ==============
+    // ============================================
+
+    class TCP_optic_M27RCO: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+        {
+            class OpticsModes
+            {
+                class EVOSD
+                {
+                    visionMode[] = {};
+                };
+            };
+        };
+    };
+    class TCP_optic_M43RCO: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+        {
+            class OpticsModes
+            {
+                class EVOSD
+                {
+                    visionMode[] = {};
+                };
+            };
+        };
+    };
+    class TCP_optic_EVOSD: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+        {
+            class OpticsModes
+            {
+                class EVOSD
+                {
+                    visionMode[] = {};
+                };
+            };
+        };
+    };
+    class TCP_optic_EVOSJ: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+        {
+            class OpticsModes
+            {
+                class EVOSJ: TCP_OpticsMode_Base_3D
+				{
+				};
+                class EVOSD
+				{
+					opticsID=1;
+					useModelOptics=1;
+					opticsPPEffects[]=
+					{
+						"OpticsCHAbera1",
+						"OpticsBlur1"
+					};
+					opticsZoomMin=0.083333336;
+					opticsZoomMax=0.25;
+					opticsZoomInit=0.25;
+					discreteDistance[]={100,200,300,400,500,600,700,800,900,1000};
+					discreteDistanceInitIndex=1;
+					distanceZoomMin=100;
+					distanceZoomMax=1000;
+					discreteFOV[]={0.25,0.125,0.083333336};
+					discreteInitIndex=0;
+					modelOptics[]=
+					{
+						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_1x.p3d",
+						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_2x.p3d",
+						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_3x.p3d"
+					};
+					memoryPointCamera="opticView";
+					visionMode[]=
+					{
+					};
+					opticsFlare=1;
+					opticsDisablePeripherialVision=1;
+					cameraDir="";
+				};
+            };
+        };
+    };
+	class TCP_optic_KFA_M6G: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+		{
+            class OpticsModes
+            {
+                class 2D
+				{
+					visionMode[]= {};
+				};
+            };
+        };
+    };
+	class TCP_optic_KFA_M6G2: ItemCore
+    {
+        class ItemInfo: InventoryOpticsItem_Base_F
+		{
+            class OpticsModes
+            {
+                class 2D
+				{
+					visionMode[]= {};
+				};
             };
         };
     };

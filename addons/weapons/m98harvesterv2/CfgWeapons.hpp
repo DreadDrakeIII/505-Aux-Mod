@@ -35,7 +35,7 @@ class CfgWeapons {
                       };
         magazineWell[] = {QCLASS(Magwell_M98_Harvester_II)};
 
-        reloadSound[] = {"\BLU\OLI\addons\weapons\m98harvesterv2\data\sound\m98h_reload.ogg",1,1};
+        reloadMagazineSound[] = {"\BLU\OLI\addons\weapons\m98harvesterv2\data\sound\m98h_reload.ogg",1,1};
 
         class LinkedItems {
             class Cows {

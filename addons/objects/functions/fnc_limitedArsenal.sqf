@@ -40,7 +40,7 @@ private _whitelist = [
     // Backpacks
 
     // ========== GOGGLES/FACEWEAR ==========
-    "OLI_Davy_Mask_Glasses"
+    "OLI_Davy_Mask"
 ];
 
 // Setup ACE Arsenal with whitelist

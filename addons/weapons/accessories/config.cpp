@@ -16,7 +16,9 @@ class CfgPatches {
             "ace_xm157",
             "ace_optics",
             "cba_optics",
-            "ace_scopes"
+            "ace_scopes",
+            "TCP_Weapons_Ins",
+            "TCP_Weapons"
         };
         units[] = {};
         weapons[] = {

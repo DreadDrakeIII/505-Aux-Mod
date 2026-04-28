@@ -34,7 +34,7 @@ class CfgWeapons {
         magazines[] = { QCLASS(36Rnd_95x40_Mag) };
         magazineWell[] = {QCLASS(Magwell_BR55HB)};
 
-        reloadSound[] = {"\BLU\OLI\addons\weapons\br55hb\data\sound\br55hb_reload.ogg",1,1};
+        reloadMagazineSound[] = {"\BLU\OLI\addons\weapons\br55hb\data\sound\br55hb_reload.ogg",1,1};
 
         class LinkedItems {
             class Cows {

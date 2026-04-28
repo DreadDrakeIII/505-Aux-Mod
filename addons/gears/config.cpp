@@ -18,7 +18,9 @@ class CfgPatches {
             "TCP_Functions"
         };
         units[] = {};
-        weapons[] = {QCLASS(Vector)};
+        weapons[] = {
+            QCLASS(Vector)
+        };
         VERSION_CONFIG;
     };
 };

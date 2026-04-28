@@ -32,7 +32,7 @@ class CfgWeapons {
         magazines[] = {QCLASS(8Rnd_127x40_Mag)};
         magazineWell[] = { QCLASS(Magwell_M6G) };
 
-        reloadSound[] = {"\BLU\OLI\addons\weapons\m6g\data\sound\m6g_reload.ogg",1,1};
+        reloadMagazineSound[] = {"\BLU\OLI\addons\weapons\m6g\data\sound\m6g_reload.ogg",1,1};
 
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
