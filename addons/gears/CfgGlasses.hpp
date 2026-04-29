@@ -184,18 +184,21 @@ class CLASS(Tactical_Combat_Mask_DP): TCP_G_BalaclavaTacticalGlasses_Black_Blue_
     //============================CUSTOM MASKS================================
     //========================================================================
 
-    class CLASS(Davy_Mask): CLASS(Tactical_Combat_Mask) {
+    class CLASS(Davy_Mask): TCP_G_BalaclavaTacticalGlasses_Black_Black {
         displayName = "[505th] Davy Mask with Glasses";
+
+        tcp_visrRscTitlesClass = "RscTCPVisrODST";
 
         TCP_visrClasses[] = {"OLI_Davy_Mask","OLI_Davy_Mask_Red"};
 
-
-        // hiddenSelections[] = {"camo","camo1","camo2"};
-        // hiddenSelectionsTextures[] = {
-        //     "\TCP\characters\BLUFOR\UNSC\Army\Facewear\balaclava\data\camo\Black\g_Balaclava_CO.paa",
-        //     "\TCP\characters\BLUFOR\UNSC\Army\Facewear\tacticalGlasses\data\camo\Black\g_TacticalGlasses_CO.paa",
-        //     "\TCP\characters\BLUFOR\UNSC\Army\Facewear\tacticalGlasses\data\camo\Blue\g_TacticalGlasses_CO.paa"
-        // };
+        ACE_Color[] = {0, 0, 0};
+        ACE_DustPath = "\z\ace\addons\goggles\textures\fx\dust\%1.paa";
+        ACE_Overlay = "";
+        ACE_OverlayCracked = "\z\ace\addons\goggles\textures\HUD\Cracked.paa";
+        ACE_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
+        ACE_Protection = 1;
+        ACE_Resistance = 2;
+        ACE_TintAmount = 0;
     };
 
     class CLASS(Davy_Mask_Red): TCP_G_BalaclavaTacticalGlasses_Black_Red {

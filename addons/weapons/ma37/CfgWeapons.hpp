@@ -22,6 +22,9 @@ class CfgWeapons {
         magazines[] = {QCLASS(40Rnd_762x51_Mag)};
         magazineWell[] = {QCLASS(Magwell_MA37)};
 
+        class FlashLight {};
+        class TCP_weaponTypes {};
+
         reloadMagazineSound[] = {"\BLU\OLI\addons\weapons\ma37\data\sound\ma37_reload.ogg",1,1};
 
         class LinkedItems {
@@ -51,7 +54,8 @@ class CfgWeapons {
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
                     "OLI_MA37_LAM",
-                    "OLI_MA37_LAM_IR"
+                    "OLI_MA37_LAM_IR",
+                    "OLI_MA37_LAM_FL"
                 };
             };
 

@@ -422,7 +422,7 @@ class CfgWeapons
         inertia = 0.1;
 
         MRT_SwitchItemNextClass = QCLASS(MA37_LAM_IR);
-        MRT_SwitchItemPrevClass = QCLASS(MA37_LAM_IR);
+        MRT_SwitchItemPrevClass = QCLASS(MA37_LAM_FL);
         MRT_switchItemHintText = "Visible Laser";
 
         class ItemInfo: InventoryFlashLightItem_Base_F
@@ -446,7 +446,7 @@ class CfgWeapons
     };
 
     // Mode 2: IR Laser
-    class CLASS(MA37_LAM_IR): acc_pointer_IR
+    class CLASS(MA37_LAM_IR): CLASS(MA37_LAM)
     {
         author = AUTHOR;
         SCOPE_HIDDEN;
@@ -461,7 +461,7 @@ class CfgWeapons
 
         inertia = 0.1;
 
-        MRT_SwitchItemNextClass = QCLASS(MA37_LAM);
+        MRT_SwitchItemNextClass = QCLASS(MA37_LAM_FL);
         MRT_SwitchItemPrevClass = QCLASS(MA37_LAM);
         MRT_switchItemHintText = "IR Laser";
 
@@ -475,6 +475,60 @@ class CfgWeapons
                 irLaserPos = "laser pos";
                 irLaserEnd = "laser dir";
                 irDistance = 5;
+            };
+        };
+    };
+
+    // Mode 2: IR Laser
+    class CLASS(MA37_LAM_FL): CLASS(MA37_LAM)
+    {
+        author = AUTHOR;
+        SCOPE_HIDDEN;
+        baseWeapon = QCLASS(MA37_LAM_FL);
+
+        displayName = "[505th] MA37 LAM (FL)";
+        descriptionShort = "[505th] MA37 Laser Aiming Module - Flashlight Mode";
+        descriptionUse = "<t color='#9cf953'>Use: </t>[505th] Flashlight";
+
+        model = "\TCP\Weapons\Acc\Rail\LAM_MA37\accv_pointer_lam_MA37.p3d";
+        picture = "\TCP\Weapons\Acc\Rail\LAM_MA37\data\ui\icon_lam_MA37_CA.paa";
+
+        inertia = 0.1;
+
+        MRT_SwitchItemNextClass = QCLASS(MA37_LAM);
+        MRT_SwitchItemPrevClass = QCLASS(MA37_LAM_IR);
+        MRT_switchItemHintText = "Flashlight";
+
+        class ItemInfo: InventoryFlashLightItem_Base_F
+        {
+            mass = 4;
+            class Pointer {};
+            class FlashLight
+            {
+                color[] = {180, 160, 130};
+                ambient[] = {0.9, 0.81, 0.7};
+                intensity = 100;
+                size = 1;
+                innerAngle = 5;
+                outerAngle = 100;
+                coneFadeCoef = 8;
+                position = "laser pos";
+                direction = "laser dir";
+                useFlare = 1;
+                flareSize = 1.4;
+                flareMaxDistance = 200;
+                dayLight = 1;
+                scale[] = {0};
+
+                class Attenuation
+                {
+                    start = 0;
+                    constant = 0.5;
+                    linear = 0.1;
+                    quadratic = 0.2;
+                    hardLimitStart = 27;
+                    hardLimitEnd = 34;
+                };
             };
         };
     };

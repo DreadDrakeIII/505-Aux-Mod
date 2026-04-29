@@ -31,7 +31,8 @@ class CfgPatches {
             QCLASS(ANPEQ6G),
             QCLASS(ANPEQ6G_VL),
             QCLASS(MA37_LAM),
-            QCLASS(MA37_LAM_IR)
+            QCLASS(MA37_LAM_IR),
+            QCLASS(MA37_LAM_FL)
         };
         VERSION_CONFIG;
     };

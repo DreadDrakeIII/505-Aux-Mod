@@ -151,7 +151,7 @@ class CfgVehicles {
 //   BASE CLASSES
 // =============================================================================
 
-class RscText {
+class OLI_RscText {
     deletable=0; fade=0; access=0; type=0; idc=-1;
     colorBackground[] = {0,0,0,0};
     colorText[] = {0.85,0.90,0.88,1};
@@ -162,7 +162,7 @@ class RscText {
     linespacing=1;
 };
 
-class RscStructuredText {
+class OLI_RscStructuredText {
     deletable=0; fade=0; access=0; type=13; idc=-1;
     style=0;
     colorText[] = {0.85,0.90,0.88,1};
@@ -173,7 +173,7 @@ class RscStructuredText {
     size=0.022; shadow=0;
 };
 
-class RscPicture {
+class OLI_RscPicture {
     deletable=0; fade=0; access=0; type=0; idc=-1;
     style=48;
     colorBackground[] = {0,0,0,0};
@@ -182,7 +182,7 @@ class RscPicture {
     text=""; fixedWidth=0; shadow=0; x=0; y=0; w=0.2; h=0.15;
 };
 
-class RscButton {
+class OLI_RscButton {
     deletable=0; fade=0; access=0; type=1; idc=-1;
     style=0x02;
     colorText[] = {0.85,0.90,0.88,1};
@@ -202,7 +202,7 @@ class RscButton {
     font="PuristaMedium"; sizeEx=0.026; text=""; action="";
 };
 
-class RscListBox {
+class OLI_RscListBox {
     deletable=0; fade=0; access=0; type=5; idc=-1;
     colorBackground[]       = {0.04, 0.07, 0.05, 0.95};
     colorSelect[]           = {0.14, 0.38, 0.18, 1.0};
@@ -234,19 +234,19 @@ class GVAR(dialog) {
 
     class ControlsBackground {
 
-        class Body: RscText {
+        class Body: OLI_RscText {
             idc=-1;
             x=DIALOG_X; y=DIALOG_Y; w=DIALOG_W; h=DIALOG_H;
             colorBackground[] = {0.06,0.08,0.11,0.97};
         };
 
-        class HeaderBG: RscText {
+        class HeaderBG: OLI_RscText {
             idc=-1;
             x=DIALOG_X; y=DIALOG_Y;
             w=DIALOG_W; h="0.060 * safezoneH";
             colorBackground[] = {0.09,0.13,0.17,1.0};
         };
-        class HeaderAccent: RscText {
+        class HeaderAccent: OLI_RscText {
             idc=-1;
             x=DIALOG_X; y="0.103 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.003 * safezoneH";
@@ -256,7 +256,7 @@ class GVAR(dialog) {
         // Column divider — thin vertical accent between list and preview.
         // Left column is x=0.23–0.49 (list + category buttons).
         // Right column is x=0.51–0.79 (preview panel).
-        class ColumnDivider: RscText {
+        class ColumnDivider: OLI_RscText {
             idc=-1;
             x="0.499 * safezoneW + safezoneX"; y="0.170 * safezoneH + safezoneY";
             w="0.002 * safezoneW"; h="0.500 * safezoneH";
@@ -264,13 +264,13 @@ class GVAR(dialog) {
         };
 
         // Left-column header bar — sits above list/category buttons
-        class LeftColHeaderBG: RscText {
+        class LeftColHeaderBG: OLI_RscText {
             idc=-1;
             x="0.230 * safezoneW + safezoneX"; y="0.165 * safezoneH + safezoneY";
             w="0.260 * safezoneW"; h="0.038 * safezoneH";
             colorBackground[] = {0.05,0.07,0.09,0.90};
         };
-        class LeftColHeaderLine: RscText {
+        class LeftColHeaderLine: OLI_RscText {
             idc=-1;
             x="0.230 * safezoneW + safezoneX"; y="0.203 * safezoneH + safezoneY";
             w="0.260 * safezoneW"; h="0.002 * safezoneH";
@@ -278,33 +278,33 @@ class GVAR(dialog) {
         };
 
         // Right-column header bar — sits above preview panel
-        class RightColHeaderBG: RscText {
+        class RightColHeaderBG: OLI_RscText {
             idc=-1;
             x="0.510 * safezoneW + safezoneX"; y="0.165 * safezoneH + safezoneY";
             w="0.280 * safezoneW"; h="0.038 * safezoneH";
             colorBackground[] = {0.05,0.07,0.09,0.90};
         };
-        class RightColHeaderLine: RscText {
+        class RightColHeaderLine: OLI_RscText {
             idc=-1;
             x="0.510 * safezoneW + safezoneX"; y="0.203 * safezoneH + safezoneY";
             w="0.280 * safezoneW"; h="0.002 * safezoneH";
             colorBackground[] = {0.20,0.55,0.28,0.55};
         };
 
-        class StatusAccentTop: RscText {
+        class StatusAccentTop: OLI_RscText {
             idc=-1;
             x=DIALOG_X; y="0.676 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.002 * safezoneH";
             colorBackground[] = {0.20,0.55,0.28,0.35};
         };
-        class StatusBG: RscText {
+        class StatusBG: OLI_RscText {
             idc=-1;
             x=DIALOG_X; y="0.680 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.060 * safezoneH";
             colorBackground[] = {0.04,0.06,0.08,0.95};
         };
 
-        class Watermark: RscPicture {
+        class Watermark: OLI_RscPicture {
             idc=-1;
             style=48;
             x="0.37 * safezoneW + safezoneX";
@@ -318,7 +318,7 @@ class GVAR(dialog) {
 
     class Controls {
 
-        class Logo505: RscPicture {
+        class Logo505: OLI_RscPicture {
             idc=-1; style=48;
             x="0.192 * safezoneW + safezoneX";
             y="0.044 * safezoneH + safezoneY";
@@ -327,7 +327,7 @@ class GVAR(dialog) {
             text=PATH_LOGO_505;
         };
 
-        class Title: RscText {
+        class Title: OLI_RscText {
             idc=-1;
             text="COMBAT ENGINEER TABLET";
             x="0.250 * safezoneW + safezoneX";
@@ -336,7 +336,7 @@ class GVAR(dialog) {
             colorText[] = {0.90,0.95,0.88,1.0};
             font="PuristaBold"; sizeEx=0.036; style=0x00;
         };
-        class SubTitle: RscText {
+        class SubTitle: OLI_RscText {
             idc=-1;
             text="505th EXPEDITIONARY FORCE  //  UNITED NATIONS SPACE COMMAND";
             x="0.250 * safezoneW + safezoneX";
@@ -346,7 +346,7 @@ class GVAR(dialog) {
             font="PuristaMedium"; sizeEx=0.018; style=0x00;
         };
 
-        class ResourceDisplay: RscText {
+        class ResourceDisplay: OLI_RscText {
             idc=IDC_RESOURCE_DISPLAY;
             text="⬡ ---";
             x="0.640 * safezoneW + safezoneX";
@@ -357,7 +357,7 @@ class GVAR(dialog) {
             font="PuristaBold"; sizeEx=0.028; style=0x02;
         };
 
-        class CloseButton: RscButton {
+        class CloseButton: OLI_RscButton {
             idc=1001; text="X";
             x="0.754 * safezoneW + safezoneX";
             y="0.048 * safezoneH + safezoneY";
@@ -370,7 +370,7 @@ class GVAR(dialog) {
             action="closeDialog 0;";
         };
 
-        class ModeTabBuild: RscButton {
+        class ModeTabBuild: OLI_RscButton {
             idc=IDC_MODE_BUILD;
             text="BUILD MODE";
             x="0.205 * safezoneW + safezoneX";
@@ -383,7 +383,7 @@ class GVAR(dialog) {
             font="PuristaBold"; sizeEx=0.022;
             action="";
         };
-        class ModeTabDemolish: RscButton {
+        class ModeTabDemolish: OLI_RscButton {
             idc=IDC_MODE_DEMOLISH;
             text="DEMOLISH MODE";
             x="0.487 * safezoneW + safezoneX";
@@ -416,7 +416,7 @@ class GVAR(dialog) {
         // ─────────────────────────────────────────────────────────────────────
 
         // Left column header — "CATEGORY" in category-picker, "Category > X" in list view
-        class LeftColTitle: RscText {
+        class LeftColTitle: OLI_RscText {
             idc = IDC_CAT_TITLE;
             text = "CATEGORY";
             x = "0.232 * safezoneW + safezoneX";
@@ -429,7 +429,7 @@ class GVAR(dialog) {
 
         // Breadcrumb label — shown in list view only (sits on top of LeftColTitle,
         // so hide one to show the other). Set dynamically by showObjectList.
-        class CatLabel: RscText {
+        class CatLabel: OLI_RscText {
             idc = IDC_CAT_LABEL;
             text = "";
             x = "0.232 * safezoneW + safezoneX";
@@ -441,7 +441,7 @@ class GVAR(dialog) {
         };
 
         // Right column header — "OBJECT PREVIEW"
-        class RightColTitle: RscText {
+        class RightColTitle: OLI_RscText {
             idc = -1;
             text = "OBJECT PREVIEW";
             x = "0.512 * safezoneW + safezoneX";
@@ -457,7 +457,7 @@ class GVAR(dialog) {
         // Stacked: Barrier at y=0.320, Structure at 0.380, Misc at 0.440.
         // Below 0.500 is reserved for future subcategory buttons.
 
-        class BtnCatBarrier: RscButton {
+        class BtnCatBarrier: OLI_RscButton {
             idc = IDC_CAT_BARRIER;
             text = "Barrier";
             x = "0.236 * safezoneW + safezoneX";
@@ -470,7 +470,7 @@ class GVAR(dialog) {
             font = "PuristaBold"; sizeEx = 0.034;
             action = "[""Barrier""] call OLI_engtools_fnc_showObjectList;";
         };
-        class BtnCatStructure: RscButton {
+        class BtnCatStructure: OLI_RscButton {
             idc = IDC_CAT_STRUCTURE;
             text = "Structure";
             x = "0.236 * safezoneW + safezoneX";
@@ -483,7 +483,7 @@ class GVAR(dialog) {
             font = "PuristaBold"; sizeEx = 0.034;
             action = "[""Structure""] call OLI_engtools_fnc_showObjectList;";
         };
-        class BtnCatMisc: RscButton {
+        class BtnCatMisc: OLI_RscButton {
             idc = IDC_CAT_MISC;
             text = "Misc";
             x = "0.236 * safezoneW + safezoneX";
@@ -498,7 +498,7 @@ class GVAR(dialog) {
         };
 
         // ── [< Back] button — sits at top of list view, above the list ────────
-        class BtnCategoryBack: RscButton {
+        class BtnCategoryBack: OLI_RscButton {
             idc = IDC_CAT_BACK;
             text = "<  Back to Categories";
             x = "0.236 * safezoneW + safezoneX";
@@ -516,7 +516,7 @@ class GVAR(dialog) {
         // ── OBJECT LIST ───────────────────────────────────────────────────────
         // Scrollable listbox. y starts below the Back button (0.254), ends
         // above the reserved future-expand region (0.660). Font 2× previous.
-        class ObjList: RscListBox {
+        class ObjList: OLI_RscListBox {
             idc = IDC_OBJ_LIST;
             x = "0.236 * safezoneW + safezoneX";
             y = "0.254 * safezoneH + safezoneY";
@@ -624,14 +624,14 @@ class GVAR(dialog) {
         // Image occupies top 60% of right column, name + cost + description
         // below. Shown empty with placeholder text when no selection.
 
-        class PreviewImgBorder: RscText {
+        class PreviewImgBorder: OLI_RscText {
             idc = IDC_PREVIEW_IMG_BORDER;
             x = "0.514 * safezoneW + safezoneX";
             y = "0.214 * safezoneH + safezoneY";
             w = "0.272 * safezoneW"; h = "0.300 * safezoneH";
             colorBackground[] = {0.06,0.08,0.11,0.97};
         };
-        class PreviewImage: RscPicture {
+        class PreviewImage: OLI_RscPicture {
             idc = IDC_PREVIEW_IMAGE; style = 48;
             x = "0.518 * safezoneW + safezoneX";
             y = "0.218 * safezoneH + safezoneY";
@@ -640,7 +640,7 @@ class GVAR(dialog) {
             colorBackground[] = {0.06,0.08,0.11,0.97};
             text = "";
         };
-        class PreviewName: RscText {
+        class PreviewName: OLI_RscText {
             idc = IDC_PREVIEW_NAME;
             text = "";
             x = "0.514 * safezoneW + safezoneX";
@@ -650,7 +650,7 @@ class GVAR(dialog) {
             colorBackground[] = {0,0,0,0};
             font = "PuristaBold"; sizeEx = 0.030; style = 0x02;
         };
-        class PreviewDesc: RscStructuredText {
+        class PreviewDesc: OLI_RscStructuredText {
             idc = IDC_PREVIEW_DESC;
             x = "0.514 * safezoneW + safezoneX";
             y = "0.566 * safezoneH + safezoneY";
@@ -664,7 +664,7 @@ class GVAR(dialog) {
 
         // ── PLACEHOLDER (shown when nothing selected) ─────────────────────────
         // Different control from PreviewName so we can hide/show independently.
-        class PreviewPlaceholder: RscStructuredText {
+        class PreviewPlaceholder: OLI_RscStructuredText {
             idc = IDC_PREVIEW_PLACEHOLDER;
             x = "0.514 * safezoneW + safezoneX";
             y = "0.340 * safezoneH + safezoneY";
@@ -678,7 +678,7 @@ class GVAR(dialog) {
         // function files. Kept as an invisible 1px stub to avoid scrubbing
         // those references. Do not remove without also editing showObjectList
         // and showCategories.
-        class BtnBuild: RscButton {
+        class BtnBuild: OLI_RscButton {
             idc = IDC_CAT_BUILD;
             text = "";
             x = "0.0 * safezoneW"; y = "0.0 * safezoneH";
@@ -694,7 +694,7 @@ class GVAR(dialog) {
 
 
         // ── STATUS BAR ────────────────────────────────────────────────────────
-        class StatusText: RscStructuredText {
+        class StatusText: OLI_RscStructuredText {
             idc=IDC_STATUS_TEXT;
             x=DIALOG_X; y="0.682 * safezoneH + safezoneY";
             w=DIALOG_W; h="0.026 * safezoneH";
@@ -703,7 +703,7 @@ class GVAR(dialog) {
             size=0.018;
         };
 
-        class ControlsHint: RscText {
+        class ControlsHint: OLI_RscText {
             idc=-1;
             text="Hover / Scroll list = preview  |  Click or Enter = start placing  |  In placement: LMB=Place  RMB=Menu  Scroll=Rotate  ALT+Scr=Height  Ctrl+Scr=Dist  Q/E=Yaw  G=Gnd  F=Snap  Backspace=Reset";
             x=DIALOG_X; y="0.711 * safezoneH + safezoneY";
@@ -733,7 +733,7 @@ class RscTitles {
         fadein   = 0;
         fadeout  = 0;
         class controls {
-            class PiPBorder : RscText {
+            class PiPBorder : OLI_RscText {
                 idc = -1;
                 x = "(0.768 * safezoneW) + safezoneX";
                 y = "(0.016 * safezoneH) + safezoneY";
@@ -741,7 +741,7 @@ class RscTitles {
                 h = "0.154 * safezoneH";
                 colorBackground[] = {0.20, 0.55, 0.28, 0.70};
             };
-            class PiPDisplay : RscPicture {
+            class PiPDisplay : OLI_RscPicture {
                 idc   = 1234;
                 x = "(0.770 * safezoneW) + safezoneX";
                 y = "(0.018 * safezoneH) + safezoneY";
@@ -751,7 +751,7 @@ class RscTitles {
                 style = 48;
                 colorBackground[] = {0, 0, 0, 1};
             };
-            class PiPLabel : RscText {
+            class PiPLabel : OLI_RscText {
                 idc = -1;
                 x = "(0.771 * safezoneW) + safezoneX";
                 y = "(0.019 * safezoneH) + safezoneY";

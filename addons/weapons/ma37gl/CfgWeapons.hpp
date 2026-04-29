@@ -53,7 +53,8 @@ class CfgWeapons {
             class PointerSlot: PointerSlot {
                 compatibleItems[] = {
                     "OLI_MA37_LAM",
-                    "OLI_MA37_LAM_IR"
+                    "OLI_MA37_LAM_IR",
+                    "OLI_MA37_LAM_FL"
                 };
             };
 
