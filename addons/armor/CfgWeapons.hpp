@@ -1,3 +1,4 @@
+class ItemInfo;
 class CfgWeapons {
     class Rogue_CEHelmet;
     class CLASS(Marine_Helmet_Base): Rogue_CEHelmet {
@@ -69,6 +70,16 @@ class CfgWeapons {
         SCOPE_HIDDEN;
         author = AUTHOR;
         displayName = "[505th] CH43/A Helmet Olive (Base)";
+        class ItemInfo: ItemInfo
+	{
+		class HitpointsProtectionInfo
+		{
+			class Chest;
+			class Diaphragm;
+			class Abdomen;
+			class Body;
+		};
+	};
     };
 
 

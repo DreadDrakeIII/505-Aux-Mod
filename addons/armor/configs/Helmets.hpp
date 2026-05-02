@@ -195,6 +195,44 @@ class CLASS(CH43A_Helmet_Olive): CLASS(CH43A_Helmet_OLIVE_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CH43/A Helmet (Olive)";
+    hiddenSelections[] = {"camo","decals"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\helmets\tcp\ch43a_co.paa),
+        "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
+    };
+                class ItemInfo: ItemInfo {
+                    class HitpointsProtectionInfo: HitpointsProtectionInfo
+                    {
+                        class Head
+                        {
+                            hitpointName = "HitHead";
+                            armor = 23;
+                            passThrough = 0.2;
+                };
+            };
+        };
+};
+
+class CLASS(CH43A_Medic_Helmet_Olive): CLASS(CH43A_Helmet_OLIVE_Base) {
+    SCOPE_PUBLIC;
+    author = AUTHOR;
+    displayName = "[505th] CH43/A Medic Helmet (Olive)";
+    hiddenSelections[] = {"camo","decals"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOF(data\helmets\tcp\ch43a_medic_co.paa),
+        "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
+    };
+                class ItemInfo: ItemInfo {
+                    class HitpointsProtectionInfo: HitpointsProtectionInfo
+                    {
+                        class Head
+                        {
+                            hitpointName = "HitHead";
+                            armor = 23;
+                            passThrough = 0.2;
+                };
+            };
+        };
 };
 
 class CLASS(ECH35J_Helmet_Olive_BV): CLASS(ECH35J_Helmet_Olive_Blue_Base) {

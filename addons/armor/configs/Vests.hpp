@@ -677,13 +677,125 @@ class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
 // =========================================================================
 // ============================ M43 Vests ==================================
 // =========================================================================
+class HitpointsProtectionInfo;
 class CLASS(M43_Heavy_Olive_1): CLASS(M43_Heavy_Olive_1_Base) {
     displayName = "[505th] M43 Heavy (Olive 1)";
     SCOPE_PUBLIC;
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals"};
+    hiddenSelectionsTextures[] = {
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_01_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_shoulders_gungnir_olive_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_02_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_03_co.paa),
+    "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"};
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
+        class HitpointsProtectionInfo: HitpointsProtectionInfo
+        {
+            class Neck
+			{
+				hitpointName	= "HitNeck";	// reference to the hit point class defined in the man base class
+				armor			= 25;			// addition to armor of referenced hitpoint
+				passThrough		= 0.2;			// multiplier of base passThrough defined in referenced hitpoint
+			};
+            class Chest
+            {
+                hitpointName = "HitChest";        // Reference to the hitpoint class defined in the man base class
+                armor = 25;                     // Addition to armor of referenced hitpoint
+                passThrough = 0.2;                 // Multiplier of base passThrough defined in referenced hitpoint
+            };
+            class Diaphragm
+            {
+                hitpointName = "HitDiaphragm";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Abdomen
+            {
+                hitpointName = "HitAbdomen";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Body
+            {
+                hitpointName = "HitBody";
+                passThrough = 0.2;
+            };
+            class Arms //Shoulders added
+            {
+                hitpointName = "HitArms";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Legs //Thighplates added
+            {
+                hitpointName = "HitLegs";
+                armor = 25;
+                passThrough = 0.2;
+            };
         };
+    };
+};
+
+class CLASS(M43_Medic_Olive_1): CLASS(M43_Heavy_Olive_1_Base) {
+    displayName = "[505th] M43 Medic (Olive 1)";
+    SCOPE_PUBLIC;
+    hiddenSelections[] = {"camo","camo1","camo2","camo3","decals"};
+    hiddenSelectionsTextures[] = {
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_01_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_medic_shoulders_gungnir_olive_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_02_co.paa),
+    QPATHTOF(data\vests\tcp\standard\m43a_vest_olive_03_co.paa),
+    "\TCP\Characters\BLUFOR\UNSC\Army\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"};
+    class ItemInfo: ItemInfo {
+            containerClass = "Supply100";
+            vestType = "Rebreather";
+        class HitpointsProtectionInfo: HitpointsProtectionInfo
+        {
+            class Neck
+			{
+				hitpointName	= "HitNeck";	// reference to the hit point class defined in the man base class
+				armor			= 25;			// addition to armor of referenced hitpoint
+				passThrough		= 0.2;			// multiplier of base passThrough defined in referenced hitpoint
+			};
+            class Chest
+            {
+                hitpointName = "HitChest";        // Reference to the hitpoint class defined in the man base class
+                armor = 25;                     // Addition to armor of referenced hitpoint
+                passThrough = 0.2;                 // Multiplier of base passThrough defined in referenced hitpoint
+            };
+            class Diaphragm
+            {
+                hitpointName = "HitDiaphragm";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Abdomen
+            {
+                hitpointName = "HitAbdomen";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Body
+            {
+                hitpointName = "HitBody";
+                passThrough = 0.2;
+            };
+            class Arms //Shoulders added
+            {
+                hitpointName = "HitArms";
+                armor = 25;
+                passThrough = 0.2;
+            };
+            class Legs //Thighplates added
+            {
+                hitpointName = "HitLegs";
+                armor = 25;
+                passThrough = 0.2;
+            };
+        };
+    };
 };
 
 class CLASS(M43_Medium_Olive_1): CLASS(M43_Medium_Olive_1_Base) {
