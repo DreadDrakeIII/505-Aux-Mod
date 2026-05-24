@@ -61,6 +61,8 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),40);
             // MR10 Longbow  | 9.5xVX2     | 15Rnd
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),40);
+            // BR55HB         | 7.62x51mm   | 36Rnd
+            MAG_XX(CLASS(36Rnd_95x40_Mag),40);
 
             // ---- PRIMARY: SMGs ----
             // CPW           | 9x21mm      | 30Rnd
@@ -167,6 +169,8 @@ class CfgVehicles {
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),160);
             // MR10 Longbow  | 9.5xVX2     | 15Rnd
             MAG_XX(CLASS(15Rnd_95xVX2_Mag),160);
+            // BR55HB         | 7.62x51mm   | 36Rnd
+            MAG_XX(CLASS(36Rnd_95x40_Mag),160);
 
             // ---- PRIMARY: SMGs ----
             // CPW           | 9x21mm      | 30Rnd

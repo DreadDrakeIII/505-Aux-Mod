@@ -191,48 +191,62 @@ class CLASS(Black_Ops_Helmet): CLASS(505th_Black_Ops_Helmet_Base) {
 // ==============================================================================================
 // ============================ CH43/A, ECH35/J and ECH43/A Helmets =============================
 // ==============================================================================================
-class CLASS(CH43A_Helmet_Olive): CLASS(CH43A_Helmet_OLIVE_Base) {
+class CLASS(CH43A_Helmet_Olive): CLASS(CH43A_Helmet_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CH43/A Helmet (Olive)";
+    picture = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\data\ui\Olive\icon_headgear_CH43A_CA.paa";
     hiddenSelections[] = {"camo","decals"};
     hiddenSelectionsTextures[] = {
         QPATHTOF(data\helmets\tcp\ch43a_co.paa),
         "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
     };
-                class ItemInfo: ItemInfo {
-                    class HitpointsProtectionInfo: HitpointsProtectionInfo
-                    {
-                        class Head
-                        {
-                            hitpointName = "HitHead";
-                            armor = 23;
-                            passThrough = 0.2;
-                };
+    class TCP_uniformDecals: TCP_uniformDecals {
+        decalColor = "white";
+    };
+    class ItemInfo: ItemInfo {
+        hiddenSelections[] = {"camo","decals"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(data\helmets\tcp\ch43a_co.paa),
+            "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
+        };
+        class HitpointsProtectionInfo: HitpointsProtectionInfo {
+            class Head {
+                hitpointName = "HitHead";
+                armor = 23;
+                passThrough = 0.2;
             };
         };
+    };
 };
 
-class CLASS(CH43A_Medic_Helmet_Olive): CLASS(CH43A_Helmet_OLIVE_Base) {
+class CLASS(CH43A_Medic_Helmet_Olive): CLASS(CH43A_Helmet_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CH43/A Medic Helmet (Olive)";
+    picture = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\data\ui\Olive\icon_headgear_CH43A_CA.paa";
     hiddenSelections[] = {"camo","decals"};
     hiddenSelectionsTextures[] = {
         QPATHTOF(data\helmets\tcp\ch43a_medic_co.paa),
         "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
     };
-                class ItemInfo: ItemInfo {
-                    class HitpointsProtectionInfo: HitpointsProtectionInfo
-                    {
-                        class Head
-                        {
-                            hitpointName = "HitHead";
-                            armor = 23;
-                            passThrough = 0.2;
-                };
+    class TCP_uniformDecals: TCP_uniformDecals {
+        decalColor = "white";
+    };
+    class ItemInfo: ItemInfo {
+        hiddenSelections[] = {"camo","decals"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(data\helmets\tcp\ch43a_medic_co.paa),
+            "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\black\vest_M43_DecalSheet_CA.paa"
+        };
+        class HitpointsProtectionInfo: HitpointsProtectionInfo {
+            class Head {
+                hitpointName = "HitHead";
+                armor = 23;
+                passThrough = 0.2;
             };
         };
+    };
 };
 
 class CLASS(ECH35J_Helmet_Olive_BV): CLASS(ECH35J_Helmet_Olive_Blue_Base) {
@@ -241,8 +255,59 @@ class CLASS(ECH35J_Helmet_Olive_BV): CLASS(ECH35J_Helmet_Olive_Blue_Base) {
     displayName = "[505th] ECH35/J Helmet BV (Olive)";
 };
 
-class CLASS(ECH43A_Helmet_Olive_BV): CLASS(ECH43A_Helmet_OLIVE_Base) {
+class CLASS(ECH43A_Helmet_Olive_BV): CLASS(ECH43A_Helmet_Base) {
     SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] ECH43/A Helmet BV (Olive)";
+    picture = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\ui\Olive\icon_headgear_ECH43A_Blue_CA.paa";
+    TCP_visrClasses[] = {
+    "OLI_ECH43A_Helmet_Olive_BV",
+    "OLI_ECH43A_Helmet_Olive_BV_DP"
+};
+    class TCP_uniformDecals: TCP_uniformDecals {
+        decalColor = "white";
+    };
+    hiddenSelections[] = {"camo","camo1","decals"};
+    hiddenSelectionsTextures[] = {
+        "\TCP\characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\data\camo\Olive\helmet_CH43A_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\Blue\helmet_ECH43A_Visor_CO.paa",
+        "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\white\vest_M43_DecalSheet_CA.paa"
+    };
+    class ItemInfo: ItemInfo {
+        uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_Blue.p3d";
+        hiddenSelections[] = {"camo","camo1","decals"};
+        hiddenSelectionsTextures[] = {
+            "\TCP\characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\data\camo\Olive\helmet_CH43A_CO.paa",
+            "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\Blue\helmet_ECH43A_Visor_CO.paa",
+            "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\white\vest_M43_DecalSheet_CA.paa"
+        };
+        class HitpointsProtectionInfo: HitpointsProtectionInfo {
+            class Head {
+                hitpointName = "HitHead";
+                armor = 23;
+                passThrough = 0.2;
+            };
+        };
+    };
+};
+
+class CLASS(ECH43A_Helmet_Olive_BV_DP): CLASS(ECH43A_Helmet_DP_Base) {
+    scope = 1;
+    scopeArsenal = 0;
+    author = AUTHOR;
+    displayName = "[505th] ECH43/A Helmet BV DP (Olive)";
+    picture = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\ui\Olive\icon_headgear_ECH43A_Blue_CA.paa";
+    TCP_visrClasses[] = {
+    "OLI_ECH43A_Helmet_Olive_BV",
+    "OLI_ECH43A_Helmet_Olive_BV_DP"
+};
+    class TCP_uniformDecals: TCP_uniformDecals {
+        decalColor = "white";
+    };
+    hiddenSelections[] = {"camo","camo1","decals"};
+    hiddenSelectionsTextures[] = {
+        "\TCP\characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\data\camo\Olive\helmet_CH43A_CO.paa",
+        "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\data\camo\Blue\helmet_ECH43A_Visor_CA.paa",
+        "\TCP\characters\BLUFOR\UNSC\ARMY\Vests\M43A\data\camo\white\vest_M43_DecalSheet_CA.paa"
+    };
 };

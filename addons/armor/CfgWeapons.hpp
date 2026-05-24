@@ -1,4 +1,11 @@
-class ItemInfo;
+class TCP_uniformDecals;
+class TCP_equipmentTypes;
+  class H_Cap_oli;
+  class UniformItem;
+  class ItemInfo;
+  class Uniform_Base;
+  class H_HelmetB;
+  class HeadgearItem;
 class CfgWeapons {
     class Rogue_CEHelmet;
     class CLASS(Marine_Helmet_Base): Rogue_CEHelmet {
@@ -65,23 +72,33 @@ class CfgWeapons {
 // ===================================================================================================
 // ============================ CH43/A, ECH35/J and ECH43/A Helmets BASE =============================
 // ===================================================================================================
-    class TCP_H_Helmet_CH43A_Olive;
-    class CLASS(CH43A_Helmet_OLIVE_Base): TCP_H_Helmet_CH43A_Olive {
-        SCOPE_HIDDEN;
-        author = AUTHOR;
-        displayName = "[505th] CH43/A Helmet Olive (Base)";
-        class ItemInfo: ItemInfo
-	{
-		class HitpointsProtectionInfo
-		{
-			class Chest;
-			class Diaphragm;
-			class Abdomen;
-			class Body;
-		};
-	};
-    };
+class TCP_H_Helmet_CH43A_Base;
+class CLASS(CH43A_Helmet_Base): TCP_H_Helmet_CH43A_Base {
+    SCOPE_HIDDEN;
+    author = AUTHOR;
+    displayName = "[505th] CH43/A Helmet (Base)";
 
+    ace_hearing_protection = 1;
+    ace_hearing_lowerVolume = 0;
+    class TCP_uniformDecals {
+        selectionName = "nameCH43A";
+    };
+    model = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";
+    class ItemInfo: HeadgearItem {
+        uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_CH43A\h_helmet_CH43A.p3d";
+        mass = 80;
+        modelSides[] = {3,1};
+        hiddenSelections[] = {"camo","decals"};
+        passThrough = 0.2;
+        class HitpointsProtectionInfo {
+            class Head {
+                hitpointName = "HitHead";
+                armor = 23;
+                passThrough = 0.2;
+            };
+        };
+    };
+};
 
     class TCP_H_Helmet_ECH35J_Olive_Blue;
     class CLASS(ECH35J_Helmet_Olive_Blue_Base): TCP_H_Helmet_ECH35J_Olive_Blue {
@@ -90,11 +107,42 @@ class CfgWeapons {
         displayName = "[505th] ECH35/J Helmet Olive Blue (Base)";
     };
 
-    class TCP_H_Helmet_ECH43A_Olive_Blue;
-    class CLASS(ECH43A_Helmet_OLIVE_Base): TCP_H_Helmet_ECH43A_Olive_Blue {
+    class TCP_H_Helmet_ECH43A_Base;
+    class CLASS(ECH43A_Helmet_Base): TCP_H_Helmet_ECH43A_Base {
         SCOPE_HIDDEN;
         author = AUTHOR;
-        displayName = "[505th] ECH43/A Helmet Olive Blue (Base)";
+        displayName = "[505th] ECH43/A Helmet (Base)";
+        ace_hearing_protection = 1;
+        ace_hearing_lowerVolume = 0;
+        class TCP_uniformDecals {
+            selectionName = "nameCH43A";
+        };
+        model = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_Blue.p3d";
+        class ItemInfo: HeadgearItem {
+            uniformModel = "\TCP\Characters\BLUFOR\UNSC\Army\Headgear\helmet_ECH43A\h_helmet_ECH43A_Blue.p3d";
+            mass = 80;
+            modelSides[] = {3,1};
+            hiddenSelections[] = {"camo","camo1","decals"};
+            class HitpointsProtectionInfo {
+                class Head {
+                    hitpointName = "HitHead";
+                    armor = 23;
+                    passThrough = 0.2;
+                };
+                class Face {
+                    hitpointName = "HitFace";
+                    armor = 23;
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+
+    class TCP_H_Helmet_ECH43A_Base_DP;
+    class CLASS(ECH43A_Helmet_DP_Base): TCP_H_Helmet_ECH43A_Base_DP {
+        SCOPE_HIDDEN;
+        author = AUTHOR;
+        displayName = "[505th] ECH43/A Helmet DP (Base)";
     };
 
 

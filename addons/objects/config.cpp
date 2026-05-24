@@ -11,7 +11,6 @@ class CfgPatches {
             "TKE_Props",
             "OPTRE_BW_Locker",
             "A3_Structures_F_Mil_Flags",
-            "WBK_Lovchy_Animations",
             "WBK_KitArsenal",
             "ace_arsenal"
         };
