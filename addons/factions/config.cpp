@@ -7,7 +7,6 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QCLASS(main),
-            QEGVAR(vehicles,load_order),
         };
         units[] = {
             QCLASS(BLUFOR_Unit_Base),
