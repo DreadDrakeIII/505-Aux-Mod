@@ -87,3 +87,12 @@ sleep 1;
     "true",
     {}
 ] spawn Wbk_AddKit;
+
+[
+    _locker,
+    "Marine Combat Engineer",
+    [[["OLI_MA37","TCP_muzzle_brake_762_01","OLI_MA37_LAM","TCP_optic_EVOSJ",["OLI_40Rnd_762x51_Mag",40],[],""],[],["OLI_M6G","","","",["OLI_8Rnd_127x40_Mag",8],[],""],["OLI_CBUU_Woodland_1",[["ACE_elasticBandage",5],["ACE_tourniquet",1],["ACE_MapTools",1],["ACE_IR_Strobe_Item",1],["ItemcTabHCam",1],["ACE_EntrenchingTool",1],["ACE_Flashlight_XL50",1],["ACE_CableTie",5],["ItemAndroid",1],["WBK_HeadLampItem_Double",1],["kat_Painkiller",1,4],["TCP_M21_Smoke",5,1],["TCP_M21_SmokeBlue",3,1]]],["OLI_M43_Heavy_Olive_1",[["OLI_40Rnd_762x51_Mag",8,40]]],["TCP_B_Engineer_1_M43_Medium_Rucksack_Engineer_Olive_M43A",[["kat_IFAK",1],["KAT_Empty_bloodIV_250",1],["OLI_EndurexBoosterInhaler",3],["OLI_Combat_Engineer_Toolkit",1],["OPTRE_M9_Frag",4,1],[["UNSC_Knife","","","",[],[],""],1]]],"OLI_CH43A_Helmet_Olive","OLI_Tactical_Glasses",["OPTRE_Smartfinder","","","",["Laserbatteries",1],[],""],["ItemMap","TCP_UGPS","TCP_ANPRC55_9","ItemCompass","TCP_Watch","OPTRE_NVG"]],[["hoa_sling_slungHelmetItems",[]]]],
+    ["OLI_MA37_NoLight","OLI_BR55HB","OLI_M6G","OLI_M6C","OLI_MHG16","TCP_optic_M27RCO","TCP_muzzle_brake_762_01","TCP_muzzle_brake_95_01","OLI_ANPEQ6G","OLI_Tactical_Glasses","OLI_Tactical_Combat_Mask","TCP_G_Balaclava_Black","OLI_CBUU_Woodland_1","OLI_CBUU_Woodland_2","TCP_B_Rifleman_1_M43_Medium_Rucksack_Olive","TCP_B_Rifleman_2_M43_Medium_Rucksack_Olive","TCP_B_Rifleman_3_M43_Medium_Rucksack_Olive","TCP_B_Rifleman_4_M43_Medium_Rucksack_Olive","TCP_B_Rifleman_5_M43_Medium_Rucksack_Olive","TCP_B_Engineer_1_M43_Medium_Rucksack_Engineer_Olive_M43A"],
+    "true",
+    {}
+] spawn Wbk_AddKit;
