@@ -1,5 +1,5 @@
 class CfgMagazines {
-    class OPTRE_4Rnd_145x114_APFSDS_Mag;
+    class TCP_4Rnd_127x99_Mag_APFSDS_Tracer_Green;
 
     // ================================
     // M98 HARVESTER MAGAZINES
@@ -9,7 +9,7 @@ class CfgMagazines {
     // ================================
     // APFSDS MAGAZINE (Best for armor penetration)
     // ================================
-    class CLASS(5Rnd_147x114_APFSDS_Mag) : OPTRE_4Rnd_145x114_APFSDS_Mag {
+    class CLASS(5Rnd_147x114_APFSDS_Mag) : TCP_4Rnd_127x99_Mag_APFSDS_Tracer_Green {
         SCOPE_PUBLIC;
         baseMagazine = QCLASS(5Rnd_147x114_APFSDS_Mag);
         author = AUTHOR;
@@ -18,8 +18,8 @@ class CfgMagazines {
         displayNameShort = "14.7×114mm APFSDS • 5Rnd";
         descriptionShort = "Anti-Material Magazine • APFSDS Rounds • Maximum Penetration • 5 Rounds";
 
-        model = "\OPTRE_Weapons\Sniper\SRS99D_Mag.p3d";
-        picture = "\OPTRE_Weapons\Sniper\icons\srsD_mag.paa";
+        model = "\A3\weapons_F\ammo\mag_univ.p3d";
+        picture = "TCP\weapons\ammo\127x99\Ball\data\ui\icon_127x99mm_CA.paa";
 
 
         // Ammunition type

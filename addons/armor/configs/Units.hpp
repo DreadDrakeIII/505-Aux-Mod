@@ -9,29 +9,29 @@ class CLASS(Marine_CE_Rifleman): CLASS(Marine_CE_Base) {
 
     uniformClass = QCLASS(Uniform_CE);
     weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -56,29 +56,29 @@ class CLASS(Marine_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
     hiddenSelection[] = {"camo","camo1"};
     hiddenSelectionTextures[] = {QPATHTOF(data\uniforms\ce\marine\Marine_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
     weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -106,8 +106,8 @@ class CLASS(Marine_CE_Autorifle): CLASS(Marine_CE_Rifleman) {
 
     weapons[]= {
         "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -115,8 +115,8 @@ class CLASS(Marine_CE_Autorifle): CLASS(Marine_CE_Rifleman) {
     };
     respawnWeapons[]= {
         "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -175,9 +175,9 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
     editorPreview = EDITOR_PREVIEW(Marine_LAT);
 
     weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "launch_MRAWS_green_F",
         "OPTRE_Smartfinder",
@@ -185,9 +185,9 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "launch_MRAWS_green_F",
         "OPTRE_Smartfinder",
@@ -195,12 +195,12 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
         "MRAWS_HEAT_F"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
         "MRAWS_HEAT_F"
     };
@@ -218,30 +218,30 @@ class CLASS(Marine_CE_Grenadier): CLASS(Marine_CE_Rifleman) {
     editorPreview = EDITOR_PREVIEW(Marine_Grenadier);
 
     weapons[]= {
-        "OLI_MA5CGL",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37GL",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5CGL",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37GL",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
         "1Rnd_HE_Grenade_shell"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
         "1Rnd_HE_Grenade_shell"
     };
@@ -268,29 +268,29 @@ class CLASS(Marine_CE_Corpsman): CLASS(Marine_CE_Base) {
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\medic\Medic_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
     weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -317,29 +317,29 @@ class CLASS(Corpsman_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\medic\Medic_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformRolled_co.paa"};
 
     weapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "OLI_MA37",
+        "TCP_optic_EVOSJ",
+        "OLI_MA37_LAM",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -367,8 +367,8 @@ class CLASS(Marine_CE_SquadLead): CLASS(Marine_CE_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -376,8 +376,8 @@ class CLASS(Marine_CE_SquadLead): CLASS(Marine_CE_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -416,8 +416,8 @@ class CLASS(Marine_CE_SquadLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -425,8 +425,8 @@ class CLASS(Marine_CE_SquadLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -465,8 +465,8 @@ class CLASS(Marine_CE_PlatoonLead): CLASS(Marine_CE_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -474,8 +474,8 @@ class CLASS(Marine_CE_PlatoonLead): CLASS(Marine_CE_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -514,8 +514,8 @@ class CLASS(Marine_CE_PlatoonLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -523,8 +523,8 @@ class CLASS(Marine_CE_PlatoonLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -565,16 +565,18 @@ class CLASS(Marine_CE_FR): CLASS(Marine_CE_Base) {
     };
 
     weapons[]= {
-        "OLI_VTR93_Vindicta",
-        "OLI_VTR_Scope",
+        "OLI_VK78_COMMANDO",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_VTR93_Vindicta",
-        "OLI_VTR_Scope",
+        "OLI_VK78_COMMANDO",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -668,8 +670,8 @@ class CLASS(Marine_CE_Adamant): CLASS(Marine_CE_Base) {
 
     weapons[]= {
         "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -677,8 +679,8 @@ class CLASS(Marine_CE_Adamant): CLASS(Marine_CE_Base) {
     };
     respawnWeapons[]= {
         "OLI_M73",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -714,8 +716,8 @@ class CLASS(Marine_CE_Crawford): CLASS(Marine_CE_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -723,8 +725,8 @@ class CLASS(Marine_CE_Crawford): CLASS(Marine_CE_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSJ",
+        "TCP_rail_ammoCounter_VK78",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -778,8 +780,8 @@ class CLASS(Marine_CE_Oliver): CLASS(Marine_CE_Base) {
 
     weapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -787,8 +789,8 @@ class CLASS(Marine_CE_Oliver): CLASS(Marine_CE_Base) {
     };
     respawnWeapons[]= {
         "OLI_VK78_COMMANDO",
-        "OPTRE_M12_Optic",
-        "OLI_MEQ7",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
         "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
@@ -831,28 +833,30 @@ class CLASS(Marine_CE_Davy): CLASS(Marine_CE_Base) {
     };
 
     weapons[]= {
-        "OLI_M98_HARVESTER",
-        "OLI_M98HA_Scope",
-        "OLI_M6G",
+        "OLI_M73",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
+        "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_M98_HARVESTER",
-        "OLI_M98HA_Scope",
-        "OLI_M6G",
+        "OLI_M73",
+        "TCP_optic_EVOSM",
+        "TCP_acc_carryHandle_M731",
+        "OLI_M6C",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
     };
     magazines[] = {
-        "OLI_5Rnd_147x114_APFSDS_Mag",
-        "OLI_8Rnd_127x40_Mag"
+        "OLI_100Rnd_95x40_Box",
+        "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_5Rnd_147x114_APFSDS_Mag",
-        "OLI_8Rnd_127x40_Mag"
+        "OLI_100Rnd_95x40_Box",
+        "OLI_12Rnd_127x40_Mag"
     };
 
     linkedItems[] = {
@@ -880,7 +884,7 @@ class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
     hiddenSelectionsTextures[] = {QPATHTOF(data\uniforms\ce\custom\Kain_UniformP_co.paa),"\Rogue_CEMarine\data\Rogue_CEUniformT_co.paa"};
 
     weapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6G",
@@ -889,7 +893,7 @@ class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6G",
@@ -898,11 +902,11 @@ class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_8Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_8Rnd_127x40_Mag"
     };
 
@@ -927,7 +931,7 @@ class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
     displayName = "J.Doc";
 
     weapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6G",
@@ -936,7 +940,7 @@ class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6G",
@@ -945,11 +949,11 @@ class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_8Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_8Rnd_127x40_Mag"
     };
 
@@ -980,7 +984,7 @@ class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
     displayName = "B.Saint";
 
     weapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6C",
@@ -989,7 +993,7 @@ class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6C",
@@ -998,11 +1002,11 @@ class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -1082,7 +1086,7 @@ class CLASS(Marine_CE_Milan): CLASS(Marine_CE_Base) {
     uniformClass = QCLASS(Uniform_CE);
 
     weapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6C",
@@ -1091,7 +1095,7 @@ class CLASS(Marine_CE_Milan): CLASS(Marine_CE_Base) {
         "Put"
     };
     respawnWeapons[]= {
-        "OLI_MA5C",
+        "OLI_MA37",
         "OPTRE_M12_Optic",
         "OLI_MEQ7",
         "OLI_M6C",
@@ -1100,11 +1104,11 @@ class CLASS(Marine_CE_Milan): CLASS(Marine_CE_Base) {
         "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_762x51_Mag",
+        "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag"
     };
 
@@ -1253,17 +1257,17 @@ class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
 
     uniformClass = QCLASS(Uniform_BlackOps);
     weapons[] = {
-        "OLI_BR45B", "OPTRE_M12_Optic", "OLI_MEQ7", "OLI_PUMA", "OPTRE_Smartfinder", "Throw", "Put"
+        "OLI_BR55HB", "TCP_optic_M43RCO_CUP", "OLI_ANPEQ6G", "OLI_PUMA", "OPTRE_Smartfinder", "Throw", "Put"
     };
     respawnWeapons[] = {
-        "OLI_BR45B", "OPTRE_M12_Optic", "OLI_MEQ7", "OLI_PUMA", "OPTRE_Smartfinder", "Throw", "Put"
+        "OLI_BR55HB", "TCP_optic_M43RCO_CUP", "OLI_ANPEQ6G", "OLI_PUMA", "OPTRE_Smartfinder", "Throw", "Put"
     };
     magazines[] = {
-        "OLI_32Rnd_95x40_Mag",
+        "OLI_36Rnd_95x40_Mag",
         "OLI_16Rnd_45ACP_Mag"
     };
     respawnMagazines[] = {
-        "OLI_32Rnd_95x40_Mag",
+        "OLI_36Rnd_95x40_Mag",
         "OLI_16Rnd_45ACP_Mag"
     };
     linkedItems[] = {
@@ -1291,10 +1295,10 @@ class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
-    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    weapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
     linkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
     respawnLinkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
     backpack = "";
@@ -1316,10 +1320,10 @@ class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
-    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    weapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
     linkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
     respawnLinkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
     backpack = "";
@@ -1341,10 +1345,10 @@ class CLASS(Marine_TCP_Black_1): CLASS(Marine_TCP_Urban_1_Base) {
         "\TCP\Characters\BLUFOR\UNSC\Army\Uniforms\CBUU\data\camo\Black\CBUU_Gloves_CO.paa"
     };
 
-    weapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    respawnWeapons[] = {"OLI_MA5C","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
-    magazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
-    respawnMagazines[] = {"OLI_32Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    weapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    respawnWeapons[] = {"OLI_MA37","OPTRE_M12_Optic","OLI_MEQ7","OLI_M6C","OPTRE_Smartfinder","Throw","Put"};
+    magazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
+    respawnMagazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
     linkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Kevlar_Black_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
     respawnLinkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Kevlar_Black_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
     backpack = "";

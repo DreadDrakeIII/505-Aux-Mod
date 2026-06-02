@@ -2,6 +2,7 @@ class CfgVehicles {
     class ReammoBox_F;
     class TKE_Crate1R: ReammoBox_F {
     };
+
     class CLASS(Resupply_Base): TKE_Crate1R {
         SCOPE_PUBLIC;
         author = AUTHOR;
@@ -49,14 +50,10 @@ class CfgVehicles {
         class TransportMagazines {
 
             // ---- PRIMARY: Assault Rifles / Battle Rifles ----
-            // BR45B         | 9.5x40mm    | 32Rnd
-            MAG_XX(CLASS(32Rnd_95x40_Mag),40);
-            // MA5C          | 7.62x51mm   | 32Rnd
-            MAG_XX(CLASS(32Rnd_762x51_Mag),40);
+            // MA37/MA37GL
+            MAG_XX(CLASS(40Rnd_762x51_Mag),40);
             // LMR11 Shortbow| 7.62x51mm   | 30Rnd
             MAG_XX(CLASS(30Rnd_762x51_Mag),40);
-            // M295BMR       | 7.62xV7     | 25Rnd
-            MAG_XX(CLASS(25Rnd_762xV7_Mag),40);
             // VK78 Commando | 9.5xVX2     | 20Rnd
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),40);
             // MR10 Longbow  | 9.5xVX2     | 15Rnd
@@ -74,34 +71,13 @@ class CfgVehicles {
             // M6D Carbine   | 12.7x40mm   | 40Rnd
             MAG_XX(CLASS(40Rnd_127x40_Mag),40);
 
-
             // ---- PRIMARY: LMGs / HMGs ----
             // M73           | 9.5x40mm    | 100Rnd Box
             MAG_XX(CLASS(100Rnd_95x40_Box),40);
-            // M247          | 7.62x51mm   | 400Rnd Box
-            MAG_XX(CLASS(400Rnd_762x51_Box),40);
-            // Cerberus      | .338        | 100Rnd Box
-            MAG_XX(CLASS(100_338_box),40);
-            // Unknown MG       | 7.62x51mm   | 100Rnd
-            MAG_XX(DMNS_100Rnd_762x51_Mag,40);
 
             // ---- PRIMARY: Sniper / Anti-Material ----
-            // VTR93 Vindicta| 12.7x108mm  | 10Rnd HDUR
-            MAG_XX(CLASS(10Rnd_HDUR),40);
-            // M98 Harvester | 14.7x114mm  | 5Rnd APFSDS
-            MAG_XX(CLASS(5Rnd_147x114_APFSDS_Mag),40);
-            // M98 Harvester | 14.7x114mm  | 5Rnd HVAP
-            MAG_XX(CLASS(5Rnd_147x114_HVAP_Mag),40);
-            // M98 Harvester | 14.7x114mm  | 5Rnd HEDP
-            MAG_XX(CLASS(5Rnd_147x114_HEDP_Mag),40);
 
             // ---- PRIMARY: Energy Weapons ----
-            // WRS28 Pilum   | UC Cell (HE)
-            MAG_XX(CLASS(UC_CELL),10);
-            // WRS28 Pilum   | CC Cell (AP)
-            MAG_XX(CLASS(CC_CELL),10);
-            // WRS14 RHINO | Shock Slugs
-            MAG_XX(CLASS(coolant_cartridge),10);
 
             // ---- SECONDARY: Pistols ----
             // M6G           | 12.7x40mm   | 8Rnd
@@ -114,22 +90,41 @@ class CfgVehicles {
             MAG_XX(CLASS(16Rnd_45ACP_Mag),40);
 
             // ---- UGL Ammo ----
-            MAG_XX(1Rnd_HE_MEU_shell,20);
-            MAG_XX(OPTRE_1Rnd_Smoke_Grenade_shell,20);
-            MAG_XX(UGL_FlareWhite_Illumination_F,20);
-            MAG_XX(UGL_FlareWhite_F,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Green,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Red,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_White,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Yellow,20);
+            MAG_XX(TCP_1Rnd_40_Shell_HE,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Blue,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Green,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Red,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_White,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Yellow,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Orange,20);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Purple,20);
+            MAG_XX(TCP_1Rnd_40_Shell_TD,20);
+            MAG_XX(1Rnd_HE_Grenade_shell,20);
             MAG_XX(UGL_FlareGreen_F,20);
-            MAG_XX(UGL_FlareRed_F,20);
             MAG_XX(UGL_FlareCIR_F,20);
-            MAG_XX(OPTRE_signalSmokeB,20);
-            MAG_XX(OPTRE_signalSmokeG,20);
-            MAG_XX(OPTRE_signalSmokeP,20);
-            MAG_XX(OPTRE_signalSmokeR,20);
+            MAG_XX(UGL_FlareRed_F,20);
+            MAG_XX(UGL_FlareWhite_F,20);
+            MAG_XX(UGL_FlareYellow_F,20);
+            MAG_XX(UGL_FlareGreen_Illumination_F,20);
+            MAG_XX(UGL_FlareRed_Illumination_F,20);
+            MAG_XX(UGL_FlareWhite_Illumination_F,20);
+            MAG_XX(UGL_FlareYellow_Illumination_F,20);
+            MAG_XX(1Rnd_SmokeBlue_Grenade_shell,20);
+            MAG_XX(1Rnd_SmokeGreen_Grenade_shell,20);
+            MAG_XX(1Rnd_SmokeOrange_Grenade_shell,20);
+            MAG_XX(1Rnd_SmokePurple_Grenade_shell,20);
+            MAG_XX(1Rnd_SmokeRed_Grenade_shell,20);
+            MAG_XX(1Rnd_Smoke_Grenade_shell,20);
+            MAG_XX(1Rnd_SmokeYellow_Grenade_shell,20);
 
             // ---- Launcher Ammo ----
             // M41 SSR MAV/AW     | HEAT / SACLOS
             MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,2);
-            //[1st] S-108 SAM
+            // [1st] S-108 SAM
             MAG_XX(MEU_SPKR108_SAM_AA,2);
             // M40 "Rabbit" Launcher
             MAG_XX(OPTRE_1Rnd_50x137_HEAT,2);
@@ -157,14 +152,10 @@ class CfgVehicles {
         class TransportMagazines {
 
             // ---- PRIMARY: Assault Rifles / Battle Rifles ----
-            // BR45B         | 9.5x40mm    | 32Rnd
-            MAG_XX(CLASS(32Rnd_95x40_Mag),160);
-            // MA5C          | 7.62x51mm   | 32Rnd
-            MAG_XX(CLASS(32Rnd_762x51_Mag),160);
+            // MA37/MA37GL
+            MAG_XX(CLASS(40Rnd_762x51_Mag),160);
             // LMR11 Shortbow| 7.62x51mm   | 30Rnd
             MAG_XX(CLASS(30Rnd_762x51_Mag),160);
-            // M295BMR       | 7.62xV7     | 25Rnd
-            MAG_XX(CLASS(25Rnd_762xV7_Mag),160);
             // VK78 Commando | 9.5xVX2     | 20Rnd
             MAG_XX(CLASS(20Rnd_95xVX2_Mag),160);
             // MR10 Longbow  | 9.5xVX2     | 15Rnd
@@ -185,30 +176,10 @@ class CfgVehicles {
             // ---- PRIMARY: LMGs / HMGs ----
             // M73           | 9.5x40mm    | 100Rnd Box
             MAG_XX(CLASS(100Rnd_95x40_Box),160);
-            // M247          | 7.62x51mm   | 400Rnd Box
-            MAG_XX(CLASS(400Rnd_762x51_Box),160);
-            // Cerberus      | .338        | 100Rnd Box
-            MAG_XX(CLASS(100_338_box),160);
-            // Unknown MG       | 7.62x51mm   | 100Rnd
-            MAG_XX(DMNS_100Rnd_762x51_Mag,160);
 
             // ---- PRIMARY: Sniper / Anti-Material ----
-            // VTR93 Vindicta| 12.7x108mm  | 10Rnd HDUR
-            MAG_XX(CLASS(10Rnd_HDUR),160);
-            // M98 Harvester | 14.7x114mm  | 5Rnd APFSDS
-            MAG_XX(CLASS(5Rnd_147x114_APFSDS_Mag),80);
-            // M98 Harvester | 14.7x114mm  | 5Rnd HVAP
-            MAG_XX(CLASS(5Rnd_147x114_HVAP_Mag),80);
-            // M98 Harvester | 14.7x114mm  | 5Rnd HEDP
-            MAG_XX(CLASS(5Rnd_147x114_HEDP_Mag),80);
 
             // ---- PRIMARY: Energy Weapons ----
-            // WRS28 Pilum   | UC Cell (HE)
-            MAG_XX(CLASS(UC_CELL),40);
-            // WRS28 Pilum   | CC Cell (AP)
-            MAG_XX(CLASS(CC_CELL),40);
-            // WRS14 RHINO | Shock Slugs
-            MAG_XX(CLASS(coolant_cartridge),40);
 
             // ---- SECONDARY: Pistols ----
             // M6G           | 12.7x40mm   | 8Rnd
@@ -221,22 +192,41 @@ class CfgVehicles {
             MAG_XX(CLASS(16Rnd_45ACP_Mag),160);
 
             // ---- UGL Ammo ----
-            MAG_XX(1Rnd_HE_MEU_shell,80);
-            MAG_XX(OPTRE_1Rnd_Smoke_Grenade_shell,80);
-            MAG_XX(UGL_FlareWhite_Illumination_F,80);
-            MAG_XX(UGL_FlareWhite_F,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Green,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Red,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_White,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Signal_Yellow,80);
+            MAG_XX(TCP_1Rnd_40_Shell_HE,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Blue,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Green,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Red,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_White,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Yellow,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Orange,80);
+            MAG_XX(TCP_1Rnd_40_Shell_Smoke_Purple,80);
+            MAG_XX(TCP_1Rnd_40_Shell_TD,80);
+            MAG_XX(1Rnd_HE_Grenade_shell,80);
             MAG_XX(UGL_FlareGreen_F,80);
-            MAG_XX(UGL_FlareRed_F,80);
             MAG_XX(UGL_FlareCIR_F,80);
-            MAG_XX(OPTRE_signalSmokeB,80);
-            MAG_XX(OPTRE_signalSmokeG,80);
-            MAG_XX(OPTRE_signalSmokeP,80);
-            MAG_XX(OPTRE_signalSmokeR,80);
+            MAG_XX(UGL_FlareRed_F,80);
+            MAG_XX(UGL_FlareWhite_F,80);
+            MAG_XX(UGL_FlareYellow_F,80);
+            MAG_XX(UGL_FlareGreen_Illumination_F,80);
+            MAG_XX(UGL_FlareRed_Illumination_F,80);
+            MAG_XX(UGL_FlareWhite_Illumination_F,80);
+            MAG_XX(UGL_FlareYellow_Illumination_F,80);
+            MAG_XX(1Rnd_SmokeBlue_Grenade_shell,80);
+            MAG_XX(1Rnd_SmokeGreen_Grenade_shell,80);
+            MAG_XX(1Rnd_SmokeOrange_Grenade_shell,80);
+            MAG_XX(1Rnd_SmokePurple_Grenade_shell,80);
+            MAG_XX(1Rnd_SmokeRed_Grenade_shell,80);
+            MAG_XX(1Rnd_Smoke_Grenade_shell,80);
+            MAG_XX(1Rnd_SmokeYellow_Grenade_shell,80);
 
             // ---- Launcher Ammo ----
             // M41 SSR MAV/AW     | HEAT / SACLOS
             MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,20);
-            //[1st] S-108 SAM
+            // [1st] S-108 SAM
             MAG_XX(MEU_SPKR108_SAM_AA,20);
             // M40 "Rabbit" Launcher
             MAG_XX(OPTRE_1Rnd_50x137_HEAT,20);
