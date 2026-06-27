@@ -1,6 +1,5 @@
 class CLASS(Marine_CE_Rifleman): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
-
+    SCOPE_HIDDEN;
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
     editorPreview = EDITOR_PREVIEW(Marine_Rifleman);
@@ -255,7 +254,7 @@ class CLASS(Marine_CE_Grenadier): CLASS(Marine_CE_Rifleman) {
 };
 
 class CLASS(Marine_CE_Corpsman): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
@@ -353,7 +352,7 @@ class CLASS(Corpsman_CE_Rifleman_Rolled): CLASS(Marine_CE_Rolled_Base) {
 };
 
 class CLASS(Marine_CE_SquadLead): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
@@ -451,7 +450,7 @@ class CLASS(Marine_CE_SquadLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
 };
 
 class CLASS(Marine_CE_PlatoonLead): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
@@ -549,7 +548,7 @@ class CLASS(Marine_CE_PlatoonLead_Rolled): CLASS(Marine_CE_Rolled_Base) {
 };
 
 class CLASS(Marine_CE_FR): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(INF_CE);
@@ -654,7 +653,7 @@ class CLASS(Marine_CE_FR_Rolled): CLASS(Marine_CE_Rolled_Base) {
 
 //////////////////////Custom Unit//////////////////////
 class CLASS(Marine_CE_Adamant): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     displayName = "J.Adamant";
 
@@ -704,7 +703,7 @@ class CLASS(Marine_CE_Adamant): CLASS(Marine_CE_Base) {
 };
 
 class CLASS(Marine_CE_Crawford): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
@@ -764,7 +763,7 @@ class CLASS(Marine_CE_Crawford_Rolled): CLASS(Marine_CE_Rolled_Base) {
 };
 
 class CLASS(Marine_CE_Oliver): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
@@ -815,7 +814,7 @@ class CLASS(Marine_CE_Oliver): CLASS(Marine_CE_Base) {
 };
 
 class CLASS(Marine_CE_Davy): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     displayName = "S.Davy";
 
@@ -869,7 +868,7 @@ class CLASS(Marine_CE_Davy): CLASS(Marine_CE_Base) {
 };
 
 class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     displayName = "J.Kain";
 
@@ -920,7 +919,7 @@ class CLASS(Marine_CE_Kain): CLASS(Marine_CE_Base) {
 };
 
 class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
@@ -973,7 +972,7 @@ class CLASS(Marine_CE_Doc): CLASS(Marine_CE_Base) {
     backpack = QCLASS(MedicalBackpack_Predef);
 };
 class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
@@ -1023,7 +1022,7 @@ class CLASS(Marine_CE_Saint): CLASS(Marine_CE_Base) {
     backpack = QCLASS(MedicalBackpack_Predef);
 };
 class CLASS(Marine_CE_Handler): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);
@@ -1073,7 +1072,7 @@ class CLASS(Marine_CE_Handler): CLASS(Marine_CE_Base) {
     backpack = QCLASS(Backpack_SL_PL_Predef);
 };
 class CLASS(Marine_CE_Milan): CLASS(Marine_CE_Base) {
-    SCOPE_PUBLIC;
+    SCOPE_HIDDEN;
 
     // Editor Properties
     editorSubcategory = QEDSUBCAT(Customs);

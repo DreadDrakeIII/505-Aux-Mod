@@ -1,23 +1,19 @@
 class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack [Grey]";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo","camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\backpacks\505th_BackpackGrey_co.paa),QPATHTOF(data\backpacks\505th_PouchesGrey_co.paa)};
     };
     class CLASS(Backpack_CE_505): CLASS(Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack [Green]";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo","camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\backpacks\505th_Backpack_co.paa),QPATHTOF(data\backpacks\505th_Pouches_co.paa)};
     };
     class CLASS(Backpack_CE_FR): CLASS(Backpack_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack [Force Recon]";
         hiddenSelections[] = {"camo","camo1"};
@@ -146,63 +142,49 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
     class CLASS(BackpackLR_CE): CLASS(BackpackLR_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack LR [Grey]";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo","camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\backpacks\505th_BackpackGrey_co.paa),QPATHTOF(data\backpacks\505th_PouchesGrey_co.paa)};
     };
     class CLASS(BackpackLR_CE_505): CLASS(BackpackLR_CE) {
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack LR [Green]";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo","camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\backpacks\505th_Backpack_co.paa),QPATHTOF(data\backpacks\505th_Pouches_co.paa)};
     };
     class CLASS(Backpack_LR_CE_FR): CLASS(BackpackLR_CE) {
         author = "505th Aux Team";
         displayName = "[505th] Combat Pack LR [Force Recon]";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo","camo1"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\backpacks\FR_Backpack_co.paa),QPATHTOF(data\backpacks\FR_Pouches_co.paa)};
     };
     class CLASS(Invisible_Backpack_CE): CLASS(Backpack_Invis_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Invisible Backpack";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {"\A3\weapons_f\ammoboxes\bags\data\backpack_small_co.paa"};
     };
     class CLASS(LR_Antenna_CE): CLASS(LR_Antenna_Base) {
         author = "505th Aux Team";
         displayName = "[505th] LR Antenna";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEAntenna_co.paa"};
     };
     class CLASS(ScoutBackpack_CE): CLASS(Scout_Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Scout Pack";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {"\Rogue_CEMarine\data\Rogue_CEBackpack_co.paa"};
     };
     class CLASS(MedicalBackpack): CLASS(Medical_Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Medical Backpack";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_HIDDEN;
     };
     class CLASS(MedicalBackpack_Predef): CLASS(MedicalBackpack) {
         SCOPE_HIDDEN;

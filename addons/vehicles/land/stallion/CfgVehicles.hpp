@@ -17,8 +17,8 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
     class CLASS(Stallion_Covered_Transport): OPTRE_m1087_stallion_cover_unsc {
         SCOPE_PUBLIC;
@@ -32,16 +32,16 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
     class CLASS(Stallion_Ammo): OPTRE_m1087_stallion_unsc_resupply {
         SCOPE_PUBLIC;
         displayName = "M1087 Stallion (Ammo)";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
         model = "\A3\Soft_F_EPC\Truck_03\Truck_03_box_F.p3d";
         // hiddenSelections[] = {"Camo1","Camo2","Camo3","Camo4"};
         // hiddenSelectionsTextures[] = {
@@ -62,8 +62,8 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
     class CLASS(Stallion_Repair): OPTRE_m1087_stallion_unsc_repair {
         SCOPE_PUBLIC;
@@ -76,8 +76,8 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
     class CLASS(Stallion_Medical): OPTRE_m1087_stallion_unsc_medical {
         SCOPE_PUBLIC;
@@ -91,8 +91,8 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
     class CLASS(Stallion_Device): OPTRE_m1087_stallion_device_unsc {
         SCOPE_PUBLIC;
@@ -107,7 +107,7 @@ class CfgVehicles {
         // };
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCrew = QCLASS(Marine_CE_Rifleman);
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCrew = QCLASS(Marine_TCP_Woodland_1);
     };
 };

@@ -6,8 +6,8 @@ class CfgVehicles {
         displayName = "M12 LAAG Warthog";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
         // hiddenSelections[] = {
         //     "Camo1",
         //     "Camo2",
@@ -68,8 +68,8 @@ class CfgVehicles {
         displayName = "M12G1 Gauss Warthog";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
         // hiddenSelections[] = {
         //     "Camo1",
         //     "Camo2",
@@ -124,8 +124,8 @@ class CfgVehicles {
         displayName = "M12 FAV Warthog";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
         // hiddenSelections[] = {
         //     "Camo1",
         //     "Camo2",
@@ -213,8 +213,8 @@ class CfgVehicles {
         displayName = "M813 Troop Transport";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Cars);
-        crew = QCLASS(Marine_CE_Rifleman);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        crew = QCLASS(Marine_TCP_Woodland_1);
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
         // hiddenSelections[] = {
         //     "Camo1",
         //     "Camo2",

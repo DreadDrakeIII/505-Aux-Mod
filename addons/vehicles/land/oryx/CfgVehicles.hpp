@@ -7,7 +7,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 
     class OPTRE_M493_APC;
@@ -18,7 +18,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 
     class OPTRE_M493_AIE;
@@ -29,7 +29,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 
     class OPTRE_M493_AIE_RCWS;
@@ -40,7 +40,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 
     class OPTRE_M493_M37;
@@ -51,7 +51,7 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 
     class OPTRE_M493_M37_RCWS;
@@ -62,6 +62,6 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(IFV);
         crew = QCLASS(Marine_Tank_Crew);
-        typicalCargo[] = {QCLASS(Marine_CE_Rifleman)};
+        typicalCargo[] = {QCLASS(Marine_TCP_Woodland_1)};
     };
 };

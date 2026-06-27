@@ -5,7 +5,8 @@ class cfgMagazineWells {
     // ================================
     class CLASS(Magwell_M73) {
         CLASS(95x40)[] = {
-            QCLASS(100Rnd_95x40_Box)
+            QCLASS(100Rnd_95x40_Box),
+            QCLASS(400Rnd_95x40_Box)
         };
     };
 };

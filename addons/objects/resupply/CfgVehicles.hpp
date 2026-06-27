@@ -366,7 +366,7 @@ class CfgVehicles {
 
         class TransportWeapons {
             // Launchers
-            WEAP_XX(DMNS_M96_LAW,10);
+            WEAP_XX(OPTRE_M44_Lykoi_Semi_Disposable_AT_Grey,10);
         };
     };
 };

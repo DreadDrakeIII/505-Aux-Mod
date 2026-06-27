@@ -32,7 +32,10 @@ class CfgWeapons {
         picture = "\TCP\Weapons\Machineguns\M731\data\ui\icon_lmg_M731_X_ca.paa";
 
         modes[] = {"Single", "FullAuto"};
-        magazines[] = {QCLASS(100Rnd_95x40_Box)};
+        magazines[] = {
+            QCLASS(100Rnd_95x40_Box),
+            QCLASS(400Rnd_95x40_Box)
+        };
         magazineWell[] = { QCLASS(Magwell_M73) };
 
         reloadSound[] = {"\BLU\OLI\addons\weapons\m73\data\sound\m73_reload.ogg",1,1};

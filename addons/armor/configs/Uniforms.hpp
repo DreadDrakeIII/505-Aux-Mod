@@ -1,9 +1,7 @@
 class CLASS(Uniform_CE): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Marine Uniform";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: ItemInfo{
 		uniformClass = QCLASS(Marine_CE_Rifleman);
         uniformType = "Neopren";
@@ -14,9 +12,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Marine Uniform (Rolled)";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: ItemInfo
 	{
 		uniformClass = QCLASS(Marine_CE_Rifleman_Rolled);
@@ -28,9 +24,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Corpsman): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Corpsman Uniform";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: ItemInfo
 	{
 		uniformClass = QCLASS(Marine_CE_Corpsman);
@@ -42,9 +36,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Corpsman_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Corpsman Uniform (Rolled)";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Corpsman_CE_Rifleman_Rolled);
@@ -56,9 +48,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_SL): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Squad Lead Uniform";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_SquadLead);
@@ -70,9 +60,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_SL_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Squad Lead Uniform (Rolled) ";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_SquadLead_Rolled);
@@ -84,9 +72,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_PL): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Platoon Lead Uniform";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_PlatoonLead);
@@ -98,9 +84,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_PL_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Platoon Lead Uniform (Rolled) ";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_PlatoonLead_Rolled);
@@ -112,9 +96,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_FR): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Force Recon Uniform";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_FR);
@@ -126,9 +108,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_FR_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Force Recon Uniform (Rolled) ";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_FR_Rolled);
@@ -141,9 +121,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Adamant): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Adamant)";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Adamant);
@@ -155,9 +133,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Crawford): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Crawford)";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Crawford);
@@ -169,9 +145,7 @@ scopeArsenal = 2;
 class CLASS(Uniform_CE_Crawford_Rolled): CLASS(Uniform_CE_Rolled_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Crawford,Rolled)";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Crawford_Rolled);
@@ -184,9 +158,7 @@ class CLASS(Uniform_CE_Oliver): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Oliver)";
 uniformType = "Neopren";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Oliver);
@@ -199,9 +171,7 @@ class CLASS(Uniform_CE_Doc): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Doc)";
 uniformType = "Neopren";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Doc);
@@ -214,9 +184,7 @@ class CLASS(Uniform_CE_Kain): CLASS(Uniform_CE_Base) {
 author = "505th Aux Team";
 displayName = "[505th] Custom Uniform (Kain)";
 uniformType = "Neopren";
-scope = 2;
-scopeCurator = 2;
-scopeArsenal = 2;
+SCOPE_HIDDEN;
 	class ItemInfo: UniformItem
 	{
 		uniformClass = QCLASS(Marine_CE_Kain);
