@@ -6,7 +6,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(36Rnd_95x40_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 36Rnd 9.5x40mm Mag";
+        displayName = "[505th] 36Rnd BR55HB Mag";
         displayNameShort = "9.5x40mm Mag";
         descriptionShort = "9.5x40mm Magazine for BR55HB Battle Rifle developed by Blackreach Armory";
 

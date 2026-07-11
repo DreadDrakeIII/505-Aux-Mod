@@ -6,7 +6,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(30Rnd_9x21_Mag);
         author = AUTHOR;
 
-        displayname = "[505th] 30Rnd 9x21mm Magazine";
+        displayname = "[505th] 30Rnd CPW Magazine";
         displaynameshort = "9x21mm";
         descriptionshort = "30 Round Magazine<br/>9x21mm<br/>";
 

@@ -6,7 +6,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(12Rnd_45ACP_Mag);
         author = AUTHOR;
 
-        displayname = "[505th] 12Rnd .45 ACP Magazine";
+        displayname = "[505th] 12Rnd MHG16 Magazine";
         displaynameshort = ".45 ACP";
         descriptionshort = "12 Round Magazine developed by Blackreach Armory Industries<br/>.45 ACP<br/>";
 

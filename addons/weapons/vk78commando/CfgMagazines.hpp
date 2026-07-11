@@ -9,7 +9,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(20Rnd_95xVX2_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 9.5×VX2 20Rnd Mag";
+        displayName = "[505th] 20Rnd VK78 Mag";
         displayNameShort = "9.5×VX2 • 20Rnd";
         descriptionShort = "Low-capacity magazine • Hi-Power • 9.5×VX2 Ball";
 

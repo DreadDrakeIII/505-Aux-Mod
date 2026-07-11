@@ -592,35 +592,32 @@ class CfgWeapons
 				};
                 class EVOSD
 				{
-					opticsID=1;
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1"
-					};
-					opticsZoomMin=0.083333336;
-					opticsZoomMax=0.25;
-					opticsZoomInit=0.25;
-					discreteDistance[]={100,200,300,400,500,600,700,800,900,1000};
-					discreteDistanceInitIndex=1;
-					distanceZoomMin=100;
-					distanceZoomMax=1000;
-					discreteFOV[]={0.25,0.125,0.083333336};
-					discreteInitIndex=0;
-					modelOptics[]=
-					{
-						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_1x.p3d",
-						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_2x.p3d",
-						"\TCP\Weapons_Ins\Acc\Optic\M27RCO\reticle_M27RCO_3x.p3d"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-					};
-					opticsFlare=1;
-					opticsDisablePeripherialVision=1;
-					cameraDir="";
+                    opticsID=2;
+                    useModelOptics=1;
+                    opticsPPEffects[]=
+                    {
+                        "OpticsCHAbera1",
+                        "OpticsBlur1"
+                    };
+                    opticsZoomMin=0.25;
+                    opticsZoomMax=0.125;
+                    opticsZoomInit=0.125;
+                    discreteDistance[]={100,300,400,500,600,700,800,900,1000};
+                    discreteDistanceInitIndex=0;
+                    distanceZoomMin=100;
+                    distanceZoomMax=200;
+                    discreteFOV[]={0.25,0.125};
+                    discreteInitIndex=0;
+                    modelOptics[]=
+                    {
+                        "\TCP\Weapons\Acc\Optic\KFA_M6G\reticle_kfa_M6G_1x.p3d",
+                        "\TCP\Weapons\Acc\Optic\KFA_M6G\reticle_kfa_M6G_2x.p3d"
+                    };
+                    memoryPointCamera="cameraView";
+                    visionMode[]={};
+                    opticsFlare=1;
+                    opticsDisablePeripherialVision=1;
+                    cameraDir="";
 				};
             };
         };

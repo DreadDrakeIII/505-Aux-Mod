@@ -9,7 +9,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(30Rnd_762x51_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 30Rnd 7.62x51mm Mag";
+        displayName = "[505th] 30Rnd Shortbow Mag";
         displayNameShort = "7.62x51mm • 30Rnd";
         descriptionShort = "High-capacity magazine • 7.62x51mm Ball";
 

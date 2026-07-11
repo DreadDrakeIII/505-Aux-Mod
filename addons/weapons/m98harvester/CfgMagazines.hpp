@@ -14,7 +14,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(5Rnd_147x114_APFSDS_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 5Rnd APFSDS";
+        displayName = "[505th] 5Rnd M98H APFSDS";
         displayNameShort = "14.7×114mm APFSDS • 5Rnd";
         descriptionShort = "Anti-Material Magazine • APFSDS Rounds • Maximum Penetration • 5 Rounds";
 
@@ -40,7 +40,7 @@ class CfgMagazines {
     // HVAP MAGAZINE (Balanced - armor penetration + velocity)
     // ================================
     class CLASS(5Rnd_147x114_HVAP_Mag): CLASS(5Rnd_147x114_APFSDS_Mag) {
-        displayName = "[505th] 5Rnd HVAP";
+        displayName = "[505th] 5Rnd M98H HVAP";
         displayNameShort = "14.7×114mm HVAP • 5Rnd";
         descriptionShort = "Anti-Material Magazine • HVAP Rounds • Balanced Penetration • 5 Rounds";
         tracersEvery = 1;              // no tracers (armor-piercing rounds)
@@ -55,7 +55,7 @@ class CfgMagazines {
     // HEDP MAGAZINE (High Explosive - anti-personnel/structure)
     // ================================
     class CLASS(5Rnd_147x114_HEDP_Mag): CLASS(5Rnd_147x114_APFSDS_Mag) {
-        displayName = "[505th] 5Rnd HEDP";
+        displayName = "[505th] 5Rnd M98H HEDP";
         displayNameShort = "14.7×114mm HEDP • 5Rnd";
         descriptionShort = "Anti-Material Magazine • HEDP Rounds • Explosive Payload • 5 Rounds";
         tracersEvery = 1;              // no tracers (armor-piercing rounds)

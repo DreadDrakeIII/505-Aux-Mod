@@ -6,7 +6,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(40Rnd_762x51_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] 40Rnd 7.62x51mm Mag";
+        displayName = "[505th] 40Rnd MA37 Mag";
         displayNameShort = "40Rnd 7.62x51mm Mag";
         descriptionShort = "40 Rounds Magazine developed by Blackreach Armory";
 

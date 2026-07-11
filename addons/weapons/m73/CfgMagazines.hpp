@@ -7,7 +7,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(100Rnd_95x40_Box);
         author = AUTHOR;
 
-        displayName = "[505th] 100Rnd 9.5x40mm Box";
+        displayName = "[505th] 100Rnd M73 Box";
         displayNameShort = "100Rnd 9.5x40mm Box";
         descriptionShort = "100 Rounds Box developed by Blackreach Armory";
 
@@ -24,7 +24,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(400Rnd_95x40_Box);
         author = AUTHOR;
 
-        displayName = "[505th] 400Rnd 9.5x40mm Box";
+        displayName = "[505th] 400Rnd M73 Box";
         displayNameShort = "400Rnd 9.5x40mm Box";
         descriptionShort = "400 Rounds Box developed by Blackreach Armory";
 
