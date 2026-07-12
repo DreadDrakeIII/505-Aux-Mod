@@ -9,7 +9,7 @@ class CfgMagazines {
         baseMagazine = QCLASS(15Rnd_95xVX2_Mag);
         author = AUTHOR;
 
-        displayName = "[505th] Longbow 15Rnd Mag";
+        displayName = "[505th] 15Rnd Longbow Mag";
         displayNameShort = "9.5xVX2mm • 15Rnd";
         descriptionShort = "Low-capacity magazine • 15Rnd 9.5xVX2mm Ball";
 

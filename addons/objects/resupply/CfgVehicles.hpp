@@ -52,6 +52,8 @@ class CfgVehicles {
             // ---- PRIMARY: Assault Rifles / Battle Rifles ----
             // MA37/MA37GL
             MAG_XX(CLASS(40Rnd_762x51_Mag),40);
+            // MA37K
+            MAG_XX(CLASS(32Rnd_762x51_Mag),40);
             // LMR11 Shortbow| 7.62x51mm   | 30Rnd
             MAG_XX(CLASS(30Rnd_762x51_Mag),40);
             // VK78 Commando | 9.5xVX2     | 20Rnd
@@ -154,6 +156,8 @@ class CfgVehicles {
             // ---- PRIMARY: Assault Rifles / Battle Rifles ----
             // MA37/MA37GL
             MAG_XX(CLASS(40Rnd_762x51_Mag),160);
+            // MA37K
+            MAG_XX(CLASS(32Rnd_762x51_Mag),160);
             // LMR11 Shortbow| 7.62x51mm   | 30Rnd
             MAG_XX(CLASS(30Rnd_762x51_Mag),160);
             // VK78 Commando | 9.5xVX2     | 20Rnd
@@ -366,7 +370,7 @@ class CfgVehicles {
 
         class TransportWeapons {
             // Launchers
-            WEAP_XX(OPTRE_M44_Lykoi_Semi_Disposable_AT_Grey,10);
+            WEAP_XX(OLI_M44_Lykoi_Loaded_Grey,10);
         };
     };
 };

@@ -12,7 +12,7 @@ class CfgWeapons {
         SCOPE_PRIVATE;
         author = AUTHOR;
 
-        displayName = "[505] M44 Lykoi Disposable AT (Grey)";
+        displayName = "[505th] M44 Lykoi Disposable AT (Grey)";
         baseWeapon = QCLASS(M44_Lykoi_Base_Grey);
 
         magazines[] = {"OPTRE_M44_Lykoi_HEAT_mag"};
@@ -52,7 +52,7 @@ class CfgWeapons {
     class CLASS(M44_Lykoi_Used_Grey): CLASS(M44_Lykoi_Disposable_Grey) {
         SCOPE_HIDDEN;
 
-        displayName = "[505] M44 Lykoi Disposable AT (Grey) [USED]";
+        displayName = "[505th] M44 Lykoi Disposable AT (Grey) [USED]";
         magazines[] = {"CBA_FakeLauncherMagazine"};
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
