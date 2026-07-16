@@ -40,4 +40,36 @@ class CfgVehicles {
             sync[] = {};
         };
     };
+
+    class Land_MultiScreenComputer_01_olive_F;
+    class CLASS(KCS_Computer): Land_MultiScreenComputer_01_olive_F {
+        author = AUTHOR;
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "KCS Training Computer";
+
+        class ACE_Actions {
+            class ACE_MainActions {
+                selection = "";
+                distance = 5;
+                condition = "true";
+
+                class OLI_KCS_Root {
+                    displayName = "Casualty Spawner";
+                    condition = "true";
+                    statement = "";
+                    insertChildren = "[_target, _player] call OLI_KCS_fnc_menuChildren";
+                    distance = 5;
+                };
+            };
+        };
+    };
+
+    class Land_JumpTarget_F;
+    class CLASS(KCS_TrainingSpot): Land_JumpTarget_F {
+        author = AUTHOR;
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "KCS Training Spot";
+    };
 };

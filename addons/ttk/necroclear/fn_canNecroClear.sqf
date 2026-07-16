@@ -1,31 +1,20 @@
 /*
- * fn_canNecroClear.sqf
- * [505th] NecroClear Vial - Treatment Condition
+ * OLI_fnc_canNecroClear
+ * Condition: KAT loaded, no dose already active, and (optionally) an
+ * established IV/IO line on the selected part (KAT pharma).
  *
- * Requires an established IV line (16g IV or FAST IO) on the selected limb.
- *
- * Parameters:
- *   0: _medic    <OBJECT>
- *   1: _patient  <OBJECT>
- *   2: _bodyPart <STRING>
- *
- * Returns: BOOL
+ * 0: Patient <OBJECT>, 1: Body part <STRING>
+ * Return: BOOL
  */
+params ["_patient", "_bodyPart"];
 
-params ["_medic", "_patient", "_bodyPart"];
+if (!OLI_hasKAT) exitWith {false};
+if (_patient getVariable ["OLI_necroClearActive", false]) exitWith {false};
 
-if (!alive _patient) exitWith {false};
-
-if (_patient getVariable ["OLI_NecroClearActive", false]) exitWith {false};
-
-if (_medic == _patient && {!OLI_NecroClear_allowSelfUse}) exitWith {false};
-
-if (OLI_NecroClear_medicRequired == 1 && {!([_medic] call ace_medical_treatment_fnc_isMedic)}) exitWith {false};
-
-// Require established IV access on the selected limb (KAT pharma)
-// 0 = none, 1 = FAST IO, 2 = 16g IV
-private _partIndex = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"] find (toLower _bodyPart);
-private _IVarray = _patient getVariable ["kat_pharma_IV", [0,0,0,0,0,0]];
-if ((_IVarray select _partIndex) == 0) exitWith {false};
-
-true
+if (missionNamespace getVariable ["OLI_NecroClear_requireIV", true] && {OLI_hasKATPharma}) then {
+    private _partIndex = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"] find (toLower _bodyPart);
+    private _ivArray = _patient getVariable ["kat_pharma_IV", [0, 0, 0, 0, 0, 0]];
+    _partIndex != -1 && {(_ivArray select _partIndex) > 0}
+} else {
+    true
+}

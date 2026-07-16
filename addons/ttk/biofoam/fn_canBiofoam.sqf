@@ -1,23 +1,14 @@
 /*
- * fn_canBiofoam.sqf
- * [505th] Biofoam Canister - Treatment Condition
+ * OLI_fnc_canBiofoam
+ * Condition: body part has at least one open (unbandaged) wound.
+ * Medic/self/item checks are handled by ACE via the action config.
  *
- * Returns true if the target body part has open (unbandaged) wounds.
- *
- * Parameters:
- *   0: _medic    <OBJECT> - The medic performing treatment
- *   1: _patient  <OBJECT> - The patient being treated
- *   2: _bodyPart <STRING> - The body part selected (e.g. "leftarm")
- *
- * Returns: BOOL
+ * 0: Patient <OBJECT>, 1: Body part <STRING>
+ * Return: BOOL
  */
-
-params ["_medic", "_patient", "_bodyPart"];
-
-_bodyPart = toLower _bodyPart;
+params ["_patient", "_bodyPart"];
 
 private _openWounds = _patient getVariable ["ace_medical_openWounds", createHashMap];
-private _openWoundsOnPart = _openWounds getOrDefault [_bodyPart, []];
+private _woundsOnPart = _openWounds getOrDefault [toLower _bodyPart, []];
 
-// Has at least one open wound with amountOf > 0
-(_openWoundsOnPart findIf {(_x select 1) > 0}) != -1
+(_woundsOnPart findIf {(_x select 1) > 0}) != -1

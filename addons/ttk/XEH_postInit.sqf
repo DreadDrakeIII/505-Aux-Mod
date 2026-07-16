@@ -1,107 +1,92 @@
-[{
-    kat_misc_treatmentTimeDetachTourniquet = OLI_tourni_removeTime;
-}, [], 3] call CBA_fnc_waitAndExecute;
+/*
+ * XEH_postInit.sqf
+ * [505th] Tactical Trauma Kit - Event Wiring
+ *
+ * All patient-state mutation happens in *Local functions on the patient's
+ * machine, reached via these CBA target events.
+ */
 
-// ─── Per-limb necrosis tracker (server only) ──────────────────────────────────
-[] call OLI_fnc_necrosisTracker;
+// ─── Treatment target events (run where the patient is local) ────────────────
+["OLI_ttk_biofoamLocal",    {_this call OLI_fnc_biofoamLocal}]    call CBA_fnc_addEventHandler;
+["OLI_ttk_stitchLocal",     {_this call OLI_fnc_ttkLocal}]        call CBA_fnc_addEventHandler;
+["OLI_ttk_polysealLocal",   {_this call OLI_fnc_polysealLocal}]   call CBA_fnc_addEventHandler;
+["OLI_ttk_polysealApply",   {_this call OLI_fnc_polysealApply}]   call CBA_fnc_addEventHandler;
+["OLI_ttk_necroClearLocal", {_this call OLI_fnc_necroClearLocal}] call CBA_fnc_addEventHandler;
+["OLI_ttk_endurexLocal",    {_this call OLI_fnc_endurexLocal}]    call CBA_fnc_addEventHandler;
+["OLI_ttk_flatlineLocal",   {_this call OLI_fnc_flatlineLocal}]   call CBA_fnc_addEventHandler;
 
-// ─── Medical menu necrosis overlay PFH ───────────────────────────────────────
-// Runs every 0.5s. Calls updateNecrosisOverlay only when the medical menu is
-// actually open, so there is no cost when the menu is closed.
-[{
-    private _display = uiNamespace getVariable ["ace_medical_gui_menuDisplay", displayNull];
-    if (!isNull _display) then {
-        [] call OLI_fnc_updateNecrosisOverlay;
-    };
-}, 0.5] call CBA_fnc_addPerFrameHandler;
+// Multi-use canister consumption, on whichever machine owns the holder.
+["OLI_ttk_consumeCanister", {
+    params ["_holder"];
+    if (!local _holder) exitWith {};
+    if (missionNamespace getVariable ["OLI_biofoam_infinite", false]) exitWith {};
 
+    private _mags = magazinesAmmoFull _holder;
+    private _idx = _mags findIf {(_x select 0) == "OLI_BiofoamCanister"};
+    if (_idx == -1) exitWith {};
 
+    private _current = (_mags select _idx) select 1;
+    private _maxUses = missionNamespace getVariable ["OLI_biofoam_uses", 5];
+    private _remaining = (_current min _maxUses) - 1;
 
-// ─── Combat Stim: locality change handler ────────────────────────────────────
-// If a stimmed unit's locality transfers to this machine, restart the
-// maintenance PFH so the stim continues uninterrupted.
-["ace_medical_localityChanged", {
-    params ["_unit"];
-    if !(local _unit) exitWith {};
-    if !(_unit getVariable ["OLI_stimActive", false]) exitWith {};
-
-    private _startTime = _unit getVariable ["OLI_stimStartTime", 0];
-    private _duration  = missionNamespace getVariable ["OLI_stim_duration", 120];
-
-    if (CBA_missionTime - _startTime >= _duration) exitWith {
-        _unit setVariable ["OLI_stimActive", false, true];
-    };
-
-    [_unit] call OLI_fnc_stimLocal;
-}] call CBA_fnc_addEventHandler;
-
-// OLI Tactical Trauma Kit - Replace ACE medical GUI body images with UNSC Marine
-// Runs once at mission start, registers event handlers
-
-private _basePath = "\BLU\OLI\addons\ttk\body_images\";
-
-// Map of IDC -> texture filename
-// IDCs from ace_medical_gui script_component.hpp
-private _textureMap = [
-    [6005, "marine_head.paa"],          // IDC_BODY_HEAD
-    [6010, "marine_torso.paa"],         // IDC_BODY_TORSO
-    [6015, "marine_arm_left.paa"],      // IDC_BODY_ARMLEFT
-    [6020, "marine_arm_right.paa"],     // IDC_BODY_ARMRIGHT
-    [6025, "marine_leg_left.paa"],      // IDC_BODY_LEGLEFT
-    [6030, "marine_leg_right.paa"],     // IDC_BODY_LEGRIGHT
-    [6035, "marine_arm_left_T.paa"],    // IDC_BODY_ARMLEFT_T
-    [6040, "marine_arm_right_T.paa"],   // IDC_BODY_ARMRIGHT_T
-    [6045, "marine_leg_left_T.paa"],    // IDC_BODY_LEGLEFT_T
-    [6050, "marine_leg_right_T.paa"],   // IDC_BODY_LEGRIGHT_T
-    [6055, "marine_arm_left_B.paa"],    // IDC_BODY_ARMLEFT_B
-    [6060, "marine_arm_right_B.paa"],   // IDC_BODY_ARMRIGHT_B
-    [6065, "marine_leg_left_B.paa"],    // IDC_BODY_LEGLEFT_B
-    [6070, "marine_leg_right_B.paa"],   // IDC_BODY_LEGRIGHT_B
-    [6080, "marine_head_S.paa"],        // IDC_BODY_HEAD_S
-    [6085, "marine_torso_S.paa"],       // IDC_BODY_TORSO_S
-    [6090, "marine_arm_left_S.paa"],    // IDC_BODY_ARMLEFT_S
-    [6095, "marine_arm_right_S.paa"],   // IDC_BODY_ARMRIGHT_S
-    [6100, "marine_leg_left_S.paa"],    // IDC_BODY_LEGLEFT_S
-    [6105, "marine_leg_right_S.paa"]    // IDC_BODY_LEGRIGHT_S
-];
-
-// Store globally so the event handler can access it
-OLI_TTK_textureMap = _textureMap;
-OLI_TTK_basePath = _basePath;
-
-// Hook into ACE medical menu opened event
-["ace_medicalMenuOpened", {
-    params ["_player", "_target", "_display"];
-
-    private _ctrlGroup = _display displayCtrl 6000; // IDC_BODY_GROUP
-
-    {
-        _x params ["_idc", "_file"];
-        private _ctrl = _ctrlGroup controlsGroupCtrl _idc;
-        _ctrl ctrlSetText (OLI_TTK_basePath + _file);
-    } forEach OLI_TTK_textureMap;
-
-    // Background IDC is -1; it's the first control in the group
-    private _allCtrls = allControls _ctrlGroup;
-    if (count _allCtrls > 0) then {
-        (_allCtrls select 0) ctrlSetText (OLI_TTK_basePath + "marine_background.paa");
+    _holder removeMagazine "OLI_BiofoamCanister";
+    if (_remaining > 0) then {
+        _holder addMagazine ["OLI_BiofoamCanister", _remaining];
     };
 }] call CBA_fnc_addEventHandler;
 
-// Also handle the passive IGUI patient info overlay
-["ace_medical_gui_updateBodyImage", {
-    params ["_ctrlGroup", "_target", "_selectionN"];
+// Server-side scheduler for the Polyseal heal delay. Lives on the server
+// so it survives medic disconnect; routed via CBA events only (immune to
+// mission CfgRemoteExec restrictions, e.g. Liberation).
+if (isServer) then {
+    ["OLI_ttk_polysealSchedule", {
+        params ["_medic", "_patient", "_bodyPart"];
+        private _delay = missionNamespace getVariable ["OLI_polyseal_healDelay", 6];
+        [{
+            params ["_medic", "_patient", "_bodyPart"];
+            if (isNull _patient || {!alive _patient}) exitWith {};
+            ["OLI_ttk_polysealApply", [_medic, _patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
+        }, _this, _delay] call CBA_fnc_waitAndExecute;
+    }] call CBA_fnc_addEventHandler;
+};
 
+// ─── Endurex Booster: actuation sound ────────────────────────────────────────
+// Broadcast so every nearby client plays it positionally at the patient's
+// location; playSound3D itself only ever plays locally on whichever
+// machine calls it, so every client needs to receive this event.
+["OLI_ttk_endurexSound", {
+    params ["_pos"];
+    playSound3D ["\BLU\OLI\addons\ttk\sounds\Endurex\endurex01.ogg", objNull, false, _pos, 1, 1, 30];
+}] call CBA_fnc_addEventHandler;
+
+// ─── Per-limb necrosis tracking (KAT only, patient-local like KAT's own) ─────
+if (OLI_hasKAT) then {
+    // Fires on the patient's machine whenever a tourniquet is applied.
+    ["ace_medical_treatment_tourniquetLocal", {
+        params ["_patient"];
+        [_patient] call OLI_fnc_necrosisStart;
+    }] call CBA_fnc_addEventHandler;
+};
+
+// ─── Medical GUI: body image swap + necrosis tint ────────────────────────────
+// Registered one frame late so our handler runs AFTER ACE's (and KAT's)
+// updateBodyImage handlers regardless of addon load order.
+if (hasInterface) then {
+    [{
+        ["ace_medical_gui_updateBodyImage", {
+            _this call OLI_fnc_updateBodyImage;
+        }] call CBA_fnc_addEventHandler;
+    }] call CBA_fnc_execNextFrame;
+};
+
+// ─── Resume sweep ──────────────────────────────────────────────────────────────
+// Covers mission start / save resume / JIP with already-active effects:
+// restart patient-local loops for units that are local to this machine.
+// Delayed a few seconds so JIP variable sync and CBA settings settle.
+[{
     {
-        _x params ["_idc", "_file"];
-        private _ctrl = _ctrlGroup controlsGroupCtrl _idc;
-        if (!isNull _ctrl) then {
-            _ctrl ctrlSetText (OLI_TTK_basePath + _file);
+        if (local _x) then {
+            [_x, true] call OLI_fnc_handleLocality;
         };
-    } forEach OLI_TTK_textureMap;
-
-    private _allCtrls = allControls _ctrlGroup;
-    if (count _allCtrls > 0) then {
-        (_allCtrls select 0) ctrlSetText (OLI_TTK_basePath + "marine_background.paa");
-    };
-}] call CBA_fnc_addEventHandler;
+    } forEach allUnits;
+}, [], 5] call CBA_fnc_waitAndExecute;

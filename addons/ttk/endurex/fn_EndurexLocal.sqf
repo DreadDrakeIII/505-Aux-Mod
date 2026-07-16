@@ -1,84 +1,63 @@
 /*
- * fn_EndurexLocal.sqf
- * [505th] Vita-Boost Autoinjector - Local Patient Logic
+ * OLI_fnc_endurexLocal
+ * Runs on the PATIENT's machine. Applies sway elimination and exhaustion
+ * suppression until the public end-time. Resumable after locality
+ * transfer (flag + end-time are public; this function self-guards).
  *
- * Runs on the patient's machine (remoteExecCall'd from EndurexTreat).
- * Applies sway reduction and stamina suppression for the duration.
+ * Sway factors are per-machine and only affect the local player, so they
+ * are only touched when the patient IS the local player.
  *
- * Sway removal is guaranteed by a hard timer (waitAndExecute) independent
- * of the PFH, so it expires on time even if the PFH is disrupted.
- *
- * Parameters:
- *   0: _patient <OBJECT>
+ * 0: Patient <OBJECT>
  */
-
 params ["_patient"];
 
-if (!local _patient) exitWith {};
-if (!alive _patient) exitWith {};
+if (!local _patient || {!alive _patient}) exitWith {};
+if (_patient getVariable ["OLI_endurexPFH", -1] != -1) exitWith {};   // already running here
 
-private _duration  = missionNamespace getVariable ["OLI_Endurex_duration", 240];
-private _startTime = _patient getVariable ["OLI_EndurexStartTime", CBA_missionTime];
+// Expired before we even started (e.g. resumed after a long transfer)
+if (CBA_missionTime >= (_patient getVariable ["OLI_endurexEndTime", 0])) exitWith {
+    [_patient, true] call OLI_fnc_endurexStop;
+};
 
-private _hasACEFatigue = missionNamespace getVariable ["ace_advanced_fatigue_enabled", false];
+// ── Apply effects ─────────────────────────────────────────────────────────────
+private _isPlayer = _patient isEqualTo ACE_player;
+private _useAF = !isNil "ace_advanced_fatigue_enabled"
+    && {missionNamespace getVariable ["ace_advanced_fatigue_enabled", false]}
+    && {_isPlayer};
 
-// ─── Apply immediate effects ─────────────────────────────────────────────────
-["multiplier", {0.01}, "OLI_Endurex"] call ace_common_fnc_addSwayFactor;
+if (_isPlayer) then {
+    ["multiplier", {0.01}, "OLI_ttk_endurex"] call ace_common_fnc_addSwayFactor;
+};
 
-if (_hasACEFatigue) then {
+if (_useAF) then {
+    ["OLI_ttk_endurex", 0] call ace_advanced_fatigue_fnc_addDutyFactor;
     ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve + 3000;
-    ["OLI_Endurex", 0] call ace_advanced_fatigue_fnc_addDutyFactor;
-    private _exclusions = missionNamespace getVariable ["ace_advanced_fatigue_setAnimExclusions", []];
-    _exclusions pushBackUnique "OLI_EndurexOverride";
 } else {
     _patient enableStamina false;
 };
 
-// ─── Cleanup helper ──────────────────────────────────────────────────────────
-private _fnCleanup = {
-    params ["_patient", "_hasACEFatigue"];
-
-    ["multiplier", "OLI_Endurex"] call ace_common_fnc_removeSwayFactor;
-
-    if (_hasACEFatigue) then {
-        ["OLI_Endurex"] call ace_advanced_fatigue_fnc_removeDutyFactor;
-        private _exclusions = missionNamespace getVariable ["ace_advanced_fatigue_setAnimExclusions", []];
-        private _idx = _exclusions find "OLI_EndurexOverride";
-        if (_idx != -1) then { _exclusions deleteAt _idx; };
-    } else {
-        _patient enableStamina true;
-    };
-};
-
-// ─── Hard-timed sway removal (guaranteed, independent of PFH) ────────────────
-// Even if the PFH is disrupted by locality change, script error, or edge case,
-// this fires at exactly the right time and cleans up sway + stamina.
-private _remaining = _duration - (CBA_missionTime - _startTime);
-[{
-    params ["_patient", "_hasACEFatigue", "_fnCleanup"];
-    _patient setVariable ["OLI_EndurexActive", false, true];
-    [_patient, _hasACEFatigue] call _fnCleanup;
-}, [_patient, _hasACEFatigue, _fnCleanup], _remaining max 0] call CBA_fnc_waitAndExecute;
-
-// ─── Main PFH (0.5s tick for stamina maintenance + early exit on death) ──────
-[{
+// ── Maintenance PFH ───────────────────────────────────────────────────────────
+private _pfh = [{
     params ["_args", "_idPFH"];
-    _args params ["_patient", "_startTime", "_duration", "_hasACEFatigue", "_fnCleanup"];
+    _args params ["_patient", "_useAF", "_isPlayer"];
 
-    // Dead or flag cleared — clean up early and exit
-    if (!alive _patient || {!(_patient getVariable ["OLI_EndurexActive", false])}) exitWith {
-        _patient setVariable ["OLI_EndurexActive", false, true];
-        [_patient, _hasACEFatigue] call _fnCleanup;
+    // Locality moved away: clean local effects, KEEP the global flag so
+    // the new owner machine resumes via the XEH Local handler.
+    if (!local _patient) exitWith {
+        [_patient, false, _useAF, _isPlayer] call OLI_fnc_endurexStop;
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    // Timer expired — PFH exits, hard timer handles cleanup
-    if (CBA_missionTime - _startTime >= _duration) exitWith {
+    private _endTime = _patient getVariable ["OLI_endurexEndTime", 0];
+    if (!alive _patient
+        || {!(_patient getVariable ["OLI_endurexActive", false])}
+        || {CBA_missionTime >= _endTime}) exitWith {
+        [_patient, true, _useAF, _isPlayer] call OLI_fnc_endurexStop;
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 
-    // Maintain stamina
-    if (_hasACEFatigue) then {
+    // Keep the tank topped up
+    if (_useAF) then {
         if (ace_advanced_fatigue_anReserve < 2000) then {
             ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve + 3000;
         };
@@ -86,4 +65,6 @@ private _remaining = _duration - (CBA_missionTime - _startTime);
         _patient setStamina (getStamina _patient + 100);
     };
 
-}, 0.5, [_patient, _startTime, _duration, _hasACEFatigue, _fnCleanup]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_patient, _useAF, _isPlayer]] call CBA_fnc_addPerFrameHandler;
+
+_patient setVariable ["OLI_endurexPFH", _pfh];
