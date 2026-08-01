@@ -76,6 +76,8 @@ class CfgVehicles {
             // ---- PRIMARY: LMGs / HMGs ----
             // M73           | 9.5x40mm    | 100Rnd Box
             MAG_XX(CLASS(100Rnd_95x40_Box),40);
+            // M73           | 9.5x40mm    | 400Rnd Box
+            MAG_XX(CLASS(400Rnd_95x40_Box),40);
 
             // ---- PRIMARY: Sniper / Anti-Material ----
 
@@ -180,6 +182,8 @@ class CfgVehicles {
             // ---- PRIMARY: LMGs / HMGs ----
             // M73           | 9.5x40mm    | 100Rnd Box
             MAG_XX(CLASS(100Rnd_95x40_Box),160);
+            // M73           | 9.5x40mm    | 400Rnd Box
+            MAG_XX(CLASS(400Rnd_95x40_Box),160);
 
             // ---- PRIMARY: Sniper / Anti-Material ----
 

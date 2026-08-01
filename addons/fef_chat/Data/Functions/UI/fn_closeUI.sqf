@@ -10,6 +10,11 @@ missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
 // Unblock ACE scroll interaction
 [false] call ace_interact_menu_fnc_blockMouseWheel;
 
+// Restore vanilla Arma action menu (scroll wheel).
+// "false" restores default engine handling of these events.
+inGameUISetEventHandler ["PrevAction", "false"];
+inGameUISetEventHandler ["NextAction", "false"];
+
 private _display46 = findDisplay 46;
 
 private _oldEH = missionNamespace getVariable ["FEF_UI_ScrollEH", -1];

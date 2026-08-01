@@ -58,6 +58,6 @@ if (_partIndex != -1) then {
 
 // ── Recalculate and log ───────────────────────────────────────────────────────
 [_patient] call ace_medical_status_fnc_updateWoundBloodLoss;
+[_patient, true, true, true, true] call ace_medical_engine_fnc_updateBodyPartVisuals;
 [_patient] call ace_medical_engine_fnc_updateDamageEffects;
-
 [_patient, "activity", "%1 used a Tactical Trauma Kit", [[_medic, false, true] call ace_common_fnc_getName]] call ace_medical_treatment_fnc_addToLog;

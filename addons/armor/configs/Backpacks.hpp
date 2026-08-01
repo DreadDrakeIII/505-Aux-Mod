@@ -326,6 +326,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         SCOPE_PUBLIC;
         author = "505th Aux Team";
         displayName = "[505th] M43 Rucksack 1 (Olive)";
+
     };
     class CLASS(M43_Rucksack_2_Olive): CLASS(M43_Rucksack_2_Olive_Base) {
         SCOPE_PUBLIC;
@@ -376,7 +377,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         SCOPE_HIDDEN;
 
         class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
+            MAG_XX(OLI_40Rnd_762x51_Mag,9);
             MAG_XX(OLI_12Rnd_127x40_Mag,3);
             MAG_XX(OPTRE_M2_Smoke,4);
             MAG_XX(OPTRE_M2_Smoke_Blue,2);
@@ -392,7 +393,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         SCOPE_HIDDEN;
 
         class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
+            MAG_XX(OLI_40Rnd_762x51_Mag,9);
             MAG_XX(OLI_12Rnd_127x40_Mag,3);
             MAG_XX(OPTRE_M9_Frag,4);
             MAG_XX(1Rnd_HE_Grenade_shell,25);
@@ -432,7 +433,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         SCOPE_HIDDEN;
 
         class TransportMagazines {
-            MAG_XX(OLI_32Rnd_762x51_Mag,9);
+            MAG_XX(OLI_40Rnd_762x51_Mag,9);
             MAG_XX(OLI_12Rnd_127x40_Mag,3);
             MAG_XX(OPTRE_M2_Smoke,4);
             MAG_XX(OPTRE_M2_Smoke_Blue,2);

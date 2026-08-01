@@ -1300,7 +1300,7 @@ class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
     respawnMagazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
     linkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
     respawnLinkedItems[] = {QCLASS(ECH43A_Helmet_Olive_BV), QCLASS(M43_Heavy_Olive_1), "OPTRE_NVG", "", MARINE_LINKED_ITEMS_RADIO};
-    backpack = "";
+    backpack = "OLI_Riflemen_Predef";
 };
 
 class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
@@ -1325,7 +1325,7 @@ class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
     respawnMagazines[] = {"OLI_40Rnd_762x51_Mag","OLI_12Rnd_127x40_Mag"};
     linkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
     respawnLinkedItems[] = {QCLASS(CH43A_Helmet_Olive), QCLASS(M43_Medium_Olive_1), "OPTRE_NVG", "TCP_G_BalaclavaTacticalGlasses_Black_Blue", MARINE_LINKED_ITEMS_RADIO};
-    backpack = "";
+    backpack = "OLI_Riflemen_Predef";
 };
 
 class CLASS(Marine_TCP_Black_1): CLASS(Marine_TCP_Urban_1_Base) {

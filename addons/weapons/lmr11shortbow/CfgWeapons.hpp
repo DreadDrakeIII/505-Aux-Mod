@@ -1,26 +1,14 @@
 class Mode_SemiAuto;
+class WeaponSlotsInfo;
+class CowsSlot;
+class PointerSlot;
+class MuzzleSlot;
+class UnderBarrelSlot;
 
 class CfgWeapons {
-    class Rifle_Base_F;
-    class OPTRE_LongRifle_Base: Rifle_Base_F {
-        class WeaponSlotsInfo;
-    };
-    class OPTRE_M393_DMR: OPTRE_LongRifle_Base {
-        class WeaponSlotsInfo: WeaponSlotsInfo {
-            class CowsSlot;
-            class PointerSlot;
-            class MuzzleSlot;
-            class UnderBarrelSlot;
-        };
+    class TCP_srifle_M392;
 
-        class Single: Mode_SemiAuto {
-        };
-    };
-
-    // ================================
-    // LMR11 Shortbow - Sniper Rifle
-    // ================================
-    class CLASS(LMR11_SHORTBOW): OPTRE_M393_DMR {
+    class CLASS(LMR11_SHORTBOW): TCP_srifle_M392 {
         SCOPE_PUBLIC;
         author = AUTHOR;
         baseWeapon = QCLASS(LMR11_SHORTBOW);
@@ -28,11 +16,6 @@ class CfgWeapons {
         // User-facing
         displayName = "[505th] LMR11 Shortbow ";
         descriptionShort = "7.62x51mm • 30Rnd magazine • Sniper rifle";
-        picture = "\OPTRE_Weapons\DMR\icons\M395_Icon.paa";
-        model = "\OPTRE_Weapons\DMR\M395.p3d";
-
-        hiddenSelections[] = {"camo","camo1","camo2"};
-        hiddenSelectionsTextures[] = {"optre_weapons\dmr\data\mainbody1_co.paa","optre_weapons\dmr\data\mainbody2_co.paa","optre_weapons\dmr\data\muzzle_co.paa"};
 
         // Behaviour / performance
         modes[] = { "Single" };
@@ -46,9 +29,6 @@ class CfgWeapons {
 
             class CowsSlot: CowsSlot {
                 compatibleItems[] = {
-                    "OPTRE_BR45_Scope",
-                    "OPTRE_BR55HB_Scope",
-                    "optic_DMS",
                     "TCP_optic_M11VERO_Blue",
                     "TCP_optic_M11VERO",
                     "TCP_optic_M81ERO_Blue",
@@ -68,13 +48,18 @@ class CfgWeapons {
             };
 
             class PointerSlot: PointerSlot {
-                class CompatibleItems {
-                    ATTACHMENTS_POINTER_BASE
+                compatibleItems[] = {
+                    "OLI_ANPEQ6G",
+                    "OLI_ANPEQ6G_VL"
                 };
             };
 
             class MuzzleSlot: MuzzleSlot {
-                compatibleItems[] = {};
+                compatibleItems[] = {
+                    "TCP_muzzle_brake_762_03",
+                    "TCP_muzzle_brake_762_01",
+                    "TCP_muzzle_brake_762_02",
+                };
             };
 
             class UnderBarrelSlot: UnderBarrelSlot {
@@ -84,8 +69,8 @@ class CfgWeapons {
             };
         };
 
-        class Single: Single
-		{
+        class Single: Mode_SemiAuto {
+
 			displayName="Single";
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType

@@ -72,7 +72,6 @@ class CfgWeapons {
                     "TCP_acc_carryHandle_M731",
                     "OLI_ANPEQ6G",
                     "OLI_ANPEQ6G_VL"
-
                 };
             };
 

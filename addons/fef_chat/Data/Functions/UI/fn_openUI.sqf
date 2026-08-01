@@ -14,6 +14,11 @@ missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
 // Block ACE scroll interaction
 [true] call ace_interact_menu_fnc_blockMouseWheel;
 
+// Block vanilla Arma action menu (scroll wheel) while chat menu is open.
+// Returning "true" tells the engine to skip its default handling of these events.
+inGameUISetEventHandler ["PrevAction", "true"];
+inGameUISetEventHandler ["NextAction", "true"];
+
 private _display46 = findDisplay 46;
 private _oldEH = missionNamespace getVariable ["FEF_UI_ScrollEH", -1];
 if (_oldEH >= 0) then {
