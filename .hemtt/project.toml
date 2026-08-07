@@ -38,7 +38,7 @@ workshop = [
     "1572627279", # OPTRE First Contact
     "570118882", # No Weapon Sway
     "3328314886", # Heavy Weapon Framework
-    #"3038821437", # UNSC Foundries
+    "3038821437", # UNSC Foundries
     #"3038826897", # UNSC Foundries Ace Compat
     "3300894429", # WBK Kit Menu
     "3165450999", # WBK Immersive Animations
@@ -72,7 +72,6 @@ workshop = [
     "3407948300", # JSRS 2025
     "3389065865", # The Cole Protocol
     "3691638301", # The Cole Protocol (OPTRE Compat Patch)
-    "1273833677", # Goko Ballistic Impact
 ]
 presets = ["main"]
 dlc = []

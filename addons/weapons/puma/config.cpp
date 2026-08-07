@@ -10,7 +10,8 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "WBK_SciFiWeaponary",
-            "jsrs2025_config_c"
+            "jsrs2025_config_c",
+            "OPTRE_ACE_Compat"
             };
         units[] = {};
         weapons[] = {

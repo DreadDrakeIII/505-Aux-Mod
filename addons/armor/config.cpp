@@ -10,6 +10,7 @@ class CfgPatches {
             "A3_Characters_F",
             "A3_Data_F_Mark",
             "Rogue_CEMarine",
+            "19thMD_Vests_Kelp",
             "TKE_UCN",
             "TKE_Rogue_Uniform",
             "TKE_MD",

@@ -10,7 +10,8 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "TKE_Weapons_handgun_mhg16",
-            "jsrs2025_config_c"
+            "jsrs2025_config_c",
+            "OPTRE_ACE_Compat"
             };
         units[] = {};
         weapons[] = {
