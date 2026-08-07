@@ -2,7 +2,7 @@ class CfgPatches {
     class 505th_Brandings {
         units[] = {};
         weapons[] = {};
-        requiredAddons[] = {"1st_MEU_patch_main_loadingScreens"};
+        requiredAddons[] = {};
     };
 };
 
