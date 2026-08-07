@@ -39,7 +39,7 @@ workshop = [
     "570118882", # No Weapon Sway
     "3328314886", # Heavy Weapon Framework
     "3038821437", # UNSC Foundries
-    #"3038826897", # UNSC Foundries Ace Compat
+    "3038826897", # UNSC Foundries Ace Compat
     "3300894429", # WBK Kit Menu
     "3165450999", # WBK Immersive Animations
     "2933180786", # WebKnight's OPTRE Expansion
@@ -47,7 +47,7 @@ workshop = [
     "3391132245", # Advanced Vault System: SPARTANS Expansion
     "2794721649", # Advanced Vault System: Remastered
     "3255508422", # HALO Flamethrower
-    #"2888477598", # 1st MEU Aux Mod
+    "2888477598", # 1st MEU Aux Mod
     # "2522638637", # ACE Arsenal Extended
     "366425329", # FIR AWS(AirWeaponSystem)
     "784218341", # The Mighty GAU-8 Avenger
