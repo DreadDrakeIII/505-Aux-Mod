@@ -14,8 +14,10 @@ class CfgPatches {
             "TKE_UCN",
             "TKE_Rogue_Uniform",
             "TKE_MD",
+            "1st_MEU_patch_gear_facewear",
             "OPTRE_Misc_Objects",
             "A3_expEden_characters",
+            "OPTRE_ACE_Compat",
             "TCP_Characters",
             "TCP_Data"
         };
