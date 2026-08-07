@@ -10,7 +10,6 @@ class CfgPatches {
             QCLASS(main),
             "A3_Weapons_F",
             "OPTRE_Weapons",
-            "OPTRE_ACE_Compat"
         };
         units[] = {};
         weapons[] = {};

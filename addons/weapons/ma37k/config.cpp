@@ -10,7 +10,6 @@ class CfgPatches {
         requiredAddons[] = {
             QUOTE(ADDON),
             "OPTRE_Weapons_MA37K",
-            "OPTRE_ACE_Compat",
             "jsrs2025_config_c"
             };
 
