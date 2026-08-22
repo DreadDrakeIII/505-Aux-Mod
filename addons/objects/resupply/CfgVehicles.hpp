@@ -117,13 +117,13 @@ class CfgVehicles {
             MAG_XX(UGL_FlareRed_Illumination_F,20);
             MAG_XX(UGL_FlareWhite_Illumination_F,20);
             MAG_XX(UGL_FlareYellow_Illumination_F,20);
-            MAG_XX(1Rnd_SmokeBlue_Grenade_shell,20);
-            MAG_XX(1Rnd_SmokeGreen_Grenade_shell,20);
-            MAG_XX(1Rnd_SmokeOrange_Grenade_shell,20);
-            MAG_XX(1Rnd_SmokePurple_Grenade_shell,20);
-            MAG_XX(1Rnd_SmokeRed_Grenade_shell,20);
-            MAG_XX(1Rnd_Smoke_Grenade_shell,20);
-            MAG_XX(1Rnd_SmokeYellow_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokeBlue_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokeGreen_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokeOrange_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokePurple_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokeRed_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_Smoke_Grenade_shell,20);
+            MAG_XX(OPTRE_1Rnd_SmokeYellow_Grenade_shell,20);
 
             // ---- Launcher Ammo ----
             // M41 SSR MAV/AW     | HEAT / SACLOS
@@ -223,13 +223,13 @@ class CfgVehicles {
             MAG_XX(UGL_FlareRed_Illumination_F,80);
             MAG_XX(UGL_FlareWhite_Illumination_F,80);
             MAG_XX(UGL_FlareYellow_Illumination_F,80);
-            MAG_XX(1Rnd_SmokeBlue_Grenade_shell,80);
-            MAG_XX(1Rnd_SmokeGreen_Grenade_shell,80);
-            MAG_XX(1Rnd_SmokeOrange_Grenade_shell,80);
-            MAG_XX(1Rnd_SmokePurple_Grenade_shell,80);
-            MAG_XX(1Rnd_SmokeRed_Grenade_shell,80);
-            MAG_XX(1Rnd_Smoke_Grenade_shell,80);
-            MAG_XX(1Rnd_SmokeYellow_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokeBlue_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokeGreen_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokeOrange_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokePurple_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokeRed_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_Smoke_Grenade_shell,80);
+            MAG_XX(OPTRE_1Rnd_SmokeYellow_Grenade_shell,80);
 
             // ---- Launcher Ammo ----
             // M41 SSR MAV/AW     | HEAT / SACLOS

@@ -21,7 +21,10 @@ class CfgWeapons {
 
         modes[] = {"Single", "FullAuto"};
         magazines[] = {QCLASS(40Rnd_762x51_Mag)};
-        magazineWell[] = { QCLASS(Magwell_MA37) };
+        magazineWell[] = {
+            QCLASS(Magwell_MA37),
+            "TCP_40_1"
+        };
 
         reloadMagazineSound[] = {"\BLU\OLI\addons\weapons\ma37gl\data\sound\ma37gl_reload.ogg",1,1};
 
@@ -89,13 +92,13 @@ class CfgWeapons {
                     "UGL_FlareRed_Illumination_F",
                     "UGL_FlareWhite_Illumination_F",
                     "UGL_FlareYellow_Illumination_F",
-                    "1Rnd_SmokeBlue_Grenade_shell",
-                    "1Rnd_SmokeGreen_Grenade_shell",
-                    "1Rnd_SmokeOrange_Grenade_shell",
-                    "1Rnd_SmokePurple_Grenade_shell",
-                    "1Rnd_SmokeRed_Grenade_shell",
-                    "1Rnd_Smoke_Grenade_shell",
-                    "1Rnd_SmokeYellow_Grenade_shell"
+                    "OPTRE_1Rnd_SmokeBlue_Grenade_shell",
+                    "OPTRE_1Rnd_SmokeGreen_Grenade_shell",
+                    "OPTRE_1Rnd_SmokeOrange_Grenade_shell",
+                    "OPTRE_1Rnd_SmokePurple_Grenade_shell",
+                    "OPTRE_1Rnd_SmokeRed_Grenade_shell",
+                    "OPTRE_1Rnd_Smoke_Grenade_shell",
+                    "OPTRE_1Rnd_SmokeYellow_Grenade_shell"
                 };
              };
         };

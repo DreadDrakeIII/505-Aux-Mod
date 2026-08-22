@@ -8,7 +8,7 @@ class CfgPatches {
 
 class Extended_DisplayLoad_EventHandlers {
     class RscDisplayMain {
-        OLI_Brandings_MenuMusic = "if (isNil 'OLI_Brandings_menuMusicLoopEH') then {OLI_Brandings_menuMusicLoopEH = addMusicEventHandler ['MusicStop', {params ['_music']; if (_music == 'OLI_Music_The_505th_Anthem' && {!isNull findDisplay 0}) then {playMusic _music};}]}; playMusic 'OLI_Music_The_505th_Anthem';";
+        OLI_Brandings_MenuMusic = "if (isNil 'OLI_Brandings_menuMusicLoopEH') then {OLI_Brandings_menuMusicLoopEH = addMusicEventHandler ['MusicStop', {params ['_music']; if (_music == 'OLI_Music_Journey_To_Rome' && {!isNull findDisplay 0}) then {playMusic _music};}]}; playMusic 'OLI_Music_Journey_To_Rome';";
     };
 };
 

@@ -12,7 +12,8 @@ class CfgPatches {
             "TCP_Compat_OPTRE_Weapons_Rifles_MA37",
             "TCP_Weapons_Rifles_MA37",
             "TCP_Compat_ACE_Weapons_Rifles_MA37",
-            "jsrs2025_config_c"
+            "jsrs2025_config_c",
+            "OPTRE_Weapons_Ammo"
             };
         units[] = {};
         weapons[] = {
@@ -23,3 +24,4 @@ class CfgPatches {
 };
 
 #include "CfgWeapons.hpp"
+#include "CfgMagazinesWells.hpp"

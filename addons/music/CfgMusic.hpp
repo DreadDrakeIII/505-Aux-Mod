@@ -108,6 +108,7 @@ class CfgMusic {
     MUSIC(Insurrection_Begins_Today_3,"Insurrection Begins Today (Speech PT3)",37,Other);
     MUSIC(Goodbye_Song,"Goodbye Song",82,Other);
     MUSIC(House_Atreides_Pipes,"House Atreides Pipes",414,Other);
+    MUSIC(Journey_To_Rome,"Journey to Rome",139,Other);
 
     // AOT OST
     MUSIC(Attack_on_Titan,"[AoT] Attack on Titan Standard",257,AOT);
