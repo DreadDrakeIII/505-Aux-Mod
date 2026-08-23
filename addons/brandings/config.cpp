@@ -91,7 +91,7 @@ class RscDisplayMain: RscStandardDisplay {
             y = "SafeZoneY";
             h = "SafeZoneH";
             w = "SafeZoneW";
-            text = "\BLU\OLI\addons\brandings\textures\505th_mainmenu.paa";
+            text = "\BLU\OLI\addons\brandings\textures\505th_mainmenu2.paa";
         };
     };
 };
