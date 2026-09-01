@@ -16,5 +16,4 @@ SOUND_FX(Insurrection_Begins_Today_1,"[505th] Insurrection Begins 1",200);
 SOUND_FX(Insurrection_Begins_Today_2,"[505th] Insurrection Begins 2",200);
 SOUND_FX(Insurrection_Begins_Today_3,"[505th] Insurrection Begins 3",200);
 SOUND_FX(Insurrection_Begins_Today,"[505th] Insurrection Begins Full",200);
-SOUND_FX(Journey_To_Rome,"[505th] Journey to Rome",200);
 };

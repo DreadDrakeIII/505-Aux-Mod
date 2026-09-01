@@ -84,3 +84,58 @@ parameters = []
 extends = "default"
 mission = "Previews.VR"
 parameters = ["-name=Previews"]
+
+[hemtt.launch.menu]
+workshop = [
+    "450814997",  # CBA_A3
+    "463939057", # ACE
+    "3499977893", # ADT
+    "623475643",  # 3DEN
+    "1779063631", # ZEN
+    "2291129343", # Improved Melee System
+    "767380317", # Blastcore # Only used to test particle effects
+    "769440155", # Operation TREBUCHET
+    "3325103983", # Combat Equipment Evolved
+    "1572627279", # OPTRE First Contact
+    "570118882", # No Weapon Sway
+    "3328314886", # Heavy Weapon Framework
+    "3038821437", # UNSC Foundries
+    "3038826897", # UNSC Foundries Ace Compat
+    "3300894429", # WBK Kit Menu
+    "3165450999", # WBK Immersive Animations
+    "2933180786", # WebKnight's OPTRE Expansion
+    "2915485125", # Burn 'Em Redux
+    "3391132245", # Advanced Vault System: SPARTANS Expansion
+    "2794721649", # Advanced Vault System: Remastered
+    "3255508422", # HALO Flamethrower
+    "2888477598", # 1st MEU Aux Mod
+    # "2522638637", # ACE Arsenal Extended
+    "366425329", # FIR AWS(AirWeaponSystem)
+    "784218341", # The Mighty GAU-8 Avenger
+    "949698441", # The Mighty GAU-8 Avenger - ACE
+    "2987115897", # Weapon Research and Security: Firearms
+    "3469976535", # Weapon Research and Security: Autonomous systems
+    "3423561449", # Equipment PLUS
+    "3283642267", # Speshal Core
+    "3283645995", # Breach - Rewrite
+    "3283652320", # Melee - Rewrite
+    "1960024802", # PLP All in One
+    "1923321700", # O&T Expansion Eden
+    "3489262669", # Expanded Actions and Vehicle Animations
+    "2958273599", # Modular Warehouse Parts
+    "2975882889", # Modular Shoothouse Parts
+    "366423278", # F-16 Fighting Falcon
+    "3122396633", # C-130 Hercules
+    "1124993203", # 3den Better Inventory
+    "1260802825", # AV-8B Harrier 2
+    "3390219536", # C-5 Galaxy
+    "2776005424", # Enhanced Artwork Supporter
+    "3407948300", # JSRS 2025
+    "3389065865", # The Cole Protocol
+    "3691638301", # The Cole Protocol (OPTRE Compat Patch)
+    "1273833677", # Goko Ballisitc Impact
+]
+presets = ["main"]
+dlc = []
+optionals = []
+parameters = []

@@ -14,5 +14,4 @@ class CfgVehicles {
     SOUND_OBJ(Insurrection_Begins_Today_2,"[505th] Insurrection Begins 2");
     SOUND_OBJ(Insurrection_Begins_Today_3,"[505th] Insurrection Begins 3");
     SOUND_OBJ(Insurrection_Begins_Today,"[505th] Insurrection Begins Full");
-    SOUND_OBJ(Journey_To_Rome,"[505th] Journey to Rome");
 };

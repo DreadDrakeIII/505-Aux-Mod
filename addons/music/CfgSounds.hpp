@@ -9,5 +9,4 @@ class CfgSounds {
     SOUND(Insurrection_Begins_Today_2,"Insurrection Begins 2","Insurrection Begins 2");
     SOUND(Insurrection_Begins_Today_3,"Insurrection Begins 3","Insurrection Begins 3");
     SOUND(Insurrection_Begins_Today,"Insurrection Begins Full","Insurrection Begins Full");
-    SOUND(Journey_To_Rome,"Journey to Rome","Journey to Rome");
 };

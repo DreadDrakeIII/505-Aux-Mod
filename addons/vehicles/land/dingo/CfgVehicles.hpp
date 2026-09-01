@@ -85,15 +85,15 @@ class CfgVehicles {
             };
         };
 
-        // hiddenSelections[] = {
-        //     "camo1",
-        //     "camo2",
-        //     "camo3"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\dingo\data\textures\505th_Dingo_EXT1_co.paa),
-        //     QPATHTOF(land\dingo\data\textures\505th_Dingo_EXT2_co.paa),
-        //     QPATHTOF(land\dingo\data\textures\505th_Dingo_Wheel_co.paa)
-        // };
+        hiddenSelections[] = {
+            "camo1",
+            "camo2",
+            "camo3"
+        };
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(land\dingo\data\textures\505th_Dingo_EXT1_co.paa),
+            QPATHTOF(land\dingo\data\textures\505th_Dingo_EXT2_co.paa),
+            QPATHTOF(land\dingo\data\textures\505th_Dingo_Wheel_co.paa)
+        };
     };
 };
