@@ -1,6 +1,7 @@
 class CfgFactionClasses {
     class FACTION(ARTE) {
-        SCOPE_HIDDEN;
+        scope = 1;
+        scopeCurator = 1;
         displayName = "[505th] Artemis";
     };
 };
