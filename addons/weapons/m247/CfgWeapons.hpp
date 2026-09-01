@@ -22,7 +22,7 @@ class CfgWeapons {
                     };
     };
 
-    class CLASS(M274): OPTRE_M247 {
+    class CLASS(M247): OPTRE_M247 {
         SCOPE_HIDDEN;
         author = AUTHOR;
         baseWeapon = QCLASS(M247);

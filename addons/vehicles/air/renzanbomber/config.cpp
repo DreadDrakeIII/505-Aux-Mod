@@ -11,8 +11,8 @@ class CfgPatches {
             "SC_Fixed"
         };
         units[] = {
-            QCLASS(Pelican_Base),
-            QCLASS(Pelican),
+            QCLASS(G42_Renzan_Base),
+            QCLASS(G42_Renzan),
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;
