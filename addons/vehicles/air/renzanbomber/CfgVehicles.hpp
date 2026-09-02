@@ -11,7 +11,7 @@ class CfgVehicles {
         hiddenSelections[] = {"camo1","camo2"};
         hiddenSelectionsTextures[] = {
             QPATHTOF(air\renzanbomber\data\textures\innie\Body_co.paa),
-            QPATHTOF(air\renzanbomber\data\textures\innie\Detials_co.paa)
+            QPATHTOF(air\renzanbomber\data\textures\innie\Details_co.paa)
         };
     };
 
