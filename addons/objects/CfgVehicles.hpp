@@ -115,7 +115,7 @@ class CfgVehicles {
             };
         };
     };
-    class CLASS(SideSwapper): CLASS(Console_Base) {
+    class CLASS(Console_SideSwapper): CLASS(Console_Base) {
         SCOPE_PUBLIC;
         author = AUTHOR;
 

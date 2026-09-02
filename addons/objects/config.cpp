@@ -22,6 +22,7 @@ class CfgPatches {
             QCLASS(Flag_505th_Damaged_Pole),
             QCLASS(Console_Base),
             QCLASS(Console_Permissions),
+            QCLASS(Console_SideSwapper),
             QCLASS(FRLoadout_Arsenal),
             QCLASS(HMLoadout_Arsenal),
             QCLASS(AFLoadout_Arsenal),
