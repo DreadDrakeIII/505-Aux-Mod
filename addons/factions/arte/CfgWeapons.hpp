@@ -10,7 +10,6 @@ class CfgWeapons {
         displayName = "[ARTE] Wolf Cap";
         model = "\A3\Characters_F\Common\cappatrol";
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\TKE_BDU\Textures\MDTFCamoV1milcap.paa"};
         class ItemInfo: ItemInfo {
             hiddenSelections[] = {"camo"};
             uniformModel = "\A3\Characters_F\Common\cappatrol";
@@ -23,7 +22,6 @@ class CfgWeapons {
         displayName = "[ARTE] Wolf Boonie";
         model = "A3\Characters_F_EPB\Common\booniehat_hs.p3d";
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {"\TKE_BDU\Textures\MDTFCamoV1Booniehat.paa"};
         class ItemInfo: ItemInfo {
             hiddenSelections[] = {"camo"};
             uniformModel = "A3\Characters_F_EPB\Common\booniehat_hs.p3d";
@@ -128,9 +126,7 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CLASS(Wolf_Vest_01): CLASS(Vest_Base) {
-        scope = 2;
-        scopeArsenal = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
 
         displayName = "[ARTE] Wolf Vest 01";
         modelSides[] = {ALL_SIDES};
@@ -146,9 +142,7 @@ class CfgWeapons {
         };
     };
     class CLASS(Wolf_Vest_02): CLASS(Vest_Base) {
-        scope = 2;
-        scopeArsenal = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
 
         displayName = "[ARTE] Wolf Vest 02";
         modelSides[] = {ALL_SIDES};
@@ -167,9 +161,7 @@ class CfgWeapons {
         };
     };
     class CLASS(Jager_Vest_01): CLASS(Vest_Base) {
-        scope = 2;
-        scopeArsenal = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
 
         displayName = "[ARTE] Jager Vest 01";
         modelSides[] = {ALL_SIDES};
@@ -244,9 +236,7 @@ class CfgWeapons {
     };
 };
     class CLASS(Jager_Vest_02): CLASS(Vest_Base) {
-        scope = 2;
-        scopeArsenal = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
 
         displayName = "[ARTE] Jager Vest 02";
         modelSides[] = {ALL_SIDES};
@@ -325,9 +315,7 @@ class CfgWeapons {
     };
 };
     class CLASS(Jager_Vest_03): CLASS(Vest_Base) {
-        scope = 2;
-        scopeArsenal = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
 
         displayName = "[ARTE] Jager Vest 03";
         modelSides[] = {ALL_SIDES};

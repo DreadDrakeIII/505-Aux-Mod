@@ -1,8 +1,10 @@
 class CfgVehicles {
+    //===============================
+    // G42 RENZAN BOMBER
+    //===============================
     class SC_Fixed_Bomber_01;
     class CLASS(G42_Renzan_Base): SC_Fixed_Bomber_01 {
-        scope = 1;
-        scopeCurator = 1;
+        SCOPE_HIDDEN;
         displayName = "G42 Renzan Heavy Bomber (Base)";
         side = OPFOR;
         faction = QFACTION(Innie);
@@ -10,14 +12,13 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Planes);
         hiddenSelections[] = {"camo1","camo2"};
         hiddenSelectionsTextures[] = {
-            QPATHTOF(air\renzanbomber\data\textures\innie\Body_co.paa),
-            QPATHTOF(air\renzanbomber\data\textures\innie\Details_co.paa)
+            QPATHTOF(innie\data\g42\Body_co.paa),
+            QPATHTOF(innie\data\g42\Details_co.paa)
         };
     };
 
     class CLASS(G42_Renzan): CLASS(G42_Renzan_Base) {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "G42 Renzan Heavy Bomber";
     };
 };

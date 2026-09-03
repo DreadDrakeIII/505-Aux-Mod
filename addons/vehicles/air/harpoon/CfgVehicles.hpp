@@ -5,8 +5,7 @@ class CfgVehicles {
         class pilotCamera;
     };
     class CLASS(Harpoon_Base): Heli_Transport_03_base_F {
-        scope = 1;
-        scopeCurator = 1;
+        SCOPE_HIDDEN;
         displayName = "CH-447 Harpoon (Base)";
         side = BLUFOR;
         faction = QFACTION(505th);
@@ -93,8 +92,7 @@ class CfgVehicles {
         };
     };
     class CLASS(Harpoon): CLASS(Harpoon_Base) {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         author = AUTHOR;
 
         displayName = "CH-447 Harpoon";

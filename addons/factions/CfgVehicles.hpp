@@ -38,7 +38,7 @@ class CfgVehicles {
         SCOPE_PRIVATE;
         author = AUTHOR;
         displayName = "OPFOR Unit Base";
-        uniformClass = "OPFOR_Uniform_Base";
+        uniformClass = QCLASS(OPFOR_Uniform_Base);
 
         editorSubcategory = QEDSUBCAT(Infantry);
 
@@ -66,7 +66,7 @@ class CfgVehicles {
     class CLASS(INDEP_Unit_Base): I_Soldier_02_F {
         SCOPE_PRIVATE;
         displayName = "INDEP Unit Base";
-        uniformClass = "INDEP_Uniform_Base";
+        uniformClass = QCLASS(INDEP_Uniform_Base);
 
         modelSides[] = {INDEP};
 

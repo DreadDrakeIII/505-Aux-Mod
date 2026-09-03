@@ -1,6 +1,5 @@
 class CfgEditorSubcategories {
-    class EDSUBCAT(TRNEBOTS) {
-        SCOPE_HIDDEN;
+    class EDSUBCAT(TRNE_Light_INF) {
         displayName = "Training Bots";
     };
 };

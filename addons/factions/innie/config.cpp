@@ -8,21 +8,17 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
-            "A3_Soft_F_Gamma_Truck_02",
+            "SC_Fixed"
         };
         units[] = {
-            QCLASS(Mule_Transport),
-            QCLASS(Mule_Covered),
-            QCLASS(Mule_MRL),
-            QCLASS(Mule_Ammo),
-            QCLASS(Mule_Fuel),
-            QCLASS(Mule_Medical),
-            QCLASS(Mule_Repair)
+            QCLASS(G42_Renzan_Base),
+            QCLASS(G42_Renzan)
         };
         weapons[] = {};
-        skipWhenMissingDependencies = 1;
+        skipWhenMissingDependencies = TRUE;
         VERSION_CONFIG;
     };
 };
 
+#include "CfgFactionClasses.hpp"
 #include "CfgVehicles.hpp"

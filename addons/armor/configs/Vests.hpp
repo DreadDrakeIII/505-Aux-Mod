@@ -554,9 +554,7 @@ class CLASS(CE_Vest_Milan): CLASS(CE_Marine_Vest_NS_Base) {
 ///////////////////////////////Pilot Vest///////////////////////////////
 class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
     displayName = "[505th] Pilot Vest";
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    SCOPE_PUBLIC;
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";
@@ -565,9 +563,7 @@ class CLASS(Pilot_Vest): CLASS(Pilot_Vest_Base) {
 /////////////////////////////Black Ops Vest/////////////////////////////
 class CLASS(BlackOps_Vest): CLASS(BlackOps_Vest_Base) {
     displayName = "[505th] Black Ops Vest";
-    scope = 0;
-    scopeCurator = 0;
-    scopeArsenal = 0;
+    SCOPE_PRIVATE;
     class ItemInfo: ItemInfo {
             containerClass = "Supply100";
             vestType = "Rebreather";

@@ -108,32 +108,6 @@
     false
 ] call CBA_fnc_addSetting;
 
-[
-    "FEF_Reinsert_MarkerDuration",
-    "SLIDER",
-    ["Reinsert Marker Duration", "How long the reinsert marker stays visible on the map, in seconds."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    [5, 300, 120, 0],
-    0,
-    {},
-    false
-] call CBA_fnc_addSetting;
-
-// ============================================================================
-// CASUALTY MARKER SETTINGS
-// ============================================================================
-
-[
-    "FEF_Casualty_MarkerDuration",
-    "SLIDER",
-    ["Casualty Marker Duration", "How long the casualty marker stays visible on the map, in seconds."],
-    ["505th Expeditionary Force Aux Mod", "Chat Wheel Menu"],
-    [5, 300, 60, 0],
-    0,
-    {},
-    false
-] call CBA_fnc_addSetting;
-
 // ============================================================================
 // DEBUG
 // ============================================================================

@@ -249,9 +249,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
     class CLASS(Pilot_Backpack): CLASS(Pilot_Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Pilot Pack";
-        scope = 2;
-        scopeCurator = 2;
-        scopeArsenal = 2;
+        SCOPE_PUBLIC;
     };
     class CLASS(Pilot_Backpack_Predef): CLASS(Pilot_Backpack) {
         SCOPE_HIDDEN;
@@ -294,9 +292,7 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
     class CLASS(BlackOps_Backpack): CLASS(BlackOps_Backpack_Base) {
         author = "505th Aux Team";
         displayName = "[505th] Black Ops Backpack";
-        scope = 0;
-        scopeCurator = 0;
-        scopeArsenal = 0;
+        SCOPE_PRIVATE;
     };
     class CLASS(BlackOps_Backpack_Predef): CLASS(BlackOps_Backpack_Base) {
         SCOPE_HIDDEN;

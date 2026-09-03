@@ -29,8 +29,7 @@ class CfgVehicles {
     class Module_F;
 
     class CLASS(Module_AddResources): Module_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "Add Engineer Resources";
         category = QCLASS(Zeus);
         function = QFUNC(zeusAddResources);
@@ -62,8 +61,7 @@ class CfgVehicles {
 // =============================================================================
 
     class CLASS(Module_SupplyDrop): Module_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "Airdrop Engineer Supplies";
         category = QCLASS(Zeus);
         function = QFUNC(zeusSupplyDrop);
@@ -88,8 +86,7 @@ class CfgVehicles {
     class Land_TCP_Space_Crate_01_Blue;
 
     class CLASS(EngineerSupplyCrate): Land_TCP_Space_Crate_01_Blue {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         author = AUTHOR;
 
         displayName = "Engineer Supply Crate";
@@ -122,8 +119,7 @@ class CfgVehicles {
     class Land_TCP_Space_Crate_Pallet_Large_01_Blue;
 
     class CLASS(EngineerSupplyPallet): Land_TCP_Space_Crate_Pallet_Large_01_Blue {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         author = AUTHOR;
 
         displayName = "Engineer Supply Pallet";

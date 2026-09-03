@@ -9,6 +9,7 @@ if (isNull _console) exitWith {};
 {_console removeAction _x} forEach (_console getVariable ["OLI_Supply_ActionIDs", []]);
 
 _console setVariable ["OLI_Supply_ActionIDs", nil];
+_console setVariable ["OLI_Supply_ActionMap", nil];
 _console setVariable ["OLI_Supply_ShownSecs", nil];
 
 OLI_Supply_LocalConsoles = OLI_Supply_LocalConsoles - [_console];

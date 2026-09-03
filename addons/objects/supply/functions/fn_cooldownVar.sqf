@@ -1,15 +1,18 @@
-// OLI_SUPPLY - name of the per-player cooldown variable stored on a console.
+// OLI_SUPPLY - name of the cooldown variable one option uses on a console.
 //
-// Cooldowns are per console AND per player: one player pulling a crate never
-// locks anyone else out. The value is a CBA_missionTime stamp, set public by
-// the server so the owning client can render its own countdown.
+// Cooldowns are per console AND per option, and shared by everybody: when a
+// squad leader takes Platoon Ammo from a console, nobody else can take Platoon
+// Ammo from that console until the timer runs out - but Squad Ammo, Medical,
+// Explosives and Rockets all stay available, each on their own timer.
 //
-// Arguments: 0: unit <OBJECT>
+// The value is a CBA_missionTime stamp, set public by the server so every
+// client renders the same countdown.
+//
+// Arguments: 0: action key <STRING>
 // Return: variable name <STRING>
 
-params [["_unit", objNull]];
+params [["_key", ""]];
 
-private _uid = getPlayerUID _unit;
-if (_uid isEqualTo "") then {_uid = netId _unit};   // SP / edge cases
+if (_key isEqualTo "") exitWith {""};
 
-format ["OLI_Supply_CD_%1", _uid]
+format ["OLI_Supply_CD_%1", _key]

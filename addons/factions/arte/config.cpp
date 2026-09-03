@@ -8,11 +8,14 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
-            "TKE_UCN",
-            "TKE_BDU",
-            "TKE_Rogue_Uniform",
+            "TKE_UCN",                      // Jager helmets / armour
+            "TKE_Rogue_Uniform",            // Jager uniforms
+            "TKE_MD",                       // Jager backpack, MD pistol
+            "A3_Soft_F_Gamma_Truck_02",     // Mule
+            "OPTRE_Vehicles_Warthog"        // Warthog
         };
         units[] = {
+            // ---- Infantry ----
             QCLASS(Wolf_Unit_Base),
             QCLASS(Jager_Unit_Base),
             QCLASS(Jager_Unit_02_Base),
@@ -37,7 +40,19 @@ class CfgPatches {
             QCLASS(Jager_AT_Predef),
             QCLASS(Jager_LMG_Predef),
             QCLASS(Jager_Sniper_Predef),
-            QCLASS(Jager_Bismark_Predef)
+            QCLASS(Jager_Bismark_Predef),
+            // ---- Vehicles ----
+            QCLASS(Mule_Transport),
+            QCLASS(Mule_Covered),
+            QCLASS(Mule_MRL),
+            QCLASS(Mule_Ammo),
+            QCLASS(Mule_Fuel),
+            QCLASS(Mule_Medical),
+            QCLASS(Mule_Repair),
+            QCLASS(ARTE_Warthog_LRV),
+            QCLASS(ARTE_Warthog_AT_LRV),
+            QCLASS(ARTE_Warthog_TD_LRV),
+            QCLASS(ARTE_Warthog_AA)
         };
         weapons[] = {
             QCLASS(Helmet_Base),
@@ -55,16 +70,16 @@ class CfgPatches {
             QCLASS(Wolf_Vest_02),
             QCLASS(Jager_Vest_01),
             QCLASS(Jager_Vest_02),
-            QCLASS(Jager_Vest_03),
+            QCLASS(Jager_Vest_03)
         };
-        VERSION_CONFIG;
-
         skipWhenMissingDependencies = TRUE;
+        VERSION_CONFIG;
     };
 };
 
+#include "CfgFactionClasses.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgEditorSubCategories.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgFactionClasses.hpp"
+#include "CfgGroups.hpp"
 #include "CfgWorlds.hpp"

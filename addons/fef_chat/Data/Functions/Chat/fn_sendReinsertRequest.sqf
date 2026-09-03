@@ -25,13 +25,3 @@ private _message = format ["Reinsert request, x%1 required at my position!", _co
 
 // Side chat is allowed for reinsert
 _unit sideChat _message;
-
-// Optional side-visible marker
-private _sideRecipients = allPlayers select {
-    isPlayer _x &&
-    {side group _x isEqualTo side group _unit}
-};
-
-{
-    [netId _unit, _count] remoteExecCall ["FEF_fnc_createReinsertMarkerLocal", _x];
-} forEach _sideRecipients;

@@ -1279,8 +1279,7 @@ class CLASS(Unit_BlackOps): CLASS(BlackOps_Base) {
 };
 
 class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
-    scope = 2;
-    scopeCurator = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     side = BLUFOR;
     faction = QFACTION(505th);
@@ -1304,8 +1303,7 @@ class CLASS(Marine_TCP_Woodland_1): CLASS(Marine_TCP_Woodland_1_Base) {
 };
 
 class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
-    scope = 2;
-    scopeCurator = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     side = BLUFOR;
     faction = QFACTION(505th);
@@ -1329,8 +1327,7 @@ class CLASS(Marine_TCP_Woodland_2): CLASS(Marine_TCP_Woodland_2_Base) {
 };
 
 class CLASS(Marine_TCP_Black_1): CLASS(Marine_TCP_Urban_1_Base) {
-    scope = 2;
-    scopeCurator = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     side = BLUFOR;
     faction = QFACTION(505th);

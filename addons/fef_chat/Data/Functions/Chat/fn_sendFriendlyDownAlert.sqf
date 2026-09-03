@@ -29,14 +29,3 @@ if (isNull _speaker) exitWith {};
 {
     [_speaker, _message] remoteExecCall ["FEF_fnc_sendLocalMessage", _x];
 } forEach (units group _unit select { isPlayer _x });
-
-// Same side recipients — marker + ping (side-wide, map-scoped)
-private _sideRecipients = allPlayers select {
-    isPlayer _x &&
-    { side group _x isEqualTo side group _unit }
-};
-
-{
-    [netId _unit] remoteExecCall ["FEF_fnc_createFriendlyDownMarkerLocal", _x];
-    [netId _unit] remoteExecCall ["FEF_fnc_createCasualtyPingLocal", _x];
-} forEach _sideRecipients;

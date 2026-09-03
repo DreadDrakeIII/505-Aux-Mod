@@ -207,9 +207,7 @@ class CLASS(Uniform_BlackOps): CLASS(Uniform_BlackOps_Base) {
 class TCP_equipmentTypes;
 
 class CLASS(CBUU_Woodland_1): CLASS(CBUU_Woodland_1_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform (Woodland 1)";
 
@@ -225,9 +223,7 @@ class CLASS(CBUU_Woodland_1): CLASS(CBUU_Woodland_1_Base) {
 };
 
 class CLASS(CBUU_Woodland_2): CLASS(CBUU_Woodland_2_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform (Woodland 2)";
 
@@ -243,9 +239,7 @@ class CLASS(CBUU_Woodland_2): CLASS(CBUU_Woodland_2_Base) {
 };
 
 class CLASS(CBUU_Urban_1): CLASS(CBUU_Urban_1_Base) {
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    SCOPE_PUBLIC;
     author = AUTHOR;
     displayName = "[505th] CBUU Uniform (Urban 1)";
 

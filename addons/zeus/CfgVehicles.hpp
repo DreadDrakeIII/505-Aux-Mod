@@ -2,8 +2,7 @@ class CfgVehicles {
     class Module_F;
 
     class CLASS(Module_FullHealVehicle): Module_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "Full Heal Vehicle";
         category = QCLASS(Zeus);
         function = "OLI_fnc_fullHealVehicle";
@@ -22,8 +21,7 @@ class CfgVehicles {
     };
 
     class CLASS(Module_EjectOccupants): Module_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "Eject All Occupants";
         category = QCLASS(Zeus);
         function = "OLI_fnc_ejectOccupants";
@@ -44,8 +42,7 @@ class CfgVehicles {
     class Land_MultiScreenComputer_01_olive_F;
     class CLASS(KCS_Computer): Land_MultiScreenComputer_01_olive_F {
         author = AUTHOR;
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "KCS Training Computer";
 
         class ACE_Actions {
@@ -68,8 +65,7 @@ class CfgVehicles {
     class Land_JumpTarget_F;
     class CLASS(KCS_TrainingSpot): Land_JumpTarget_F {
         author = AUTHOR;
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "KCS Training Spot";
     };
 };

@@ -55,7 +55,8 @@ workshop = [
     "2987115897", # Weapon Research and Security: Firearms
     "3469976535", # Weapon Research and Security: Autonomous systems
     "3423561449", # Equipment PLUS
-    "3283642267", # Speshal Core
+    "3283642267", # Speshal Core (ships tsp_core.pbo only - NOT the source of sc_* classes)
+    "2478080991", # Scion Conflict (provides sc_equipment / sc_props - needed by factions/trainingbot)
     "3283645995", # Breach - Rewrite
     "3283652320", # Melee - Rewrite
     "1960024802", # PLP All in One
@@ -116,7 +117,8 @@ workshop = [
     "2987115897", # Weapon Research and Security: Firearms
     "3469976535", # Weapon Research and Security: Autonomous systems
     "3423561449", # Equipment PLUS
-    "3283642267", # Speshal Core
+    "3283642267", # Speshal Core (ships tsp_core.pbo only - NOT the source of sc_* classes)
+    "2478080991", # Scion Conflict (provides sc_equipment / sc_props - needed by factions/trainingbot)
     "3283645995", # Breach - Rewrite
     "3283652320", # Melee - Rewrite
     "1960024802", # PLP All in One

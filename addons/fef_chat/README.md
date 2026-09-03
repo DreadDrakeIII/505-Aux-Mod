@@ -56,7 +56,7 @@ This version is focused on a **clean backend-first structure** before moving to 
   - `en_US` NeedMedic
   - `en_GB` NeedMedic
 
-## Chat / Marker Rules
+## Chat Rules
 
 ### Group Chat
 Used for normal squad comms:
@@ -75,14 +75,12 @@ Reserved for:
 ### Friendly Down
 Friendly Down currently does:
 - group chat text
-- same-side casualty marker
 
-Tactical ping is intentionally postponed for now.
+Map markers and the 3D casualty ping have been removed from this module.
 
 ### Reinsert
 Reinsert currently does:
 - side chat request
-- same-side reinsert marker
 
 ## Current Menu Layout
 
@@ -151,7 +149,6 @@ This module is currently considered the **backend-complete command-menu version*
 It is intended to provide:
 - stable comms logic
 - stable submenu flow
-- stable marker behaviour
 - stable CBA settings/keybind setup
 
 before replacing the vanilla command menu with a custom 505th-styled UI.

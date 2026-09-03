@@ -1,5 +1,5 @@
-// OLI_SUPPLY - SERVER ONLY. Validates the request, burns the cooldown,
-// creates the crate and hands it to the requesting client to pick up.
+// OLI_SUPPLY - SERVER ONLY. Validates the request, burns that option's
+// cooldown, creates the crate and hands it to the requesting client to pick up.
 //
 // Crate cargo is never touched: whatever loot the class ships with is what
 // the player gets.
@@ -20,33 +20,39 @@ if !(_console isKindOf "OLI_Supply_Console" || {_console getVariable ["OLI_Suppl
 private _idx = OLI_Supply_Actions findIf {(_x select 0) == _key};
 if (_idx < 0) exitWith {};
 
+(OLI_Supply_Actions select _idx) params ["", "_name", "", "", "_classVar", "", "_cdVar", "", "_enabledVar"];
+
+// Option turned off in the addon options. The client should not have shown an
+// action for it at all, so this only catches a stale action or a forged event.
+if !(missionNamespace getVariable [_enabledVar, true]) exitWith {
+    ["OLI_Supply_message", [format ["%1 resupply is disabled on this mission", _name]], _unit] call CBA_fnc_targetEvent;
+};
+
 // Range guard. Generous multiple of the action radius so lag never trips it,
 // tight enough that a replayed event from across the map spawns nothing.
 private _maxRange = (missionNamespace getVariable ["OLI_Supply_ActionRadius", 4]) * OLI_Supply_ServerRangeFactor;
 if (_unit distance _console > _maxRange) exitWith {};
 
-// Cooldown is per console AND per player, checked here as well as on the
-// client so a client cannot simply skip it.
-private _cdVar = [_unit] call OLI_Supply_fnc_cooldownVar;
-private _end = _console getVariable [_cdVar, 0];
+// Cooldown is per console AND per option, shared by all players, checked here
+// as well as on the client so a client cannot simply skip it.
+private _cdName = [_key] call OLI_Supply_fnc_cooldownVar;
+private _end = _console getVariable [_cdName, 0];
 if (CBA_missionTime < _end) exitWith {
-    ["OLI_Supply_message", [format ["Supply console recharging - %1", [_end - CBA_missionTime] call OLI_Supply_fnc_formatTime]], _unit] call CBA_fnc_targetEvent;
+    ["OLI_Supply_message", [format ["%1 resupply recharging - %2", _name, [_end - CBA_missionTime] call OLI_Supply_fnc_formatTime]], _unit] call CBA_fnc_targetEvent;
 };
 
-(OLI_Supply_Actions select _idx) params ["", "_settingVar", "_label"];
-private _class = missionNamespace getVariable [_settingVar, ""];
+private _class = missionNamespace getVariable [_classVar, ""];
 
 if (_class isEqualTo "" || {!isClass (configFile >> "CfgVehicles" >> _class)}) exitWith {
-    diag_log format ["[OLI_Supply] '%1' is not a CfgVehicles class - check CBA setting %2", _class, _settingVar];
-    ["OLI_Supply_message", [format ["%1 unavailable - crate class '%2' is not loaded", _label, _class]], _unit] call CBA_fnc_targetEvent;
+    diag_log format ["[OLI_Supply] '%1' is not a CfgVehicles class - check CBA setting %2", _class, _classVar];
+    ["OLI_Supply_message", [format ["%1 unavailable - crate class '%2' is not loaded", _name, _class]], _unit] call CBA_fnc_targetEvent;
 };
 
-// Burn this player's cooldown before creating anything. Public so their own
-// client - and their client after a JIP reconnect - renders the counter.
-// Default is 0, i.e. no cooldown unless a mission maker dials one in.
-private _cd = missionNamespace getVariable ["OLI_Supply_Cooldown", 0];
+// Burn this option's cooldown before creating anything. Public so every
+// client - including one that joins later - renders the same counter.
+private _cd = missionNamespace getVariable [_cdVar, 0];
 if (_cd > 0) then {
-    _console setVariable [_cdVar, CBA_missionTime + _cd, true];
+    _console setVariable [_cdName, CBA_missionTime + _cd, true];
 };
 
 // Spawn the crate FROZEN, and on the player's own footprint rather than in

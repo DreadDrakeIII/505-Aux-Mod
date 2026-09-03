@@ -1,8 +1,7 @@
 class CfgVehicles {
     class B_T_VTOL_01_armed_F;
     class CLASS(Widow_Armed): B_T_VTOL_01_armed_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "V/AC-220 Widow";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
@@ -33,8 +32,7 @@ class CfgVehicles {
 
     class B_T_VTOL_01_infantry_F;
     class CLASS(Widow): B_T_VTOL_01_infantry_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "V/IC-220 Widow";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
@@ -65,8 +63,7 @@ class CfgVehicles {
 
     class B_T_VTOL_01_vehicle_F;
     class CLASS(Widow_Vehicle): B_T_VTOL_01_vehicle_F {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         displayName = "V/C-210 Widow";
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);

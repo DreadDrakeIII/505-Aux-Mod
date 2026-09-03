@@ -17,53 +17,6 @@ class CfgPatches {
     };
 };
 
-class CfgMarkers {
-    class b_unknown;
-
-    class FEF_MarkerReinsertX1: b_unknown {
-        name = "Reinsert x1";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\reinsert_x1.paa";
-        color[] = {0.20, 0.45, 0.65, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerReinsertX2: b_unknown {
-        name = "Reinsert x2";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\reinsert_x2.paa";
-        color[] = {0.20, 0.45, 0.65, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerReinsertX3: b_unknown {
-        name = "Reinsert x3";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\reinsert_x3.paa";
-        color[] = {0.20, 0.45, 0.65, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerReinsertX4: b_unknown {
-        name = "Reinsert x4";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\reinsert_x4.paa";
-        color[] = {0.20, 0.45, 0.65, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerReinsertX5: b_unknown {
-        name = "Reinsert x5";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\reinsert_x5.paa";
-        color[] = {0.20, 0.45, 0.65, 1};
-        size = 32;
-        shadow = 0;
-    };
-    class FEF_MarkerCorpsman: b_unknown {
-        name = "Corpsman Request";
-        icon = "BLU\OLI\addons\fef_chat\ui\assets\markers\request_corpsman.paa";
-        color[] = {0.70, 0.13, 0.13, 1};
-        size = 32;
-        shadow = 0;
-    };
-};
-
 class CfgFunctions {
     class FEF {
         class Settings {
@@ -85,9 +38,6 @@ class CfgFunctions {
             class sendLocalSideMessage {};
             class sendReinsertRequest {};
             class speakerGroupChat {};
-            class createFriendlyDownMarkerLocal {};
-            class createReinsertMarkerLocal {};
-            class createCasualtyPingLocal {};
         };
 
         class Sounds {

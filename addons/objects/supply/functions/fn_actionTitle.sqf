@@ -20,7 +20,9 @@ params ["_key", ["_onCooldown", false], ["_remaining", 0], ["_iconSize", 1.5]];
 private _idx = OLI_Supply_Actions findIf {(_x select 0) == _key};
 if (_idx < 0) exitWith {""};
 
-(OLI_Supply_Actions select _idx) params ["", "", "_label", "_color", "_icon"];
+(OLI_Supply_Actions select _idx) params ["", "_name", "_color", "_icon"];
+
+private _label = format ["Spawn %1", _name];
 
 if (_onCooldown) then {
     _color = OLI_Supply_ColorCooldown;

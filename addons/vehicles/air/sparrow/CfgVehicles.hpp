@@ -2,8 +2,7 @@ class CfgVehicles {
     class B_Heli_Light_01_dynamicLoadout_F;
     class CLASS(Sparrow): B_Heli_Light_01_dynamicLoadout_F {
         displayName = "AH-600 Sparrow";
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);
@@ -40,8 +39,7 @@ class CfgVehicles {
     class B_Heli_Light_01_F;
     class CLASS(Pidgeon): B_Heli_Light_01_F {
         displayName = "AH-610 Pigeon";
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(Helicopters);
         crew = QCLASS(Marine_Heli_Pilot);

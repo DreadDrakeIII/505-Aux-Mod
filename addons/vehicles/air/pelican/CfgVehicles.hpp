@@ -6,8 +6,7 @@ class CfgVehicles {
         class Turrets;
     };
     class CLASS(Pelican_Base): Splits_UNSC_D77_TC_Pelican {
-        scope = 1;
-        scopeCurator = 1;
+        SCOPE_HIDDEN;
         displayName = "D77-TC Pelican (Base)";
         side = BLUFOR;
         faction = QFACTION(505th);
@@ -124,8 +123,7 @@ class CfgVehicles {
     };
 
     class CLASS(Pelican): CLASS(Pelican_Base) {
-        scope = 2;
-        scopeCurator = 2;
+        SCOPE_PUBLIC;
         author = AUTHOR;
 
         displayName = "D77-TC Pelican";

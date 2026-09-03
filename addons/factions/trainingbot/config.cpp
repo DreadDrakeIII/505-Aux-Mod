@@ -11,8 +11,10 @@ class CfgPatches {
             "sc_equipment",
         };
         units[] = {
-            QCLASS(TRNE_LightUnit_Base),
+            QCLASS(TRNE_Light_Unit_Base),
             QCLASS(TRNE_Light_Rifleman),
+            QCLASS(TRNE_Light_Backpack),
+            QCLASS(TRNE_Light_Rifleman_Predef)
         };
         weapons[] = {
             QCLASS(Uniform_Base),
@@ -28,4 +30,5 @@ class CfgPatches {
 #include "CfgEditorSubCategories.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgFactionClasses.hpp"
+#include "CfgGroups.hpp"
 #include "CfgWorlds.hpp"
