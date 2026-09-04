@@ -8,7 +8,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
-            "SC_Fixed"
+            "SC_Fixed",
+            QCLASS(vehicles_pelican)
         };
         units[] = {
             QCLASS(G42_Renzan_Base),

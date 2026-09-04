@@ -23,6 +23,7 @@ class CfgVehicles {
     };
     class CLASS(Pelican_Base);
     class CLASS(Innie_Pelican): CLASS(Pelican_Base) {
+        SCOPE_PUBLIC;
         displayName = "[Innie] D77-TC Pelican";
         side = OPFOR;
         faction = QFACTION(Innie);
