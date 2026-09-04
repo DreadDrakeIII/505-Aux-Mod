@@ -74,6 +74,7 @@ workshop = [
     "3389065865", # The Cole Protocol
     "3691638301", # The Cole Protocol (OPTRE Compat Patch)
     "1273833677", # Goko Ballisitc Impact
+    "3773912312", # colinel's Dynamic Dropships
 ]
 presets = ["main"]
 dlc = []

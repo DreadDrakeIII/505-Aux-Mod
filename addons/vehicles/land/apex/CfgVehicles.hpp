@@ -9,20 +9,20 @@ class CfgVehicles {
         faction = QFACTION(505th);
         editorSubcategory = QEDSUBCAT(APCs);
         crew = QCLASS(Marine_Tank_Crew);
-        // hiddenSelections[] = {
-        //     "camo1",
-        //     "camo2",
-        //     "camo3",
-        //     "CamoNet",
-        //     "CamoSlat"
-        // };
-        // hiddenSelectionsTextures[] = {
-        //     QPATHTOF(land\apex\data\textures\EXT1_co.paa),
-        //     QPATHTOF(land\apex\data\textures\EXT2_co.paa),
-        //     QPATHTOF(land\apex\data\textures\Wheel_co.paa),
-        //     "a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-        //     QPATHTOF(land\apex\data\textures\EXT3_co.paa)
-        // };
+        hiddenSelections[] = {
+            "camo1",
+            "camo2",
+            "camo3",
+            "CamoNet",
+            "CamoSlat"
+        };
+        hiddenSelectionsTextures[] = {
+            "a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT1_green_CO.paa",
+            "a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT2_green_CO.paa",
+            "a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_wheel_green_CO.paa",
+            "a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+            "A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa"
+        };
         // textureList[] = {"505th", 1, "Green", 0, "Tan", 0};
         // class TextureSources {
         //     class Main {

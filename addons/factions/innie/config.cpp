@@ -12,7 +12,8 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(G42_Renzan_Base),
-            QCLASS(G42_Renzan)
+            QCLASS(G42_Renzan),
+            QCLASS(Innie_Pelican)
         };
         weapons[] = {};
         skipWhenMissingDependencies = TRUE;

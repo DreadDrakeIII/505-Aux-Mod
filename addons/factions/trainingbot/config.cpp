@@ -8,13 +8,18 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             QUOTE(ADDON),
+            "sc_uniforms",
             "sc_equipment",
         };
         units[] = {
             QCLASS(TRNE_Light_Unit_Base),
             QCLASS(TRNE_Light_Rifleman),
+            QCLASS(TRNE_Light_LMG),
+            QCLASS(TRNE_Light_AT),
             QCLASS(TRNE_Light_Backpack),
-            QCLASS(TRNE_Light_Rifleman_Predef)
+            QCLASS(TRNE_Light_Rifleman_Predef),
+            QCLASS(TRNE_Light_LMG_Predef),
+            QCLASS(TRNE_Light_AT_Predef),
         };
         weapons[] = {
             QCLASS(Uniform_Base),
