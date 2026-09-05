@@ -8,7 +8,7 @@ class CfgVehicles {
         displayName = "G42 Renzan Heavy Bomber (Base)";
         side = OPFOR;
         faction = QFACTION(Innie);
-        crew = "OPTRE_Ins_URF_Crewman";
+        crew = "TCP_O_INS_M_Soldier_Engineer";
         editorSubcategory = QEDSUBCAT(Planes);
         hiddenSelections[] = {"camo1","camo2"};
         hiddenSelectionsTextures[] = {
@@ -20,20 +20,5 @@ class CfgVehicles {
     class CLASS(G42_Renzan): CLASS(G42_Renzan_Base) {
         SCOPE_PUBLIC;
         displayName = "[Innie] G42 Renzan Heavy Bomber";
-    };
-    class CLASS(Pelican_Base);
-    class CLASS(Innie_Pelican): CLASS(Pelican_Base) {
-        SCOPE_PUBLIC;
-        displayName = "[Innie] D77-TC Pelican";
-        side = OPFOR;
-        faction = QFACTION(Innie);
-        crew = "OPTRE_Ins_URF_Crewman";
-        editorSubcategory = QEDSUBCAT(Helicopters);
-        hiddenSelections[] = {"camo1","camo2","camo3"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(innie\data\pelican\Body_co.paa),
-            QPATHTOF(innie\data\pelican\Wings_co.paa),
-            QPATHTOF(innie\data\pelican\Weaponry_co.paa)
-        };
     };
 };

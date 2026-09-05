@@ -13,6 +13,7 @@ class CfgPatches {
         units[] = {
             QCLASS(Pelican_Base),
             QCLASS(Pelican),
+            QCLASS(Innie_Pelican)
         };
         weapons[] = {};
         skipWhenMissingDependencies = 1;
