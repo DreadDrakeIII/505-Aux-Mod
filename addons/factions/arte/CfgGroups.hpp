@@ -5,6 +5,7 @@ class CfgGroups {
 
             /////////////////////////// Wolf - line infantry ///////////////////////////
             class CLASS(ARTE_Wolf_INF) {
+                SCOPE_HIDDEN;
                 name = "Infantry - Wolf";
 
                 class ARTE_Wolf_RifleSquad {

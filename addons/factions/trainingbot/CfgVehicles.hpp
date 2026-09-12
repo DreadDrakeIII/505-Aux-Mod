@@ -26,6 +26,58 @@ class CfgVehicles {
             QPATHTOF(trainingbot\data\textures\TrainingBot_Legs_co.paa)
         };
     };
+    class CLASS(Red_Light_Unit_Base): CLASS(OPFOR_Unit_Base) {
+        SCOPE_HIDDEN;
+        faction = QFACTION(TRNE);
+
+        genericNames = QCLASS(TRNE_Bots);
+        modelSides[] = {ALL_SIDES};
+        editorSubcategory = QEDSUBCAT(TRNE_Light_INF);
+
+        items[] = {
+            ITEM_20("ACE_elasticBandage"),
+            ITEM_4("ACE_tourniquet"),
+            "FirstAidKit"
+        };
+        respawnItems[] = {
+            ITEM_20("ACE_elasticBandage"),
+            ITEM_4("ACE_tourniquet"),
+            "FirstAidKit"
+        };
+        model = "Uniforms\warbot.p3d";
+        uniformClass = QCLASS(Red_Light_Uniform);
+        hiddenSelections[] = {"camo","camo1"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(trainingbot\data\textures\red\Red_Torso_co.paa),
+            QPATHTOF(trainingbot\data\textures\red\Red_Legs_co.paa)
+        };
+    };
+    class CLASS(Blue_Light_Unit_Base): CLASS(OPFOR_Unit_Base) {
+        SCOPE_HIDDEN;
+        faction = QFACTION(TRNE);
+
+        genericNames = QCLASS(TRNE_Bots);
+        modelSides[] = {ALL_SIDES};
+        editorSubcategory = QEDSUBCAT(TRNE_Light_INF);
+
+        items[] = {
+            ITEM_20("ACE_elasticBandage"),
+            ITEM_4("ACE_tourniquet"),
+            "FirstAidKit"
+        };
+        respawnItems[] = {
+            ITEM_20("ACE_elasticBandage"),
+            ITEM_4("ACE_tourniquet"),
+            "FirstAidKit"
+        };
+        model = "Uniforms\warbot.p3d";
+        uniformClass = QCLASS(Blue_Light_Uniform);
+        hiddenSelections[] = {"camo","camo1"};
+        hiddenSelectionsTextures[] = {
+            QPATHTOF(trainingbot\data\textures\blue\Blue_Torso_co.paa),
+            QPATHTOF(trainingbot\data\textures\blue\Blue_Legs_co.paa)
+        };
+    };
     /////////////////////TRNE_Light//////////////////////////
     class CLASS(TRNE_Light_Rifleman): CLASS(TRNE_Light_Unit_Base) {
         SCOPE_PUBLIC;

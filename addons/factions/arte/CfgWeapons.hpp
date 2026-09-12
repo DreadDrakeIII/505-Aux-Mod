@@ -5,7 +5,7 @@ class CfgWeapons {
     };
     //////////////////////Helmets//////////////////////
     class CLASS(Wolf_Cap): CLASS(Helmet_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Cap";
         model = "\A3\Characters_F\Common\cappatrol";
@@ -17,7 +17,7 @@ class CfgWeapons {
     };
 
     class CLASS(Wolf_Boonie): CLASS(Helmet_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Boonie";
         model = "A3\Characters_F_EPB\Common\booniehat_hs.p3d";
@@ -90,7 +90,7 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CLASS(Wolf_Uniform): CLASS(Uniform_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Uniform";
 
@@ -126,7 +126,7 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CLASS(Wolf_Vest_01): CLASS(Vest_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Vest 01";
         modelSides[] = {ALL_SIDES};
@@ -142,7 +142,7 @@ class CfgWeapons {
         };
     };
     class CLASS(Wolf_Vest_02): CLASS(Vest_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Vest 02";
         modelSides[] = {ALL_SIDES};

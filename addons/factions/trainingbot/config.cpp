@@ -22,6 +22,12 @@ class CfgPatches {
             QCLASS(TRNE_Light_AT_Predef),
         };
         weapons[] = {
+            QCLASS(Helmet_Base),
+            QCLASS(TRNE_Head),
+            QCLASS(Red_Head),
+            QCLASS(Blue_Head),
+            QCLASS(Red_Faceshield),
+            QCLASS(Blue_Faceshield),
             QCLASS(Uniform_Base),
             QCLASS(TRNE_Light_Uniform),
         };

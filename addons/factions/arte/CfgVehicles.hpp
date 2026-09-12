@@ -74,7 +74,7 @@ class CfgVehicles {
     };
     /////////////////////Wolf//////////////////////////
     class CLASS(Wolf_Rifleman): CLASS(Wolf_Unit_Base) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "INF 01 Rifleman";
 
@@ -98,7 +98,7 @@ class CfgVehicles {
         backpack = QCLASS(Wolf_Rifleman_Predef);
     };
     class CLASS(Wolf_Marksman): CLASS(Wolf_Rifleman) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "INF 02 Marksman";
 
@@ -126,7 +126,7 @@ class CfgVehicles {
         backpack = QCLASS(Wolf_Marksman_Predef);
     };
     class CLASS(Wolf_AT): CLASS(Wolf_Rifleman) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "INF 03 Rifleman (AT)";
 
@@ -156,7 +156,7 @@ class CfgVehicles {
         backpack = QCLASS(Wolf_AT_Predef);
     };
     class CLASS(Wolf_AA): CLASS(Wolf_Rifleman) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "INF 04 Rifleman (AA)";
 
@@ -186,7 +186,7 @@ class CfgVehicles {
         backpack = QCLASS(Wolf_AA_Predef);
     };
     class CLASS(Wolf_Grenadier): CLASS(Wolf_Rifleman) {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "INF 05 Grenadier";
 
@@ -360,7 +360,7 @@ class CfgVehicles {
     class B_FieldPack_oli;
     class TKE_AlicePackUCNArmy;
     class CLASS(Wolf_Backpack): B_FieldPack_oli {
-        SCOPE_PUBLIC;
+        SCOPE_HIDDEN;
 
         displayName = "[ARTE] Wolf Backpack";
         model = "\A3\weapons_f\Ammoboxes\bags\Backpack_Gorod";

@@ -43,6 +43,30 @@ class CfgVehicles {
         hiddenSelections[] = {"camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\flags\505th_co.paa)};
     };
+    class CLASS(Banner_Sosei): Banner_01_F {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+
+        displayName = "Sōsei Colony Banner";
+
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Flags);
+
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Sōsei_Flag_co.paa)};
+    };
+    class CLASS(Banner_Takeda): Banner_01_F {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+
+        displayName = "Takeda Separatists Banner";
+
+        editorCategory = QEDCAT(Objects);
+        editorSubcategory = QEDSUBCAT(Flags);
+
+        hiddenSelections[] = {"camo"};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Takeds_Flag_co.paa)};
+    };
 
     class Flag_White_F;
     class CLASS(Flag_505th_Pole): Flag_White_F {
@@ -62,6 +86,18 @@ class CfgVehicles {
         displayName = "505th Damaged Flag (Pole)";
         class EventHandlers {
             init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\505th_Damaged_co.paa));
+        };
+    };
+    class CLASS(Flag_Sosei_Pole): CLASS(Flag_505th_Pole) {
+        displayName = "Sōsei Colony Flag (Pole)";
+        class EventHandlers {
+            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Sōsei_co.paa));
+        };
+    };
+    class CLASS(Flag_Takeda_Pole): CLASS(Flag_505th_Pole) {
+        displayName = "Takeda Separatists Flag (Pole)";
+        class EventHandlers {
+            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Takeda_co.paa));
         };
     };
 

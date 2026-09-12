@@ -13,7 +13,10 @@ class CfgPatches {
         };
         units[] = {
             QCLASS(Frigate_Innie_Blank),
-            QCLASS(Frigate_Innie),
+            QCLASS(Frigate_Aegis),
+            QCLASS(Frigate_Ajax),
+            QCLASS(Frigate_Sosei),
+            QCLASS(Frigate_Takeda)
         };
         weapons[] = {};
         VERSION_CONFIG;
