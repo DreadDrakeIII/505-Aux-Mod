@@ -124,6 +124,24 @@
 ] call CBA_fnc_addSetting;
 
 // ============================================================================
+// VEHICLE SCROLL BLOCK
+// ============================================================================
+
+[
+    "FEF_VehicleScroll_BlockInVehicle",
+    "CHECKBOX",
+    [
+        "Block ACE Scroll Menu In Vehicles",
+        "While ON, ACE's scroll-wheel self-interaction menu will not open while the player is in any vehicle seat (driver, gunner, cargo, turret) - scrolling stays free for optics zoom / weapon cycling instead. Off restores ACE's normal scroll behaviour in vehicles."
+    ],
+    ["505th Expeditionary Force Aux Mod", "Vehicle Scroll Block"],
+    true,
+    0,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+// ============================================================================
 // CUSTOM MESSAGES 01-12
 // ============================================================================
 

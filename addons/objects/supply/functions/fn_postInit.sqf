@@ -38,11 +38,6 @@ if (hasInterface) then {
         [_text] call ace_common_fnc_displayTextStructured;
     }] call CBA_fnc_addEventHandler;
 
-    // The action radius is baked into addAction, so wait for server-forced CBA
-    // settings before attaching anything. "CBA_settingsInitialized" is an
-    // EVENT, not a variable - CBA raises it one frame after postInit. The
-    // timer is a safety net so a missed event can never leave the consoles
-    // dead; fn_wireConsoles is one-shot, so only the first trigger counts.
     ["CBA_settingsInitialized", {call OLI_Supply_fnc_wireConsoles}] call CBA_fnc_addEventHandler;
     [{call OLI_Supply_fnc_wireConsoles}, [], 3] call CBA_fnc_waitAndExecute;
 };

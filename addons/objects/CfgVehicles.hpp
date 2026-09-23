@@ -65,7 +65,7 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Flags);
 
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Takeds_Flag_co.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Takeda_Flag_co.paa)};
     };
 
     class Flag_White_F;
@@ -304,7 +304,7 @@ class CfgVehicles {
 
         // FR Loadout Locker
     class CLASS(FRLoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
-            SCOPE_PUBLIC;
+            SCOPE_HIDDEN;
             author = AUTHOR;
             displayName = "[505th] FR Loadout and Arsenal & Kit Locker";
             model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
@@ -349,7 +349,7 @@ class CfgVehicles {
     class CLASS(CELoadout_Arsenal): OPTRE_Furniture_AmmoRack_BR55 {
             SCOPE_PUBLIC;
             author = AUTHOR;
-            displayName = "[505th] CE Loadout and Arsenal & Kit Locker";
+            displayName = "[505th] Marine Loadout and Arsenal & Kit Locker";
             model = "OPTRE_BW_Buildings\Furniture\WeaponsRack_BR\WeaponsRack_AR";
             editorPreview = "\OPTRE_Misc\Image\OPTRE\BW_Buildings\OPTRE_Furniture_AmmoRack_BR55.jpg";
 

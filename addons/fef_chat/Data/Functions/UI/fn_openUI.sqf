@@ -11,8 +11,9 @@ missionNamespace setVariable ["FEF_UI_CurrentMenu", "main"];
 missionNamespace setVariable ["FEF_UI_SelectedIndex", 0];
 missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
 
-// Block ACE scroll interaction
-[true] call ace_interact_menu_fnc_blockMouseWheel;
+// Recompute ACE scroll block - UI-open is now one of its reasons
+// (see Data/Functions/System/fn_updateAceScrollBlock.sqf)
+call FEF_fnc_updateAceScrollBlock;
 
 // Block vanilla Arma action menu (scroll wheel) while chat menu is open.
 // Returning "true" tells the engine to skip its default handling of these events.

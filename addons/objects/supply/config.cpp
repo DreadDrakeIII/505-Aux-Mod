@@ -1,18 +1,5 @@
 #include "script_component.hpp"
 
-// ===========================================================================
-// Supply Console sub-component - ported from the standalone oli_supply_main
-// package (built by the other developer, HEMTT-based) into addons/objects.
-//
-// This sub-component does NOT use this mod's PREP()/FUNC()/GVAR() macro
-// system. It uses the vanilla Arma CfgFunctions auto-compile convention
-// instead (tag "OLI_Supply", file naming fn_*.sqf), exactly as it was
-// authored in the original package - every function it defines is called
-// directly as OLI_Supply_fnc_<name>, and fn_preInit.sqf / fn_postInit.sqf
-// are marked preInit/postInit below so they run automatically without an
-// XEH_preInit.sqf/XEH_postInit.sqf hookup.
-// ===========================================================================
-
 class CfgPatches {
     class SUBADDON {
         author = AUTHOR;
@@ -54,6 +41,12 @@ class CfgFunctions {
             class spawnCrate {};
             class startCarry {};
             class titleLoop {};
+            class openMenu {};
+            class closeMenu {};
+            class renderMenu {};
+            class onMouseWheel {};
+            class onKeyDown {};
+            class onSelect {};
         };
     };
 };

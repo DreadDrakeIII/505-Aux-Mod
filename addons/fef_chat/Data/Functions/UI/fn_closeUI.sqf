@@ -7,8 +7,9 @@ missionNamespace setVariable ["FEF_UI_CurrentMenu", "main"];
 missionNamespace setVariable ["FEF_UI_SelectedIndex", 0];
 missionNamespace setVariable ["FEF_UI_ScrollOffset", 0];
 
-// Unblock ACE scroll interaction
-[false] call ace_interact_menu_fnc_blockMouseWheel;
+// Recompute ACE scroll block - vehicle reason (if any) still applies even
+// though our own UI is now closed (see fn_updateAceScrollBlock.sqf)
+call FEF_fnc_updateAceScrollBlock;
 
 // Restore vanilla Arma action menu (scroll wheel).
 // "false" restores default engine handling of these events.

@@ -1,8 +1,3 @@
-// OLI_SUPPLY - client side of an action press. Does the cheap local checks,
-// then asks the server, which is the authority on cooldown and spawning.
-//
-// Arguments: 0: console <OBJECT>, 1: caller <OBJECT>, 2: action key <STRING>
-
 params [["_console", objNull], ["_unit", objNull], ["_key", ""]];
 
 if (isNull _console || {isNull _unit} || {_key isEqualTo ""}) exitWith {};

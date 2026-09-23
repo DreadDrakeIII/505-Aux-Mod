@@ -17,8 +17,7 @@ class CfgPatches {
             QCLASS(Resupply_SquadMedical),
             QCLASS(Resupply_PlatoonMedical),
             QCLASS(Resupply_Explosives),
-            QCLASS(Resupply_Rockets),
-            QCLASS(CE_Loadout)
+            QCLASS(Resupply_Rockets)
         };
         weapons[] = {};
         VERSION_CONFIG;

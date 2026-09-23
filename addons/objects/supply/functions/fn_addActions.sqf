@@ -1,10 +1,12 @@
-// OLI_SUPPLY - attach the console's scroll-wheel actions to an object.
+// OLI_SUPPLY - attach ONE scroll-wheel action to a console: "Open Supply
+// Menu". Selecting it opens the custom top-left resupply menu (fn_openMenu)
+// instead of listing every crate type directly on the vanilla/ACE action
+// list. The menu itself reads OLI_Supply_Actions live every time it draws,
+// so turning an option on/off in the addon options is reflected the next
+// time the menu opens - the action itself no longer needs a rebuild for
+// that (only OLI_Supply_ActionRadius still does - see fn_wireConsoles).
 //
-// One action per ENABLED entry in OLI_Supply_Actions: an option switched off
-// in the addon options gets no action at all, so a mission running ammo and
-// medical only shows four entries rather than six greyed-out ones.
-//
-// The placeable console class gets these automatically. For any other prop use
+// The placeable console class gets this automatically. For any other prop use
 // OLI_Supply_fnc_registerConsole on the server instead of calling this
 // directly - the server has to know the object is a console before it will
 // honour requests aimed at it.
@@ -23,50 +25,36 @@ if !(isNil {_console getVariable "OLI_Supply_ActionIDs"}) exitWith {
 if (isNil "OLI_Supply_LocalConsoles") then {OLI_Supply_LocalConsoles = []};
 
 private _radius = missionNamespace getVariable ["OLI_Supply_ActionRadius", 4];
-private _ids = [];
-private _map = [];      // [[action key, action id], ...] - only the enabled ones
-private _shown = [];    // last rendered whole second, parallel to _map
 
-{
-    _x params ["_key", "", "", "", "", "", "", "", "_enabledVar"];
+// Reuses the ammo icon already shipped with this sub-component (see
+// fn_preInit.sqf's ICON_AMMO) as a generic "resupply" symbol for the single
+// menu-opening action.
+private _icon   = "\BLU\OLI\addons\objects\supply\data\ammo.paa";
+private _title  = format ["<img image='%1' size='1.5' shadow=2 /> <t>Open Supply Menu</t>", _icon];
+private _window = format ["<img image='%1' size='2.5' shadow=2 /> <t>Open Supply Menu</t>", _icon];
 
-    // Option switched off in the addon options: no action, not even greyed out.
-    if (missionNamespace getVariable [_enabledVar, true]) then {
-        private _title  = [_key, false, 0] call OLI_Supply_fnc_actionTitle;
-        private _window = [_key, false, 0, 1.6] call OLI_Supply_fnc_actionTitle;
+private _id = _console addAction [
+    _title,
+    {
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        [_target] call OLI_Supply_fnc_openMenu;
+    },
+    [],                                                       // arguments (unused - single action now)
+    1.5,                                                      // priority
+    true,                                                      // showWindow - on-screen prompt, no scrolling needed
+    true,                                                      // hideOnUse - re-added by the class/registerConsole flow the same as before
+    "",                                                        // shortcut
+    "alive _this && {isNull objectParent _this}",              // condition (_this = caller)
+    _radius,                                                   // radius (m)
+    false,                                                     // unconscious
+    "",                                                        // selection
+    ""                                                         // memoryPoint
+];
 
-        private _id = _console addAction [
-            _title,                                                  // title (HTML)
-            {
-                params ["_target", "_caller", "_actionId", "_arguments"];
-                [_target, _caller, _arguments] call OLI_Supply_fnc_requestCrate;
-            },
-            _key,                                                    // arguments
-            1.5 - (_forEachIndex * 0.01),                            // priority (keeps table order)
-            true,                                                    // showWindow - on-screen prompt, no scrolling needed
-            true,                                                    // hideOnUse
-            "",                                                      // shortcut
-            "alive _this && {isNull objectParent _this}",            // condition (_this = caller)
-            _radius,                                                 // radius (m)
-            false,                                                   // unconscious
-            "",                                                      // selection
-            ""                                                       // memoryPoint
-        ];
+_console setUserActionText [_id, _title, _window];
 
-        // Third element is the on-screen "default action" text - the prompt you
-        // get just by looking at the console. addAction has no parameter for it,
-        // setUserActionText does.
-        _console setUserActionText [_id, _title, _window];
-
-        _ids pushBack _id;
-        _map pushBack [_key, _id];
-        _shown pushBack -1;
-    };
-} forEach OLI_Supply_Actions;
-
+private _ids = [_id];
 _console setVariable ["OLI_Supply_ActionIDs", _ids];
-_console setVariable ["OLI_Supply_ActionMap", _map];
-_console setVariable ["OLI_Supply_ShownSecs", _shown];
 OLI_Supply_LocalConsoles pushBackUnique _console;
 
 _ids

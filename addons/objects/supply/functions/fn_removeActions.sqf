@@ -1,6 +1,3 @@
-// OLI_SUPPLY - strip the console actions off an object again.
-// Arguments: 0: object <OBJECT>
-
 params [["_console", objNull]];
 
 if (!hasInterface) exitWith {};
@@ -13,3 +10,9 @@ _console setVariable ["OLI_Supply_ActionMap", nil];
 _console setVariable ["OLI_Supply_ShownSecs", nil];
 
 OLI_Supply_LocalConsoles = OLI_Supply_LocalConsoles - [_console];
+
+if (missionNamespace getVariable ["OLI_Supply_UI_Open", false]) then {
+    if ((missionNamespace getVariable ["OLI_Supply_UI_Console", objNull]) isEqualTo _console) then {
+        [] call OLI_Supply_fnc_closeMenu;
+    };
+};

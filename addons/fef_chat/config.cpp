@@ -73,6 +73,12 @@ class CfgFunctions {
             class onMouseWheel {};
             class onKeyDown {};
         };
+
+        class System {
+            file = "BLU\OLI\addons\fef_chat\Data\Functions\System";
+            class updateAceScrollBlock {};
+            class configureVehicleScrollBlock {};
+        };
     };
 };
 
@@ -96,5 +102,8 @@ class Extended_PostInit_EventHandlers {
     };
     class FEF_UnconsciousEH {
         clientInit = QUOTE(call FEF_fnc_unconsciousEH;);
+    };
+    class FEF_VehicleScrollBlock {
+        clientInit = QUOTE(call FEF_fnc_configureVehicleScrollBlock;);
     };
 };
