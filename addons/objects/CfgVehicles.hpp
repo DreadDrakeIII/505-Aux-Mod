@@ -91,13 +91,13 @@ class CfgVehicles {
     class CLASS(Flag_Sosei_Pole): CLASS(Flag_505th_Pole) {
         displayName = "Sōsei Colony Flag (Pole)";
         class EventHandlers {
-            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Sōsei_co.paa));
+            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Sōsei_Flag_co.paa));
         };
     };
     class CLASS(Flag_Takeda_Pole): CLASS(Flag_505th_Pole) {
         displayName = "Takeda Separatists Flag (Pole)";
         class EventHandlers {
-            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Takeda_co.paa));
+            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Takeda_Flag_co.paa));
         };
     };
 
