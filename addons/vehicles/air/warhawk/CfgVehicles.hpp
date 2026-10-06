@@ -14,14 +14,13 @@ class CfgVehicles {
         armorStructural = 10;   // Base is 2, x5
         armor = 300;             // Base is 60, x5
 
+        // Laser designator (pilot camera laser) removed 2026-10-06 per Chase.
         weapons[] = {
             QCLASS(Warhawk_Gun20mm),
-            "Laserdesignator_pilotCamera",
             "CMFlareLauncher_Singles"
         };
         magazines[] = {
             QCLASS(Warhawk_Mag_Gun20mm_x3000),
-            "Laserbatteries",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",

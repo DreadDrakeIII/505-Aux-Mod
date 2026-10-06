@@ -48,7 +48,7 @@ class CfgVehicles {
                 UIPicture = "\optre_vehicles_air\falcon\FalconPylonPic.paa";
                 class pylons {
                     class WingPylonRight {
-                        hardpoints[] = {"OPTRE_Hardpoint_UH144_Upper"};
+                        hardpoints[] = {QCLASS(Falcon_HP_Wing)};
                         attachment = "OPTRE_16Rnd_Anvil1_missiles";
                         bay = -1;
                         priority = 4;
@@ -56,7 +56,7 @@ class CfgVehicles {
                         turret[] = {-1};
                     };
                     class BellyPylonRight: WingPylonRight {
-                        hardpoints[] = {"OPTRE_Hardpoint_UH144_Lower"};
+                        hardpoints[] = {QCLASS(Falcon_HP_Belly)};
                         attachment = "OPTRE_8Rnd_Anvil1_missiles";
                         priority = 3;
                         UIposition[] = {0.2, 0.40000001};
@@ -111,16 +111,6 @@ class CfgVehicles {
                             "OPTRE_5Rnd_Mortar_Bomb_Pylon",
                             "OPTRE_5Rnd_Mortar_Bomb_Pylon",
                             "OPTRE_AIE_4000Rnd_762x51_M118_Belt_Tracer_Red_Pylon"
-                        };
-                    };
-                    class Stealth {
-                        displayName = "Stealth";
-                        attachment[] = {
-                            "OPTRE_AN_ALE_407_198Rnd_Chaff_Pylon",
-                            "OPTRE_AN_ALE_407_198Rnd_Flare_Pylon",
-                            "OPTRE_AN_ALE_407_198Rnd_Flare_Pylon",
-                            "OPTRE_AN_ALE_407_198Rnd_Chaff_Pylon",
-                            "OPTRE_SearchLight_Pylon"
                         };
                     };
                 };
