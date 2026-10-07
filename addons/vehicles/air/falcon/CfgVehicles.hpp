@@ -14,13 +14,13 @@ class CfgVehicles {
         gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
+        weapons[] = {"CMFlareLauncher"};
         magazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
-            "240Rnd_CMFlare_Chaff_Magazine",
-            "Laserbatteries"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
     };
         class CLASS(Falcon_Armed): OPTRE_UNSC_falcon_armed {
@@ -34,13 +34,13 @@ class CfgVehicles {
         gunnerType = QCLASS(Marine_Heli_Crew);
         typicalCargo[] = {QCLASS(Marine_Heli_Pilot)};
         armor = 180;
+        weapons[] = {"CMFlareLauncher"};
         magazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
             "240Rnd_CMFlare_Chaff_Magazine",
-            "240Rnd_CMFlare_Chaff_Magazine",
-            "Laserbatteries"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
 
         class Components: Components {
