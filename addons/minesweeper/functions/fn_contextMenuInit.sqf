@@ -8,7 +8,7 @@ private _actionInfo = [
     "\a3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa",
     {
         params ["_pos", "_objects"];
-        
+
         private _ied = _objects select 0;
         private _difficulty = _ied getVariable ["MSIED_difficulty", "unknown"];
         private _mineCount = _ied getVariable ["MSIED_mineCount", 20];
@@ -21,7 +21,7 @@ private _actionInfo = [
         private _defused = _ied getVariable ["MSIED_Defused", false];
         private _detonated = _ied getVariable ["MSIED_Detonated", false];
         private _debugMode = _ied getVariable ["MSIED_Debug", false];
-        
+
         private _sideName = switch (_triggerSide) do {
             case west: {"BLUFOR"};
             case east: {"OPFOR"};
@@ -29,7 +29,7 @@ private _actionInfo = [
             case civilian: {"None (Civilian)"};
             default {"Unknown"};
         };
-        
+
         private _explosionName = switch (toLower _explosionSize) do {
             case "small": {"Small (Grenade)"};
             case "medium": {"Medium (Bomb)"};
@@ -38,11 +38,11 @@ private _actionInfo = [
             case "nothing": {"Nothing (Training)"};
             default {"Large"};
         };
-        
+
         private _status = "Active";
         if (_defused) then {_status = "Defused"};
         if (_detonated) then {_status = "Detonated"};
-        
+
         private _message = format [
             "<t align='center' size='1.2'>IED Information</t><br/><br/>" +
             "<t color='#00ff00'>Difficulty:</t> %1<br/>" +
@@ -62,17 +62,17 @@ private _actionInfo = [
             _explosionName,
             _sideName,
             _status,
-            if (_preDefusalBeep) then {"Enabled"} else {"Disabled"},
-            if (_debugMode) then {"Enabled"} else {"Disabled"}
+            ["Disabled", "Enabled"] select (_preDefusalBeep),
+            ["Disabled", "Enabled"] select (_debugMode)
         ];
-        
+
         ["Minesweeper IED", _message] call zen_common_fnc_showMessage;
     },
     {
         params ["_pos", "_objects"];
-        
+
         if (count _objects != 1) exitWith {false};
-        
+
         private _ied = _objects select 0;
         !isNil {_ied getVariable "MSIED_difficulty"}
     }
@@ -85,11 +85,11 @@ private _actionToggleDebug = [
     "\a3\ui_f\data\igui\cfg\actions\settimer_ca.paa",
     {
         params ["_pos", "_objects"];
-        
+
         private _ied = _objects select 0;
         private _currentDebug = _ied getVariable ["MSIED_Debug", false];
         private _debugFlag = _ied getVariable ["MSIED_DebugFlag", objNull];
-        
+
         if (_currentDebug && !isNull _debugFlag) then {
             // Remove debug flag
             deleteVehicle _debugFlag;
@@ -100,11 +100,11 @@ private _actionToggleDebug = [
             // Add debug flag
             private _flagPos = ASLToAGL getPosASL _ied;
             _flagPos set [2, (_flagPos select 2) + 2];
-            
+
             private _flag = "Sign_Sphere100cm_F" createVehicle _flagPos;
             _flag setObjectTexture [0, "#(rgb,8,8,3)color(1,0,0,0.8)"];
             _flag setPosASL (AGLToASL _flagPos);
-            
+
             _ied setVariable ["MSIED_Debug", true, true];
             _ied setVariable ["MSIED_DebugFlag", _flag, true];
             ["Minesweeper IED", "Debug flag added"] call zen_common_fnc_showMessage;
@@ -112,13 +112,13 @@ private _actionToggleDebug = [
     },
     {
         params ["_pos", "_objects"];
-        
+
         if (count _objects != 1) exitWith {false};
-        
+
         private _ied = _objects select 0;
         private _defused = _ied getVariable ["MSIED_Defused", false];
         private _detonated = _ied getVariable ["MSIED_Detonated", false];
-        
+
         (!isNil {_ied getVariable "MSIED_difficulty"}) && !_defused && !_detonated
     }
 ] call zen_context_menu_fnc_createAction;
@@ -130,20 +130,20 @@ private _actionInstantDefuse = [
     "\a3\ui_f\data\igui\cfg\simpleTasks\types\repair_ca.paa",
     {
         params ["_pos", "_objects"];
-        
+
         private _ied = _objects select 0;
         [_ied] call MSIED_fnc_complete;
         ["Minesweeper IED", "IED instantly defused (testing mode)"] call zen_common_fnc_showMessage;
     },
     {
         params ["_pos", "_objects"];
-        
+
         if (count _objects != 1) exitWith {false};
-        
+
         private _ied = _objects select 0;
         private _defused = _ied getVariable ["MSIED_Defused", false];
         private _detonated = _ied getVariable ["MSIED_Detonated", false];
-        
+
         (!isNil {_ied getVariable "MSIED_difficulty"}) && !_defused && !_detonated
     }
 ] call zen_context_menu_fnc_createAction;
@@ -155,20 +155,20 @@ private _actionInstantDetonate = [
     "\a3\ui_f\data\igui\cfg\simpleTasks\types\destroy_ca.paa",
     {
         params ["_pos", "_objects"];
-        
+
         private _ied = _objects select 0;
         [_ied] call MSIED_fnc_detonate;
         ["Minesweeper IED", "IED detonated (testing mode)"] call zen_common_fnc_showMessage;
     },
     {
         params ["_pos", "_objects"];
-        
+
         if (count _objects != 1) exitWith {false};
-        
+
         private _ied = _objects select 0;
         private _defused = _ied getVariable ["MSIED_Defused", false];
         private _detonated = _ied getVariable ["MSIED_Detonated", false];
-        
+
         (!isNil {_ied getVariable "MSIED_difficulty"}) && !_defused && !_detonated
     }
 ] call zen_context_menu_fnc_createAction;
@@ -181,9 +181,9 @@ private _parentAction = [
     {},
     {
         params ["_pos", "_objects"];
-        
+
         if (count _objects != 1) exitWith {false};
-        
+
         private _ied = _objects select 0;
         !isNil {_ied getVariable "MSIED_difficulty"}
     }

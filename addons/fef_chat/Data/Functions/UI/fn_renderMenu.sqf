@@ -161,7 +161,7 @@ for "_i" from 0 to (_visibleCount - 1) do {
         };
 
         _btn ctrlSetBackgroundColor _btnColor;
-        _btn ctrlSetText format ["  %1%2", _label, if (_isSubmenu) then { "  >" } else { "" }];
+        _btn ctrlSetText format ["  %1%2", _label, ["", "  >"] select (_isSubmenu)];
         _accent ctrlSetBackgroundColor ([_type, _label] call _getAccentColor);
     } else {
         _btn ctrlSetBackgroundColor [0, 0, 0, 0];
@@ -192,11 +192,7 @@ _footer ctrlSetFontHeight 0.016;
 private _footerText = if (_itemCount > _visibleCount) then {
     format ["SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE    %1/%2", _selectedIndex + 1, _itemCount]
 } else {
-    if (_menuId != "main") then {
-        "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC BACK"
-    } else {
-        "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE"
-    };
+    ["SCROLL SELECT    SPACE/ENTER CONFIRM    ESC CLOSE", "SCROLL SELECT    SPACE/ENTER CONFIRM    ESC BACK"] select (_menuId != "main")
 };
 
 _footer ctrlSetText _footerText;

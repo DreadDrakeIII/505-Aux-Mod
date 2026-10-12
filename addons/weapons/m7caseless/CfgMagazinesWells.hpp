@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // M7 Caseless MAGAZINE WELL
     // ================================

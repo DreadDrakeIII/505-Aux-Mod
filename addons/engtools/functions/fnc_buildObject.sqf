@@ -214,12 +214,12 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
                 // along the long axis. Cursor determines which end to chain onto.
                 // Z/X nudge slides along long axis, Shift+Z/X nudges perpendicular.
 
-                private _longAxisWorld = if (_tLongIsX) then { _vecRight }     else { _targetVecDir };
-                private _perpAxisWorld = if (_tLongIsX) then { _targetVecDir } else { _vecRight };
+                private _longAxisWorld = [_targetVecDir, _vecRight] select (_tLongIsX);
+                private _perpAxisWorld = [_vecRight, _targetVecDir] select (_tLongIsX);
 
                 // Half-lengths along the long axis
-                private _tLongHalf = if (_tLongIsX) then { _tHalfX } else { _tHalfY };
-                private _myLongHalf = if (_tLongIsX) then { _myHalfX } else { _myHalfY };
+                private _tLongHalf = [_tHalfY, _tHalfX] select (_tLongIsX);
+                private _myLongHalf = [_myHalfY, _myHalfX] select (_tLongIsX);
 
                 // Which end of the target to chain onto (cursor side)
                 private _cursorDelta = _basePos vectorDiff _targetPos;
@@ -242,7 +242,7 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
                 // FIX 6: always use target's vectorUp so placed objects align on slope
                 GVAR(buildingObject) setVectorDirAndUp [_rotatedDir, _targetVecUp];
                 GVAR(buildingObject) setPosASL _snapPos;
-                GVAR(buildingObject) setObjectTexture [0, if (player distance GVAR(buildingObject) < 15) then {"#(argb,8,8,3)color(0.2,0.8,0.3,0.6)"} else {"#(argb,8,8,3)color(1.0,0.15,0.1,0.6)"}];
+                GVAR(buildingObject) setObjectTexture [0, ["#(argb,8,8,3)color(1.0,0.15,0.1,0.6)", "#(argb,8,8,3)color(0.2,0.8,0.3,0.6)"] select ((player distance OLI_engtools_buildingObject) < 15)];
                 GVAR(canPlaceObject) = (player distance GVAR(buildingObject) < 15);
             };
         } else {
@@ -273,11 +273,11 @@ GVAR(buildEH) = addMissionEventHandler ["EachFrame", {
             } else {
                 ([_pitch, _bank, _worldYaw] call OLI_engtools_fnc_pitchBankYawToVectors) params ["_vd", "_vu"];
                 GVAR(buildingObject) setPosASL _basePos;
-                GVAR(buildingObject) setVectorDirAndUp [_vd, if (_vectorSurface) then { _defaultVecUp } else { _vu }];
+                GVAR(buildingObject) setVectorDirAndUp [_vd, [_vu, _defaultVecUp] select (_vectorSurface)];
             };
         };
         GVAR(buildingObject) setPosASL _basePos;
-        GVAR(buildingObject) setObjectTexture [0, if (player distance GVAR(buildingObject) < 15) then {"#(argb,8,8,3)color(0.2,0.8,0.3,0.6)"} else {"#(argb,8,8,3)color(1.0,0.15,0.1,0.6)"}];
+        GVAR(buildingObject) setObjectTexture [0, ["#(argb,8,8,3)color(1.0,0.15,0.1,0.6)", "#(argb,8,8,3)color(0.2,0.8,0.3,0.6)"] select ((player distance OLI_engtools_buildingObject) < 15)];
         GVAR(canPlaceObject) = (player distance GVAR(buildingObject) < 15);
     };
 

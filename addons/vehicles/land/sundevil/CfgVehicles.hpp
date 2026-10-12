@@ -1,4 +1,4 @@
-class CFGVehicles {
+class CfgVehicles {
     class OPTRE_M808B2;
     class CLASS(Sundevil): OPTRE_M808B2 {
         SCOPE_PUBLIC;

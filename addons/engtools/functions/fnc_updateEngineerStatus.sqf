@@ -13,17 +13,13 @@ private _ctrl = _display displayCtrl IDC_STATUS_TEXT;
 if (isNull _ctrl) exitWith {};
 
 private _count   = if (!isNil QGVAR(builtObjects)) then { count GVAR(builtObjects) } else { 0 };
-private _toolkit = if ("OLI_Combat_Engineer_Toolkit" in items player) then {
-    "<t color='#55CC66'>EQUIPPED</t>"
-} else {
-    "<t color='#CC4444'>MISSING</t>"
-};
+private _toolkit = ["<t color='#CC4444'>MISSING</t>", "<t color='#55CC66'>EQUIPPED</t>"] select ("OLI_Combat_Engineer_Toolkit" in items player);
 private _height  = if (!isNil "OLI_engtools_buildHeight")  then { OLI_engtools_buildHeight  } else { 0 };
 private _terrain = if (!isNil "OLI_engtools_levelTerrain") then { OLI_engtools_levelTerrain } else { true };
 private _snap    = if (!isNil "OLI_engtools_snapActive")   then { OLI_engtools_snapActive   } else { false };
 
-private _terrainStr = if (_terrain) then { "<t color='#55CC66'>ON</t>"  } else { "<t color='#CC4444'>OFF</t>" };
-private _snapStr    = if (_snap)    then { "<t color='#5599FF'>ON</t>"  } else { "<t color='#888888'>OFF</t>" };
+private _terrainStr = ["<t color='#CC4444'>OFF</t>", "<t color='#55CC66'>ON</t>"] select (_terrain);
+private _snapStr    = ["<t color='#888888'>OFF</t>", "<t color='#5599FF'>ON</t>"] select (_snap);
 
 private _pitch = if (!isNil QGVAR(buildPitch)) then { GVAR(buildPitch) } else { 0 };
 private _bank  = if (!isNil QGVAR(buildBank))  then { GVAR(buildBank)  } else { 0 };
@@ -43,7 +39,7 @@ if (_resourcesEnabled) then {
         case INDEPENDENT: {"INDFOR"};
         default           {"SIDE"};
     };
-    private _resColor = if (_resources > 0) then { "#FFAA00" } else { "#FF4444" };
+    private _resColor = ["#FF4444", "#FFAA00"] select (_resources > 0);
     _resStr = format ["  |  %1 Pool: <t color='%2'>%3</t>", _sideLabel, _resColor, _resources];
 };
 

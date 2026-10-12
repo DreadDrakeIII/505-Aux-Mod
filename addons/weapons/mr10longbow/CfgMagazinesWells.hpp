@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // MR10 LONGBOW MAGAZINE WELL
     // Allows weapon to accept any of the 3 ammo types

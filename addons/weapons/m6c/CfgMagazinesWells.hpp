@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // M6C MAGAZINE WELL
     // Allows weapon to accept any of the 3 ammo types

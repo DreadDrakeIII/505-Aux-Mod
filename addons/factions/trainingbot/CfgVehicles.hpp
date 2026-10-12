@@ -1,6 +1,6 @@
 class CfgVehicles {
-    class CLASS(OPFOR_Unit_Base);
-    class CLASS(TRNE_Light_Unit_Base): CLASS(OPFOR_Unit_Base) {
+    class MDTF_V_R_BOT;
+    class CLASS(TRNE_Light_Unit_Base): MDTF_V_R_BOT {
         SCOPE_HIDDEN;
         faction = QFACTION(TRNE);
 
@@ -17,65 +17,6 @@ class CfgVehicles {
             ITEM_20("ACE_elasticBandage"),
             ITEM_4("ACE_tourniquet"),
             "FirstAidKit"
-        };
-        model = "Uniforms\warbot.p3d";
-        uniformClass = QCLASS(TRNE_Light_Uniform);
-        hiddenSelections[] = {"camo","camo1"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(trainingbot\data\textures\TrainingBot_Torso_co.paa),
-            QPATHTOF(trainingbot\data\textures\TrainingBot_Legs_co.paa)
-        };
-    };
-    class CLASS(Red_Light_Unit_Base): CLASS(OPFOR_Unit_Base) {
-        SCOPE_HIDDEN;
-        faction = QFACTION(TRNE);
-
-        genericNames = QCLASS(TRNE_Bots);
-        modelSides[] = {ALL_SIDES};
-        editorSubcategory = QEDSUBCAT(TRNE_Light_INF);
-
-        items[] = {
-            ITEM_20("ACE_elasticBandage"),
-            ITEM_4("ACE_tourniquet"),
-            "FirstAidKit"
-        };
-        respawnItems[] = {
-            ITEM_20("ACE_elasticBandage"),
-            ITEM_4("ACE_tourniquet"),
-            "FirstAidKit"
-        };
-        model = "Uniforms\warbot.p3d";
-        uniformClass = QCLASS(Red_Light_Uniform);
-        hiddenSelections[] = {"camo","camo1"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(trainingbot\data\textures\red\Red_Torso_co.paa),
-            QPATHTOF(trainingbot\data\textures\red\Red_Legs_co.paa)
-        };
-    };
-    class CLASS(Blue_Light_Unit_Base): CLASS(OPFOR_Unit_Base) {
-        SCOPE_HIDDEN;
-        faction = QFACTION(TRNE);
-
-        genericNames = QCLASS(TRNE_Bots);
-        modelSides[] = {ALL_SIDES};
-        editorSubcategory = QEDSUBCAT(TRNE_Light_INF);
-
-        items[] = {
-            ITEM_20("ACE_elasticBandage"),
-            ITEM_4("ACE_tourniquet"),
-            "FirstAidKit"
-        };
-        respawnItems[] = {
-            ITEM_20("ACE_elasticBandage"),
-            ITEM_4("ACE_tourniquet"),
-            "FirstAidKit"
-        };
-        model = "Uniforms\warbot.p3d";
-        uniformClass = QCLASS(Blue_Light_Uniform);
-        hiddenSelections[] = {"camo","camo1"};
-        hiddenSelectionsTextures[] = {
-            QPATHTOF(trainingbot\data\textures\blue\Blue_Torso_co.paa),
-            QPATHTOF(trainingbot\data\textures\blue\Blue_Legs_co.paa)
         };
     };
     /////////////////////TRNE_Light//////////////////////////
@@ -99,8 +40,8 @@ class CfgVehicles {
             "Put"
         };
 
-        linkedItems[] = {QCLASS(TRNE_Head), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
-        respawnLinkedItems[] = {QCLASS(TRNE_Head), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        linkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        respawnLinkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
         backpack = QCLASS(TRNE_Light_Rifleman_Predef);
     };
     class CLASS(TRNE_Light_LMG): CLASS(TRNE_Light_Unit_Base) {
@@ -123,8 +64,8 @@ class CfgVehicles {
             "Put"
         };
 
-        linkedItems[] = {QCLASS(TRNE_Faceshield), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
-        respawnLinkedItems[] = {QCLASS(TRNE_Faceshield), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        linkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        respawnLinkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
         backpack = QCLASS(TRNE_Light_LMG_Predef);
     };
     class CLASS(TRNE_Light_AT): CLASS(TRNE_Light_Unit_Base) {
@@ -149,20 +90,20 @@ class CfgVehicles {
             "Put"
         };
 
-        linkedItems[] = {QCLASS(TRNE_Head), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
-        respawnLinkedItems[] = {QCLASS(TRNE_Head), "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        linkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
+        respawnLinkedItems[] = {"TKE_WarBotHead", "19th_invisible_Vest", "OPTRE_NVGT_C", "", LINKED_ITEMS_RADIO};
         backpack = QCLASS(TRNE_Light_AT_Predef);
     };
     ///////////////////Backpack////////////////////////
-    class SC_Backpack_Warbot;
-    class CLASS(TRNE_Light_Backpack): SC_Backpack_Warbot {
+    class TKE_RadioPackUCN;
+    class CLASS(TRNE_Light_Backpack): TKE_RadioPackUCN {
         SCOPE_HIDDEN;
 
         displayName = "[TRNE] Trainingbot Backpack";
-        model = "sc_equipment\data\warbot\gen2_backpack.p3d";
+        model = "\TKE_Kuiper_Engagements\TKE_MD\TKE_RadioPack.p3d";
         hiddenSelections[] = {"camo_backpack"};
         hiddenSelectionsTextures[] = {
-            "sc_equipment\data\warbot\textures\backpack_co.paa"
+            "\TKE_Kuiper_Engagements\TKE_MD\data\TKE_RadioPack_co.paa"
         };
     };
     class CLASS(TRNE_Light_Rifleman_Predef): CLASS(TRNE_Light_Backpack) {
@@ -199,5 +140,4 @@ class CfgVehicles {
             MAG_XX(Laserbatteries,1);
         };
     };
-
 };

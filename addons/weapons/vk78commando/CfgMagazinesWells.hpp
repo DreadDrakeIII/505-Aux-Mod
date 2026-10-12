@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // VK78 COMMANDO MAGAZINE WELL
     // Allows weapon to accept any of the 3 ammo types

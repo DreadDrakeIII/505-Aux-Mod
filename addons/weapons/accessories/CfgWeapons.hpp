@@ -2,7 +2,7 @@ class CfgWeapons
 {
     // Parent classes
     class acc_pointer_IR;
-    class optic_Aco;
+    //class optic_Aco;
     // class muzzle_snds_acp;
     class InventoryFlashLightItem_Base_F;
     // class InventoryMuzzleItem_Base_F;

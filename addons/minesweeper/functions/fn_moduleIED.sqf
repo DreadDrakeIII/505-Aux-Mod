@@ -19,7 +19,7 @@ if (count _syncedObjects > 0) then {
 if (isNull _ied) then {
     // Get all nearby objects within 1 meter
     private _nearObjects = nearestObjects [_modulePos, ["All"], 3];
-    
+
     // Filter out the module itself and find a valid target
     {
         if (_x != _logic && {!isNull _x} && {alive _x}) exitWith {
@@ -36,7 +36,7 @@ if (isNull _ied) exitWith {
         "No valid object found! Place the module directly on or very close to an object.",
         ""
     ] call BIS_fnc_showNotification;
-    
+
     // Delete the module
     deleteVehicle _logic;
     false
@@ -72,11 +72,11 @@ switch (toLower _difficulty) do {
 // Initialize the IED on the server
 if (isServer) then {
     [_ied, _difficulty, _mineCount, _timeLimit, "large", _triggerSide, false, false, _gridWidth, _gridHeight] call MSIED_fnc_initIED;
-    
+
     // Notify Zeus operator of success
     [
         "Minesweeper IED",
-        format ["IED created on %1 (%2 difficulty, %3 trigger)", getText (configFile >> "CfgVehicles" >> typeOf _ied >> "displayName"), _difficulty, _triggerSide],
+        format ["IED created on %1 (%2 difficulty, %3 trigger)", getText (configOf _ied >> "displayName"), _difficulty, _triggerSide],
         ""
     ] call BIS_fnc_showNotification;
 };

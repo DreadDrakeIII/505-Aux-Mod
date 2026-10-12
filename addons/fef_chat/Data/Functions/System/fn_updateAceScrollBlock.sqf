@@ -18,7 +18,7 @@ private _uiOpen = missionNamespace getVariable ["FEF_UI_Open", false];
 
 private _vehicleBlock = false;
 if (missionNamespace getVariable ["FEF_VehicleScroll_BlockInVehicle", true]) then {
-    _vehicleBlock = (vehicle player) != player;
+    _vehicleBlock = !isNull objectParent player;
 };
 
 private _shouldBlock = _uiOpen || _vehicleBlock;

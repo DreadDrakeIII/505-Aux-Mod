@@ -15,6 +15,7 @@ class CfgPatches {
             QCLASS(Frigate_Innie_Blank),
             QCLASS(Frigate_Aegis),
             QCLASS(Frigate_Ajax),
+            QCLASS(Frigate_Sword),
             QCLASS(Frigate_Sosei),
             QCLASS(Frigate_Takeda)
         };

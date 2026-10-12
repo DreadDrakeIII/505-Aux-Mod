@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // MA37K MAGAZINE WELL
     // Allows weapon to accept any of the 3 ammo types

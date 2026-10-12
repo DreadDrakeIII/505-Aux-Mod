@@ -1,4 +1,4 @@
-class cfgMagazineWells {
+class CfgMagazineWells {
     // ================================
     // M6D Carbine MAGAZINE WELL
     // ================================
