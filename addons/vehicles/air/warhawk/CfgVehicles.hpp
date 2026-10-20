@@ -31,17 +31,50 @@ class CfgVehicles {
 
         hiddenSelectionsTextures[]=
 		{
-			QPATHTOF(air\warhawk\data\textures\fighter_01_fuselage_01_co_2.paa),
-			QPATHTOF(air\warhawk\data\textures\fighter_01_fuselage_02_co_2.paa),
+			QPATHTOF(air\warhawk\data\textures\Warhawk2_camo1_co.paa),
+			QPATHTOF(air\warhawk\data\textures\Warhawk2_camo2_co.paa),
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_03_ca.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+			"",
+			""
 			//"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 		};
+        textureList[] = {"Warhawk", 1, "Warhawk2", 0};
+        class TextureSources {
+            class Warhawk {
+                displayName = "Warhawk";
+                textures[] = {
+			        QPATHTOF(air\warhawk\data\textures\Warhawk2_camo1_co.paa),
+			        QPATHTOF(air\warhawk\data\textures\Warhawk2_camo2_co.paa),
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
+			        "",
+			        ""
+			        //"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+		        };
+            };
+            class Warhawk2: Warhawk {
+                displayName = "Warhawk 2";
+                textures[] = {
+			        QPATHTOF(air\warhawk\data\textures\Warhawk_camo1_co.paa),
+			        QPATHTOF(air\warhawk\data\textures\Warhawk_camo2_co.paa),
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
+			        "",
+			        ""
+			        //"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+		        };
+            };
+        };
 
         class Components: Components {
             class TransportPylonsComponent {
@@ -322,17 +355,50 @@ class CfgVehicles {
 		};
         hiddenSelectionsTextures[]=
 		{
-			QPATHTOF(air\warhawk\data\textures\fighter_01_fuselage_01_co_2.paa),
-			QPATHTOF(air\warhawk\data\textures\fighter_01_fuselage_02_co_2.paa),
+			QPATHTOF(air\warhawk\data\textures\Warhawk2_camo1_co.paa),
+			QPATHTOF(air\warhawk\data\textures\Warhawk2_camo2_co.paa),
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_03_ca.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+			"",
+			""
 			//"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 		};
+        textureList[] = {"Warhawk", 1, "Warhawk2", 0};
+        class TextureSources {
+            class Warhawk {
+                displayName = "Warhawk";
+                textures[] = {
+			        QPATHTOF(air\warhawk\data\textures\Warhawk2_camo1_co.paa),
+			        QPATHTOF(air\warhawk\data\textures\Warhawk2_camo2_co.paa),
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
+			        "",
+			        ""
+			        //"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+		        };
+            };
+            class Warhawk2: Warhawk {
+                displayName = "Warhawk 2";
+                textures[] = {
+			        QPATHTOF(air\warhawk\data\textures\Warhawk_camo1_co.paa),
+			        QPATHTOF(air\warhawk\data\textures\Warhawk_camo2_co.paa),
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_glass_01_ca.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_01_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
+			        "a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
+			        "",
+			        ""
+			        //"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+		        };
+            };
+        };
     };
 
     class B_Plane_Fighter_01_Stealth_F;
@@ -376,8 +442,8 @@ class CfgVehicles {
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_02_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_03_co.paa",
 			"a3\air_f_jets\plane_fighter_01\data\fighter_01_cockpit_05_co.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_03_ca.paa",
-			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
+			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_05_ca.paa",
+			"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_04_ca.paa"
 			//"a3\air_f_jets\plane_fighter_01\data\Numbers\Fighter_01_01_ca.paa"
 		};
     };
