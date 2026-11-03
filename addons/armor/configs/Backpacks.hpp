@@ -89,7 +89,9 @@ class CLASS(Backpack_CE): CLASS(Backpack_Base) {
         class TransportMagazines {
             MAG_XX(OLI_32Rnd_762x51_Mag,9);
             MAG_XX(OLI_12Rnd_127x40_Mag,3);
-            MAG_XX(MRAWS_HEAT_F,3);
+            MAG_XX(OLI_M20_HEAT75,1);
+            MAG_XX(OLI_M20_HE44,1);
+            MAG_XX(OLI_M20_WP,1);
             MAG_XX(OPTRE_M2_Smoke,4);
             MAG_XX(OPTRE_M2_Smoke_Blue,2);
             MAG_XX(OPTRE_M9_Frag,4);

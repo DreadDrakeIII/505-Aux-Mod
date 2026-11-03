@@ -11,6 +11,10 @@ class CfgPatches {
             QUOTE(ADDON),
             "OPTRE_Weapons_SMG",
             "OPTRE_ACE_Compat",
+            "TCP_Compat_OPTRE_Weapons_SMGs_M7",
+            "TCP_Weapons_SMGs_M7",
+            "TCP_Compat_ACE_Weapons_SMGs_M7",
+            "TCP_Weapons_Ammo_5x23_Ball",           // TCP_60Rnd_5x23_Mag
             "jsrs2025_config_c"
             };
         units[] = {};

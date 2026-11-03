@@ -53,7 +53,7 @@ class CfgVehicles {
         editorSubcategory = QEDSUBCAT(Flags);
 
         hiddenSelections[] = {"camo"};
-        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Sōsei_Flag_co.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Sosei_Flag_co.paa)};
     };
     class CLASS(Banner_Takeda): Banner_01_F {
         SCOPE_PUBLIC;
@@ -68,8 +68,8 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {QPATHTOF(data\flags\Takeda_Flag_co.paa)};
     };
 
-    class Flag_White_F;
-    class CLASS(Flag_505th_Pole): Flag_White_F {
+    class Land_TCP_PortableMast_01_Flag_Olive_BES_02;
+    class CLASS(Flag_505th_Pole): Land_TCP_PortableMast_01_Flag_Olive_BES_02 {
         SCOPE_PUBLIC;
         author = AUTHOR;
 
@@ -91,7 +91,7 @@ class CfgVehicles {
     class CLASS(Flag_Sosei_Pole): CLASS(Flag_505th_Pole) {
         displayName = "Sōsei Colony Flag (Pole)";
         class EventHandlers {
-            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Sōsei_Flag_co.paa));
+            init = QUOTE((_this select 0) setFlagTexture QQPATHTOF(data\flags\Sosei_Flag_co.paa));
         };
     };
     class CLASS(Flag_Takeda_Pole): CLASS(Flag_505th_Pole) {

@@ -11,6 +11,7 @@ class CfgPatches {
             "TKE_Props",
             "OPTRE_BW_Locker",
             "A3_Structures_F_Mil_Flags",
+            "TCP_Props_Military_Equipment_PortableMast_01",   // flag mast base
             "WBK_KitArsenal",
             "ace_arsenal"
         };

@@ -3,6 +3,34 @@
 
 class CfgWeapons
 {
+    // 505th Beret (Black) - TCP beret base
+    class TCP_H_Beret_Black;
+    class CLASS(Beret_Black): TCP_H_Beret_Black {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+        displayName = "[505th] Beret (Black)";
+    };
+
+    // 505th Boonie Hats - TCP bases
+    class TCP_H_boonieHat_Gray;
+    class CLASS(Boonie_Gray): TCP_H_boonieHat_Gray {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+        displayName = "[505th] Boonie Hat (Gray)";
+    };
+    class TCP_H_boonieHat_Folded_Left_Gray;
+    class CLASS(Boonie_Folded_Left_Gray): TCP_H_boonieHat_Folded_Left_Gray {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+        displayName = "[505th] Boonie Hat (Gray, Folded Left)";
+    };
+    class TCP_H_boonieHat_Folded_Right_Gray;
+    class CLASS(Boonie_Folded_Right_Gray): TCP_H_boonieHat_Folded_Right_Gray {
+        SCOPE_PUBLIC;
+        author = AUTHOR;
+        displayName = "[505th] Boonie Hat (Gray, Folded Right)";
+    };
+
     class ACE_Vector;
 
     class CLASS(Vector): ACE_Vector

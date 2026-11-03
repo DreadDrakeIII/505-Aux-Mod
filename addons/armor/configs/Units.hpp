@@ -178,7 +178,7 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
         "TCP_optic_EVOSJ",
         "OLI_MA37_LAM",
         "OLI_M6C",
-        "launch_MRAWS_green_F",
+        "OLI_M20_Lawbringer_LAT",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
@@ -188,7 +188,7 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
         "TCP_optic_EVOSJ",
         "OLI_MA37_LAM",
         "OLI_M6C",
-        "launch_MRAWS_green_F",
+        "OLI_M20_Lawbringer_LAT",
         "OPTRE_Smartfinder",
         "Throw",
         "Put"
@@ -196,12 +196,12 @@ class CLASS(Marine_CE_LAT): CLASS(Marine_CE_Rifleman) {
     magazines[] = {
         "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
-        "MRAWS_HEAT_F"
+        "OLI_M20_HEAT75"
     };
     respawnMagazines[] = {
         "OLI_40Rnd_762x51_Mag",
         "OLI_12Rnd_127x40_Mag",
-        "MRAWS_HEAT_F"
+        "OLI_M20_HEAT75"
     };
     linkedItems[] = {
         QCLASS(CE_HELMET), QCLASS(CE_Armour_Vest), "OPTRE_NVG", "OPTRE_HUD_In_Glasses", MARINE_LINKED_ITEMS_RADIO

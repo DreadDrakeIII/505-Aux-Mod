@@ -1,7 +1,7 @@
 class CfgMagazines {
-    class OPTRE_60Rnd_5x23mm_Mag;
+    class TCP_60Rnd_5x23_Mag;
 
-    class CLASS(60Rnd_5x23_Mag): OPTRE_60Rnd_5x23mm_Mag {
+    class CLASS(60Rnd_5x23_Mag): TCP_60Rnd_5x23_Mag {
         SCOPE_PUBLIC;
         baseMagazine = QCLASS(60Rnd_5x23_Mag);
         author = AUTHOR;
@@ -9,9 +9,6 @@ class CfgMagazines {
         displayname = "[505th] 60Rnd M7 Caseless Magazine";
         displaynameshort = "5x23mm";
         descriptionshort = "60 Round Caseless Magazine<br/>5x23mm<br/>";
-
-        model = "\OPTRE_Weapons\ammoPacketsV2\data\5x23\5x23mm_60rnd.p3d";
-        picture = "\OPTRE_weapons\smg\icons\magazine.paa";
 
         ammo = QCLASS(5x23_Caseless);
         count = 60;

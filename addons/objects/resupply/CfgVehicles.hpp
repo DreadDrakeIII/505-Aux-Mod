@@ -121,8 +121,10 @@ class CfgVehicles {
             MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,2);
             // [1st] S-108 SAM
             MAG_XX(MEU_SPKR108_SAM_AA,2);
-            // M40 "Rabbit" Launcher
-            MAG_XX(OPTRE_1Rnd_50x137_HEAT,2);
+            // [505th] M20 Lawbringer (LAT) | HEAT 75 / HE 44 / WP
+            MAG_XX(OLI_M20_HEAT75,2);
+            MAG_XX(OLI_M20_HE44,2);
+            MAG_XX(OLI_M20_WP,2);
 
             // ---- Grenades ----
             MAG_XX(OPTRE_M9_Frag,8);
@@ -227,8 +229,10 @@ class CfgVehicles {
             MAG_XX(OPTRE_M41_Twin_HEAT_SACLOS,20);
             // [1st] S-108 SAM
             MAG_XX(MEU_SPKR108_SAM_AA,20);
-            // M40 "Rabbit" Launcher
-            MAG_XX(OPTRE_1Rnd_50x137_HEAT,20);
+            // [505th] M20 Lawbringer (LAT) | HEAT 75 / HE 44 / WP
+            MAG_XX(OLI_M20_HEAT75,20);
+            MAG_XX(OLI_M20_HE44,20);
+            MAG_XX(OLI_M20_WP,20);
 
             // ---- Grenades ----
             MAG_XX(OPTRE_M9_Frag,32);

@@ -15,10 +15,16 @@ class CfgPatches {
             "OPTRE_Hud",
             "OPTRE_FunctionsLibrary",
             "TCP_Characters_BLUFOR_UNSC_Army_Facewear_balaclavaTacticalGlasses",
-            "TCP_Functions"
+            "TCP_Functions",
+            "TCP_Characters_BLUFOR_UNSC_Army_Headgear_beret",
+            "TCP_Characters_BLUFOR_UNSC_Army_Headgear_boonieHat"
         };
         units[] = {};
         weapons[] = {
+            QCLASS(Beret_Black),
+            QCLASS(Boonie_Gray),
+            QCLASS(Boonie_Folded_Left_Gray),
+            QCLASS(Boonie_Folded_Right_Gray),
             QCLASS(Vector)
         };
         VERSION_CONFIG;
